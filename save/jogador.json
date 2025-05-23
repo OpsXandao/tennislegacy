@@ -1,1 +1,53 @@
-{}
+[
+  {
+    "nome": "Lucas Moretti",
+    "nacionalidade": "[BR] Brasil",
+    "idade": 21,
+    "overall": 47,
+    "atributos": {
+      "saque": 50,
+      "forehand": 52,
+      "backhand": 45,
+      "topspin": 42,
+      "voleio": 46,
+      "slice": 40,
+      "movimento": 48,
+      "lob": 50,
+      "winner": 45
+    }
+  },
+  {
+    "nome": "Derek Coleman",
+    "nacionalidade": "[US] Estados Unidos",
+    "idade": 24,
+    "overall": 50,
+    "atributos": {
+      "saque": 55,
+      "forehand": 53,
+      "backhand": 46,
+      "topspin": 49,
+      "voleio": 51,
+      "slice": 50,
+      "movimento": 48,
+      "lob": 47,
+      "winner": 51
+    }
+  },
+  {
+    "nome": "Kenji Takeda",
+    "nacionalidade": "[JP] Japão",
+    "idade": 22,
+    "overall": 52,
+    "atributos": {
+      "saque": 54,
+      "forehand": 49,
+      "backhand": 57,
+      "topspin": 52,
+      "voleio": 50,
+      "slice": 47,
+      "movimento": 53,
+      "lob": 48,
+      "winner": 51
+    }
+  }
+]
