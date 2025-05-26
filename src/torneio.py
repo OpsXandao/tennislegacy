@@ -1,11 +1,16 @@
 import random
 
 class TorneioATP250:
-    def __init__(self, semana, jogador_nome, jogador_nacionalidade, ranking):
+    def __init__(self, semana, jogador_nome, jogador_nacionalidade, ranking, nome_save=None):
+        self.nome_save = nome_save
         self.semana = semana
         self.jogador_nome = jogador_nome
         self.jogador_nacionalidade = jogador_nacionalidade
         self.ranking = ranking
+        self.nome_save = nome_save
+        
+    def distribuir_premio(total, porcentagem):
+        return int(total * porcentagem)
 
     def _buscar_instancia_jogador(self):
         import builtins
@@ -51,7 +56,6 @@ class TorneioATP250:
     def simular_torneio(self, todos_jogadores):
         chave_principal, jogadores_qualy = self.preparar_jogadores_para_qualy(todos_jogadores)
 
-        # Adiciona o jogador principal no quali
         random.shuffle(jogadores_qualy)
 
         jogador_vivo = True
@@ -67,7 +71,6 @@ class TorneioATP250:
                 sigla_b = b["nacionalidade"].split()[0].strip("[]")
                 print(f"• {a['nome']} [{sigla_a}] vs {b['nome']} [{sigla_b}]")
 
- 
             vencedores, perdedores, resultados = [], [], []
 
             for a, b in zip(lista_jogadores[::2], lista_jogadores[1::2]):
@@ -95,7 +98,6 @@ class TorneioATP250:
                         jogador_vivo = False
                         perdedores.append({"nome": self.jogador_nome, "nacionalidade": self.jogador_nacionalidade})
                         vencedores.append(adversario)
-                        ultimos_perdedores.append({"nome": self.jogador_nome, "nacionalidade": self.jogador_nacionalidade})
                         print("\n😔 Você foi eliminado do qualifying.")
                         if input("📋 Deseja simular o restante do torneio? (s/n): ").strip().lower() != "s":
                             return [], [], [], False
@@ -121,11 +123,13 @@ class TorneioATP250:
         # Rodada 1: 16 ➜ 8
         rodada1, _, _, jogador_vivo = simular_rodada(jogadores_qualy, "Rodada 1 do qualifying...")
 
-        # Rodada 2: 8 ➜ 4
+        # Rodada 2: 8 ➜ 4 (final do qualifying)
         if jogador_vivo:
-            classificados, ultimos_perdedores, _, jogador_vivo = simular_rodada(rodada1, "Rodada 2 (final) do qualifying...")
+            classificados, perdedores_finais, _, jogador_vivo = simular_rodada(rodada1, "Rodada 2 (final) do qualifying...")
+            ultimos_perdedores = perdedores_finais  # ✅ Apenas quem perdeu na final
         else:
             classificados = []
+            ultimos_perdedores = []  # ❌ Sem chance de lucky loser
 
         # Lucky loser
         lucky_loser = None
