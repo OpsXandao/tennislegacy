@@ -46,7 +46,7 @@ class jogador:
         print("\n⚔️ Estilo de jogo:")
         print("1. Atacar na rede")
         print("2. Atacar do fundo")
-        print("3. Atacar pelo meio")
+        print("3. Atacar do meio")
         estilo = input("Escolha (1, 2 ou 3): ").strip()
         return {
             "direcao": "meio" if direcao == "1" else "laterais",
@@ -57,10 +57,18 @@ class jogador:
             }.get(estilo, "atacar_do_fundo")
         }
 
-    def carregar_adversario(self):
-        caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../save/jogador.json")
+    def carregar_adversario(self, nome_adversario=None):
+        caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../save/atp.json")
         with open(caminho, encoding="utf-8") as f:
-            return random.choice(json.load(f))
+            jogadores = json.load(f)
+
+        if nome_adversario:
+            for j in jogadores:
+                if j["nome"] == nome_adversario:
+                    return j
+            raise ValueError(f"Adversário '{nome_adversario}' não encontrado em atp.json.")
+        else:
+            return random.choice(jogadores)
 
     def calcular_bonus_por_estilo(self, estilo, atributo):
         estilo_bonus = {
@@ -70,7 +78,7 @@ class jogador:
         }
         return 2 if atributo in estilo_bonus.get(estilo, set()) else 0
 
-    def jogar_partida(self):
+    def jogar_partida(self, nome_adversario=None):
         media = lambda a: sum(a.values()) / len(a)
         vantagens = {
             "forehand": "backhand", "backhand": "slice", "slice": "forehand",
@@ -78,7 +86,7 @@ class jogador:
             "saque": "movimento", "movimento": "winner", "winner": "saque"
         }
 
-        adversario = self.carregar_adversario()
+        adversario = self.carregar_adversario(nome_adversario)
         nome_adversario = adversario["nome"]
         nacionalidade_adversario = adversario["nacionalidade"]
         atributos_adversario = adversario["atributos"]
@@ -156,3 +164,5 @@ class jogador:
         print(f"🟦 Placar final: {sets_jogador} x {sets_adversario}")
         print(f"⚡ Energia gasta: {int(total_games * 0.8)}")
         print(f"⭐ XP ganho: {experiencia}")
+
+        return sets_jogador, sets_adversario    

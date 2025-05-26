@@ -1,72 +1,84 @@
-calendario_janeiro = {
+calendario = {
     1: [  # Semana 1
         {
             "nome": "Brisbane International",
             "tipo": "ATP 250",
-            "local": "Brisbane, Austrália",
+            "local": "Brisbane",
+            "quadra": "dura",
             "premiacao": 661585,
             "dificuldade": 2,
             "popularidade": 2,
             "qualificacao": True,
-            "pais_sede": "[AU] Austrália"
+            "pais_sede": "[AU] Austrália",
+            "ultimo_campeao": "Jiří Lehečka"
         },
         {
             "nome": "Hong Kong Open",
             "tipo": "ATP 250",
-            "local": "Hong Kong, China",
+            "local": "Hong Kong",
+            "quadra": "dura",
             "premiacao": 661585,
             "dificuldade": 2,
             "popularidade": 2,
             "qualificacao": True,
-            "pais_sede": "[CN] China"
-        },
-        {
-            "nome": "United Cup",
-            "tipo": "Torneio Misto",
-            "local": "Sydney, Perth, Brisbane (Austrália)",
-            "premiacao": 10000000,
-            "dificuldade": 4,
-            "popularidade": 4,
-            "qualificacao": False,
-            "pais_sede": "[AU] Austrália"
+            "pais_sede": "[CN] China",
+            "ultimo_campeao": "Alexandre Müller"
         }
     ],
     2: [
         {
             "nome": "ASB Classic",
             "tipo": "ATP 250",
-            "local": "Auckland, Nova Zelândia",
+            "local": "Auckland",
+            "quadra": "dura",
             "premiacao": 661585,
             "dificuldade": 2,
             "popularidade": 2,
             "qualificacao": True,
-            "pais_sede": "[NZ] Nova Zelândia"
+            "pais_sede": "[NZ] Nova Zelândia",
+            "ultimo_campeao": "Gaël Monfils"
         },
         {
             "nome": "Adelaide International",
             "tipo": "ATP 250",
-            "local": "Adelaide, Austrália",
+            "local": "Adelaide",
+            "quadra": "dura",
             "premiacao": 661585,
             "dificuldade": 2,
             "popularidade": 2,
             "qualificacao": True,
-            "pais_sede": "[AU] Austrália"
+            "pais_sede": "[AU] Austrália",
+            "ultimo_campeao": "Félix Auger-Aliassime"
         }
     ],
     3: [
         {
             "nome": "Australian Open",
             "tipo": "Grand Slam",
-            "local": "Melbourne, Austrália",
+            "local": "Melbourne",
+            "quadra": "dura",
             "premiacao": 76340925,
             "dificuldade": 5,
             "popularidade": 5,
             "qualificacao": True,
-            "pais_sede": "[AU] Austrália"
+            "pais_sede": "[AU] Austrália",
+            "ultimo_campeao": "Jannik Sinner "
         }
     ],
-    4: []  # Descanso ou eventos menores
+    4: [
+        {
+            "nome": "Open Sud de France",
+            "tipo": "ATP 250",
+            "local": "Montpellier",
+            "premiacao": 76340925,
+            "dificuldade": 5,
+            "popularidade": 5,
+            "qualificacao": True,
+            "pais_sede": "[FR] França",
+            "ultimo_campeao": "Félix Auger-Aliassime"
+        }
+    ]
 }
 
 def obter_torneios_da_semana(semana):
-    return calendario_janeiro.get(semana, [])
+    return calendario.get(semana, [])
