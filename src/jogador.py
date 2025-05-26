@@ -1,6 +1,10 @@
 import json
 import random
 import os
+import builtins
+
+from dados import escolher_nacionalidade
+from ranking import SistemaRanking
 
 class jogador:
     def __init__(self, nome, idade, nacionalidade):
@@ -166,3 +170,51 @@ class jogador:
         print(f"⭐ XP ganho: {experiencia}")
 
         return sets_jogador, sets_adversario    
+
+def criar_jogador():
+    print("🎾 Criação do Jogador")
+    nome = input("Nome: ")
+    idade = int(input("Idade: "))
+    nacionalidade = escolher_nacionalidade()
+
+    print("\n📌 Escolha o tipo de jogador:")
+    print("1. Técnico — mais controle e precisão")
+    print("2. Físico — mais força e movimentação")
+    print("3. Equilibrado — tudo balanceado")
+    tipo = input("Escolha (1, 2 ou 3): ").strip()
+
+    atributos_por_tipo = {
+        "1": {
+            "saque": 60, "forehand": 75, "backhand": 75, "topspin": 72,
+            "voleio": 65, "slice": 72, "movimento": 68, "lob": 74, "winner": 65
+        },
+        "2": {
+            "saque": 75, "forehand": 72, "backhand": 70, "topspin": 68,
+            "voleio": 60, "slice": 62, "movimento": 78, "lob": 60, "winner": 75
+        },
+        "3": {
+            "saque": 70, "forehand": 70, "backhand": 70, "topspin": 70,
+            "voleio": 70, "slice": 70, "movimento": 70, "lob": 70, "winner": 70
+        }
+    }
+
+    atributos = atributos_por_tipo.get(tipo, atributos_por_tipo["3"])
+
+    jogador_instancia = jogador(nome, idade, nacionalidade)
+    jogador_instancia.atributos = atributos
+    builtins.jogador = jogador_instancia
+
+    # 🟨 Calcular overall
+    overall = sum(atributos.values()) // len(atributos)
+
+    # 🟩 Adicionar ao ranking ATP
+    sistema = SistemaRanking("save/atp.json")
+    sistema.adicionar_jogador_novo({
+        "nome": nome,
+        "nacionalidade": nacionalidade,
+        "idade": idade,
+        "overall": overall,
+        "atributos": atributos
+    })
+
+    return jogador_instancia
