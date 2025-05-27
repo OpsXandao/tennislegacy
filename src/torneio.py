@@ -1,4 +1,8 @@
-import random
+import random, os, json, builtins
+from save import carregar_estado_torneio
+from src.ranking import SistemaRanking
+from interface.menu_rodada import menu_rodadas
+from src.calendario import distribuir_premio
 
 class TorneioATP250:
     def __init__(self, semana, jogador_nome, jogador_nacionalidade, ranking, nome_save=None):
@@ -7,138 +11,195 @@ class TorneioATP250:
         self.jogador_nome = jogador_nome
         self.jogador_nacionalidade = jogador_nacionalidade
         self.ranking = ranking
-        self.nome_save = nome_save
-        
-    def distribuir_premio(total, porcentagem):
-        return int(total * porcentagem)
+
+    def _simular_partida_npc(self, a, b):
+        vencedor = random.choice([a, b])
+        perdedor = b if vencedor == a else a
+        sets_v, sets_d = 2, random.choice([0, 1])
+        resultado = f"{vencedor['nome']} {sets_v} x {sets_d} {perdedor['nome']}"
+        return vencedor, perdedor, resultado
 
     def _buscar_instancia_jogador(self):
-        import builtins
-        return builtins.jogador  # para acessar o jogador global criado em main.py
-    
+        try:
+            return builtins.jogador
+        except AttributeError:
+            raise ValueError("Jogador não definido no contexto global.")
+
     def preparar_jogadores_para_qualy(self, todos_jogadores):
-        # Remove top 30
-        jogadores_31_80 = [j for j in todos_jogadores if 31 <= self.ranking.obter_posicao(j["nome"]) <= 80]
-        jogadores_81_plus = [j for j in todos_jogadores if self.ranking.obter_posicao(j["nome"]) > 80]
+        try:
+            self.ranking.ordenar()
+            # Excluir jogadores top 30
+            jogadores_31_80 = [j for j in todos_jogadores if 31 <= self.ranking.obter_posicao(j["nome"]) <= 80]
+            jogadores_81_plus = [j for j in todos_jogadores if self.ranking.obter_posicao(j["nome"]) > 80]
 
-        # Sorteia 28 da faixa 31-80 para chave principal
-        random.shuffle(jogadores_31_80)
-        direto_na_chave = jogadores_31_80[:28]
+            random.shuffle(jogadores_31_80)
+            direto_na_chave = jogadores_31_80[:28]
+            nomes_chave_principal = {j["nome"] for j in direto_na_chave}
 
-        # Restantes da faixa + 81+ vão para o quali
-        restantes_para_qualy = jogadores_31_80[28:] + jogadores_81_plus
-        random.shuffle(restantes_para_qualy)
-        quali_convidados = restantes_para_qualy[:15]  # 15 vagas
+            restantes_para_qualy = jogadores_31_80[28:] + jogadores_81_plus
+            restantes_para_qualy = [j for j in restantes_para_qualy if j["nome"] not in nomes_chave_principal]
+            random.shuffle(restantes_para_qualy)
+            quali_convidados = restantes_para_qualy[:15]
 
-        # ➕ Adiciona o jogador principal aqui!
-        jogador_principal = {"nome": self.jogador_nome, "nacionalidade": self.jogador_nacionalidade}
-        quali_convidados.append(jogador_principal)
+            jogador_principal = {"nome": self.jogador_nome, "nacionalidade": self.jogador_nacionalidade}
+            if self.ranking.obter_posicao(jogador_principal["nome"]) is None:
+                self.ranking.adicionar_jogador_novo(jogador_principal)
+                self.ranking.salvar_ranking()
+            if self.jogador_nome not in {j["nome"] for j in quali_convidados}:
+                quali_convidados.append(jogador_principal)
 
-        # 📋 Mostrar chave direta
-        print("\n🟢 Jogadores na chave principal (entrada direta):")
-        for j in direto_na_chave:
-            pos = self.ranking.obter_posicao(j["nome"]) or "N/A"
-            destaque = "⭐" if j["nome"] == self.jogador_nome else ""
-            print(f"• {j['nome']} {destaque} — {j['nacionalidade']} — #{pos}")
+            print("\n🟢 Jogadores na chave principal (entrada direta):")
+            for j in direto_na_chave:
+                pos = self.ranking.obter_posicao(j["nome"]) or "N/A"
+                destaque = "⭐" if j["nome"] == self.jogador_nome else ""
+                print(f"• {j['nome']} {destaque} — {j['nacionalidade']} — #{pos}")
 
+            print("\n🟡 Jogadores convidados para o qualifying:")
+            for j in quali_convidados:
+                pos = self.ranking.obter_posicao(j["nome"])
+                destaque = "⭐" if j["nome"] == self.jogador_nome else ""
+                print(f"• {j['nome']} {destaque} — {j['nacionalidade']} — #{pos}")
 
-        # 📋 Mostrar quali (inclui o jogador agora!)
-        print("\n🟡 Jogadores convidados para o qualifying:")
-        for j in quali_convidados:
-            pos = self.ranking.obter_posicao(j["nome"])
-            destaque = "⭐" if j["nome"] == self.jogador_nome else ""
-            print(f"• {j['nome']} {destaque} — {j['nacionalidade']} — #{pos}")
-
-
-        return direto_na_chave, quali_convidados
-
+            return direto_na_chave, quali_convidados
+        except Exception as e:
+            print(f"❌ Erro ao preparar jogadores para o qualifying: {e}")
+            return [], []
 
     def simular_torneio(self, todos_jogadores):
-        chave_principal, jogadores_qualy = self.preparar_jogadores_para_qualy(todos_jogadores)
+        try:
+            caminho = os.path.join("saves", self.nome_save, "torneio_atp.json")
+            if not os.path.exists(caminho):
+                print("❌ Arquivo de estado do torneio não encontrado.")
+                return [], False
 
-        random.shuffle(jogadores_qualy)
+            with open(caminho, "r", encoding="utf-8") as f:
+                estado = json.load(f)
 
-        jogador_vivo = True
-        entrou_como_lucky = False
-        ultimos_perdedores = []
+            jogador_ativo = self._buscar_instancia_jogador()
+            fases = ["qualy_1", "qualy_2", "pre_oitavas", "oitavas", "quartas", "semifinal", "final"]
+            resultados = estado["resultados"]
 
-        def simular_rodada(lista_jogadores, texto_rodada):
-            nonlocal jogador_vivo
-            print(f"\n🎾 {texto_rodada}")
-            print("\n🧾 Confrontos da rodada:")
-            for a, b in zip(lista_jogadores[::2], lista_jogadores[1::2]):
-                sigla_a = a["nacionalidade"].split()[0].strip("[]")
-                sigla_b = b["nacionalidade"].split()[0].strip("[]")
-                print(f"• {a['nome']} [{sigla_a}] vs {b['nome']} [{sigla_b}]")
+            fase_atual = estado["fase_atual"]
+            index_fase = fases.index(fase_atual)
 
-            vencedores, perdedores, resultados = [], [], []
+            while index_fase < len(fases):
+                fase = fases[index_fase]
+                confrontos = estado["rodadas"][fase]
+                if not confrontos:
+                    print(f"⚠️ Nenhum confronto para a fase {fase}.")
+                    break
 
-            for a, b in zip(lista_jogadores[::2], lista_jogadores[1::2]):
-                nomes = (a["nome"], b["nome"])
-                jogador_env = self.jogador_nome in nomes
-
-                if jogador_env and jogador_vivo:
-                    adversario = b if nomes[0] == self.jogador_nome else a
-                    jogador_inst = self._buscar_instancia_jogador()
-                    sets_j, sets_adv = jogador_inst.jogar_partida(nome_adversario=adversario["nome"])
-                    venceu = sets_j > sets_adv
-
-                    resultado = (
-                        f"{self.jogador_nome} {sets_j} x {sets_adv} {adversario['nome']}"
-                        if nomes[0] == self.jogador_nome
-                        else f"{adversario['nome']} {sets_adv} x {sets_j} {self.jogador_nome}"
+                # Recupera objetos dos jogadores
+                confrontos_com_obj = [
+                    (
+                        next((j for j in todos_jogadores if j["nome"] == a), {"nome": a, "nacionalidade": "??"}),
+                        next((j for j in todos_jogadores if j["nome"] == b), {"nome": b, "nacionalidade": "??"})
                     )
-                    resultado += " ✅" if venceu else " ❌"
-                    resultados.append(resultado)
+                    for a, b in confrontos
+                ]
 
-                    if venceu:
-                        vencedores.append({"nome": self.jogador_nome, "nacionalidade": self.jogador_nacionalidade})
-                        perdedores.append(adversario)
-                    else:
-                        jogador_vivo = False
-                        perdedores.append({"nome": self.jogador_nome, "nacionalidade": self.jogador_nacionalidade})
-                        vencedores.append(adversario)
-                        print("\n😔 Você foi eliminado do qualifying.")
-                        if input("📋 Deseja simular o restante do torneio? (s/n): ").strip().lower() != "s":
-                            return [], [], [], False
-                else:
-                    vencedor = random.choice([a, b])
-                    perdedor = b if vencedor == a else a
-                    sets_v, sets_d = 2, random.choice([0, 1])
-                    resultado = (
-                        f"{a['nome']} {sets_v} x {sets_d} {b['nome']}"
-                        if vencedor == a
-                        else f"{b['nome']} {sets_v} x {sets_d} {a['nome']}"
-                    )
-                    resultados.append(resultado)
-                    vencedores.append(vencedor)
-                    perdedores.append(perdedor)
+                print(f"\n🎾 Fase: {fase.replace('_', ' ').title()}")
+                menu_rodadas(resultados[fase], confrontos_com_obj, jogador_ativo, self.nome_save, self)
 
-            print("\n🏁 Resultados:")
-            for r in resultados:
-                print("-", r)
+                # Define vencedores dessa rodada para próxima fase
+                vencedores = [r.split()[0] for r in resultados[fase]]
 
-            return vencedores, perdedores, resultados, jogador_vivo
+                if fase != "final":
+                    proxima_fase = fases[index_fase + 1]
+                    pares_proximos = list(zip(vencedores[::2], vencedores[1::2]))
+                    estado["rodadas"][proxima_fase] = pares_proximos
+                    estado["fase_atual"] = proxima_fase
 
-        # Rodada 1: 16 ➜ 8
-        rodada1, _, _, jogador_vivo = simular_rodada(jogadores_qualy, "Rodada 1 do qualifying...")
+                # Atualiza e salva o JSON a cada fase
+                with open(caminho, "w", encoding="utf-8") as f:
+                    json.dump(estado, f, indent=2, ensure_ascii=False)
 
-        # Rodada 2: 8 ➜ 4 (final do qualifying)
-        if jogador_vivo:
-            classificados, perdedores_finais, _, jogador_vivo = simular_rodada(rodada1, "Rodada 2 (final) do qualifying...")
-            ultimos_perdedores = perdedores_finais  # ✅ Apenas quem perdeu na final
-        else:
-            classificados = []
-            ultimos_perdedores = []  # ❌ Sem chance de lucky loser
+                index_fase += 1
 
-        # Lucky loser
-        lucky_loser = None
-        if ultimos_perdedores and random.choice([True, False]):
-            lucky_loser = min(
-                ultimos_perdedores,
-                key=lambda p: self.ranking.obter_posicao(p["nome"]) or 9999
+            print("\n🥇 Campeão do torneio:", vencedores[0])
+            return vencedores, False
+
+        except Exception as e:
+            print(f"❌ Erro ao simular torneio: {e}")
+            return [], False
+
+
+    def salvar_estado(self, fase_atual, confrontos, resultados):
+        from save import salvar_estado_torneio
+        caminho = os.path.join("saves", self.nome_save, "torneio_atp.json")
+        salvar_estado_torneio(caminho, fase_atual, confrontos, resultados)
+
+    def retomar_torneio(self, caminho_torneio, jogador, jogadores_disponiveis):
+        estado_salvo = carregar_estado_torneio(caminho_torneio)
+        if not estado_salvo:
+            return None
+        print(f"\\n📂 Retomando o torneio salvo da {estado_salvo['fase_atual']}...")
+        jogador_normalizado = jogador.nome.strip().lower()
+        ativo = any(
+            jogador_normalizado in (a.strip().lower(), b.strip().lower())
+            for a, b in estado_salvo["confrontos"]
+        )
+        if not ativo:
+            print("⚠️ Você já foi eliminado deste torneio.")
+            os.remove(caminho_torneio)
+            return jogador
+        confrontos = [
+            (
+                next((j for j in jogadores_disponiveis if j["nome"] == a), {"nome": a, "nacionalidade": "??"}),
+                next((j for j in jogadores_disponiveis if j["nome"] == b), {"nome": b, "nacionalidade": "??"})
             )
-            classificados.append(lucky_loser)
-            entrou_como_lucky = lucky_loser["nome"] == self.jogador_nome
+            for a, b in estado_salvo["confrontos"]
+        ]
+        menu_rodadas(estado_salvo["resultados"], confrontos, jogador, self.nome_save, self)
+        return jogador
 
-        return classificados, entrou_como_lucky
+    def iniciar_torneio_json(self, nome_torneio, todos_jogadores):
+        caminho_json = os.path.join("saves", self.nome_save, "torneio_atp.json")
+
+        if os.path.exists(caminho_json):
+            os.remove(caminho_json)
+
+        # 🧠 Reutiliza a lógica centralizada de qualificação
+        entrada_direta, qualifying = self.preparar_jogadores_para_qualy(todos_jogadores)
+
+        # 🧩 Confrontos da Qualy 1
+        random.shuffle(qualifying)
+        confrontos_qualy_1 = list(zip(qualifying[::2], qualifying[1::2]))
+
+        # 🎾 Chave principal: 28 + 4 espaços dos qualifiers
+        random.shuffle(entrada_direta)
+        jogadores_chave = entrada_direta + [{"nome": f"Qualy {i+1}", "nacionalidade": "??"} for i in range(4)]
+        confrontos_pre_oitavas = list(zip(jogadores_chave[::2], jogadores_chave[1::2]))
+
+        dados = {
+            "semana": self.semana,
+            "torneio": nome_torneio,
+            "fase_atual": "qualy_1",
+            "jogador": self.jogador_nome,
+            "entrada_direta": entrada_direta,
+            "qualifying": qualifying,
+            "rodadas": {
+                "qualy_1": [(a["nome"], b["nome"]) for a, b in confrontos_qualy_1],
+                "qualy_2": [],
+                "pre_oitavas": [(a["nome"], b["nome"]) for a, b in confrontos_pre_oitavas],
+                "oitavas": [],
+                "quartas": [],
+                "semifinal": [],
+                "final": []
+            },
+            "resultados": {
+                "qualy_1": [],
+                "qualy_2": [],
+                "pre_oitavas": [],
+                "oitavas": [],
+                "quartas": [],
+                "semifinal": [],
+                "final": []
+            }
+        }
+
+        os.makedirs(os.path.dirname(caminho_json), exist_ok=True)
+        with open(caminho_json, "w", encoding="utf-8") as f:
+            json.dump(dados, f, indent=2, ensure_ascii=False)
+
+        print(f"📁 Torneio inicializado e salvo em {caminho_json}")
