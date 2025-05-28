@@ -1,9 +1,9 @@
+# main.py
 import sys
-sys.path.append('./src')
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 
-from jogador import criar_jogador
-from menu import menu_principal
+from interface.menu_inicial import menu_inicial
 
 if __name__ == "__main__":
-    jogador = criar_jogador()
-    menu_principal(jogador)
+    menu_inicial()

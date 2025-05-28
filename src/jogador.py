@@ -78,6 +78,8 @@ def adicionar_jogador_ao_ranking(jogador_instancia):
         print(f"ℹ️ Jogador '{jogador_instancia.nome}' já está presente no ranking.")
 
 def carregar_jogador(nome_save):
+    from jogador import reidratar_jogador  # ← garante que a função será usada
+
     caminho = os.path.join("saves", nome_save, "jogador.json")
     if not os.path.exists(caminho):
         print("❌ Save não encontrado.")
@@ -86,22 +88,7 @@ def carregar_jogador(nome_save):
     with open(caminho, "r", encoding="utf-8") as f:
         dados = json.load(f)
 
-    jogador_instancia = Jogador(
-        nome=dados["nome"],
-        idade=dados["idade"],
-        nacionalidade=dados["nacionalidade"],
-        save_name=nome_save
-    )
-
-    jogador_instancia.xp = dados["xp"]
-    jogador_instancia.nivel = dados["nivel"]
-    jogador_instancia.energia = dados["energia"]
-    jogador_instancia.ritmo_jogo = dados["ritmo_jogo"]
-    jogador_instancia.moral = dados["moral"]
-    jogador_instancia.dinheiro = dados["dinheiro"]
-    jogador_instancia.atributos = dados["atributos"]
-
-    return jogador_instancia
+    return reidratar_jogador(dados, nome_save)
 
 
 def criar_jogador(nome_save):
@@ -160,3 +147,19 @@ def criar_jogador(nome_save):
     adicionar_jogador_ao_ranking(jogador_instancia)
 
     return jogador_instancia
+
+def reidratar_jogador(dados, nome_save):
+            jogador = Jogador(
+                nome=dados["nome"],
+                idade=dados["idade"],
+                nacionalidade=dados["nacionalidade"],
+                save_name=nome_save
+            )
+            jogador.xp = dados["xp"]
+            jogador.nivel = dados["nivel"]
+            jogador.energia = dados["energia"]
+            jogador.ritmo_jogo = dados["ritmo_jogo"]
+            jogador.moral = dados["moral"]
+            jogador.dinheiro = dados["dinheiro"]
+            jogador.atributos = dados["atributos"]
+            return jogador
