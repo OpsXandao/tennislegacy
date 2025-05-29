@@ -3,7 +3,7 @@ from src.torneio import criar_torneio, salvar_torneio
 from src.save import salvar_jogo
 
 
-def menu_temporada(jogador, nome_save):
+def menu_temporada(jogador, nome_save, salvar_automaticamente=False):
     semana = getattr(jogador, "semana", 1)
     while True:
         print(f"\n📅 Semana {semana} da temporada")
