@@ -36,7 +36,7 @@ def menu_temporada(jogador, nome_save):
                     f"em {torneio_escolhido.get('pais_sede', '??')}!"
                 )
                 torneio = criar_torneio(torneio_escolhido, jogador, nome_save, semana)
-                salvar_torneio(torneio, nome_save)
+                salvar_torneio(torneio)
                 print("Torneio iniciado! Volte para o menu do torneio pelo controller.")
                 break
             else:

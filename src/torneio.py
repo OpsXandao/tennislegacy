@@ -671,7 +671,6 @@ def criar_torneio(torneio_escolhido, jogador, nome_save, semana):
         nome_save=nome_save,
     )
 
-
     # Cria a estrutura do torneio no disco
     instancia.iniciar_torneio(torneio_escolhido["nome"], ranking.ranking)
     return instancia
