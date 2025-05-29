@@ -1,6 +1,7 @@
 import random, os, json
 from jogador import normalizar_nome  # no topo do arquivo
 
+
 class TorneioATP250:
     def __init__(
         self, semana, jogador_nome, jogador_nacionalidade, ranking, nome_save=None
