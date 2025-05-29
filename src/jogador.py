@@ -50,7 +50,20 @@ class Jogador:
             "dinheiro": self.dinheiro,
             "atributos": self.atributos
         }
-        
+
+def obter_nome(obj):
+    """Retorna o nome normalizado de um jogador, seja ele um str, dict ou objeto."""
+    if isinstance(obj, dict):
+        return obj.get("nome", "").strip()
+    elif hasattr(obj, "nome"):
+        return getattr(obj, "nome", "").strip()
+    return str(obj).strip()
+
+def normalizar_nome(obj):
+    """Retorna o nome do jogador em lowercase e sem espaços extras, seja dict, objeto ou string."""
+    nome = obter_nome(obj)
+    return nome.lower()
+
 def adicionar_jogador_ao_ranking(jogador_instancia):
     ranking_path = os.path.join("saves", jogador_instancia.save_name, "ranking_atp.json")
 
@@ -60,9 +73,9 @@ def adicionar_jogador_ao_ranking(jogador_instancia):
     else:
         ranking = []
 
-    nomes_existentes = [j["nome"].strip().lower() for j in ranking]
+    nomes_existentes = [normalizar_nome(j) for j in ranking]
 
-    if jogador_instancia.nome.strip().lower() not in nomes_existentes:
+    if normalizar_nome(jogador_instancia) not in nomes_existentes:
         novo = {
             "nome": jogador_instancia.nome,
             "nacionalidade": jogador_instancia.nacionalidade,
@@ -89,7 +102,6 @@ def carregar_jogador(nome_save):
         dados = json.load(f)
 
     return reidratar_jogador(dados, nome_save)
-
 
 def criar_jogador(nome_save):
     from save import criar_pasta_save, salvar_jogo
@@ -149,17 +161,17 @@ def criar_jogador(nome_save):
     return jogador_instancia
 
 def reidratar_jogador(dados, nome_save):
-            jogador = Jogador(
-                nome=dados["nome"],
-                idade=dados["idade"],
-                nacionalidade=dados["nacionalidade"],
-                save_name=nome_save
-            )
-            jogador.xp = dados["xp"]
-            jogador.nivel = dados["nivel"]
-            jogador.energia = dados["energia"]
-            jogador.ritmo_jogo = dados["ritmo_jogo"]
-            jogador.moral = dados["moral"]
-            jogador.dinheiro = dados["dinheiro"]
-            jogador.atributos = dados["atributos"]
-            return jogador
+    jogador = Jogador(
+        nome=dados["nome"],
+        idade=dados["idade"],
+        nacionalidade=dados["nacionalidade"],
+        save_name=nome_save
+    )
+    jogador.xp = dados["xp"]
+    jogador.nivel = dados["nivel"]
+    jogador.energia = dados["energia"]
+    jogador.ritmo_jogo = dados["ritmo_jogo"]
+    jogador.moral = dados["moral"]
+    jogador.dinheiro = dados["dinheiro"]
+    jogador.atributos = dados["atributos"]
+    return jogador

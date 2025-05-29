@@ -1,3 +1,4 @@
+from jogador import normalizar_nome  # garantir no topo do arquivo
 import random
 
 def escolher_estrategia():
@@ -89,14 +90,8 @@ def jogar_partida(jogador, adversario, nome_save):
         games = {"j": 0, "a": 0}
         while True:
             print(f"\n{jogador.nome} {games['j']} x {games['a']} {adversario['nome']}")
-            nome_jogador = jogador.nome.strip().lower()
-            nome_adv = adversario['nome'].strip().lower()
-
-            if nome_jogador in [nome_jogador, nome_adv]:
-                vencedor, historico = simular_game(jogador, adversario, estrategia)
-            else:
-                vencedor = random.choice(['j', 'a'])
-
+            
+            vencedor, historico = simular_game(jogador, adversario, estrategia)
             games[vencedor] += 1
 
             if vencedor == "a":
@@ -106,17 +101,25 @@ def jogar_partida(jogador, adversario, nome_save):
                     estrategia = escolher_estrategia()
 
             if (games["j"] >= 6 or games["a"] >= 6) and abs(games["j"] - games["a"]) >= 2:
-                sets[winner := "j" if games["j"] > games["a"] else "a"] += 1
+                winner = "j" if games["j"] > games["a"] else "a"
+                sets[winner] += 1
                 resultado.append((games["j"], games["a"]))
                 print(f"🏁 Fim do set: {jogador.nome} {games['j']} x {games['a']} {adversario['nome']}")
                 break
 
+    # ✅ Agora fora do while principal
     print("\nPartida finalizada!")
     print("📋 Resultado por sets:")
     for idx, (sj, sa) in enumerate(resultado, 1):
         print(f"Set {idx}: {jogador.nome} {sj} x {sa} {adversario['nome']}")
 
-    vencedor_final = jogador.nome if sets["j"] > sets["a"] else adversario["nome"]
+    sets_vencidos_jogador = sets["j"]
+    sets_vencidos_adversario = sets["a"]
+
+    vencedor_final = jogador.nome if sets_vencidos_jogador > sets_vencidos_adversario else adversario["nome"]
+    perdedor_final = adversario["nome"] if vencedor_final == jogador.nome else jogador.nome
+
+    placar_final = f"{vencedor_final} {max(sets_vencidos_jogador, sets_vencidos_adversario)} x {min(sets_vencidos_jogador, sets_vencidos_adversario)} {perdedor_final}"
+
     print(f"\n✅ Vencedor da partida: {vencedor_final}")
-    placar_final = f"{vencedor_final} 2 x {1 if sets['j'] == 2 else 0} {adversario['nome'] if vencedor_final == jogador.nome else jogador.nome}"
     return vencedor_final, placar_final

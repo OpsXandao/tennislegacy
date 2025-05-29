@@ -1,5 +1,6 @@
 import json
 import os
+from jogador import normalizar_nome
 
 class SistemaRanking:
     def __init__(self, caminho_arquivo):
@@ -23,9 +24,9 @@ class SistemaRanking:
         self.ranking.sort(key=lambda jogador: jogador["pontos"], reverse=True)
 
     def atualizar_pontuacao(self, nome, pontos):
-        nome_normalizado = nome.strip().lower()
+        nome_normalizado = normalizar_nome(nome)
         for jogador in self.ranking:
-            if jogador["nome"].strip().lower() == nome_normalizado:
+            if normalizar_nome(jogador) == nome_normalizado:
                 jogador["pontos"] += pontos
                 break
         else:
@@ -35,9 +36,9 @@ class SistemaRanking:
 
     def obter_posicao(self, nome):
         self.ordenar()
-        nome_normalizado = nome.strip().lower()
+        nome_normalizado = normalizar_nome(nome)
         for idx, jogador in enumerate(self.ranking, 1):
-            if jogador["nome"].strip().lower() == nome_normalizado:
+            if normalizar_nome(jogador) == nome_normalizado:
                 return idx
         return None
 
@@ -47,8 +48,8 @@ class SistemaRanking:
 
     def adicionar_jogador_novo(self, jogador_dict):
         """Adiciona um novo jogador ao ranking, caso ainda não exista."""
-        nome_normalizado = jogador_dict["nome"].strip().lower()
-        if any(j["nome"].strip().lower() == nome_normalizado for j in self.ranking):
+        nome_normalizado = normalizar_nome(jogador_dict)
+        if any(normalizar_nome(j) == nome_normalizado for j in self.ranking):
             print(f"ℹ️ Jogador '{jogador_dict['nome']}' já está no ranking.")
             return
 
@@ -72,8 +73,8 @@ class SistemaRanking:
         with open(caminho_global, encoding='utf-8') as f:
             dados = json.load(f)
 
-        nome_normalizado = jogador_dict["nome"].strip().lower()
-        if any(j["nome"].strip().lower() == nome_normalizado for j in dados):
+        nome_normalizado = normalizar_nome(jogador_dict)
+        if any(normalizar_nome(j) == nome_normalizado for j in dados):
             return
 
         jogador_completo = jogador_dict.copy()
@@ -85,7 +86,14 @@ class SistemaRanking:
             }
 
         dados.append(jogador_completo)
-        with open(caminho_global, "w", encoding='utf-8') as f:
+        with open(caminho_global, "w", encoding="utf-8") as f:
             json.dump(dados, f, indent=2, ensure_ascii=False)
 
         print(f"📈 Jogador '{jogador_dict['nome']}' também adicionado ao ranking_atp.json global.")
+
+    def buscar_jogador_por_nome(self, nome):
+        nome_normalizado = normalizar_nome(nome)
+        for jogador in self.ranking:
+            if normalizar_nome(jogador) == nome_normalizado:
+                return jogador
+        return None
