@@ -25,7 +25,8 @@ def menu_torneio(nome_save):
             jogador_b = get_jogador_by_id(ranking, confronto["jogador_b_id"])
             resultado = confronto.get("resultado", "pendente")
             print(
-                f"{idx}. {jogador_a['nome']} vs {jogador_b['nome']} | Resultado: {resultado}"
+                f"{idx}. {jogador_a['nome']} vs {jogador_b['nome']} | "
+                f"Resultado: {resultado}"
             )
 
         print("\nOpções:")
@@ -33,21 +34,18 @@ def menu_torneio(nome_save):
         print("[2] Ver confrontos da fase")
         print("[3] Ver resultados da fase")
         print("[4] Salvar jogo")
-        print("[5] Sair para temporada")
+        print("[5] Sair do menu torneio")
 
         opcao = input("Escolha uma opção: ").strip()
 
         if opcao == "1":
-            # Aqui você vai chamar sua função de jogar a partida do player (pode importar de jogar_partida.py)
             print("Jogando partida do player...")
-            # Exemplo fictício:
-            # jogar_partida_do_player(torneio, ranking, nome_save)
+            # Aqui chama sua função de jogar a partida do jogador
             simular_partidas_npc(torneio, ranking)
             avancar_fase(torneio)
             salvar_torneio(caminho_torneio, torneio)
         elif opcao == "2":
-            # Mostrar confrontos detalhados
-            continue  # Já estão exibidos no print inicial
+            continue  # Já exibidos no print inicial
         elif opcao == "3":
             print("\nResultados da fase:")
             for resultado in torneio["resultados"][torneio["fase_atual"]]:
@@ -56,12 +54,12 @@ def menu_torneio(nome_save):
             salvar_torneio(caminho_torneio, torneio)
             print("Jogo salvo com sucesso!")
         elif opcao == "5":
-            print("Saindo para o menu temporada...")
+            print("Saindo do menu torneio...")
             break
         else:
             print("Opção inválida!")
 
-        # Checar se torneio acabou, se sim, sair para temporada
+        # Checar se torneio acabou, se sim, retornar ao controller (break)
         if torneio["fase_atual"] == "final" and all(
             c.get("resultado") for c in torneio["rodadas"]["final"]
         ):

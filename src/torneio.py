@@ -654,7 +654,8 @@ class TorneioATP250:
 
         with open(caminho, "w", encoding="utf-8") as f:
             json.dump(estado, f, ensure_ascii=False, indent=2)
-            
+
+
 def criar_torneio(torneio_escolhido, jogador, nome_save, semana):
     # Cria instância do ranking para ser usada pelo torneio
     from src.ranking import SistemaRanking
@@ -664,15 +665,17 @@ def criar_torneio(torneio_escolhido, jogador, nome_save, semana):
 
     instancia = TorneioATP250(
         semana=semana,
-        jogador_nome=jogador["nome"],
-        jogador_nacionalidade=jogador["nacionalidade"],
+        jogador_nome=jogador.nome,
+        jogador_nacionalidade=jogador.nacionalidade,
         ranking=ranking,
         nome_save=nome_save,
     )
 
+
     # Cria a estrutura do torneio no disco
     instancia.iniciar_torneio(torneio_escolhido["nome"], ranking.ranking)
     return instancia
+
 
 def salvar_torneio(instancia):
     """
@@ -708,6 +711,7 @@ def carregar_torneio(nome_save):
     )
     return instancia
 
+
 def simular_partidas_npc(instancia, nome_jogador=None):
     """
     Simula as partidas entre NPCs na fase atual do torneio.
@@ -716,6 +720,7 @@ def simular_partidas_npc(instancia, nome_jogador=None):
     if nome_jogador is None:
         nome_jogador = instancia.jogador_nome
     instancia.simular_npcs_na_fase_atual(nome_jogador)
+
 
 def avancar_fase(instancia):
     """

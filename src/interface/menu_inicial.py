@@ -1,5 +1,5 @@
 from jogador import carregar_jogador, criar_jogador
-from save import carregar_ou_redirecionar
+from controller import fluxo_principal
 import builtins
 
 
@@ -28,4 +28,5 @@ def menu_inicial():
         return menu_inicial()
 
     builtins.jogador = jogador_inst
-    carregar_ou_redirecionar(jogador_inst, nome_save, salvar_automaticamente)
+    # Agora chama o fluxo principal do controller:
+    fluxo_principal(jogador_inst, nome_save, salvar_automaticamente)
