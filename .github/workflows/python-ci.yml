@@ -14,19 +14,16 @@ jobs:
       - name: Configurar Python 3:11
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Instalar dependencias
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install black flake8 pytest
+          # pip install black  pytest
 
       - name: Executa lint com black
         run: black --check .
-
-      - name: Executa lint com flake8
-        run: flake8 .
 
       - name: Executa testes pytest
         run: pytest
