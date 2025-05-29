@@ -139,7 +139,7 @@ def atualizar_estado_jogador(caminho, vivo=True, fase_finalizada=False):
 
 def carregar_ou_redirecionar(jogador_inst, nome_save, salvar_automaticamente):
     try:
-        from interface.menu_temporada import menu_temporada
+        from interface.menu_torneio import menu_temporada
         from interface.menu_torneio import menu_rodadas
         from src.torneio import TorneioATP250
 
