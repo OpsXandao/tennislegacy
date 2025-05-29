@@ -211,13 +211,15 @@ nacionalidades = {
         "[VU] Vanuatu",
     ],
 }
+
+
 def escolher_nacionalidade():
     print("\n🌍 Escolha um continente:")
     continentes = list(nacionalidades.keys())
-    
+
     for i, cont in enumerate(continentes, 1):
         print(f"{i}. {cont}")
-        
+
     while True:
         try:
             opcao = int(input("Número do continente: ")) - 1
@@ -225,10 +227,10 @@ def escolher_nacionalidade():
             break
         except (ValueError, IndexError):
             print("❌ Escolha inválida. Tente novamente.")
-            
+
     print(f"\n🌎 Países em {continente_escolhido}:")
     paises = nacionalidades[continente_escolhido]
-    
+
     for i, pais in enumerate(paises, 1):
         print(f"{i}. {pais}")
 
@@ -239,5 +241,5 @@ def escolher_nacionalidade():
             break
         except (ValueError, IndexError):
             print("❌ Escolha inválida. Tente novamente.")
-    
+
     return pais_escolhido

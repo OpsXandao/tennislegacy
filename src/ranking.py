@@ -2,6 +2,7 @@ import json
 import os
 from jogador import normalizar_nome
 
+
 class SistemaRanking:
     def __init__(self, caminho_arquivo):
         self.caminho_arquivo = caminho_arquivo
@@ -10,11 +11,11 @@ class SistemaRanking:
     def carregar_ranking(self):
         if not os.path.exists(self.caminho_arquivo):
             return []
-        with open(self.caminho_arquivo, encoding='utf-8') as f:
+        with open(self.caminho_arquivo, encoding="utf-8") as f:
             return json.load(f)
 
     def salvar_ranking(self):
-        with open(self.caminho_arquivo, "w", encoding='utf-8') as f:
+        with open(self.caminho_arquivo, "w", encoding="utf-8") as f:
             json.dump(self.ranking, f, indent=2, ensure_ascii=False)
 
     def ordenar(self):
@@ -59,7 +60,9 @@ class SistemaRanking:
         self.ranking.append(jogador_dict)
         self.ordenar()
         self.salvar_ranking()
-        print(f"✅ Jogador '{jogador_dict['nome']}' foi adicionado ao ranking com sucesso.")
+        print(
+            f"✅ Jogador '{jogador_dict['nome']}' foi adicionado ao ranking com sucesso."
+        )
 
         self._atualizar_ranking_global(jogador_dict)
 
@@ -70,7 +73,7 @@ class SistemaRanking:
             print("⚠️ Arquivo ranking_atp.json não encontrado.")
             return
 
-        with open(caminho_global, encoding='utf-8') as f:
+        with open(caminho_global, encoding="utf-8") as f:
             dados = json.load(f)
 
         nome_normalizado = normalizar_nome(jogador_dict)
@@ -80,16 +83,24 @@ class SistemaRanking:
         jogador_completo = jogador_dict.copy()
         if "atributos" not in jogador_completo:
             jogador_completo["atributos"] = {
-                "saque": 60, "forehand": 60, "backhand": 60,
-                "topspin": 60, "voleio": 60, "slice": 60,
-                "movimento": 60, "lob": 60, "winner": 60
+                "saque": 60,
+                "forehand": 60,
+                "backhand": 60,
+                "topspin": 60,
+                "voleio": 60,
+                "slice": 60,
+                "movimento": 60,
+                "lob": 60,
+                "winner": 60,
             }
 
         dados.append(jogador_completo)
         with open(caminho_global, "w", encoding="utf-8") as f:
             json.dump(dados, f, indent=2, ensure_ascii=False)
 
-        print(f"📈 Jogador '{jogador_dict['nome']}' também adicionado ao ranking_atp.json global.")
+        print(
+            f"📈 Jogador '{jogador_dict['nome']}' também adicionado ao ranking_atp.json global."
+        )
 
     def buscar_jogador_por_nome(self, nome):
         nome_normalizado = normalizar_nome(nome)

@@ -4,10 +4,12 @@ from jogador import reidratar_jogador, normalizar_nome
 BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "saves")
 DB_DIR = os.path.join(os.path.dirname(__file__), "..", "db")
 
+
 def criar_pasta_save(nome_save):
     caminho = os.path.join(BASE_DIR, nome_save)
     os.makedirs(caminho, exist_ok=True)
     return caminho
+
 
 def salvar_jogo(nome_save, jogador_inst):
     try:
@@ -19,16 +21,18 @@ def salvar_jogo(nome_save, jogador_inst):
 
         for j in ranking:
             if normalizar_nome(j) == normalizar_nome(jogador_inst):
-                j.update({
-                    "idade": jogador_inst.idade,
-                    "xp": jogador_inst.xp,
-                    "nivel": jogador_inst.nivel,
-                    "energia": jogador_inst.energia,
-                    "ritmo_jogo": jogador_inst.ritmo_jogo,
-                    "moral": jogador_inst.moral,
-                    "dinheiro": jogador_inst.dinheiro,
-                    "atributos": jogador_inst.atributos
-                })
+                j.update(
+                    {
+                        "idade": jogador_inst.idade,
+                        "xp": jogador_inst.xp,
+                        "nivel": jogador_inst.nivel,
+                        "energia": jogador_inst.energia,
+                        "ritmo_jogo": jogador_inst.ritmo_jogo,
+                        "moral": jogador_inst.moral,
+                        "dinheiro": jogador_inst.dinheiro,
+                        "atributos": jogador_inst.atributos,
+                    }
+                )
 
         with open(ranking_path, "w", encoding="utf-8") as f:
             json.dump(ranking, f, indent=2, ensure_ascii=False)
@@ -42,7 +46,10 @@ def salvar_jogo(nome_save, jogador_inst):
     except Exception as e:
         print(f"❌ Erro ao salvar jogo: {e}")
 
-def salvar_estado_atual_torneio(nome_save, fase_atual, confrontos, resultados, jogador_vivo=True):
+
+def salvar_estado_atual_torneio(
+    nome_save, fase_atual, confrontos, resultados, jogador_vivo=True
+):
     try:
         caminho = os.path.join(BASE_DIR, nome_save, "torneio_atp.json")
 
@@ -54,13 +61,13 @@ def salvar_estado_atual_torneio(nome_save, fase_atual, confrontos, resultados, j
                 "rodadas": {},
                 "resultados": {},
                 "fase_atual": fase_atual,
-                "jogador_vivo": jogador_vivo
+                "jogador_vivo": jogador_vivo,
             }
 
         estado["rodadas"][fase_atual] = [
             (
                 a["nome"] if isinstance(a, dict) else a,
-                b["nome"] if isinstance(b, dict) else b
+                b["nome"] if isinstance(b, dict) else b,
             )
             for a, b in confrontos
         ]
@@ -76,6 +83,7 @@ def salvar_estado_atual_torneio(nome_save, fase_atual, confrontos, resultados, j
 
     except Exception as e:
         print(f"❌ Erro ao salvar estado atual do torneio: {e}")
+
 
 def carregar_estado_torneio(caminho):
     try:
@@ -100,7 +108,7 @@ def carregar_estado_torneio(caminho):
             "fase_atual": fase or "fase_indefinida",
             "confrontos": rodadas,
             "resultados": resultados,
-            "jogador_vivo": jogador_vivo
+            "jogador_vivo": jogador_vivo,
         }
 
     except (FileNotFoundError, json.JSONDecodeError, TypeError) as e:
@@ -112,8 +120,9 @@ def carregar_estado_torneio(caminho):
         "fase_atual": "fase_indefinida",
         "confrontos": [],
         "resultados": [],
-        "jogador_vivo": True
+        "jogador_vivo": True,
     }
+
 
 def atualizar_estado_jogador(caminho, vivo=True, fase_finalizada=False):
     try:
@@ -126,6 +135,7 @@ def atualizar_estado_jogador(caminho, vivo=True, fase_finalizada=False):
             json.dump(estado, f, indent=2, ensure_ascii=False)
     except Exception as e:
         print(f"❌ Erro ao atualizar status do jogador: {e}")
+
 
 def carregar_ou_redirecionar(jogador_inst, nome_save, salvar_automaticamente):
     try:
@@ -149,7 +159,7 @@ def carregar_ou_redirecionar(jogador_inst, nome_save, salvar_automaticamente):
             jogador_nome=jogador_inst.nome,
             jogador_nacionalidade=jogador_inst.nacionalidade,
             ranking=None,
-            nome_save=nome_save
+            nome_save=nome_save,
         )
 
         fase = estado.get("fase_atual")
@@ -161,7 +171,13 @@ def carregar_ou_redirecionar(jogador_inst, nome_save, salvar_automaticamente):
             return menu_temporada(jogador_inst, nome_save, salvar_automaticamente)
 
         confrontos_normalizados = torneio.normalizar_confrontos(confrontos)
-        return menu_rodadas(estado["resultados"], confrontos_normalizados, jogador_inst, nome_save, torneio)
+        return menu_rodadas(
+            estado["resultados"],
+            confrontos_normalizados,
+            jogador_inst,
+            nome_save,
+            torneio,
+        )
 
     except Exception as e:
         print(f"❌ Erro ao carregar save ou redirecionar: {e}")

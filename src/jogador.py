@@ -1,6 +1,7 @@
 import os
 import json
 
+
 class Jogador:
     def __init__(self, nome, idade, nacionalidade, save_name="default"):
         self.nome = nome
@@ -14,8 +15,15 @@ class Jogador:
         self.dinheiro = 500
         self.save_name = save_name
         self.atributos = {
-            "saque": 50, "forehand": 50, "backhand": 50, "topspin": 50,
-            "voleio": 50, "slice": 50, "movimento": 50, "lob": 50, "winner": 50
+            "saque": 50,
+            "forehand": 50,
+            "backhand": 50,
+            "topspin": 50,
+            "voleio": 50,
+            "slice": 50,
+            "movimento": 50,
+            "lob": 50,
+            "winner": 50,
         }
 
     def calcular_overall(self):
@@ -48,8 +56,9 @@ class Jogador:
             "ritmo_jogo": self.ritmo_jogo,
             "moral": self.moral,
             "dinheiro": self.dinheiro,
-            "atributos": self.atributos
+            "atributos": self.atributos,
         }
+
 
 def obter_nome(obj):
     """Retorna o nome normalizado de um jogador, seja ele um str, dict ou objeto."""
@@ -59,13 +68,17 @@ def obter_nome(obj):
         return getattr(obj, "nome", "").strip()
     return str(obj).strip()
 
+
 def normalizar_nome(obj):
     """Retorna o nome do jogador em lowercase e sem espaços extras, seja dict, objeto ou string."""
     nome = obter_nome(obj)
     return nome.lower()
 
+
 def adicionar_jogador_ao_ranking(jogador_instancia):
-    ranking_path = os.path.join("saves", jogador_instancia.save_name, "ranking_atp.json")
+    ranking_path = os.path.join(
+        "saves", jogador_instancia.save_name, "ranking_atp.json"
+    )
 
     if os.path.exists(ranking_path):
         with open(ranking_path, "r", encoding="utf-8") as f:
@@ -81,7 +94,7 @@ def adicionar_jogador_ao_ranking(jogador_instancia):
             "nacionalidade": jogador_instancia.nacionalidade,
             "overall": jogador_instancia.calcular_overall(),
             "atributos": jogador_instancia.atributos,
-            "pontos": 0
+            "pontos": 0,
         }
         ranking.append(novo)
         with open(ranking_path, "w", encoding="utf-8") as f:
@@ -89,6 +102,7 @@ def adicionar_jogador_ao_ranking(jogador_instancia):
         print(f"✅ Jogador '{novo['nome']}' adicionado ao ranking local com 0 pontos.")
     else:
         print(f"ℹ️ Jogador '{jogador_instancia.nome}' já está presente no ranking.")
+
 
 def carregar_jogador(nome_save):
     from jogador import reidratar_jogador  # ← garante que a função será usada
@@ -102,6 +116,7 @@ def carregar_jogador(nome_save):
         dados = json.load(f)
 
     return reidratar_jogador(dados, nome_save)
+
 
 def criar_jogador(nome_save):
     from save import criar_pasta_save, salvar_jogo
@@ -128,17 +143,38 @@ def criar_jogador(nome_save):
 
     atributos_por_tipo = {
         "1": {
-            "saque": 60, "forehand": 75, "backhand": 75, "topspin": 72,
-            "voleio": 65, "slice": 72, "movimento": 68, "lob": 74, "winner": 65
+            "saque": 60,
+            "forehand": 75,
+            "backhand": 75,
+            "topspin": 72,
+            "voleio": 65,
+            "slice": 72,
+            "movimento": 68,
+            "lob": 74,
+            "winner": 65,
         },
         "2": {
-            "saque": 75, "forehand": 72, "backhand": 70, "topspin": 68,
-            "voleio": 60, "slice": 62, "movimento": 78, "lob": 60, "winner": 75
+            "saque": 75,
+            "forehand": 72,
+            "backhand": 70,
+            "topspin": 68,
+            "voleio": 60,
+            "slice": 62,
+            "movimento": 78,
+            "lob": 60,
+            "winner": 75,
         },
         "3": {
-            "saque": 70, "forehand": 70, "backhand": 70, "topspin": 70,
-            "voleio": 70, "slice": 70, "movimento": 70, "lob": 70, "winner": 70
-        }
+            "saque": 70,
+            "forehand": 70,
+            "backhand": 70,
+            "topspin": 70,
+            "voleio": 70,
+            "slice": 70,
+            "movimento": 70,
+            "lob": 70,
+            "winner": 70,
+        },
     }
 
     atributos = atributos_por_tipo.get(tipo, atributos_por_tipo["3"])
@@ -160,12 +196,13 @@ def criar_jogador(nome_save):
 
     return jogador_instancia
 
+
 def reidratar_jogador(dados, nome_save):
     jogador = Jogador(
         nome=dados["nome"],
         idade=dados["idade"],
         nacionalidade=dados["nacionalidade"],
-        save_name=nome_save
+        save_name=nome_save,
     )
     jogador.xp = dados["xp"]
     jogador.nivel = dados["nivel"]
