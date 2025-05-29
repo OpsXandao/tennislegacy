@@ -1,6 +1,6 @@
 import os
 import json
-from jogador import reidratar_jogador, normalizar_nome
+from jogador import normalizar_nome
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "saves")
 DB_DIR = os.path.join(os.path.dirname(__file__), "..", "db")

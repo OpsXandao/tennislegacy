@@ -1,5 +1,5 @@
 from src.calendario import obter_torneios_da_semana, avancar_semana
-from src.torneio import criar_torneio, carregar_torneio, salvar_torneio
+from src.torneio import criar_torneio, salvar_torneio
 from src.save import salvar_jogo
 
 
@@ -37,7 +37,13 @@ def menu_temporada(jogador, nome_save):
                 )
                 torneio = criar_torneio(torneio_escolhido, jogador, nome_save, semana)
                 salvar_torneio(torneio)
-                print("Torneio iniciado! Volte para o menu do torneio pelo controller.")
+                from interface.menu_torneio import (
+                    menu_torneio,
+                )  # ajuste o import se necessário
+
+                # Chama o menu do torneio direto!
+                menu_torneio(torneio, jogador, nome_save)
+
                 break
             else:
                 print("Número de torneio inválido.")

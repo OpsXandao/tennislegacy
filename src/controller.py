@@ -1,5 +1,5 @@
 import os
-from save import carregar_estado_torneio, salvar_jogo
+from save import carregar_estado_torneio
 from interface.menu_temporada import menu_temporada
 from interface.menu_torneio import menu_torneio
 
