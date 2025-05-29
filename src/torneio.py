@@ -654,6 +654,76 @@ class TorneioATP250:
 
         with open(caminho, "w", encoding="utf-8") as f:
             json.dump(estado, f, ensure_ascii=False, indent=2)
+            
+def criar_torneio(torneio_escolhido, jogador, nome_save, semana):
+    # Cria instância do ranking para ser usada pelo torneio
+    from src.ranking import SistemaRanking
+
+    ranking_path = os.path.join("saves", nome_save, "ranking_atp.json")
+    ranking = SistemaRanking(ranking_path)
+
+    instancia = TorneioATP250(
+        semana=semana,
+        jogador_nome=jogador["nome"],
+        jogador_nacionalidade=jogador["nacionalidade"],
+        ranking=ranking,
+        nome_save=nome_save,
+    )
+
+    # Cria a estrutura do torneio no disco
+    instancia.iniciar_torneio(torneio_escolhido["nome"], ranking.ranking)
+    return instancia
+
+def salvar_torneio(instancia):
+    """
+    Salva o estado atual do torneio associado à instância no arquivo correto do save.
+    """
+    caminho_json = os.path.join("saves", instancia.nome_save, "torneio_atp.json")
+    estado = instancia._carregar_estado()
+    with open(caminho_json, "w", encoding="utf-8") as f:
+        json.dump(estado, f, indent=2, ensure_ascii=False)
+
+
+def carregar_torneio(nome_save):
+    from src.ranking import SistemaRanking
+
+    ranking_path = os.path.join("saves", nome_save, "ranking_atp.json")
+    ranking = SistemaRanking(ranking_path)
+    caminho_json = os.path.join("saves", nome_save, "torneio_atp.json")
+
+    with open(caminho_json, "r", encoding="utf-8") as f:
+        estado = json.load(f)
+
+    jogador_nome = estado["jogador"]
+    # Busca nacionalidade no ranking pelo nome do jogador:
+    jogador_obj = next((j for j in ranking.ranking if j["nome"] == jogador_nome), None)
+    jogador_nacionalidade = jogador_obj["nacionalidade"] if jogador_obj else "??"
+
+    instancia = TorneioATP250(
+        semana=estado["semana"],
+        jogador_nome=jogador_nome,
+        jogador_nacionalidade=jogador_nacionalidade,
+        ranking=ranking,
+        nome_save=nome_save,
+    )
+    return instancia
+
+def simular_partidas_npc(instancia, nome_jogador=None):
+    """
+    Simula as partidas entre NPCs na fase atual do torneio.
+    Se nome_jogador for fornecido, preserva o confronto do player.
+    """
+    if nome_jogador is None:
+        nome_jogador = instancia.jogador_nome
+    instancia.simular_npcs_na_fase_atual(nome_jogador)
+
+def avancar_fase(instancia):
+    """
+    Avança a fase do torneio conforme o estado atual e salva.
+    """
+    estado = instancia._carregar_estado()
+    instancia._atualizar_fase_se_necessario(estado)
+    instancia._salvar_estado(estado)
 
 
 def extrair_nome_puro(resultado):

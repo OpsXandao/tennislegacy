@@ -42,3 +42,6 @@ def obter_info_torneio_e_fase(nome_save):
         )
 
     return nome_torneio, fase
+
+def avancar_semana(semana):
+    return semana + 1

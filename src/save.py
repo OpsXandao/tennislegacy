@@ -1,4 +1,5 @@
-import os, json
+import os
+import json
 from jogador import reidratar_jogador, normalizar_nome
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "saves")
@@ -135,50 +136,3 @@ def atualizar_estado_jogador(caminho, vivo=True, fase_finalizada=False):
             json.dump(estado, f, indent=2, ensure_ascii=False)
     except Exception as e:
         print(f"❌ Erro ao atualizar status do jogador: {e}")
-
-
-def carregar_ou_redirecionar(jogador_inst, nome_save, salvar_automaticamente):
-    try:
-        from interface.menu_torneio import menu_temporada
-        from interface.menu_torneio import menu_rodadas
-        from src.torneio import TorneioATP250
-
-        caminho_torneio = os.path.join("saves", nome_save, "torneio_atp.json")
-        if not os.path.exists(caminho_torneio):
-            print("📁 Nenhum torneio salvo encontrado. Indo para a temporada.")
-            return menu_temporada(jogador_inst, nome_save, salvar_automaticamente, 1)
-
-        with open(caminho_torneio, "r", encoding="utf-8") as f:
-            estado = json.load(f)
-
-        if isinstance(jogador_inst, dict):
-            jogador_inst = reidratar_jogador(jogador_inst, nome_save)
-
-        torneio = TorneioATP250(
-            semana=estado["semana"],
-            jogador_nome=jogador_inst.nome,
-            jogador_nacionalidade=jogador_inst.nacionalidade,
-            ranking=None,
-            nome_save=nome_save,
-        )
-
-        fase = estado.get("fase_atual")
-        jogador_vivo = estado.get("jogador_vivo", True)
-        confrontos = estado["rodadas"].get(fase, [])
-
-        if not jogador_vivo:
-            print("🟥 Você foi eliminado. Indo para a próxima semana...")
-            return menu_temporada(jogador_inst, nome_save, salvar_automaticamente)
-
-        confrontos_normalizados = torneio.normalizar_confrontos(confrontos)
-        return menu_rodadas(
-            estado["resultados"],
-            confrontos_normalizados,
-            jogador_inst,
-            nome_save,
-            torneio,
-        )
-
-    except Exception as e:
-        print(f"❌ Erro ao carregar save ou redirecionar: {e}")
-        return menu_temporada(jogador_inst, nome_save, salvar_automaticamente, 1)

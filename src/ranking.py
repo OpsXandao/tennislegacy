@@ -108,3 +108,17 @@ class SistemaRanking:
             if normalizar_nome(jogador) == nome_normalizado:
                 return jogador
         return None
+
+def carregar_ranking(caminho_arquivo):
+    """Função utilitária para carregar ranking a partir de um arquivo JSON."""
+    if not os.path.exists(caminho_arquivo):
+        return []
+    with open(caminho_arquivo, encoding="utf-8") as f:
+        return json.load(f)
+
+def get_jogador_by_id(ranking, id_):
+    """Retorna o jogador na posição id_ (começando em 1, igual ao ranking tradicional)."""
+    try:
+        return ranking[id_ - 1]
+    except (IndexError, TypeError):
+        return None
