@@ -23,7 +23,7 @@ def menu_temporada(jogador, nome_save, salvar_automaticamente=False):
         if escolha == "0":
             semana = avancar_semana(semana)
             jogador["semana"] = semana
-            salvar_jogo(jogador, nome_save)
+            salvar_jogo(nome_save, jogador)
             print("Semana avançada, jogador descansou!")
             continue
 

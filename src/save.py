@@ -1,6 +1,7 @@
 import os
 import json
 from jogador import normalizar_nome
+import jogador
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "saves")
 DB_DIR = os.path.join(os.path.dirname(__file__), "..", "db")
@@ -14,33 +15,45 @@ def criar_pasta_save(nome_save):
 
 def salvar_jogo(nome_save, jogador_inst):
     try:
+        # Salvar jogador.json
+        if hasattr(jogador_inst, "to_dict"):
+            dados = jogador_inst.to_dict()
+        elif isinstance(jogador_inst, dict):
+            dados = jogador_inst
+        else:
+            raise ValueError("Tipo de jogador não suportado!")
+
         caminho = criar_pasta_save(nome_save)
-        ranking_path = os.path.join(caminho, "ranking_atp.json")
-
-        with open(ranking_path, encoding="utf-8") as f:
-            ranking = json.load(f)
-
-        for j in ranking:
-            if normalizar_nome(j) == normalizar_nome(jogador_inst):
-                j.update(
-                    {
-                        "idade": jogador_inst.idade,
-                        "xp": jogador_inst.xp,
-                        "nivel": jogador_inst.nivel,
-                        "energia": jogador_inst.energia,
-                        "ritmo_jogo": jogador_inst.ritmo_jogo,
-                        "moral": jogador_inst.moral,
-                        "dinheiro": jogador_inst.dinheiro,
-                        "atributos": jogador_inst.atributos,
-                    }
-                )
-
-        with open(ranking_path, "w", encoding="utf-8") as f:
-            json.dump(ranking, f, indent=2, ensure_ascii=False)
-
         jogador_path = os.path.join(caminho, "jogador.json")
         with open(jogador_path, "w", encoding="utf-8") as f:
-            json.dump(jogador_inst.to_dict(), f, indent=2, ensure_ascii=False)
+            json.dump(dados, f, indent=2, ensure_ascii=False)
+
+        # Atualizar ranking_atp.json (opcional)
+        ranking_path = os.path.join(caminho, "ranking_atp.json")
+        if os.path.exists(ranking_path):
+            with open(ranking_path, encoding="utf-8") as f:
+                ranking = json.load(f)
+
+            # Atualiza informações do jogador no ranking, se existir
+            for j in ranking:
+                if normalizar_nome(j.get("nome", "")) == normalizar_nome(
+                    dados.get("nome", "")
+                ):
+                    j.update(
+                        {
+                            "idade": dados.get("idade"),
+                            "xp": dados.get("xp"),
+                            "nivel": dados.get("nivel"),
+                            "energia": dados.get("energia"),
+                            "ritmo_jogo": dados.get("ritmo_jogo"),
+                            "moral": dados.get("moral"),
+                            "dinheiro": dados.get("dinheiro"),
+                            "atributos": dados.get("atributos"),
+                        }
+                    )
+
+            with open(ranking_path, "w", encoding="utf-8") as f:
+                json.dump(ranking, f, indent=2, ensure_ascii=False)
 
         print("💾 Jogo salvo automaticamente")
 

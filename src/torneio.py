@@ -1,5 +1,6 @@
 import random, os, json
-from jogador import normalizar_nome  # no topo do arquivo
+from jogador import normalizar_nome
+import jogar_partida  # no topo do arquivo
 
 
 class TorneioATP250:
@@ -264,7 +265,12 @@ class TorneioATP250:
                     f"⚠️ Corrigindo número de vencedores ({len(vencedores)}) para {esperado} adicionando bots."
                 )
                 while len(vencedores) < esperado:
-                    vencedores.append({"nome": f"{nome_bot}_{len(vencedores)+1}", "nacionalidade": "??"})
+                    vencedores.append(
+                        {
+                            "nome": f"{nome_bot}_{len(vencedores)+1}",
+                            "nacionalidade": "??",
+                        }
+                    )
             elif len(vencedores) > esperado:
                 print(
                     f"⚠️ Mais vencedores ({len(vencedores)}) que o esperado ({esperado}). Cortando excesso."
@@ -408,15 +414,20 @@ class TorneioATP250:
                 semifinal_resultados = estado["resultados"].get("semifinal", [])
                 if len(semifinal_resultados) == 1:
                     # Padrão: só teve um confronto na semi
-                    jogador_a = semifinal_resultados[0]['vencedor']
-                    jogador_b = semifinal_resultados[0]['jogador_a'] if semifinal_resultados[0]['vencedor']['nome'] != semifinal_resultados[0]['jogador_a']['nome'] else semifinal_resultados[0]['jogador_b']
+                    jogador_a = semifinal_resultados[0]["vencedor"]
+                    jogador_b = (
+                        semifinal_resultados[0]["jogador_a"]
+                        if semifinal_resultados[0]["vencedor"]["nome"]
+                        != semifinal_resultados[0]["jogador_a"]["nome"]
+                        else semifinal_resultados[0]["jogador_b"]
+                    )
                     final_confronto = [jogador_a, jogador_b]
                     estado["rodadas"]["final"] = [final_confronto]
                     confrontos = [final_confronto]
                 elif len(semifinal_resultados) == 2:
                     # Duas semis: pega os dois vencedores
-                    jogador_a = semifinal_resultados[0]['vencedor']
-                    jogador_b = semifinal_resultados[1]['vencedor']
+                    jogador_a = semifinal_resultados[0]["vencedor"]
+                    jogador_b = semifinal_resultados[1]["vencedor"]
                     final_confronto = [jogador_a, jogador_b]
                     estado["rodadas"]["final"] = [final_confronto]
                     confrontos = [final_confronto]
@@ -434,7 +445,7 @@ class TorneioATP250:
                     "jogador_a": self.garantir_dados_completos(a),
                     "jogador_b": self.garantir_dados_completos(b),
                     "vencedor": self.garantir_dados_completos(vencedor),
-                    "resultado": placar
+                    "resultado": placar,
                 }
                 novos_resultados.append(resultado_dict)
 
@@ -459,7 +470,9 @@ class TorneioATP250:
         if resultados_final:
             resultado_final = resultados_final[0]
             if isinstance(resultado_final, dict):
-                campeao = resultado_final.get("vencedor", {}).get("nome", "Desconhecido")
+                campeao = resultado_final.get("vencedor", {}).get(
+                    "nome", "Desconhecido"
+                )
             else:
                 campeao = resultado_final.split()[0]
             print(f"\n🏁 Torneio finalizado. Campeão: {campeao}")
@@ -575,7 +588,6 @@ class TorneioATP250:
                 )
             print(f"{idx}. {nome_a} vs {nome_b}")
 
-  
     def iniciar_torneio(self, nome_torneio, todos_jogadores):
         try:
             estado = self._carregar_estado()
@@ -694,7 +706,9 @@ class TorneioATP250:
 
         # Localiza o confronto do jogador
         confronto_jogador = None
-        for a, b in estado["rodadas"][fase]:
+        adversario = None  # Inicializa para evitar erro
+
+        for a, b in estado["rodadas"].get(fase, []):
             nome_a = a["nome"] if isinstance(a, dict) else a
             nome_b = b["nome"] if isinstance(b, dict) else b
             if normalizar_nome(nome_a) == normalizar_nome(jogador.nome):
@@ -706,21 +720,26 @@ class TorneioATP250:
                 confronto_jogador = (a, b)
                 break
 
-        if confronto_jogador is None:
+        if adversario is None:
             print("Você não tem confronto nesta fase ou já jogou sua partida.")
-            return
+            return {
+                "msg": "Nenhum confronto para o jogador nesta fase.",
+                "fase_eliminacao": None,
+                "eliminado": False,
+            }
 
-        # CHAMADA DA PARTIDA INTERATIVA
-        from jogar_partida import jogar_partida
-
-        vencedor_nome, placar_final = jogar_partida(jogador, adversario, self.nome_save)
+        # Agora sim, chama a partida!
+        vencedor_nome, placar_final = jogar_partida.jogar_partida(
+            jogador, adversario, self.nome_save
+        )
         vencedor = {"nome": vencedor_nome}
 
-        # Atualiza o resultado na estrutura do torneio
+        # Atualiza o resultado
         self.processar_resultado_partida(jogador, adversario, vencedor, placar_final)
-
-        # Simula os NPCs para a fase
         self.simular_npcs_na_fase_atual(jogador.nome)
+
+        # Checa se foi eliminado
+        jogador_ativo = self.jogador_ainda_ativo()
 
         # Avança fase e salva
         from src.torneio import avancar_fase, salvar_torneio
@@ -728,7 +747,11 @@ class TorneioATP250:
         avancar_fase(self)
         salvar_torneio(self)
 
-        return "✅ Partida jogada e resultados atualizados!"
+        return {
+            "msg": "✅ Partida jogada e resultados atualizados!",
+            "fase_eliminacao": fase if not jogador_ativo else None,
+            "eliminado": not jogador_ativo,
+        }
 
     def buscar_jogador_completo(self, nome):
         """Busca um jogador completo pelo nome (ou ID, se quiser expandir depois)."""
@@ -838,4 +861,3 @@ def extrair_nome_puro(resultado):
             return resultado.strip()
     else:
         return "Desconhecido"
-
