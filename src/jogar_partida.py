@@ -34,7 +34,7 @@ def escolher_estrategia():
 def calcular_bonus(estilo, atributo):
     bonus_map = {
         "atacar_na_rede": {"voleio", "reflexo"},
-        "atacar_do_fundo": {"forehand", "backhand", "resistencia"},
+        "atacar_do_fundo": {"forehand", "backhand", "movimento"},
         "atacar_pelo_meio": {"saque", "forca", "precisao"},
     }
     return 2 if atributo in bonus_map.get(estilo, set()) else 0

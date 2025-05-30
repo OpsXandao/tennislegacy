@@ -42,7 +42,32 @@ def menu_torneio(torneio, jogador, nome_save):
         else:
             print("Opção inválida!")
 
-        # Checar se torneio acabou, se sim, retornar ao controller (break)
+        # >>>>>>> NOVO BLOCO UX: Checa se jogador foi eliminado
+        if not torneio.jogador_ainda_ativo():
+            print(f"\n😔 Fim de torneio para {torneio.jogador_nome}!")
+            print(
+                f"🎾 Sua jornada parou na fase {torneio._carregar_estado()['fase_atual']}, mas o show continua...\n"
+            )
+            print(
+                "Quer ver quem será o campeão deste torneio? Você pode acompanhar rodada a rodada!"
+            )
+
+            resp = (
+                input("📋 Simular o restante do torneio? (s/n): ")
+                .strip()
+                .lower()
+            )
+            if resp == "s":
+                # Garante acesso à lista de todos jogadores
+                todos_jogadores = carregar_ranking(nome_save)
+                torneio.simular_torneio_restante(todos_jogadores)
+            else:
+                print(
+                    "\n🔄 Voltando para a temporada... Pronto para o próximo desafio?\n"
+                )
+            break  # Sai do menu_torneio após simular ou recusar
+
+        # Checar se torneio acabou (final natural), se sim, retornar ao controller
         estado = torneio._carregar_estado()
         if estado["fase_atual"] == "final" and not estado["rodadas"]["final"]:
             print("Torneio finalizado!")

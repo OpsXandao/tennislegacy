@@ -213,6 +213,7 @@ class TorneioATP250:
         vencedores = []
         for i, r in enumerate(estado["resultados"][fase]):
             jogador_obj = None
+            nome_vencedor = None
             try:
                 if isinstance(r, dict):
                     vencedor = r.get("vencedor")
@@ -238,73 +239,69 @@ class TorneioATP250:
                             f"Jogador '{nome_vencedor}' não encontrado no ranking."
                         )
                 elif isinstance(r, str):
-                    # Fallback para resultado string
-                    nome = extrair_nome_puro(r)
-                    jogador_obj = self.ranking.buscar_jogador_por_nome(nome)
+                    nome_vencedor = extrair_nome_puro(r)
+                    jogador_obj = self.ranking.buscar_jogador_por_nome(nome_vencedor)
                     if not jogador_obj:
-                        raise ValueError(
-                            f"(String) Jogador '{nome}' não encontrado no ranking."
+                        print(
+                            f"⚠️ Resultado NPC: não encontrei '{nome_vencedor}' no ranking (veio de '{r}'). Usando dict mínimo."
                         )
+                        jogador_obj = {"nome": nome_vencedor, "nacionalidade": "??"}
+
                 else:
                     raise TypeError(f"Tipo inesperado em resultado: {type(r)}")
             except Exception as e:
                 print(f"❌ Erro ao processar vencedor da posição {i} em '{fase}': {e}")
-                # Preenche com dicionário mínimo para evitar crash, mas sinaliza problema
                 jogador_obj = {
-                    "nome": nome_vencedor if "nome_vencedor" in locals() else str(r),
+                    "nome": nome_vencedor if nome_vencedor else str(r),
                     "nacionalidade": "??",
                 }
             vencedores.append(jogador_obj)
 
-        # Monta confrontos da próxima fase
-        try:
-            if fase == "qualy_1":
-                if len(vencedores) != 8:
-                    raise ValueError(
-                        f"❌ Esperado exatamente 8 vencedores para montar a 'qualy_2'. Vieram: {len(vencedores)}"
-                    )
-                random.shuffle(vencedores)
-                estado["rodadas"]["qualy_2"] = [
-                    (
-                        self.self.garantir_dados_completos(a),
-                        self.self.garantir_dados_completos(b),
-                    )
-                    for a, b in zip(vencedores[::2], vencedores[1::2])
-                ]
+        # Função utilitária para corrigir lista de vencedores
+        def corrigir_lista(vencedores, esperado, nome_bot):
+            if len(vencedores) < esperado:
+                print(
+                    f"⚠️ Corrigindo número de vencedores ({len(vencedores)}) para {esperado} adicionando bots."
+                )
+                while len(vencedores) < esperado:
+                    vencedores.append({"nome": f"{nome_bot}_{len(vencedores)+1}", "nacionalidade": "??"})
+            elif len(vencedores) > esperado:
+                print(
+                    f"⚠️ Mais vencedores ({len(vencedores)}) que o esperado ({esperado}). Cortando excesso."
+                )
+                vencedores[:] = vencedores[:esperado]
+            return vencedores
 
-                estado["resultados"]["qualy_2"] = []
-                estado["fase_atual"] = "qualy_2"
-            elif fase == "qualy_2":
-                if len(vencedores) != 4:
-                    raise ValueError(
-                        f"❌ Esperado exatamente 4 vencedores para montar a 'pre_oitavas'. Vieram: {len(vencedores)}"
-                    )
-                jogadores_chave = self.ranking.ranking[:12] + vencedores  # 12 + 4 = 16
-                random.shuffle(jogadores_chave)
-                estado["rodadas"]["pre_oitavas"] = [
-                    (
-                        self.self.garantir_dados_completos(a),
-                        self.self.garantir_dados_completos(b),
-                    )
-                    for a, b in zip(jogadores_chave[::2], jogadores_chave[1::2])
-                ]
-                estado["resultados"]["pre_oitavas"] = []
-                estado["fase_atual"] = "pre_oitavas"
-            else:
-                proxima = ordem[idx + 1]
-                if len(vencedores) != len(estado["rodadas"].get(fase, [])):
-                    print(...)
-                estado["rodadas"][proxima] = [
-                    (
-                        self.self.garantir_dados_completos(a),
-                        self.self.garantir_dados_completos(b),
-                    )
-                    for a, b in zip(vencedores[::2], vencedores[1::2])
-                ]
-                estado["resultados"][proxima] = []
-                estado["fase_atual"] = proxima
-        except:
-            print("Ferrou")
+        # Monta confrontos da próxima fase
+        if fase == "qualy_1":
+            vencedores = corrigir_lista(vencedores, 8, "BotQualy2")
+            random.shuffle(vencedores)
+            estado["rodadas"]["qualy_2"] = [
+                (self.garantir_dados_completos(a), self.garantir_dados_completos(b))
+                for a, b in zip(vencedores[::2], vencedores[1::2])
+            ]
+            estado["resultados"]["qualy_2"] = []
+            estado["fase_atual"] = "qualy_2"
+        elif fase == "qualy_2":
+            vencedores = corrigir_lista(vencedores, 4, "BotPO")
+            jogadores_chave = self.ranking.ranking[:12] + vencedores  # 12 + 4 = 16
+            random.shuffle(jogadores_chave)
+            estado["rodadas"]["pre_oitavas"] = [
+                (self.garantir_dados_completos(a), self.garantir_dados_completos(b))
+                for a, b in zip(jogadores_chave[::2], jogadores_chave[1::2])
+            ]
+            estado["resultados"]["pre_oitavas"] = []
+            estado["fase_atual"] = "pre_oitavas"
+        else:
+            proxima = ordem[idx + 1]
+            esperado = len(estado["rodadas"].get(fase, []))
+            vencedores = corrigir_lista(vencedores, esperado, f"Bot_{proxima}")
+            estado["rodadas"][proxima] = [
+                (self.garantir_dados_completos(a), self.garantir_dados_completos(b))
+                for a, b in zip(vencedores[::2], vencedores[1::2])
+            ]
+            estado["resultados"][proxima] = []
+            estado["fase_atual"] = proxima
 
     def jogar_chave_principal(self, classificados):
         if len(classificados) != 4:
@@ -401,46 +398,73 @@ class TorneioATP250:
             "semifinal",
             "final",
         ]
-        idx = fases.index(estado["fase_atual"])
 
-        while idx < len(fases):
-            fase = fases[idx]
+        while True:
+            fase = estado["fase_atual"]
             confrontos = estado["rodadas"].get(fase, [])
+
+            # INOVAÇÃO: Se está na final e não há confrontos, tenta gerar a final
+            if fase == "final" and not confrontos:
+                semifinal_resultados = estado["resultados"].get("semifinal", [])
+                if len(semifinal_resultados) == 1:
+                    # Padrão: só teve um confronto na semi
+                    jogador_a = semifinal_resultados[0]['vencedor']
+                    jogador_b = semifinal_resultados[0]['jogador_a'] if semifinal_resultados[0]['vencedor']['nome'] != semifinal_resultados[0]['jogador_a']['nome'] else semifinal_resultados[0]['jogador_b']
+                    final_confronto = [jogador_a, jogador_b]
+                    estado["rodadas"]["final"] = [final_confronto]
+                    confrontos = [final_confronto]
+                elif len(semifinal_resultados) == 2:
+                    # Duas semis: pega os dois vencedores
+                    jogador_a = semifinal_resultados[0]['vencedor']
+                    jogador_b = semifinal_resultados[1]['vencedor']
+                    final_confronto = [jogador_a, jogador_b]
+                    estado["rodadas"]["final"] = [final_confronto]
+                    confrontos = [final_confronto]
+                else:
+                    # Não tem semifinal suficiente para montar a final
+                    break
+
             if not confrontos:
-                break
+                break  # Não há mais confrontos, fim do torneio
 
             novos_resultados = []
             for a, b in confrontos:
-                # Compatibilidade com formato antigo e novo
-                if isinstance(a, str):
-                    j1 = next(
-                        (j for j in todos_jogadores if j["nome"] == a), {"nome": a}
-                    )
-                else:
-                    j1 = a
-
-                if isinstance(b, str):
-                    j2 = next(
-                        (j for j in todos_jogadores if j["nome"] == b), {"nome": b}
-                    )
-                else:
-                    j2 = b
-
-                vencedor, perdedor, placar = self._simular_partida_npc(j1, j2)
-                novos_resultados.append(placar)
+                vencedor, perdedor, placar = self._simular_partida_npc(a, b)
+                resultado_dict = {
+                    "jogador_a": self.garantir_dados_completos(a),
+                    "jogador_b": self.garantir_dados_completos(b),
+                    "vencedor": self.garantir_dados_completos(vencedor),
+                    "resultado": placar
+                }
+                novos_resultados.append(resultado_dict)
 
             estado["resultados"][fase].extend(novos_resultados)
+
+            # Se simulou a final, finaliza!
+            if fase == "final":
+                estado["fase_atual"] = "finalizado"
+                self._salvar_estado(estado)
+                break
+
             self._atualizar_fase_se_necessario(estado)
-            idx += 1
+            self._salvar_estado(estado)
+            estado = self._carregar_estado()  # Recarrega para pegar a próxima fase
 
-        self._salvar_estado(estado)
-        resultado_final = estado["resultados"]["final"][0]
-        if isinstance(resultado_final, dict):
-            campeao = resultado_final.get("vencedor", {}).get("nome", "Desconhecido")
+            # Verifica se já terminou
+            if estado["fase_atual"] == "finalizado":
+                break
+
+        # Impressão do campeão
+        resultados_final = estado["resultados"].get("final", [])
+        if resultados_final:
+            resultado_final = resultados_final[0]
+            if isinstance(resultado_final, dict):
+                campeao = resultado_final.get("vencedor", {}).get("nome", "Desconhecido")
+            else:
+                campeao = resultado_final.split()[0]
+            print(f"\n🏁 Torneio finalizado. Campeão: {campeao}")
         else:
-            campeao = resultado_final.split()[0]
-
-        print(f"\n🏁 Torneio finalizado. Campeão: {campeao}")
+            print("\n⚠️ Não foi possível simular a final corretamente.")
 
     def simular_npcs_na_fase_atual(self, nome_jogador):
         estado = self._carregar_estado()
@@ -551,95 +575,7 @@ class TorneioATP250:
                 )
             print(f"{idx}. {nome_a} vs {nome_b}")
 
-    def _atualizar_fase_se_necessario(self, estado):
-        fase = estado["fase_atual"]
-        total_confrontos = len(estado["rodadas"].get(fase, []))
-        total_resultados = len(estado["resultados"].get(fase, []))
-
-        if total_resultados < total_confrontos:
-            return  # Ainda faltam partidas para essa fase
-
-        ordem = [
-            "qualy_1",
-            "qualy_2",
-            "pre_oitavas",
-            "oitavas",
-            "quartas",
-            "semifinal",
-            "final",
-        ]
-        idx = ordem.index(fase)
-        if idx + 1 >= len(ordem):
-            estado["fase_atual"] = "finalizado"
-            return
-
-        vencedores = []
-        for r in estado["resultados"][fase]:
-            jogador_obj = None
-            if isinstance(r, dict) and isinstance(r.get("vencedor"), dict):
-                # Se já existe id_ranking, usa ele
-                id_rank = r["vencedor"].get("id_ranking")
-                if id_rank and 1 <= id_rank <= len(self.ranking.ranking):
-                    jogador_obj = self.ranking.ranking[
-                        id_rank - 1
-                    ]  # Ranking começa em 1
-            if not jogador_obj:
-                # fallback para nome limpo
-                if isinstance(r, dict):
-                    vencedor_nome = (
-                        r["vencedor"]["nome"]
-                        if isinstance(r["vencedor"], dict)
-                        else str(r["vencedor"])
-                    )
-                else:
-                    vencedor_nome = extrair_nome_puro(r)
-                jogador_obj = self.ranking.buscar_jogador_por_nome(vencedor_nome)
-            if jogador_obj:
-                vencedores.append(jogador_obj)
-            else:
-                vencedores.append({"nome": vencedor_nome, "nacionalidade": "??"})
-
-        # 🚩 qualy_1: 8 vencedores para qualy_2
-        if fase == "qualy_1":
-            if len(vencedores) != 8:
-                raise ValueError(
-                    "❌ Esperado exatamente 8 vencedores para montar a 'qualy_2'."
-                )
-            random.shuffle(vencedores)
-            estado["rodadas"]["qualy_2"] = [
-                (self.garantir_dados_completos(a), self.garantir_dados_completos(b))
-                for a, b in zip(vencedores[::2], vencedores[1::2])
-            ]
-            estado["resultados"]["qualy_2"] = []
-            estado["fase_atual"] = "qualy_2"
-        # 🚩 qualy_2: 4 vencedores + 12 do ranking = 16
-        elif fase == "qualy_2":
-            if len(vencedores) != 4:
-                raise ValueError(
-                    "❌ Esperado exatamente 4 vencedores para montar a 'pre_oitavas'."
-                )
-            jogadores_chave = self.ranking.ranking[:12] + vencedores
-            random.shuffle(jogadores_chave)
-            estado["rodadas"]["pre_oitavas"] = list(
-                zip(jogadores_chave[::2], jogadores_chave[1::2])
-            )
-            estado["resultados"]["pre_oitavas"] = []
-            estado["fase_atual"] = "pre_oitavas"
-        else:
-            # Demais fases normais
-            proxima = ordem[idx + 1]
-            if len(vencedores) != len(estado["rodadas"].get(fase, [])):
-                print("⚠️ Número de vencedores diferente do esperado para próxima fase.")
-            estado["rodadas"][proxima] = [
-                (
-                    self.self.garantir_dados_completos(a),
-                    self.self.garantir_dados_completos(b),
-                )
-                for a, b in zip(vencedores[::2], vencedores[1::2])
-            ]
-            estado["resultados"][proxima] = []
-            estado["fase_atual"] = proxima
-
+  
     def iniciar_torneio(self, nome_torneio, todos_jogadores):
         try:
             estado = self._carregar_estado()
@@ -891,9 +827,15 @@ def extrair_nome_puro(resultado):
             return vencedor.get("nome", "Desconhecido")
         return str(vencedor)
     elif isinstance(resultado, str):
-        partes = resultado.split()
-        if len(partes) >= 3 and partes[-2] == "x":
-            return " ".join(partes[:-2])
-        return resultado.strip()
+        # Considera que o nome está ANTES do placar " x "
+        partes = resultado.split(" x ")
+        if len(partes) > 1:
+            nome = " x ".join(partes[:-1]).strip()
+            # Se tiver sets "Fulano 2", remove o número do final
+            nome = nome.rstrip("0123456789").strip()
+            return nome
+        else:
+            return resultado.strip()
     else:
         return "Desconhecido"
+
