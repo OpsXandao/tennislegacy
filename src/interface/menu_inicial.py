@@ -1,17 +1,20 @@
-from jogador import carregar_jogador, criar_jogador
-from controller import fluxo_principal
 import builtins
 
+from src.controller import fluxo_principal
+from src.io_utils import safe_input
+from src.jogador import carregar_jogador, criar_jogador
 
 def menu_inicial():
     print("\n🎾 Bem-vindo ao TennisLegacy!")
     print("1. Iniciar novo jogo")
     print("2. Carregar jogo salvo")
 
-    escolha = input("Escolha uma opção (1 ou 2): ").strip()
-    nome_save = input("🎮 Nome do seu save: ").strip()
+    escolha = safe_input("Escolha uma opção (1 ou 2): ").strip()
+    nome_save = safe_input("🎮 Nome do seu save: ").strip()
     salvar_automaticamente = (
-        input("📎 Deseja salvar automaticamente após cada partida ou torneio? (s/n): ")
+        safe_input(
+            "📎 Deseja salvar automaticamente após cada partida ou torneio? (s/n): "
+        )
         .strip()
         .lower()
         == "s"

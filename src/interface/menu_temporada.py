@@ -1,6 +1,7 @@
-from src.calendario import obter_torneios_da_semana, avancar_semana
-from src.torneio import criar_torneio, salvar_torneio
+from src.calendario import avancar_semana, obter_torneios_da_semana
+from src.io_utils import safe_input
 from src.save import salvar_jogo
+from src.torneio import criar_torneio, salvar_torneio
 
 
 def menu_temporada(jogador, nome_save, salvar_automaticamente=False):
@@ -16,15 +17,26 @@ def menu_temporada(jogador, nome_save, salvar_automaticamente=False):
             print(f"{idx}. {nome} | País: {pais} | Premiação: {premiacao}")
 
         print("[0] Avançar semana (descansar)")
-        escolha = input(
-            "Escolha um torneio para participar (número) ou 0 para avançar: "
+        print("[9] Salvar jogo")
+        escolha = safe_input(
+            "Escolha um torneio (número), 0 para avançar ou 9 para salvar: "
         ).strip()
 
         if escolha == "0":
             semana = avancar_semana(semana)
-            jogador["semana"] = semana
+            if isinstance(jogador, dict):
+                jogador["semana"] = semana
+            else:
+                jogador.semana = semana
+            if salvar_automaticamente:
+                salvar_jogo(nome_save, jogador)
+                print("Semana avançada, jogador descansou!")
+            else:
+                print("Semana avançada, jogador descansou! (use a opção 9 para salvar)")
+            continue
+        if escolha == "9":
             salvar_jogo(nome_save, jogador)
-            print("Semana avançada, jogador descansou!")
+            print("Jogo salvo com sucesso!")
             continue
 
         try:
@@ -37,12 +49,15 @@ def menu_temporada(jogador, nome_save, salvar_automaticamente=False):
                 )
                 torneio = criar_torneio(torneio_escolhido, jogador, nome_save, semana)
                 salvar_torneio(torneio)
-                from interface.menu_torneio import (
-                    menu_torneio,
-                )  # ajuste o import se necessário
+                from src.interface.menu_torneio import menu_torneio
 
                 # Chama o menu do torneio direto!
-                menu_torneio(torneio, jogador, nome_save)
+                menu_torneio(
+                    jogador,
+                    nome_save,
+                    torneio=torneio,
+                    salvar_automaticamente=salvar_automaticamente,
+                )
 
                 break
             else:

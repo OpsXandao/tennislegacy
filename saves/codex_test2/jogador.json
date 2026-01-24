@@ -1,0 +1,23 @@
+{
+  "nome": "Codex Player",
+  "idade": 25,
+  "nacionalidade": "[BR] Brasil",
+  "xp": 0,
+  "nivel": 1,
+  "semana": 2,
+  "energia": 100,
+  "ritmo_jogo": 50,
+  "moral": 70,
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 70,
+    "forehand": 70,
+    "backhand": 70,
+    "topspin": 70,
+    "voleio": 70,
+    "slice": 70,
+    "movimento": 70,
+    "lob": 70,
+    "winner": 70
+  }
+}

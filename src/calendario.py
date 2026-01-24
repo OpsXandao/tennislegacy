@@ -1,11 +1,8 @@
-import json
-import os
+from src.dados import carregar_calendario, carregar_estado_torneio
 
 
 def obter_torneios_da_semana(semana):
-    caminho = os.path.join(os.path.dirname(__file__), "../db/calendario.json")
-    with open(caminho, encoding="utf-8") as f:
-        calendario = json.load(f)
+    calendario = carregar_calendario()
     return calendario.get(str(semana), [])
 
 
@@ -22,9 +19,9 @@ def distribuir_premio(total, porcentagem):
 
 
 def obter_info_torneio_e_fase(nome_save):
-    caminho = os.path.join("saves", nome_save, "torneio_atp.json")
-    with open(caminho, encoding="utf-8") as f:
-        estado = json.load(f)
+    estado = carregar_estado_torneio(nome_save)
+    if not estado:
+        return "Nenhum torneio em andamento", "sem_torneio"
 
     nome_torneio = estado.get("torneio", "Torneio Desconhecido")
     fase = estado.get("fase_atual", "fase_desconhecida")

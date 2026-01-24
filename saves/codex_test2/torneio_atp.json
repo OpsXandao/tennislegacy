@@ -1,0 +1,331 @@
+{
+  "semana": 2,
+  "torneio": "ASB Classic",
+  "fase_atual": "qualy_1",
+  "jogador": "Codex Player",
+  "jogador_vivo": true,
+  "rodadas": {
+    "qualy_1": [
+      [
+        {
+          "nome": "Kei Nishikori",
+          "nacionalidade": "[JP] Japão",
+          "idade": 35,
+          "overall": 73,
+          "pontos": 928,
+          "atributos": {
+            "saque": 67,
+            "forehand": 77,
+            "backhand": 73,
+            "topspin": 71,
+            "voleio": 72,
+            "slice": 77,
+            "movimento": 76,
+            "lob": 71,
+            "winner": 75
+          },
+          "id": 62
+        },
+        {
+          "nome": "Matteo Arnaldi",
+          "nacionalidade": "[IT] Itália",
+          "idade": 24,
+          "overall": 80,
+          "pontos": 1365,
+          "atributos": {
+            "saque": 82,
+            "forehand": 80,
+            "backhand": 78,
+            "topspin": 82,
+            "voleio": 76,
+            "slice": 83,
+            "movimento": 81,
+            "lob": 78,
+            "winner": 81
+          },
+          "id": 39
+        }
+      ],
+      [
+        {
+          "nome": "Sebastian Baez",
+          "nacionalidade": "[AR] Argentina",
+          "idade": 24,
+          "overall": 81,
+          "pontos": 1450,
+          "atributos": {
+            "saque": 76,
+            "forehand": 80,
+            "backhand": 82,
+            "topspin": 81,
+            "voleio": 79,
+            "slice": 81,
+            "movimento": 85,
+            "lob": 84,
+            "winner": 80
+          },
+          "id": 36
+        },
+        {
+          "nome": "Roberto Carballes Baena",
+          "nacionalidade": "[ES] Espanha",
+          "idade": 32,
+          "overall": 72,
+          "pontos": 926,
+          "atributos": {
+            "saque": 68,
+            "forehand": 73,
+            "backhand": 75,
+            "topspin": 73,
+            "voleio": 75,
+            "slice": 70,
+            "movimento": 74,
+            "lob": 71,
+            "winner": 73
+          },
+          "id": 63
+        }
+      ],
+      [
+        {
+          "nome": "Jordan Thompson",
+          "nacionalidade": "[AU] Austrália",
+          "idade": 31,
+          "overall": 79,
+          "pontos": 1375,
+          "atributos": {
+            "saque": 80,
+            "forehand": 78,
+            "backhand": 80,
+            "topspin": 79,
+            "voleio": 79,
+            "slice": 81,
+            "movimento": 80,
+            "lob": 72,
+            "winner": 83
+          },
+          "id": 38
+        },
+        {
+          "nome": "Mattia Bellucci",
+          "nacionalidade": "[IT] Itália",
+          "idade": 23,
+          "overall": 72,
+          "pontos": 891,
+          "atributos": {
+            "saque": 73,
+            "forehand": 69,
+            "backhand": 71,
+            "topspin": 72,
+            "voleio": 71,
+            "slice": 70,
+            "movimento": 72,
+            "lob": 73,
+            "winner": 75
+          },
+          "id": 68
+        }
+      ],
+      [
+        {
+          "nome": "Aleksandar Kovacevic",
+          "nacionalidade": "[US] USA",
+          "idade": 26,
+          "overall": 70,
+          "pontos": 787,
+          "atributos": {
+            "saque": 71,
+            "forehand": 73,
+            "backhand": 71,
+            "topspin": 70,
+            "voleio": 70,
+            "slice": 64,
+            "movimento": 68,
+            "lob": 71,
+            "winner": 73
+          },
+          "id": 80
+        },
+        {
+          "nome": "Nuno Borges",
+          "nacionalidade": "[PT] Portugal",
+          "idade": 28,
+          "overall": 78,
+          "pontos": 1270,
+          "atributos": {
+            "saque": 77,
+            "forehand": 77,
+            "backhand": 79,
+            "topspin": 81,
+            "voleio": 78,
+            "slice": 76,
+            "movimento": 80,
+            "lob": 75,
+            "winner": 76
+          },
+          "id": 41
+        }
+      ],
+      [
+        {
+          "nome": "Alexandre Muller",
+          "nacionalidade": "[FR] França",
+          "idade": 28,
+          "overall": 78,
+          "pontos": 1313,
+          "atributos": {
+            "saque": 74,
+            "forehand": 78,
+            "backhand": 81,
+            "topspin": 80,
+            "voleio": 78,
+            "slice": 78,
+            "movimento": 81,
+            "lob": 78,
+            "winner": 76
+          },
+          "id": 40
+        },
+        {
+          "nome": "Luciano Darderi",
+          "nacionalidade": "[IT] Itália",
+          "idade": 23,
+          "overall": 76,
+          "pontos": 1159,
+          "atributos": {
+            "saque": 77,
+            "forehand": 77,
+            "backhand": 75,
+            "topspin": 80,
+            "voleio": 76,
+            "slice": 72,
+            "movimento": 75,
+            "lob": 75,
+            "winner": 76
+          },
+          "id": 45
+        }
+      ],
+      [
+        {
+          "nome": "Jacob Fearnley",
+          "nacionalidade": "[GB] Grã-Bretanha",
+          "idade": 23,
+          "overall": 74,
+          "pontos": 976,
+          "atributos": {
+            "saque": 76,
+            "forehand": 73,
+            "backhand": 75,
+            "topspin": 73,
+            "voleio": 74,
+            "slice": 73,
+            "movimento": 77,
+            "lob": 73,
+            "winner": 76
+          },
+          "id": 54
+        },
+        {
+          "nome": "Yoshihito Nishioka",
+          "nacionalidade": "[JP] Japão",
+          "idade": 29,
+          "overall": 72,
+          "pontos": 813,
+          "atributos": {
+            "saque": 67,
+            "forehand": 75,
+            "backhand": 75,
+            "topspin": 69,
+            "voleio": 74,
+            "slice": 73,
+            "movimento": 73,
+            "lob": 69,
+            "winner": 73
+          },
+          "id": 75
+        }
+      ],
+      [
+        {
+          "nome": "Alejandro Tabilo",
+          "nacionalidade": "[CL] Chile",
+          "idade": 27,
+          "overall": 73,
+          "pontos": 940,
+          "atributos": {
+            "saque": 76,
+            "forehand": 74,
+            "backhand": 71,
+            "topspin": 76,
+            "voleio": 76,
+            "slice": 68,
+            "movimento": 72,
+            "lob": 73,
+            "winner": 70
+          },
+          "id": 61
+        },
+        {
+          "nome": "Hamad Medjedovic",
+          "nacionalidade": "[RS] Sérvia",
+          "idade": 21,
+          "overall": 73,
+          "pontos": 811,
+          "atributos": {
+            "saque": 71,
+            "forehand": 74,
+            "backhand": 75,
+            "topspin": 71,
+            "voleio": 71,
+            "slice": 70,
+            "movimento": 75,
+            "lob": 74,
+            "winner": 74
+          },
+          "id": 77
+        }
+      ],
+      [
+        {
+          "nome": "David Goffin",
+          "nacionalidade": "[BE] Bélgica",
+          "idade": 34,
+          "overall": 78,
+          "pontos": 1118,
+          "atributos": {
+            "saque": 70,
+            "forehand": 78,
+            "backhand": 78,
+            "topspin": 81,
+            "voleio": 81,
+            "slice": 80,
+            "movimento": 81,
+            "lob": 80,
+            "winner": 75
+          },
+          "id": 47
+        },
+        {
+          "nome": "Codex Player",
+          "nacionalidade": "[BR] Brasil"
+        }
+      ]
+    ],
+    "qualy_2": [],
+    "pre_oitavas": [],
+    "oitavas": [],
+    "quartas": [],
+    "semifinal": [],
+    "final": []
+  },
+  "resultados": {
+    "qualy_1": [],
+    "qualy_2": [],
+    "pre_oitavas": [],
+    "oitavas": [],
+    "quartas": [],
+    "semifinal": [],
+    "final": []
+  }
+}

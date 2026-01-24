@@ -1,6 +1,14 @@
-import random, os, json
-from jogador import normalizar_nome
-import jogar_partida  # no topo do arquivo
+import json
+import random
+
+from src.dados import (
+    carregar_estado_torneio,
+    get_caminho_ranking_save,
+    get_caminho_torneio_save,
+)
+from src.jogador import Jogador, normalizar_nome
+from src.jogar_partida import jogar_partida
+from src.ranking import SistemaRanking
 
 
 class TorneioATP250:
@@ -12,7 +20,7 @@ class TorneioATP250:
         self.jogador_nome = jogador_nome
         self.jogador_nacionalidade = jogador_nacionalidade
         self.ranking = ranking
-        self.caminho_json = os.path.join("saves", self.nome_save, "torneio_atp.json")
+        self.caminho_json = get_caminho_torneio_save(self.nome_save)
 
     def garantir_dados_completos(self, jogador):
         if isinstance(jogador, dict) and "atributos" in jogador:
@@ -24,8 +32,9 @@ class TorneioATP250:
         return {"nome": nome, "nacionalidade": "??"}
 
     def _carregar_estado(self):
-        if not os.path.exists(self.caminho_json):
-            # Cria um estado vazio/padrão
+        estado = carregar_estado_torneio(self.nome_save)
+        if estado is None:
+            # Cria um estado vazio/padrão se o arquivo não existir
             estado = {
                 "torneio": "N/A",
                 "semana": 1,
@@ -36,9 +45,7 @@ class TorneioATP250:
                 "jogador_vivo": True,
             }
             self._salvar_estado(estado)
-            return estado
-        with open(self.caminho_json, "r", encoding="utf-8") as f:
-            return json.load(f)
+        return estado
 
     def _salvar_estado(self, estado):
         with open(self.caminho_json, "w", encoding="utf-8") as f:
@@ -50,14 +57,21 @@ class TorneioATP250:
 
             nome_jogador = self.jogador_nome.strip()
             nome_jogador_lower = nome_jogador.lower()
-            jogadores_31_80 = [
-                j
-                for j in todos_jogadores
-                if 31 <= self.ranking.obter_posicao(j["nome"]) <= 80
-            ]
-            jogadores_81_plus = [
-                j for j in todos_jogadores if self.ranking.obter_posicao(j["nome"]) > 80
-            ]
+
+            def posicao_valida(nome):
+                pos = self.ranking.obter_posicao(nome)
+                return pos if isinstance(pos, int) else None
+
+            jogadores_31_80 = []
+            jogadores_81_plus = []
+            for j in todos_jogadores:
+                pos = posicao_valida(j["nome"])
+                if pos is None:
+                    continue
+                if 31 <= pos <= 80:
+                    jogadores_31_80.append(j)
+                elif pos > 80:
+                    jogadores_81_plus.append(j)
 
             random.shuffle(jogadores_31_80)
             chave_principal = jogadores_31_80[:28]
@@ -77,12 +91,12 @@ class TorneioATP250:
                 self.ranking.salvar_ranking()
 
             # Garante que o jogador principal esteja incluído no qualifying
-            if nome_jogador not in [j["nome"].lower() for j in restantes_para_qualy]:
+            if nome_jogador_lower not in [j["nome"].lower() for j in restantes_para_qualy]:
                 restantes_para_qualy.append(jogador_principal)
 
             # 🔁 Garante prioridade para o jogador
             restantes_para_qualy = [
-                j for j in restantes_para_qualy if j["nome"].lower() != nome_jogador
+                j for j in restantes_para_qualy if j["nome"].lower() != nome_jogador_lower
             ]
             restantes_para_qualy.insert(0, jogador_principal)
 
@@ -116,8 +130,6 @@ class TorneioATP250:
             print(f"❌ Erro ao escolher participantes: {e}")
             return [], []
 
-    def _criar_caminho_torneio(self):
-        return os.path.join("saves", self.nome_save, "torneio_atp.json")
 
     def jogar_qualy(self, jogadores_qualy):
         if len(jogadores_qualy) < 16:
@@ -166,7 +178,7 @@ class TorneioATP250:
             },
         }
 
-        caminho = os.path.join("saves", self.nome_save, "torneio_atp.json")
+        caminho = get_caminho_torneio_save(self.nome_save)
         with open(caminho, "w", encoding="utf-8") as f:
             json.dump(estado, f, indent=2, ensure_ascii=False)
 
@@ -332,9 +344,8 @@ class TorneioATP250:
             confronto_a, confronto_b = confrontos[0]
             confrontos[0] = (jogador_dict, confronto_b)
 
-        caminho = os.path.join("saves", self.nome_save, "torneio_atp.json")
-        with open(caminho, "r", encoding="utf-8") as f:
-            estado = json.load(f)
+        caminho = get_caminho_torneio_save(self.nome_save)
+        estado = carregar_estado_torneio(self.nome_save)
 
         estado["fase_atual"] = "pre_oitavas"
         estado["rodadas"]["pre_oitavas"] = confrontos
@@ -362,12 +373,11 @@ class TorneioATP250:
         )
 
     def remover_confronto_do_jogador(self, fase, nome_jogador):
-        if not os.path.exists(self.caminho_json):
+        estado = carregar_estado_torneio(self.nome_save)
+        if not estado:
             print("⚠️ Arquivo de torneio não encontrado.")
             return
 
-        with open(self.caminho_json, "r", encoding="utf-8") as f:
-            estado = json.load(f)
 
         confrontos_originais = estado.get("rodadas", {}).get(fase, [])
         confrontos_filtrados = []
@@ -531,7 +541,7 @@ class TorneioATP250:
         estado = self._carregar_estado()
         return estado.get("jogador_vivo", True)
 
-    def exibir_resultados(self, estado):
+    def exibir_resultados(self):
         estado = self._carregar_estado()
         fases_ordenadas = [
             "qualy_1",
@@ -621,8 +631,6 @@ class TorneioATP250:
         return fases.index(fase) if fase in fases else -1
 
     def normalizar_confrontos(self, confrontos_raw):
-        from jogador import Jogador  # evita import circular
-
         confrontos_obj = []
         for a, b in confrontos_raw:
             a_nome = a["nome"] if isinstance(a, dict) else a
@@ -646,9 +654,8 @@ class TorneioATP250:
             else:
                 return {"nome": str(j), "nacionalidade": "??"}
 
-        caminho = os.path.join("saves", self.nome_save, "torneio_atp.json")
-        with open(caminho, "r", encoding="utf-8") as f:
-            estado = json.load(f)
+        caminho = get_caminho_torneio_save(self.nome_save)
+        estado = carregar_estado_torneio(self.nome_save)
 
         fase = estado["fase_atual"]
         confrontos = estado["rodadas"].get(fase, [])
@@ -729,7 +736,7 @@ class TorneioATP250:
             }
 
         # Agora sim, chama a partida!
-        vencedor_nome, placar_final = jogar_partida.jogar_partida(
+        vencedor_nome, placar_final = jogar_partida(
             jogador, adversario, self.nome_save
         )
         vencedor = {"nome": vencedor_nome}
@@ -742,8 +749,6 @@ class TorneioATP250:
         jogador_ativo = self.jogador_ainda_ativo()
 
         # Avança fase e salva
-        from src.torneio import avancar_fase, salvar_torneio
-
         avancar_fase(self)
         salvar_torneio(self)
 
@@ -771,9 +776,7 @@ class TorneioATP250:
 
 def criar_torneio(torneio_escolhido, jogador, nome_save, semana):
     # Cria instância do ranking para ser usada pelo torneio
-    from src.ranking import SistemaRanking
-
-    ranking_path = os.path.join("saves", nome_save, "ranking_atp.json")
+    ranking_path = get_caminho_ranking_save(nome_save)
     ranking = SistemaRanking(ranking_path)
 
     instancia = TorneioATP250(
@@ -793,21 +796,19 @@ def salvar_torneio(instancia):
     """
     Salva o estado atual do torneio associado à instância no arquivo correto do save.
     """
-    caminho_json = os.path.join("saves", instancia.nome_save, "torneio_atp.json")
+    caminho_json = get_caminho_torneio_save(instancia.nome_save)
     estado = instancia._carregar_estado()
     with open(caminho_json, "w", encoding="utf-8") as f:
         json.dump(estado, f, indent=2, ensure_ascii=False)
 
 
 def carregar_torneio(nome_save):
-    from src.ranking import SistemaRanking
-
-    ranking_path = os.path.join("saves", nome_save, "ranking_atp.json")
+    ranking_path = get_caminho_ranking_save(nome_save)
     ranking = SistemaRanking(ranking_path)
-    caminho_json = os.path.join("saves", nome_save, "torneio_atp.json")
 
-    with open(caminho_json, "r", encoding="utf-8") as f:
-        estado = json.load(f)
+    estado = carregar_estado_torneio(nome_save)
+    if not estado:
+        return None  # Ou levantar um erro
 
     jogador_nome = estado["jogador"]
     # Busca nacionalidade no ranking pelo nome do jogador:

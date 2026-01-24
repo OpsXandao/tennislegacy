@@ -1,14 +1,17 @@
-import os
 import json
-from jogador import normalizar_nome
-import jogador
+import os
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "saves")
-DB_DIR = os.path.join(os.path.dirname(__file__), "..", "db")
+from src.dados import (
+    SAVES_DIR,
+    get_caminho_jogador_save,
+    get_caminho_ranking_save,
+    get_caminho_torneio_save,
+)
+from src.jogador import normalizar_nome
 
 
 def criar_pasta_save(nome_save):
-    caminho = os.path.join(BASE_DIR, nome_save)
+    caminho = os.path.join(SAVES_DIR, nome_save)
     os.makedirs(caminho, exist_ok=True)
     return caminho
 
@@ -23,13 +26,13 @@ def salvar_jogo(nome_save, jogador_inst):
         else:
             raise ValueError("Tipo de jogador não suportado!")
 
-        caminho = criar_pasta_save(nome_save)
-        jogador_path = os.path.join(caminho, "jogador.json")
+        criar_pasta_save(nome_save)
+        jogador_path = get_caminho_jogador_save(nome_save)
         with open(jogador_path, "w", encoding="utf-8") as f:
             json.dump(dados, f, indent=2, ensure_ascii=False)
 
         # Atualizar ranking_atp.json (opcional)
-        ranking_path = os.path.join(caminho, "ranking_atp.json")
+        ranking_path = get_caminho_ranking_save(nome_save)
         if os.path.exists(ranking_path):
             with open(ranking_path, encoding="utf-8") as f:
                 ranking = json.load(f)
@@ -65,7 +68,7 @@ def salvar_estado_atual_torneio(
     nome_save, fase_atual, confrontos, resultados, jogador_vivo=True
 ):
     try:
-        caminho = os.path.join(BASE_DIR, nome_save, "torneio_atp.json")
+        caminho = get_caminho_torneio_save(nome_save)
 
         if os.path.exists(caminho):
             with open(caminho, "r", encoding="utf-8") as f:

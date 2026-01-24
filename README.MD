@@ -37,3 +37,7 @@ Menu Torneio
 |
 V
 Menu Temporada (semana seguinte)
+
+## Documentacao
+- `docs/fluxo_principal.md`: fluxo principal do jogo
+- `docs/saves.md`: estrutura dos arquivos de save

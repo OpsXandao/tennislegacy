@@ -1,5 +1,13 @@
-import os
 import json
+import os
+
+from src.dados import (
+    carregar_ranking,
+    get_caminho_jogador_save,
+    get_caminho_ranking_global,
+    get_caminho_ranking_save,
+)
+from src.io_utils import safe_input
 
 
 class Jogador:
@@ -9,6 +17,7 @@ class Jogador:
         self.xp = 0
         self.nacionalidade = nacionalidade
         self.nivel = 1
+        self.semana = 1
         self.energia = 100
         self.ritmo_jogo = 50
         self.moral = 70
@@ -52,6 +61,7 @@ class Jogador:
             "nacionalidade": self.nacionalidade,
             "xp": self.xp,
             "nivel": self.nivel,
+            "semana": self.semana,
             "energia": self.energia,
             "ritmo_jogo": self.ritmo_jogo,
             "moral": self.moral,
@@ -75,16 +85,10 @@ def normalizar_nome(obj):
     return nome.lower()
 
 
-def adicionar_jogador_ao_ranking(jogador_instancia):
-    ranking_path = os.path.join(
-        "saves", jogador_instancia.save_name, "ranking_atp.json"
-    )
 
-    if os.path.exists(ranking_path):
-        with open(ranking_path, "r", encoding="utf-8") as f:
-            ranking = json.load(f)
-    else:
-        ranking = []
+def adicionar_jogador_ao_ranking(jogador_instancia):
+    ranking_path = get_caminho_ranking_save(jogador_instancia.save_name)
+    ranking = carregar_ranking(ranking_path)
 
     nomes_existentes = [normalizar_nome(j) for j in ranking]
 
@@ -105,12 +109,10 @@ def adicionar_jogador_ao_ranking(jogador_instancia):
 
 
 def carregar_jogador(nome_save):
-    from jogador import reidratar_jogador  # ← garante que a função será usada
-
-    caminho = os.path.join("saves", nome_save, "jogador.json")
+    caminho = get_caminho_jogador_save(nome_save)
     if not os.path.exists(caminho):
         print("❌ Save não encontrado.")
-        exit()
+        raise SystemExit(1)
 
     with open(caminho, "r", encoding="utf-8") as f:
         dados = json.load(f)
@@ -118,80 +120,66 @@ def carregar_jogador(nome_save):
     return reidratar_jogador(dados, nome_save)
 
 
-def criar_jogador(nome_save):
-    from save import criar_pasta_save, salvar_jogo
-    from dados import escolher_nacionalidade
-    import builtins
-    from shutil import copyfile
+def _obter_dados_iniciais_jogador():
+    """Lida com a coleta de nome, idade e nacionalidade do jogador."""
+    from src.interface.menu_jogador import escolher_nacionalidade_menu
 
     print("🎾 Criação do Jogador")
-    nome = input("Nome: ")
+    nome = safe_input("Nome: ")
     while True:
-        idade_str = input("Idade: ").strip()
+        idade_str = safe_input("Idade: ").strip()
         if idade_str.isdigit():
             idade = int(idade_str)
             break
         print("❌ Idade inválida. Digite apenas números inteiros.")
 
-    nacionalidade = escolher_nacionalidade()
+    nacionalidade = escolher_nacionalidade_menu()
+    return nome, idade, nacionalidade
 
+
+def _obter_tipo_jogador():
+    """Lida com a escolha do tipo de jogador e retorna os atributos correspondentes."""
     print("\n📌 Escolha o tipo de jogador:")
     print("1. Técnico — mais controle e precisão")
     print("2. Físico — mais força e movimentação")
     print("3. Equilibrado — tudo balanceado")
-    tipo = input("Escolha (1, 2 ou 3): ").strip()
+    tipo = safe_input("Escolha (1, 2 ou 3): ").strip()
 
     atributos_por_tipo = {
-        "1": {
-            "saque": 60,
-            "forehand": 75,
-            "backhand": 75,
-            "topspin": 72,
-            "voleio": 65,
-            "slice": 72,
-            "movimento": 68,
-            "lob": 74,
-            "winner": 65,
-        },
-        "2": {
-            "saque": 75,
-            "forehand": 72,
-            "backhand": 70,
-            "topspin": 68,
-            "voleio": 60,
-            "slice": 62,
-            "movimento": 78,
-            "lob": 60,
-            "winner": 75,
-        },
-        "3": {
-            "saque": 70,
-            "forehand": 70,
-            "backhand": 70,
-            "topspin": 70,
-            "voleio": 70,
-            "slice": 70,
-            "movimento": 70,
-            "lob": 70,
-            "winner": 70,
-        },
+        "1": {"saque": 60, "forehand": 75, "backhand": 75, "topspin": 72, "voleio": 65, "slice": 72, "movimento": 68, "lob": 74, "winner": 65},
+        "2": {"saque": 75, "forehand": 72, "backhand": 70, "topspin": 68, "voleio": 60, "slice": 62, "movimento": 78, "lob": 60, "winner": 75},
+        "3": {"saque": 70, "forehand": 70, "backhand": 70, "topspin": 70, "voleio": 70, "slice": 70, "movimento": 70, "lob": 70, "winner": 70},
     }
+    return atributos_por_tipo.get(tipo, atributos_por_tipo["3"])
 
-    atributos = atributos_por_tipo.get(tipo, atributos_por_tipo["3"])
+
+def _inicializar_arquivos_save(nome_save):
+    """Cria a pasta do save e copia o ranking global se necessário."""
+    from src.save import criar_pasta_save
+    from shutil import copyfile
+
+    criar_pasta_save(nome_save)
+
+    ranking_origem = get_caminho_ranking_global()
+    ranking_destino = get_caminho_ranking_save(nome_save)
+    if not os.path.exists(ranking_destino):
+        copyfile(ranking_origem, ranking_destino)
+
+
+def criar_jogador(nome_save):
+    """Cria uma nova instância de jogador, inicializa os arquivos e salva o jogo."""
+    import builtins
+    from src.save import salvar_jogo
+
+    nome, idade, nacionalidade = _obter_dados_iniciais_jogador()
+    atributos = _obter_tipo_jogador()
 
     jogador_instancia = Jogador(nome, idade, nacionalidade, save_name=nome_save)
     jogador_instancia.atributos = atributos
     builtins.jogador = jogador_instancia
 
-    criar_pasta_save(nome_save)
-
-    ranking_origem = os.path.join("db", "ranking_atp.json")
-    ranking_destino = os.path.join("saves", nome_save, "ranking_atp.json")
-    if not os.path.exists(ranking_destino):
-        copyfile(ranking_origem, ranking_destino)
-
+    _inicializar_arquivos_save(nome_save)
     salvar_jogo(nome_save, jogador_instancia)
-
     adicionar_jogador_ao_ranking(jogador_instancia)
 
     return jogador_instancia
@@ -206,6 +194,7 @@ def reidratar_jogador(dados, nome_save):
     )
     jogador.xp = dados["xp"]
     jogador.nivel = dados["nivel"]
+    jogador.semana = dados.get("semana", 1)
     jogador.energia = dados["energia"]
     jogador.ritmo_jogo = dados["ritmo_jogo"]
     jogador.moral = dados["moral"]

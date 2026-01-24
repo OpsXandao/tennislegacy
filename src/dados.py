@@ -1,245 +1,59 @@
-nacionalidades = {
-    "África": [
-        "[AO] Angola",
-        "[DZ] Argélia",
-        "[BJ] Benin",
-        "[BW] Botsuana",
-        "[BF] Burquina Faso",
-        "[BI] Burúndi",
-        "[CV] Cabo Verde",
-        "[CM] Camarões",
-        "[TD] Chade",
-        "[KM] Comores",
-        "[CG] Congo",
-        "[CI] Costa do Marfim",
-        "[DJ] Djibuti",
-        "[EG] Egito",
-        "[ER] Eritreia",
-        "[SZ] Eswatíni",
-        "[ET] Etiópia",
-        "[GA] Gabão",
-        "[GM] Gâmbia",
-        "[GH] Gana",
-        "[GN] Guiné",
-        "[GW] Guiné-Bissau",
-        "[GQ] Guiné Equatorial",
-        "[LS] Lesoto",
-        "[LR] Libéria",
-        "[LY] Líbia",
-        "[MG] Madagáscar",
-        "[MW] Maláui",
-        "[ML] Mali",
-        "[MA] Marrocos",
-        "[MU] Maurício",
-        "[MR] Mauritânia",
-        "[MZ] Moçambique",
-        "[NA] Namíbia",
-        "[NE] Níger",
-        "[NG] Nigéria",
-        "[KE] Quênia",
-        "[CF] República Centro-Africana",
-        "[CD] República Democrática do Congo",
-        "[RW] Ruanda",
-        "[ST] São Tomé e Príncipe",
-        "[SN] Senegal",
-        "[SL] Serra Leoa",
-        "[SC] Seicheles",
-        "[SO] Somália",
-        "[SD] Sudão",
-        "[SS] Sudão do Sul",
-        "[TZ] Tanzânia",
-        "[TG] Togo",
-        "[TN] Tunísia",
-        "[UG] Uganda",
-        "[ZM] Zâmbia",
-        "[ZW] Zimbábue",
-    ],
-    "América do Norte/ Central": [
-        "[AG] Antígua e Barbuda",
-        "[BS] Bahamas",
-        "[BB] Barbados",
-        "[BZ] Belize",
-        "[CA] Canadá",
-        "[CR] Costa Rica",
-        "[CU] Cuba",
-        "[DM] Dominica",
-        "[SV] El Salvador",
-        "[US] Estados Unidos",
-        "[GD] Granada",
-        "[GT] Guatemala",
-        "[HT] Haiti",
-        "[HN] Honduras",
-        "[JM] Jamaica",
-        "[MX] México",
-        "[NI] Nicarágua",
-        "[PA] Panamá",
-        "[DO] República Dominicana",
-        "[LC] Santa Lúcia",
-        "[KN] São Cristóvão e Neves",
-        "[VC] São Vicente e Granadinas",
-        "[TT] Trinidad e Tobago",
-    ],
-    "América do Sul": [
-        "[AR] Argentina",
-        "[BO] Bolívia",
-        "[BR] Brasil",
-        "[CL] Chile",
-        "[CO] Colômbia",
-        "[EC] Equador",
-        "[GY] Guiana",
-        "[PY] Paraguai",
-        "[PE] Peru",
-        "[SR] Suriname",
-        "[UY] Uruguai",
-        "[VE] Venezuela",
-    ],
-    "Europa": [
-        "[AT] Áustria",
-        "[AL] Albânia",
-        "[DE] Alemanha",
-        "[AD] Andorra",
-        "[AM] Armênia",
-        "[AZ] Azerbaijão",
-        "[BY] Bielorrússia",
-        "[BG] Bulgária",
-        "[BE] Bélgica",
-        "[BA] Bósnia e Herzegovina",
-        "[KZ] Cazaquistão",
-        "[CY] Chipre",
-        "[HR] Croácia",
-        "[DK] Dinamarca",
-        "[SK] Eslováquia",
-        "[SI] Eslovênia",
-        "[ES] Espanha",
-        "[EE] Estônia",
-        "[FI] Finlândia",
-        "[FR] França",
-        "[GE] Geórgia",
-        "[GR] Grécia",
-        "[HU] Hungria",
-        "[IE] Irlanda",
-        "[IS] Islândia",
-        "[IT] Itália",
-        "[XK] Kosovo",
-        "[LV] Letônia",
-        "[LI] Liechtenstein",
-        "[LT] Lituânia",
-        "[LU] Luxemburgo",
-        "[MT] Malta",
-        "[MD] Moldávia",
-        "[ME] Montenegro",
-        "[MC] Mônaco",
-        "[NO] Noruega",
-        "[NL] Países Baixos",
-        "[PL] Polônia",
-        "[PT] Portugal",
-        "[GB] Reino Unido",
-        "[RO] Romênia",
-        "[RU] Rússia",
-        "[SM] San Marino",
-        "[SE] Suécia",
-        "[CH] Suíça",
-        "[RS] Sérvia",
-        "[TR] Turquia",
-        "[UA] Ucrânia",
-        "[VA] Vaticano",
-    ],
-    "Ásia": [
-        "[AF] Afeganistão",
-        "[AM] Armênia",
-        "[SA] Arábia Saudita",
-        "[AZ] Azerbaijão",
-        "[BH] Bahrein",
-        "[BD] Bangladesh",
-        "[BN] Brunei",
-        "[BT] Butão",
-        "[KH] Camboja",
-        "[QA] Catar",
-        "[KZ] Cazaquistão",
-        "[CN] China",
-        "[CY] Chipre",
-        "[SG] Cingapura",
-        "[KP] Coreia do Norte",
-        "[KR] Coreia do Sul",
-        "[AE] Emirados Árabes Unidos",
-        "[PH] Filipinas",
-        "[GE] Geórgia",
-        "[ID] Indonésia",
-        "[IQ] Iraque",
-        "[IN] Índia",
-        "[IR] Irã",
-        "[IL] Israel",
-        "[YE] Iémen",
-        "[JP] Japão",
-        "[JO] Jordânia",
-        "[KW] Kuwait",
-        "[LA] Laos",
-        "[LB] Líbano",
-        "[MV] Maldivas",
-        "[MY] Malásia",
-        "[MM] Mianmar",
-        "[MN] Mongólia",
-        "[NP] Nepal",
-        "[OM] Omã",
-        "[PS] Palestina",
-        "[PK] Paquistão",
-        "[KG] Quirguistão",
-        "[LK] Sri Lanka",
-        "[SY] Síria",
-        "[TH] Tailândia",
-        "[TJ] Tajiquistão",
-        "[TL] Timor-Leste",
-        "[TM] Turcomenistão",
-        "[TR] Turquia",
-        "[UZ] Usbequistão",
-        "[VN] Vietnã",
-    ],
-    "Oceania": [
-        "[AU] Austrália",
-        "[FJ] Fiji",
-        "[MH] Ilhas Marshall",
-        "[SB] Ilhas Salomão",
-        "[KI] Kiribati",
-        "[FM] Micronésia",
-        "[NR] Nauru",
-        "[NZ] Nova Zelândia",
-        "[PW] Palau",
-        "[PG] Papua-Nova Guiné",
-        "[WS] Samoa",
-        "[TO] Tonga",
-        "[TV] Tuvalu",
-        "[VU] Vanuatu",
-    ],
-}
+import json
+import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DB_DIR = os.path.join(BASE_DIR, "db")
+SAVES_DIR = os.path.join(BASE_DIR, "saves")
 
-def escolher_nacionalidade():
-    print("\n🌍 Escolha um continente:")
-    continentes = list(nacionalidades.keys())
+# --- Nacionalidades ---
 
-    for i, cont in enumerate(continentes, 1):
-        print(f"{i}. {cont}")
+def carregar_nacionalidades():
+    """Carrega o dicionário de nacionalidades do arquivo JSON."""
+    caminho_para_arquivo = os.path.join(DB_DIR, "nacionalidades.json")
+    with open(caminho_para_arquivo, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
-    while True:
-        try:
-            opcao = int(input("Número do continente: ")) - 1
-            continente_escolhido = continentes[opcao]
-            break
-        except (ValueError, IndexError):
-            print("❌ Escolha inválida. Tente novamente.")
+# --- Caminhos (Paths) ---
 
-    print(f"\n🌎 Países em {continente_escolhido}:")
-    paises = nacionalidades[continente_escolhido]
+def get_caminho_ranking_save(nome_save):
+    """Retorna o caminho para o arquivo de ranking de um save específico."""
+    return os.path.join(SAVES_DIR, nome_save, "ranking_atp.json")
 
-    for i, pais in enumerate(paises, 1):
-        print(f"{i}. {pais}")
+def get_caminho_ranking_global():
+    """Retorna o caminho para o arquivo de ranking global."""
+    return os.path.join(DB_DIR, "ranking_atp.json")
 
-    while True:
-        try:
-            opc_pais = int(input("Número do país: ")) - 1
-            pais_escolhido = paises[opc_pais]
-            break
-        except (ValueError, IndexError):
-            print("❌ Escolha inválida. Tente novamente.")
+def get_caminho_calendario():
+    """Retorna o caminho para o arquivo de calendário."""
+    return os.path.join(DB_DIR, "calendario.json")
 
-    return pais_escolhido
+def get_caminho_jogador_save(nome_save):
+    """Retorna o caminho para o arquivo do jogador em um save específico."""
+    return os.path.join(SAVES_DIR, nome_save, "jogador.json")
+
+# --- Carregadores de Dados (Data Loaders) ---
+
+def carregar_ranking(caminho):
+    """Carrega um arquivo de ranking (JSON) de um caminho específico."""
+    if not os.path.exists(caminho):
+        return []  # Retorna uma lista vazia se o ranking não existir
+    with open(caminho, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def get_caminho_torneio_save(nome_save):
+    """Retorna o caminho para o arquivo de estado de um torneio de um save."""
+    return os.path.join(SAVES_DIR, nome_save, "torneio_atp.json")
+
+def carregar_estado_torneio(nome_save):
+    """Carrega o estado de um torneio de um save específico."""
+    caminho = get_caminho_torneio_save(nome_save)
+    if not os.path.exists(caminho):
+        return None  # Retorna None se o arquivo não existir
+    with open(caminho, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def carregar_calendario():
+    """Carrega os dados do calendário do arquivo JSON."""
+    caminho = get_caminho_calendario()
+    with open(caminho, 'r', encoding='utf-8') as f:
+        return json.load(f)

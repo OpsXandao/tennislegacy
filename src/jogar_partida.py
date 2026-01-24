@@ -1,5 +1,6 @@
-from jogador import normalizar_nome  # garantir no topo do arquivo
 import random
+
+from src.io_utils import safe_input
 
 
 def escolher_estrategia():
@@ -7,7 +8,7 @@ def escolher_estrategia():
     print("🧭 Direção de ataque:")
     print("1. Pelo meio")
     print("2. Pelas laterais")
-    direcao = input("Escolha (1 ou 2): ").strip()
+    direcao = safe_input("Escolha (1 ou 2): ").strip()
     if direcao not in {"1", "2"}:
         print("❌ Direção inválida. Usando 'meio'.")
         direcao = "1"
@@ -16,7 +17,7 @@ def escolher_estrategia():
     print("1. Atacar na rede")
     print("2. Atacar do fundo")
     print("3. Atacar pelo meio")
-    estilo = input("Escolha (1, 2 ou 3): ").strip()
+    estilo = safe_input("Escolha (1, 2 ou 3): ").strip()
     if estilo not in {"1", "2", "3"}:
         print("❌ Estilo inválido. Usando 'atacar do fundo'.")
         estilo = "2"
@@ -109,7 +110,7 @@ def jogar_partida(jogador, adversario, nome_save):
 
             if vencedor == "a":
                 print("❌ Você perdeu este game.")
-                escolha = input("Deseja manter a estratégia? (s/n): ").strip().lower()
+                escolha = safe_input("Deseja manter a estratégia? (s/n): ").strip().lower()
                 if escolha == "n":
                     estrategia = escolher_estrategia()
 
