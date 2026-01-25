@@ -1,5 +1,5 @@
 import json
-from src.dados import get_caminho_ranking_save, get_caminho_torneio_save
+from src.dados import get_caminho_ranking_save, get_caminho_torneio_save, get_caminho_ranking_global, carregar_ranking
 from src.calendario import carregar_temporada
 from src.ranking import SistemaRanking
 from src.jogador import normalizar_nome
@@ -137,6 +137,7 @@ def distribuir_pontos_torneio(nome_save):
                 pass # This happens if fase is not in fases_ordem, which shouldn't happen with dynamic list
 
     # Special handling for the champion (ensures 'campeao' phase is correctly assigned)
+    vencedor_final_name = ""
     if "final" in resultados and resultados["final"]:
         try:
             vencedor_final_dict = resultados["final"][0].get('vencedor', {})
@@ -157,6 +158,18 @@ def distribuir_pontos_torneio(nome_save):
         print(f"ℹ️ Nenhum ponto a ser distribuído para o torneio '{nome_torneio}'.")
         return
 
+    if vencedor_final_name:
+        campeao_record = ranking.buscar_jogador_por_nome(vencedor_final_name)
+        if campeao_record is not None:
+            campeao_record.setdefault("trofeus", []).append(
+                {
+                    "torneio": nome_torneio,
+                    "tipo": tournament_type,
+                    "semana": semana_atual,
+                    "ano": temporada.get("ano"),
+                }
+            )
+
     print(f"\n🏆 Pontuação do Torneio: {nome_torneio} ({tournament_type})")
     # Ordena para mostrar do maior para o menor
     for nome, pontos in sorted(pontos_distribuidos.items(), key=lambda item: item[1], reverse=True):
@@ -168,3 +181,46 @@ def distribuir_pontos_torneio(nome_save):
     ranking.ordenar()
     ranking.salvar_ranking()
     print("✅ Ranking atualizado com sucesso!")
+    # Garante migração dos pontos antigos para pontos_detalhados
+    semana_expiracao_base = (semana_atual + 51) % 52 + 1
+    for jogador in ranking.ranking:
+        pontos_atual = jogador.get("pontos", 0)
+        pontos_detalhados = jogador.get("pontos_detalhados", [])
+        if pontos_atual > 0 and not pontos_detalhados:
+            jogador["pontos_detalhados"] = [
+                {"pontos": pontos_atual, "semana_expiracao": semana_expiracao_base}
+            ]
+        jogador["pontos"] = sum(p.get("pontos", 0) for p in jogador.get("pontos_detalhados", []))
+
+    # Reparacao defensiva: restaura pontos-base iniciais no comeco da temporada
+    if semana_atual <= 10:
+        ranking_global = carregar_ranking(get_caminho_ranking_global())
+        base_por_id = {j.get("id"): j.get("pontos", 0) for j in ranking_global if isinstance(j, dict)}
+        base_por_nome = {normalizar_nome(j): j.get("pontos", 0) for j in ranking_global if isinstance(j, dict)}
+        for jogador in ranking.ranking:
+            if jogador.get("pontos_seed_base"):
+                continue
+            base_pontos = 0
+            if jogador.get("id") in base_por_id:
+                base_pontos = base_por_id.get(jogador.get("id"), 0)
+            else:
+                base_pontos = base_por_nome.get(normalizar_nome(jogador), 0)
+            if base_pontos <= 0:
+                continue
+
+            total_detalhado = sum(p.get("pontos", 0) for p in jogador.get("pontos_detalhados", []))
+            if total_detalhado >= base_pontos * 0.9:
+                continue
+
+            complemento = base_pontos - total_detalhado
+            if complemento > 0:
+                jogador.setdefault("pontos_detalhados", []).append(
+                    {
+                        "pontos": complemento,
+                        "semana_expiracao": semana_expiracao_base,
+                        "origem": "base",
+                    }
+                )
+                jogador["pontos_seed_base"] = True
+                jogador["pontos"] = sum(p.get("pontos", 0) for p in jogador.get("pontos_detalhados", []))
+    ranking.salvar_ranking()

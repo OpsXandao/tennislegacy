@@ -4,7 +4,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 88,
-    "pontos": 10380,
+    "pontos": 0,
     "atributos": {
       "saque": 90,
       "forehand": 96,
@@ -31,7 +31,7 @@
     "nacionalidade": "[ES] Espanha",
     "idade": 22,
     "overall": 88,
-    "pontos": 8850,
+    "pontos": 0,
     "atributos": {
       "saque": 89,
       "forehand": 96,
@@ -58,7 +58,7 @@
     "nacionalidade": "[DE] Alemanha",
     "idade": 28,
     "overall": 88,
-    "pontos": 7285,
+    "pontos": 0,
     "atributos": {
       "saque": 97,
       "forehand": 91,
@@ -85,7 +85,7 @@
     "nacionalidade": "[US] USA",
     "idade": 27,
     "overall": 87,
-    "pontos": 4625,
+    "pontos": 0,
     "atributos": {
       "saque": 95,
       "forehand": 94,
@@ -112,7 +112,7 @@
     "nacionalidade": "[GB] Grã-Bretanha",
     "idade": 23,
     "overall": 85,
-    "pontos": 4610,
+    "pontos": 0,
     "atributos": {
       "saque": 94,
       "forehand": 89,
@@ -139,7 +139,7 @@
     "nacionalidade": "[RS] Sérvia",
     "idade": 38,
     "overall": 93,
-    "pontos": 4080,
+    "pontos": 0,
     "atributos": {
       "saque": 100,
       "forehand": 94,
@@ -166,7 +166,7 @@
     "nacionalidade": "[NO] Noruega",
     "idade": 26,
     "overall": 86,
-    "pontos": 3905,
+    "pontos": 0,
     "atributos": {
       "saque": 92,
       "forehand": 88,
@@ -193,7 +193,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 85,
-    "pontos": 3860,
+    "pontos": 0,
     "atributos": {
       "saque": 85,
       "forehand": 88,
@@ -220,7 +220,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 26,
     "overall": 86,
-    "pontos": 3635,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 92,
@@ -247,7 +247,7 @@
     "nacionalidade": "[DK] Dinamarca",
     "idade": 22,
     "overall": 85,
-    "pontos": 3440,
+    "pontos": 0,
     "atributos": {
       "saque": 87,
       "forehand": 89,
@@ -274,7 +274,7 @@
     "nacionalidade": "[RU] Rússia",
     "idade": 29,
     "overall": 86,
-    "pontos": 3290,
+    "pontos": 0,
     "atributos": {
       "saque": 89,
       "forehand": 91,
@@ -301,7 +301,7 @@
     "nacionalidade": "[US] USA",
     "idade": 28,
     "overall": 83,
-    "pontos": 3210,
+    "pontos": 0,
     "atributos": {
       "saque": 89,
       "forehand": 88,
@@ -328,7 +328,7 @@
     "nacionalidade": "[US] USA",
     "idade": 22,
     "overall": 83,
-    "pontos": 2980,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 88,
@@ -355,7 +355,7 @@
     "nacionalidade": "[FR] França",
     "idade": 20,
     "overall": 83,
-    "pontos": 2845,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 88,
@@ -382,7 +382,7 @@
     "nacionalidade": "[US] USA",
     "idade": 27,
     "overall": 80,
-    "pontos": 2625,
+    "pontos": 0,
     "atributos": {
       "saque": 82,
       "forehand": 84,
@@ -409,7 +409,7 @@
     "nacionalidade": "[BG] Bulgária",
     "idade": 34,
     "overall": 83,
-    "pontos": 2595,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 88,
@@ -436,7 +436,7 @@
     "nacionalidade": "[RU] Rússia",
     "idade": 27,
     "overall": 84,
-    "pontos": 2540,
+    "pontos": 0,
     "atributos": {
       "saque": 88,
       "forehand": 90,
@@ -463,7 +463,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 26,
     "overall": 82,
-    "pontos": 2475,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 86,
@@ -490,7 +490,7 @@
     "nacionalidade": "[CZ] Czechia",
     "idade": 19,
     "overall": 80,
-    "pontos": 2272,
+    "pontos": 0,
     "atributos": {
       "saque": 84,
       "forehand": 86,
@@ -517,7 +517,7 @@
     "nacionalidade": "[GR] Grécia",
     "idade": 26,
     "overall": 85,
-    "pontos": 2270,
+    "pontos": 0,
     "atributos": {
       "saque": 88,
       "forehand": 89,
@@ -544,7 +544,7 @@
     "nacionalidade": "[CZ] Czechia",
     "idade": 24,
     "overall": 80,
-    "pontos": 2265,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 79,
@@ -571,7 +571,7 @@
     "nacionalidade": "[FR] França",
     "idade": 26,
     "overall": 79,
-    "pontos": 2155,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 86,
@@ -598,7 +598,7 @@
     "nacionalidade": "[US] USA",
     "idade": 24,
     "overall": 81,
-    "pontos": 2020,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 83,
@@ -625,7 +625,7 @@
     "nacionalidade": "[RU] Rússia",
     "idade": 29,
     "overall": 79,
-    "pontos": 1910,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 81,
@@ -652,7 +652,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 25,
     "overall": 78,
-    "pontos": 1900,
+    "pontos": 0,
     "atributos": {
       "saque": 85,
       "forehand": 82,
@@ -679,7 +679,7 @@
     "nacionalidade": "[ES] Espanha",
     "idade": 25,
     "overall": 79,
-    "pontos": 1730,
+    "pontos": 0,
     "atributos": {
       "saque": 79,
       "forehand": 80,
@@ -706,7 +706,7 @@
     "nacionalidade": "[CA] Canadá",
     "idade": 26,
     "overall": 81,
-    "pontos": 1726,
+    "pontos": 0,
     "atributos": {
       "saque": 85,
       "forehand": 82,
@@ -733,7 +733,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 29,
     "overall": 82,
-    "pontos": 1720,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 84,
@@ -760,7 +760,7 @@
     "nacionalidade": "[US] USA",
     "idade": 23,
     "overall": 79,
-    "pontos": 1690,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 84,
@@ -787,7 +787,7 @@
     "nacionalidade": "[CA] Canadá",
     "idade": 24,
     "overall": 81,
-    "pontos": 1685,
+    "pontos": 0,
     "atributos": {
       "saque": 88,
       "forehand": 84,
@@ -814,7 +814,7 @@
     "nacionalidade": "[PL] Polônia",
     "idade": 28,
     "overall": 80,
-    "pontos": 1665,
+    "pontos": 0,
     "atributos": {
       "saque": 85,
       "forehand": 81,
@@ -841,7 +841,7 @@
     "nacionalidade": "[FR] França",
     "idade": 21,
     "overall": 79,
-    "pontos": 1614,
+    "pontos": 0,
     "atributos": {
       "saque": 81,
       "forehand": 84,
@@ -868,7 +868,7 @@
     "nacionalidade": "[US] USA",
     "idade": 20,
     "overall": 77,
-    "pontos": 1550,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 81,
@@ -895,7 +895,7 @@
     "nacionalidade": "[NL] Holanda",
     "idade": 28,
     "overall": 79,
-    "pontos": 1485,
+    "pontos": 0,
     "atributos": {
       "saque": 81,
       "forehand": 80,
@@ -922,7 +922,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 78,
-    "pontos": 1480,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 78,
@@ -949,7 +949,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 24,
     "overall": 79,
-    "pontos": 1450,
+    "pontos": 0,
     "atributos": {
       "saque": 76,
       "forehand": 80,
@@ -976,7 +976,7 @@
     "nacionalidade": "[CZ] Czechia",
     "idade": 23,
     "overall": 79,
-    "pontos": 1415,
+    "pontos": 0,
     "atributos": {
       "saque": 84,
       "forehand": 81,
@@ -1003,7 +1003,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 31,
     "overall": 77,
-    "pontos": 1375,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 78,
@@ -1030,7 +1030,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 24,
     "overall": 78,
-    "pontos": 1365,
+    "pontos": 0,
     "atributos": {
       "saque": 82,
       "forehand": 80,
@@ -1057,7 +1057,7 @@
     "nacionalidade": "[FR] França",
     "idade": 28,
     "overall": 76,
-    "pontos": 1313,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 78,
@@ -1084,7 +1084,7 @@
     "nacionalidade": "[PT] Portugal",
     "idade": 28,
     "overall": 76,
-    "pontos": 1270,
+    "pontos": 0,
     "atributos": {
       "saque": 77,
       "forehand": 77,
@@ -1111,7 +1111,7 @@
     "nacionalidade": "[FR] França",
     "idade": 38,
     "overall": 78,
-    "pontos": 1265,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 78,
@@ -1138,7 +1138,7 @@
     "nacionalidade": "[US] USA",
     "idade": 31,
     "overall": 76,
-    "pontos": 1265,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 79,
@@ -1165,7 +1165,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 30,
     "overall": 78,
-    "pontos": 1205,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 84,
@@ -1192,7 +1192,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 74,
-    "pontos": 1159,
+    "pontos": 0,
     "atributos": {
       "saque": 77,
       "forehand": 77,
@@ -1219,7 +1219,7 @@
     "nacionalidade": "[RS] Sérvia",
     "idade": 25,
     "overall": 77,
-    "pontos": 1146,
+    "pontos": 0,
     "atributos": {
       "saque": 77,
       "forehand": 79,
@@ -1246,7 +1246,7 @@
     "nacionalidade": "[BE] Bélgica",
     "idade": 34,
     "overall": 76,
-    "pontos": 1118,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 78,
@@ -1273,7 +1273,7 @@
     "nacionalidade": "[ES] Espanha",
     "idade": 28,
     "overall": 74,
-    "pontos": 1070,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 77,
@@ -1300,7 +1300,7 @@
     "nacionalidade": "[BE] Bélgica",
     "idade": 25,
     "overall": 75,
-    "pontos": 1051,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 78,
@@ -1327,7 +1327,7 @@
     "nacionalidade": "[FR] França",
     "idade": 28,
     "overall": 74,
-    "pontos": 1024,
+    "pontos": 0,
     "atributos": {
       "saque": 79,
       "forehand": 80,
@@ -1354,7 +1354,7 @@
     "nacionalidade": "[KZ] Cazaquistão",
     "idade": 27,
     "overall": 76,
-    "pontos": 1005,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 81,
@@ -1381,7 +1381,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 25,
     "overall": 74,
-    "pontos": 1000,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 79,
@@ -1408,7 +1408,7 @@
     "nacionalidade": "[CA] Canadá",
     "idade": 23,
     "overall": 74,
-    "pontos": 997,
+    "pontos": 0,
     "atributos": {
       "saque": 76,
       "forehand": 79,
@@ -1435,7 +1435,7 @@
     "nacionalidade": "[GB] Grã-Bretanha",
     "idade": 23,
     "overall": 73,
-    "pontos": 976,
+    "pontos": 0,
     "atributos": {
       "saque": 76,
       "forehand": 73,
@@ -1462,7 +1462,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 25,
     "overall": 74,
-    "pontos": 975,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 74,
@@ -1489,7 +1489,7 @@
     "nacionalidade": "[HU] Hungria",
     "idade": 25,
     "overall": 75,
-    "pontos": 975,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 78,
@@ -1516,7 +1516,7 @@
     "nacionalidade": "[ES] Espanha",
     "idade": 37,
     "overall": 75,
-    "pontos": 974,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 78,
@@ -1543,7 +1543,7 @@
     "nacionalidade": "[ES] Espanha",
     "idade": 28,
     "overall": 75,
-    "pontos": 962,
+    "pontos": 0,
     "atributos": {
       "saque": 77,
       "forehand": 73,
@@ -1570,7 +1570,7 @@
     "nacionalidade": "[RS] Sérvia",
     "idade": 29,
     "overall": 75,
-    "pontos": 952,
+    "pontos": 0,
     "atributos": {
       "saque": 79,
       "forehand": 77,
@@ -1597,7 +1597,7 @@
     "nacionalidade": "[FR] França",
     "idade": 28,
     "overall": 75,
-    "pontos": 943,
+    "pontos": 0,
     "atributos": {
       "saque": 79,
       "forehand": 76,
@@ -1624,7 +1624,7 @@
     "nacionalidade": "[CL] Chile",
     "idade": 27,
     "overall": 72,
-    "pontos": 940,
+    "pontos": 0,
     "atributos": {
       "saque": 76,
       "forehand": 74,
@@ -1651,7 +1651,7 @@
     "nacionalidade": "[JP] Japão",
     "idade": 35,
     "overall": 72,
-    "pontos": 928,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 77,
@@ -1678,7 +1678,7 @@
     "nacionalidade": "[ES] Espanha",
     "idade": 32,
     "overall": 71,
-    "pontos": 926,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 73,
@@ -1705,7 +1705,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 24,
     "overall": 70,
-    "pontos": 911,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 72,
@@ -1732,7 +1732,7 @@
     "nacionalidade": "[BR] Brasil",
     "idade": 18,
     "overall": 72,
-    "pontos": 907,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 77,
@@ -1759,7 +1759,7 @@
     "nacionalidade": "[DE] Alemanha",
     "idade": 26,
     "overall": 72,
-    "pontos": 906,
+    "pontos": 0,
     "atributos": {
       "saque": 73,
       "forehand": 71,
@@ -1786,7 +1786,7 @@
     "nacionalidade": "[US] USA",
     "idade": 19,
     "overall": 70,
-    "pontos": 893,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 72,
@@ -1813,7 +1813,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 71,
-    "pontos": 891,
+    "pontos": 0,
     "atributos": {
       "saque": 73,
       "forehand": 69,
@@ -1840,7 +1840,7 @@
     "nacionalidade": "[BA] Bósnia e Herzegovina",
     "idade": 33,
     "overall": 70,
-    "pontos": 875,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 72,
@@ -1867,7 +1867,7 @@
     "nacionalidade": "[CN] China",
     "idade": 23,
     "overall": 71,
-    "pontos": 874,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 74,
@@ -1894,7 +1894,7 @@
     "nacionalidade": "[CN] China",
     "idade": 20,
     "overall": 69,
-    "pontos": 822,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 69,
@@ -1921,7 +1921,7 @@
     "nacionalidade": "[FR] França",
     "idade": 29,
     "overall": 70,
-    "pontos": 820,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 74,
@@ -1948,7 +1948,7 @@
     "nacionalidade": "[RU] Rússia",
     "idade": 27,
     "overall": 71,
-    "pontos": 816,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 75,
@@ -1975,7 +1975,7 @@
     "nacionalidade": "[FR] França",
     "idade": 24,
     "overall": 70,
-    "pontos": 816,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 74,
@@ -2002,7 +2002,7 @@
     "nacionalidade": "[JP] Japão",
     "idade": 29,
     "overall": 71,
-    "pontos": 813,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 75,
@@ -2029,7 +2029,7 @@
     "nacionalidade": "[FR] França",
     "idade": 26,
     "overall": 71,
-    "pontos": 812,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 75,
@@ -2056,7 +2056,7 @@
     "nacionalidade": "[RS] Sérvia",
     "idade": 21,
     "overall": 72,
-    "pontos": 811,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 74,
@@ -2083,7 +2083,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 29,
     "overall": 70,
-    "pontos": 792,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 76,
@@ -2110,7 +2110,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 24,
     "overall": 71,
-    "pontos": 792,
+    "pontos": 0,
     "atributos": {
       "saque": 75,
       "forehand": 72,
@@ -2137,7 +2137,7 @@
     "nacionalidade": "[US] USA",
     "idade": 26,
     "overall": 69,
-    "pontos": 787,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 73,
@@ -2164,7 +2164,7 @@
     "nacionalidade": "[CN] China",
     "idade": 28,
     "overall": 70,
-    "pontos": 785,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 74,
@@ -2191,7 +2191,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 30,
     "overall": 69,
-    "pontos": 762,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 67,
@@ -2218,7 +2218,7 @@
     "nacionalidade": "[HR] Croácia",
     "idade": 28,
     "overall": 70,
-    "pontos": 741,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 69,
@@ -2245,7 +2245,7 @@
     "nacionalidade": "[BE] Bélgica",
     "idade": 23,
     "overall": 69,
-    "pontos": 726,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 69,
@@ -2272,7 +2272,7 @@
     "nacionalidade": "[CZ] Czechia",
     "idade": 27,
     "overall": 68,
-    "pontos": 715,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 70,
@@ -2299,7 +2299,7 @@
     "nacionalidade": "[DE] Alemanha",
     "idade": 35,
     "overall": 69,
-    "pontos": 690,
+    "pontos": 0,
     "atributos": {
       "saque": 72,
       "forehand": 74,
@@ -2326,7 +2326,7 @@
     "nacionalidade": "[NL] Holanda",
     "idade": 24,
     "overall": 67,
-    "pontos": 690,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 66,
@@ -2353,7 +2353,7 @@
     "nacionalidade": "[PL] Polônia",
     "idade": 29,
     "overall": 67,
-    "pontos": 689,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 70,
@@ -2380,7 +2380,7 @@
     "nacionalidade": "[NL] Holanda",
     "idade": 29,
     "overall": 69,
-    "pontos": 670,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 73,
@@ -2407,7 +2407,7 @@
     "nacionalidade": "[GB] Grã-Bretanha",
     "idade": 29,
     "overall": 71,
-    "pontos": 657,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 72,
@@ -2434,7 +2434,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 26,
     "overall": 67,
-    "pontos": 653,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 70,
@@ -2461,7 +2461,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 33,
     "overall": 66,
-    "pontos": 651,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 65,
@@ -2488,7 +2488,7 @@
     "nacionalidade": "[TW] Taipei Chinês",
     "idade": 23,
     "overall": 66,
-    "pontos": 648,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 67,
@@ -2515,7 +2515,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 21,
     "overall": 67,
-    "pontos": 645,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 67,
@@ -2542,7 +2542,7 @@
     "nacionalidade": "[US] USA",
     "idade": 27,
     "overall": 68,
-    "pontos": 644,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 72,
@@ -2569,7 +2569,7 @@
     "nacionalidade": "[BO] Bolívia",
     "idade": 31,
     "overall": 65,
-    "pontos": 641,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 66,
@@ -2596,7 +2596,7 @@
     "nacionalidade": "[KZ] Cazaquistão",
     "idade": 24,
     "overall": 68,
-    "pontos": 630,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 72,
@@ -2623,7 +2623,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 24,
     "overall": 67,
-    "pontos": 620,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 68,
@@ -2650,7 +2650,7 @@
     "nacionalidade": "[US] USA",
     "idade": 30,
     "overall": 68,
-    "pontos": 617,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 71,
@@ -2677,7 +2677,7 @@
     "nacionalidade": "[ES] Espanha",
     "idade": 33,
     "overall": 69,
-    "pontos": 615,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 71,
@@ -2704,7 +2704,7 @@
     "nacionalidade": "[US] USA",
     "idade": 20,
     "overall": 66,
-    "pontos": 598,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 63,
@@ -2731,7 +2731,7 @@
     "nacionalidade": "[US] USA",
     "idade": 27,
     "overall": 64,
-    "pontos": 583,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 63,
@@ -2758,7 +2758,7 @@
     "nacionalidade": "[GB] Grã-Bretanha",
     "idade": 30,
     "overall": 63,
-    "pontos": 582,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 65,
@@ -2785,7 +2785,7 @@
     "nacionalidade": "[HR] Croácia",
     "idade": 36,
     "overall": 68,
-    "pontos": 563,
+    "pontos": 0,
     "atributos": {
       "saque": 72,
       "forehand": 67,
@@ -2812,7 +2812,7 @@
     "nacionalidade": "[US] USA",
     "idade": 29,
     "overall": 67,
-    "pontos": 558,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 67,
@@ -2839,7 +2839,7 @@
     "nacionalidade": "[US] USA",
     "idade": 21,
     "overall": 65,
-    "pontos": 538,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 71,
@@ -2866,7 +2866,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 37,
     "overall": 65,
-    "pontos": 536,
+    "pontos": 0,
     "atributos": {
       "saque": 58,
       "forehand": 63,
@@ -2893,7 +2893,7 @@
     "nacionalidade": "[DK] Dinamarca",
     "idade": 21,
     "overall": 64,
-    "pontos": 536,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 67,
@@ -2920,7 +2920,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 23,
     "overall": 66,
-    "pontos": 530,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 67,
@@ -2947,7 +2947,7 @@
     "nacionalidade": "[CL] Chile",
     "idade": 27,
     "overall": 65,
-    "pontos": 529,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 67,
@@ -2974,7 +2974,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 29,
     "overall": 67,
-    "pontos": 518,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 68,
@@ -3001,7 +3001,7 @@
     "nacionalidade": "[BR] Brasil",
     "idade": 25,
     "overall": 67,
-    "pontos": 513,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 72,
@@ -3028,7 +3028,7 @@
     "nacionalidade": "[FR] França",
     "idade": 22,
     "overall": 67,
-    "pontos": 508,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 69,
@@ -3055,7 +3055,7 @@
     "nacionalidade": "[FI] Finlândia",
     "idade": 23,
     "overall": 66,
-    "pontos": 498,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 68,
@@ -3082,7 +3082,7 @@
     "nacionalidade": "[PT] Portugal",
     "idade": 21,
     "overall": 65,
-    "pontos": 493,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 68,
@@ -3109,7 +3109,7 @@
     "nacionalidade": "[US] USA",
     "idade": 23,
     "overall": 65,
-    "pontos": 492,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 65,
@@ -3136,7 +3136,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 23,
     "overall": 65,
-    "pontos": 485,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 67,
@@ -3163,7 +3163,7 @@
     "nacionalidade": "[CO] Colômbia",
     "idade": 28,
     "overall": 66,
-    "pontos": 482,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 66,
@@ -3190,7 +3190,7 @@
     "nacionalidade": "[US] USA",
     "idade": 24,
     "overall": 65,
-    "pontos": 479,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 67,
@@ -3217,7 +3217,7 @@
     "nacionalidade": "[FR] França",
     "idade": 23,
     "overall": 64,
-    "pontos": 478,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 69,
@@ -3244,7 +3244,7 @@
     "nacionalidade": "[FR] França",
     "idade": 23,
     "overall": 64,
-    "pontos": 477,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 64,
@@ -3271,7 +3271,7 @@
     "nacionalidade": "[CL] Chile",
     "idade": 28,
     "overall": 66,
-    "pontos": 474,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 68,
@@ -3298,7 +3298,7 @@
     "nacionalidade": "[CH] Suíça",
     "idade": 22,
     "overall": 64,
-    "pontos": 474,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 65,
@@ -3325,7 +3325,7 @@
     "nacionalidade": "[RS] Sérvia",
     "idade": 34,
     "overall": 66,
-    "pontos": 466,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 64,
@@ -3352,7 +3352,7 @@
     "nacionalidade": "[ES] Espanha",
     "idade": 27,
     "overall": 64,
-    "pontos": 466,
+    "pontos": 0,
     "atributos": {
       "saque": 58,
       "forehand": 66,
@@ -3379,7 +3379,7 @@
     "nacionalidade": "[CZ] Czechia",
     "idade": 22,
     "overall": 65,
-    "pontos": 466,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 65,
@@ -3406,7 +3406,7 @@
     "nacionalidade": "[AU] Austrália",
     "idade": 24,
     "overall": 64,
-    "pontos": 464,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 65,
@@ -3433,7 +3433,7 @@
     "nacionalidade": "[AT] Áustria",
     "idade": 29,
     "overall": 64,
-    "pontos": 458,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 64,
@@ -3460,7 +3460,7 @@
     "nacionalidade": "[FR] França",
     "idade": 36,
     "overall": 66,
-    "pontos": 456,
+    "pontos": 0,
     "atributos": {
       "saque": 60,
       "forehand": 67,
@@ -3487,7 +3487,7 @@
     "nacionalidade": "[BR] Brasil",
     "idade": 30,
     "overall": 66,
-    "pontos": 454,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 69,
@@ -3514,7 +3514,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 24,
     "overall": 63,
-    "pontos": 453,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 64,
@@ -3541,7 +3541,7 @@
     "nacionalidade": "[GE] Geórgia",
     "idade": 33,
     "overall": 65,
-    "pontos": 451,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 66,
@@ -3568,7 +3568,7 @@
     "nacionalidade": "[BR] Brasil",
     "idade": 27,
     "overall": 62,
-    "pontos": 446,
+    "pontos": 0,
     "atributos": {
       "saque": 61,
       "forehand": 63,
@@ -3595,7 +3595,7 @@
     "nacionalidade": "[HU] Hungria",
     "idade": 33,
     "overall": 64,
-    "pontos": 443,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 63,
@@ -3622,7 +3622,7 @@
     "nacionalidade": "[FR] França",
     "idade": 31,
     "overall": 64,
-    "pontos": 439,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 61,
@@ -3649,7 +3649,7 @@
     "nacionalidade": "[LT] Lituânia",
     "idade": 20,
     "overall": 63,
-    "pontos": 439,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 66,
@@ -3676,7 +3676,7 @@
     "nacionalidade": "[DE] Alemanha",
     "idade": 33,
     "overall": 64,
-    "pontos": 435,
+    "pontos": 0,
     "atributos": {
       "saque": 65,
       "forehand": 65,
@@ -3703,7 +3703,7 @@
     "nacionalidade": "[US] USA",
     "idade": 23,
     "overall": 62,
-    "pontos": 433,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 65,
@@ -3730,7 +3730,7 @@
     "nacionalidade": "[CH] Suíça",
     "idade": 40,
     "overall": 64,
-    "pontos": 432,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 65,
@@ -3757,7 +3757,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 24,
     "overall": 62,
-    "pontos": 423,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 67,
@@ -3784,7 +3784,7 @@
     "nacionalidade": "[US] USA",
     "idade": 31,
     "overall": 61,
-    "pontos": 422,
+    "pontos": 0,
     "atributos": {
       "saque": 65,
       "forehand": 59,
@@ -3811,7 +3811,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 28,
     "overall": 61,
-    "pontos": 413,
+    "pontos": 0,
     "atributos": {
       "saque": 54,
       "forehand": 60,
@@ -3838,7 +3838,7 @@
     "nacionalidade": "[AR] Argentina",
     "idade": 33,
     "overall": 62,
-    "pontos": 411,
+    "pontos": 0,
     "atributos": {
       "saque": 56,
       "forehand": 63,
@@ -3865,7 +3865,7 @@
     "nacionalidade": "[JP] Japão",
     "idade": 32,
     "overall": 63,
-    "pontos": 410,
+    "pontos": 0,
     "atributos": {
       "saque": 61,
       "forehand": 62,
@@ -3892,7 +3892,7 @@
     "nacionalidade": "[BE] Bélgica",
     "idade": 20,
     "overall": 62,
-    "pontos": 410,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 59,
@@ -3919,7 +3919,7 @@
     "nacionalidade": "[RU] Rússia",
     "idade": 26,
     "overall": 62,
-    "pontos": 407,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 62,
@@ -3946,7 +3946,7 @@
     "nacionalidade": "[ES] Espanha",
     "idade": 19,
     "overall": 62,
-    "pontos": 404,
+    "pontos": 0,
     "atributos": {
       "saque": 61,
       "forehand": 62,
@@ -3973,7 +3973,7 @@
     "nacionalidade": "[CA] Canadá",
     "idade": 23,
     "overall": 62,
-    "pontos": 403,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 61,
@@ -4000,7 +4000,7 @@
     "nacionalidade": "[FR] França",
     "idade": 34,
     "overall": 63,
-    "pontos": 399,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 64,
@@ -4027,7 +4027,7 @@
     "nacionalidade": "[CL] Chile",
     "idade": 29,
     "overall": 63,
-    "pontos": 390,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 66,
@@ -4048,6 +4048,39 @@
       "determinacao": 53
     },
     "pontos_detalhados": []
+  },
+  {
+    "nome": "Alexandre Paiva",
+    "nacionalidade": "[BR] Brasil",
+    "genero": "masculino",
+    "overall": 70,
+    "atributos": {
+      "saque": 70,
+      "forehand": 70,
+      "backhand": 70,
+      "topspin": 70,
+      "voleio": 70,
+      "slice": 70,
+      "movimento": 70,
+      "lob": 70,
+      "fisico": 70,
+      "winner": 70
+    },
+    "pontos": 0,
+    "pontos_detalhados": [],
+    "atributos_psicologicos": {
+      "concentracao": 50,
+      "agressividade": 50,
+      "leitura_de_jogo": 50,
+      "determinacao": 50
+    },
+    "idade": 22,
+    "xp": 20,
+    "nivel": 1,
+    "energia": 28,
+    "ritmo_jogo": 50,
+    "moral": 70,
+    "dinheiro": 500
   },
   {
     "nome": "Lowest_Rank_Bot",

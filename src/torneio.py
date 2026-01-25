@@ -99,16 +99,16 @@ class Torneio:
         with open(self.caminho_json, "w", encoding="utf-8") as f:
             json.dump(estado, f, indent=2, ensure_ascii=False)
 
-    def escolher_participantes(self, todos_jogadores):
+    def escolher_participantes(self, todos_jogadores, priorizar_jogador=True):
         nome_jogador = self.jogador_nome.strip()
-        nome_jogador_lower = nome_jogador.lower()
+        nome_jogador_lower = nome_jogador.lower() if priorizar_jogador else None
 
         # Adiciona o jogador principal ao ranking se não estiver lá
         jogador_principal_obj = {
             "nome": nome_jogador,
             "nacionalidade": self.jogador_nacionalidade,
         }
-        if self.ranking.obter_posicao(nome_jogador) is None:
+        if priorizar_jogador and self.ranking.obter_posicao(nome_jogador) is None:
             self.ranking.adicionar_jogador_novo(jogador_principal_obj)
             self.ranking.salvar_ranking()
             # Recarrega o ranking para incluir o jogador principal
@@ -128,10 +128,10 @@ class Torneio:
             num_top_diretos = 28 # 32 - 4
 
         # Separa os jogadores do ranking
-        jogadores_ranking_ordenado = self.ranking.ranking
+        jogadores_ranking_ordenado = todos_jogadores if todos_jogadores else self.ranking.ranking
         
         # Garante que o jogador principal esteja na lista de todos os jogadores
-        if nome_jogador_lower not in [j["nome"].lower() for j in jogadores_ranking_ordenado]:
+        if priorizar_jogador and nome_jogador_lower not in [j["nome"].lower() for j in jogadores_ranking_ordenado]:
             jogadores_ranking_ordenado.append(jogador_principal_obj)
             self.ranking.adicionar_jogador_novo(jogador_principal_obj) # Adiciona ao ranking da instancia
             self.ranking.salvar_ranking() # Salva no disco
@@ -155,7 +155,7 @@ class Torneio:
                 chave_principal.append(j)
 
         # Se o jogador principal não foi para a chave principal, coloca ele no qualy
-        if nome_jogador_lower not in [j["nome"].lower() for j in chave_principal]:
+        if priorizar_jogador and nome_jogador_lower not in [j["nome"].lower() for j in chave_principal]:
             if nome_jogador_lower not in [j["nome"].lower() for j in qualy_players]:
                 qualy_players.insert(0, jogador_principal_obj) # Prioriza o jogador no qualy
             else: # Se já está no qualy, garante que esteja no início
@@ -163,10 +163,10 @@ class Torneio:
                 qualy_players.insert(0, jogador_principal_obj)
         
         # Shuffle players for qualifying (excluding the main player if already placed)
-        outros_qualy = [j for j in qualy_players if j["nome"].lower() != nome_jogador_lower]
+        outros_qualy = [j for j in qualy_players if j["nome"].lower() != nome_jogador_lower] if priorizar_jogador else list(qualy_players)
         random.shuffle(outros_qualy)
         
-        if nome_jogador_lower in [j["nome"].lower() for j in qualy_players]:
+        if priorizar_jogador and nome_jogador_lower in [j["nome"].lower() for j in qualy_players]:
             final_qualy_list = [jogador_principal_obj] + outros_qualy
         else:
             final_qualy_list = outros_qualy
@@ -174,9 +174,12 @@ class Torneio:
         final_qualy_list = final_qualy_list[:num_jogadores_qualy]
 
         # Completa com bots se não houver jogadores suficientes para o qualy
+        bots_adicionados = False
         while len(final_qualy_list) < num_jogadores_qualy:
             bot = gerar_jogador_fraco(len(final_qualy_list) + 1, self.tournament_data["pais_sede"])
             final_qualy_list.append(bot)
+            self.ranking.adicionar_jogador_novo(bot)
+            bots_adicionados = True
 
         # Garante que a chave principal tenha o número correto de jogadores
         # Se faltar, completa com os próximos do ranking que não foram para o qualy
@@ -192,20 +195,27 @@ class Torneio:
         while len(chave_principal) < num_top_diretos:
             bot = gerar_jogador_fraco(len(chave_principal) + 1, self.tournament_data["pais_sede"])
             chave_principal.append(bot)
+            self.ranking.adicionar_jogador_novo(bot)
+            bots_adicionados = True
+
+        if bots_adicionados:
+            self.ranking.salvar_ranking()
+            self.ranking.carregar_ranking()
+            self.ranking.ordenar()
 
 
         print(f"\n🟢 Entrada direta ({len(chave_principal)} jogadores):")
         for j in chave_principal:
             nome = j["nome"]
             pos = self.ranking.obter_posicao(nome) or "N/A"
-            destaque = "⭐" if nome.lower() == nome_jogador_lower else ""
+            destaque = "⭐" if nome_jogador_lower and nome.lower() == nome_jogador_lower else ""
             print(f"• {nome} {destaque} — #{pos}")
 
         print(f"\n🟡 Qualifying ({len(final_qualy_list)} jogadores):")
         for j in final_qualy_list:
             nome = j["nome"]
             pos = self.ranking.obter_posicao(nome) or "N/A"
-            destaque = "⭐" if nome.lower() == nome_jogador_lower else ""
+            destaque = "⭐" if nome_jogador_lower and nome.lower() == nome_jogador_lower else ""
             print(f"• {nome} {destaque} — #{pos}")
 
         return chave_principal, final_qualy_list
@@ -354,9 +364,10 @@ class Torneio:
                             nome_vencedor
                         )
                     if not jogador_obj:
-                        raise ValueError(
-                            f"Jogador '{nome_vencedor}' não encontrado no ranking."
-                        )
+                        if isinstance(vencedor, dict):
+                            jogador_obj = self.garantir_dados_completos(vencedor)
+                        else:
+                            jogador_obj = {"nome": nome_vencedor, "nacionalidade": "??"}
                 elif isinstance(r, str):
                     nome_vencedor = extrair_nome_puro(r)
                     jogador_obj = self.ranking.buscar_jogador_por_nome(nome_vencedor)
@@ -440,7 +451,9 @@ class Torneio:
 
             main_draw_players = direct_entries + qualifiers
             while len(main_draw_players) < expected_main_draw_size:
-                main_draw_players.append({"nome": f"BotMD{len(main_draw_players) + 1}", "nacionalidade": "??"})
+                main_draw_players.append(
+                    gerar_jogador_fraco(len(main_draw_players) + 1, self.tournament_data["pais_sede"])
+                )
 
             random.shuffle(main_draw_players)
             estado["rodadas"][proxima_fase] = [
@@ -655,7 +668,7 @@ class Torneio:
         self._atualizar_fase_se_necessario(estado)
         self._salvar_estado(estado)
 
-    def simular_torneio_npc(self, todos_jogadores_ranking):
+    def simular_torneio_npc(self, todos_jogadores_ranking, participantes_semana=None):
         """
         Simula um torneio completo para NPCs e retorna o campeão.
         Não salva o estado do torneio para o save_file principal.
@@ -711,17 +724,15 @@ class Torneio:
 
         # Get participants
         # We need a list of players *not* including the actual user player
-        filtered_todos_jogadores = [p for p in todos_jogadores_ranking if normalizar_nome(p["nome"]) != normalizar_nome(self.jogador_nome)]
+        base_lista = participantes_semana if participantes_semana else todos_jogadores_ranking
+        filtered_todos_jogadores = [
+            p for p in base_lista if normalizar_nome(p["nome"]) != normalizar_nome(self.jogador_nome)
+        ]
         
-        # Use escolher_participantes with the dummy instance. This will generate the draws.
-        # But we need to ensure it's not trying to insert the *user's* player
-        # The escolher_participantes method already handles inserting a player (if not found in ranking)
-        # So, for NPC simulation, we might need a version of escolher_participantes that doesn't prioritize a specific player.
-        # For simplicity for now, let's pass a very low-ranked dummy player name to escolher_participantes
-        temp_instance.jogador_nome = "Lowest_Rank_Bot"
-        temp_instance.jogador_nacionalidade = "??"
-        
-        direct_entries, qualifying_players = temp_instance.escolher_participantes(filtered_todos_jogadores)
+        # Use escolher_participantes without prioritizing any player.
+        direct_entries, qualifying_players = temp_instance.escolher_participantes(
+            filtered_todos_jogadores, priorizar_jogador=False
+        )
 
         # Run qualifying (all NPC matches)
         if qualifying_players:
