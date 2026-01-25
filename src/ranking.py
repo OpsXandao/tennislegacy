@@ -67,6 +67,10 @@ class SistemaRanking:
             jogador["pontos_detalhados"] = []
             mudou = True
 
+        if "trofeus" not in jogador:
+            jogador["trofeus"] = []
+            mudou = True
+
         pontos = jogador.get("pontos", 0)
         if not isinstance(pontos, int):
             try:

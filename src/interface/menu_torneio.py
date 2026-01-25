@@ -1,6 +1,8 @@
 from src.calendario import avancar_semana
 from src.interface.menu_temporada import menu_temporada
 from src.dados import carregar_ranking, get_caminho_ranking_save
+from src.interface.match_info import exibir_stats_adversario, exibir_review_partida
+from src.ranking import SistemaRanking
 from src.io_utils import safe_input, clear_screen, print_blue, print_green, print_red, print_yellow, print_magenta
 from src.save import salvar_jogo
 from src.torneio import carregar_torneio, salvar_torneio
@@ -25,8 +27,10 @@ def menu_torneio(jogador, nome_save, torneio=None, salvar_automaticamente=False)
         print_green("[1] 🎾 Jogar sua partida")
         print_green("[2] 📋 Ver confrontos da fase")
         print_green("[3] 📊 Ver resultados da última fase")
-        print_green("[4] 💾 Salvar jogo")
-        print_green("[5] ↩️ Sair do menu torneio")
+        print_green("[4] 🔎 Ver stats do adversário")
+        print_green("[5] 🧪 Review da partida")
+        print_green("[6] 💾 Salvar jogo")
+        print_green("[7] ↩️ Sair do menu torneio")
         print()
 
         opcao = safe_input("Escolha uma opção: ").strip()
@@ -45,10 +49,30 @@ def menu_torneio(jogador, nome_save, torneio=None, salvar_automaticamente=False)
         elif opcao == "3":
             torneio.exibir_resultados()
         elif opcao == "4":
+            adversario = torneio.obter_proximo_adversario(jogador.nome)
+            if not adversario:
+                print_red("Nenhum adversário disponível nesta fase.")
+                safe_input("Pressione Enter para continuar...")
+                continue
+            adversario = torneio.garantir_dados_completos(adversario)
+            ranking = SistemaRanking(get_caminho_ranking_save(nome_save))
+            exibir_stats_adversario(jogador, adversario, ranking)
+            safe_input("\nPressione Enter para continuar...")
+        elif opcao == "5":
+            adversario = torneio.obter_proximo_adversario(jogador.nome)
+            if not adversario:
+                print_red("Nenhum adversário disponível nesta fase.")
+                safe_input("Pressione Enter para continuar...")
+                continue
+            adversario = torneio.garantir_dados_completos(adversario)
+            ranking = SistemaRanking(get_caminho_ranking_save(nome_save))
+            exibir_review_partida(jogador, adversario, ranking)
+            safe_input("\nPressione Enter para continuar...")
+        elif opcao == "6":
             salvar_torneio(torneio)
             salvar_jogo(nome_save, jogador)
             print_green("Jogo salvo com sucesso!")
-        elif opcao == "5":
+        elif opcao == "7":
             print_yellow("Saindo do menu torneio...")
             break
         else:

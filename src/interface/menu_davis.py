@@ -4,7 +4,9 @@ Menu da Copa Davis - Interface para o torneio por equipes.
 
 from src.calendario import avancar_semana
 from src.interface.menu_temporada import menu_temporada
-from src.dados import carregar_ranking, get_caminho_ranking_save
+from src.dados import get_caminho_ranking_save
+from src.interface.match_info import exibir_stats_adversario, exibir_review_partida
+from src.ranking import SistemaRanking
 from src.io_utils import safe_input, clear_screen, print_blue, print_green, print_red, print_yellow, print_magenta
 from src.save import salvar_jogo
 from src.davis_cup import carregar_davis_cup
@@ -47,13 +49,17 @@ def menu_davis(jogador, nome_save, davis=None, salvar_automaticamente=False):
         if proximo:
             adversario = proximo.get("adversario", "??")
             print_green(f"[1] 🎾 Jogar confronto vs {adversario}")
+            print_green("[2] 🔎 Ver stats do adversário")
+            print_green("[3] 🧪 Review do confronto")
         else:
             print_yellow("[1] 🎾 Nenhum confronto disponível")
+            print_yellow("[2] 🔎 Ver stats do adversário")
+            print_yellow("[3] 🧪 Review do confronto")
 
-        print_green("[2] 📊 Ver tabela do grupo")
-        print_green("[3] 📋 Ver resultados")
-        print_green("[4] 💾 Salvar jogo")
-        print_green("[5] ↩️ Sair do menu")
+        print_green("[4] 📊 Ver tabela do grupo")
+        print_green("[5] 📋 Ver resultados")
+        print_green("[6] 💾 Salvar jogo")
+        print_green("[7] ↩️ Sair do menu")
         print()
 
         opcao = safe_input("Escolha uma opção: ").strip()
@@ -76,20 +82,50 @@ def menu_davis(jogador, nome_save, davis=None, salvar_automaticamente=False):
                 safe_input("Pressione Enter para continuar...")
 
         elif opcao == "2":
+            if not proximo:
+                print_yellow("Nenhum confronto disponível no momento.")
+                safe_input("Pressione Enter para continuar...")
+                continue
+            adversario = proximo.get("adversario")
+            equipe_adversaria = davis._gerar_equipe_adversaria(adversario)
+            adversario_principal = equipe_adversaria[0] if equipe_adversaria else None
+            if not adversario_principal:
+                print_red("Nao foi possivel carregar o adversario.")
+                safe_input("Pressione Enter para continuar...")
+                continue
+            ranking = SistemaRanking(get_caminho_ranking_save(nome_save))
+            exibir_stats_adversario(jogador, adversario_principal, ranking)
+            safe_input("\nPressione Enter para continuar...")
+        elif opcao == "3":
+            if not proximo:
+                print_yellow("Nenhum confronto disponível no momento.")
+                safe_input("Pressione Enter para continuar...")
+                continue
+            adversario = proximo.get("adversario")
+            equipe_adversaria = davis._gerar_equipe_adversaria(adversario)
+            adversario_principal = equipe_adversaria[0] if equipe_adversaria else None
+            if not adversario_principal:
+                print_red("Nao foi possivel carregar o adversario.")
+                safe_input("Pressione Enter para continuar...")
+                continue
+            ranking = SistemaRanking(get_caminho_ranking_save(nome_save))
+            exibir_review_partida(jogador, adversario_principal, ranking)
+            safe_input("\nPressione Enter para continuar...")
+        elif opcao == "4":
             davis.exibir_tabela_grupo()
             safe_input("\nPressione Enter para continuar...")
 
-        elif opcao == "3":
+        elif opcao == "5":
             _exibir_resultados_davis(davis)
             safe_input("\nPressione Enter para continuar...")
 
-        elif opcao == "4":
+        elif opcao == "6":
             davis._salvar_estado(davis._carregar_estado())
             salvar_jogo(nome_save, jogador)
             print_green("Jogo salvo com sucesso!")
             safe_input("Pressione Enter para continuar...")
 
-        elif opcao == "5":
+        elif opcao == "7":
             print_yellow("Saindo do menu da Copa Davis...")
             break
 

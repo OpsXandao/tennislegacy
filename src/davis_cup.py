@@ -19,8 +19,8 @@ from src.dados import (
     carregar_estado_torneio,
 )
 from src.jogador import normalizar_nome
-from src.ranking import SistemaRanking
-from src.jogar_partida import criar_config_partida, jogar_partida
+from src.ranking import SistemaRanking, DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
+from src.jogar_partida import criar_config_partida, jogar_partida, simular_partida_npc
 from src.progressao import handle_xp_e_level_up, handle_fadiga_e_lesao
 from src.save import salvar_jogo
 from src.io_utils import safe_input, print_blue, print_green, print_yellow, print_red, clear_screen
@@ -527,6 +527,17 @@ class DavisCup:
 
         return extrair_codigo(pais1) == extrair_codigo(pais2)
 
+    def _garantir_atributos_jogador(self, jogador_dict):
+        if "atributos" not in jogador_dict or not isinstance(jogador_dict["atributos"], dict):
+            jogador_dict["atributos"] = DEFAULT_ATRIBUTOS.copy()
+        if "atributos_psicologicos" not in jogador_dict or not isinstance(jogador_dict["atributos_psicologicos"], dict):
+            jogador_dict["atributos_psicologicos"] = DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy()
+        if "overall" not in jogador_dict:
+            jogador_dict["overall"] = round(
+                sum(jogador_dict["atributos"].values()) / len(jogador_dict["atributos"])
+            )
+        return jogador_dict
+
     def _gerar_equipe_adversaria(self, pais):
         """Retorna a equipe adversária (jogadores convocados)."""
         estado = self._carregar_estado()
@@ -599,7 +610,28 @@ class DavisCup:
         print_blue(f"     🏆 COPA DAVIS - {pais_jogador} vs {adversario_pais}")
         print_blue(f"{'=' * 60}")
 
-        equipe_adversaria = self._gerar_equipe_adversaria(adversario_pais)
+        equipe_adversaria = [self._garantir_atributos_jogador(j) for j in self._gerar_equipe_adversaria(adversario_pais)]
+
+        selecao_jogador = estado.get("selecoes", {}).get(pais_jogador, {})
+        equipe_jogador = selecao_jogador.get("convocados")
+        if not equipe_jogador:
+            sel = SelecaoNacional(pais_jogador, self.ranking)
+            sel.completar_convocacao(4)
+            equipe_jogador = sel.convocados
+
+        companheiro = None
+        for atleta in equipe_jogador:
+            if normalizar_nome(atleta.get("nome", "")) != normalizar_nome(self.jogador.nome):
+                companheiro = self._garantir_atributos_jogador(atleta)
+                break
+        if companheiro is None:
+            companheiro = {
+                "nome": f"Companheiro ({pais_jogador})",
+                "nacionalidade": pais_jogador,
+                "overall": 65,
+                "atributos": DEFAULT_ATRIBUTOS.copy(),
+                "atributos_psicologicos": DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy(),
+            }
 
         print(f"\n📋 Adversários:")
         for i, adv in enumerate(equipe_adversaria, 1):
@@ -649,17 +681,18 @@ class DavisCup:
 
         safe_input("\nPressione Enter para a próxima partida...")
 
-        # Partida 2: Simples - Jogador vs Adversário 2
+        # Partida 2: Simples - Companheiro vs Adversário 2
         clear_screen()
         print_blue(f"\n{'=' * 60}")
-        print_blue(f"     SIMPLES 2: {self.jogador.nome} vs {equipe_adversaria[1]['nome']}")
+        print_blue(f"     SIMPLES 2: {companheiro['nome']} vs {equipe_adversaria[1]['nome']}")
         print_blue(f"{'=' * 60}\n")
 
-        vencedor_nome2, placar2, pontos_disputados2 = jogar_partida(
-            self.jogador, equipe_adversaria[1], self.nome_save, config=config
+        vencedor_dict2, _, placar2 = simular_partida_npc(
+            companheiro, equipe_adversaria[1], config=config
         )
+        vencedor_nome2 = vencedor_dict2.get("nome", "??")
 
-        if normalizar_nome(vencedor_nome2) == normalizar_nome(self.jogador.nome):
+        if normalizar_nome(vencedor_nome2) == normalizar_nome(companheiro.get("nome", "")):
             vitorias_jogador += 1
             print_green(f"\n✅ {pais_jogador} vence! Placar: {placar2}")
         else:
@@ -670,16 +703,11 @@ class DavisCup:
 
         resultados_partidas.append({
             "tipo": "simples",
-            "jogador_a": self.jogador.nome,
+            "jogador_a": companheiro.get("nome", "??"),
             "jogador_b": equipe_adversaria[1]["nome"],
             "vencedor": vencedor_nome2,
             "placar": placar2
         })
-
-        vitoria2 = normalizar_nome(vencedor_nome2) == normalizar_nome(self.jogador.nome)
-        self.jogador = handle_xp_e_level_up(self.jogador, vitoria2)
-        self.jogador = handle_fadiga_e_lesao(self.jogador, pontos_disputados=pontos_disputados2)
-        salvar_jogo(self.nome_save, self.jogador)
 
         safe_input("\nPressione Enter para a partida de duplas...")
 
