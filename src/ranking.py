@@ -13,7 +13,15 @@ DEFAULT_ATRIBUTOS = {
     "slice": 60,
     "movimento": 60,
     "lob": 60,
+    "fisico": 60,
     "winner": 60,
+}
+
+DEFAULT_ATRIBUTOS_PSICOLOGICOS = {
+    "concentracao": 50,
+    "agressividade": 50,
+    "leitura_de_jogo": 50,
+    "determinacao": 50,
 }
 
 
@@ -54,22 +62,46 @@ class SistemaRanking:
             jogador["nacionalidade"] = "??"
             mudou = True
 
+        # Normalização da nova estrutura de pontos
+        if "pontos_detalhados" not in jogador:
+            jogador["pontos_detalhados"] = []
+            mudou = True
+
         pontos = jogador.get("pontos", 0)
         if not isinstance(pontos, int):
-            jogador["pontos"] = int(pontos) if pontos else 0
+            try:
+                jogador["pontos"] = int(pontos)
+            except (ValueError, TypeError):
+                jogador["pontos"] = 0
             mudou = True
+        
+        # Garante que 'pontos' seja a soma de 'pontos_detalhados' se existir
+        soma_detalhada = sum(p.get("pontos", 0) for p in jogador["pontos_detalhados"])
+        if jogador["pontos"] != soma_detalhada and soma_detalhada > 0:
+             jogador["pontos"] = soma_detalhada
+             mudou = True
         elif "pontos" not in jogador:
-            jogador["pontos"] = 0
-            mudou = True
+             jogador["pontos"] = 0
+             mudou = True
+
 
         atributos = jogador.get("atributos")
         if not isinstance(atributos, dict) or not atributos:
             jogador["atributos"] = DEFAULT_ATRIBUTOS.copy()
             mudou = True
+        elif "fisico" not in atributos:
+            jogador["atributos"]["fisico"] = DEFAULT_ATRIBUTOS["fisico"]
+            mudou = True
 
-        if "overall" not in jogador:
+        if "overall" not in jogador or mudou:
             atributos = jogador["atributos"]
             jogador["overall"] = round(sum(atributos.values()) / len(atributos))
+            mudou = True
+
+        # Normalização de atributos psicológicos
+        atributos_psico = jogador.get("atributos_psicologicos")
+        if not isinstance(atributos_psico, dict) or not atributos_psico:
+            jogador["atributos_psicologicos"] = DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy()
             mudou = True
 
         return jogador, mudou
@@ -84,17 +116,30 @@ class SistemaRanking:
                 jogador["pontos"] = 0
         self.ranking.sort(key=lambda jogador: jogador["pontos"], reverse=True)
 
-    def atualizar_pontuacao(self, nome, pontos):
+    def adicionar_pontos(self, nome, pontos, semana_expiracao):
+        """Adiciona um bloco de pontos detalhados a um jogador."""
         nome_normalizado = normalizar_nome(nome)
-        for jogador in self.ranking:
-            if normalizar_nome(jogador) == nome_normalizado:
-                jogador["pontos"] += pontos
+        jogador_encontrado = None
+        for j in self.ranking:
+            if normalizar_nome(j) == nome_normalizado:
+                jogador_encontrado = j
                 break
-        else:
-            jogador_novo, _ = self._normalizar_jogador({"nome": nome, "pontos": pontos})
-            self.ranking.append(jogador_novo)
+        
+        if not jogador_encontrado:
+            # Cria um novo jogador se não for encontrado
+            jogador_encontrado, _ = self._normalizar_jogador({"nome": nome})
+            self.ranking.append(jogador_encontrado)
+
+        # Adiciona o novo bloco de pontos
+        bloco_pontos = {"pontos": pontos, "semana_expiracao": semana_expiracao}
+        jogador_encontrado["pontos_detalhados"].append(bloco_pontos)
+        
+        # Recalcula o total de pontos
+        jogador_encontrado["pontos"] = sum(p["pontos"] for p in jogador_encontrado["pontos_detalhados"])
+
         self.ordenar()
-        self.salvar_ranking()
+        # O salvamento é feito externamente (ex: no final da distribuição)
+
 
     def obter_posicao(self, nome):
         self.ordenar()
@@ -165,6 +210,48 @@ class SistemaRanking:
             if normalizar_nome(jogador) == nome_normalizado:
                 return jogador
         return None
+    def exibir_ranking(self, start_pos=1, end_pos=None, player_name=None):
+        self.ordenar()
+        
+        if not self.ranking:
+            print("\n🚫 Ranking vazio. Nao ha jogadores para exibir.")
+            return
+
+        print("\n--- 🌐 RANKING ---")
+        
+        # Display player's rank if requested
+        if player_name:
+            player_rank = self.obter_posicao(player_name)
+            if player_rank:
+                player_info = self.buscar_jogador_por_nome(player_name)
+                print(f"⭐ Sua Posicao: #{player_rank} - {player_info['nome']} ({player_info['nacionalidade']}) - {player_info['pontos']} pts")
+            else:
+                print(f"⭐ {player_name} nao encontrado no ranking atual.")
+            print("--------------------")
+
+        # Determine the range to display
+        if end_pos is None:
+            end_pos = len(self.ranking) # Show all if no end specified
+        
+        # Ensure valid range
+        start_idx = max(0, start_pos - 1)
+        end_idx = min(len(self.ranking), end_pos)
+
+        if start_idx >= len(self.ranking):
+            print(f"\n🚫 A posicao inicial {start_pos} esta fora do alcance do ranking.")
+            return
+        if end_idx <= start_idx:
+            print(f"\n🚫 Nenhuma posicao para exibir no intervalo {start_pos}-{end_pos}.")
+            return
+
+        print(f"\nExibindo posicoes de #{start_pos} a #{end_idx}:")
+        for i in range(start_idx, end_idx):
+            jogador = self.ranking[i]
+            pos = i + 1
+            destaque = " (Voce)" if player_name and normalizar_nome(jogador) == normalizar_nome(player_name) else ""
+            print(f"#{pos} - {jogador['nome']} ({jogador['nacionalidade']}) - {jogador['pontos']} pts{destaque}")
+        print("--------------------")
+
 def get_jogador_by_id(ranking, id_):
     """Retorna o jogador na posição id_ (começando em 1, igual ao ranking tradicional)."""
     try:

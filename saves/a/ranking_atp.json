@@ -4,7 +4,7 @@
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 94,
-    "pontos": 10380,
+    "pontos": 0,
     "atributos": {
       "saque": 90,
       "forehand": 96,
@@ -22,14 +22,15 @@
       "agressividade": 72,
       "leitura_de_jogo": 69,
       "determinacao": 92
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Carlos Alcaraz",
     "nacionalidade": "[ES] Espanha",
     "idade": 22,
     "overall": 94,
-    "pontos": 8850,
+    "pontos": 0,
     "atributos": {
       "saque": 89,
       "forehand": 96,
@@ -47,14 +48,15 @@
       "agressividade": 76,
       "leitura_de_jogo": 76,
       "determinacao": 73
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alexander Zverev",
     "nacionalidade": "[DE] Alemanha",
     "idade": 28,
     "overall": 92,
-    "pontos": 7285,
+    "pontos": 0,
     "atributos": {
       "saque": 97,
       "forehand": 91,
@@ -72,14 +74,15 @@
       "agressividade": 70,
       "leitura_de_jogo": 88,
       "determinacao": 90
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Taylor Fritz",
     "nacionalidade": "[US] USA",
     "idade": 27,
     "overall": 91,
-    "pontos": 4625,
+    "pontos": 0,
     "atributos": {
       "saque": 95,
       "forehand": 94,
@@ -97,14 +100,15 @@
       "agressividade": 83,
       "leitura_de_jogo": 68,
       "determinacao": 84
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jack Draper",
     "nacionalidade": "[GB] Grã-Bretanha",
     "idade": 23,
     "overall": 90,
-    "pontos": 4610,
+    "pontos": 0,
     "atributos": {
       "saque": 94,
       "forehand": 89,
@@ -122,14 +126,15 @@
       "agressividade": 67,
       "leitura_de_jogo": 66,
       "determinacao": 68
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Novak Djokovic",
     "nacionalidade": "[RS] Sérvia",
     "idade": 38,
     "overall": 97,
-    "pontos": 4080,
+    "pontos": 0,
     "atributos": {
       "saque": 100,
       "forehand": 94,
@@ -147,14 +152,15 @@
       "agressividade": 79,
       "leitura_de_jogo": 88,
       "determinacao": 91
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Casper Ruud",
     "nacionalidade": "[NO] Noruega",
     "idade": 26,
     "overall": 88,
-    "pontos": 3905,
+    "pontos": 0,
     "atributos": {
       "saque": 92,
       "forehand": 88,
@@ -172,14 +178,15 @@
       "agressividade": 81,
       "leitura_de_jogo": 70,
       "determinacao": 86
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Lorenzo Musetti",
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 88,
-    "pontos": 3860,
+    "pontos": 0,
     "atributos": {
       "saque": 85,
       "forehand": 88,
@@ -197,14 +204,15 @@
       "agressividade": 86,
       "leitura_de_jogo": 81,
       "determinacao": 77
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alex De Minaur",
     "nacionalidade": "[AU] Austrália",
     "idade": 26,
     "overall": 89,
-    "pontos": 3635,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 92,
@@ -222,14 +230,15 @@
       "agressividade": 79,
       "leitura_de_jogo": 83,
       "determinacao": 73
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Holger Rune",
     "nacionalidade": "[DK] Dinamarca",
     "idade": 22,
     "overall": 88,
-    "pontos": 3440,
+    "pontos": 0,
     "atributos": {
       "saque": 87,
       "forehand": 89,
@@ -247,14 +256,15 @@
       "agressividade": 91,
       "leitura_de_jogo": 64,
       "determinacao": 88
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Daniil Medvedev",
     "nacionalidade": "[RU] Rússia",
     "idade": 29,
     "overall": 89,
-    "pontos": 3290,
+    "pontos": 0,
     "atributos": {
       "saque": 89,
       "forehand": 91,
@@ -272,14 +282,15 @@
       "agressividade": 70,
       "leitura_de_jogo": 87,
       "determinacao": 78
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Tommy Paul",
     "nacionalidade": "[US] USA",
     "idade": 28,
     "overall": 86,
-    "pontos": 3210,
+    "pontos": 0,
     "atributos": {
       "saque": 89,
       "forehand": 88,
@@ -297,14 +308,15 @@
       "agressividade": 70,
       "leitura_de_jogo": 66,
       "determinacao": 68
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Ben Shelton",
     "nacionalidade": "[US] USA",
     "idade": 22,
     "overall": 85,
-    "pontos": 2980,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 88,
@@ -322,14 +334,15 @@
       "agressividade": 85,
       "leitura_de_jogo": 71,
       "determinacao": 64
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Arthur Fils",
     "nacionalidade": "[FR] França",
     "idade": 20,
     "overall": 85,
-    "pontos": 2845,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 88,
@@ -347,14 +360,15 @@
       "agressividade": 73,
       "leitura_de_jogo": 64,
       "determinacao": 72
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Frances Tiafoe",
     "nacionalidade": "[US] USA",
     "idade": 27,
     "overall": 82,
-    "pontos": 2625,
+    "pontos": 0,
     "atributos": {
       "saque": 82,
       "forehand": 84,
@@ -372,14 +386,15 @@
       "agressividade": 69,
       "leitura_de_jogo": 77,
       "determinacao": 66
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Grigor Dimitrov",
     "nacionalidade": "[BG] Bulgária",
     "idade": 34,
     "overall": 85,
-    "pontos": 2595,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 88,
@@ -397,14 +412,15 @@
       "agressividade": 62,
       "leitura_de_jogo": 84,
       "determinacao": 75
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Andrey Rublev",
     "nacionalidade": "[RU] Rússia",
     "idade": 27,
     "overall": 86,
-    "pontos": 2540,
+    "pontos": 0,
     "atributos": {
       "saque": 88,
       "forehand": 90,
@@ -422,14 +438,15 @@
       "agressividade": 65,
       "leitura_de_jogo": 91,
       "determinacao": 74
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Francisco Cerundolo",
     "nacionalidade": "[AR] Argentina",
     "idade": 26,
     "overall": 84,
-    "pontos": 2475,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 86,
@@ -447,14 +464,15 @@
       "agressividade": 77,
       "leitura_de_jogo": 69,
       "determinacao": 86
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jakub Mensik",
     "nacionalidade": "[CZ] Czechia",
     "idade": 19,
     "overall": 82,
-    "pontos": 2272,
+    "pontos": 0,
     "atributos": {
       "saque": 84,
       "forehand": 86,
@@ -472,14 +490,15 @@
       "agressividade": 77,
       "leitura_de_jogo": 86,
       "determinacao": 85
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Stefanos Tsitsipas",
     "nacionalidade": "[GR] Grécia",
     "idade": 26,
     "overall": 88,
-    "pontos": 2270,
+    "pontos": 0,
     "atributos": {
       "saque": 88,
       "forehand": 89,
@@ -497,14 +516,15 @@
       "agressividade": 82,
       "leitura_de_jogo": 70,
       "determinacao": 86
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Tomas Machac",
     "nacionalidade": "[CZ] Czechia",
     "idade": 24,
     "overall": 82,
-    "pontos": 2265,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 79,
@@ -522,14 +542,15 @@
       "agressividade": 59,
       "leitura_de_jogo": 79,
       "determinacao": 65
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Ugo Humbert",
     "nacionalidade": "[FR] França",
     "idade": 26,
     "overall": 81,
-    "pontos": 2155,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 86,
@@ -547,14 +568,15 @@
       "agressividade": 66,
       "leitura_de_jogo": 59,
       "determinacao": 84
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Sebastian Korda",
     "nacionalidade": "[US] USA",
     "idade": 24,
     "overall": 83,
-    "pontos": 2020,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 83,
@@ -572,14 +594,15 @@
       "agressividade": 86,
       "leitura_de_jogo": 62,
       "determinacao": 71
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Karen Khachanov",
     "nacionalidade": "[RU] Rússia",
     "idade": 29,
     "overall": 82,
-    "pontos": 1910,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 81,
@@ -597,14 +620,15 @@
       "agressividade": 72,
       "leitura_de_jogo": 78,
       "determinacao": 84
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alexei Popyrin",
     "nacionalidade": "[AU] Austrália",
     "idade": 25,
     "overall": 80,
-    "pontos": 1900,
+    "pontos": 0,
     "atributos": {
       "saque": 85,
       "forehand": 82,
@@ -622,14 +646,15 @@
       "agressividade": 62,
       "leitura_de_jogo": 68,
       "determinacao": 68
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alejandro Davidovich Fokina",
     "nacionalidade": "[ES] Espanha",
     "idade": 25,
     "overall": 81,
-    "pontos": 1730,
+    "pontos": 0,
     "atributos": {
       "saque": 79,
       "forehand": 80,
@@ -647,14 +672,15 @@
       "agressividade": 78,
       "leitura_de_jogo": 65,
       "determinacao": 79
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Denis Shapovalov",
     "nacionalidade": "[CA] Canadá",
     "idade": 26,
     "overall": 84,
-    "pontos": 1726,
+    "pontos": 0,
     "atributos": {
       "saque": 85,
       "forehand": 82,
@@ -672,14 +698,15 @@
       "agressividade": 81,
       "leitura_de_jogo": 80,
       "determinacao": 62
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Matteo Berrettini",
     "nacionalidade": "[IT] Itália",
     "idade": 29,
     "overall": 84,
-    "pontos": 1720,
+    "pontos": 0,
     "atributos": {
       "saque": 86,
       "forehand": 84,
@@ -697,14 +724,15 @@
       "agressividade": 80,
       "leitura_de_jogo": 65,
       "determinacao": 77
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Brandon Nakashima",
     "nacionalidade": "[US] USA",
     "idade": 23,
     "overall": 82,
-    "pontos": 1690,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 84,
@@ -722,14 +750,15 @@
       "agressividade": 65,
       "leitura_de_jogo": 63,
       "determinacao": 72
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Felix Auger-Aliassime",
     "nacionalidade": "[CA] Canadá",
     "idade": 24,
     "overall": 84,
-    "pontos": 1685,
+    "pontos": 0,
     "atributos": {
       "saque": 88,
       "forehand": 84,
@@ -747,14 +776,15 @@
       "agressividade": 68,
       "leitura_de_jogo": 89,
       "determinacao": 80
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Hubert Hurkacz",
     "nacionalidade": "[PL] Polônia",
     "idade": 28,
     "overall": 83,
-    "pontos": 1665,
+    "pontos": 0,
     "atributos": {
       "saque": 85,
       "forehand": 81,
@@ -772,14 +802,15 @@
       "agressividade": 76,
       "leitura_de_jogo": 66,
       "determinacao": 80
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Giovanni Mpetshi Perricard",
     "nacionalidade": "[FR] França",
     "idade": 21,
     "overall": 81,
-    "pontos": 1614,
+    "pontos": 0,
     "atributos": {
       "saque": 81,
       "forehand": 84,
@@ -797,14 +828,15 @@
       "agressividade": 83,
       "leitura_de_jogo": 81,
       "determinacao": 81
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alex Michelsen",
     "nacionalidade": "[US] USA",
     "idade": 20,
     "overall": 79,
-    "pontos": 1550,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 81,
@@ -822,14 +854,15 @@
       "agressividade": 63,
       "leitura_de_jogo": 82,
       "determinacao": 57
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Tallon Griekspoor",
     "nacionalidade": "[NL] Holanda",
     "idade": 28,
     "overall": 82,
-    "pontos": 1485,
+    "pontos": 0,
     "atributos": {
       "saque": 81,
       "forehand": 80,
@@ -847,14 +880,15 @@
       "agressividade": 68,
       "leitura_de_jogo": 70,
       "determinacao": 66
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Flavio Cobolli",
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 79,
-    "pontos": 1480,
+    "pontos": 0,
     "atributos": {
       "saque": 83,
       "forehand": 78,
@@ -872,14 +906,15 @@
       "agressividade": 62,
       "leitura_de_jogo": 85,
       "determinacao": 86
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Sebastian Baez",
     "nacionalidade": "[AR] Argentina",
     "idade": 24,
     "overall": 81,
-    "pontos": 1450,
+    "pontos": 0,
     "atributos": {
       "saque": 76,
       "forehand": 80,
@@ -897,14 +932,15 @@
       "agressividade": 85,
       "leitura_de_jogo": 79,
       "determinacao": 67
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jiri Lehecka",
     "nacionalidade": "[CZ] Czechia",
     "idade": 23,
     "overall": 81,
-    "pontos": 1415,
+    "pontos": 0,
     "atributos": {
       "saque": 84,
       "forehand": 81,
@@ -922,14 +958,15 @@
       "agressividade": 77,
       "leitura_de_jogo": 72,
       "determinacao": 69
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jordan Thompson",
     "nacionalidade": "[AU] Austrália",
     "idade": 31,
     "overall": 79,
-    "pontos": 1375,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 78,
@@ -947,14 +984,15 @@
       "agressividade": 85,
       "leitura_de_jogo": 76,
       "determinacao": 70
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Matteo Arnaldi",
     "nacionalidade": "[IT] Itália",
     "idade": 24,
     "overall": 80,
-    "pontos": 1365,
+    "pontos": 0,
     "atributos": {
       "saque": 82,
       "forehand": 80,
@@ -972,14 +1010,15 @@
       "agressividade": 65,
       "leitura_de_jogo": 61,
       "determinacao": 64
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alexandre Muller",
     "nacionalidade": "[FR] França",
     "idade": 28,
     "overall": 78,
-    "pontos": 1313,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 78,
@@ -997,14 +1036,15 @@
       "agressividade": 72,
       "leitura_de_jogo": 72,
       "determinacao": 63
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Nuno Borges",
     "nacionalidade": "[PT] Portugal",
     "idade": 28,
     "overall": 78,
-    "pontos": 1270,
+    "pontos": 0,
     "atributos": {
       "saque": 77,
       "forehand": 77,
@@ -1022,14 +1062,15 @@
       "agressividade": 73,
       "leitura_de_jogo": 68,
       "determinacao": 83
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Gael Monfils",
     "nacionalidade": "[FR] França",
     "idade": 38,
     "overall": 80,
-    "pontos": 1265,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 78,
@@ -1047,14 +1088,15 @@
       "agressividade": 69,
       "leitura_de_jogo": 68,
       "determinacao": 64
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Marcos Giron",
     "nacionalidade": "[US] USA",
     "idade": 31,
     "overall": 77,
-    "pontos": 1265,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 79,
@@ -1072,14 +1114,15 @@
       "agressividade": 70,
       "leitura_de_jogo": 69,
       "determinacao": 56
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Lorenzo Sonego",
     "nacionalidade": "[IT] Itália",
     "idade": 30,
     "overall": 80,
-    "pontos": 1205,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 84,
@@ -1097,14 +1140,15 @@
       "agressividade": 58,
       "leitura_de_jogo": 84,
       "determinacao": 60
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Luciano Darderi",
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 76,
-    "pontos": 1159,
+    "pontos": 0,
     "atributos": {
       "saque": 77,
       "forehand": 77,
@@ -1122,14 +1166,15 @@
       "agressividade": 73,
       "leitura_de_jogo": 58,
       "determinacao": 78
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Miomir Kecmanovic",
     "nacionalidade": "[RS] Sérvia",
     "idade": 25,
     "overall": 79,
-    "pontos": 1146,
+    "pontos": 0,
     "atributos": {
       "saque": 77,
       "forehand": 79,
@@ -1147,14 +1192,15 @@
       "agressividade": 69,
       "leitura_de_jogo": 75,
       "determinacao": 58
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "David Goffin",
     "nacionalidade": "[BE] Bélgica",
     "idade": 34,
     "overall": 78,
-    "pontos": 1118,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 78,
@@ -1172,14 +1218,15 @@
       "agressividade": 67,
       "leitura_de_jogo": 74,
       "determinacao": 69
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Pedro Martinez Portero",
     "nacionalidade": "[ES] Espanha",
     "idade": 28,
     "overall": 76,
-    "pontos": 1070,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 77,
@@ -1197,14 +1244,15 @@
       "agressividade": 61,
       "leitura_de_jogo": 70,
       "determinacao": 80
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Zizou Bergs",
     "nacionalidade": "[BE] Bélgica",
     "idade": 25,
     "overall": 76,
-    "pontos": 1051,
+    "pontos": 0,
     "atributos": {
       "saque": 80,
       "forehand": 78,
@@ -1222,14 +1270,15 @@
       "agressividade": 53,
       "leitura_de_jogo": 74,
       "determinacao": 76
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Quentin Halys",
     "nacionalidade": "[FR] França",
     "idade": 28,
     "overall": 76,
-    "pontos": 1024,
+    "pontos": 0,
     "atributos": {
       "saque": 79,
       "forehand": 80,
@@ -1247,14 +1296,15 @@
       "agressividade": 74,
       "leitura_de_jogo": 81,
       "determinacao": 70
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alexander Bublik",
     "nacionalidade": "[KZ] Cazaquistão",
     "idade": 27,
     "overall": 78,
-    "pontos": 1005,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 81,
@@ -1272,14 +1322,15 @@
       "agressividade": 63,
       "leitura_de_jogo": 79,
       "determinacao": 75
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Camilo Ugo Carabelli",
     "nacionalidade": "[AR] Argentina",
     "idade": 25,
     "overall": 75,
-    "pontos": 1000,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 79,
@@ -1297,14 +1348,15 @@
       "agressividade": 55,
       "leitura_de_jogo": 61,
       "determinacao": 65
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Gabriel Diallo",
     "nacionalidade": "[CA] Canadá",
     "idade": 23,
     "overall": 76,
-    "pontos": 997,
+    "pontos": 0,
     "atributos": {
       "saque": 76,
       "forehand": 79,
@@ -1322,14 +1374,15 @@
       "agressividade": 67,
       "leitura_de_jogo": 53,
       "determinacao": 83
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jacob Fearnley",
     "nacionalidade": "[GB] Grã-Bretanha",
     "idade": 23,
     "overall": 74,
-    "pontos": 976,
+    "pontos": 0,
     "atributos": {
       "saque": 76,
       "forehand": 73,
@@ -1347,14 +1400,15 @@
       "agressividade": 79,
       "leitura_de_jogo": 74,
       "determinacao": 59
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Tomas Martin Etcheverry",
     "nacionalidade": "[AR] Argentina",
     "idade": 25,
     "overall": 76,
-    "pontos": 975,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 74,
@@ -1372,14 +1426,15 @@
       "agressividade": 77,
       "leitura_de_jogo": 58,
       "determinacao": 69
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Fabian Marozsan",
     "nacionalidade": "[HU] Hungria",
     "idade": 25,
     "overall": 76,
-    "pontos": 975,
+    "pontos": 0,
     "atributos": {
       "saque": 78,
       "forehand": 78,
@@ -1397,14 +1452,15 @@
       "agressividade": 56,
       "leitura_de_jogo": 80,
       "determinacao": 73
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Roberto Bautista Agut",
     "nacionalidade": "[ES] Espanha",
     "idade": 37,
     "overall": 77,
-    "pontos": 974,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 78,
@@ -1422,14 +1478,15 @@
       "agressividade": 80,
       "leitura_de_jogo": 74,
       "determinacao": 70
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jaume Munar",
     "nacionalidade": "[ES] Espanha",
     "idade": 28,
     "overall": 76,
-    "pontos": 962,
+    "pontos": 0,
     "atributos": {
       "saque": 77,
       "forehand": 73,
@@ -1447,14 +1504,15 @@
       "agressividade": 59,
       "leitura_de_jogo": 57,
       "determinacao": 64
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Laslo Djere",
     "nacionalidade": "[RS] Sérvia",
     "idade": 29,
     "overall": 76,
-    "pontos": 952,
+    "pontos": 0,
     "atributos": {
       "saque": 79,
       "forehand": 77,
@@ -1472,14 +1530,15 @@
       "agressividade": 58,
       "leitura_de_jogo": 70,
       "determinacao": 83
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Benjamin Bonzi",
     "nacionalidade": "[FR] França",
     "idade": 28,
     "overall": 76,
-    "pontos": 943,
+    "pontos": 0,
     "atributos": {
       "saque": 79,
       "forehand": 76,
@@ -1497,14 +1556,15 @@
       "agressividade": 82,
       "leitura_de_jogo": 69,
       "determinacao": 82
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alejandro Tabilo",
     "nacionalidade": "[CL] Chile",
     "idade": 27,
     "overall": 73,
-    "pontos": 940,
+    "pontos": 0,
     "atributos": {
       "saque": 76,
       "forehand": 74,
@@ -1522,14 +1582,15 @@
       "agressividade": 69,
       "leitura_de_jogo": 60,
       "determinacao": 65
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Kei Nishikori",
     "nacionalidade": "[JP] Japão",
     "idade": 35,
     "overall": 73,
-    "pontos": 928,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 77,
@@ -1547,14 +1608,15 @@
       "agressividade": 53,
       "leitura_de_jogo": 79,
       "determinacao": 61
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Roberto Carballes Baena",
     "nacionalidade": "[ES] Espanha",
     "idade": 32,
     "overall": 72,
-    "pontos": 926,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 73,
@@ -1572,14 +1634,15 @@
       "agressividade": 75,
       "leitura_de_jogo": 74,
       "determinacao": 58
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Francisco Comesana",
     "nacionalidade": "[AR] Argentina",
     "idade": 24,
     "overall": 71,
-    "pontos": 911,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 72,
@@ -1597,14 +1660,15 @@
       "agressividade": 49,
       "leitura_de_jogo": 55,
       "determinacao": 76
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "João Fonseca",
     "nacionalidade": "[BR] Brasil",
     "idade": 18,
     "overall": 74,
-    "pontos": 907,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 77,
@@ -1622,14 +1686,15 @@
       "agressividade": 81,
       "leitura_de_jogo": 53,
       "determinacao": 53
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Daniel Altmaier",
     "nacionalidade": "[DE] Alemanha",
     "idade": 26,
     "overall": 73,
-    "pontos": 906,
+    "pontos": 0,
     "atributos": {
       "saque": 73,
       "forehand": 71,
@@ -1647,14 +1712,15 @@
       "agressividade": 65,
       "leitura_de_jogo": 76,
       "determinacao": 52
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Learner Tien",
     "nacionalidade": "[US] USA",
     "idade": 19,
     "overall": 71,
-    "pontos": 893,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 72,
@@ -1672,14 +1738,15 @@
       "agressividade": 65,
       "leitura_de_jogo": 72,
       "determinacao": 52
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Mattia Bellucci",
     "nacionalidade": "[IT] Itália",
     "idade": 23,
     "overall": 72,
-    "pontos": 891,
+    "pontos": 0,
     "atributos": {
       "saque": 73,
       "forehand": 69,
@@ -1697,14 +1764,15 @@
       "agressividade": 70,
       "leitura_de_jogo": 64,
       "determinacao": 79
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Damir Dzumhur",
     "nacionalidade": "[BA] Bósnia e Herzegovina",
     "idade": 33,
     "overall": 71,
-    "pontos": 875,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 72,
@@ -1722,14 +1790,15 @@
       "agressividade": 53,
       "leitura_de_jogo": 56,
       "determinacao": 64
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Bu Yunchaokete",
     "nacionalidade": "[CN] China",
     "idade": 23,
     "overall": 72,
-    "pontos": 874,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 74,
@@ -1747,14 +1816,15 @@
       "agressividade": 68,
       "leitura_de_jogo": 62,
       "determinacao": 79
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Shang Juncheng",
     "nacionalidade": "[CN] China",
     "idade": 20,
     "overall": 70,
-    "pontos": 822,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 69,
@@ -1772,14 +1842,15 @@
       "agressividade": 77,
       "leitura_de_jogo": 65,
       "determinacao": 72
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Arthur Rinderknech",
     "nacionalidade": "[FR] França",
     "idade": 29,
     "overall": 72,
-    "pontos": 820,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 74,
@@ -1797,14 +1868,15 @@
       "agressividade": 71,
       "leitura_de_jogo": 55,
       "determinacao": 71
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Roman Safiullin",
     "nacionalidade": "[RU] Rússia",
     "idade": 27,
     "overall": 72,
-    "pontos": 816,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 75,
@@ -1822,14 +1894,15 @@
       "agressividade": 61,
       "leitura_de_jogo": 70,
       "determinacao": 69
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Hugo Gaston",
     "nacionalidade": "[FR] França",
     "idade": 24,
     "overall": 71,
-    "pontos": 816,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 74,
@@ -1847,14 +1920,15 @@
       "agressividade": 62,
       "leitura_de_jogo": 76,
       "determinacao": 64
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Yoshihito Nishioka",
     "nacionalidade": "[JP] Japão",
     "idade": 29,
     "overall": 72,
-    "pontos": 813,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 75,
@@ -1872,14 +1946,15 @@
       "agressividade": 52,
       "leitura_de_jogo": 56,
       "determinacao": 56
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Corentin Moutet",
     "nacionalidade": "[FR] França",
     "idade": 26,
     "overall": 72,
-    "pontos": 812,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 75,
@@ -1897,14 +1972,15 @@
       "agressividade": 59,
       "leitura_de_jogo": 49,
       "determinacao": 67
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Hamad Medjedovic",
     "nacionalidade": "[RS] Sérvia",
     "idade": 21,
     "overall": 73,
-    "pontos": 811,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 74,
@@ -1922,14 +1998,15 @@
       "agressividade": 57,
       "leitura_de_jogo": 68,
       "determinacao": 57
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Aleksandar Vukic",
     "nacionalidade": "[AU] Austrália",
     "idade": 29,
     "overall": 71,
-    "pontos": 792,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 76,
@@ -1947,14 +2024,15 @@
       "agressividade": 50,
       "leitura_de_jogo": 70,
       "determinacao": 68
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Rinky Hijikata",
     "nacionalidade": "[AU] Austrália",
     "idade": 24,
     "overall": 72,
-    "pontos": 792,
+    "pontos": 0,
     "atributos": {
       "saque": 75,
       "forehand": 72,
@@ -1972,14 +2050,15 @@
       "agressividade": 56,
       "leitura_de_jogo": 51,
       "determinacao": 77
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Aleksandar Kovacevic",
     "nacionalidade": "[US] USA",
     "idade": 26,
     "overall": 70,
-    "pontos": 787,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 73,
@@ -1997,14 +2076,15 @@
       "agressividade": 75,
       "leitura_de_jogo": 58,
       "determinacao": 50
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Zhang Zhizhen",
     "nacionalidade": "[CN] China",
     "idade": 28,
     "overall": 71,
-    "pontos": 785,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 74,
@@ -2022,14 +2102,15 @@
       "agressividade": 55,
       "leitura_de_jogo": 56,
       "determinacao": 69
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Christopher O'Connell",
     "nacionalidade": "[AU] Austrália",
     "idade": 30,
     "overall": 70,
-    "pontos": 762,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 67,
@@ -2047,14 +2128,15 @@
       "agressividade": 54,
       "leitura_de_jogo": 65,
       "determinacao": 52
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Borna Coric",
     "nacionalidade": "[HR] Croácia",
     "idade": 28,
     "overall": 71,
-    "pontos": 741,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 69,
@@ -2072,14 +2154,15 @@
       "agressividade": 77,
       "leitura_de_jogo": 76,
       "determinacao": 66
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Raphael Collignon",
     "nacionalidade": "[BE] Bélgica",
     "idade": 23,
     "overall": 70,
-    "pontos": 726,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 69,
@@ -2097,14 +2180,15 @@
       "agressividade": 63,
       "leitura_de_jogo": 55,
       "determinacao": 73
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Vit Kopriva",
     "nacionalidade": "[CZ] Czechia",
     "idade": 27,
     "overall": 69,
-    "pontos": 715,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 70,
@@ -2122,14 +2206,15 @@
       "agressividade": 72,
       "leitura_de_jogo": 60,
       "determinacao": 53
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jan-Lennard Struff",
     "nacionalidade": "[DE] Alemanha",
     "idade": 35,
     "overall": 70,
-    "pontos": 690,
+    "pontos": 0,
     "atributos": {
       "saque": 72,
       "forehand": 74,
@@ -2147,14 +2232,15 @@
       "agressividade": 51,
       "leitura_de_jogo": 69,
       "determinacao": 61
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jesper De Jong",
     "nacionalidade": "[NL] Holanda",
     "idade": 24,
     "overall": 68,
-    "pontos": 690,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 66,
@@ -2172,14 +2258,15 @@
       "agressividade": 59,
       "leitura_de_jogo": 59,
       "determinacao": 60
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Kamil Majchrzak",
     "nacionalidade": "[PL] Polônia",
     "idade": 29,
     "overall": 68,
-    "pontos": 689,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 70,
@@ -2197,14 +2284,15 @@
       "agressividade": 69,
       "leitura_de_jogo": 47,
       "determinacao": 67
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Botic Van De Zandschulp",
     "nacionalidade": "[NL] Holanda",
     "idade": 29,
     "overall": 70,
-    "pontos": 670,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 73,
@@ -2222,14 +2310,15 @@
       "agressividade": 68,
       "leitura_de_jogo": 51,
       "determinacao": 49
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Cameron Norrie",
     "nacionalidade": "[GB] Grã-Bretanha",
     "idade": 29,
     "overall": 72,
-    "pontos": 657,
+    "pontos": 0,
     "atributos": {
       "saque": 74,
       "forehand": 72,
@@ -2247,14 +2336,15 @@
       "agressividade": 72,
       "leitura_de_jogo": 59,
       "determinacao": 74
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Adam Walton",
     "nacionalidade": "[AU] Austrália",
     "idade": 26,
     "overall": 68,
-    "pontos": 653,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 70,
@@ -2272,14 +2362,15 @@
       "agressividade": 49,
       "leitura_de_jogo": 53,
       "determinacao": 52
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "James Duckworth",
     "nacionalidade": "[AU] Austrália",
     "idade": 33,
     "overall": 67,
-    "pontos": 651,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 65,
@@ -2297,14 +2388,15 @@
       "agressividade": 62,
       "leitura_de_jogo": 59,
       "determinacao": 49
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Chun-Hsin Tseng",
     "nacionalidade": "[TW] Taipei Chinês",
     "idade": 23,
     "overall": 67,
-    "pontos": 648,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 67,
@@ -2322,14 +2414,15 @@
       "agressividade": 50,
       "leitura_de_jogo": 53,
       "determinacao": 59
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Luca Nardi",
     "nacionalidade": "[IT] Itália",
     "idade": 21,
     "overall": 67,
-    "pontos": 645,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 67,
@@ -2347,14 +2440,15 @@
       "agressividade": 72,
       "leitura_de_jogo": 74,
       "determinacao": 47
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Reilly Opelka",
     "nacionalidade": "[US] USA",
     "idade": 27,
     "overall": 69,
-    "pontos": 644,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 72,
@@ -2372,14 +2466,15 @@
       "agressividade": 72,
       "leitura_de_jogo": 74,
       "determinacao": 74
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Hugo Dellien",
     "nacionalidade": "[BO] Bolívia",
     "idade": 31,
     "overall": 66,
-    "pontos": 641,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 66,
@@ -2397,14 +2492,15 @@
       "agressividade": 47,
       "leitura_de_jogo": 45,
       "determinacao": 64
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alexander Shevchenko",
     "nacionalidade": "[KZ] Cazaquistão",
     "idade": 24,
     "overall": 69,
-    "pontos": 630,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 72,
@@ -2422,14 +2518,15 @@
       "agressividade": 73,
       "leitura_de_jogo": 47,
       "determinacao": 49
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Mariano Navone",
     "nacionalidade": "[AR] Argentina",
     "idade": 24,
     "overall": 67,
-    "pontos": 620,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 68,
@@ -2447,14 +2544,15 @@
       "agressividade": 69,
       "leitura_de_jogo": 72,
       "determinacao": 52
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Mackenzie McDonald",
     "nacionalidade": "[US] USA",
     "idade": 30,
     "overall": 69,
-    "pontos": 617,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 71,
@@ -2472,14 +2570,15 @@
       "agressividade": 60,
       "leitura_de_jogo": 62,
       "determinacao": 62
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Pablo Carreno Busta",
     "nacionalidade": "[ES] Espanha",
     "idade": 33,
     "overall": 70,
-    "pontos": 615,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 71,
@@ -2497,14 +2596,15 @@
       "agressividade": 75,
       "leitura_de_jogo": 60,
       "determinacao": 76
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Nishesh Basavareddy",
     "nacionalidade": "[US] USA",
     "idade": 20,
     "overall": 67,
-    "pontos": 598,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 63,
@@ -2522,14 +2622,15 @@
       "agressividade": 50,
       "leitura_de_jogo": 57,
       "determinacao": 45
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Brandon Holt",
     "nacionalidade": "[US] USA",
     "idade": 27,
     "overall": 65,
-    "pontos": 583,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 63,
@@ -2547,14 +2648,15 @@
       "agressividade": 51,
       "leitura_de_jogo": 72,
       "determinacao": 68
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Billy Harris",
     "nacionalidade": "[GB] Grã-Bretanha",
     "idade": 30,
     "overall": 63,
-    "pontos": 582,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 65,
@@ -2572,14 +2674,15 @@
       "agressividade": 55,
       "leitura_de_jogo": 50,
       "determinacao": 54
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Marin Cilic",
     "nacionalidade": "[HR] Croácia",
     "idade": 36,
     "overall": 69,
-    "pontos": 563,
+    "pontos": 0,
     "atributos": {
       "saque": 72,
       "forehand": 67,
@@ -2597,14 +2700,15 @@
       "agressividade": 77,
       "leitura_de_jogo": 70,
       "determinacao": 72
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Christopher Eubanks",
     "nacionalidade": "[US] USA",
     "idade": 29,
     "overall": 68,
-    "pontos": 558,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 67,
@@ -2622,14 +2726,15 @@
       "agressividade": 67,
       "leitura_de_jogo": 68,
       "determinacao": 61
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Ethan Quinn",
     "nacionalidade": "[US] USA",
     "idade": 21,
     "overall": 66,
-    "pontos": 538,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 71,
@@ -2647,14 +2752,15 @@
       "agressividade": 50,
       "leitura_de_jogo": 53,
       "determinacao": 50
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Fabio Fognini",
     "nacionalidade": "[IT] Itália",
     "idade": 37,
     "overall": 65,
-    "pontos": 536,
+    "pontos": 0,
     "atributos": {
       "saque": 58,
       "forehand": 63,
@@ -2672,14 +2778,15 @@
       "agressividade": 44,
       "leitura_de_jogo": 61,
       "determinacao": 66
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Elmer Moller",
     "nacionalidade": "[DK] Dinamarca",
     "idade": 21,
     "overall": 65,
-    "pontos": 536,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 67,
@@ -2697,14 +2804,15 @@
       "agressividade": 44,
       "leitura_de_jogo": 66,
       "determinacao": 53
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Juan Manuel Cerundolo",
     "nacionalidade": "[AR] Argentina",
     "idade": 23,
     "overall": 67,
-    "pontos": 530,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 67,
@@ -2722,14 +2830,15 @@
       "agressividade": 46,
       "leitura_de_jogo": 63,
       "determinacao": 60
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Tomas Barrios Vera",
     "nacionalidade": "[CL] Chile",
     "idade": 27,
     "overall": 66,
-    "pontos": 529,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 67,
@@ -2747,14 +2856,15 @@
       "agressividade": 73,
       "leitura_de_jogo": 71,
       "determinacao": 60
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Thanasi Kokkinakis",
     "nacionalidade": "[AU] Austrália",
     "idade": 29,
     "overall": 68,
-    "pontos": 518,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 68,
@@ -2772,14 +2882,15 @@
       "agressividade": 47,
       "leitura_de_jogo": 76,
       "determinacao": 62
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Thiago Seyboth Wild",
     "nacionalidade": "[BR] Brasil",
     "idade": 25,
     "overall": 68,
-    "pontos": 513,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 72,
@@ -2797,14 +2908,15 @@
       "agressividade": 73,
       "leitura_de_jogo": 51,
       "determinacao": 48
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Arthur Cazaux",
     "nacionalidade": "[FR] França",
     "idade": 22,
     "overall": 67,
-    "pontos": 508,
+    "pontos": 0,
     "atributos": {
       "saque": 71,
       "forehand": 69,
@@ -2822,14 +2934,15 @@
       "agressividade": 47,
       "leitura_de_jogo": 66,
       "determinacao": 72
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Otto Virtanen",
     "nacionalidade": "[FI] Finlândia",
     "idade": 23,
     "overall": 67,
-    "pontos": 498,
+    "pontos": 0,
     "atributos": {
       "saque": 70,
       "forehand": 68,
@@ -2847,14 +2960,15 @@
       "agressividade": 57,
       "leitura_de_jogo": 48,
       "determinacao": 75
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jaime Faria",
     "nacionalidade": "[PT] Portugal",
     "idade": 21,
     "overall": 65,
-    "pontos": 493,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 68,
@@ -2872,14 +2986,15 @@
       "agressividade": 61,
       "leitura_de_jogo": 50,
       "determinacao": 61
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Eliot Spizzirri",
     "nacionalidade": "[US] USA",
     "idade": 23,
     "overall": 65,
-    "pontos": 492,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 65,
@@ -2897,14 +3012,15 @@
       "agressividade": 44,
       "leitura_de_jogo": 62,
       "determinacao": 45
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Roman Andres Burruchaga",
     "nacionalidade": "[AR] Argentina",
     "idade": 23,
     "overall": 65,
-    "pontos": 485,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 67,
@@ -2922,14 +3038,15 @@
       "agressividade": 64,
       "leitura_de_jogo": 61,
       "determinacao": 61
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Daniel Elahi Galan",
     "nacionalidade": "[CO] Colômbia",
     "idade": 28,
     "overall": 66,
-    "pontos": 482,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 66,
@@ -2947,14 +3064,15 @@
       "agressividade": 54,
       "leitura_de_jogo": 73,
       "determinacao": 52
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Tristan Boyer",
     "nacionalidade": "[US] USA",
     "idade": 24,
     "overall": 65,
-    "pontos": 479,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 67,
@@ -2972,14 +3090,15 @@
       "agressividade": 64,
       "leitura_de_jogo": 65,
       "determinacao": 53
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Valentin Royer",
     "nacionalidade": "[FR] França",
     "idade": 23,
     "overall": 65,
-    "pontos": 478,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 69,
@@ -2997,14 +3116,15 @@
       "agressividade": 51,
       "leitura_de_jogo": 55,
       "determinacao": 47
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Terence Atmane",
     "nacionalidade": "[FR] França",
     "idade": 23,
     "overall": 64,
-    "pontos": 477,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 64,
@@ -3022,14 +3142,15 @@
       "agressividade": 62,
       "leitura_de_jogo": 51,
       "determinacao": 56
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Cristian Garin",
     "nacionalidade": "[CL] Chile",
     "idade": 28,
     "overall": 67,
-    "pontos": 474,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 68,
@@ -3047,14 +3168,15 @@
       "agressividade": 74,
       "leitura_de_jogo": 69,
       "determinacao": 74
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Jerome Kym",
     "nacionalidade": "[CH] Suíça",
     "idade": 22,
     "overall": 65,
-    "pontos": 474,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 65,
@@ -3072,14 +3194,15 @@
       "agressividade": 43,
       "leitura_de_jogo": 57,
       "determinacao": 62
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Dusan Lajovic",
     "nacionalidade": "[RS] Sérvia",
     "idade": 34,
     "overall": 67,
-    "pontos": 466,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 64,
@@ -3097,14 +3220,15 @@
       "agressividade": 48,
       "leitura_de_jogo": 47,
       "determinacao": 62
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Carlos Taberner",
     "nacionalidade": "[ES] Espanha",
     "idade": 27,
     "overall": 64,
-    "pontos": 466,
+    "pontos": 0,
     "atributos": {
       "saque": 58,
       "forehand": 66,
@@ -3122,14 +3246,15 @@
       "agressividade": 58,
       "leitura_de_jogo": 50,
       "determinacao": 46
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Dalibor Svrcina",
     "nacionalidade": "[CZ] Czechia",
     "idade": 22,
     "overall": 66,
-    "pontos": 466,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 65,
@@ -3147,14 +3272,15 @@
       "agressividade": 55,
       "leitura_de_jogo": 72,
       "determinacao": 46
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Tristan Schoolkate",
     "nacionalidade": "[AU] Austrália",
     "idade": 24,
     "overall": 65,
-    "pontos": 464,
+    "pontos": 0,
     "atributos": {
       "saque": 68,
       "forehand": 65,
@@ -3172,14 +3298,15 @@
       "agressividade": 50,
       "leitura_de_jogo": 54,
       "determinacao": 52
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Sebastian Ofner",
     "nacionalidade": "[AT] Áustria",
     "idade": 29,
     "overall": 65,
-    "pontos": 458,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 64,
@@ -3197,14 +3324,15 @@
       "agressividade": 57,
       "leitura_de_jogo": 69,
       "determinacao": 60
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Adrian Mannarino",
     "nacionalidade": "[FR] França",
     "idade": 36,
     "overall": 67,
-    "pontos": 456,
+    "pontos": 0,
     "atributos": {
       "saque": 60,
       "forehand": 67,
@@ -3222,14 +3350,15 @@
       "agressividade": 54,
       "leitura_de_jogo": 64,
       "determinacao": 70
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Thiago Monteiro",
     "nacionalidade": "[BR] Brasil",
     "idade": 30,
     "overall": 67,
-    "pontos": 454,
+    "pontos": 0,
     "atributos": {
       "saque": 69,
       "forehand": 69,
@@ -3247,14 +3376,15 @@
       "agressividade": 61,
       "leitura_de_jogo": 45,
       "determinacao": 66
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Thiago Agustin Tirante",
     "nacionalidade": "[AR] Argentina",
     "idade": 24,
     "overall": 63,
-    "pontos": 453,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 64,
@@ -3272,14 +3402,15 @@
       "agressividade": 58,
       "leitura_de_jogo": 50,
       "determinacao": 70
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Nikoloz Basilashvili",
     "nacionalidade": "[GE] Geórgia",
     "idade": 33,
     "overall": 66,
-    "pontos": 451,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 66,
@@ -3297,14 +3428,15 @@
       "agressividade": 47,
       "leitura_de_jogo": 74,
       "determinacao": 72
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Felipe Meligeni Alves",
     "nacionalidade": "[BR] Brasil",
     "idade": 27,
     "overall": 62,
-    "pontos": 446,
+    "pontos": 0,
     "atributos": {
       "saque": 61,
       "forehand": 63,
@@ -3322,14 +3454,15 @@
       "agressividade": 48,
       "leitura_de_jogo": 43,
       "determinacao": 68
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Marton Fucsovics",
     "nacionalidade": "[HU] Hungria",
     "idade": 33,
     "overall": 64,
-    "pontos": 443,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 63,
@@ -3347,14 +3480,15 @@
       "agressividade": 65,
       "leitura_de_jogo": 59,
       "determinacao": 46
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Lucas Pouille",
     "nacionalidade": "[FR] França",
     "idade": 31,
     "overall": 64,
-    "pontos": 439,
+    "pontos": 0,
     "atributos": {
       "saque": 67,
       "forehand": 61,
@@ -3372,14 +3506,15 @@
       "agressividade": 51,
       "leitura_de_jogo": 61,
       "determinacao": 48
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Vilius Gaubas",
     "nacionalidade": "[LT] Lituânia",
     "idade": 20,
     "overall": 63,
-    "pontos": 439,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 66,
@@ -3397,14 +3532,15 @@
       "agressividade": 51,
       "leitura_de_jogo": 47,
       "determinacao": 62
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Yannick Hanfmann",
     "nacionalidade": "[DE] Alemanha",
     "idade": 33,
     "overall": 65,
-    "pontos": 435,
+    "pontos": 0,
     "atributos": {
       "saque": 65,
       "forehand": 65,
@@ -3422,14 +3558,15 @@
       "agressividade": 70,
       "leitura_de_jogo": 51,
       "determinacao": 59
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Emilio Nava",
     "nacionalidade": "[US] USA",
     "idade": 23,
     "overall": 63,
-    "pontos": 433,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 65,
@@ -3447,14 +3584,15 @@
       "agressividade": 49,
       "leitura_de_jogo": 69,
       "determinacao": 70
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Stan Wawrinka",
     "nacionalidade": "[CH] Suíça",
     "idade": 40,
     "overall": 65,
-    "pontos": 432,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 65,
@@ -3472,14 +3610,15 @@
       "agressividade": 44,
       "leitura_de_jogo": 45,
       "determinacao": 63
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Francesco Passaro",
     "nacionalidade": "[IT] Itália",
     "idade": 24,
     "overall": 62,
-    "pontos": 423,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 67,
@@ -3497,14 +3636,15 @@
       "agressividade": 66,
       "leitura_de_jogo": 48,
       "determinacao": 41
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Mitchell Krueger",
     "nacionalidade": "[US] USA",
     "idade": 31,
     "overall": 61,
-    "pontos": 422,
+    "pontos": 0,
     "atributos": {
       "saque": 65,
       "forehand": 59,
@@ -3522,14 +3662,15 @@
       "agressividade": 49,
       "leitura_de_jogo": 63,
       "determinacao": 43
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Federico Agustin Gomez",
     "nacionalidade": "[AR] Argentina",
     "idade": 28,
     "overall": 61,
-    "pontos": 413,
+    "pontos": 0,
     "atributos": {
       "saque": 54,
       "forehand": 60,
@@ -3547,14 +3688,15 @@
       "agressividade": 47,
       "leitura_de_jogo": 44,
       "determinacao": 62
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Federico Coria",
     "nacionalidade": "[AR] Argentina",
     "idade": 33,
     "overall": 62,
-    "pontos": 411,
+    "pontos": 0,
     "atributos": {
       "saque": 56,
       "forehand": 63,
@@ -3572,14 +3714,15 @@
       "agressividade": 57,
       "leitura_de_jogo": 62,
       "determinacao": 53
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Taro Daniel",
     "nacionalidade": "[JP] Japão",
     "idade": 32,
     "overall": 63,
-    "pontos": 410,
+    "pontos": 0,
     "atributos": {
       "saque": 61,
       "forehand": 62,
@@ -3597,14 +3740,15 @@
       "agressividade": 41,
       "leitura_de_jogo": 44,
       "determinacao": 43
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Alexander Blockx",
     "nacionalidade": "[BE] Bélgica",
     "idade": 20,
     "overall": 62,
-    "pontos": 410,
+    "pontos": 0,
     "atributos": {
       "saque": 62,
       "forehand": 59,
@@ -3622,14 +3766,15 @@
       "agressividade": 68,
       "leitura_de_jogo": 62,
       "determinacao": 68
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Pavel Kotov",
     "nacionalidade": "[RU] Rússia",
     "idade": 26,
     "overall": 62,
-    "pontos": 407,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 62,
@@ -3647,14 +3792,15 @@
       "agressividade": 57,
       "leitura_de_jogo": 41,
       "determinacao": 66
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Martin Landaluce",
     "nacionalidade": "[ES] Espanha",
     "idade": 19,
     "overall": 62,
-    "pontos": 404,
+    "pontos": 0,
     "atributos": {
       "saque": 61,
       "forehand": 62,
@@ -3672,14 +3818,15 @@
       "agressividade": 58,
       "leitura_de_jogo": 57,
       "determinacao": 44
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Liam Draxl",
     "nacionalidade": "[CA] Canadá",
     "idade": 23,
     "overall": 62,
-    "pontos": 403,
+    "pontos": 0,
     "atributos": {
       "saque": 64,
       "forehand": 61,
@@ -3697,14 +3844,15 @@
       "agressividade": 44,
       "leitura_de_jogo": 41,
       "determinacao": 49
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Pierre-Hugues Herbert",
     "nacionalidade": "[FR] França",
     "idade": 34,
     "overall": 63,
-    "pontos": 399,
+    "pontos": 0,
     "atributos": {
       "saque": 66,
       "forehand": 64,
@@ -3722,14 +3870,15 @@
       "agressividade": 69,
       "leitura_de_jogo": 70,
       "determinacao": 66
-    }
+    },
+    "pontos_detalhados": []
   },
   {
     "nome": "Nicolas Jarry",
     "nacionalidade": "[CL] Chile",
     "idade": 29,
     "overall": 64,
-    "pontos": 390,
+    "pontos": 0,
     "atributos": {
       "saque": 63,
       "forehand": 66,
@@ -3747,6 +3896,39 @@
       "agressividade": 43,
       "leitura_de_jogo": 70,
       "determinacao": 53
-    }
+    },
+    "pontos_detalhados": []
+  },
+  {
+    "nome": "Alexandre Paiva",
+    "nacionalidade": "[BR] Brasil",
+    "genero": "masculino",
+    "overall": 72,
+    "atributos": {
+      "saque": 70,
+      "forehand": 70,
+      "backhand": 70,
+      "topspin": 70,
+      "voleio": 70,
+      "slice": 70,
+      "movimento": 80,
+      "lob": 70,
+      "winner": 80
+    },
+    "pontos": 0,
+    "pontos_detalhados": [],
+    "atributos_psicologicos": {
+      "concentracao": 50,
+      "agressividade": 50,
+      "leitura_de_jogo": 50,
+      "determinacao": 50
+    },
+    "idade": 22,
+    "xp": 70,
+    "nivel": 1,
+    "energia": 5,
+    "ritmo_jogo": 50,
+    "moral": 70,
+    "dinheiro": 500
   }
 ]

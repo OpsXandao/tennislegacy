@@ -1,3 +1,4 @@
+import os
 import json
 import random
 
@@ -7,20 +8,41 @@ from src.dados import (
     get_caminho_torneio_save,
 )
 from src.jogador import Jogador, normalizar_nome
-from src.jogar_partida import jogar_partida
+from src.calendario import obter_torneio_por_nome
+from src.jogar_partida import criar_config_partida, jogar_partida
+from src.progressao import handle_xp_e_level_up, handle_fadiga_e_lesao, recuperar_energia_entre_rodadas
+from src.save import salvar_jogo
 from src.ranking import SistemaRanking
+from src.gerador_nomes import gerar_jogador_fraco
 
 
-class TorneioATP250:
+
+class Torneio:
     def __init__(
-        self, semana, jogador_nome, jogador_nacionalidade, ranking, nome_save=None
+        self, tournament_data, jogador_nome, jogador_nacionalidade, ranking, nome_save=None
     ):
         self.nome_save = nome_save
-        self.semana = semana
+        self.tournament_data = tournament_data
+        self.semana = int(tournament_data["semana"]) if "semana" in tournament_data else 1 # Extract semana from tournament_data
+        self.nome_torneio_atual = tournament_data["nome"] # Extract nome from tournament_data
         self.jogador_nome = jogador_nome
         self.jogador_nacionalidade = jogador_nacionalidade
         self.ranking = ranking
         self.caminho_json = get_caminho_torneio_save(self.nome_save)
+
+        # Define best_of_sets based on tournament type
+        if self.tournament_data["tipo"] == "Grand Slam":
+            self.best_of_sets = 5
+        else:
+            self.best_of_sets = 3
+
+        # Define number of rounds based on tournament type
+        if self.tournament_data["tipo"] == "Grand Slam":
+            self.num_rounds = 7 # 128 players
+        elif self.tournament_data["tipo"] == "Davis Cup":
+            self.num_rounds = 0 # Special handling
+        else: # ATP 250, 500, 1000
+            self.num_rounds = 5 # 32 players
 
     def garantir_dados_completos(self, jogador):
         if isinstance(jogador, dict) and "atributos" in jogador:
@@ -31,20 +53,47 @@ class TorneioATP250:
             return obj
         return {"nome": nome, "nacionalidade": "??"}
 
+    def _get_first_main_draw_phase(self):
+        if self.tournament_data["tipo"] == "Grand Slam":
+            return "r128"
+        elif self.tournament_data["tipo"] == "Davis Cup":
+            return "" # Not applicable, handled separately
+        else: # ATP
+            return "pre_oitavas"
+
+
     def _carregar_estado(self):
         estado = carregar_estado_torneio(self.nome_save)
         if estado is None:
             # Cria um estado vazio/padrão se o arquivo não existir
             estado = {
-                "torneio": "N/A",
-                "semana": 1,
+                "torneio": self.nome_torneio_atual,
+                "semana": self.semana,
                 "fase_atual": "qualy_1",
                 "rodadas": {},
                 "resultados": {},
                 "jogador": self.jogador_nome,
                 "jogador_vivo": True,
+                "tournament_data": self.tournament_data, # Save tournament data
             }
             self._salvar_estado(estado)
+        else:
+            # If loaded state exists but doesn't have tournament_data (old save), add it
+            if "tournament_data" not in estado:
+                from src.calendario import obter_torneio_por_nome
+                estado["tournament_data"] = obter_torneio_por_nome(estado["semana"], estado["torneio"])
+                # Also ensure best_of_sets and num_rounds are set for old saves
+                if estado["tournament_data"]["tipo"] == "Grand Slam":
+                    self.best_of_sets = 5
+                    self.num_rounds = 7
+                elif estado["tournament_data"]["tipo"] == "Davis Cup":
+                    self.best_of_sets = 3 # Placeholder
+                    self.num_rounds = 0 # Placeholder
+                else:
+                    self.best_of_sets = 3
+                    self.num_rounds = 5
+                self._salvar_estado(estado) # Save updated state
+
         return estado
 
     def _salvar_estado(self, estado):
@@ -52,130 +101,182 @@ class TorneioATP250:
             json.dump(estado, f, indent=2, ensure_ascii=False)
 
     def escolher_participantes(self, todos_jogadores):
-        try:
+        nome_jogador = self.jogador_nome.strip()
+        nome_jogador_lower = nome_jogador.lower()
+
+        # Adiciona o jogador principal ao ranking se não estiver lá
+        jogador_principal_obj = {
+            "nome": nome_jogador,
+            "nacionalidade": self.jogador_nacionalidade,
+        }
+        if self.ranking.obter_posicao(nome_jogador) is None:
+            self.ranking.adicionar_jogador_novo(jogador_principal_obj)
+            self.ranking.salvar_ranking()
+            # Recarrega o ranking para incluir o jogador principal
+            self.ranking.carregar_ranking()
             self.ranking.ordenar()
 
-            nome_jogador = self.jogador_nome.strip()
-            nome_jogador_lower = nome_jogador.lower()
+        # Determina o tamanho da chave principal e do qualifying
+        if self.tournament_data["tipo"] == "Grand Slam":
+            tamanho_chave_principal = 128
+            vagas_qualy = 16 # 4 rodadas de qualy para 16 vagas
+            num_jogadores_qualy = 128 # 128 jogadores no qualy para 16 vagas
+            num_top_diretos = 112 # 128 - 16
+        else: # ATP 250/500/1000
+            tamanho_chave_principal = 32
+            vagas_qualy = 4 # 2 rodadas de qualy para 4 vagas
+            num_jogadores_qualy = 16 # 16 jogadores no qualy para 4 vagas
+            num_top_diretos = 28 # 32 - 4
 
-            def posicao_valida(nome):
-                pos = self.ranking.obter_posicao(nome)
-                return pos if isinstance(pos, int) else None
+        # Separa os jogadores do ranking
+        jogadores_ranking_ordenado = self.ranking.ranking
+        
+        # Garante que o jogador principal esteja na lista de todos os jogadores
+        if nome_jogador_lower not in [j["nome"].lower() for j in jogadores_ranking_ordenado]:
+            jogadores_ranking_ordenado.append(jogador_principal_obj)
+            self.ranking.adicionar_jogador_novo(jogador_principal_obj) # Adiciona ao ranking da instancia
+            self.ranking.salvar_ranking() # Salva no disco
+            self.ranking.carregar_ranking() # Recarrega para ordenar novamente
+            jogadores_ranking_ordenado = self.ranking.ranking # Atualiza a lista
+            self.ranking.ordenar() # Garante que está ordenado
 
-            jogadores_31_80 = []
-            jogadores_81_plus = []
-            for j in todos_jogadores:
-                pos = posicao_valida(j["nome"])
-                if pos is None:
-                    continue
-                if 31 <= pos <= 80:
-                    jogadores_31_80.append(j)
-                elif pos > 80:
-                    jogadores_81_plus.append(j)
+        # Seleciona os jogadores para a chave principal (entrada direta)
+        chave_principal = []
+        qualy_players = []
 
-            random.shuffle(jogadores_31_80)
-            chave_principal = jogadores_31_80[:28]
-            nomes_chave = {j["nome"] for j in chave_principal}
+        # Tenta preencher a chave principal com os melhores do ranking
+        for j in jogadores_ranking_ordenado:
+            if len(chave_principal) < num_top_diretos and j["nome"].lower() != nome_jogador_lower:
+                chave_principal.append(j)
+            elif j["nome"].lower() != nome_jogador_lower: # Jogadores restantes vão para o qualy
+                qualy_players.append(j)
+            
+            # Se o jogador principal está entre os top diretos, adiciona ele
+            if j["nome"].lower() == nome_jogador_lower and len(chave_principal) < num_top_diretos:
+                chave_principal.append(j)
 
-            restantes_para_qualy = jogadores_31_80[28:] + jogadores_81_plus
-            restantes_para_qualy = [
-                j for j in restantes_para_qualy if j["nome"] not in nomes_chave
-            ]
+        # Se o jogador principal não foi para a chave principal, coloca ele no qualy
+        if nome_jogador_lower not in [j["nome"].lower() for j in chave_principal]:
+            if nome_jogador_lower not in [j["nome"].lower() for j in qualy_players]:
+                qualy_players.insert(0, jogador_principal_obj) # Prioriza o jogador no qualy
+            else: # Se já está no qualy, garante que esteja no início
+                qualy_players.remove(jogador_principal_obj)
+                qualy_players.insert(0, jogador_principal_obj)
+        
+        # Shuffle players for qualifying (excluding the main player if already placed)
+        outros_qualy = [j for j in qualy_players if j["nome"].lower() != nome_jogador_lower]
+        random.shuffle(outros_qualy)
+        
+        if nome_jogador_lower in [j["nome"].lower() for j in qualy_players]:
+            final_qualy_list = [jogador_principal_obj] + outros_qualy
+        else:
+            final_qualy_list = outros_qualy
 
-            jogador_principal = {
-                "nome": nome_jogador,
-                "nacionalidade": self.jogador_nacionalidade,
-            }
-            if self.ranking.obter_posicao(nome_jogador) is None:
-                self.ranking.adicionar_jogador_novo(jogador_principal)
-                self.ranking.salvar_ranking()
+        final_qualy_list = final_qualy_list[:num_jogadores_qualy]
 
-            # Garante que o jogador principal esteja incluído no qualifying
-            if nome_jogador_lower not in [j["nome"].lower() for j in restantes_para_qualy]:
-                restantes_para_qualy.append(jogador_principal)
+        # Completa com bots se não houver jogadores suficientes para o qualy
+        while len(final_qualy_list) < num_jogadores_qualy:
+            bot = gerar_jogador_fraco(len(final_qualy_list) + 1, self.tournament_data["pais_sede"])
+            final_qualy_list.append(bot)
 
-            # 🔁 Garante prioridade para o jogador
-            restantes_para_qualy = [
-                j for j in restantes_para_qualy if j["nome"].lower() != nome_jogador_lower
-            ]
-            restantes_para_qualy.insert(0, jogador_principal)
+        # Garante que a chave principal tenha o número correto de jogadores
+        # Se faltar, completa com os próximos do ranking que não foram para o qualy
+        if len(chave_principal) < num_top_diretos:
+            jogadores_nao_selecionados = [j for j in jogadores_ranking_ordenado if j not in chave_principal and j not in final_qualy_list]
+            for j in jogadores_nao_selecionados:
+                if len(chave_principal) < num_top_diretos:
+                    chave_principal.append(j)
+                else:
+                    break
 
-            # Completa até 16 jogadores
-            while len(restantes_para_qualy) < 16:
-                bot = {
-                    "nome": f"BotQualy{len(restantes_para_qualy)+1}",
-                    "nacionalidade": "??",
-                }
-                restantes_para_qualy.append(bot)
+        # Se ainda faltar na chave principal, adiciona bots
+        while len(chave_principal) < num_top_diretos:
+            bot = gerar_jogador_fraco(len(chave_principal) + 1, self.tournament_data["pais_sede"])
+            chave_principal.append(bot)
 
-            qualifying = restantes_para_qualy[:16]
 
-            print(f"\n🟢 Entrada direta ({len(chave_principal)} jogadores):")
-            for j in chave_principal:
-                nome = j["nome"]
-                pos = self.ranking.obter_posicao(nome) or "N/A"
-                destaque = "⭐" if nome.lower() == nome_jogador.lower() else ""
-                print(f"• {nome} {destaque} — #{pos}")
+        print(f"\n🟢 Entrada direta ({len(chave_principal)} jogadores):")
+        for j in chave_principal:
+            nome = j["nome"]
+            pos = self.ranking.obter_posicao(nome) or "N/A"
+            destaque = "⭐" if nome.lower() == nome_jogador_lower else ""
+            print(f"• {nome} {destaque} — #{pos}")
 
-            print(f"\n🟡 Qualifying ({len(qualifying)} jogadores):")
-            for j in qualifying:
-                nome = j["nome"]
-                pos = self.ranking.obter_posicao(nome) or "N/A"
-                destaque = "⭐" if nome.lower() == nome_jogador.lower() else ""
-                print(f"• {nome} {destaque} — #{pos}")
+        print(f"\n🟡 Qualifying ({len(final_qualy_list)} jogadores):")
+        for j in final_qualy_list:
+            nome = j["nome"]
+            pos = self.ranking.obter_posicao(nome) or "N/A"
+            destaque = "⭐" if nome.lower() == nome_jogador_lower else ""
+            print(f"• {nome} {destaque} — #{pos}")
 
-            return chave_principal, qualifying
+        return chave_principal, final_qualy_list
 
-        except Exception as e:
-            print(f"❌ Erro ao escolher participantes: {e}")
-            return [], []
 
 
     def jogar_qualy(self, jogadores_qualy):
-        if len(jogadores_qualy) < 16:
-            raise ValueError("❌ A qualificação precisa de pelo menos 16 jogadores.")
-        if len(jogadores_qualy) > 16:
-            jogadores_qualy = jogadores_qualy[:16]
+        # Determine qualifying phases based on tournament type
+        if self.tournament_data["tipo"] == "Grand Slam":
+            qualy_phases = ["qualy_r1", "qualy_r2", "qualy_r3"]
+            main_draw_phases = ["r128", "r64", "r32", "r16", "quartas", "semifinal", "final"]
+        else: # ATP
+            qualy_phases = ["qualy_1", "qualy_2"]
+            main_draw_phases = ["pre_oitavas", "oitavas", "quartas", "semifinal", "final"]
+
+        if not jogadores_qualy:
+            print("⚠️ Sem jogadores para a qualificação.")
+            return
+
+        # Ensure a power of 2 for initial qualifying round (current qualy_r1/qualy_1 assumes 16 or 128)
+        # Find the smallest power of 2 greater than or equal to len(jogadores_qualy)
+        num_players_qualy_round1 = 1
+        while num_players_qualy_round1 < len(jogadores_qualy):
+            num_players_qualy_round1 *= 2
+        
+        # Pad with bots if needed to reach num_players_qualy_round1
+        while len(jogadores_qualy) < num_players_qualy_round1:
+            jogadores_qualy.append(gerar_jogador_fraco(len(jogadores_qualy) + 1, self.tournament_data["pais_sede"]))
 
         random.shuffle(jogadores_qualy)
-        confrontos = list(zip(jogadores_qualy[::2], jogadores_qualy[1::2]))
+        confrontos_qualy_r1 = list(zip(jogadores_qualy[::2], jogadores_qualy[1::2]))
 
-        # Garante que o jogador esteja em um confronto
-        nomes_confrontos = [a["nome"] for a, _ in confrontos] + [
-            b["nome"] for _, b in confrontos
-        ]
-        if self.jogador_nome not in nomes_confrontos:
+        # Ensure player is in a confrontation
+        nomes_confrontos_normalized = [normalizar_nome(a["nome"]) for a, _ in confrontos_qualy_r1] + \
+                                      [normalizar_nome(b["nome"]) for _, b in confrontos_qualy_r1]
+        if normalizar_nome(self.jogador_nome) not in nomes_confrontos_normalized:
             jogador_dict = {
                 "nome": self.jogador_nome,
                 "nacionalidade": self.jogador_nacionalidade,
             }
-            confronto_a, confronto_b = confrontos[0]
-            confrontos[0] = (jogador_dict, confronto_b)
+            # Find an empty slot or replace a bot
+            found_slot = False
+            for i, (p1, p2) in enumerate(confrontos_qualy_r1):
+                if p1["nome"].startswith("Bot") or p2["nome"].startswith("Bot"):
+                    if p1["nome"].startswith("Bot"):
+                        confrontos_qualy_r1[i] = (jogador_dict, p2)
+                    else:
+                        confrontos_qualy_r1[i] = (p1, jogador_dict)
+                    found_slot = True
+                    break
+            if not found_slot: # Fallback: replace first player in first match
+                confrontos_qualy_r1[0] = (jogador_dict, confrontos_qualy_r1[0][1])
+
+        rodadas_dict = {qualy_phases[0]: confrontos_qualy_r1}
+        resultados_dict = {qualy_phases[0]: []}
+        
+        # Initialize other qualifying and main draw phases as empty
+        for phase in qualy_phases[1:] + main_draw_phases:
+            rodadas_dict[phase] = []
+            resultados_dict[phase] = []
 
         estado = {
             "semana": self.semana,
             "torneio": self.nome_torneio,
-            "fase_atual": "qualy_1",
+            "fase_atual": qualy_phases[0],
             "jogador": self.jogador_nome,
             "jogador_vivo": True,
-            "rodadas": {
-                "qualy_1": confrontos,
-                "qualy_2": [],
-                "pre_oitavas": [],
-                "oitavas": [],
-                "quartas": [],
-                "semifinal": [],
-                "final": [],
-            },
-            "resultados": {
-                "qualy_1": [],
-                "qualy_2": [],
-                "pre_oitavas": [],
-                "oitavas": [],
-                "quartas": [],
-                "semifinal": [],
-                "final": [],
-            },
+            "rodadas": rodadas_dict,
+            "resultados": resultados_dict,
+            "tournament_data": self.tournament_data, # Ensure tournament_data is saved
         }
 
         caminho = get_caminho_torneio_save(self.nome_save)
@@ -203,15 +304,21 @@ class TorneioATP250:
         if total_resultados < total_confrontos:
             return  # Ainda faltam partidas para essa fase
 
-        ordem = [
-            "qualy_1",
-            "qualy_2",
-            "pre_oitavas",
-            "oitavas",
-            "quartas",
-            "semifinal",
-            "final",
-        ]
+        if self.tournament_data["tipo"] == "Grand Slam":
+            ordem = [
+                "qualy_r1", "qualy_r2", "qualy_r3", # Assuming 3 rounds of qualifying for a GS
+                "r128", "r64", "r32", "r16", "quartas", "semifinal", "final",
+            ]
+        elif self.tournament_data["tipo"] == "Davis Cup":
+            # Davis Cup has a different format, this function might not be used directly for phase progression
+            # For now, we'll return, assuming its progression is handled elsewhere or is simpler.
+            return
+        else: # ATP 250/500/1000 and others
+            ordem = [
+                "qualy_1", "qualy_2", # Current ATP qualifying structure
+                "pre_oitavas", "oitavas", "quartas", "semifinal", "final",
+            ]
+
         try:
             idx = ordem.index(fase)
         except ValueError:
@@ -278,10 +385,7 @@ class TorneioATP250:
                 )
                 while len(vencedores) < esperado:
                     vencedores.append(
-                        {
-                            "nome": f"{nome_bot}_{len(vencedores)+1}",
-                            "nacionalidade": "??",
-                        }
+                        gerar_jogador_fraco(len(vencedores)+1, self.tournament_data["pais_sede"])
                     )
             elif len(vencedores) > esperado:
                 print(
@@ -290,74 +394,84 @@ class TorneioATP250:
                 vencedores[:] = vencedores[:esperado]
             return vencedores
 
-        # Monta confrontos da próxima fase
-        if fase == "qualy_1":
-            vencedores = corrigir_lista(vencedores, 8, "BotQualy2")
-            random.shuffle(vencedores)
-            estado["rodadas"]["qualy_2"] = [
+        proxima_fase = ordem[idx + 1]
+        
+        # Calculate the target number of players for the *next* phase's draw
+        target_draw_size = 0
+        if proxima_fase == "final":
+            target_draw_size = 2
+        elif proxima_fase == "semifinal":
+            target_draw_size = 4
+        elif proxima_fase == "quartas":
+            target_draw_size = 8
+        elif proxima_fase == "r16" or proxima_fase == "oitavas":
+            target_draw_size = 16
+        elif proxima_fase == "r32" or proxima_fase == "pre_oitavas":
+            target_draw_size = 32
+        elif proxima_fase == "r64":
+            target_draw_size = 64
+        elif proxima_fase == "r128":
+            target_draw_size = 128
+        # For qualifying rounds, the number of participants is usually a power of 2.
+        # The 'vencedores' list should already contain the correct number of winners to form the next round.
+        # If not, 'corrigir_lista' will pad it with bots.
+        # The `target_draw_size` for a qualifying round is the number of players that will participate in *that* round.
+        elif proxima_fase.startswith("qualy_"):
+            target_draw_size = len(vencedores) # All winners advance to next qualy round
+        else: # Fallback for new phases, assume single elimination
+            target_draw_size = len(vencedores)
+
+        # Correct the winners list to have the correct number of players for the next draw
+        vencedores_corrigidos = corrigir_lista(vencedores, target_draw_size, f"Bot_{proxima_fase}")
+
+
+        # If it's a phase where qualifiers merge into the main draw, the draw is created elsewhere (e.g., iniciar_torneio)
+        # So, this `_atualizar_fase_se_necessario` function just advances the phase.
+        is_merge_phase_to_main_draw = False
+        if (self.tournament_data["tipo"] == "Grand Slam" and fase == "qualy_r3" and proxima_fase == "r128"):
+            is_merge_phase_to_main_draw = True
+        elif (self.tournament_data["tipo"] != "Grand Slam" and fase == "qualy_2" and proxima_fase == "pre_oitavas"):
+            is_merge_phase_to_main_draw = True
+        
+        if is_merge_phase_to_main_draw:
+            direct_entries = estado.get("direct_entries", [])
+            expected_main_draw_size = 128 if self.tournament_data["tipo"] == "Grand Slam" else 32
+            expected_qualifiers = 16 if self.tournament_data["tipo"] == "Grand Slam" else 4
+            qualifiers = corrigir_lista(list(vencedores), expected_qualifiers, "BotQualyMain")
+
+            main_draw_players = direct_entries + qualifiers
+            while len(main_draw_players) < expected_main_draw_size:
+                main_draw_players.append({"nome": f"BotMD{len(main_draw_players) + 1}", "nacionalidade": "??"})
+
+            random.shuffle(main_draw_players)
+            estado["rodadas"][proxima_fase] = [
                 (self.garantir_dados_completos(a), self.garantir_dados_completos(b))
-                for a, b in zip(vencedores[::2], vencedores[1::2])
+                for a, b in zip(main_draw_players[::2], main_draw_players[1::2])
             ]
-            estado["resultados"]["qualy_2"] = []
-            estado["fase_atual"] = "qualy_2"
-        elif fase == "qualy_2":
-            vencedores = corrigir_lista(vencedores, 4, "BotPO")
-            jogadores_chave = self.ranking.ranking[:12] + vencedores  # 12 + 4 = 16
-            random.shuffle(jogadores_chave)
-            estado["rodadas"]["pre_oitavas"] = [
-                (self.garantir_dados_completos(a), self.garantir_dados_completos(b))
-                for a, b in zip(jogadores_chave[::2], jogadores_chave[1::2])
-            ]
-            estado["resultados"]["pre_oitavas"] = []
-            estado["fase_atual"] = "pre_oitavas"
+            estado["resultados"][proxima_fase] = []
+            estado["fase_atual"] = proxima_fase
         else:
-            proxima = ordem[idx + 1]
-            esperado = len(estado["rodadas"].get(fase, []))
-            vencedores = corrigir_lista(vencedores, esperado, f"Bot_{proxima}")
-            estado["rodadas"][proxima] = [
+            random.shuffle(vencedores_corrigidos) # Shuffle winners for the next round
+            estado["rodadas"][proxima_fase] = [
                 (self.garantir_dados_completos(a), self.garantir_dados_completos(b))
-                for a, b in zip(vencedores[::2], vencedores[1::2])
+                for a, b in zip(vencedores_corrigidos[::2], vencedores_corrigidos[1::2])
             ]
-            estado["resultados"][proxima] = []
-            estado["fase_atual"] = proxima
+            estado["resultados"][proxima_fase] = []
+            estado["fase_atual"] = proxima_fase
 
-    def jogar_chave_principal(self, classificados):
-        if len(classificados) != 4:
-            raise ValueError(
-                "❌ Esperado exatamente 4 vencedores do qualifying para montar a chave principal."
-            )
 
-        jogadores_top = self.ranking.ranking[:12]
-        jogadores_chave = jogadores_top + classificados
-        random.shuffle(jogadores_chave)
-
-        confrontos = list(zip(jogadores_chave[::2], jogadores_chave[1::2]))
-
-        nomes_confrontos = [a["nome"] for a, _ in confrontos] + [
-            b["nome"] for _, b in confrontos
-        ]
-        if self.jogador_nome not in nomes_confrontos:
-            jogador_dict = {
-                "nome": self.jogador_nome,
-                "nacionalidade": self.jogador_nacionalidade,
-            }
-            confronto_a, confronto_b = confrontos[0]
-            confrontos[0] = (jogador_dict, confronto_b)
-
-        caminho = get_caminho_torneio_save(self.nome_save)
-        estado = carregar_estado_torneio(self.nome_save)
-
-        estado["fase_atual"] = "pre_oitavas"
-        estado["rodadas"]["pre_oitavas"] = confrontos
-        estado["resultados"]["pre_oitavas"] = []
-
-        with open(caminho, "w", encoding="utf-8") as f:
-            json.dump(estado, f, indent=2, ensure_ascii=False)
 
     def _simular_partida_npc(self, a, b):
         vencedor = random.choice([a, b])
         perdedor = b if vencedor == a else a
-        sets_v, sets_d = 2, random.choice([0, 1])
+        
+        # Determine sets based on best_of_sets
+        if self.best_of_sets == 5:
+            sets_v = 3
+            sets_d = random.choice([0, 1, 2])
+        else: # best_of_sets == 3
+            sets_v = 2
+            sets_d = random.choice([0, 1])
 
         # 🔧 Remover números residuais no nome (caso alguém já esteja com " 2")
         def limpar_nome(nome):
@@ -405,15 +519,20 @@ class TorneioATP250:
 
     def simular_torneio_restante(self, todos_jogadores):
         estado = self._carregar_estado()
-        fases = [
-            "qualy_1",
-            "qualy_2",
-            "pre_oitavas",
-            "oitavas",
-            "quartas",
-            "semifinal",
-            "final",
-        ]
+        
+        if self.tournament_data["tipo"] == "Grand Slam":
+            fases_ordem = [
+                "qualy_r1", "qualy_r2", "qualy_r3",
+                "r128", "r64", "r32", "r16", "quartas", "semifinal", "final",
+            ]
+        elif self.tournament_data["tipo"] == "Davis Cup":
+            print("\n⚠️ Simulação de torneio restante para Davis Cup não implementada. Retornando.")
+            return # Davis Cup has special phase handling
+        else: # ATP 250/500/1000 and others
+            fases_ordem = [
+                "qualy_1", "qualy_2",
+                "pre_oitavas", "oitavas", "quartas", "semifinal", "final",
+            ]
 
         while True:
             fase = estado["fase_atual"]
@@ -537,21 +656,156 @@ class TorneioATP250:
         self._atualizar_fase_se_necessario(estado)
         self._salvar_estado(estado)
 
+    def simular_torneio_npc(self, todos_jogadores_ranking):
+        """
+        Simula um torneio completo para NPCs e retorna o campeão.
+        Não salva o estado do torneio para o save_file principal.
+        """
+        # Criar um nome de save temporário para não sobrescrever o save do jogador
+        temp_save_name = f"temp_npc_torneio_{self.nome_torneio_atual}_{self.semana}"
+        temp_caminho_json = get_caminho_torneio_save(temp_save_name)
+
+        # Ensure the directory for the temporary save exists
+        os.makedirs(os.path.dirname(temp_caminho_json), exist_ok=True)
+
+        # Need to create a dummy Torneio instance for the simulation
+        # Use a dummy player name for this instance
+        dummy_player_name = "NPC_Dummy_Player"
+        dummy_player_nacionalidade = "??"
+
+        temp_instance = Torneio(
+            tournament_data=self.tournament_data,
+            jogador_nome=dummy_player_name, # A dummy player name
+            jogador_nacionalidade=dummy_player_nacionalidade,
+            ranking=self.ranking, # Use the main ranking
+            nome_save=temp_save_name,
+        )
+        
+        # Initialize the tournament state for the NPC tournament
+        estado_npc_torneio = {
+            "torneio": self.nome_torneio_atual,
+            "semana": self.semana,
+            "fase_atual": "qualy_1" if temp_instance.tournament_data.get("qualificacao", False) else temp_instance._get_first_main_draw_phase(), # Start with qualy or first main draw phase
+            "rodadas": {},
+            "resultados": {},
+            "jogador": dummy_player_name,
+            "jogador_vivo": False, # NPC tournament, no user player
+            "tournament_data": self.tournament_data,
+        }
+
+        # Initialize phases dynamically
+        if self.tournament_data["tipo"] == "Grand Slam":
+            qualy_phases = ["qualy_r1", "qualy_r2", "qualy_r3"]
+            main_draw_phases = ["r128", "r64", "r32", "r16", "quartas", "semifinal", "final"]
+        else: # ATP
+            qualy_phases = ["qualy_1", "qualy_2"]
+            main_draw_phases = ["pre_oitavas", "oitavas", "quartas", "semifinal", "final"]
+
+        all_phases = qualy_phases + main_draw_phases
+        for phase in all_phases:
+            estado_npc_torneio["rodadas"][phase] = []
+            estado_npc_torneio["resultados"][phase] = []
+        
+        # Save initial state of the NPC tournament
+        with open(temp_caminho_json, "w", encoding="utf-8") as f:
+            json.dump(estado_npc_torneio, f, indent=2, ensure_ascii=False)
+
+        # Get participants
+        # We need a list of players *not* including the actual user player
+        filtered_todos_jogadores = [p for p in todos_jogadores_ranking if normalizar_nome(p["nome"]) != normalizar_nome(self.jogador_nome)]
+        
+        # Use escolher_participantes with the dummy instance. This will generate the draws.
+        # But we need to ensure it's not trying to insert the *user's* player
+        # The escolher_participantes method already handles inserting a player (if not found in ranking)
+        # So, for NPC simulation, we might need a version of escolher_participantes that doesn't prioritize a specific player.
+        # For simplicity for now, let's pass a very low-ranked dummy player name to escolher_participantes
+        temp_instance.jogador_nome = "Lowest_Rank_Bot"
+        temp_instance.jogador_nacionalidade = "??"
+        
+        direct_entries, qualifying_players = temp_instance.escolher_participantes(filtered_todos_jogadores)
+
+        # Run qualifying (all NPC matches)
+        if qualifying_players:
+            temp_instance.jogar_qualy(qualifying_players)
+            # Simulate all qualy matches
+            temp_instance.simular_torneio_restante(filtered_todos_jogadores) # This will simulate all qualy matches and advance phases
+            
+            # Reload state after qualy simulation
+            estado_npc_torneio = carregar_estado_torneio(temp_save_name)
+            qualy_final_phase = ""
+            num_expected_qualifiers = 0
+            if temp_instance.tournament_data["tipo"] == "Grand Slam":
+                qualy_final_phase = "qualy_r3"
+                num_expected_qualifiers = 16
+            else:
+                qualy_final_phase = "qualy_2"
+                num_expected_qualifiers = 4
+            
+            qualifiers = []
+            if qualy_final_phase in estado_npc_torneio["resultados"] and estado_npc_torneio["resultados"][qualy_final_phase]:
+                qualifiers = [r["vencedor"] for r in estado_npc_torneio["resultados"][qualy_final_phase]]
+            
+            while len(qualifiers) < num_expected_qualifiers:
+                qualifiers.append(gerar_jogador_fraco(len(qualifiers)+1, self.tournament_data["pais_sede"]))
+        else:
+            qualifiers = []
+
+        # Create main draw
+        main_draw_players = direct_entries + qualifiers
+        random.shuffle(main_draw_players)
+
+        first_main_draw_phase = ""
+        if temp_instance.tournament_data["tipo"] == "Grand Slam":
+            first_main_draw_phase = "r128"
+        else:
+            first_main_draw_phase = "pre_oitavas"
+        
+        # Set the first main draw round in the temp_instance's state
+        estado_npc_torneio["rodadas"][first_main_draw_phase] = [
+            (temp_instance.garantir_dados_completos(a), temp_instance.garantir_dados_completos(b))
+            for a, b in zip(main_draw_players[::2], main_draw_players[1::2])
+        ]
+        estado_npc_torneio["fase_atual"] = first_main_draw_phase
+        estado_npc_torneio["resultados"][first_main_draw_phase] = []
+        
+        with open(temp_caminho_json, "w", encoding="utf-8") as f:
+            json.dump(estado_npc_torneio, f, indent=2, ensure_ascii=False)
+
+        # Simulate main draw
+        temp_instance.simular_torneio_restante(filtered_todos_jogadores)
+        
+        # Get champion
+        estado_npc_torneio = carregar_estado_torneio(temp_save_name) # Reload final state
+        champion = None
+        if "final" in estado_npc_torneio["resultados"] and estado_npc_torneio["resultados"]["final"]:
+            champion = estado_npc_torneio["resultados"]["final"][0]["vencedor"]
+
+        # Clean up temporary save file
+        os.remove(temp_caminho_json)
+        
+        return champion
+
     def jogador_ainda_ativo(self):
         estado = self._carregar_estado()
         return estado.get("jogador_vivo", True)
 
     def exibir_resultados(self):
         estado = self._carregar_estado()
-        fases_ordenadas = [
-            "qualy_1",
-            "qualy_2",
-            "pre_oitavas",
-            "oitavas",
-            "quartas",
-            "semifinal",
-            "final",
-        ]
+        
+        if self.tournament_data["tipo"] == "Grand Slam":
+            fases_ordenadas = [
+                "qualy_r1", "qualy_r2", "qualy_r3",
+                "r128", "r64", "r32", "r16", "quartas", "semifinal", "final",
+            ]
+        elif self.tournament_data["tipo"] == "Davis Cup":
+            print("\n📊 Resultados da Davis Cup (formato de equipes, em breve).")
+            return
+        else: # ATP 250/500/1000 and others
+            fases_ordenadas = [
+                "qualy_1", "qualy_2",
+                "pre_oitavas", "oitavas", "quartas", "semifinal", "final",
+            ]
+
         ultima_fase = next(
             (f for f in reversed(fases_ordenadas) if estado["resultados"].get(f)), None
         )
@@ -604,31 +858,110 @@ class TorneioATP250:
             estado["torneio"] = nome_torneio
             self._salvar_estado(estado)
 
-            entrada_direta, qualifying = self.escolher_participantes(todos_jogadores)
+            direct_entries, qualifying_players = self.escolher_participantes(todos_jogadores)
+            jogador_direct = normalizar_nome(self.jogador_nome) in [
+                normalizar_nome(j["nome"]) for j in direct_entries
+            ]
 
-            # Inicia o qualifying
-            self.jogar_qualy(qualifying)
+            if self.tournament_data["tipo"] == "Davis Cup":
+                print(f"\n📁 Torneio {nome_torneio} (Davis Cup) iniciado com sucesso e salvo. Formato de equipes.")
+                # Davis Cup logic will be implemented separately.
+                # For now, just initialize a dummy state or handle its unique structure.
+                # Example: create groups, then playoffs.
+                return
+            elif self.tournament_data["tipo"] == "United Cup":
+                print(f"\n📁 Torneio {nome_torneio} (United Cup) iniciado com sucesso e salvo. Formato de equipes mistas.")
+                print("⚠️ A lógica para a United Cup ainda não foi implementada. O torneio será ignorado por enquanto.")
+                return
 
-            # Atualiza nome do torneio no estado salvo
-            estado = self._carregar_estado()
-            estado["torneio"] = nome_torneio
+            # --- Qualifying Tournament ---
+            qualifiers = []
+            if qualifying_players and self.tournament_data.get("qualificacao", True):
+                self.jogar_qualy(qualifying_players)
+                estado = self._carregar_estado()
+                estado["direct_entries"] = direct_entries
+                self._salvar_estado(estado)
+
+                if jogador_direct:
+                    while estado["fase_atual"].startswith("qualy"):
+                        self.simular_npcs_na_fase_atual("__npc_only__")
+                        estado = self._carregar_estado()
+
+                    qualy_final_phase = "qualy_r3" if self.tournament_data["tipo"] == "Grand Slam" else "qualy_2"
+                    if qualy_final_phase in estado["resultados"] and estado["resultados"][qualy_final_phase]:
+                        qualifiers = [r["vencedor"] for r in estado["resultados"][qualy_final_phase]]
+                        print(f"✅ Classificados do qualifying ({len(qualifiers)}): {[j['nome'] for j in qualifiers]}")
+                    print(f"\n📁 Torneio {nome_torneio} iniciado com sucesso e salvo. Chave principal gerada.")
+                    return
+                else:
+                    print("🟡 Qualifying iniciado. A chave principal será gerada após o qualifying.")
+                    return
+            else:
+                print("⚠️ Sem qualifying para este torneio.")
+
+            # --- Main Draw Creation ---
+            main_draw_players = direct_entries + qualifiers
+
+            # Ensure the total number of players for the main draw is correct
+            expected_main_draw_size = 0
+            if self.tournament_data["tipo"] == "Grand Slam":
+                expected_main_draw_size = 128
+            else: # ATP
+                expected_main_draw_size = 32
+            
+            # Pad with bots if needed (shouldn't happen if escolher_participantes is correct)
+            while len(main_draw_players) < expected_main_draw_size:
+                 main_draw_players.append(gerar_jogador_fraco(len(main_draw_players) + 1, self.tournament_data["pais_sede"]))
+            
+            random.shuffle(main_draw_players) # Shuffle for draw
+
+            # Create initial main draw matchups
+            first_main_draw_phase = ""
+            if self.tournament_data["tipo"] == "Grand Slam":
+                first_main_draw_phase = "r128"
+            else: # ATP
+                first_main_draw_phase = "pre_oitavas"
+            
+            confrontos_main_draw = [(self.garantir_dados_completos(a), self.garantir_dados_completos(b))
+                                    for a, b in zip(main_draw_players[::2], main_draw_players[1::2])]
+            
+            # Ensure the player is in the main draw (if they didn't get direct entry and didn't qualify, or if they are bot-replaced)
+            player_in_main_draw = normalizar_nome(self.jogador_nome) in [normalizar_nome(p["nome"]) for p in main_draw_players]
+            
+            if not player_in_main_draw:
+                # If player is not in main draw, put them in a random slot, replacing a bot or low-ranked player
+                for i, (p1, p2) in enumerate(confrontos_main_draw):
+                    if p1["nome"].startswith("Bot") or p2["nome"].startswith("Bot"):
+                        if p1["nome"].startswith("Bot"):
+                            confrontos_main_draw[i] = ({"nome": self.jogador_nome, "nacionalidade": self.jogador_nacionalidade}, p2)
+                        else:
+                            confrontos_main_draw[i] = (p1, {"nome": self.jogador_nome, "nacionalidade": self.jogador_nacionalidade})
+                        break
+                
+            estado["rodadas"][first_main_draw_phase] = confrontos_main_draw
+            estado["fase_atual"] = first_main_draw_phase # Set current phase to first main draw round
+            estado["resultados"][first_main_draw_phase] = [] # Clear results for this phase
+
             self._salvar_estado(estado)
 
-            print(f"\n📁 Torneio {nome_torneio} iniciado com sucesso e salvo.")
+            print(f"\n📁 Torneio {nome_torneio} iniciado com sucesso e salvo. Chave principal gerada.")
         except Exception as e:
             print(f"❌ Erro ao iniciar torneio: {e}")
 
     def _obter_fase_index(self, fase):
-        fases = [
-            "qualy_1",
-            "qualy_2",
-            "pre_oitavas",
-            "oitavas",
-            "quartas",
-            "semifinal",
-            "final",
-        ]
-        return fases.index(fase) if fase in fases else -1
+        if self.tournament_data["tipo"] == "Grand Slam":
+            fases_ordem = [
+                "qualy_r1", "qualy_r2", "qualy_r3",
+                "r128", "r64", "r32", "r16", "quartas", "semifinal", "final",
+            ]
+        elif self.tournament_data["tipo"] == "Davis Cup":
+            return -1 # Davis Cup has special phase handling, this index is not directly applicable
+        else: # ATP 250/500/1000 and others
+            fases_ordem = [
+                "qualy_1", "qualy_2",
+                "pre_oitavas", "oitavas", "quartas", "semifinal", "final",
+            ]
+        return fases_ordem.index(fase) if fase in fases_ordem else -1
 
     def normalizar_confrontos(self, confrontos_raw):
         confrontos_obj = []
@@ -704,8 +1037,7 @@ class TorneioATP250:
 
     @property
     def nome_torneio(self):
-        estado = self._carregar_estado()
-        return estado.get("torneio", "N/A")
+        return self.nome_torneio_atual
 
     def jogar_partida_do_jogador(self, jogador, nome_save):
         estado = self._carregar_estado()
@@ -736,26 +1068,46 @@ class TorneioATP250:
             }
 
         # Agora sim, chama a partida!
-        vencedor_nome, placar_final = jogar_partida(
-            jogador, adversario, self.nome_save
+        # Cria a configuração da partida baseada nos dados do torneio
+        config_partida = criar_config_partida(self.tournament_data)
+        vencedor_nome, placar_final, pontos_disputados = jogar_partida(
+            jogador, adversario, self.nome_save, config=config_partida
         )
         vencedor = {"nome": vencedor_nome}
 
-        # Atualiza o resultado
+        # Atualiza o resultado do torneio
         self.processar_resultado_partida(jogador, adversario, vencedor, placar_final)
+        
+        # Simula as outras partidas da fase
         self.simular_npcs_na_fase_atual(jogador.nome)
+
+        # Lida com o ganho de XP e possível level up
+        vitoria = normalizar_nome(vencedor_nome) == normalizar_nome(jogador.nome)
+        jogador = handle_xp_e_level_up(jogador, vitoria)
+
+        # Lida com o aumento de fadiga e possível lesão
+        jogador = handle_fadiga_e_lesao(jogador, pontos_disputados=pontos_disputados)
+
+        # Salva o estado do jogador (com XP e fadiga atualizados)
+        salvar_jogo(nome_save, jogador)
 
         # Checa se foi eliminado
         jogador_ativo = self.jogador_ainda_ativo()
 
-        # Avança fase e salva
+        # Avança para a próxima fase (se todas as partidas acabaram)
         avancar_fase(self)
-        salvar_torneio(self)
+
+        # Recupera energia se o jogador avançou de fase
+        estado_atualizado = self._carregar_estado()
+        if jogador_ativo and estado_atualizado["fase_atual"] != fase:
+            jogador = recuperar_energia_entre_rodadas(jogador)
+            salvar_jogo(nome_save, jogador)
 
         return {
             "msg": "✅ Partida jogada e resultados atualizados!",
             "fase_eliminacao": fase if not jogador_ativo else None,
             "eliminado": not jogador_ativo,
+            "jogador": jogador, # Retorna o objeto jogador atualizado
         }
 
     def buscar_jogador_completo(self, nome):
@@ -779,8 +1131,11 @@ def criar_torneio(torneio_escolhido, jogador, nome_save, semana):
     ranking_path = get_caminho_ranking_save(nome_save)
     ranking = SistemaRanking(ranking_path)
 
-    instancia = TorneioATP250(
-        semana=semana,
+    # Add semana to torneio_escolhido for the Torneio class
+    torneio_escolhido["semana"] = semana
+
+    instancia = Torneio(
+        tournament_data=torneio_escolhido,
         jogador_nome=jogador.nome,
         jogador_nacionalidade=jogador.nacionalidade,
         ranking=ranking,
@@ -788,7 +1143,7 @@ def criar_torneio(torneio_escolhido, jogador, nome_save, semana):
     )
 
     # Cria a estrutura do torneio no disco
-    instancia.iniciar_torneio(torneio_escolhido["nome"], ranking.ranking)
+    instancia.iniciar_torneio(instancia.nome_torneio, ranking.ranking)
     return instancia
 
 
@@ -815,8 +1170,18 @@ def carregar_torneio(nome_save):
     jogador_obj = next((j for j in ranking.ranking if j["nome"] == jogador_nome), None)
     jogador_nacionalidade = jogador_obj["nacionalidade"] if jogador_obj else "??"
 
-    instancia = TorneioATP250(
-        semana=estado["semana"],
+    # Retrieve tournament_data from the saved state
+    tournament_data = estado.get("tournament_data")
+    if not tournament_data:
+        # Fallback for old saves that don't have tournament_data directly
+        from src.calendario import obter_torneio_por_nome
+        tournament_data = obter_torneio_por_nome(estado["semana"], estado["torneio"])
+        if not tournament_data:
+            print(f"⚠️ Não foi possível carregar os dados do torneio {estado['torneio']} da semana {estado['semana']}.")
+            return None # Or raise an error
+
+    instancia = Torneio(
+        tournament_data=tournament_data,
         jogador_nome=jogador_nome,
         jogador_nacionalidade=jogador_nacionalidade,
         ranking=ranking,

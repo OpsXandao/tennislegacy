@@ -1,4 +1,22 @@
-from src.dados import carregar_calendario, carregar_estado_torneio
+import json
+import os
+from src.dados import (
+    carregar_calendario,
+    carregar_estado_torneio,
+    get_caminho_ranking_save,
+    get_caminho_temporada,
+    get_caminho_jogador_save,
+)
+from src.jogador import carregar_jogador
+from src.ranking import SistemaRanking
+from src.save import salvar_jogo
+from src.torneio import Torneio # Re-add import
+from src.pontuacao import distribuir_pontos_torneio # Re-add import
+from src.io_utils import safe_input # Re-add import
+
+# --- Constantes ---
+FADIGA_RECUPERACAO_SEMANAL = 25
+
 
 
 def obter_torneios_da_semana(semana):
@@ -41,5 +59,156 @@ def obter_info_torneio_e_fase(nome_save):
     return nome_torneio, fase
 
 
-def avancar_semana(semana):
-    return semana + 1
+def carregar_temporada(nome_save):
+    """Carrega o estado da temporada (ano e semana) do save."""
+    caminho = get_caminho_temporada(nome_save)
+    if not os.path.exists(caminho):
+        # Se não existir, cria um estado inicial
+        return {"ano": 2026, "semana": 1}
+    with open(caminho, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def salvar_temporada(nome_save, data):
+    """Salva o estado da temporada (ano e semana) no save."""
+    caminho = get_caminho_temporada(nome_save)
+    with open(caminho, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+
+def _migrar_pontuacao(ranking_obj, semana_atual):
+    """Migra a estrutura de pontos antiga para a nova (pontos_detalhados)."""
+    print("ℹ️ Migrando estrutura de pontuação para o novo sistema de ranking contínuo...")
+    for jogador in ranking_obj.ranking:
+        if "pontos" in jogador and "pontos_detalhados" not in jogador:
+            pontos_antigos = jogador.pop("pontos")
+            # Assume que os pontos existentes expiram no final do ano atual
+            semana_expiracao = 52
+            jogador["pontos_detalhados"] = [
+                {"pontos": pontos_antigos, "semana_expiracao": semana_expiracao}
+            ]
+            jogador["pontos"] = pontos_antigos # Mantém o campo total
+    ranking_obj.salvar_ranking()
+    print("✅ Migração concluída!")
+    return True
+
+def avancar_semana(nome_save):
+    """
+    Avança uma semana na temporada, atualiza o ranking (point decay) e salva o estado.
+    Simula também os torneios não selecionados pelo jogador.
+    """
+    from src.torneio import Torneio # Import here to avoid circular dependency
+    from src.pontuacao import distribuir_pontos_torneio # Import here to avoid circular dependency
+    from src.io_utils import safe_input # Import here for pause
+
+    temporada = carregar_temporada(nome_save)
+    ranking = SistemaRanking(get_caminho_ranking_save(nome_save))
+
+    # Migração de dados (se necessário)
+    if ranking.ranking and "pontos_detalhados" not in ranking.ranking[0]:
+        _migrar_pontuacao(ranking, temporada["semana"])
+        # Recarrega o ranking após a migração
+        ranking = SistemaRanking(get_caminho_ranking_save(nome_save))
+
+    # Avança a semana/ano
+    temporada["semana"] += 1
+    if temporada["semana"] > 52:
+        temporada["semana"] = 1
+        temporada["ano"] += 1
+        print(f"🎉 Feliz Ano Novo! Bem-vindo a {temporada['ano']}!")
+
+    semana_atual = temporada["semana"]
+    print(f"\n--- Avançando para a Semana {semana_atual} de {temporada['ano']} ---")
+
+    # Recuperação de Fadiga e Lesão do jogador
+    jogador = carregar_jogador(nome_save)
+    if jogador.status_lesao["lesionado"]:
+        jogador.status_lesao["semanas_restantes"] -= 1
+        print(f"❤️  Você está se recuperando da lesão. Semanas restantes: {jogador.status_lesao['semanas_restantes']}")
+        if jogador.status_lesao["semanas_restantes"] <= 0:
+            jogador.status_lesao["lesionado"] = False
+            jogador.fadiga = 0 # Zera a fadiga após se recuperar
+            print("✅ Você se recuperou da sua lesão!")
+    else:
+        # Recupera a fadiga se não estiver jogando
+        jogador.fadiga = max(0, jogador.fadiga - FADIGA_RECUPERACAO_SEMANAL)
+        print(f"😌 Sua fadiga diminuiu para {jogador.fadiga}%.")
+    
+    salvar_jogo(nome_save, jogador)
+
+
+    # --- Simular outros torneios da semana ---
+    torneios_da_semana = obter_torneios_da_semana(semana_atual)
+    # Check if player is participating in a tournament this week (tournament state file exists and has data)
+    player_active_tournament_state = carregar_estado_torneio(nome_save)
+    player_active_tournament_name = player_active_tournament_state.get("torneio") if player_active_tournament_state else None
+
+
+    campeoes_da_semana = []
+    
+    for info_torneio in torneios_da_semana:
+        # Skip player's current tournament
+        if player_active_tournament_name and info_torneio["nome"] == player_active_tournament_name:
+            print(f"\n➡️ O jogador está participando do torneio: {info_torneio['nome']}. Não será simulado aqui.")
+            continue
+        
+        # Skip Davis Cup and United Cup for NPC simulation for now, as their logic is not fully implemented
+        if info_torneio["tipo"] == "Davis Cup" or info_torneio["tipo"] == "United Cup":
+            print(f"\n➡️ Torneio {info_torneio['nome']} ({info_torneio['tipo']}) não será simulado para NPCs. Formato especial.")
+            continue
+        
+        print(f"\n🌍 Simulando torneio para NPCs: {info_torneio['nome']} ({info_torneio['tipo']})...")
+        
+        # Create a dummy Torneio instance for simulation purposes
+        # The 'jogador_nome' here is just a placeholder, as the actual player is not in this tournament
+        # Pass the ranking object to the Torneio instance
+        sim_torneio_instance = Torneio(
+            tournament_data=info_torneio,
+            jogador_nome="Simulador_NPC", # Dummy name for the instance
+            jogador_nacionalidade="??",
+            ranking=ranking,
+            nome_save=nome_save # Use current save name to access ranking but temp files for tournament state
+        )
+
+        try:
+            campeao_simulado = sim_torneio_instance.simular_torneio_npc(ranking.ranking)
+            if campeao_simulado:
+                campeoes_da_semana.append(f"{info_torneio['nome']}: {campeao_simulado['nome']}")
+                # Distribute points for the simulated tournament
+                # We need a dummy name_save for the simulated tournament state to be saved and loaded
+                # sim_torneio_instance.nome_save holds the temp_save_name used in simular_torneio_npc
+                distribuir_pontos_torneio(sim_torneio_instance.nome_save) 
+        except Exception as e:
+            print(f"❌ Erro ao simular {info_torneio['nome']} para NPCs: {e}")
+
+    # Display champions of simulated tournaments
+    if campeoes_da_semana:
+        print("\n--- 🏆 Campeões da Semana ---")
+        for campeao_info in campeoes_da_semana:
+            print(f"- {campeao_info}")
+        print("----------------------------")
+        safe_input("Pressione Enter para continuar a temporada...") # Pause for display
+
+
+    # Lógica de point decay
+    print("\n📉 Verificando pontos a expirar...")
+    for jogador_ranking in ranking.ranking:
+        pontos_originais = sum(p["pontos"] for p in jogador_ranking.get("pontos_detalhados", []))
+        
+        pontos_validos = [
+            p for p in jogador_ranking.get("pontos_detalhados", []) if p["semana_expiracao"] >= semana_atual
+        ]
+        
+        jogador_ranking["pontos_detalhados"] = pontos_validos
+        novo_total = sum(p["pontos"] for p in pontos_validos)
+        jogador_ranking["pontos"] = novo_total
+
+        if novo_total < pontos_originais:
+            print(f"  - {jogador_ranking['nome']} perdeu {pontos_originais - novo_total} pontos.")
+
+    ranking.ordenar()
+    ranking.salvar_ranking()
+    salvar_temporada(nome_save, temporada)
+    print("✅ Ranking semanal atualizado.")
+    
+    return temporada

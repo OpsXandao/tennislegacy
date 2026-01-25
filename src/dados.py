@@ -31,6 +31,11 @@ def get_caminho_jogador_save(nome_save):
     """Retorna o caminho para o arquivo do jogador em um save específico."""
     return os.path.join(SAVES_DIR, nome_save, "jogador.json")
 
+def get_caminho_temporada(nome_save):
+    """Retorna o caminho para o arquivo de temporada de um save específico."""
+    return os.path.join(SAVES_DIR, nome_save, "temporada.json")
+
+
 # --- Carregadores de Dados (Data Loaders) ---
 
 def carregar_ranking(caminho):

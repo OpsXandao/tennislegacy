@@ -16,13 +16,7 @@
       "lob": 90,
       "winner": 97
     },
-    "id": 1,
-    "atributos_psicologicos": {
-      "concentracao": 89,
-      "agressividade": 72,
-      "leitura_de_jogo": 69,
-      "determinacao": 92
-    }
+    "id": 1
   },
   {
     "nome": "Carlos Alcaraz",
@@ -41,13 +35,7 @@
       "lob": 89,
       "winner": 92
     },
-    "id": 2,
-    "atributos_psicologicos": {
-      "concentracao": 77,
-      "agressividade": 76,
-      "leitura_de_jogo": 76,
-      "determinacao": 73
-    }
+    "id": 2
   },
   {
     "nome": "Alexander Zverev",
@@ -66,13 +54,7 @@
       "lob": 89,
       "winner": 92
     },
-    "id": 3,
-    "atributos_psicologicos": {
-      "concentracao": 90,
-      "agressividade": 70,
-      "leitura_de_jogo": 88,
-      "determinacao": 90
-    }
+    "id": 3
   },
   {
     "nome": "Taylor Fritz",
@@ -91,13 +73,7 @@
       "lob": 88,
       "winner": 93
     },
-    "id": 4,
-    "atributos_psicologicos": {
-      "concentracao": 94,
-      "agressividade": 83,
-      "leitura_de_jogo": 68,
-      "determinacao": 84
-    }
+    "id": 4
   },
   {
     "nome": "Jack Draper",
@@ -116,13 +92,7 @@
       "lob": 84,
       "winner": 91
     },
-    "id": 5,
-    "atributos_psicologicos": {
-      "concentracao": 79,
-      "agressividade": 67,
-      "leitura_de_jogo": 66,
-      "determinacao": 68
-    }
+    "id": 5
   },
   {
     "nome": "Novak Djokovic",
@@ -141,13 +111,7 @@
       "lob": 95,
       "winner": 98
     },
-    "id": 6,
-    "atributos_psicologicos": {
-      "concentracao": 78,
-      "agressividade": 79,
-      "leitura_de_jogo": 88,
-      "determinacao": 91
-    }
+    "id": 6
   },
   {
     "nome": "Casper Ruud",
@@ -166,13 +130,7 @@
       "lob": 90,
       "winner": 90
     },
-    "id": 7,
-    "atributos_psicologicos": {
-      "concentracao": 64,
-      "agressividade": 81,
-      "leitura_de_jogo": 70,
-      "determinacao": 86
-    }
+    "id": 7
   },
   {
     "nome": "Lorenzo Musetti",
@@ -191,13 +149,7 @@
       "lob": 87,
       "winner": 85
     },
-    "id": 8,
-    "atributos_psicologicos": {
-      "concentracao": 84,
-      "agressividade": 86,
-      "leitura_de_jogo": 81,
-      "determinacao": 77
-    }
+    "id": 8
   },
   {
     "nome": "Alex De Minaur",
@@ -216,13 +168,7 @@
       "lob": 89,
       "winner": 88
     },
-    "id": 9,
-    "atributos_psicologicos": {
-      "concentracao": 72,
-      "agressividade": 79,
-      "leitura_de_jogo": 83,
-      "determinacao": 73
-    }
+    "id": 9
   },
   {
     "nome": "Holger Rune",
@@ -241,13 +187,7 @@
       "lob": 83,
       "winner": 92
     },
-    "id": 10,
-    "atributos_psicologicos": {
-      "concentracao": 89,
-      "agressividade": 91,
-      "leitura_de_jogo": 64,
-      "determinacao": 88
-    }
+    "id": 10
   },
   {
     "nome": "Daniil Medvedev",
@@ -266,13 +206,7 @@
       "lob": 89,
       "winner": 87
     },
-    "id": 11,
-    "atributos_psicologicos": {
-      "concentracao": 90,
-      "agressividade": 70,
-      "leitura_de_jogo": 87,
-      "determinacao": 78
-    }
+    "id": 11
   },
   {
     "nome": "Tommy Paul",
@@ -291,13 +225,7 @@
       "lob": 85,
       "winner": 83
     },
-    "id": 12,
-    "atributos_psicologicos": {
-      "concentracao": 72,
-      "agressividade": 70,
-      "leitura_de_jogo": 66,
-      "determinacao": 68
-    }
+    "id": 12
   },
   {
     "nome": "Ben Shelton",
@@ -316,13 +244,7 @@
       "lob": 80,
       "winner": 89
     },
-    "id": 13,
-    "atributos_psicologicos": {
-      "concentracao": 91,
-      "agressividade": 85,
-      "leitura_de_jogo": 71,
-      "determinacao": 64
-    }
+    "id": 13
   },
   {
     "nome": "Arthur Fils",
@@ -341,13 +263,7 @@
       "lob": 84,
       "winner": 88
     },
-    "id": 14,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 73,
-      "leitura_de_jogo": 64,
-      "determinacao": 72
-    }
+    "id": 14
   },
   {
     "nome": "Frances Tiafoe",
@@ -366,13 +282,7 @@
       "lob": 77,
       "winner": 86
     },
-    "id": 15,
-    "atributos_psicologicos": {
-      "concentracao": 85,
-      "agressividade": 69,
-      "leitura_de_jogo": 77,
-      "determinacao": 66
-    }
+    "id": 15
   },
   {
     "nome": "Grigor Dimitrov",
@@ -391,13 +301,7 @@
       "lob": 84,
       "winner": 87
     },
-    "id": 16,
-    "atributos_psicologicos": {
-      "concentracao": 86,
-      "agressividade": 62,
-      "leitura_de_jogo": 84,
-      "determinacao": 75
-    }
+    "id": 16
   },
   {
     "nome": "Andrey Rublev",
@@ -416,13 +320,7 @@
       "lob": 88,
       "winner": 86
     },
-    "id": 17,
-    "atributos_psicologicos": {
-      "concentracao": 79,
-      "agressividade": 65,
-      "leitura_de_jogo": 91,
-      "determinacao": 74
-    }
+    "id": 17
   },
   {
     "nome": "Francisco Cerundolo",
@@ -441,13 +339,7 @@
       "lob": 85,
       "winner": 86
     },
-    "id": 18,
-    "atributos_psicologicos": {
-      "concentracao": 62,
-      "agressividade": 77,
-      "leitura_de_jogo": 69,
-      "determinacao": 86
-    }
+    "id": 18
   },
   {
     "nome": "Jakub Mensik",
@@ -466,13 +358,7 @@
       "lob": 76,
       "winner": 84
     },
-    "id": 19,
-    "atributos_psicologicos": {
-      "concentracao": 78,
-      "agressividade": 77,
-      "leitura_de_jogo": 86,
-      "determinacao": 85
-    }
+    "id": 19
   },
   {
     "nome": "Stefanos Tsitsipas",
@@ -491,13 +377,7 @@
       "lob": 90,
       "winner": 84
     },
-    "id": 20,
-    "atributos_psicologicos": {
-      "concentracao": 75,
-      "agressividade": 82,
-      "leitura_de_jogo": 70,
-      "determinacao": 86
-    }
+    "id": 20
   },
   {
     "nome": "Tomas Machac",
@@ -516,13 +396,7 @@
       "lob": 84,
       "winner": 83
     },
-    "id": 21,
-    "atributos_psicologicos": {
-      "concentracao": 60,
-      "agressividade": 59,
-      "leitura_de_jogo": 79,
-      "determinacao": 65
-    }
+    "id": 21
   },
   {
     "nome": "Ugo Humbert",
@@ -541,13 +415,7 @@
       "lob": 83,
       "winner": 79
     },
-    "id": 22,
-    "atributos_psicologicos": {
-      "concentracao": 81,
-      "agressividade": 66,
-      "leitura_de_jogo": 59,
-      "determinacao": 84
-    }
+    "id": 22
   },
   {
     "nome": "Sebastian Korda",
@@ -566,13 +434,7 @@
       "lob": 82,
       "winner": 86
     },
-    "id": 23,
-    "atributos_psicologicos": {
-      "concentracao": 66,
-      "agressividade": 86,
-      "leitura_de_jogo": 62,
-      "determinacao": 71
-    }
+    "id": 23
   },
   {
     "nome": "Karen Khachanov",
@@ -591,13 +453,7 @@
       "lob": 84,
       "winner": 84
     },
-    "id": 24,
-    "atributos_psicologicos": {
-      "concentracao": 66,
-      "agressividade": 72,
-      "leitura_de_jogo": 78,
-      "determinacao": 84
-    }
+    "id": 24
   },
   {
     "nome": "Alexei Popyrin",
@@ -616,13 +472,7 @@
       "lob": 74,
       "winner": 81
     },
-    "id": 25,
-    "atributos_psicologicos": {
-      "concentracao": 68,
-      "agressividade": 62,
-      "leitura_de_jogo": 68,
-      "determinacao": 68
-    }
+    "id": 25
   },
   {
     "nome": "Alejandro Davidovich Fokina",
@@ -641,13 +491,7 @@
       "lob": 85,
       "winner": 82
     },
-    "id": 26,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 78,
-      "leitura_de_jogo": 65,
-      "determinacao": 79
-    }
+    "id": 26
   },
   {
     "nome": "Denis Shapovalov",
@@ -666,13 +510,7 @@
       "lob": 84,
       "winner": 87
     },
-    "id": 27,
-    "atributos_psicologicos": {
-      "concentracao": 89,
-      "agressividade": 81,
-      "leitura_de_jogo": 80,
-      "determinacao": 62
-    }
+    "id": 27
   },
   {
     "nome": "Matteo Berrettini",
@@ -691,13 +529,7 @@
       "lob": 82,
       "winner": 87
     },
-    "id": 28,
-    "atributos_psicologicos": {
-      "concentracao": 79,
-      "agressividade": 80,
-      "leitura_de_jogo": 65,
-      "determinacao": 77
-    }
+    "id": 28
   },
   {
     "nome": "Brandon Nakashima",
@@ -716,13 +548,7 @@
       "lob": 77,
       "winner": 82
     },
-    "id": 29,
-    "atributos_psicologicos": {
-      "concentracao": 81,
-      "agressividade": 65,
-      "leitura_de_jogo": 63,
-      "determinacao": 72
-    }
+    "id": 29
   },
   {
     "nome": "Felix Auger-Aliassime",
@@ -741,13 +567,7 @@
       "lob": 81,
       "winner": 87
     },
-    "id": 30,
-    "atributos_psicologicos": {
-      "concentracao": 72,
-      "agressividade": 68,
-      "leitura_de_jogo": 89,
-      "determinacao": 80
-    }
+    "id": 30
   },
   {
     "nome": "Hubert Hurkacz",
@@ -766,13 +586,7 @@
       "lob": 83,
       "winner": 81
     },
-    "id": 31,
-    "atributos_psicologicos": {
-      "concentracao": 81,
-      "agressividade": 76,
-      "leitura_de_jogo": 66,
-      "determinacao": 80
-    }
+    "id": 31
   },
   {
     "nome": "Giovanni Mpetshi Perricard",
@@ -791,13 +605,7 @@
       "lob": 78,
       "winner": 83
     },
-    "id": 32,
-    "atributos_psicologicos": {
-      "concentracao": 67,
-      "agressividade": 83,
-      "leitura_de_jogo": 81,
-      "determinacao": 81
-    }
+    "id": 32
   },
   {
     "nome": "Alex Michelsen",
@@ -816,13 +624,7 @@
       "lob": 81,
       "winner": 81
     },
-    "id": 33,
-    "atributos_psicologicos": {
-      "concentracao": 57,
-      "agressividade": 63,
-      "leitura_de_jogo": 82,
-      "determinacao": 57
-    }
+    "id": 33
   },
   {
     "nome": "Tallon Griekspoor",
@@ -841,13 +643,7 @@
       "lob": 79,
       "winner": 80
     },
-    "id": 34,
-    "atributos_psicologicos": {
-      "concentracao": 83,
-      "agressividade": 68,
-      "leitura_de_jogo": 70,
-      "determinacao": 66
-    }
+    "id": 34
   },
   {
     "nome": "Flavio Cobolli",
@@ -866,13 +662,7 @@
       "lob": 78,
       "winner": 81
     },
-    "id": 35,
-    "atributos_psicologicos": {
-      "concentracao": 58,
-      "agressividade": 62,
-      "leitura_de_jogo": 85,
-      "determinacao": 86
-    }
+    "id": 35
   },
   {
     "nome": "Sebastian Baez",
@@ -891,13 +681,7 @@
       "lob": 84,
       "winner": 80
     },
-    "id": 36,
-    "atributos_psicologicos": {
-      "concentracao": 75,
-      "agressividade": 85,
-      "leitura_de_jogo": 79,
-      "determinacao": 67
-    }
+    "id": 36
   },
   {
     "nome": "Jiri Lehecka",
@@ -916,13 +700,7 @@
       "lob": 80,
       "winner": 78
     },
-    "id": 37,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 77,
-      "leitura_de_jogo": 72,
-      "determinacao": 69
-    }
+    "id": 37
   },
   {
     "nome": "Jordan Thompson",
@@ -941,13 +719,7 @@
       "lob": 72,
       "winner": 83
     },
-    "id": 38,
-    "atributos_psicologicos": {
-      "concentracao": 84,
-      "agressividade": 85,
-      "leitura_de_jogo": 76,
-      "determinacao": 70
-    }
+    "id": 38
   },
   {
     "nome": "Matteo Arnaldi",
@@ -966,13 +738,7 @@
       "lob": 78,
       "winner": 81
     },
-    "id": 39,
-    "atributos_psicologicos": {
-      "concentracao": 61,
-      "agressividade": 65,
-      "leitura_de_jogo": 61,
-      "determinacao": 64
-    }
+    "id": 39
   },
   {
     "nome": "Alexandre Muller",
@@ -991,13 +757,7 @@
       "lob": 78,
       "winner": 76
     },
-    "id": 40,
-    "atributos_psicologicos": {
-      "concentracao": 78,
-      "agressividade": 72,
-      "leitura_de_jogo": 72,
-      "determinacao": 63
-    }
+    "id": 40
   },
   {
     "nome": "Nuno Borges",
@@ -1016,13 +776,7 @@
       "lob": 75,
       "winner": 76
     },
-    "id": 41,
-    "atributos_psicologicos": {
-      "concentracao": 78,
-      "agressividade": 73,
-      "leitura_de_jogo": 68,
-      "determinacao": 83
-    }
+    "id": 41
   },
   {
     "nome": "Gael Monfils",
@@ -1041,13 +795,7 @@
       "lob": 85,
       "winner": 83
     },
-    "id": 42,
-    "atributos_psicologicos": {
-      "concentracao": 75,
-      "agressividade": 69,
-      "leitura_de_jogo": 68,
-      "determinacao": 64
-    }
+    "id": 42
   },
   {
     "nome": "Marcos Giron",
@@ -1066,13 +814,7 @@
       "lob": 76,
       "winner": 77
     },
-    "id": 43,
-    "atributos_psicologicos": {
-      "concentracao": 58,
-      "agressividade": 70,
-      "leitura_de_jogo": 69,
-      "determinacao": 56
-    }
+    "id": 43
   },
   {
     "nome": "Lorenzo Sonego",
@@ -1091,13 +833,7 @@
       "lob": 79,
       "winner": 83
     },
-    "id": 44,
-    "atributos_psicologicos": {
-      "concentracao": 81,
-      "agressividade": 58,
-      "leitura_de_jogo": 84,
-      "determinacao": 60
-    }
+    "id": 44
   },
   {
     "nome": "Luciano Darderi",
@@ -1116,13 +852,7 @@
       "lob": 75,
       "winner": 76
     },
-    "id": 45,
-    "atributos_psicologicos": {
-      "concentracao": 57,
-      "agressividade": 73,
-      "leitura_de_jogo": 58,
-      "determinacao": 78
-    }
+    "id": 45
   },
   {
     "nome": "Miomir Kecmanovic",
@@ -1141,13 +871,7 @@
       "lob": 77,
       "winner": 77
     },
-    "id": 46,
-    "atributos_psicologicos": {
-      "concentracao": 77,
-      "agressividade": 69,
-      "leitura_de_jogo": 75,
-      "determinacao": 58
-    }
+    "id": 46
   },
   {
     "nome": "David Goffin",
@@ -1166,13 +890,7 @@
       "lob": 80,
       "winner": 75
     },
-    "id": 47,
-    "atributos_psicologicos": {
-      "concentracao": 67,
-      "agressividade": 67,
-      "leitura_de_jogo": 74,
-      "determinacao": 69
-    }
+    "id": 47
   },
   {
     "nome": "Pedro Martinez Portero",
@@ -1191,13 +909,7 @@
       "lob": 73,
       "winner": 76
     },
-    "id": 48,
-    "atributos_psicologicos": {
-      "concentracao": 69,
-      "agressividade": 61,
-      "leitura_de_jogo": 70,
-      "determinacao": 80
-    }
+    "id": 48
   },
   {
     "nome": "Zizou Bergs",
@@ -1216,13 +928,7 @@
       "lob": 72,
       "winner": 80
     },
-    "id": 49,
-    "atributos_psicologicos": {
-      "concentracao": 83,
-      "agressividade": 53,
-      "leitura_de_jogo": 74,
-      "determinacao": 76
-    }
+    "id": 49
   },
   {
     "nome": "Quentin Halys",
@@ -1241,13 +947,7 @@
       "lob": 69,
       "winner": 80
     },
-    "id": 50,
-    "atributos_psicologicos": {
-      "concentracao": 56,
-      "agressividade": 74,
-      "leitura_de_jogo": 81,
-      "determinacao": 70
-    }
+    "id": 50
   },
   {
     "nome": "Alexander Bublik",
@@ -1266,13 +966,7 @@
       "lob": 77,
       "winner": 81
     },
-    "id": 51,
-    "atributos_psicologicos": {
-      "concentracao": 79,
-      "agressividade": 63,
-      "leitura_de_jogo": 79,
-      "determinacao": 75
-    }
+    "id": 51
   },
   {
     "nome": "Camilo Ugo Carabelli",
@@ -1291,13 +985,7 @@
       "lob": 77,
       "winner": 74
     },
-    "id": 52,
-    "atributos_psicologicos": {
-      "concentracao": 62,
-      "agressividade": 55,
-      "leitura_de_jogo": 61,
-      "determinacao": 65
-    }
+    "id": 52
   },
   {
     "nome": "Gabriel Diallo",
@@ -1316,13 +1004,7 @@
       "lob": 70,
       "winner": 79
     },
-    "id": 53,
-    "atributos_psicologicos": {
-      "concentracao": 58,
-      "agressividade": 67,
-      "leitura_de_jogo": 53,
-      "determinacao": 83
-    }
+    "id": 53
   },
   {
     "nome": "Jacob Fearnley",
@@ -1341,13 +1023,7 @@
       "lob": 73,
       "winner": 76
     },
-    "id": 54,
-    "atributos_psicologicos": {
-      "concentracao": 74,
-      "agressividade": 79,
-      "leitura_de_jogo": 74,
-      "determinacao": 59
-    }
+    "id": 54
   },
   {
     "nome": "Tomas Martin Etcheverry",
@@ -1366,13 +1042,7 @@
       "lob": 75,
       "winner": 77
     },
-    "id": 55,
-    "atributos_psicologicos": {
-      "concentracao": 69,
-      "agressividade": 77,
-      "leitura_de_jogo": 58,
-      "determinacao": 69
-    }
+    "id": 55
   },
   {
     "nome": "Fabian Marozsan",
@@ -1391,13 +1061,7 @@
       "lob": 69,
       "winner": 79
     },
-    "id": 56,
-    "atributos_psicologicos": {
-      "concentracao": 82,
-      "agressividade": 56,
-      "leitura_de_jogo": 80,
-      "determinacao": 73
-    }
+    "id": 56
   },
   {
     "nome": "Roberto Bautista Agut",
@@ -1416,13 +1080,7 @@
       "lob": 74,
       "winner": 80
     },
-    "id": 57,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 80,
-      "leitura_de_jogo": 74,
-      "determinacao": 70
-    }
+    "id": 57
   },
   {
     "nome": "Jaume Munar",
@@ -1441,13 +1099,7 @@
       "lob": 75,
       "winner": 68
     },
-    "id": 58,
-    "atributos_psicologicos": {
-      "concentracao": 72,
-      "agressividade": 59,
-      "leitura_de_jogo": 57,
-      "determinacao": 64
-    }
+    "id": 58
   },
   {
     "nome": "Laslo Djere",
@@ -1466,13 +1118,7 @@
       "lob": 74,
       "winner": 79
     },
-    "id": 59,
-    "atributos_psicologicos": {
-      "concentracao": 77,
-      "agressividade": 58,
-      "leitura_de_jogo": 70,
-      "determinacao": 83
-    }
+    "id": 59
   },
   {
     "nome": "Benjamin Bonzi",
@@ -1491,13 +1137,7 @@
       "lob": 75,
       "winner": 76
     },
-    "id": 60,
-    "atributos_psicologicos": {
-      "concentracao": 77,
-      "agressividade": 82,
-      "leitura_de_jogo": 69,
-      "determinacao": 82
-    }
+    "id": 60
   },
   {
     "nome": "Alejandro Tabilo",
@@ -1516,13 +1156,7 @@
       "lob": 73,
       "winner": 70
     },
-    "id": 61,
-    "atributos_psicologicos": {
-      "concentracao": 50,
-      "agressividade": 69,
-      "leitura_de_jogo": 60,
-      "determinacao": 65
-    }
+    "id": 61
   },
   {
     "nome": "Kei Nishikori",
@@ -1541,13 +1175,7 @@
       "lob": 71,
       "winner": 75
     },
-    "id": 62,
-    "atributos_psicologicos": {
-      "concentracao": 50,
-      "agressividade": 53,
-      "leitura_de_jogo": 79,
-      "determinacao": 61
-    }
+    "id": 62
   },
   {
     "nome": "Roberto Carballes Baena",
@@ -1566,13 +1194,7 @@
       "lob": 71,
       "winner": 73
     },
-    "id": 63,
-    "atributos_psicologicos": {
-      "concentracao": 77,
-      "agressividade": 75,
-      "leitura_de_jogo": 74,
-      "determinacao": 58
-    }
+    "id": 63
   },
   {
     "nome": "Francisco Comesana",
@@ -1591,13 +1213,7 @@
       "lob": 73,
       "winner": 73
     },
-    "id": 64,
-    "atributos_psicologicos": {
-      "concentracao": 55,
-      "agressividade": 49,
-      "leitura_de_jogo": 55,
-      "determinacao": 76
-    }
+    "id": 64
   },
   {
     "nome": "João Fonseca",
@@ -1616,13 +1232,7 @@
       "lob": 76,
       "winner": 72
     },
-    "id": 65,
-    "atributos_psicologicos": {
-      "concentracao": 69,
-      "agressividade": 81,
-      "leitura_de_jogo": 53,
-      "determinacao": 53
-    }
+    "id": 65
   },
   {
     "nome": "Daniel Altmaier",
@@ -1641,13 +1251,7 @@
       "lob": 69,
       "winner": 74
     },
-    "id": 66,
-    "atributos_psicologicos": {
-      "concentracao": 73,
-      "agressividade": 65,
-      "leitura_de_jogo": 76,
-      "determinacao": 52
-    }
+    "id": 66
   },
   {
     "nome": "Learner Tien",
@@ -1666,13 +1270,7 @@
       "lob": 70,
       "winner": 72
     },
-    "id": 67,
-    "atributos_psicologicos": {
-      "concentracao": 72,
-      "agressividade": 65,
-      "leitura_de_jogo": 72,
-      "determinacao": 52
-    }
+    "id": 67
   },
   {
     "nome": "Mattia Bellucci",
@@ -1691,13 +1289,7 @@
       "lob": 73,
       "winner": 75
     },
-    "id": 68,
-    "atributos_psicologicos": {
-      "concentracao": 53,
-      "agressividade": 70,
-      "leitura_de_jogo": 64,
-      "determinacao": 79
-    }
+    "id": 68
   },
   {
     "nome": "Damir Dzumhur",
@@ -1716,13 +1308,7 @@
       "lob": 74,
       "winner": 67
     },
-    "id": 69,
-    "atributos_psicologicos": {
-      "concentracao": 65,
-      "agressividade": 53,
-      "leitura_de_jogo": 56,
-      "determinacao": 64
-    }
+    "id": 69
   },
   {
     "nome": "Bu Yunchaokete",
@@ -1741,13 +1327,7 @@
       "lob": 73,
       "winner": 72
     },
-    "id": 70,
-    "atributos_psicologicos": {
-      "concentracao": 76,
-      "agressividade": 68,
-      "leitura_de_jogo": 62,
-      "determinacao": 79
-    }
+    "id": 70
   },
   {
     "nome": "Shang Juncheng",
@@ -1766,13 +1346,7 @@
       "lob": 68,
       "winner": 73
     },
-    "id": 71,
-    "atributos_psicologicos": {
-      "concentracao": 54,
-      "agressividade": 77,
-      "leitura_de_jogo": 65,
-      "determinacao": 72
-    }
+    "id": 71
   },
   {
     "nome": "Arthur Rinderknech",
@@ -1791,13 +1365,7 @@
       "lob": 70,
       "winner": 73
     },
-    "id": 72,
-    "atributos_psicologicos": {
-      "concentracao": 72,
-      "agressividade": 71,
-      "leitura_de_jogo": 55,
-      "determinacao": 71
-    }
+    "id": 72
   },
   {
     "nome": "Roman Safiullin",
@@ -1816,13 +1384,7 @@
       "lob": 70,
       "winner": 74
     },
-    "id": 73,
-    "atributos_psicologicos": {
-      "concentracao": 58,
-      "agressividade": 61,
-      "leitura_de_jogo": 70,
-      "determinacao": 69
-    }
+    "id": 73
   },
   {
     "nome": "Hugo Gaston",
@@ -1841,13 +1403,7 @@
       "lob": 69,
       "winner": 71
     },
-    "id": 74,
-    "atributos_psicologicos": {
-      "concentracao": 59,
-      "agressividade": 62,
-      "leitura_de_jogo": 76,
-      "determinacao": 64
-    }
+    "id": 74
   },
   {
     "nome": "Yoshihito Nishioka",
@@ -1866,13 +1422,7 @@
       "lob": 69,
       "winner": 73
     },
-    "id": 75,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 52,
-      "leitura_de_jogo": 56,
-      "determinacao": 56
-    }
+    "id": 75
   },
   {
     "nome": "Corentin Moutet",
@@ -1891,13 +1441,7 @@
       "lob": 70,
       "winner": 67
     },
-    "id": 76,
-    "atributos_psicologicos": {
-      "concentracao": 51,
-      "agressividade": 59,
-      "leitura_de_jogo": 49,
-      "determinacao": 67
-    }
+    "id": 76
   },
   {
     "nome": "Hamad Medjedovic",
@@ -1916,13 +1460,7 @@
       "lob": 74,
       "winner": 74
     },
-    "id": 77,
-    "atributos_psicologicos": {
-      "concentracao": 67,
-      "agressividade": 57,
-      "leitura_de_jogo": 68,
-      "determinacao": 57
-    }
+    "id": 77
   },
   {
     "nome": "Aleksandar Vukic",
@@ -1941,13 +1479,7 @@
       "lob": 72,
       "winner": 70
     },
-    "id": 78,
-    "atributos_psicologicos": {
-      "concentracao": 48,
-      "agressividade": 50,
-      "leitura_de_jogo": 70,
-      "determinacao": 68
-    }
+    "id": 78
   },
   {
     "nome": "Rinky Hijikata",
@@ -1966,13 +1498,7 @@
       "lob": 70,
       "winner": 74
     },
-    "id": 79,
-    "atributos_psicologicos": {
-      "concentracao": 50,
-      "agressividade": 56,
-      "leitura_de_jogo": 51,
-      "determinacao": 77
-    }
+    "id": 79
   },
   {
     "nome": "Aleksandar Kovacevic",
@@ -1991,13 +1517,7 @@
       "lob": 71,
       "winner": 73
     },
-    "id": 80,
-    "atributos_psicologicos": {
-      "concentracao": 49,
-      "agressividade": 75,
-      "leitura_de_jogo": 58,
-      "determinacao": 50
-    }
+    "id": 80
   },
   {
     "nome": "Zhang Zhizhen",
@@ -2016,13 +1536,7 @@
       "lob": 73,
       "winner": 68
     },
-    "id": 81,
-    "atributos_psicologicos": {
-      "concentracao": 64,
-      "agressividade": 55,
-      "leitura_de_jogo": 56,
-      "determinacao": 69
-    }
+    "id": 81
   },
   {
     "nome": "Christopher O'Connell",
@@ -2041,13 +1555,7 @@
       "lob": 70,
       "winner": 67
     },
-    "id": 82,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 54,
-      "leitura_de_jogo": 65,
-      "determinacao": 52
-    }
+    "id": 82
   },
   {
     "nome": "Borna Coric",
@@ -2066,13 +1574,7 @@
       "lob": 74,
       "winner": 70
     },
-    "id": 83,
-    "atributos_psicologicos": {
-      "concentracao": 71,
-      "agressividade": 77,
-      "leitura_de_jogo": 76,
-      "determinacao": 66
-    }
+    "id": 83
   },
   {
     "nome": "Raphael Collignon",
@@ -2091,13 +1593,7 @@
       "lob": 69,
       "winner": 69
     },
-    "id": 84,
-    "atributos_psicologicos": {
-      "concentracao": 66,
-      "agressividade": 63,
-      "leitura_de_jogo": 55,
-      "determinacao": 73
-    }
+    "id": 84
   },
   {
     "nome": "Vit Kopriva",
@@ -2116,13 +1612,7 @@
       "lob": 72,
       "winner": 72
     },
-    "id": 85,
-    "atributos_psicologicos": {
-      "concentracao": 62,
-      "agressividade": 72,
-      "leitura_de_jogo": 60,
-      "determinacao": 53
-    }
+    "id": 85
   },
   {
     "nome": "Jan-Lennard Struff",
@@ -2141,13 +1631,7 @@
       "lob": 70,
       "winner": 74
     },
-    "id": 86,
-    "atributos_psicologicos": {
-      "concentracao": 51,
-      "agressividade": 51,
-      "leitura_de_jogo": 69,
-      "determinacao": 61
-    }
+    "id": 86
   },
   {
     "nome": "Jesper De Jong",
@@ -2166,13 +1650,7 @@
       "lob": 66,
       "winner": 68
     },
-    "id": 87,
-    "atributos_psicologicos": {
-      "concentracao": 57,
-      "agressividade": 59,
-      "leitura_de_jogo": 59,
-      "determinacao": 60
-    }
+    "id": 87
   },
   {
     "nome": "Kamil Majchrzak",
@@ -2191,13 +1669,7 @@
       "lob": 66,
       "winner": 62
     },
-    "id": 88,
-    "atributos_psicologicos": {
-      "concentracao": 73,
-      "agressividade": 69,
-      "leitura_de_jogo": 47,
-      "determinacao": 67
-    }
+    "id": 88
   },
   {
     "nome": "Botic Van De Zandschulp",
@@ -2216,13 +1688,7 @@
       "lob": 70,
       "winner": 69
     },
-    "id": 89,
-    "atributos_psicologicos": {
-      "concentracao": 68,
-      "agressividade": 68,
-      "leitura_de_jogo": 51,
-      "determinacao": 49
-    }
+    "id": 89
   },
   {
     "nome": "Cameron Norrie",
@@ -2241,13 +1707,7 @@
       "lob": 72,
       "winner": 68
     },
-    "id": 90,
-    "atributos_psicologicos": {
-      "concentracao": 61,
-      "agressividade": 72,
-      "leitura_de_jogo": 59,
-      "determinacao": 74
-    }
+    "id": 90
   },
   {
     "nome": "Adam Walton",
@@ -2266,13 +1726,7 @@
       "lob": 71,
       "winner": 67
     },
-    "id": 91,
-    "atributos_psicologicos": {
-      "concentracao": 73,
-      "agressividade": 49,
-      "leitura_de_jogo": 53,
-      "determinacao": 52
-    }
+    "id": 91
   },
   {
     "nome": "James Duckworth",
@@ -2291,13 +1745,7 @@
       "lob": 64,
       "winner": 69
     },
-    "id": 92,
-    "atributos_psicologicos": {
-      "concentracao": 51,
-      "agressividade": 62,
-      "leitura_de_jogo": 59,
-      "determinacao": 49
-    }
+    "id": 92
   },
   {
     "nome": "Chun-Hsin Tseng",
@@ -2316,13 +1764,7 @@
       "lob": 65,
       "winner": 64
     },
-    "id": 93,
-    "atributos_psicologicos": {
-      "concentracao": 58,
-      "agressividade": 50,
-      "leitura_de_jogo": 53,
-      "determinacao": 59
-    }
+    "id": 93
   },
   {
     "nome": "Luca Nardi",
@@ -2341,13 +1783,7 @@
       "lob": 66,
       "winner": 66
     },
-    "id": 94,
-    "atributos_psicologicos": {
-      "concentracao": 52,
-      "agressividade": 72,
-      "leitura_de_jogo": 74,
-      "determinacao": 47
-    }
+    "id": 94
   },
   {
     "nome": "Reilly Opelka",
@@ -2366,13 +1802,7 @@
       "lob": 69,
       "winner": 73
     },
-    "id": 95,
-    "atributos_psicologicos": {
-      "concentracao": 61,
-      "agressividade": 72,
-      "leitura_de_jogo": 74,
-      "determinacao": 74
-    }
+    "id": 95
   },
   {
     "nome": "Hugo Dellien",
@@ -2391,13 +1821,7 @@
       "lob": 63,
       "winner": 65
     },
-    "id": 96,
-    "atributos_psicologicos": {
-      "concentracao": 61,
-      "agressividade": 47,
-      "leitura_de_jogo": 45,
-      "determinacao": 64
-    }
+    "id": 96
   },
   {
     "nome": "Alexander Shevchenko",
@@ -2416,13 +1840,7 @@
       "lob": 66,
       "winner": 71
     },
-    "id": 97,
-    "atributos_psicologicos": {
-      "concentracao": 64,
-      "agressividade": 73,
-      "leitura_de_jogo": 47,
-      "determinacao": 49
-    }
+    "id": 97
   },
   {
     "nome": "Mariano Navone",
@@ -2441,13 +1859,7 @@
       "lob": 67,
       "winner": 65
     },
-    "id": 98,
-    "atributos_psicologicos": {
-      "concentracao": 74,
-      "agressividade": 69,
-      "leitura_de_jogo": 72,
-      "determinacao": 52
-    }
+    "id": 98
   },
   {
     "nome": "Mackenzie McDonald",
@@ -2466,13 +1878,7 @@
       "lob": 65,
       "winner": 67
     },
-    "id": 99,
-    "atributos_psicologicos": {
-      "concentracao": 52,
-      "agressividade": 60,
-      "leitura_de_jogo": 62,
-      "determinacao": 62
-    }
+    "id": 99
   },
   {
     "nome": "Pablo Carreno Busta",
@@ -2491,13 +1897,7 @@
       "lob": 72,
       "winner": 71
     },
-    "id": 100,
-    "atributos_psicologicos": {
-      "concentracao": 54,
-      "agressividade": 75,
-      "leitura_de_jogo": 60,
-      "determinacao": 76
-    }
+    "id": 100
   },
   {
     "nome": "Nishesh Basavareddy",
@@ -2516,13 +1916,7 @@
       "lob": 66,
       "winner": 67
     },
-    "id": 101,
-    "atributos_psicologicos": {
-      "concentracao": 46,
-      "agressividade": 50,
-      "leitura_de_jogo": 57,
-      "determinacao": 45
-    }
+    "id": 101
   },
   {
     "nome": "Brandon Holt",
@@ -2541,13 +1935,7 @@
       "lob": 66,
       "winner": 66
     },
-    "id": 102,
-    "atributos_psicologicos": {
-      "concentracao": 55,
-      "agressividade": 51,
-      "leitura_de_jogo": 72,
-      "determinacao": 68
-    }
+    "id": 102
   },
   {
     "nome": "Billy Harris",
@@ -2566,13 +1954,7 @@
       "lob": 63,
       "winner": 65
     },
-    "id": 103,
-    "atributos_psicologicos": {
-      "concentracao": 66,
-      "agressividade": 55,
-      "leitura_de_jogo": 50,
-      "determinacao": 54
-    }
+    "id": 103
   },
   {
     "nome": "Marin Cilic",
@@ -2591,13 +1973,7 @@
       "lob": 71,
       "winner": 71
     },
-    "id": 104,
-    "atributos_psicologicos": {
-      "concentracao": 69,
-      "agressividade": 77,
-      "leitura_de_jogo": 70,
-      "determinacao": 72
-    }
+    "id": 104
   },
   {
     "nome": "Christopher Eubanks",
@@ -2616,13 +1992,7 @@
       "lob": 67,
       "winner": 71
     },
-    "id": 105,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 67,
-      "leitura_de_jogo": 68,
-      "determinacao": 61
-    }
+    "id": 105
   },
   {
     "nome": "Ethan Quinn",
@@ -2641,13 +2011,7 @@
       "lob": 64,
       "winner": 64
     },
-    "id": 106,
-    "atributos_psicologicos": {
-      "concentracao": 48,
-      "agressividade": 50,
-      "leitura_de_jogo": 53,
-      "determinacao": 50
-    }
+    "id": 106
   },
   {
     "nome": "Fabio Fognini",
@@ -2666,13 +2030,7 @@
       "lob": 67,
       "winner": 68
     },
-    "id": 107,
-    "atributos_psicologicos": {
-      "concentracao": 73,
-      "agressividade": 44,
-      "leitura_de_jogo": 61,
-      "determinacao": 66
-    }
+    "id": 107
   },
   {
     "nome": "Elmer Moller",
@@ -2691,13 +2049,7 @@
       "lob": 65,
       "winner": 66
     },
-    "id": 108,
-    "atributos_psicologicos": {
-      "concentracao": 60,
-      "agressividade": 44,
-      "leitura_de_jogo": 66,
-      "determinacao": 53
-    }
+    "id": 108
   },
   {
     "nome": "Juan Manuel Cerundolo",
@@ -2716,13 +2068,7 @@
       "lob": 69,
       "winner": 68
     },
-    "id": 109,
-    "atributos_psicologicos": {
-      "concentracao": 46,
-      "agressividade": 46,
-      "leitura_de_jogo": 63,
-      "determinacao": 60
-    }
+    "id": 109
   },
   {
     "nome": "Tomas Barrios Vera",
@@ -2741,13 +2087,7 @@
       "lob": 65,
       "winner": 60
     },
-    "id": 110,
-    "atributos_psicologicos": {
-      "concentracao": 60,
-      "agressividade": 73,
-      "leitura_de_jogo": 71,
-      "determinacao": 60
-    }
+    "id": 110
   },
   {
     "nome": "Thanasi Kokkinakis",
@@ -2766,13 +2106,7 @@
       "lob": 67,
       "winner": 68
     },
-    "id": 111,
-    "atributos_psicologicos": {
-      "concentracao": 51,
-      "agressividade": 47,
-      "leitura_de_jogo": 76,
-      "determinacao": 62
-    }
+    "id": 111
   },
   {
     "nome": "Thiago Seyboth Wild",
@@ -2791,13 +2125,7 @@
       "lob": 69,
       "winner": 69
     },
-    "id": 112,
-    "atributos_psicologicos": {
-      "concentracao": 48,
-      "agressividade": 73,
-      "leitura_de_jogo": 51,
-      "determinacao": 48
-    }
+    "id": 112
   },
   {
     "nome": "Arthur Cazaux",
@@ -2816,13 +2144,7 @@
       "lob": 64,
       "winner": 70
     },
-    "id": 113,
-    "atributos_psicologicos": {
-      "concentracao": 64,
-      "agressividade": 47,
-      "leitura_de_jogo": 66,
-      "determinacao": 72
-    }
+    "id": 113
   },
   {
     "nome": "Otto Virtanen",
@@ -2841,13 +2163,7 @@
       "lob": 61,
       "winner": 68
     },
-    "id": 114,
-    "atributos_psicologicos": {
-      "concentracao": 52,
-      "agressividade": 57,
-      "leitura_de_jogo": 48,
-      "determinacao": 75
-    }
+    "id": 114
   },
   {
     "nome": "Jaime Faria",
@@ -2866,13 +2182,7 @@
       "lob": 68,
       "winner": 64
     },
-    "id": 115,
-    "atributos_psicologicos": {
-      "concentracao": 71,
-      "agressividade": 61,
-      "leitura_de_jogo": 50,
-      "determinacao": 61
-    }
+    "id": 115
   },
   {
     "nome": "Eliot Spizzirri",
@@ -2891,13 +2201,7 @@
       "lob": 65,
       "winner": 68
     },
-    "id": 116,
-    "atributos_psicologicos": {
-      "concentracao": 62,
-      "agressividade": 44,
-      "leitura_de_jogo": 62,
-      "determinacao": 45
-    }
+    "id": 116
   },
   {
     "nome": "Roman Andres Burruchaga",
@@ -2916,13 +2220,7 @@
       "lob": 68,
       "winner": 66
     },
-    "id": 117,
-    "atributos_psicologicos": {
-      "concentracao": 56,
-      "agressividade": 64,
-      "leitura_de_jogo": 61,
-      "determinacao": 61
-    }
+    "id": 117
   },
   {
     "nome": "Daniel Elahi Galan",
@@ -2941,13 +2239,7 @@
       "lob": 69,
       "winner": 68
     },
-    "id": 118,
-    "atributos_psicologicos": {
-      "concentracao": 60,
-      "agressividade": 54,
-      "leitura_de_jogo": 73,
-      "determinacao": 52
-    }
+    "id": 118
   },
   {
     "nome": "Tristan Boyer",
@@ -2966,13 +2258,7 @@
       "lob": 64,
       "winner": 67
     },
-    "id": 119,
-    "atributos_psicologicos": {
-      "concentracao": 49,
-      "agressividade": 64,
-      "leitura_de_jogo": 65,
-      "determinacao": 53
-    }
+    "id": 119
   },
   {
     "nome": "Valentin Royer",
@@ -2991,13 +2277,7 @@
       "lob": 60,
       "winner": 64
     },
-    "id": 120,
-    "atributos_psicologicos": {
-      "concentracao": 50,
-      "agressividade": 51,
-      "leitura_de_jogo": 55,
-      "determinacao": 47
-    }
+    "id": 120
   },
   {
     "nome": "Terence Atmane",
@@ -3016,13 +2296,7 @@
       "lob": 62,
       "winner": 68
     },
-    "id": 121,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 62,
-      "leitura_de_jogo": 51,
-      "determinacao": 56
-    }
+    "id": 121
   },
   {
     "nome": "Cristian Garin",
@@ -3041,13 +2315,7 @@
       "lob": 66,
       "winner": 61
     },
-    "id": 122,
-    "atributos_psicologicos": {
-      "concentracao": 55,
-      "agressividade": 74,
-      "leitura_de_jogo": 69,
-      "determinacao": 74
-    }
+    "id": 122
   },
   {
     "nome": "Jerome Kym",
@@ -3066,13 +2334,7 @@
       "lob": 62,
       "winner": 64
     },
-    "id": 123,
-    "atributos_psicologicos": {
-      "concentracao": 45,
-      "agressividade": 43,
-      "leitura_de_jogo": 57,
-      "determinacao": 62
-    }
+    "id": 123
   },
   {
     "nome": "Dusan Lajovic",
@@ -3091,13 +2353,7 @@
       "lob": 68,
       "winner": 70
     },
-    "id": 124,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 48,
-      "leitura_de_jogo": 47,
-      "determinacao": 62
-    }
+    "id": 124
   },
   {
     "nome": "Carlos Taberner",
@@ -3116,13 +2372,7 @@
       "lob": 63,
       "winner": 64
     },
-    "id": 125,
-    "atributos_psicologicos": {
-      "concentracao": 48,
-      "agressividade": 58,
-      "leitura_de_jogo": 50,
-      "determinacao": 46
-    }
+    "id": 125
   },
   {
     "nome": "Dalibor Svrcina",
@@ -3141,13 +2391,7 @@
       "lob": 67,
       "winner": 66
     },
-    "id": 126,
-    "atributos_psicologicos": {
-      "concentracao": 73,
-      "agressividade": 55,
-      "leitura_de_jogo": 72,
-      "determinacao": 46
-    }
+    "id": 126
   },
   {
     "nome": "Tristan Schoolkate",
@@ -3166,13 +2410,7 @@
       "lob": 59,
       "winner": 68
     },
-    "id": 127,
-    "atributos_psicologicos": {
-      "concentracao": 71,
-      "agressividade": 50,
-      "leitura_de_jogo": 54,
-      "determinacao": 52
-    }
+    "id": 127
   },
   {
     "nome": "Sebastian Ofner",
@@ -3191,13 +2429,7 @@
       "lob": 68,
       "winner": 63
     },
-    "id": 128,
-    "atributos_psicologicos": {
-      "concentracao": 48,
-      "agressividade": 57,
-      "leitura_de_jogo": 69,
-      "determinacao": 60
-    }
+    "id": 128
   },
   {
     "nome": "Adrian Mannarino",
@@ -3216,13 +2448,7 @@
       "lob": 67,
       "winner": 64
     },
-    "id": 129,
-    "atributos_psicologicos": {
-      "concentracao": 67,
-      "agressividade": 54,
-      "leitura_de_jogo": 64,
-      "determinacao": 70
-    }
+    "id": 129
   },
   {
     "nome": "Thiago Monteiro",
@@ -3241,13 +2467,7 @@
       "lob": 69,
       "winner": 68
     },
-    "id": 130,
-    "atributos_psicologicos": {
-      "concentracao": 65,
-      "agressividade": 61,
-      "leitura_de_jogo": 45,
-      "determinacao": 66
-    }
+    "id": 130
   },
   {
     "nome": "Thiago Agustin Tirante",
@@ -3266,13 +2486,7 @@
       "lob": 62,
       "winner": 62
     },
-    "id": 131,
-    "atributos_psicologicos": {
-      "concentracao": 67,
-      "agressividade": 58,
-      "leitura_de_jogo": 50,
-      "determinacao": 70
-    }
+    "id": 131
   },
   {
     "nome": "Nikoloz Basilashvili",
@@ -3291,13 +2505,7 @@
       "lob": 64,
       "winner": 67
     },
-    "id": 132,
-    "atributos_psicologicos": {
-      "concentracao": 65,
-      "agressividade": 47,
-      "leitura_de_jogo": 74,
-      "determinacao": 72
-    }
+    "id": 132
   },
   {
     "nome": "Felipe Meligeni Alves",
@@ -3316,13 +2524,7 @@
       "lob": 62,
       "winner": 62
     },
-    "id": 133,
-    "atributos_psicologicos": {
-      "concentracao": 44,
-      "agressividade": 48,
-      "leitura_de_jogo": 43,
-      "determinacao": 68
-    }
+    "id": 133
   },
   {
     "nome": "Marton Fucsovics",
@@ -3341,13 +2543,7 @@
       "lob": 63,
       "winner": 67
     },
-    "id": 134,
-    "atributos_psicologicos": {
-      "concentracao": 45,
-      "agressividade": 65,
-      "leitura_de_jogo": 59,
-      "determinacao": 46
-    }
+    "id": 134
   },
   {
     "nome": "Lucas Pouille",
@@ -3366,13 +2562,7 @@
       "lob": 64,
       "winner": 66
     },
-    "id": 135,
-    "atributos_psicologicos": {
-      "concentracao": 50,
-      "agressividade": 51,
-      "leitura_de_jogo": 61,
-      "determinacao": 48
-    }
+    "id": 135
   },
   {
     "nome": "Vilius Gaubas",
@@ -3391,13 +2581,7 @@
       "lob": 62,
       "winner": 62
     },
-    "id": 136,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 51,
-      "leitura_de_jogo": 47,
-      "determinacao": 62
-    }
+    "id": 136
   },
   {
     "nome": "Yannick Hanfmann",
@@ -3416,13 +2600,7 @@
       "lob": 67,
       "winner": 66
     },
-    "id": 137,
-    "atributos_psicologicos": {
-      "concentracao": 63,
-      "agressividade": 70,
-      "leitura_de_jogo": 51,
-      "determinacao": 59
-    }
+    "id": 137
   },
   {
     "nome": "Emilio Nava",
@@ -3441,13 +2619,7 @@
       "lob": 63,
       "winner": 67
     },
-    "id": 138,
-    "atributos_psicologicos": {
-      "concentracao": 56,
-      "agressividade": 49,
-      "leitura_de_jogo": 69,
-      "determinacao": 70
-    }
+    "id": 138
   },
   {
     "nome": "Stan Wawrinka",
@@ -3466,13 +2638,7 @@
       "lob": 68,
       "winner": 64
     },
-    "id": 139,
-    "atributos_psicologicos": {
-      "concentracao": 70,
-      "agressividade": 44,
-      "leitura_de_jogo": 45,
-      "determinacao": 63
-    }
+    "id": 139
   },
   {
     "nome": "Francesco Passaro",
@@ -3491,13 +2657,7 @@
       "lob": 60,
       "winner": 65
     },
-    "id": 140,
-    "atributos_psicologicos": {
-      "concentracao": 53,
-      "agressividade": 66,
-      "leitura_de_jogo": 48,
-      "determinacao": 41
-    }
+    "id": 140
   },
   {
     "nome": "Mitchell Krueger",
@@ -3516,13 +2676,7 @@
       "lob": 59,
       "winner": 59
     },
-    "id": 141,
-    "atributos_psicologicos": {
-      "concentracao": 39,
-      "agressividade": 49,
-      "leitura_de_jogo": 63,
-      "determinacao": 43
-    }
+    "id": 141
   },
   {
     "nome": "Federico Agustin Gomez",
@@ -3541,13 +2695,7 @@
       "lob": 63,
       "winner": 64
     },
-    "id": 142,
-    "atributos_psicologicos": {
-      "concentracao": 59,
-      "agressividade": 47,
-      "leitura_de_jogo": 44,
-      "determinacao": 62
-    }
+    "id": 142
   },
   {
     "nome": "Federico Coria",
@@ -3566,13 +2714,7 @@
       "lob": 62,
       "winner": 64
     },
-    "id": 143,
-    "atributos_psicologicos": {
-      "concentracao": 54,
-      "agressividade": 57,
-      "leitura_de_jogo": 62,
-      "determinacao": 53
-    }
+    "id": 143
   },
   {
     "nome": "Taro Daniel",
@@ -3591,13 +2733,7 @@
       "lob": 61,
       "winner": 62
     },
-    "id": 144,
-    "atributos_psicologicos": {
-      "concentracao": 58,
-      "agressividade": 41,
-      "leitura_de_jogo": 44,
-      "determinacao": 43
-    }
+    "id": 144
   },
   {
     "nome": "Alexander Blockx",
@@ -3616,13 +2752,7 @@
       "lob": 62,
       "winner": 64
     },
-    "id": 145,
-    "atributos_psicologicos": {
-      "concentracao": 70,
-      "agressividade": 68,
-      "leitura_de_jogo": 62,
-      "determinacao": 68
-    }
+    "id": 145
   },
   {
     "nome": "Pavel Kotov",
@@ -3641,13 +2771,7 @@
       "lob": 61,
       "winner": 62
     },
-    "id": 146,
-    "atributos_psicologicos": {
-      "concentracao": 44,
-      "agressividade": 57,
-      "leitura_de_jogo": 41,
-      "determinacao": 66
-    }
+    "id": 146
   },
   {
     "nome": "Martin Landaluce",
@@ -3666,13 +2790,7 @@
       "lob": 64,
       "winner": 62
     },
-    "id": 147,
-    "atributos_psicologicos": {
-      "concentracao": 51,
-      "agressividade": 58,
-      "leitura_de_jogo": 57,
-      "determinacao": 44
-    }
+    "id": 147
   },
   {
     "nome": "Liam Draxl",
@@ -3691,13 +2809,7 @@
       "lob": 64,
       "winner": 61
     },
-    "id": 148,
-    "atributos_psicologicos": {
-      "concentracao": 53,
-      "agressividade": 44,
-      "leitura_de_jogo": 41,
-      "determinacao": 49
-    }
+    "id": 148
   },
   {
     "nome": "Pierre-Hugues Herbert",
@@ -3716,13 +2828,7 @@
       "lob": 60,
       "winner": 63
     },
-    "id": 149,
-    "atributos_psicologicos": {
-      "concentracao": 52,
-      "agressividade": 69,
-      "leitura_de_jogo": 70,
-      "determinacao": 66
-    }
+    "id": 149
   },
   {
     "nome": "Nicolas Jarry",
@@ -3741,12 +2847,30 @@
       "lob": 65,
       "winner": 66
     },
-    "id": 150,
-    "atributos_psicologicos": {
-      "concentracao": 69,
-      "agressividade": 43,
-      "leitura_de_jogo": 70,
-      "determinacao": 53
-    }
+    "id": 150
+  },
+  {
+    "nome": "Alexandre Paiva",
+    "nacionalidade": "[BR] Brasil",
+    "overall": 71,
+    "atributos": {
+      "saque": 80,
+      "forehand": 72,
+      "backhand": 80,
+      "topspin": 68,
+      "voleio": 60,
+      "slice": 62,
+      "movimento": 83,
+      "lob": 60,
+      "winner": 75
+    },
+    "pontos": 0,
+    "idade": 22,
+    "xp": 0,
+    "nivel": 1,
+    "energia": 100,
+    "ritmo_jogo": 50,
+    "moral": 70,
+    "dinheiro": 500
   }
 ]

@@ -1,4 +1,11 @@
-## Fluxograma de Navegação
+## Como jogar
+
+- Requisitos: Python 3.10+
+- Instalar dependencias: `pip install -r requirements.txt`
+- Executar o jogo: `python main.py`
+- Saves ficam na pasta `saves/` (o jogo oferece opcao de salvar no menu do torneio)
+
+## Fluxograma de Navegacao
 
 ### 1. Menu Inicial
 - [1] Novo Jogo — Cria jogador, vai para Menu Temporada.
