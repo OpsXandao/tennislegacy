@@ -1,22 +1,59 @@
 import json
-import random
 import os
 
-class jogador:
-    def __init__(self, nome, idade, nacionalidade):
+from src.dados import (
+    carregar_ranking,
+    get_caminho_jogador_save,
+    get_caminho_ranking_global,
+    get_caminho_ranking_save,
+)
+from src.io_utils import safe_input
+
+
+DEFAULT_ATRIBUTOS_PSICOLOGICOS = {
+    "concentracao": 50,
+    "agressividade": 50,
+    "leitura_de_jogo": 50,
+    "determinacao": 50,
+}
+
+
+class Jogador:
+    def __init__(self, nome, idade, nacionalidade, save_name="default", genero="masculino"):
         self.nome = nome
         self.idade = idade
-        self.xp = 0
         self.nacionalidade = nacionalidade
-        self.nivel = 1
+        self.save_name = save_name
+        self.genero = genero  # "masculino" ou "feminino"
+
+        # Atributos de Jogo
+        self.semana = 1
         self.energia = 100
         self.ritmo_jogo = 50
         self.moral = 70
         self.dinheiro = 500
+        self.fadiga = 0
+        self.status_lesao = {"lesionado": False, "semanas_restantes": 0}
+
+        # Atributos de Progressão
+        self.nivel = 1
+        self.xp = 0
+        self.xp_para_proximo_nivel = 100
+        self.pontos_de_skill = 0
+        
         self.atributos = {
-            "saque": 50, "forehand": 50, "backhand": 50, "topspin": 50,
-            "voleio": 50, "slice": 50, "movimento": 50, "lob": 50, "winner": 50
+            "saque": 50,
+            "forehand": 50,
+            "backhand": 50,
+            "topspin": 50,
+            "voleio": 50,
+            "slice": 50,
+            "movimento": 50,
+            "lob": 50,
+            "fisico": 50,
+            "winner": 50,
         }
+        self.atributos_psicologicos = DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy()
 
     def calcular_overall(self):
         return round(sum(self.atributos.values()) / len(self.atributos))
@@ -24,12 +61,18 @@ class jogador:
     def mostrar_status(self):
         print(f"\n🎾 Jogador: {self.nome} | {self.nacionalidade}")
         print(f"Overall: {self.calcular_overall()}")
-        print(f"Idade: {self.idade} | Nível: {self.nivel} | XP: {self.xp}")
+        print(f"Idade: {self.idade} | Nível: {self.nivel}")
+        print(f"XP: {self.xp} / {self.xp_para_proximo_nivel}")
+        print(f"Pontos de Skill: {self.pontos_de_skill}")
         print(f"Energia: {self.energia} | Ritmo de jogo: {self.ritmo_jogo}")
         print(f"Moral: {self.moral} | Dinheiro: ${self.dinheiro}")
         print("Atributos Técnicos:")
         for chave, valor in self.atributos.items():
             print(f"  {chave.capitalize()}: {valor}")
+        print("Atributos Psicológicos:")
+        for chave, valor in self.atributos_psicologicos.items():
+            nome_formatado = chave.replace("_", " ").capitalize()
+            print(f"  {nome_formatado}: {valor}")
 
     def ajustar_energia(self, valor):
         self.energia = max(0, min(100, self.energia + valor))
@@ -37,122 +80,350 @@ class jogador:
     def ajustar_ritmo(self, valor):
         self.ritmo_jogo = max(0, min(100, self.ritmo_jogo + valor))
 
-    def escolher_estrategia():
-        print("\n🎯 Escolha sua estratégia para este game:")
-        print("🧭 Direção de ataque:")
-        print("1. Pelo meio")
-        print("2. Pelas laterais")
-        direcao = input("Escolha (1 ou 2): ").strip()
-        print("\n⚔️ Estilo de jogo:")
-        print("1. Atacar na rede")
-        print("2. Atacar do fundo")
-        print("3. Atacar pelo meio")
-        estilo = input("Escolha (1, 2 ou 3): ").strip()
+    def to_dict(self):
         return {
-            "direcao": "meio" if direcao == "1" else "laterais",
-            "estilo": {
-                "1": "atacar_na_rede",
-                "2": "atacar_do_fundo",
-                "3": "atacar_pelo_meio"
-            }.get(estilo, "atacar_do_fundo")
+            "nome": self.nome,
+            "idade": self.idade,
+            "nacionalidade": self.nacionalidade,
+            "genero": self.genero,
+            "semana": self.semana,
+            "energia": self.energia,
+            "ritmo_jogo": self.ritmo_jogo,
+            "moral": self.moral,
+            "dinheiro": self.dinheiro,
+            "nivel": self.nivel,
+            "xp": self.xp,
+            "xp_para_proximo_nivel": self.xp_para_proximo_nivel,
+            "pontos_de_skill": self.pontos_de_skill,
+            "fadiga": self.fadiga,
+            "status_lesao": self.status_lesao,
+            "atributos": self.atributos,
+            "atributos_psicologicos": self.atributos_psicologicos,
         }
 
-    def carregar_adversario(self):
-        caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../save/jogador.json")
-        with open(caminho, encoding="utf-8") as f:
-            return random.choice(json.load(f))
 
-    def calcular_bonus_por_estilo(self, estilo, atributo):
-        estilo_bonus = {
-            "atacar_na_rede": {"voleio", "winner"},
-            "atacar_do_fundo": {"forehand", "backhand", "topspin"},
-            "atacar_pelo_meio": {"saque", "slice", "movimento"}
+
+def obter_nome(obj):
+    """Retorna o nome normalizado de um jogador, seja ele um str, dict ou objeto."""
+    if isinstance(obj, dict):
+        return obj.get("nome", "").strip()
+    elif hasattr(obj, "nome"):
+        return getattr(obj, "nome", "").strip()
+    return str(obj).strip()
+
+
+def normalizar_nome(obj):
+    """Retorna o nome do jogador em lowercase e sem espaços extras, seja dict, objeto ou string."""
+    nome = obter_nome(obj)
+    return nome.lower()
+
+
+
+def adicionar_jogador_ao_ranking(jogador_instancia):
+    ranking_path = get_caminho_ranking_save(jogador_instancia.save_name)
+    ranking = carregar_ranking(ranking_path)
+
+    nomes_existentes = [normalizar_nome(j) for j in ranking]
+
+    if normalizar_nome(jogador_instancia) not in nomes_existentes:
+        novo = {
+            "nome": jogador_instancia.nome,
+            "nacionalidade": jogador_instancia.nacionalidade,
+            "genero": jogador_instancia.genero,
+            "overall": jogador_instancia.calcular_overall(),
+            "atributos": jogador_instancia.atributos,
+            "pontos": 0,
         }
-        return 2 if atributo in estilo_bonus.get(estilo, set()) else 0
+        ranking.append(novo)
+        with open(ranking_path, "w", encoding="utf-8") as f:
+            json.dump(ranking, f, indent=2, ensure_ascii=False)
+        print(f"✅ Jogador '{novo['nome']}' adicionado ao ranking local com 0 pontos.")
+    else:
+        print(f"ℹ️ Jogador '{jogador_instancia.nome}' já está presente no ranking.")
 
-    def jogar_partida(self):
-        media = lambda a: sum(a.values()) / len(a)
-        vantagens = {
-            "forehand": "backhand", "backhand": "slice", "slice": "forehand",
-            "topspin": "lob", "lob": "voleio", "voleio": "topspin",
-            "saque": "movimento", "movimento": "winner", "winner": "saque"
-        }
 
-        adversario = self.carregar_adversario()
-        nome_adversario = adversario["nome"]
-        nacionalidade_adversario = adversario["nacionalidade"]
-        atributos_adversario = adversario["atributos"]
-        overall_adversario = adversario["overall"]
+def carregar_jogador(nome_save):
+    caminho = get_caminho_jogador_save(nome_save)
+    if not os.path.exists(caminho):
+        print("❌ Save não encontrado.")
+        raise SystemExit(1)
 
-        sets_jogador, sets_adversario = 0, 0
-        estrategia_atual = None
+    with open(caminho, "r", encoding="utf-8") as f:
+        dados = json.load(f)
 
-        while sets_jogador < 2 and sets_adversario < 2:
-            games_jogador, games_adversario = 0, 0
-            print(f"\n🎾 Set {sets_jogador + sets_adversario + 1} — {self.nome} {self.nacionalidade} vs {nome_adversario} {nacionalidade_adversario}")
+    return reidratar_jogador(dados, nome_save)
 
-            while True:
-                if not estrategia_atual:
-                    estrategia_atual = jogador.escolher_estrategia()
-                pontos_jogador, pontos_adversario = 0, 0
 
-                def placar(pj, pa):
-                    if pj >= 3 and pa >= 3:
-                        if pj == pa:
-                            return "40 x 40"
-                        elif pj > pa:
-                            return "Ad x 40"
-                        else:
-                            return "40 x Ad"
-                    else:
-                        valores = ["0", "15", "30", "40"]
-                        return f"{valores[min(pj, 3)]} x {valores[min(pa, 3)]}"
+def _obter_dados_iniciais_jogador():
+    """Lida com a coleta de nome, idade, nacionalidade e gênero do jogador."""
+    from src.interface.menu_jogador import escolher_nacionalidade_menu
 
-                while (pontos_jogador < 4 or pontos_adversario < 4) or abs(pontos_jogador - pontos_adversario) < 2:
-                    print(f"🎾 Ponto! {placar(pontos_jogador, pontos_adversario)}")
+    print("🎾 Criação do Jogador")
+    nome = safe_input("Nome: ")
+    while True:
+        idade_str = safe_input("Idade: ").strip()
+        if idade_str.isdigit():
+            idade = int(idade_str)
+            break
+        print("❌ Idade inválida. Digite apenas números inteiros.")
 
-                    atributo_jogador = random.choice(list(self.atributos))
-                    atributo_adversario = random.choice(list(atributos_adversario))
-                    bonus_jogador = (3 if vantagens.get(atributo_jogador) == atributo_adversario else 0) + self.calcular_bonus_por_estilo(estrategia_atual["estilo"], atributo_jogador)
-                    bonus_adversario = 3 if vantagens.get(atributo_adversario) == atributo_jogador else 0
+    nacionalidade = escolher_nacionalidade_menu()
 
-                    perfil_jogador = media(self.atributos) * 0.6 + self.energia * 0.2 + self.ritmo_jogo * 0.2 + bonus_jogador + random.uniform(-3, 3)
-                    perfil_adversario = media(atributos_adversario) * 0.6 + random.randint(60, 90) * 0.2 + random.randint(50, 80) * 0.2 + bonus_adversario + random.uniform(-3, 3)
+    # Seleção de gênero
+    genero = _escolher_genero()
 
-                    if perfil_jogador >= perfil_adversario:
-                        pontos_jogador += 1
-                    else:
-                        pontos_adversario += 1
+    return nome, idade, nacionalidade, genero
 
-                    if (pontos_jogador >= 4 or pontos_adversario >= 4) and abs(pontos_jogador - pontos_adversario) >= 2:
-                        break
 
-                if pontos_jogador > pontos_adversario:
-                    games_jogador += 1
-                    print(f"✅ Game seu! ({games_jogador} x {games_adversario})")
+def _escolher_genero():
+    """Permite ao jogador escolher o gênero do personagem."""
+    print("\n👤 Escolha o gênero do jogador:")
+    print("1. Masculino (ATP Tour)")
+    print("2. Feminino (WTA Tour) - Em breve")
+
+    while True:
+        escolha = safe_input("Escolha (1 ou 2): ").strip()
+        if escolha == "1":
+            return "masculino"
+        elif escolha == "2":
+            print("⚠️ O modo feminino (WTA Tour) ainda está em desenvolvimento.")
+            print("   Por enquanto, apenas o modo masculino está disponível.")
+            confirmar = safe_input("Deseja continuar com o modo masculino? (s/n): ").strip().lower()
+            if confirmar == "s":
+                return "masculino"
+            # Se não confirmar, volta para o menu de escolha
+        else:
+            print("❌ Opção inválida. Escolha 1 ou 2.")
+
+
+def _obter_archetype():
+    """Lida com a escolha do archetipo do jogador e retorna os atributos correspondentes."""
+    print("\n📌 Escolha o archetipo de jogador:")
+    print("1. Técnico — mais controle e precisão")
+    print("2. Físico — mais força e movimentação")
+    print("3. Equilibrado — tudo balanceado")
+    tipo = safe_input("Escolha (1, 2 ou 3): ").strip()
+
+    atributos_por_archetype = {
+        "1": {"saque": 60, "forehand": 75, "backhand": 75, "topspin": 72, "voleio": 65, "slice": 72, "movimento": 68, "lob": 74, "fisico": 60, "winner": 65},
+        "2": {"saque": 75, "forehand": 72, "backhand": 70, "topspin": 68, "voleio": 60, "slice": 62, "movimento": 78, "lob": 60, "fisico": 80, "winner": 75},
+        "3": {"saque": 70, "forehand": 70, "backhand": 70, "topspin": 70, "voleio": 70, "slice": 70, "movimento": 70, "lob": 70, "fisico": 70, "winner": 70},
+    }
+    return atributos_por_archetype.get(tipo, atributos_por_archetype["3"])
+
+
+def _distribuir_pontos_atributos(atributos_base, pontos_totais):
+    atributos = atributos_base.copy()
+    pontos_restantes = pontos_totais
+
+    while True:
+        print(f"\nPontos restantes: {pontos_restantes}")
+        print("Atributos atuais:")
+        for i, (atributo, valor) in enumerate(atributos.items(), 1):
+            print(f"{i}. {atributo.capitalize()}: {valor}")
+
+        print("\nEscolha uma opção:")
+        print("1-9: Alterar um atributo")
+        print("c: Confirmar e continuar")
+
+        escolha = safe_input("Opção: ").strip().lower()
+
+        if escolha == 'c':
+            if pontos_restantes > 0:
+                print(f"⚠️ Você ainda tem {pontos_restantes} pontos não distribuídos. Tem certeza que quer continuar?")
+                confirmar = safe_input("Confirmar (s/n)? ").strip().lower()
+                if confirmar != 's':
+                    continue
+            break
+
+        if escolha.isdigit() and 1 <= int(escolha) <= len(atributos):
+            idx = int(escolha) - 1
+            nome_atributo = list(atributos.keys())[idx]
+            valor_atual = atributos[nome_atributo]
+
+            print(f"\nAlterando '{nome_atributo.capitalize()}' (valor atual: {valor_atual})")
+            print("Use '+' para aumentar, '-' para diminuir, ou digite um valor.")
+            print("Pressione Enter para voltar.")
+
+            op = safe_input("Operação: ").strip()
+
+            if not op:
+                continue
+
+            if op == '+':
+                if pontos_restantes > 0:
+                    atributos[nome_atributo] += 1
+                    pontos_restantes -= 1
                 else:
-                    games_adversario += 1
-                    print(f"❌ Game do {nome_adversario}. ({games_jogador} x {games_adversario})")
-                    mudar = input("⚙️ Deseja mudar sua estratégia? (s/n): ").strip().lower()
-                    if mudar == "s":
-                        estrategia_atual = jogador.escolher_estrategia()
+                    print("❌ Pontos insuficientes.")
+            elif op == '-':
+                if atributos[nome_atributo] > 1:
+                    atributos[nome_atributo] -= 1
+                    pontos_restantes += 1
+                else:
+                    print("❌ O valor mínimo para um atributo é 1.")
+            elif op.isdigit():
+                novo_valor = int(op)
+                diferenca = novo_valor - valor_atual
+                if pontos_restantes >= diferenca and novo_valor >= 1:
+                    atributos[nome_atributo] = novo_valor
+                    pontos_restantes -= diferenca
+                else:
+                    print("❌ Pontos insuficientes ou valor inválido.")
+            else:
+                print("❌ Operação inválida.")
+        else:
+            print("❌ Opção inválida.")
+    return atributos
 
-                if (games_jogador >= 6 or games_adversario >= 6) and abs(games_jogador - games_adversario) >= 2:
-                    sets_jogador += games_jogador > games_adversario
-                    sets_adversario += games_adversario > games_jogador
-                    print(f"{'🏆 Você venceu' if games_jogador > games_adversario else '📉'} o set!")
-                    break
 
-        total_games = games_jogador + games_adversario
-        self.energia = max(0, self.energia - int(total_games * 0.8))
-        experiencia = int((overall_adversario / 100) * total_games * 4)
-        self.xp += experiencia if sets_jogador > sets_adversario else int(experiencia * 0.5)
-        self.moral = min(100, self.moral + 10) if sets_jogador > sets_adversario else max(0, self.moral - 10)
-        self.ritmo_jogo = min(100, self.ritmo_jogo + 15) if sets_jogador > sets_adversario else max(0, self.ritmo_jogo - 10)
-        self.dinheiro += total_games * 10 if sets_jogador > sets_adversario else 0
+def _distribuir_pontos_psicologicos(pontos_totais):
+    """Distribui pontos entre os atributos psicológicos."""
+    atributos = DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy()
+    pontos_restantes = pontos_totais
 
-        print(f"\n🏁 Fim da partida: {'Vitória' if sets_jogador > sets_adversario else 'Derrota'} de {self.nome} {self.nacionalidade} sobre {nome_adversario} {nacionalidade_adversario}")
-        print("🏆 Parabéns! Você venceu!" if sets_jogador > sets_adversario else "❌ Não foi dessa vez!")
-        print(f"🟦 Placar final: {sets_jogador} x {sets_adversario}")
-        print(f"⚡ Energia gasta: {int(total_games * 0.8)}")
-        print(f"⭐ XP ganho: {experiencia}")
+    descricoes = {
+        "concentracao": "Consistência durante a partida - menos erros não forçados",
+        "agressividade": "Tendência a arriscar - mais winners, mais erros",
+        "leitura_de_jogo": "Antecipação e posicionamento - bônus em rallies longos",
+        "determinacao": "Capacidade de virar jogos - bônus quando está perdendo",
+    }
+
+    while True:
+        print(f"\n📊 Pontos psicológicos restantes: {pontos_restantes}")
+        print("Atributos psicológicos atuais:")
+        for i, (atributo, valor) in enumerate(atributos.items(), 1):
+            nome_formatado = atributo.replace("_", " ").capitalize()
+            print(f"{i}. {nome_formatado}: {valor}")
+            print(f"   ({descricoes[atributo]})")
+
+        print("\nEscolha uma opção:")
+        print("1-4: Alterar um atributo")
+        print("c: Confirmar e continuar")
+
+        escolha = safe_input("Opção: ").strip().lower()
+
+        if escolha == 'c':
+            if pontos_restantes > 0:
+                print(f"⚠️ Você ainda tem {pontos_restantes} pontos não distribuídos. Tem certeza que quer continuar?")
+                confirmar = safe_input("Confirmar (s/n)? ").strip().lower()
+                if confirmar != 's':
+                    continue
+            break
+
+        if escolha.isdigit() and 1 <= int(escolha) <= len(atributos):
+            idx = int(escolha) - 1
+            nome_atributo = list(atributos.keys())[idx]
+            valor_atual = atributos[nome_atributo]
+            nome_formatado = nome_atributo.replace("_", " ").capitalize()
+
+            print(f"\nAlterando '{nome_formatado}' (valor atual: {valor_atual})")
+            print("Use '+' para aumentar, '-' para diminuir, ou digite um valor.")
+            print("Pressione Enter para voltar.")
+
+            op = safe_input("Operação: ").strip()
+
+            if not op:
+                continue
+
+            if op == '+':
+                if pontos_restantes > 0:
+                    atributos[nome_atributo] += 1
+                    pontos_restantes -= 1
+                else:
+                    print("❌ Pontos insuficientes.")
+            elif op == '-':
+                if atributos[nome_atributo] > 1:
+                    atributos[nome_atributo] -= 1
+                    pontos_restantes += 1
+                else:
+                    print("❌ O valor mínimo para um atributo é 1.")
+            elif op.isdigit():
+                novo_valor = int(op)
+                diferenca = novo_valor - valor_atual
+                if pontos_restantes >= diferenca and novo_valor >= 1:
+                    atributos[nome_atributo] = novo_valor
+                    pontos_restantes -= diferenca
+                else:
+                    print("❌ Pontos insuficientes ou valor inválido.")
+            else:
+                print("❌ Operação inválida.")
+        else:
+            print("❌ Opção inválida.")
+    return atributos
+
+
+def _inicializar_arquivos_save(nome_save):
+    """Cria a pasta do save e copia o ranking global se necessário."""
+    from src.save import criar_pasta_save
+    from shutil import copyfile
+
+    criar_pasta_save(nome_save)
+
+    ranking_origem = get_caminho_ranking_global()
+    ranking_destino = get_caminho_ranking_save(nome_save)
+    if not os.path.exists(ranking_destino):
+        copyfile(ranking_origem, ranking_destino)
+
+
+def criar_jogador(nome_save):
+    """Cria uma nova instância de jogador, inicializa os arquivos e salva o jogo."""
+    import builtins
+    from src.save import salvar_jogo
+
+    nome, idade, nacionalidade, genero = _obter_dados_iniciais_jogador()
+
+    atributos_base = _obter_archetype()
+
+    print("\nAgora, distribua os pontos de atributo do seu jogador.")
+    print("Você tem 20 pontos para distribuir entre os atributos técnicos.")
+    atributos = _distribuir_pontos_atributos(atributos_base, 20)
+
+    print("\n🧠 Agora, distribua os pontos psicológicos do seu jogador.")
+    print("Você tem 15 pontos para distribuir entre os atributos psicológicos.")
+    atributos_psicologicos = _distribuir_pontos_psicologicos(15)
+
+    jogador_instancia = Jogador(nome, idade, nacionalidade, save_name=nome_save, genero=genero)
+    jogador_instancia.atributos = atributos
+    jogador_instancia.atributos_psicologicos = atributos_psicologicos
+    builtins.jogador = jogador_instancia
+
+    _inicializar_arquivos_save(nome_save)
+    salvar_jogo(nome_save, jogador_instancia)
+    adicionar_jogador_ao_ranking(jogador_instancia)
+
+    return jogador_instancia
+
+def reidratar_jogador(dados, nome_save):
+    jogador = Jogador(
+        nome=dados["nome"],
+        idade=dados["idade"],
+        nacionalidade=dados["nacionalidade"],
+        save_name=nome_save,
+        genero=dados.get("genero", "masculino"),  # Compatibilidade com saves antigos
+    )
+    # Mantem compatibilidade com saves antigos
+    jogador.semana = dados.get("semana", 1)
+    jogador.energia = dados.get("energia", 100)
+    jogador.ritmo_jogo = dados.get("ritmo_jogo", 50)
+    jogador.moral = dados.get("moral", 70)
+    jogador.dinheiro = dados.get("dinheiro", 500)
+    jogador.atributos = dados["atributos"]
+    if "fisico" not in jogador.atributos:
+        jogador.atributos["fisico"] = 50
+    
+    # Progressão
+    jogador.nivel = dados.get("nivel", 1)
+    jogador.xp = dados.get("xp", 0)
+    jogador.xp_para_proximo_nivel = dados.get("xp_para_proximo_nivel", 100)
+    jogador.pontos_de_skill = dados.get("pontos_de_skill", 0)
+
+    # Fadiga e Lesão
+    jogador.fadiga = dados.get("fadiga", 0)
+    jogador.status_lesao = dados.get("status_lesao", {"lesionado": False, "semanas_restantes": 0})
+
+    # Migração automática para saves antigos sem atributos psicológicos
+    jogador.atributos_psicologicos = dados.get(
+        "atributos_psicologicos", DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy()
+    )
+    return jogador

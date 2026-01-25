@@ -1,0 +1,879 @@
+{
+  "1": [
+    {
+      "nome": "United Cup",
+      "tipo": "United Cup",
+      "local": "Perth/Sydney",
+      "quadra": "dura",
+      "premiacao": 10000000,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": false,
+      "pais_sede": "[AU] Austrália",
+      "ultimo_campeao": "Estados Unidos"
+    },
+    {
+      "nome": "Brisbane International",
+      "tipo": "ATP 250",
+      "local": "Brisbane",
+      "quadra": "dura",
+      "premiacao": 680140,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[AU] Austrália",
+      "ultimo_campeao": "Jiří Lehečka"
+    },
+    {
+      "nome": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "local": "Hong Kong",
+      "quadra": "dura",
+      "premiacao": 766290,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "ultimo_campeao": "Alexandre Müller"
+    }
+  ],
+  "2": [
+    {
+      "nome": "ASB Classic",
+      "tipo": "ATP 250",
+      "local": "Auckland",
+      "quadra": "dura",
+      "premiacao": 766290,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[NZ] Nova Zelândia",
+      "ultimo_campeao": "Gaël Monfils"
+    },
+    {
+      "nome": "Adelaide International",
+      "tipo": "ATP 250",
+      "local": "Adelaide",
+      "quadra": "dura",
+      "premiacao": 766290,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[AU] Austrália",
+      "ultimo_campeao": "Félix Auger-Aliassime"
+    }
+  ],
+  "3": [
+    {
+      "nome": "Australian Open",
+      "tipo": "Grand Slam",
+      "local": "Melbourne",
+      "quadra": "dura",
+      "premiacao": 43250000,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": true,
+      "pais_sede": "[AU] Austrália",
+      "ultimo_campeao": "Jannik Sinner"
+    }
+  ],
+  "4": [
+    {
+      "nome": "Davis Cup Qualifiers - 1ª Rodada",
+      "tipo": "Davis Cup",
+      "local": "Vários locais",
+      "quadra": "dura",
+      "premiacao": 0,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": false,
+      "pais_sede": "Internacional",
+      "ultimo_campeao": "Qualifying round winners",
+      "chave_formato": "mata-mata",
+      "numero_equipes": 24,
+      "formato_partida": "melhor de 3 jogos"
+    }
+  ],
+  "5": [
+    {
+      "nome": "Dallas Open",
+      "tipo": "ATP 500",
+      "local": "Dallas",
+      "quadra": "dura",
+      "premiacao": 3035960,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Denis Shapovalov"
+    },
+    {
+      "nome": "Rotterdam Open",
+      "tipo": "ATP 500",
+      "local": "Rotterdam",
+      "quadra": "dura (indoor)",
+      "premiacao": 2563150,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[NL] Países Baixos",
+      "ultimo_campeao": "Carlos Alcaraz"
+    }
+  ],
+  "6": [
+    {
+      "nome": "Delray Beach Open",
+      "tipo": "ATP 250",
+      "local": "Delray Beach",
+      "quadra": "dura",
+      "premiacao": 710735,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Miomir Kecmanovic"
+    },
+    {
+      "nome": "Open 13",
+      "tipo": "ATP 250",
+      "local": "Marseille",
+      "quadra": "dura (indoor)",
+      "premiacao": 767545,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "ultimo_campeao": "Ugo Humbert"
+    },
+    {
+      "nome": "Argentina Open",
+      "tipo": "ATP 250",
+      "local": "Buenos Aires",
+      "quadra": "saibro",
+      "premiacao": 688985,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[AR] Argentina",
+      "ultimo_campeao": "Joao Fonseca"
+    }
+  ],
+  "7": [
+    {
+      "nome": "Qatar Open",
+      "tipo": "ATP 500",
+      "local": "Doha",
+      "quadra": "dura",
+      "premiacao": 3035960,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[QA] Catar",
+      "ultimo_campeao": "Andrey Rublev"
+    },
+    {
+      "nome": "Rio Open",
+      "tipo": "ATP 500",
+      "local": "Rio de Janeiro",
+      "quadra": "saibro",
+      "premiacao": 2574145,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[BR] Brasil",
+      "ultimo_campeao": "Sebastian Baez"
+    }
+  ],
+  "8": [
+    {
+      "nome": "Dubai Tennis Championships",
+      "tipo": "ATP 500",
+      "local": "Dubai",
+      "quadra": "dura",
+      "premiacao": 3415700,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[AE] Emirados Arabes Unidos",
+      "ultimo_campeao": "Stefanos Tsitsipas"
+    },
+    {
+      "nome": "Mexican Open",
+      "tipo": "ATP 500",
+      "local": "Acapulco",
+      "quadra": "dura",
+      "premiacao": 2763440,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[MX] Mexico",
+      "ultimo_campeao": "Tomas Machac"
+    },
+    {
+      "nome": "Chile Open",
+      "tipo": "ATP 250",
+      "local": "Santiago",
+      "quadra": "saibro",
+      "premiacao": 710735,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CL] Chile",
+      "ultimo_campeao": "Laslo Djere"
+    }
+  ],
+  "9": [
+    {
+      "nome": "Indian Wells Open",
+      "tipo": "ATP 1000",
+      "local": "Indian Wells",
+      "quadra": "dura",
+      "premiacao": 9693540,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Jack Draper"
+    }
+  ],
+  "10": [
+    {
+      "nome": "Miami Open",
+      "tipo": "ATP 1000",
+      "local": "Miami Gardens",
+      "quadra": "dura",
+      "premiacao": 9193540,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Jakub Mensik"
+    }
+  ],
+  "11": [
+    {
+      "nome": "U.S. Men's Clay Court Championships",
+      "tipo": "ATP 250",
+      "local": "Houston",
+      "quadra": "saibro",
+      "premiacao": 710735,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Jenson Brooksby"
+    },
+    {
+      "nome": "Grand Prix Hassan II",
+      "tipo": "ATP 250",
+      "local": "Marrakesh",
+      "quadra": "saibro",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[MA] Marrocos",
+      "ultimo_campeao": "Luciano Darderi"
+    },
+    {
+      "nome": "Romanian Open",
+      "tipo": "ATP 250",
+      "local": "Bucharest",
+      "quadra": "saibro",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[RO] Romenia",
+      "ultimo_campeao": "Flavio Cobolli"
+    }
+  ],
+  "12": [
+    {
+      "nome": "Monte-Carlo Masters",
+      "tipo": "ATP 1000",
+      "local": "Roquebrune-Cap-Martin",
+      "quadra": "saibro",
+      "premiacao": 6128940,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "ultimo_campeao": "Carlos Alcaraz"
+    }
+  ],
+  "13": [
+    {
+      "nome": "Barcelona Open",
+      "tipo": "ATP 500",
+      "local": "Barcelona",
+      "quadra": "saibro",
+      "premiacao": 3050800,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "ultimo_campeao": "Holger Rune"
+    },
+    {
+      "nome": "Bavarian International Tennis Championships",
+      "tipo": "ATP 500",
+      "local": "Munich",
+      "quadra": "saibro",
+      "premiacao": 2747360,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "ultimo_campeao": "Alexander Zverev"
+    }
+  ],
+  "14": [
+    {
+      "nome": "Madrid Open",
+      "tipo": "ATP 1000",
+      "local": "Madrid",
+      "quadra": "saibro",
+      "premiacao": 8055385,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "ultimo_campeao": "Casper Ruud"
+    }
+  ],
+  "15": [
+    {
+      "nome": "Italian Open",
+      "tipo": "ATP 1000",
+      "local": "Rome",
+      "quadra": "saibro",
+      "premiacao": 8055385,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[IT] Italia",
+      "ultimo_campeao": "Carlos Alcaraz"
+    }
+  ],
+  "16": [
+    {
+      "nome": "Hamburg Open",
+      "tipo": "ATP 500",
+      "local": "Hamburg",
+      "quadra": "saibro",
+      "premiacao": 2320160,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "ultimo_campeao": "Flavio Cobolli"
+    },
+    {
+      "nome": "Geneva Open",
+      "tipo": "ATP 250",
+      "local": "Geneva",
+      "quadra": "saibro",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CH] Suica",
+      "ultimo_campeao": "Novak Djokovic"
+    }
+  ],
+  "17": [
+    {
+      "nome": "French Open",
+      "tipo": "Grand Slam",
+      "local": "Paris",
+      "quadra": "saibro",
+      "premiacao": 26334000,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "ultimo_campeao": "Carlos Alcaraz"
+    }
+  ],
+  "18": [
+    {
+      "nome": "Stuttgart Open",
+      "tipo": "ATP 250",
+      "local": "Stuttgart",
+      "quadra": "grama",
+      "premiacao": 778445,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "ultimo_campeao": "Taylor Fritz"
+    },
+    {
+      "nome": "Rosmalen Grass Court Championships",
+      "tipo": "ATP 250",
+      "local": "'s-Hertogenbosch",
+      "quadra": "grama",
+      "premiacao": 733665,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[NL] Países Baixos",
+      "ultimo_campeao": "Gabriel Diallo"
+    }
+  ],
+  "19": [
+    {
+      "nome": "Halle Open",
+      "tipo": "ATP 500",
+      "local": "Halle",
+      "quadra": "grama",
+      "premiacao": 2683820,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "ultimo_campeao": "Alexander Bublik"
+    }
+  ],
+  "20": [
+    {
+      "nome": "Mallorca Championships",
+      "tipo": "ATP 250",
+      "local": "Santa Ponsa",
+      "quadra": "grama",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "ultimo_campeao": "Tallon Griekspoor"
+    },
+    {
+      "nome": "Eastbourne Open",
+      "tipo": "ATP 250",
+      "local": "Eastbourne",
+      "quadra": "grama",
+      "premiacao": 783690,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[GB] Reino Unido",
+      "ultimo_campeao": "Taylor Fritz"
+    }
+  ],
+  "21": [
+    {
+      "nome": "Wimbledon",
+      "tipo": "Grand Slam",
+      "local": "London",
+      "quadra": "grama",
+      "premiacao": 24919000,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": true,
+      "pais_sede": "[GB] Reino Unido",
+      "ultimo_campeao": "Jannik Sinner"
+    }
+  ],
+  "22": [
+    {
+      "nome": "Hopman Cup",
+      "tipo": "Hopman Cup",
+      "local": "Bari",
+      "quadra": "dura",
+      "premiacao": 0,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": false,
+      "pais_sede": "[IT] Italia",
+      "ultimo_campeao": "Canada",
+      "chave_formato": "grupos",
+      "numero_equipes": 6,
+      "formato_partida": "round robin"
+    },
+    {
+      "nome": "Los Cabos Open",
+      "tipo": "ATP 250",
+      "local": "Los Cabos",
+      "quadra": "dura",
+      "premiacao": 920480,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[MX] Mexico",
+      "ultimo_campeao": "Denis Shapovalov"
+    },
+    {
+      "nome": "Swedish Open",
+      "tipo": "ATP 250",
+      "local": "Bastad",
+      "quadra": "saibro",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[SE] Suecia",
+      "ultimo_campeao": "Luciano Darderi"
+    },
+    {
+      "nome": "Swiss Open",
+      "tipo": "ATP 250",
+      "local": "Gstaad",
+      "quadra": "saibro",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CH] Suica",
+      "ultimo_campeao": "Alexander Bublik"
+    }
+  ],
+  "23": [
+    {
+      "nome": "Washington Open",
+      "tipo": "ATP 500",
+      "local": "Washington, D.C.",
+      "quadra": "dura",
+      "premiacao": 2574145,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Alex de Minaur"
+    },
+    {
+      "nome": "Austrian Open",
+      "tipo": "ATP 250",
+      "local": "Kitzbuhel",
+      "quadra": "saibro",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[AT] Austria",
+      "ultimo_campeao": "Alexander Bublik"
+    },
+    {
+      "nome": "Croatia Open",
+      "tipo": "ATP 250",
+      "local": "Umag",
+      "quadra": "saibro",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[HR] Croacia",
+      "ultimo_campeao": "Luciano Darderi"
+    }
+  ],
+  "24": [
+    {
+      "nome": "Canadian Open",
+      "tipo": "ATP 1000",
+      "local": "Toronto",
+      "quadra": "dura",
+      "premiacao": 9193540,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[CA] Canada",
+      "ultimo_campeao": "Ben Shelton"
+    }
+  ],
+  "25": [
+    {
+      "nome": "Cincinnati Open",
+      "tipo": "ATP 1000",
+      "local": "Mason",
+      "quadra": "dura",
+      "premiacao": 9193540,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Carlos Alcaraz"
+    }
+  ],
+  "26": [
+    {
+      "nome": "Winston-Salem Open",
+      "tipo": "ATP 250",
+      "local": "Winston-Salem",
+      "quadra": "dura",
+      "premiacao": 828925,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Marton Fucsovics"
+    }
+  ],
+  "27": [
+    {
+      "nome": "US Open",
+      "tipo": "Grand Slam",
+      "local": "New York City",
+      "quadra": "dura",
+      "premiacao": 40412800,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Carlos Alcaraz"
+    }
+  ],
+  "28": [
+    {
+      "nome": "Davis Cup Qualifiers - 2ª Rodada",
+      "tipo": "Davis Cup",
+      "local": "Varios locais",
+      "quadra": "dura (indoor)",
+      "premiacao": 0,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": false,
+      "pais_sede": "Internacional",
+      "ultimo_campeao": "Qualifying round winners",
+      "chave_formato": "mata-mata",
+      "numero_equipes": 14,
+      "formato_partida": "melhor de 3 jogos"
+    }
+  ],
+  "29": [
+    {
+      "nome": "Laver Cup",
+      "tipo": "Laver Cup",
+      "local": "San Francisco",
+      "quadra": "dura",
+      "premiacao": 1500000,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": false,
+      "pais_sede": "[US] Estados Unidos",
+      "ultimo_campeao": "Team World",
+      "chave_formato": "equipes",
+      "numero_equipes": 2,
+      "formato_partida": "exibicao"
+    },
+    {
+      "nome": "Chengdu Open",
+      "tipo": "ATP 250",
+      "local": "Chengdu",
+      "quadra": "dura",
+      "premiacao": 1220805,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "ultimo_campeao": "Alejandro Tabilo"
+    },
+    {
+      "nome": "Hangzhou Open",
+      "tipo": "ATP 250",
+      "local": "Hangzhou",
+      "quadra": "dura",
+      "premiacao": 1049780,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "ultimo_campeao": "Alexander Bublik"
+    }
+  ],
+  "30": [
+    {
+      "nome": "China Open",
+      "tipo": "ATP 500",
+      "local": "Beijing",
+      "quadra": "dura",
+      "premiacao": 4194080,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "ultimo_campeao": "Jannik Sinner"
+    },
+    {
+      "nome": "Japan Open",
+      "tipo": "ATP 500",
+      "local": "Tokyo",
+      "quadra": "dura",
+      "premiacao": 2404500,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[JP] Japao",
+      "ultimo_campeao": "Carlos Alcaraz"
+    }
+  ],
+  "31": [
+    {
+      "nome": "Shanghai Masters",
+      "tipo": "ATP 1000",
+      "local": "Shanghai",
+      "quadra": "dura",
+      "premiacao": 9193540,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "ultimo_campeao": "Valentin Vacherot"
+    }
+  ],
+  "32": [
+    {
+      "nome": "Almaty Open",
+      "tipo": "ATP 250",
+      "local": "Almaty",
+      "quadra": "dura (indoor)",
+      "premiacao": 1085850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[KZ] Cazaquistao",
+      "ultimo_campeao": "Daniil Medvedev"
+    },
+    {
+      "nome": "European Open",
+      "tipo": "ATP 250",
+      "local": "Brussels",
+      "quadra": "dura (indoor)",
+      "premiacao": 733665,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[BE] Belgica",
+      "ultimo_campeao": "Felix Auger-Aliassime"
+    },
+    {
+      "nome": "Stockholm Open",
+      "tipo": "ATP 250",
+      "local": "Stockholm",
+      "quadra": "dura (indoor)",
+      "premiacao": 733665,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[SE] Suecia",
+      "ultimo_campeao": "Casper Ruud"
+    }
+  ],
+  "33": [
+    {
+      "nome": "Swiss Indoors",
+      "tipo": "ATP 500",
+      "local": "Basel",
+      "quadra": "dura (indoor)",
+      "premiacao": 2684645,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[CH] Suica",
+      "ultimo_campeao": "Joao Fonseca"
+    },
+    {
+      "nome": "Vienna Open",
+      "tipo": "ATP 500",
+      "local": "Vienna",
+      "quadra": "dura (indoor)",
+      "premiacao": 2898475,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[AT] Austria",
+      "ultimo_campeao": "Jannik Sinner"
+    }
+  ],
+  "34": [
+    {
+      "nome": "Paris Masters",
+      "tipo": "ATP 1000",
+      "local": "Paris",
+      "quadra": "dura (indoor)",
+      "premiacao": 7703855,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "ultimo_campeao": "Jannik Sinner"
+    }
+  ],
+  "35": [
+    {
+      "nome": "Hellenic Championship",
+      "tipo": "ATP 250",
+      "local": "Athens",
+      "quadra": "dura (indoor)",
+      "premiacao": 793530,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[GR] Grecia",
+      "ultimo_campeao": "Novak Djokovic"
+    },
+    {
+      "nome": "Moselle Open",
+      "tipo": "ATP 250",
+      "local": "Metz",
+      "quadra": "dura (indoor)",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "ultimo_campeao": "Learner Tien"
+    }
+  ],
+  "36": [
+    {
+      "nome": "ATP Finals",
+      "tipo": "ATP Finals",
+      "local": "Turin",
+      "quadra": "dura (indoor)",
+      "premiacao": 15500000,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": false,
+      "pais_sede": "[IT] Italia",
+      "ultimo_campeao": "Jannik Sinner",
+      "chave_formato": "round robin",
+      "numero_equipes": 8,
+      "formato_partida": "round robin"
+    }
+  ],
+  "37": [
+    {
+      "nome": "Davis Cup Final 8",
+      "tipo": "Davis Cup",
+      "local": "Bologna",
+      "quadra": "dura (indoor)",
+      "premiacao": 7000000,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": false,
+      "pais_sede": "[IT] Italia",
+      "ultimo_campeao": "Italia",
+      "chave_formato": "grupos",
+      "numero_equipes": 8,
+      "formato_partida": "melhor de 3 jogos"
+    }
+  ],
+  "38": [
+    {
+      "nome": "Next Gen ATP Finals",
+      "tipo": "Next Gen ATP Finals",
+      "local": "Jeddah",
+      "quadra": "dura (indoor)",
+      "premiacao": 2101250,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": false,
+      "pais_sede": "[SA] Arabia Saudita",
+      "ultimo_campeao": "Learner Tien",
+      "chave_formato": "round robin",
+      "numero_equipes": 8,
+      "formato_partida": "round robin"
+    }
+  ]
+}

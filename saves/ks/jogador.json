@@ -1,0 +1,23 @@
+{
+  "nome": "Alexandre Paiva",
+  "idade": 22,
+  "nacionalidade": "[BR] Brasil",
+  "xp": 0,
+  "nivel": 1,
+  "semana": 3,
+  "energia": 100,
+  "ritmo_jogo": 50,
+  "moral": 70,
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 80,
+    "forehand": 72,
+    "backhand": 80,
+    "topspin": 68,
+    "voleio": 60,
+    "slice": 62,
+    "movimento": 83,
+    "lob": 60,
+    "winner": 75
+  }
+}

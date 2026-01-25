@@ -1,0 +1,331 @@
+{
+  "semana": 2,
+  "torneio": "ASB Classic",
+  "fase_atual": "qualy_1",
+  "jogador": "Codex Player",
+  "jogador_vivo": true,
+  "rodadas": {
+    "qualy_1": [
+      [
+        {
+          "nome": "Pedro Martinez Portero",
+          "nacionalidade": "[ES] Espanha",
+          "idade": 28,
+          "overall": 76,
+          "pontos": 1070,
+          "atributos": {
+            "saque": 70,
+            "forehand": 77,
+            "backhand": 75,
+            "topspin": 77,
+            "voleio": 80,
+            "slice": 77,
+            "movimento": 79,
+            "lob": 73,
+            "winner": 76
+          },
+          "id": 48
+        },
+        {
+          "nome": "Nuno Borges",
+          "nacionalidade": "[PT] Portugal",
+          "idade": 28,
+          "overall": 78,
+          "pontos": 1270,
+          "atributos": {
+            "saque": 77,
+            "forehand": 77,
+            "backhand": 79,
+            "topspin": 81,
+            "voleio": 78,
+            "slice": 76,
+            "movimento": 80,
+            "lob": 75,
+            "winner": 76
+          },
+          "id": 41
+        }
+      ],
+      [
+        {
+          "nome": "Codex Player",
+          "nacionalidade": "[BR] Brasil"
+        },
+        {
+          "nome": "Alexander Bublik",
+          "nacionalidade": "[KZ] Cazaquistão",
+          "idade": 27,
+          "overall": 78,
+          "pontos": 1005,
+          "atributos": {
+            "saque": 78,
+            "forehand": 81,
+            "backhand": 75,
+            "topspin": 78,
+            "voleio": 77,
+            "slice": 79,
+            "movimento": 74,
+            "lob": 77,
+            "winner": 81
+          },
+          "id": 51
+        }
+      ],
+      [
+        {
+          "nome": "Gael Monfils",
+          "nacionalidade": "[FR] França",
+          "idade": 38,
+          "overall": 80,
+          "pontos": 1265,
+          "atributos": {
+            "saque": 80,
+            "forehand": 78,
+            "backhand": 78,
+            "topspin": 82,
+            "voleio": 74,
+            "slice": 77,
+            "movimento": 83,
+            "lob": 85,
+            "winner": 83
+          },
+          "id": 42
+        },
+        {
+          "nome": "Jaume Munar",
+          "nacionalidade": "[ES] Espanha",
+          "idade": 28,
+          "overall": 76,
+          "pontos": 962,
+          "atributos": {
+            "saque": 77,
+            "forehand": 73,
+            "backhand": 79,
+            "topspin": 79,
+            "voleio": 77,
+            "slice": 79,
+            "movimento": 79,
+            "lob": 75,
+            "winner": 68
+          },
+          "id": 58
+        }
+      ],
+      [
+        {
+          "nome": "Bu Yunchaokete",
+          "nacionalidade": "[CN] China",
+          "idade": 23,
+          "overall": 72,
+          "pontos": 874,
+          "atributos": {
+            "saque": 74,
+            "forehand": 74,
+            "backhand": 72,
+            "topspin": 73,
+            "voleio": 72,
+            "slice": 65,
+            "movimento": 72,
+            "lob": 73,
+            "winner": 72
+          },
+          "id": 70
+        },
+        {
+          "nome": "Laslo Djere",
+          "nacionalidade": "[RS] Sérvia",
+          "idade": 29,
+          "overall": 76,
+          "pontos": 952,
+          "atributos": {
+            "saque": 79,
+            "forehand": 77,
+            "backhand": 73,
+            "topspin": 78,
+            "voleio": 70,
+            "slice": 79,
+            "movimento": 77,
+            "lob": 74,
+            "winner": 79
+          },
+          "id": 59
+        }
+      ],
+      [
+        {
+          "nome": "Corentin Moutet",
+          "nacionalidade": "[FR] França",
+          "idade": 26,
+          "overall": 72,
+          "pontos": 812,
+          "atributos": {
+            "saque": 74,
+            "forehand": 75,
+            "backhand": 71,
+            "topspin": 70,
+            "voleio": 73,
+            "slice": 72,
+            "movimento": 74,
+            "lob": 70,
+            "winner": 67
+          },
+          "id": 76
+        },
+        {
+          "nome": "Fabian Marozsan",
+          "nacionalidade": "[HU] Hungria",
+          "idade": 25,
+          "overall": 76,
+          "pontos": 975,
+          "atributos": {
+            "saque": 78,
+            "forehand": 78,
+            "backhand": 78,
+            "topspin": 77,
+            "voleio": 78,
+            "slice": 75,
+            "movimento": 74,
+            "lob": 69,
+            "winner": 79
+          },
+          "id": 56
+        }
+      ],
+      [
+        {
+          "nome": "Learner Tien",
+          "nacionalidade": "[US] USA",
+          "idade": 19,
+          "overall": 71,
+          "pontos": 893,
+          "atributos": {
+            "saque": 71,
+            "forehand": 72,
+            "backhand": 73,
+            "topspin": 71,
+            "voleio": 66,
+            "slice": 71,
+            "movimento": 70,
+            "lob": 70,
+            "winner": 72
+          },
+          "id": 67
+        },
+        {
+          "nome": "Tomas Martin Etcheverry",
+          "nacionalidade": "[AR] Argentina",
+          "idade": 25,
+          "overall": 76,
+          "pontos": 975,
+          "atributos": {
+            "saque": 78,
+            "forehand": 74,
+            "backhand": 74,
+            "topspin": 78,
+            "voleio": 74,
+            "slice": 77,
+            "movimento": 76,
+            "lob": 75,
+            "winner": 77
+          },
+          "id": 55
+        }
+      ],
+      [
+        {
+          "nome": "João Fonseca",
+          "nacionalidade": "[BR] Brasil",
+          "idade": 18,
+          "overall": 74,
+          "pontos": 907,
+          "atributos": {
+            "saque": 74,
+            "forehand": 77,
+            "backhand": 73,
+            "topspin": 74,
+            "voleio": 72,
+            "slice": 68,
+            "movimento": 77,
+            "lob": 76,
+            "winner": 72
+          },
+          "id": 65
+        },
+        {
+          "nome": "Benjamin Bonzi",
+          "nacionalidade": "[FR] França",
+          "idade": 28,
+          "overall": 76,
+          "pontos": 943,
+          "atributos": {
+            "saque": 79,
+            "forehand": 76,
+            "backhand": 76,
+            "topspin": 79,
+            "voleio": 79,
+            "slice": 79,
+            "movimento": 69,
+            "lob": 75,
+            "winner": 76
+          },
+          "id": 60
+        }
+      ],
+      [
+        {
+          "nome": "Quentin Halys",
+          "nacionalidade": "[FR] França",
+          "idade": 28,
+          "overall": 76,
+          "pontos": 1024,
+          "atributos": {
+            "saque": 79,
+            "forehand": 80,
+            "backhand": 76,
+            "topspin": 78,
+            "voleio": 77,
+            "slice": 76,
+            "movimento": 70,
+            "lob": 69,
+            "winner": 80
+          },
+          "id": 50
+        },
+        {
+          "nome": "Damir Dzumhur",
+          "nacionalidade": "[BA] Bósnia e Herzegovina",
+          "idade": 33,
+          "overall": 71,
+          "pontos": 875,
+          "atributos": {
+            "saque": 68,
+            "forehand": 72,
+            "backhand": 70,
+            "topspin": 72,
+            "voleio": 73,
+            "slice": 71,
+            "movimento": 75,
+            "lob": 74,
+            "winner": 67
+          },
+          "id": 69
+        }
+      ]
+    ],
+    "qualy_2": [],
+    "pre_oitavas": [],
+    "oitavas": [],
+    "quartas": [],
+    "semifinal": [],
+    "final": []
+  },
+  "resultados": {
+    "qualy_1": [],
+    "qualy_2": [],
+    "pre_oitavas": [],
+    "oitavas": [],
+    "quartas": [],
+    "semifinal": [],
+    "final": []
+  }
+}
