@@ -10,9 +10,6 @@ from src.dados import (
 from src.jogador import carregar_jogador
 from src.ranking import SistemaRanking
 from src.save import salvar_jogo
-from src.torneio import Torneio # Re-add import
-from src.pontuacao import distribuir_pontos_torneio # Re-add import
-from src.io_utils import safe_input # Re-add import
 
 # --- Constantes ---
 FADIGA_RECUPERACAO_SEMANAL = 25

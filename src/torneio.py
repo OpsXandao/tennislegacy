@@ -8,7 +8,6 @@ from src.dados import (
     get_caminho_torneio_save,
 )
 from src.jogador import Jogador, normalizar_nome
-from src.calendario import obter_torneio_por_nome
 from src.jogar_partida import criar_config_partida, jogar_partida
 from src.progressao import handle_xp_e_level_up, handle_fadiga_e_lesao, recuperar_energia_entre_rodadas
 from src.save import salvar_jogo
