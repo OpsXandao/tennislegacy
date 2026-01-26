@@ -3,6 +3,7 @@ import os
 
 from src.dados import carregar_ranking, get_caminho_ranking_global
 from src.jogador import normalizar_nome
+from src.json_utils import salvar_json_seguro
 
 DEFAULT_ATRIBUTOS = {
     "saque": 60,
@@ -39,13 +40,17 @@ class SistemaRanking:
     def _normalizar_ranking(self, ranking):
         if not isinstance(ranking, list):
             return [], True
-        mudou = False
+        
+        ranking_sem_duplicados, mudou_remocao = self._remover_duplicados(ranking)
+
+        mudou_norm = False
         normalizado = []
-        for jogador in ranking:
+        for jogador in ranking_sem_duplicados:
             jogador_norm, alterado = self._normalizar_jogador(jogador)
             normalizado.append(jogador_norm)
-            mudou = mudou or alterado
-        return normalizado, mudou
+            mudou_norm = mudou_norm or alterado
+
+        return normalizado, mudou_remocao or mudou_norm
 
     def _normalizar_jogador(self, jogador):
         mudou = False
@@ -110,9 +115,24 @@ class SistemaRanking:
 
         return jogador, mudou
 
+    def _remover_duplicados(self, ranking):
+        jogadores_unicos = {}
+        mudou = False
+        for jogador in ranking:
+            nome_normalizado = normalizar_nome(jogador)
+            if nome_normalizado not in jogadores_unicos:
+                jogadores_unicos[nome_normalizado] = jogador
+            else:
+                mudou = True
+                # Logica de merge: manter o jogador com mais pontos, ou o primeiro encontrado
+                jogador_existente = jogadores_unicos[nome_normalizado]
+                if jogador.get("pontos", 0) > jogador_existente.get("pontos", 0):
+                    jogadores_unicos[nome_normalizado] = jogador
+        
+        return list(jogadores_unicos.values()), mudou
+
     def salvar_ranking(self):
-        with open(self.caminho_arquivo, "w", encoding="utf-8") as f:
-            json.dump(self.ranking, f, indent=2, ensure_ascii=False)
+        salvar_json_seguro(self.caminho_arquivo, self.ranking)
 
     def ordenar(self):
         for jogador in self.ranking:
@@ -194,15 +214,13 @@ class SistemaRanking:
         nome_normalizado = normalizar_nome(jogador_dict)
         if any(normalizar_nome(j) == nome_normalizado for j in dados):
             if mudou:
-                with open(caminho_global, "w", encoding="utf-8") as f:
-                    json.dump(dados, f, indent=2, ensure_ascii=False)
+                salvar_json_seguro(caminho_global, dados)
             return
 
         jogador_completo, _ = self._normalizar_jogador(jogador_dict.copy())
 
         dados.append(jogador_completo)
-        with open(caminho_global, "w", encoding="utf-8") as f:
-            json.dump(dados, f, indent=2, ensure_ascii=False)
+        salvar_json_seguro(caminho_global, dados)
 
         print(
             f"📈 Jogador '{jogador_dict['nome']}' também adicionado ao ranking_atp.json global."
