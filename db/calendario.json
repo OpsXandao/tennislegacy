@@ -10,7 +10,9 @@
       "popularidade": 4,
       "qualificacao": false,
       "pais_sede": "[AU] Austrália",
-      "ultimo_campeao": "Estados Unidos"
+      "ultimo_campeao": "Estados Unidos",
+      "semana": 1,
+      "ultimo_campeao_duplas": null
     },
     {
       "nome": "Brisbane International",
@@ -22,7 +24,9 @@
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[AU] Austrália",
-      "ultimo_campeao": "Jiří Lehečka"
+      "ultimo_campeao": "Jiří Lehečka",
+      "semana": 1,
+      "ultimo_campeao_duplas": "Julian Cash / Lloyd Glasspool"
     },
     {
       "nome": "Hong Kong Open",
@@ -34,7 +38,9 @@
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[CN] China",
-      "ultimo_campeao": "Alexandre Müller"
+      "ultimo_campeao": "Alexandre Muller",
+      "semana": 1,
+      "ultimo_campeao_duplas": "Sander Arends / Luke Johnson"
     }
   ],
   "2": [
@@ -48,7 +54,9 @@
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[NZ] Nova Zelândia",
-      "ultimo_campeao": "Gaël Monfils"
+      "ultimo_campeao": "Gaël Monfils",
+      "semana": 2,
+      "ultimo_campeao_duplas": "Nikola Mektić / Michael Venus"
     },
     {
       "nome": "Adelaide International",
@@ -60,13 +68,16 @@
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[AU] Austrália",
-      "ultimo_campeao": "Félix Auger-Aliassime"
+      "ultimo_campeao": "Félix Auger-Aliassime",
+      "semana": 2,
+      "ultimo_campeao_duplas": "Simone Bolelli / Andrea Vavassori"
     }
   ],
   "3": [
     {
       "nome": "Australian Open",
       "tipo": "Grand Slam",
+      "permite_mistas": true,
       "local": "Melbourne",
       "quadra": "dura",
       "premiacao": 43250000,
@@ -74,12 +85,58 @@
       "popularidade": 5,
       "qualificacao": true,
       "pais_sede": "[AU] Austrália",
-      "ultimo_campeao": "Jannik Sinner"
+      "ultimo_campeao": "Jannik Sinner",
+      "semana": 3,
+      "ultimo_campeao_duplas": "Harri Heliövaara / Henry Patten"
+    },
+    {
+      "nome": "Nonthaburi Challenger",
+      "tipo": "Challenger 125",
+      "local": "Nonthaburi",
+      "quadra": "dura",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[TH] Tailândia",
+      "semana": 3,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
   "4": [
     {
-      "nome": "Davis Cup Qualifiers - 1ª Rodada",
+      "nome": "Canberra Challenger",
+      "tipo": "Challenger 125",
+      "local": "Canberra",
+      "quadra": "dura",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[AU] Austrália",
+      "semana": 4,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Monastir ITF 25",
+      "tipo": "ITF 25",
+      "local": "Monastir",
+      "quadra": "dura",
+      "premiacao": 25000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[TN] Tunísia",
+      "semana": 4,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "5": [
+    {
+      "nome": "Davis Cup Qualifiers",
       "tipo": "Davis Cup",
       "local": "Vários locais",
       "quadra": "dura",
@@ -88,50 +145,53 @@
       "popularidade": 4,
       "qualificacao": false,
       "pais_sede": "Internacional",
-      "ultimo_campeao": "Qualifying round winners",
-      "chave_formato": "mata-mata",
-      "numero_equipes": 24,
-      "formato_partida": "melhor de 3 jogos"
-    }
-  ],
-  "5": [
-    {
-      "nome": "Dallas Open",
-      "tipo": "ATP 500",
-      "local": "Dallas",
-      "quadra": "dura",
-      "premiacao": 3035960,
-      "dificuldade": 3,
-      "popularidade": 3,
-      "qualificacao": true,
-      "pais_sede": "[US] Estados Unidos",
-      "ultimo_campeao": "Denis Shapovalov"
+      "semana": 5,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     },
     {
-      "nome": "Rotterdam Open",
-      "tipo": "ATP 500",
-      "local": "Rotterdam",
+      "nome": "Open Sud de France",
+      "tipo": "ATP 250",
+      "local": "Montpellier",
       "quadra": "dura (indoor)",
-      "premiacao": 2563150,
-      "dificuldade": 3,
-      "popularidade": 3,
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[NL] Países Baixos",
-      "ultimo_campeao": "Carlos Alcaraz"
+      "pais_sede": "[FR] França",
+      "semana": 5,
+      "ultimo_campeao_duplas": "Tallon Griekspoor / Bart Stevens",
+      "ultimo_campeao": "Félix Auger-Aliassime"
     }
   ],
   "6": [
     {
-      "nome": "Delray Beach Open",
+      "nome": "Cordoba Open",
       "tipo": "ATP 250",
-      "local": "Delray Beach",
-      "quadra": "dura",
-      "premiacao": 710735,
+      "local": "Cordoba",
+      "quadra": "saibro",
+      "premiacao": 622850,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[AR] Argentina",
+      "semana": 6,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": "Juan Manuel Cerúndolo"
+    },
+    {
+      "nome": "Dallas Open",
+      "tipo": "ATP 250",
+      "local": "Dallas",
+      "quadra": "dura (indoor)",
+      "premiacao": 828925,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[US] Estados Unidos",
-      "ultimo_campeao": "Miomir Kecmanovic"
+      "semana": 6,
+      "ultimo_campeao_duplas": "Ariel Behar / Robert Galloway",
+      "ultimo_campeao": "Denis Shapovalov"
     },
     {
       "nome": "Open 13",
@@ -143,7 +203,25 @@
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[FR] França",
+      "semana": 6,
+      "ultimo_campeao_duplas": "Sander Gillé / Jan Zieliński",
       "ultimo_campeao": "Ugo Humbert"
+    }
+  ],
+  "7": [
+    {
+      "nome": "Rotterdam Open",
+      "tipo": "ATP 500",
+      "local": "Rotterdam",
+      "quadra": "dura (indoor)",
+      "premiacao": 2563150,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[NL] Países Baixos",
+      "semana": 7,
+      "ultimo_campeao_duplas": "Sander Gillé / Jan Zieliński",
+      "ultimo_campeao": "Carlos Alcaraz"
     },
     {
       "nome": "Argentina Open",
@@ -155,22 +233,26 @@
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[AR] Argentina",
-      "ultimo_campeao": "Joao Fonseca"
+      "semana": 7,
+      "ultimo_campeao_duplas": "Rafael Matos / Marcelo Melo",
+      "ultimo_campeao": "João Fonseca"
+    },
+    {
+      "nome": "Delray Beach Open",
+      "tipo": "ATP 250",
+      "local": "Delray Beach",
+      "quadra": "dura",
+      "premiacao": 710735,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 7,
+      "ultimo_campeao_duplas": "Christian Harrison / Evan King",
+      "ultimo_campeao": "Miomir Kecmanović"
     }
   ],
-  "7": [
-    {
-      "nome": "Qatar Open",
-      "tipo": "ATP 500",
-      "local": "Doha",
-      "quadra": "dura",
-      "premiacao": 3035960,
-      "dificuldade": 3,
-      "popularidade": 3,
-      "qualificacao": true,
-      "pais_sede": "[QA] Catar",
-      "ultimo_campeao": "Andrey Rublev"
-    },
+  "8": [
     {
       "nome": "Rio Open",
       "tipo": "ATP 500",
@@ -181,48 +263,84 @@
       "popularidade": 3,
       "qualificacao": true,
       "pais_sede": "[BR] Brasil",
-      "ultimo_campeao": "Sebastian Baez"
-    }
-  ],
-  "8": [
+      "semana": 8,
+      "ultimo_campeao_duplas": "Pedro Martínez / Jaume Munar",
+      "ultimo_campeao": "Sebastián Báez"
+    },
     {
-      "nome": "Dubai Tennis Championships",
-      "tipo": "ATP 500",
-      "local": "Dubai",
+      "nome": "Qatar Open",
+      "tipo": "ATP 250",
+      "local": "Doha",
       "quadra": "dura",
-      "premiacao": 3415700,
-      "dificuldade": 3,
+      "premiacao": 1493465,
+      "dificuldade": 2,
       "popularidade": 3,
       "qualificacao": true,
-      "pais_sede": "[AE] Emirados Arabes Unidos",
-      "ultimo_campeao": "Stefanos Tsitsipas"
+      "pais_sede": "[QA] Catar",
+      "semana": 8,
+      "ultimo_campeao_duplas": "Joe Salisbury / Neal Skupski",
+      "ultimo_campeao": "Andrey Rublev"
     },
+    {
+      "nome": "Los Cabos Open",
+      "tipo": "ATP 250",
+      "local": "Los Cabos",
+      "quadra": "dura",
+      "premiacao": 1005620,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[MX] México",
+      "semana": 8,
+      "ultimo_campeao_duplas": "Blake Bayldon / Tristan Schoolkate",
+      "ultimo_campeao": "Denis Shapovalov"
+    }
+  ],
+  "9": [
     {
       "nome": "Mexican Open",
       "tipo": "ATP 500",
       "local": "Acapulco",
       "quadra": "dura",
-      "premiacao": 2763440,
+      "premiacao": 2377565,
       "dificuldade": 3,
       "popularidade": 3,
       "qualificacao": true,
-      "pais_sede": "[MX] Mexico",
-      "ultimo_campeao": "Tomas Machac"
+      "pais_sede": "[MX] México",
+      "semana": 9,
+      "ultimo_campeao_duplas": "Christian Harrison / Evan King",
+      "ultimo_campeao": "Tomáš Macháč"
+    },
+    {
+      "nome": "Dubai Tennis Championships",
+      "tipo": "ATP 500",
+      "local": "Dubai",
+      "quadra": "dura",
+      "premiacao": 3113270,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[AE] Emirados Árabes",
+      "semana": 9,
+      "ultimo_campeao_duplas": "Harri Heliövaara / Henry Patten",
+      "ultimo_campeao": "Stefanos Tsitsipas"
     },
     {
       "nome": "Chile Open",
       "tipo": "ATP 250",
       "local": "Santiago",
       "quadra": "saibro",
-      "premiacao": 710735,
+      "premiacao": 742190,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[CL] Chile",
+      "semana": 9,
+      "ultimo_campeao_duplas": "Máximo González / Andrés Molteni",
       "ultimo_campeao": "Laslo Djere"
     }
   ],
-  "9": [
+  "10": [
     {
       "nome": "Indian Wells Open",
       "tipo": "ATP 1000",
@@ -233,10 +351,56 @@
       "popularidade": 4,
       "qualificacao": true,
       "pais_sede": "[US] Estados Unidos",
+      "semana": 10,
+      "ultimo_campeao_duplas": "Marcelo Arévalo / Mate Pavić",
       "ultimo_campeao": "Jack Draper"
+    },
+    {
+      "nome": "Antalya ITF 25",
+      "tipo": "ITF 25",
+      "local": "Antalya",
+      "quadra": "saibro",
+      "premiacao": 25000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[TR] Turquia",
+      "semana": 10,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "10": [
+  "11": [
+    {
+      "nome": "Phoenix Challenger",
+      "tipo": "Challenger 125",
+      "local": "Phoenix",
+      "quadra": "dura",
+      "premiacao": 200000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 11,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Murska Sobota ITF 100",
+      "tipo": "ITF 100",
+      "local": "Murska Sobota",
+      "quadra": "dura (indoor)",
+      "premiacao": 100000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[SI] Eslovênia",
+      "semana": 11,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "12": [
     {
       "nome": "Miami Open",
       "tipo": "ATP 1000",
@@ -247,145 +411,328 @@
       "popularidade": 4,
       "qualificacao": true,
       "pais_sede": "[US] Estados Unidos",
-      "ultimo_campeao": "Jakub Mensik"
+      "semana": 12,
+      "ultimo_campeao_duplas": "Julian Cash / Lloyd Glasspool",
+      "ultimo_campeao": "Jakub Menšík"
+    },
+    {
+      "nome": "Heraklion ITF 25",
+      "tipo": "ITF 25",
+      "local": "Heraklion",
+      "quadra": "dura",
+      "premiacao": 25000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[GR] Grécia",
+      "semana": 12,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "11": [
+  "13": [
+    {
+      "nome": "Girona Challenger",
+      "tipo": "Challenger 125",
+      "local": "Girona",
+      "quadra": "saibro",
+      "premiacao": 180000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "semana": 13,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Alaminos ITF 25",
+      "tipo": "ITF 25",
+      "local": "Alaminos",
+      "quadra": "saibro",
+      "premiacao": 25000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[CY] Chipre",
+      "semana": 13,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "14": [
     {
       "nome": "U.S. Men's Clay Court Championships",
       "tipo": "ATP 250",
       "local": "Houston",
       "quadra": "saibro",
-      "premiacao": 710735,
+      "premiacao": 742190,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[US] Estados Unidos",
+      "semana": 14,
+      "ultimo_campeao_duplas": "Fernando Romboli / John-Patrick Smith",
       "ultimo_campeao": "Jenson Brooksby"
     },
     {
       "nome": "Grand Prix Hassan II",
       "tipo": "ATP 250",
-      "local": "Marrakesh",
+      "local": "Marrakech",
       "quadra": "saibro",
-      "premiacao": 622850,
+      "premiacao": 651865,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[MA] Marrocos",
+      "semana": 14,
+      "ultimo_campeao_duplas": "Petr Nouza / Patrik Rikl",
       "ultimo_campeao": "Luciano Darderi"
+    },
+    {
+      "nome": "Estoril Open",
+      "tipo": "ATP 250",
+      "local": "Cascais",
+      "quadra": "saibro",
+      "premiacao": 651865,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[PT] Portugal",
+      "semana": 14,
+      "ultimo_campeao_duplas": "Ariel Behar / Joran Vliegen",
+      "ultimo_campeao": "Alex Michelsen"
+    }
+  ],
+  "15": [
+    {
+      "nome": "Monte-Carlo Masters",
+      "tipo": "ATP 1000",
+      "local": "Roquebrune-Cap-Martin",
+      "quadra": "saibro",
+      "premiacao": 6642935,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[MC] Mônaco",
+      "semana": 15,
+      "ultimo_campeao_duplas": "Julian Cash / Lloyd Glasspool",
+      "ultimo_campeao": "Carlos Alcaraz"
+    },
+    {
+      "nome": "Sarasota Challenger",
+      "tipo": "Challenger 125",
+      "local": "Sarasota",
+      "quadra": "saibro",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 15,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "16": [
+    {
+      "nome": "Barcelona Open",
+      "tipo": "ATP 500",
+      "local": "Barcelona",
+      "quadra": "saibro",
+      "premiacao": 2938695,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "semana": 16,
+      "ultimo_campeao_duplas": "Joe Salisbury / Neal Skupski",
+      "ultimo_campeao": "Holger Rune"
+    },
+    {
+      "nome": "Bavarian International",
+      "tipo": "ATP 250",
+      "local": "Munich",
+      "quadra": "saibro",
+      "premiacao": 651865,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "semana": 16,
+      "ultimo_campeao_duplas": "Kevin Krawietz / Tim Pütz",
+      "ultimo_campeao": "Alexander Zverev"
     },
     {
       "nome": "Romanian Open",
       "tipo": "ATP 250",
       "local": "Bucharest",
       "quadra": "saibro",
-      "premiacao": 622850,
+      "premiacao": 651865,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[RO] Romenia",
+      "pais_sede": "[RO] Romênia",
+      "semana": 16,
+      "ultimo_campeao_duplas": "Jakob Schnaitter / Mark Wallner",
       "ultimo_campeao": "Flavio Cobolli"
     }
   ],
-  "12": [
-    {
-      "nome": "Monte-Carlo Masters",
-      "tipo": "ATP 1000",
-      "local": "Roquebrune-Cap-Martin",
-      "quadra": "saibro",
-      "premiacao": 6128940,
-      "dificuldade": 4,
-      "popularidade": 4,
-      "qualificacao": true,
-      "pais_sede": "[FR] França",
-      "ultimo_campeao": "Carlos Alcaraz"
-    }
-  ],
-  "13": [
-    {
-      "nome": "Barcelona Open",
-      "tipo": "ATP 500",
-      "local": "Barcelona",
-      "quadra": "saibro",
-      "premiacao": 3050800,
-      "dificuldade": 3,
-      "popularidade": 3,
-      "qualificacao": true,
-      "pais_sede": "[ES] Espanha",
-      "ultimo_campeao": "Holger Rune"
-    },
-    {
-      "nome": "Bavarian International Tennis Championships",
-      "tipo": "ATP 500",
-      "local": "Munich",
-      "quadra": "saibro",
-      "premiacao": 2747360,
-      "dificuldade": 3,
-      "popularidade": 3,
-      "qualificacao": true,
-      "pais_sede": "[DE] Alemanha",
-      "ultimo_campeao": "Alexander Zverev"
-    }
-  ],
-  "14": [
+  "17": [
     {
       "nome": "Madrid Open",
       "tipo": "ATP 1000",
       "local": "Madrid",
       "quadra": "saibro",
-      "premiacao": 8055385,
+      "premiacao": 9017445,
       "dificuldade": 4,
       "popularidade": 4,
       "qualificacao": true,
       "pais_sede": "[ES] Espanha",
+      "semana": 17,
+      "ultimo_campeao_duplas": "Marcelo Arévalo / Mate Pavić",
       "ultimo_campeao": "Casper Ruud"
+    },
+    {
+      "nome": "Ostrava Challenger",
+      "tipo": "Challenger 125",
+      "local": "Ostrava",
+      "quadra": "saibro",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[CZ] Tchéquia",
+      "semana": 17,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "15": [
+  "18": [
+    {
+      "nome": "Aix-en-Provence Challenger",
+      "tipo": "Challenger 125",
+      "local": "Aix-en-Provence",
+      "quadra": "saibro",
+      "premiacao": 205000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "semana": 18,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Sabadell ITF 100",
+      "tipo": "ITF 100",
+      "local": "Sabadell",
+      "quadra": "saibro",
+      "premiacao": 100000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "semana": 18,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "19": [
     {
       "nome": "Italian Open",
       "tipo": "ATP 1000",
       "local": "Rome",
       "quadra": "saibro",
-      "premiacao": 8055385,
+      "premiacao": 9017445,
       "dificuldade": 4,
       "popularidade": 4,
       "qualificacao": true,
-      "pais_sede": "[IT] Italia",
+      "pais_sede": "[IT] Itália",
+      "semana": 19,
+      "ultimo_campeao_duplas": "Sadio Doumbia / Fabien Reboul",
       "ultimo_campeao": "Carlos Alcaraz"
+    },
+    {
+      "nome": "Mauthausen Challenger",
+      "tipo": "Challenger 125",
+      "local": "Mauthausen",
+      "quadra": "saibro",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[AT] Áustria",
+      "semana": 19,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "16": [
+  "20": [
     {
-      "nome": "Hamburg Open",
-      "tipo": "ATP 500",
-      "local": "Hamburg",
+      "nome": "Turin Challenger",
+      "tipo": "Challenger 125",
+      "local": "Turin",
       "quadra": "saibro",
-      "premiacao": 2320160,
-      "dificuldade": 3,
-      "popularidade": 3,
+      "premiacao": 195000,
+      "dificuldade": 1,
+      "popularidade": 1,
       "qualificacao": true,
-      "pais_sede": "[DE] Alemanha",
-      "ultimo_campeao": "Flavio Cobolli"
+      "pais_sede": "[IT] Itália",
+      "semana": 20,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     },
+    {
+      "nome": "Zagreb ITF 25",
+      "tipo": "ITF 25",
+      "local": "Zagreb",
+      "quadra": "saibro",
+      "premiacao": 25000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[HR] Croácia",
+      "semana": 20,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "21": [
     {
       "nome": "Geneva Open",
       "tipo": "ATP 250",
       "local": "Geneva",
       "quadra": "saibro",
-      "premiacao": 622850,
+      "premiacao": 651865,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[CH] Suica",
+      "pais_sede": "[CH] Suíça",
+      "semana": 21,
+      "ultimo_campeao_duplas": "Ariel Behar / Joran Vliegen",
       "ultimo_campeao": "Novak Djokovic"
+    },
+    {
+      "nome": "Lyon Open",
+      "tipo": "ATP 250",
+      "local": "Lyon",
+      "quadra": "saibro",
+      "premiacao": 651865,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "semana": 21,
+      "ultimo_campeao_duplas": "Ivan Dodig / Édouard Roger-Vasselin",
+      "ultimo_campeao": "Benoît Paire"
     }
   ],
-  "17": [
+  "22": [
     {
       "nome": "French Open",
       "tipo": "Grand Slam",
+      "permite_mistas": true,
       "local": "Paris",
       "quadra": "saibro",
       "premiacao": 26334000,
@@ -393,79 +740,150 @@
       "popularidade": 5,
       "qualificacao": true,
       "pais_sede": "[FR] França",
+      "semana": 22,
+      "ultimo_campeao_duplas": "Marcel Granollers / Horacio Zeballos",
       "ultimo_campeao": "Carlos Alcaraz"
+    },
+    {
+      "nome": "Heilbronn Challenger",
+      "tipo": "Challenger 125",
+      "local": "Heilbronn",
+      "quadra": "saibro",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "semana": 22,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "18": [
+  "23": [
+    {
+      "nome": "Prostejov Challenger",
+      "tipo": "Challenger 125",
+      "local": "Prostejov",
+      "quadra": "saibro",
+      "premiacao": 185000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[CZ] Tchéquia",
+      "semana": 23,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Kiseljak ITF 100",
+      "tipo": "ITF 100",
+      "local": "Kiseljak",
+      "quadra": "saibro",
+      "premiacao": 100000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[BA] Bósnia e Herzegovina",
+      "semana": 23,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "24": [
     {
       "nome": "Stuttgart Open",
       "tipo": "ATP 250",
       "local": "Stuttgart",
       "quadra": "grama",
-      "premiacao": 778445,
+      "premiacao": 812235,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[DE] Alemanha",
+      "semana": 24,
+      "ultimo_campeao_duplas": "Santiago González / Austin Krajicek",
       "ultimo_campeao": "Taylor Fritz"
     },
     {
-      "nome": "Rosmalen Grass Court Championships",
+      "nome": "Rosmalen Championships",
       "tipo": "ATP 250",
       "local": "'s-Hertogenbosch",
       "quadra": "grama",
-      "premiacao": 733665,
+      "premiacao": 812235,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[NL] Países Baixos",
+      "semana": 24,
+      "ultimo_campeao_duplas": "Julian Cash / Lloyd Glasspool",
       "ultimo_campeao": "Gabriel Diallo"
     }
   ],
-  "19": [
+  "25": [
     {
       "nome": "Halle Open",
       "tipo": "ATP 500",
       "local": "Halle",
       "quadra": "grama",
-      "premiacao": 2683820,
+      "premiacao": 2411390,
       "dificuldade": 3,
       "popularidade": 3,
       "qualificacao": true,
       "pais_sede": "[DE] Alemanha",
+      "semana": 25,
+      "ultimo_campeao_duplas": "Simone Bolelli / Andrea Vavassori",
       "ultimo_campeao": "Alexander Bublik"
+    },
+    {
+      "nome": "Queen's Club Championships",
+      "tipo": "ATP 500",
+      "local": "London",
+      "quadra": "grama",
+      "premiacao": 2411390,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[GB] Reino Unido",
+      "semana": 25,
+      "ultimo_campeao_duplas": "Nikola Mektić / Michael Venus",
+      "ultimo_campeao": "Carlos Alcaraz"
     }
   ],
-  "20": [
+  "26": [
     {
       "nome": "Mallorca Championships",
       "tipo": "ATP 250",
       "local": "Santa Ponsa",
       "quadra": "grama",
-      "premiacao": 622850,
+      "premiacao": 1005340,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[ES] Espanha",
+      "semana": 26,
+      "ultimo_campeao_duplas": "Yuki Bhambri / Robert Galloway",
       "ultimo_campeao": "Tallon Griekspoor"
     },
     {
-      "nome": "Eastbourne Open",
+      "nome": "Eastbourne International",
       "tipo": "ATP 250",
       "local": "Eastbourne",
       "quadra": "grama",
-      "premiacao": 783690,
+      "premiacao": 812235,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[GB] Reino Unido",
+      "semana": 26,
+      "ultimo_campeao_duplas": "Ariel Behar / Joran Vliegen",
       "ultimo_campeao": "Taylor Fritz"
     }
   ],
-  "21": [
+  "27": [
     {
       "nome": "Wimbledon",
       "tipo": "Grand Slam",
+      "permite_mistas": true,
       "local": "London",
       "quadra": "grama",
       "premiacao": 24919000,
@@ -473,47 +891,82 @@
       "popularidade": 5,
       "qualificacao": true,
       "pais_sede": "[GB] Reino Unido",
+      "semana": 27,
+      "ultimo_campeao_duplas": "Julian Cash / Lloyd Glasspool",
       "ultimo_campeao": "Jannik Sinner"
-    }
-  ],
-  "22": [
-    {
-      "nome": "Hopman Cup",
-      "tipo": "Hopman Cup",
-      "local": "Bari",
-      "quadra": "dura",
-      "premiacao": 0,
-      "dificuldade": 3,
-      "popularidade": 3,
-      "qualificacao": false,
-      "pais_sede": "[IT] Italia",
-      "ultimo_campeao": "Canada",
-      "chave_formato": "grupos",
-      "numero_equipes": 6,
-      "formato_partida": "round robin"
     },
     {
-      "nome": "Los Cabos Open",
-      "tipo": "ATP 250",
-      "local": "Los Cabos",
-      "quadra": "dura",
-      "premiacao": 920480,
-      "dificuldade": 2,
-      "popularidade": 2,
+      "nome": "Braunschweig Challenger",
+      "tipo": "Challenger 125",
+      "local": "Braunschweig",
+      "quadra": "saibro",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
       "qualificacao": true,
-      "pais_sede": "[MX] Mexico",
-      "ultimo_campeao": "Denis Shapovalov"
+      "pais_sede": "[DE] Alemanha",
+      "semana": 27,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "28": [
+    {
+      "nome": "Newport Challenger",
+      "tipo": "Challenger 125",
+      "local": "Newport",
+      "quadra": "grama",
+      "premiacao": 175000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 28,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Nottingham ITF 25",
+      "tipo": "ITF 25",
+      "local": "Nottingham",
+      "quadra": "grama",
+      "premiacao": 25000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[GB] Reino Unido",
+      "semana": 28,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "29": [
+    {
+      "nome": "Hamburg Open",
+      "tipo": "ATP 500",
+      "local": "Hamburg",
+      "quadra": "saibro",
+      "premiacao": 2047730,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "semana": 29,
+      "ultimo_campeao_duplas": "Andrés Molteni / Fernando Romboli",
+      "ultimo_campeao": "Flavio Cobolli"
     },
     {
       "nome": "Swedish Open",
       "tipo": "ATP 250",
       "local": "Bastad",
       "quadra": "saibro",
-      "premiacao": 622850,
+      "premiacao": 651865,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[SE] Suecia",
+      "pais_sede": "[SE] Suécia",
+      "semana": 29,
+      "ultimo_campeao_duplas": "Adam Pavlásek / Jan Zieliński",
       "ultimo_campeao": "Luciano Darderi"
     },
     {
@@ -521,37 +974,43 @@
       "tipo": "ATP 250",
       "local": "Gstaad",
       "quadra": "saibro",
-      "premiacao": 622850,
+      "premiacao": 651865,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[CH] Suica",
+      "pais_sede": "[CH] Suíça",
+      "semana": 29,
+      "ultimo_campeao_duplas": "Hendrik Jebens / Albano Olivetti",
       "ultimo_campeao": "Alexander Bublik"
-    }
-  ],
-  "23": [
+    },
     {
-      "nome": "Washington Open",
-      "tipo": "ATP 500",
-      "local": "Washington, D.C.",
-      "quadra": "dura",
-      "premiacao": 2574145,
-      "dificuldade": 3,
-      "popularidade": 3,
+      "nome": "Hall of Fame Open",
+      "tipo": "ATP 250",
+      "local": "Newport",
+      "quadra": "grama",
+      "premiacao": 742350,
+      "dificuldade": 2,
+      "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[US] Estados Unidos",
-      "ultimo_campeao": "Alex de Minaur"
-    },
+      "semana": 29,
+      "ultimo_campeao_duplas": "Robert Cash / JJ Tracy",
+      "ultimo_campeao": "Zachary Svajda"
+    }
+  ],
+  "30": [
     {
       "nome": "Austrian Open",
       "tipo": "ATP 250",
-      "local": "Kitzbuhel",
+      "local": "Kitzbühel",
       "quadra": "saibro",
-      "premiacao": 622850,
+      "premiacao": 651865,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[AT] Austria",
+      "pais_sede": "[AT] Áustria",
+      "semana": 30,
+      "ultimo_campeao_duplas": "Petr Nouza / Patrik Rikl",
       "ultimo_campeao": "Alexander Bublik"
     },
     {
@@ -559,60 +1018,127 @@
       "tipo": "ATP 250",
       "local": "Umag",
       "quadra": "saibro",
-      "premiacao": 622850,
+      "premiacao": 651865,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[HR] Croacia",
+      "pais_sede": "[HR] Croácia",
+      "semana": 30,
+      "ultimo_campeao_duplas": "Patrik Trhac / Marcus Willis",
       "ultimo_campeao": "Luciano Darderi"
+    },
+    {
+      "nome": "Atlanta Open",
+      "tipo": "ATP 250",
+      "local": "Atlanta",
+      "quadra": "dura",
+      "premiacao": 822175,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 30,
+      "ultimo_campeao_duplas": "Nathaniel Lammons / Jackson Withrow",
+      "ultimo_campeao": "Yoshihito Nishioka"
     }
   ],
-  "24": [
+  "31": [
+    {
+      "nome": "Washington Open",
+      "tipo": "ATP 500",
+      "local": "Washington, D.C.",
+      "quadra": "dura",
+      "premiacao": 2271715,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 31,
+      "ultimo_campeao_duplas": "Simone Bolelli / Andrea Vavassori",
+      "ultimo_campeao": "Alex de Minaur"
+    }
+  ],
+  "32": [
     {
       "nome": "Canadian Open",
       "tipo": "ATP 1000",
-      "local": "Toronto",
+      "local": "Montreal/Toronto",
       "quadra": "dura",
-      "premiacao": 9193540,
+      "premiacao": 7622925,
       "dificuldade": 4,
       "popularidade": 4,
       "qualificacao": true,
-      "pais_sede": "[CA] Canada",
+      "pais_sede": "[CA] Canadá",
+      "semana": 32,
+      "ultimo_campeao_duplas": "Joe Salisbury / Neal Skupski",
       "ultimo_campeao": "Ben Shelton"
+    },
+    {
+      "nome": "Bogotá Challenger",
+      "tipo": "Challenger 125",
+      "local": "Bogotá",
+      "quadra": "saibro",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[CO] Colômbia",
+      "semana": 32,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "25": [
+  "33": [
     {
       "nome": "Cincinnati Open",
       "tipo": "ATP 1000",
       "local": "Mason",
       "quadra": "dura",
-      "premiacao": 9193540,
+      "premiacao": 7622925,
       "dificuldade": 4,
       "popularidade": 4,
       "qualificacao": true,
       "pais_sede": "[US] Estados Unidos",
+      "semana": 33,
+      "ultimo_campeao_duplas": "Nikola Mektić / Rajeev Ram",
       "ultimo_campeao": "Carlos Alcaraz"
+    },
+    {
+      "nome": "Santo Domingo Challenger",
+      "tipo": "Challenger 125",
+      "local": "Santo Domingo",
+      "quadra": "saibro",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[DO] República Dominicana",
+      "semana": 33,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "26": [
+  "34": [
     {
       "nome": "Winston-Salem Open",
       "tipo": "ATP 250",
       "local": "Winston-Salem",
       "quadra": "dura",
-      "premiacao": 828925,
+      "premiacao": 850680,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[US] Estados Unidos",
-      "ultimo_campeao": "Marton Fucsovics"
+      "semana": 34,
+      "ultimo_campeao_duplas": "Rafael Matos / Marcelo Melo",
+      "ultimo_campeao": "Márton Fucsovics"
     }
   ],
-  "27": [
+  "35": [
     {
       "nome": "US Open",
       "tipo": "Grand Slam",
+      "permite_mistas": true,
       "local": "New York City",
       "quadra": "dura",
       "premiacao": 40412800,
@@ -620,52 +1146,84 @@
       "popularidade": 5,
       "qualificacao": true,
       "pais_sede": "[US] Estados Unidos",
+      "semana": 35,
+      "ultimo_campeao_duplas": "Marcel Granollers / Horacio Zeballos",
       "ultimo_campeao": "Carlos Alcaraz"
+    },
+    {
+      "nome": "Mallorca Challenger",
+      "tipo": "Challenger 125",
+      "local": "Mallorca",
+      "quadra": "dura",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "semana": 35,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "28": [
+  "36": [
     {
-      "nome": "Davis Cup Qualifiers - 2ª Rodada",
+      "nome": "Istanbul Challenger",
+      "tipo": "Challenger 125",
+      "local": "Istanbul",
+      "quadra": "dura",
+      "premiacao": 165000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[TR] Turquia",
+      "semana": 36,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Cluj ITF 100",
+      "tipo": "ITF 100",
+      "local": "Cluj-Napoca",
+      "quadra": "dura",
+      "premiacao": 100000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[RO] Romênia",
+      "semana": 36,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "37": [
+    {
+      "nome": "Davis Cup Finals - Grupos",
       "tipo": "Davis Cup",
-      "local": "Varios locais",
+      "local": "Vários locais",
       "quadra": "dura (indoor)",
       "premiacao": 0,
       "dificuldade": 4,
       "popularidade": 4,
       "qualificacao": false,
       "pais_sede": "Internacional",
-      "ultimo_campeao": "Qualifying round winners",
-      "chave_formato": "mata-mata",
-      "numero_equipes": 14,
-      "formato_partida": "melhor de 3 jogos"
+      "semana": 37,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "29": [
-    {
-      "nome": "Laver Cup",
-      "tipo": "Laver Cup",
-      "local": "San Francisco",
-      "quadra": "dura",
-      "premiacao": 1500000,
-      "dificuldade": 3,
-      "popularidade": 3,
-      "qualificacao": false,
-      "pais_sede": "[US] Estados Unidos",
-      "ultimo_campeao": "Team World",
-      "chave_formato": "equipes",
-      "numero_equipes": 2,
-      "formato_partida": "exibicao"
-    },
+  "38": [
     {
       "nome": "Chengdu Open",
       "tipo": "ATP 250",
       "local": "Chengdu",
       "quadra": "dura",
-      "premiacao": 1220805,
+      "premiacao": 1261555,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[CN] China",
+      "semana": 38,
+      "ultimo_campeao_duplas": "Vasil Kirkov / Bart Stevens",
       "ultimo_campeao": "Alejandro Tabilo"
     },
     {
@@ -673,25 +1231,29 @@
       "tipo": "ATP 250",
       "local": "Hangzhou",
       "quadra": "dura",
-      "premiacao": 1049780,
+      "premiacao": 1081395,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[CN] China",
+      "semana": 38,
+      "ultimo_campeao_duplas": "Nicolás Barrientos / David Pel",
       "ultimo_campeao": "Alexander Bublik"
     }
   ],
-  "30": [
+  "39": [
     {
       "nome": "China Open",
       "tipo": "ATP 500",
       "local": "Beijing",
       "quadra": "dura",
-      "premiacao": 4194080,
+      "premiacao": 3891650,
       "dificuldade": 3,
       "popularidade": 3,
       "qualificacao": true,
       "pais_sede": "[CN] China",
+      "semana": 39,
+      "ultimo_campeao_duplas": "Harri Heliövaara / Henry Patten",
       "ultimo_campeao": "Jannik Sinner"
     },
     {
@@ -699,133 +1261,211 @@
       "tipo": "ATP 500",
       "local": "Tokyo",
       "quadra": "dura",
-      "premiacao": 2404500,
+      "premiacao": 1989865,
       "dificuldade": 3,
       "popularidade": 3,
       "qualificacao": true,
-      "pais_sede": "[JP] Japao",
+      "pais_sede": "[JP] Japão",
+      "semana": 39,
+      "ultimo_campeao_duplas": "Rohan Bopanna / Takeru Yuzuki",
       "ultimo_campeao": "Carlos Alcaraz"
     }
   ],
-  "31": [
+  "40": [
     {
       "nome": "Shanghai Masters",
       "tipo": "ATP 1000",
       "local": "Shanghai",
       "quadra": "dura",
-      "premiacao": 9193540,
+      "premiacao": 10298535,
       "dificuldade": 4,
       "popularidade": 4,
       "qualificacao": true,
       "pais_sede": "[CN] China",
+      "semana": 40,
+      "ultimo_campeao_duplas": "Kevin Krawietz / Tim Pütz",
       "ultimo_campeao": "Valentin Vacherot"
+    },
+    {
+      "nome": "Alicante Challenger",
+      "tipo": "Challenger 125",
+      "local": "Alicante",
+      "quadra": "dura",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "semana": 40,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "32": [
+  "41": [
+    {
+      "nome": "Mouilleron-le-Captif Challenger",
+      "tipo": "Challenger 125",
+      "local": "Mouilleron-le-Captif",
+      "quadra": "dura (indoor)",
+      "premiacao": 170000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "semana": 41,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Hamburg ITF 25",
+      "tipo": "ITF 25",
+      "local": "Hamburg",
+      "quadra": "dura (indoor)",
+      "premiacao": 25000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "semana": 41,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "42": [
+    {
+      "nome": "European Open",
+      "tipo": "ATP 250",
+      "local": "Antwerp",
+      "quadra": "dura (indoor)",
+      "premiacao": 767455,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[BE] Bélgica",
+      "semana": 42,
+      "ultimo_campeao_duplas": "Christian Harrison / Evan King",
+      "ultimo_campeao": "Félix Auger-Aliassime"
+    },
     {
       "nome": "Almaty Open",
       "tipo": "ATP 250",
       "local": "Almaty",
       "quadra": "dura (indoor)",
-      "premiacao": 1085850,
+      "premiacao": 1117465,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[KZ] Cazaquistao",
+      "pais_sede": "[KZ] Cazaquistão",
+      "semana": 42,
+      "ultimo_campeao_duplas": "Jakob Schnaitter / Mark Wallner",
       "ultimo_campeao": "Daniil Medvedev"
-    },
-    {
-      "nome": "European Open",
-      "tipo": "ATP 250",
-      "local": "Brussels",
-      "quadra": "dura (indoor)",
-      "premiacao": 733665,
-      "dificuldade": 2,
-      "popularidade": 2,
-      "qualificacao": true,
-      "pais_sede": "[BE] Belgica",
-      "ultimo_campeao": "Felix Auger-Aliassime"
     },
     {
       "nome": "Stockholm Open",
       "tipo": "ATP 250",
       "local": "Stockholm",
       "quadra": "dura (indoor)",
-      "premiacao": 733665,
+      "premiacao": 767455,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[SE] Suecia",
+      "pais_sede": "[SE] Suécia",
+      "semana": 42,
+      "ultimo_campeao_duplas": "Alexander Erler / Robert Galloway",
       "ultimo_campeao": "Casper Ruud"
     }
   ],
-  "33": [
+  "43": [
     {
       "nome": "Swiss Indoors",
       "tipo": "ATP 500",
       "local": "Basel",
       "quadra": "dura (indoor)",
-      "premiacao": 2684645,
+      "premiacao": 2572135,
       "dificuldade": 3,
       "popularidade": 3,
       "qualificacao": true,
-      "pais_sede": "[CH] Suica",
-      "ultimo_campeao": "Joao Fonseca"
+      "pais_sede": "[CH] Suíça",
+      "semana": 43,
+      "ultimo_campeao_duplas": "Marcel Granollers / Horacio Zeballos",
+      "ultimo_campeao": "João Fonseca"
     },
     {
       "nome": "Vienna Open",
       "tipo": "ATP 500",
       "local": "Vienna",
       "quadra": "dura (indoor)",
-      "premiacao": 2898475,
+      "premiacao": 2788465,
       "dificuldade": 3,
       "popularidade": 3,
       "qualificacao": true,
-      "pais_sede": "[AT] Austria",
+      "pais_sede": "[AT] Áustria",
+      "semana": 43,
+      "ultimo_campeao_duplas": "Julian Cash / Lloyd Glasspool",
       "ultimo_campeao": "Jannik Sinner"
     }
   ],
-  "34": [
+  "44": [
     {
       "nome": "Paris Masters",
       "tipo": "ATP 1000",
       "local": "Paris",
       "quadra": "dura (indoor)",
-      "premiacao": 7703855,
+      "premiacao": 6946835,
       "dificuldade": 4,
       "popularidade": 4,
       "qualificacao": true,
       "pais_sede": "[FR] França",
+      "semana": 44,
+      "ultimo_campeao_duplas": "Julian Cash / Lloyd Glasspool",
       "ultimo_campeao": "Jannik Sinner"
+    },
+    {
+      "nome": "Bratislava Challenger",
+      "tipo": "Challenger 125",
+      "local": "Bratislava",
+      "quadra": "dura (indoor)",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[SK] Eslováquia",
+      "semana": 44,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "35": [
+  "45": [
     {
-      "nome": "Hellenic Championship",
+      "nome": "Belgrade Open",
       "tipo": "ATP 250",
-      "local": "Athens",
+      "local": "Belgrade",
       "quadra": "dura (indoor)",
-      "premiacao": 793530,
+      "premiacao": 651865,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
-      "pais_sede": "[GR] Grecia",
-      "ultimo_campeao": "Novak Djokovic"
+      "pais_sede": "[RS] Sérvia",
+      "semana": 45,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     },
     {
       "nome": "Moselle Open",
       "tipo": "ATP 250",
       "local": "Metz",
       "quadra": "dura (indoor)",
-      "premiacao": 622850,
+      "premiacao": 651865,
       "dificuldade": 2,
       "popularidade": 2,
       "qualificacao": true,
       "pais_sede": "[FR] França",
+      "semana": 45,
+      "ultimo_campeao_duplas": "Quentin Halys / Pierre-Hugues Herbert",
       "ultimo_campeao": "Learner Tien"
     }
   ],
-  "36": [
+  "46": [
     {
       "nome": "ATP Finals",
       "tipo": "ATP Finals",
@@ -835,45 +1475,176 @@
       "dificuldade": 5,
       "popularidade": 5,
       "qualificacao": false,
-      "pais_sede": "[IT] Italia",
-      "ultimo_campeao": "Jannik Sinner",
-      "chave_formato": "round robin",
-      "numero_equipes": 8,
-      "formato_partida": "round robin"
+      "pais_sede": "[IT] Itália",
+      "semana": 46,
+      "ultimo_campeao_duplas": "Joe Salisbury / Neal Skupski",
+      "ultimo_campeao": "Jannik Sinner"
+    },
+    {
+      "nome": "São Leopoldo Challenger",
+      "tipo": "Challenger 125",
+      "local": "São Leopoldo",
+      "quadra": "saibro",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[BR] Brasil",
+      "semana": 46,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ],
-  "37": [
+  "47": [
     {
-      "nome": "Davis Cup Final 8",
+      "nome": "Davis Cup Finals - 8 Final",
       "tipo": "Davis Cup",
-      "local": "Bologna",
+      "local": "Malaga",
       "quadra": "dura (indoor)",
-      "premiacao": 7000000,
+      "premiacao": 0,
       "dificuldade": 4,
       "popularidade": 4,
       "qualificacao": false,
-      "pais_sede": "[IT] Italia",
-      "ultimo_campeao": "Italia",
-      "chave_formato": "grupos",
-      "numero_equipes": 8,
-      "formato_partida": "melhor de 3 jogos"
+      "pais_sede": "[ES] Espanha",
+      "semana": 47,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": "Itália"
     }
   ],
-  "38": [
+  "48": [
     {
       "nome": "Next Gen ATP Finals",
       "tipo": "Next Gen ATP Finals",
       "local": "Jeddah",
       "quadra": "dura (indoor)",
-      "premiacao": 2101250,
+      "premiacao": 2000000,
       "dificuldade": 4,
       "popularidade": 4,
       "qualificacao": false,
-      "pais_sede": "[SA] Arabia Saudita",
-      "ultimo_campeao": "Learner Tien",
-      "chave_formato": "round robin",
-      "numero_equipes": 8,
-      "formato_partida": "round robin"
+      "pais_sede": "[SA] Arábia Saudita",
+      "semana": 48,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": "Learner Tien"
+    }
+  ],
+  "49": [
+    {
+      "nome": "Maia Challenger",
+      "tipo": "Challenger 125",
+      "local": "Maia",
+      "quadra": "dura (indoor)",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[PT] Portugal",
+      "semana": 49,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Helsinki ITF 100",
+      "tipo": "ITF 100",
+      "local": "Helsinki",
+      "quadra": "dura (indoor)",
+      "premiacao": 100000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[FI] Finlândia",
+      "semana": 49,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "50": [
+    {
+      "nome": "Tenerife Challenger",
+      "tipo": "Challenger 125",
+      "local": "Tenerife",
+      "quadra": "dura",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "semana": 50,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Antalya ITF 25",
+      "tipo": "ITF 25",
+      "local": "Antalya",
+      "quadra": "saibro",
+      "premiacao": 25000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[TR] Turquia",
+      "semana": 50,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "51": [
+    {
+      "nome": "Bergamo Challenger",
+      "tipo": "Challenger 125",
+      "local": "Bergamo",
+      "quadra": "dura (indoor)",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[IT] Itália",
+      "semana": 51,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Lousada ITF 100",
+      "tipo": "ITF 100",
+      "local": "Lousada",
+      "quadra": "dura (indoor)",
+      "premiacao": 100000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[PT] Portugal",
+      "semana": 51,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "52": [
+    {
+      "nome": "Oeiras Challenger",
+      "tipo": "Challenger 125",
+      "local": "Oeiras",
+      "quadra": "dura (indoor)",
+      "premiacao": 160000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[PT] Portugal",
+      "semana": 52,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    },
+    {
+      "nome": "Monastir ITF 25 Finals",
+      "tipo": "ITF 25",
+      "local": "Monastir",
+      "quadra": "dura",
+      "premiacao": 25000,
+      "dificuldade": 1,
+      "popularidade": 1,
+      "qualificacao": true,
+      "pais_sede": "[TN] Tunísia",
+      "semana": 52,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
     }
   ]
 }
