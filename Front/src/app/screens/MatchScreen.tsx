@@ -52,7 +52,6 @@ import {
   formatarNacionalidade,
   getScoutingMetrics,
   getScoutingMetricsFromData,
-  inferirEstilo,
   inferirPlanoDoPacote,
   leituraFisica,
   montarRelatorioJogador,
@@ -66,6 +65,11 @@ import {
   resumoMomentum,
   serializarPacoteTatico,
 } from './match/model'
+import {
+  extrairAdversarioInfoPartida,
+  mapApiAdversarioParaMatch,
+  modoAcompanhamentoDaApi,
+} from './match/bootstrap'
 import {
   ABORDAGENS,
   CircularGauge,
@@ -224,8 +228,7 @@ export function MatchScreen() {
       if (!ativo || !res?.partida_id) return
       setInternalPartidaId(res.partida_id)
       setPartidaId(res.partida_id)
-      const m = (res.config.modo as ModoAcomp) || 'estrategista'
-      setModo(m)
+      setModo(modoAcompanhamentoDaApi(res.config.modo))
       if (res.adversario) applyAdversario(res.adversario)
       if (res.placar) {
         setPlacar(res.placar)
@@ -256,16 +259,9 @@ export function MatchScreen() {
       if (!t) return
       setSuperficie(t.superficie ?? '')
       setFaseTorneio(String(t.fase_atual ?? ''))
-      if (t.info_partida) {
-        const meu = nomeJogador.trim().toLowerCase()
-        const j1 = t.info_partida.jogador1
-        const j2 = t.info_partida.jogador2
-        const nomeAdv = j1.trim().toLowerCase() === meu ? j2 : j1
-        if (t.info_partida.adversario) {
-          applyAdversario(t.info_partida.adversario)
-        } else {
-          setAdversario(prev => ({ ...prev, nome: nomeAdv }))
-        }
+      const adversarioPartida = extrairAdversarioInfoPartida(t, nomeJogador)
+      if (adversarioPartida) {
+        applyAdversario(adversarioPartida)
       }
     }).catch(() => {})
     api.partida.preview().then((res) => {
@@ -388,8 +384,7 @@ export function MatchScreen() {
       if (!ativa?.partida_id) return false
       setInternalPartidaId(ativa.partida_id)
       setPartidaId(ativa.partida_id)
-      const m = (ativa.config.modo as ModoAcomp) || 'estrategista'
-      setModo(m)
+      setModo(modoAcompanhamentoDaApi(ativa.config.modo))
       if (ativa.adversario) applyAdversario(ativa.adversario)
       if (ativa.placar) {
         aplicar(ativa.placar)
@@ -406,33 +401,12 @@ export function MatchScreen() {
 
   function applyAdversario(adv: ApiAdversarioInfo) {
     if (!adv) return
-    setAdversario({
-      nome: adv.nome || 'ADVERSÁRIO',
-      nacionalidade: adv.nacionalidade ?? null,
-      idade: Number(adv.idade ?? 0) || null,
-      altura: Number(adv.altura ?? 0) || null,
-      peso: Number(adv.peso ?? 0) || null,
-      maoDominante: adv.mao_dominante ?? null,
-      reves: adv.reves ?? null,
-      energia: Number(adv.energia ?? 100),
-      fadiga: Number(adv.fadiga ?? 0),
-      ranking: adv.ranking ?? adv.ranking_pos ?? null,
-      overall: Number(adv.overall ?? adv.atributos?.overall ?? 0) || null,
-      trofeus: Array.isArray(adv.trofeus) ? adv.trofeus : [],
-      atributos: adv.atributos,
-      atributosPsicologicos: adv.atributos_psicologicos,
-      historicoTorneios: Array.isArray(adv.historico_torneios) ? adv.historico_torneios : [],
-      historicoPartidas: Array.isArray(adv.historico_partidas) ? adv.historico_partidas : [],
-      resumoFifa: adv.resumo_fifa,
-      carta: adv.carta,
-      overallBoosted: adv.carta?.overall_boosted,
-      atributosBoosted: adv.carta?.atributos_boosted,
-      estilo: adv.estilo_jogo ?? inferirEstilo(adv.atributos),
-    })
+    const matchAdversario = mapApiAdversarioParaMatch(adv)
+    setAdversario(matchAdversario)
     setEnergiaJogadorAoVivo(Number(jogador?.energia ?? 100))
     setFadigaJogadorAoVivo(Number(jogador?.fadiga ?? 0))
-    setEnergiaAdversarioAoVivo(Number(adv.energia ?? 100))
-    setFadigaAdversarioAoVivo(Number(adv.fadiga ?? 0))
+    setEnergiaAdversarioAoVivo(matchAdversario.energia)
+    setFadigaAdversarioAoVivo(matchAdversario.fadiga)
   }
 
   // ─── Apply placar update ──────────────────────────────────────────────────
@@ -534,7 +508,7 @@ export function MatchScreen() {
         const r = await api.partida.iniciar('rapido')
         setInternalPartidaId(r.partida_id)
         setPartidaId(r.partida_id)
-        if ((r as any).adversario) applyAdversario((r as any).adversario)
+        if (r.adversario) applyAdversario(r.adversario)
         if (r.placar) {
           aplicar({ ...r.placar, tipo: 'setup' as any, descricao: '' } as any)
         }
@@ -551,7 +525,7 @@ export function MatchScreen() {
       const r = await api.partida.iniciar(apiModo)
       setInternalPartidaId(r.partida_id)
       setPartidaId(r.partida_id)
-      if ((r as any).adversario) applyAdversario((r as any).adversario)
+      if (r.adversario) applyAdversario(r.adversario)
       if (r.placar) {
         aplicar({ ...r.placar, tipo: 'setup' as any, descricao: '' } as any)
       }

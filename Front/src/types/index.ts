@@ -377,6 +377,13 @@ export interface PartidaAtiva {
   placar: PlacarState
 }
 
+export interface PartidaIniciar {
+  partida_id: string
+  config: PartidaConfig
+  adversario?: AdversarioInfo
+  placar?: PlacarState
+}
+
 export interface PartidaScoutH2H {
   vitorias_jogador: number
   vitorias_adversario: number

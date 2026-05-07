@@ -24,6 +24,7 @@ import type {
   AdversarioInfo,
   PartidaAtiva,
   PartidaConfig,
+  PartidaIniciar,
   PartidaPreview,
   PartidaScout,
   MembroMercado,
@@ -334,12 +335,7 @@ export const api = {
       get<PartidaAtiva | null>('/partida/ativa'),
 
     iniciar: (modo: 'detalhado' | 'rapido' | 'estrategista') =>
-      post<{
-        partida_id: string
-        config: PartidaConfig
-        adversario?: AdversarioInfo
-        placar?: PlacarState
-      }>(
+      post<PartidaIniciar>(
         '/partida/iniciar',
         { modo }
       ),

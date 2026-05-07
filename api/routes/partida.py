@@ -109,6 +109,13 @@ class PartidaAtivaResponse(BaseModel):
     placar: dict
 
 
+class PartidaIniciarResponse(BaseModel):
+    partida_id: str
+    config: PartidaConfigResponse
+    adversario: AdversarioPayload | None = None
+    placar: dict | None = None
+
+
 @router.get("/ativa")
 def obter_ativa(
     session: Session = Depends(obter_sessao_ativa),
@@ -215,10 +222,10 @@ def scout(
     )
 
 
-@router.post("/iniciar")
+@router.post("/iniciar", response_model=PartidaIniciarResponse)
 def iniciar(
     body: IniciarPartidaBody, session: Session = Depends(obter_sessao_ativa)
-) -> dict:
+) -> PartidaIniciarResponse:
     return start_match(body.modo, session.nome_save_ativo, session.jogador)
 
 
