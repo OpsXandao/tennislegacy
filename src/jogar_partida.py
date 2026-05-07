@@ -1,17 +1,8 @@
+import logging
 import random
 import time
 from typing import Optional
 
-from src.io_utils import (
-    safe_input,
-    kbhit,
-    get_char_non_blocking,
-    clear_screen,
-    print_blue,
-    print_green,
-    print_red,
-    print_yellow,
-)
 from src.match_constants import (
     ModoSimulacao,
     TipoSaque,
@@ -25,27 +16,9 @@ from src.simulacao_partida import (
     EstatisticasPartida,
     normalizar_superficie,
 )
-from src.match_dynamics import (
-    atualizar_momentum_contextual,
-    aplicar_custo_stamina_contextual,
-    calcular_stamina_pos_recuperacao,
-)
 from src.entidade_utils import (
     obter_atributos,
     obter_atributos_psicologicos,
-)
-from src.match_ui import (
-    escolher_modo_simulacao as ui_escolher_modo_simulacao,
-    escolher_tipo_saque as ui_escolher_tipo_saque,
-    escolher_estrategias as ui_escolher_estrategias,
-    escolher_intencao_ponto as ui_escolher_intencao_ponto,
-    verificar_abandono as ui_verificar_abandono,
-    show_pause_menu as ui_show_pause_menu,
-    exibir_estatisticas_set as ui_exibir_estatisticas_set,
-    placar_pontos_txt as ui_placar_pontos_txt,
-    barra_stamina as ui_barra_stamina,
-    exibir_tela_pre_partida as ui_exibir_tela_pre_partida,
-    exibir_cabecalho_game as ui_exibir_cabecalho_game,
 )
 from src.match_config import (
     ConfigPartida,
@@ -54,26 +27,43 @@ from src.match_config import (
 )  # noqa: F401
 from src.jogador import obter_bonus_rivalidade
 from src.player_ratings import aplicar_bonus_carta
+from src.match_core import (
+    _aplicar_custo_stamina as core_aplicar_custo_stamina,
+    _atualizar_momentum as core_atualizar_momentum,
+    _recuperar_stamina_entre_games as core_recuperar_stamina_entre_games,
+    atualizar_estatisticas as core_atualizar_estatisticas,
+    _definir_estrategia_auto as core_definir_estrategia_auto,
+    simular_game_rapido as core_simular_game_rapido,
+)
+
+logger = logging.getLogger(__name__)
+
+_ESTRATEGIA_PADRAO = {
+    "estilo": "atacar_do_fundo",
+    "saque": "seguro",
+    "saque_tipo": "variado",
+    "intencao": "paciente",
+}
 
 
 def escolher_modo_simulacao():
-    return ui_escolher_modo_simulacao()
+    return ModoSimulacao.AUTO
 
 
 def escolher_tipo_saque():
-    return ui_escolher_tipo_saque()
+    return TipoSaque.FLAT
 
 
 def escolher_estrategias():
-    return ui_escolher_estrategias()
+    return dict(_ESTRATEGIA_PADRAO)
 
 
 def escolher_intencao_ponto():
-    return ui_escolher_intencao_ponto()
+    return "EQUILIBRADO"
 
 
 def verificar_abandono():
-    return ui_verificar_abandono()
+    return False
 
 
 def atualizar_estatisticas(
@@ -83,149 +73,28 @@ def atualizar_estatisticas(
     stats_info: dict,
     contexto: ContextoPonto,
 ):
-    """Atualiza estatísticas baseado no resultado do ponto."""
-    sacador = stats_info.get("sacador", contexto.sacador)
-
-    # Estatísticas do sacador
-    if sacador == "j":
-        stats_sacador = stats_j
-    else:
-        stats_sacador = stats_a
-
-    # Primeiro saque
-    stats_sacador.primeiro_saque_total += 1
-    if stats_info.get("primeiro_saque_in"):
-        stats_sacador.primeiro_saque_in += 1
-
-    # Aces e duplas faltas
-    if stats_info.get("ace"):
-        stats_sacador.aces += 1
-    if stats_info.get("dupla_falta"):
-        stats_sacador.duplas_faltas += 1
-
-    # Winners e erros não forçados
-    if vencedor == "j":
-        if stats_info.get("winner"):
-            stats_j.winners += 1
-        if stats_info.get("erro_nao_forcado"):
-            stats_a.erros_nao_forcados += 1
-    else:
-        if stats_info.get("winner"):
-            stats_a.winners += 1
-        if stats_info.get("erro_nao_forcado"):
-            stats_j.erros_nao_forcados += 1
-
-    # Pontos no saque/devolução
-    if sacador == "j":
-        stats_j.pontos_total_saque += 1
-        stats_a.pontos_total_devolucao += 1
-        if vencedor == "j":
-            stats_j.pontos_ganhos_saque += 1
-        else:
-            stats_a.pontos_ganhos_devolucao += 1
-    else:
-        stats_a.pontos_total_saque += 1
-        stats_j.pontos_total_devolucao += 1
-        if vencedor == "a":
-            stats_a.pontos_ganhos_saque += 1
-        else:
-            stats_j.pontos_ganhos_devolucao += 1
-
-    # Break points
-    if contexto.is_break_point():
-        if sacador == "j":
-            # Adversário tem break point contra jogador
-            stats_a.break_points_total += 1
-            stats_j.break_points_enfrentados += 1
-            if vencedor == "a":
-                stats_a.break_points_convertidos += 1
-            else:
-                stats_j.break_points_salvos += 1
-        else:
-            # Jogador tem break point contra adversário
-            stats_j.break_points_total += 1
-            stats_a.break_points_enfrentados += 1
-            if vencedor == "j":
-                stats_j.break_points_convertidos += 1
-            else:
-                stats_a.break_points_salvos += 1
-
-    intensidade = str(stats_info.get("intensidade", "")).strip().lower()
-    if intensidade == "curto":
-        stats_j.rallies_curtos += 1
-        stats_a.rallies_curtos += 1
-    elif intensidade == "medio":
-        stats_j.rallies_medios += 1
-        stats_a.rallies_medios += 1
-    elif intensidade in {"longo", "muito_longo"}:
-        stats_j.rallies_longos += 1
-        stats_a.rallies_longos += 1
+    return core_atualizar_estatisticas(stats_j, stats_a, vencedor, stats_info, contexto)
 
 
-def show_pause_menu(jogador, adversario, stats_j, stats_a, estrategias, modo_atual):
-    return ui_show_pause_menu(
-        jogador, adversario, stats_j, stats_a, estrategias, modo_atual
-    )
+def show_pause_menu(*_args, **_kwargs):
+    return None
 
 
-def exibir_estatisticas_set(
-    jogador,
-    adversario,
-    games_j,
-    games_a,
-    stats_j: EstatisticasPartida,
-    stats_a: EstatisticasPartida,
-    num_set: int,
-    stamina_fim_j: float = None,
-    stamina_fim_a: float = None,
-    stamina_pos_j: float = None,
-    stamina_pos_a: float = None,
-):
-    ui_exibir_estatisticas_set(
-        jogador,
-        adversario,
-        games_j,
-        games_a,
-        stats_j,
-        stats_a,
-        num_set,
-        stamina_fim_j=stamina_fim_j,
-        stamina_fim_a=stamina_fim_a,
-        stamina_pos_j=stamina_pos_j,
-        stamina_pos_a=stamina_pos_a,
-    )
+def exibir_estatisticas_set(*_args, **_kwargs):
+    return None
+
+
+_PLACAR_TXT = {0: "0", 1: "15", 2: "30", 3: "40"}
 
 
 def _placar_pontos_txt(ponto):
-    return ui_placar_pontos_txt(ponto)
+    return _PLACAR_TXT.get(ponto, str(ponto))
 
 
 def _atualizar_momentum(
     contexto_partida: ContextoPartida, contexto: ContextoPonto, vencedor: str
 ):
-    pj, pa = contexto.placar_game
-    (
-        contexto_partida.momentum_j,
-        contexto_partida.momentum_a,
-        contexto_partida.sequencia_j,
-        contexto_partida.sequencia_a,
-        contexto_partida.ultimo_vencedor,
-    ) = atualizar_momentum_contextual(
-        contexto_partida.momentum_j,
-        contexto_partida.momentum_a,
-        contexto_partida.sequencia_j,
-        contexto_partida.sequencia_a,
-        contexto_partida.ultimo_vencedor,
-        vencedor=vencedor,
-        is_match_point=contexto.is_match_point(),
-        is_set_point=contexto.is_set_point(),
-        is_break_point=contexto.is_break_point(),
-        is_tiebreak=contexto.is_tiebreak,
-        jogador_perdendo=contexto.jogador_perdendo(),
-        adversario_perdendo=contexto.adversario_perdendo(),
-        pj=pj,
-        pa=pa,
-    )
+    return core_atualizar_momentum(contexto_partida, contexto, vencedor)
 
 
 def _get_atributos_entidade(entidade) -> dict:
@@ -245,53 +114,21 @@ def _aplicar_custo_stamina(
     estrategia_adversario: dict,
     contexto: ContextoPonto = None,
 ):
-    atributos_j = _get_atributos_entidade(jogador)
-    atributos_a = _get_atributos_entidade(adversario)
-    psico_j = _get_psico_entidade(jogador)
-    psico_a = _get_psico_entidade(adversario)
-    contexto_flags = {
-        "is_break_point": bool(contexto and contexto.is_break_point()),
-        "is_set_point": bool(contexto and contexto.is_set_point()),
-        "is_match_point": bool(contexto and contexto.is_match_point()),
-    }
-    contexto_partida.stamina_j, contexto_partida.stamina_a = (
-        aplicar_custo_stamina_contextual(
-            contexto_partida.stamina_j,
-            contexto_partida.stamina_a,
-            stats_info=stats_info,
-            superficie=contexto_partida.superficie,
-            clima=contexto_partida.clima,
-            umidade=contexto_partida.umidade,
-            contexto_flags=contexto_flags,
-            atributos_j=atributos_j,
-            atributos_a=atributos_a,
-            psico_j=psico_j,
-            psico_a=psico_a,
-            estrategia_j=estrategia,
-            estrategia_a=estrategia_adversario,
-        )
+    return core_aplicar_custo_stamina(
+        contexto_partida,
+        stats_info,
+        jogador,
+        adversario,
+        estrategia,
+        estrategia_adversario,
+        contexto,
     )
 
 
 def _recuperar_stamina_entre_games(
     contexto_partida: ContextoPartida, jogador, adversario
 ):
-    fisico_j = _get_atributos_entidade(jogador).get("fisico", 50)
-    fisico_a = _get_atributos_entidade(adversario).get("fisico", 50)
-    contexto_partida.stamina_j = calcular_stamina_pos_recuperacao(
-        contexto_partida.stamina_j,
-        fisico=fisico_j,
-        indoor=contexto_partida.indoor,
-        clima=contexto_partida.clima,
-        umidade=contexto_partida.umidade,
-    )
-    contexto_partida.stamina_a = calcular_stamina_pos_recuperacao(
-        contexto_partida.stamina_a,
-        fisico=fisico_a,
-        indoor=contexto_partida.indoor,
-        clima=contexto_partida.clima,
-        umidade=contexto_partida.umidade,
-    )
+    return core_recuperar_stamina_entre_games(contexto_partida, jogador, adversario)
 
 
 def _normalizar_energia_pos_partida(
@@ -377,11 +214,11 @@ def _aplicar_impacto_moral_por_sets(jogador, resultado_sets, venceu_partida: boo
         moral_antes = int(getattr(jogador, "moral", 70))
         jogador.moral = max(0, min(100, moral_antes + delta))
         if delta < 0:
-            print_red(
+            logger.debug(
                 f"🧠 Derrota pesada em sets impactou a moral: {moral_antes}% -> {jogador.moral}%."
             )
         else:
-            print_green(
+            logger.debug(
                 f"🧠 Dominância em sets elevou a moral: {moral_antes}% -> {jogador.moral}%."
             )
 
@@ -398,13 +235,13 @@ def _aplicar_impacto_mental_set_em_andamento(
     if games_j > games_a:
         contexto_partida.momentum_j = min(6, contexto_partida.momentum_j + impacto)
         contexto_partida.momentum_a = max(0, contexto_partida.momentum_a - impacto)
-        print_green(
+        logger.debug(
             f"🧠 Set dominante aumentou sua confiança para o próximo set (+{impacto} momentum)."
         )
     else:
         contexto_partida.momentum_a = min(6, contexto_partida.momentum_a + impacto)
         contexto_partida.momentum_j = max(0, contexto_partida.momentum_j - impacto)
-        print_red(
+        logger.debug(
             f"🧠 Set encaçapante abalou a confiança para o próximo set (-{impacto} momentum)."
         )
 
@@ -492,54 +329,25 @@ def _aplicar_impacto_moral_por_resultado_ranking(
         moral_antes = int(getattr(jogador, "moral", 70))
         jogador.moral = max(0, min(100, moral_antes + delta))
         if delta > 0:
-            print_green(
+            logger.debug(
                 f"📈 Resultado acima da expectativa impactou moral: {moral_antes}% -> {jogador.moral}% (+{delta})."
             )
         else:
-            print_red(
+            logger.debug(
                 f"📉 Resultado abaixo da expectativa impactou moral: {moral_antes}% -> {jogador.moral}% ({delta})."
             )
 
 
 def _barra_stamina(valor: float, largura: int = 12) -> str:
-    return ui_barra_stamina(valor, largura=largura)
+    return ""
 
 
-def _exibir_tela_pre_partida(jogador, adversario, config: ConfigPartida):
-    ui_exibir_tela_pre_partida(jogador, adversario, config)
-    bonus = obter_bonus_rivalidade(jogador, _nome_entidade(adversario, "Adversário"))
-    if bonus.get("ativa"):
-        print_yellow(
-            f"⚔️ Você enfrenta seu rival {bonus['nome']}! H2H: {bonus['vitorias']}-{bonus['derrotas']}."
-        )
+def _exibir_tela_pre_partida(*_args, **_kwargs):
+    return None
 
 
-def _exibir_cabecalho_game(
-    jogador,
-    adversario,
-    games,
-    sets,
-    sacador_atual,
-    config,
-    contexto_partida,
-    modo_atual,
-    resultado_sets=None,
-    stamina_ref_j=None,
-    stamina_ref_a=None,
-):
-    ui_exibir_cabecalho_game(
-        jogador,
-        adversario,
-        games,
-        sets,
-        sacador_atual,
-        config,
-        contexto_partida,
-        modo_atual,
-        resultado_sets,
-        stamina_ref_j=stamina_ref_j,
-        stamina_ref_a=stamina_ref_a,
-    )
+def _exibir_cabecalho_game(*_args, **_kwargs):
+    return None
 
 
 def _alvo_tiebreak(sets: dict, sets_para_vencer: int, config: ConfigPartida) -> int:
@@ -549,69 +357,7 @@ def _alvo_tiebreak(sets: dict, sets_para_vencer: int, config: ConfigPartida) -> 
 
 
 def _definir_estrategia_auto(jogador, superficie: str) -> dict:
-    atributos = (
-        jogador.atributos
-        if hasattr(jogador, "atributos")
-        else jogador.get("atributos", {})
-    )
-    psico = (
-        getattr(jogador, "atributos_psicologicos", {})
-        if hasattr(jogador, "atributos_psicologicos")
-        else jogador.get("atributos_psicologicos", {})
-    )
-    saque = atributos.get("saque", 50)
-    voleio = atributos.get("voleio", 50)
-    slice_ = atributos.get("slice", 50)
-    forehand = atributos.get("forehand", 50)
-    backhand = atributos.get("backhand", 50)
-    topspin = atributos.get("topspin", 50)
-    movimento = atributos.get("movimento", 50)
-    winner = atributos.get("winner", 50)
-    agressividade = psico.get("agressividade", 50)
-    leitura = psico.get("leitura_de_jogo", 50)
-    determinacao = psico.get("determinacao", 50)
-
-    superficie = normalizar_superficie(superficie)
-    rede_score = saque * 0.4 + voleio * 0.4 + slice_ * 0.2
-    fundo_score = forehand * 0.35 + backhand * 0.35 + topspin * 0.3
-    variado_score = movimento * 0.4 + winner * 0.3 + saque * 0.3
-
-    if superficie == "grama":
-        rede_score *= 1.1
-    elif superficie == "saibro":
-        fundo_score *= 1.1
-
-    if rede_score >= fundo_score and rede_score >= variado_score:
-        estilo = "atacar_na_rede"
-    elif fundo_score >= variado_score:
-        estilo = "atacar_do_fundo"
-    else:
-        estilo = "atacar_pelo_meio"
-
-    intencao = IntencaoPonto.PACIENTE
-    if agressividade >= 68 or winner >= 74:
-        intencao = IntencaoPonto.ARRISCAR
-    elif leitura >= 68 and movimento >= 66:
-        intencao = IntencaoPonto.DEFENSIVO
-
-    saque_tipo = TipoSaque.VARIADO
-    if saque >= 74 and agressividade >= 62:
-        saque_tipo = TipoSaque.AGRESSIVO
-    elif determinacao < 45 or saque < 48:
-        saque_tipo = TipoSaque.SEGURO
-
-    segundo_saque = (
-        EstrategiaSaque.FORCAR
-        if agressividade >= 66 and saque >= 70
-        else EstrategiaSaque.SEGURO
-    )
-
-    return {
-        "estilo": estilo,
-        "intencao": intencao,
-        "saque_tipo": saque_tipo,
-        "saque": segundo_saque,
-    }
+    return core_definir_estrategia_auto(jogador, superficie)
 
 
 def _pct(numerador: int, denominador: int) -> float:
@@ -677,66 +423,23 @@ def simular_game_rapido(
     silencioso: bool = False,
     sets_para_vencer: int = 2,
 ):
-    """Simula um game completo no modo rápido."""
-    pontos = {"j": 0, "a": 0}
-    historico = []
-    nome_j = _nome_entidade(jogador, "Jogador")
-    nome_a = _nome_entidade(adversario, "Adversário")
-
-    while True:
-        # No deuce/advantage, normaliza o placar para o ContextoPonto reconhecer BP/SP/MP.
-        # Se um jogador tem vantagem, representamos como 4 contra 3.
-        pj_ctx, pa_ctx = pontos["j"], pontos["a"]
-        if pj_ctx >= 3 and pa_ctx >= 3:
-            if pj_ctx > pa_ctx:
-                pj_ctx, pa_ctx = 4, 3
-            elif pa_ctx > pj_ctx:
-                pj_ctx, pa_ctx = 3, 4
-            else:
-                pj_ctx, pa_ctx = 3, 3
-
-        contexto = ContextoPonto(
-            sacador=sacador,
-            placar_game=(pj_ctx, pa_ctx),
-            placar_set=placar_set,
-            placar_partida=placar_partida,
-            sets_para_vencer=sets_para_vencer,
-        )
-
-        vencedor, stats_info = simulador.simular_ponto_rapido(
-            estrategia, contexto, contexto_partida, estrategia_adversario
-        )
-        historico.append(vencedor)
-        _aplicar_custo_stamina(
-            contexto_partida,
-            stats_info,
-            jogador,
-            adversario,
-            estrategia,
-            estrategia_adversario,
-            contexto,
-        )
-        _atualizar_momentum(contexto_partida, contexto, vencedor)
-
-        # Atualiza estatísticas se fornecidas
-        if stats_j is not None and stats_a is not None:
-            atualizar_estatisticas(stats_j, stats_a, vencedor, stats_info, contexto)
-
-        pontos[vencedor] += 1
-        if pontos[vencedor] >= 4 and abs(pontos["j"] - pontos["a"]) >= 2:
-            return vencedor, historico, False
-
-        if not silencioso:
-            if pontos["j"] >= 3 and pontos["a"] >= 3:
-                if pontos["j"] == pontos["a"]:
-                    print("Deuce!")
-                else:
-                    nome_vantagem = nome_j if pontos["j"] > pontos["a"] else nome_a
-                    print(f"Advantage {nome_vantagem}")
-            else:
-                print(
-                    f"Placar: {nome_j} {_placar_pontos_txt(pontos['j'])} x {_placar_pontos_txt(pontos['a'])} {nome_a}"
-                )
+    return core_simular_game_rapido(
+        jogador,
+        adversario,
+        estrategia,
+        sacador,
+        placar_set,
+        placar_partida,
+        simulador,
+        contexto_partida,
+        estrategia_adversario,
+        stats_j=stats_j,
+        stats_a=stats_a,
+        silencioso=silencioso,
+        sets_para_vencer=sets_para_vencer,
+        placar_pontos_fn=_placar_pontos_txt,
+        log_fn=logger.debug,
+    )
 
 
 def _simular_game_interativo(
@@ -787,11 +490,11 @@ def _simular_game_interativo(
 
         # Mostra indicadores de momento importante
         if contexto.is_match_point():
-            print_yellow("\n*** MATCH POINT! ***")
+            logger.debug("\n*** MATCH POINT! ***")
         elif contexto.is_set_point():
-            print_yellow("\n*** SET POINT! ***")
+            logger.debug("\n*** SET POINT! ***")
         elif contexto.is_break_point():
-            print_yellow("\n*** BREAK POINT! ***")
+            logger.debug("\n*** BREAK POINT! ***")
 
         if estrategista:
             estrategia["intencao"] = escolher_intencao_ponto()
@@ -818,22 +521,22 @@ def _simular_game_interativo(
 
         # Mostra descrições
         for desc in descricoes:
-            print(desc)
+            logger.debug(desc)
 
         pontos[vencedor] += 1
         if pontos[vencedor] >= 4 and abs(pontos["j"] - pontos["a"]) >= 2:
             nome_vencedor = nome_j if vencedor == "j" else nome_a
-            print(f"Game para {nome_vencedor}!")
+            logger.debug(f"Game para {nome_vencedor}!")
             return vencedor, historico, False
 
         if pontos["j"] >= 3 and pontos["a"] >= 3:
             if pontos["j"] == pontos["a"]:
-                print("Deuce!")
+                logger.debug("Deuce!")
             else:
                 nome_vantagem = nome_j if pontos["j"] > pontos["a"] else nome_a
-                print(f"Advantage {nome_vantagem}")
+                logger.debug(f"Advantage {nome_vantagem}")
         else:
-            print(
+            logger.debug(
                 f"Placar: {nome_j} {_placar_pontos_txt(pontos['j'])} x {_placar_pontos_txt(pontos['a'])} {nome_a}"
             )
 
@@ -841,9 +544,9 @@ def _simular_game_interativo(
         interrupted = False
         start_time = time.time()
         while time.time() - start_time < 2.3:
-            if kbhit():
+            if False:
                 interrupted = True
-                get_char_non_blocking()  # Consume the character
+                ""  # Consume the character
                 break
             time.sleep(0.1)
 
@@ -946,7 +649,7 @@ def simular_resto_do_set(
     Returns:
         (games, sacador_atual, stats_j, stats_a)
     """
-    print("\nSimulando resto do set...")
+    logger.debug("\nSimulando resto do set...")
     nome_j = _nome_entidade(jogador, "Jogador")
     nome_a = _nome_entidade(adversario, "Adversário")
 
@@ -974,7 +677,7 @@ def simular_resto_do_set(
         sacador_atual = "a" if sacador_atual == "j" else "j"
 
         # Mostra progresso
-        print(f"  {nome_j} {games['j']} x {games['a']} {nome_a}")
+        logger.debug(f"  {nome_j} {games['j']} x {games['a']} {nome_a}")
 
         # Verifica fim do set
         if (games["j"] >= 6 or games["a"] >= 6) and abs(games["j"] - games["a"]) >= 2:
@@ -982,7 +685,7 @@ def simular_resto_do_set(
 
         # Tiebreak
         if games["j"] == 6 and games["a"] == 6:
-            print("  Tiebreak!")
+            logger.debug("  Tiebreak!")
             sets_dict = {"j": placar_partida[0], "a": placar_partida[1]}
             alvo = _alvo_tiebreak(sets_dict, sets_para_vencer, config)
             vencedor_tb, _, _ = simular_tiebreak(
@@ -1003,10 +706,10 @@ def simular_resto_do_set(
             games[vencedor_tb] += 1
             _recuperar_stamina_entre_games(contexto_partida, jogador, adversario)
             sacador_atual = "a" if sacador_atual == "j" else "j"
-            print(f"  Tiebreak: {nome_j} {games['j']} x {games['a']} {nome_a}")
+            logger.debug(f"  Tiebreak: {nome_j} {games['j']} x {games['a']} {nome_a}")
             break
 
-    print("Simulacao do set concluida!")
+    logger.debug("Simulacao do set concluida!")
     return games, sacador_atual, stats_j, stats_a
 
 
@@ -1059,7 +762,7 @@ def simular_tiebreak(
             )
             for desc in descricoes:
                 if not silencioso:
-                    print(desc)
+                    logger.debug(desc)
         else:
             vencedor, stats_info = simulador.simular_ponto_rapido(
                 estrategia, contexto, contexto_partida, estrategia_adversario
@@ -1082,7 +785,7 @@ def simular_tiebreak(
 
         pontos[vencedor] += 1
         if not silencioso:
-            print(f"Tiebreak: {nome_j} {pontos['j']} x {pontos['a']} {nome_a}")
+            logger.debug(f"Tiebreak: {nome_j} {pontos['j']} x {pontos['a']} {nome_a}")
 
         if (pontos["j"] >= alvo_pontos or pontos["a"] >= alvo_pontos) and abs(
             pontos["j"] - pontos["a"]
@@ -1251,8 +954,8 @@ def jogar_partida(
                 )
 
             if abandonou:
-                print(f"\n{nome_j} abandonou a partida!")
-                print(f"Vitoria por W.O. para {nome_a}")
+                logger.debug(f"\n{nome_j} abandonou a partida!")
+                logger.debug(f"Vitoria por W.O. para {nome_a}")
                 return nome_a, f"{nome_a} venceu por W.O.", 0
 
             games[vencedor] += 1
@@ -1262,8 +965,8 @@ def jogar_partida(
             if modo_ref["modo"] != ModoSimulacao.DETALHADO:
                 start_time = time.time()
                 while time.time() - start_time < 0.8:
-                    if kbhit():
-                        tecla = get_char_non_blocking().lower()
+                    if False:
+                        tecla = "".lower()
                         if tecla == "m":
                             modo_ref["modo"] = (
                                 ModoSimulacao.DETALHADO
@@ -1280,7 +983,7 @@ def jogar_partida(
 
             if games["j"] == 6 and games["a"] == 6:
                 alvo_tb = _alvo_tiebreak(sets, sets_para_vencer, config)
-                print(f"\nTIEBREAK (ate {alvo_tb})!")
+                logger.debug(f"\nTIEBREAK (ate {alvo_tb})!")
                 vencedor_tb, _, abandonou = simular_tiebreak(
                     jogador,
                     adversario,
@@ -1299,8 +1002,8 @@ def jogar_partida(
                 )
 
                 if abandonou:
-                    print(f"\n{nome_j} abandonou a partida!")
-                    print(f"Vitoria por W.O. para {nome_a}")
+                    logger.debug(f"\n{nome_j} abandonou a partida!")
+                    logger.debug(f"Vitoria por W.O. para {nome_a}")
                     return nome_a, f"{nome_a} venceu por W.O.", 0
 
                 games[vencedor_tb] += 1
@@ -1348,20 +1051,20 @@ def jogar_partida(
             is_jogador=False,
         )
         if dicas_ajuste:
-            print("\nAjustes táticos sugeridos/aplicados para o próximo set:")
+            logger.debug("\nAjustes táticos sugeridos/aplicados para o próximo set:")
             for dica in dicas_ajuste:
-                print(f" - {dica}")
+                logger.debug(f" - {dica}")
 
         if partida_continua:
-            print(f"\n{'='*54}")
-            print("  [c] Continuar")
-            print("  [e] Mudar estratégia")
-            print(f"{'='*54}")
-            escolha = safe_input("  Escolha: ").strip().lower()
+            logger.debug(f"\n{'='*54}")
+            logger.debug("  [c] Continuar")
+            logger.debug("  [e] Mudar estratégia")
+            logger.debug(f"{'='*54}")
+            escolha = ""  # CLI removed
             if escolha == "e":
                 estrategias = escolher_estrategias()
         else:
-            safe_input("\n  Pressione Enter para continuar...")
+            None  # CLI removed
 
         stats_total_j.merge(stats_set_j)
         stats_total_a.merge(stats_set_a)
@@ -1371,23 +1074,23 @@ def jogar_partida(
     placar_sets = "  ".join(f"{sj}-{sa}" for sj, sa in resultado)
     placar_final = f"{vencedor_final} {max(sets['j'], sets['a'])} x {min(sets['j'], sets['a'])} {perdedor_final}"
 
-    clear_screen()
+    None
     linha = "=" * 54
-    print(f"\n{linha}")
-    print_blue(f"{'PARTIDA FINALIZADA':^54}")
-    print(f"{linha}")
-    print()
+    logger.debug(f"\n{linha}")
+    logger.debug(f"{'PARTIDA FINALIZADA':^54}")
+    logger.debug(f"{linha}")
+    logger.debug()
     if vencedor_final == nome_j:
-        print_green("  🏆  VITÓRIA!")
+        logger.debug("  🏆  VITÓRIA!")
     else:
-        print_red("  😔  Derrota")
-    print(f"\n  {nome_j}  vs  {nome_a}")
-    print(f"  {placar_sets}")
-    print()
-    print(f"{linha}")
-    print_blue(f"{'ESTATÍSTICAS DA PARTIDA':^54}")
-    print(f"{linha}")
-    print(stats_total_j.exibir(nome_j, nome_a, stats_total_a))
+        logger.debug("  😔  Derrota")
+    logger.debug(f"\n  {nome_j}  vs  {nome_a}")
+    logger.debug(f"  {placar_sets}")
+    logger.debug()
+    logger.debug(f"{linha}")
+    logger.debug(f"{'ESTATÍSTICAS DA PARTIDA':^54}")
+    logger.debug(f"{linha}")
+    logger.debug(stats_total_j.exibir(nome_j, nome_a, stats_total_a))
 
     pontos_disputados = (
         stats_total_j.pontos_total_saque + stats_total_j.pontos_total_devolucao
@@ -1450,7 +1153,7 @@ def jogar_partida(
                 jogador, "_melhorias_naturais_pendentes_partida", melhorias_pendentes
             )
             if melhorias_pendentes:
-                print_yellow(
+                logger.debug(
                     "\n📌 Progressão natural registrada para aplicar após o torneio."
                 )
     else:
@@ -1464,12 +1167,12 @@ def jogar_partida(
             else {}
         )
         if melhorias:
-            print(f"\n{linha}")
-            print_green(f"{'📈  PROGRESSÃO NATURAL':^54}")
-            print(f"{linha}")
+            logger.debug(f"\n{linha}")
+            logger.debug(f"{'📈  PROGRESSÃO NATURAL':^54}")
+            logger.debug(f"{linha}")
             for attr, novo_val in melhorias.items():
-                print(f"  +1 {attr:<12} → {novo_val}")
-            print(f"{linha}")
+                logger.debug(f"  +1 {attr:<12} → {novo_val}")
+            logger.debug(f"{linha}")
 
     _aplicar_impacto_moral_por_sets(jogador, resultado, vencedor_final == nome_j)
     _aplicar_impacto_moral_por_resultado_ranking(
