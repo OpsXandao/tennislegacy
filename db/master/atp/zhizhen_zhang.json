@@ -1,0 +1,49 @@
+{
+  "nome": "Zhizhen Zhang",
+  "nacionalidade": "[CN]",
+  "idade": 29,
+  "overall": 78,
+  "pontos": 205,
+  "atributos": {
+    "saque": 54,
+    "forehand": 60,
+    "backhand": 58,
+    "topspin": 62,
+    "voleio": 54,
+    "slice": 72,
+    "movimento": 63,
+    "lob": 71,
+    "winner": 69,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 295,
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 58,
+    "leitura_de_jogo": 62,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 205,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 263,
+  "pontos_ranking": 205,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 83,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

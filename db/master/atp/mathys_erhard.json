@@ -1,0 +1,49 @@
+{
+  "nome": "Mathys Erhard",
+  "nacionalidade": "[FR]",
+  "idade": 24,
+  "overall": 77,
+  "pontos": 159,
+  "atributos": {
+    "saque": 50,
+    "forehand": 48,
+    "backhand": 55,
+    "topspin": 47,
+    "voleio": 51,
+    "slice": 40,
+    "movimento": 53,
+    "lob": 40,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 345,
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 49,
+    "leitura_de_jogo": 45,
+    "determinacao": 42
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 159,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 313,
+  "pontos_ranking": 159,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Nicolai Budkov Kjaer",
+  "nacionalidade": "[NO]",
+  "idade": 19,
+  "overall": 81,
+  "pontos": 395,
+  "atributos": {
+    "saque": 46,
+    "forehand": 56,
+    "backhand": 55,
+    "topspin": 47,
+    "voleio": 59,
+    "slice": 42,
+    "movimento": 51,
+    "lob": 56,
+    "winner": 60,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 186,
+  "atributos_psicologicos": {
+    "concentracao": 51,
+    "agressividade": 42,
+    "leitura_de_jogo": 34,
+    "determinacao": 56
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 395,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 154,
+  "pontos_ranking": 395,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

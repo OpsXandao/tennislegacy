@@ -1,0 +1,49 @@
+{
+  "nome": "Carlos Sanchez Jover",
+  "nacionalidade": "[ES]",
+  "idade": 25,
+  "overall": 77,
+  "pontos": 140,
+  "atributos": {
+    "saque": 54,
+    "forehand": 42,
+    "backhand": 47,
+    "topspin": 48,
+    "voleio": 44,
+    "slice": 55,
+    "movimento": 47,
+    "lob": 53,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 375,
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 53,
+    "leitura_de_jogo": 42,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 140,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 343,
+  "pontos_ranking": 140,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 173,
+  "peso": 84,
+  "mao_dominante": "Canhoto",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

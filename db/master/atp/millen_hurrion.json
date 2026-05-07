@@ -1,0 +1,49 @@
+{
+  "nome": "Millen Hurrion",
+  "nacionalidade": "[GB]",
+  "idade": 26,
+  "overall": 73,
+  "pontos": 45,
+  "atributos": {
+    "saque": 49,
+    "forehand": 48,
+    "backhand": 40,
+    "topspin": 52,
+    "voleio": 40,
+    "slice": 49,
+    "movimento": 48,
+    "lob": 52,
+    "winner": 50,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 746,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 42,
+    "leitura_de_jogo": 30,
+    "determinacao": 50
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 45,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 714,
+  "pontos_ranking": 45,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

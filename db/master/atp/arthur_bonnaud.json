@@ -1,0 +1,49 @@
+{
+  "nome": "Arthur Bonnaud",
+  "nacionalidade": "[FR]",
+  "idade": 28,
+  "overall": 69,
+  "pontos": 6,
+  "atributos": {
+    "saque": 40,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 46,
+    "voleio": 51,
+    "slice": 40,
+    "movimento": 40,
+    "lob": 52,
+    "winner": 54,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1297,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 46,
+    "leitura_de_jogo": 36,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 6,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1340,
+  "pontos_ranking": 6,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

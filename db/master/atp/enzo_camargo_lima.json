@@ -1,0 +1,49 @@
+{
+  "nome": "Enzo Camargo Lima",
+  "nacionalidade": "[BR]",
+  "idade": 22,
+  "overall": 70,
+  "pontos": 13,
+  "atributos": {
+    "saque": 50,
+    "forehand": 50,
+    "backhand": 54,
+    "topspin": 50,
+    "voleio": 54,
+    "slice": 42,
+    "movimento": 40,
+    "lob": 44,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1099,
+  "atributos_psicologicos": {
+    "concentracao": 43,
+    "agressividade": 33,
+    "leitura_de_jogo": 40,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 13,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1079,
+  "pontos_ranking": 13,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

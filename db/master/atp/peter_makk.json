@@ -1,0 +1,49 @@
+{
+  "nome": "Peter Makk",
+  "nacionalidade": "[HU]",
+  "idade": 24,
+  "overall": 72,
+  "pontos": 29,
+  "atributos": {
+    "saque": 44,
+    "forehand": 48,
+    "backhand": 51,
+    "topspin": 54,
+    "voleio": 51,
+    "slice": 50,
+    "movimento": 45,
+    "lob": 40,
+    "winner": 57,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 880,
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 30,
+    "leitura_de_jogo": 49,
+    "determinacao": 40
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 29,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 848,
+  "pontos_ranking": 29,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

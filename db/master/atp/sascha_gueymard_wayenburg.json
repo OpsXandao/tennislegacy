@@ -1,0 +1,49 @@
+{
+  "nome": "Sascha Gueymard Wayenburg",
+  "nacionalidade": "[FR]",
+  "idade": 22,
+  "overall": 78,
+  "pontos": 202,
+  "atributos": {
+    "saque": 56,
+    "forehand": 50,
+    "backhand": 44,
+    "topspin": 44,
+    "voleio": 45,
+    "slice": 55,
+    "movimento": 49,
+    "lob": 43,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 300,
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 45,
+    "leitura_de_jogo": 43,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 202,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 268,
+  "pontos_ranking": 202,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

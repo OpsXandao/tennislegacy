@@ -1,0 +1,65 @@
+{
+  "nome": "Damir Dzumhur",
+  "nacionalidade": "[BA]",
+  "idade": 33,
+  "overall": 84,
+  "pontos": 877,
+  "atributos": {
+    "saque": 68,
+    "forehand": 72,
+    "backhand": 70,
+    "topspin": 72,
+    "voleio": 73,
+    "slice": 71,
+    "movimento": 75,
+    "lob": 74,
+    "winner": 67,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 69,
+  "atributos_psicologicos": {
+    "concentracao": 65,
+    "agressividade": 53,
+    "leitura_de_jogo": 56,
+    "determinacao": 64
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 877,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Moscow",
+      "ano": 2017,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "St. Petersburg",
+      "ano": 2017,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Antalya",
+      "ano": 2018,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 26,
+  "pontos_ranking": 877,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

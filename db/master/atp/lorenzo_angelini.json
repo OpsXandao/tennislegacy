@@ -1,0 +1,49 @@
+{
+  "nome": "Lorenzo Angelini",
+  "nacionalidade": "[IT]",
+  "idade": 19,
+  "overall": 71,
+  "pontos": 21,
+  "atributos": {
+    "saque": 44,
+    "forehand": 46,
+    "backhand": 48,
+    "topspin": 41,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 40,
+    "lob": 46,
+    "winner": 41,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 974,
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 45,
+    "leitura_de_jogo": 30,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 21,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 944,
+  "pontos_ranking": 21,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 73,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

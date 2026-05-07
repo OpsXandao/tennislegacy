@@ -1,6 +1,5 @@
 import os
 import random
-import shutil
 from copy import deepcopy
 
 from src.calendario_participacao import (
@@ -9,35 +8,13 @@ from src.calendario_participacao import (
 )
 from src.dados import (
     carregar_estado_torneio,
-    get_caminho_ranking_duplas,
-    get_caminho_ranking_save,
     get_caminho_torneio_save,
 )
-from src.jogador import Jogador, normalizar_nome
-from src.jogar_partida import criar_config_partida, jogar_partida
-from src.progressao import (
-    handle_xp_e_level_up,
-    evoluir_npc_pos_torneio,
-)
-from src.fadiga import (
-    handle_fadiga_e_lesao,
-    handle_fadiga_e_lesao_npc,
-    recuperar_energia_entre_rodadas,
-)
+from src.jogador import normalizar_nome
+from src.progressao import evoluir_npc_pos_torneio
 from src.imprensa import disparar_entrevista
-from src.save import salvar_jogo
-from src.ranking import SistemaRanking
 from src.gerador_nomes import gerar_jogador_fraco
 from src.json_utils import salvar_json_seguro
-from src.io_utils import (
-    safe_input,
-    clear_screen,
-    print_blue,
-    print_green,
-    print_red,
-    print_yellow,
-)
-from src.duplas import fundir_dupla
 from src.torneio_profile import (
     TOURNAMENT_PROFILES,
     ENTRY_DIRECT_SELECTORS,
@@ -50,13 +27,6 @@ from src.torneio_constants import (
     RANKING_LIMITE_CHALLENGER,
     RANKING_LIMITE_ENTRADA_DIRETA,
     RANKING_LIMITE_ITF,
-    RANKING_TOP_POOL,
-    RANKING_TOP_20,
-    RANKING_TOP_50,
-    DRAW_SIZE_GRAND_SLAM,
-    DRAW_SIZE_ATP_1000,
-    DRAW_SIZE_PADRAO,
-    DRAW_SIZE_ATP_1000_R64,
     SEEDS_ATP_1000,
 )
 from src.torneio_npc import simular_partida_npc_basica
@@ -111,7 +81,10 @@ class Torneio:
         self.num_rounds = 0 if self._is_davis_cup() else self._perfil["num_rounds"]
 
     def _tipo_torneio(self):
-        return self.tournament_data.get("tipo", "")
+        tournament_data = getattr(self, "tournament_data", None) or {}
+        if isinstance(tournament_data, dict):
+            return tournament_data.get("tipo", "")
+        return ""
 
     def _is_grand_slam(self):
         return self._tipo_torneio() == "Grand Slam"
@@ -466,7 +439,7 @@ class Torneio:
     def _get_first_main_draw_phase(self):
         if self._is_davis_cup():
             return ""
-        return self._perfil["main_draw_first_phase"]
+        return self._perfil.get("main_draw_first_phase", "")
 
     def _aplicar_entry_info_estado(self, estado, entry_info):
         estado["entry_status"] = entry_info.get("status_entry", {})
@@ -655,8 +628,7 @@ class Torneio:
         estado.setdefault("resultados_duplas", {})
         estado.setdefault("agenda_dia", {})
         estado.setdefault("entry_status", {})
-        if self._reparar_main_draw_se_necessario(estado):
-            self._salvar_estado(estado)
+        self._reparar_main_draw_se_necessario(estado)
 
         return estado
 
@@ -676,8 +648,8 @@ class Torneio:
             )
             return {"draw_main": draw_main, "draw_qualy": 48, "vagas_qualy": 12}
         if "500" in tipo:
-            return {"draw_main": 23, "draw_qualy": 16, "vagas_qualy": 4}
-        return {"draw_main": 23, "draw_qualy": 16, "vagas_qualy": 4}
+            return {"draw_main": 25, "draw_qualy": 16, "vagas_qualy": 4}
+        return {"draw_main": 24, "draw_qualy": 16, "vagas_qualy": 4}
 
     def _ranking_limite_torneio(self):
         tipo = str(self._tipo_torneio() or "").lower()
@@ -811,7 +783,8 @@ class Torneio:
             0.12 if int(jogador.get("protected_ranking_semanas", 0) or 0) > 0 else 0.0
         )
         noise = random.uniform(0.0, 0.08)
-        return prob + bonus_home + bonus_surface + bonus_pr + noise
+        score = prob + bonus_home + bonus_surface + bonus_pr + noise
+        return min(1.0, score)
 
     def _selecionar_pool_torneio_realista(
         self, jogadores_aptos, total_necessario, priorizar_jogador=True
@@ -886,8 +859,6 @@ class Torneio:
 
     def escolher_participantes(self, todos_jogadores, priorizar_jogador=True):
         """Distribui jogadores entre Chave Principal, Qualy e Alternates."""
-        from src.torneio_logic import selecionar_entrada_direta
-
         params = self._parametros_participacao()
         nome_jogador_lower = normalizar_nome(self.jogador_nome)
 
@@ -1156,13 +1127,6 @@ class Torneio:
 
         return processar_simulacao_rodada(self, confrontos, modalidade)
 
-    def simular_torneio_restante(self, todos_jogadores):
-        estado = self._carregar_estado()
-        while estado["fase_atual"] != "finalizado":
-            self.simular_npcs_na_fase_atual(self.jogador_nome)
-            self._atualizar_fase_se_necessario(estado)
-            self._salvar_estado(estado)
-
     def simular_npcs_na_fase_atual(self, nome_jogador):
         estado = self._carregar_estado()
         fase = estado.get("fase_atual")
@@ -1331,165 +1295,157 @@ class Torneio:
 
         self._salvar_estado(estado)
 
-
-def _torneio_remover_confronto_do_jogador(self, fase, nome_jogador):
-    estado = self._carregar_estado()
-    confrontos = estado.get("rodadas", {}).get(fase, [])
-    estado.setdefault("rodadas", {})[fase] = [
-        confronto
-        for confronto in confrontos
-        if not any(
-            normalizar_nome(
-                item.get("nome", str(item)) if isinstance(item, dict) else str(item)
+    def remover_confronto_do_jogador(self, fase, nome_jogador):
+        estado = self._carregar_estado()
+        confrontos = estado.get("rodadas", {}).get(fase, [])
+        estado.setdefault("rodadas", {})[fase] = [
+            confronto
+            for confronto in confrontos
+            if not any(
+                normalizar_nome(
+                    item.get("nome", str(item)) if isinstance(item, dict) else str(item)
+                )
+                == normalizar_nome(nome_jogador)
+                for item in confronto
             )
-            == normalizar_nome(nome_jogador)
-            for item in confronto
-        )
-    ]
-    self._salvar_estado(estado)
-
-
-def _torneio_marcar_eliminacao_em_item(item, nome_jogador, fase_saida):
-    if isinstance(item, dict) and "nome" in item:
-        if normalizar_nome(item.get("nome", "")) == normalizar_nome(nome_jogador):
-            item["vivo"] = False
-            item["fase_saida"] = fase_saida
-        for valor in item.values():
-            _torneio_marcar_eliminacao_em_item(valor, nome_jogador, fase_saida)
-        return
-    if isinstance(item, list):
-        for valor in item:
-            _torneio_marcar_eliminacao_em_item(valor, nome_jogador, fase_saida)
-    elif isinstance(item, tuple):
-        for valor in item:
-            _torneio_marcar_eliminacao_em_item(valor, nome_jogador, fase_saida)
-
-
-def _torneio_resolver_walkovers_pendentes(self, estado, nome_jogador):
-    fase_atual = estado.get("fase_atual")
-    if not fase_atual or fase_atual == "finalizado":
-        return estado
-
-    nome_norm = normalizar_nome(nome_jogador)
-    confrontos = list(estado.get("rodadas", {}).get(fase_atual, []) or [])
-    confrontos_restantes = []
-    houve_walkover = False
-
-    for confronto in confrontos:
-        if not isinstance(confronto, (list, tuple)) or len(confronto) != 2:
-            confrontos_restantes.append(confronto)
-            continue
-
-        jogador_a, jogador_b = confronto
-        nomes_a = [normalizar_nome(nome) for nome in self._nomes_da_entidade(jogador_a)]
-        nomes_b = [normalizar_nome(nome) for nome in self._nomes_da_entidade(jogador_b)]
-        jogador_no_lado_a = nome_norm in nomes_a
-        jogador_no_lado_b = nome_norm in nomes_b
-
-        if not jogador_no_lado_a and not jogador_no_lado_b:
-            confrontos_restantes.append(confronto)
-            continue
-
-        adversario = jogador_b if jogador_no_lado_a else jogador_a
-        estado.setdefault("resultados", {}).setdefault(fase_atual, []).append(
-            {
-                "jogador_a": self.garantir_dados_completos(jogador_a),
-                "jogador_b": self.garantir_dados_completos(jogador_b),
-                "vencedor": self.garantir_dados_completos(adversario),
-                "resultado": "W.O.",
-                "walkover": True,
-                "desistencia_jogador": True,
-                "fase_saida": fase_atual,
-            }
-        )
-        houve_walkover = True
-
-    if houve_walkover:
-        estado.setdefault("rodadas", {})[fase_atual] = confrontos_restantes
-        estado["jogador_vivo"] = False
-        estado["desistencia_jogador"] = True
-        estado["jogador_fase_saida"] = fase_atual
-        _torneio_marcar_eliminacao_em_item(estado, nome_jogador, fase_atual)
-    return estado
-
-
-def _torneio_desistir_do_torneio(self):
-    estado = self._carregar_estado()
-    if estado.get("fase_atual") == "finalizado":
-        return False
-
-    estado["jogador_vivo"] = False
-    estado["desistencia_jogador"] = True
-    estado["jogador_fase_saida"] = estado.get("fase_atual")
-    _torneio_marcar_eliminacao_em_item(
-        estado, self.jogador_nome, estado.get("fase_atual")
-    )
-    for entrada in estado.get("direct_entries", []) or []:
-        if isinstance(entrada, dict) and normalizar_nome(
-            entrada.get("nome", "")
-        ) == normalizar_nome(self.jogador_nome):
-            entrada["vivo"] = False
-            entrada["fase_saida"] = estado.get("fase_atual")
-    estado = _torneio_resolver_walkovers_pendentes(self, estado, self.jogador_nome)
-    self._salvar_estado(estado)
-    return True
-
-
-def _torneio_simular_torneio_restante(self, todos_jogadores=None):
-    estado = self._carregar_estado()
-    estado = _torneio_resolver_walkovers_pendentes(self, estado, self.jogador_nome)
-    self._salvar_estado(estado)
-
-    while True:
-        estado = self._carregar_estado()
-        if estado.get("fase_atual") == "finalizado":
-            break
-        self.simular_npcs_na_fase_atual(self.jogador_nome)
-        estado = self._carregar_estado()
-        self._atualizar_fase_se_necessario(estado)
+        ]
         self._salvar_estado(estado)
 
+    def _marcar_eliminacao_em_item(self, item, nome_jogador, fase_saida):
+        if isinstance(item, dict) and "nome" in item:
+            if normalizar_nome(item.get("nome", "")) == normalizar_nome(nome_jogador):
+                item["vivo"] = False
+                item["fase_saida"] = fase_saida
+            for valor in item.values():
+                self._marcar_eliminacao_em_item(valor, nome_jogador, fase_saida)
+            return
+        if isinstance(item, list):
+            for valor in item:
+                self._marcar_eliminacao_em_item(valor, nome_jogador, fase_saida)
+        elif isinstance(item, tuple):
+            for valor in item:
+                self._marcar_eliminacao_em_item(valor, nome_jogador, fase_saida)
 
-def _torneio_distribuir_pontos_duplas(self, estado, nome_save):
-    from src.dados import carregar_temporada, get_caminho_ranking_duplas
-    from src.ranking import SistemaRanking
+    def _resolver_walkovers_pendentes(self, estado, nome_jogador):
+        fase_atual = estado.get("fase_atual")
+        if not fase_atual or fase_atual == "finalizado":
+            return estado
 
-    temporada = carregar_temporada(nome_save) or {"semana": 1, "ano": 2026}
-    ranking = getattr(self, "ranking", None) or SistemaRanking(
-        get_caminho_ranking_duplas(
-            nome_save, genero=getattr(self, "genero", "masculino")
-        ),
-        modalidade="duplas",
-    )
+        nome_norm = normalizar_nome(nome_jogador)
+        confrontos = list(estado.get("rodadas", {}).get(fase_atual, []) or [])
+        confrontos_restantes = []
+        houve_walkover = False
 
-    for fase, resultados in (estado.get("resultados_duplas") or {}).items():
-        for resultado in resultados:
-            vencedor = resultado.get("vencedor", {})
-            nome_vencedor = (
-                vencedor.get("nome", "")
-                if isinstance(vencedor, dict)
-                else str(vencedor)
-            )
-            if not nome_vencedor:
+        for confronto in confrontos:
+            if not isinstance(confronto, (list, tuple)) or len(confronto) != 2:
+                confrontos_restantes.append(confronto)
                 continue
-            ranking.adicionar_pontos(
-                nome_vencedor,
-                10,
-                temporada.get("semana", 1) + 52,
-                modalidade="duplas",
-                ano_exp=temporada.get("ano", 2026),
-                metadados={"torneio": getattr(self, "nome_torneio_atual", "")},
+
+            jogador_a, jogador_b = confronto
+            nomes_a = [
+                normalizar_nome(nome) for nome in self._nomes_da_entidade(jogador_a)
+            ]
+            nomes_b = [
+                normalizar_nome(nome) for nome in self._nomes_da_entidade(jogador_b)
+            ]
+            jogador_no_lado_a = nome_norm in nomes_a
+            jogador_no_lado_b = nome_norm in nomes_b
+
+            if not jogador_no_lado_a and not jogador_no_lado_b:
+                confrontos_restantes.append(confronto)
+                continue
+
+            adversario = jogador_b if jogador_no_lado_a else jogador_a
+            estado.setdefault("resultados", {}).setdefault(fase_atual, []).append(
+                {
+                    "jogador_a": self.garantir_dados_completos(jogador_a),
+                    "jogador_b": self.garantir_dados_completos(jogador_b),
+                    "vencedor": self.garantir_dados_completos(adversario),
+                    "resultado": "W.O.",
+                    "walkover": True,
+                    "desistencia_jogador": True,
+                    "fase_saida": fase_atual,
+                }
             )
-    ranking.salvar_ranking()
+            houve_walkover = True
 
+        if houve_walkover:
+            estado.setdefault("rodadas", {})[fase_atual] = confrontos_restantes
+            estado["jogador_vivo"] = False
+            estado["desistencia_jogador"] = True
+            estado["jogador_fase_saida"] = fase_atual
+            self._marcar_eliminacao_em_item(estado, nome_jogador, fase_atual)
+        return estado
 
-if not hasattr(Torneio, "remover_confronto_do_jogador"):
-    Torneio.remover_confronto_do_jogador = _torneio_remover_confronto_do_jogador
+    def desistir_do_torneio(self):
+        estado = self._carregar_estado()
+        if estado.get("fase_atual") == "finalizado":
+            return False
 
-if not hasattr(Torneio, "desistir_do_torneio"):
-    Torneio.desistir_do_torneio = _torneio_desistir_do_torneio
+        estado["jogador_vivo"] = False
+        estado["desistencia_jogador"] = True
+        estado["jogador_fase_saida"] = estado.get("fase_atual")
+        self._marcar_eliminacao_em_item(
+            estado, self.jogador_nome, estado.get("fase_atual")
+        )
+        for entrada in estado.get("direct_entries", []) or []:
+            if isinstance(entrada, dict) and normalizar_nome(
+                entrada.get("nome", "")
+            ) == normalizar_nome(self.jogador_nome):
+                entrada["vivo"] = False
+                entrada["fase_saida"] = estado.get("fase_atual")
+        estado = self._resolver_walkovers_pendentes(estado, self.jogador_nome)
+        self._salvar_estado(estado)
+        return True
 
-Torneio.simular_torneio_restante = _torneio_simular_torneio_restante
+    def simular_torneio_restante(self, todos_jogadores=None):
+        estado = self._carregar_estado()
+        estado = self._resolver_walkovers_pendentes(estado, self.jogador_nome)
+        self._salvar_estado(estado)
 
-if not hasattr(Torneio, "_distribuir_pontos_duplas"):
-    Torneio._distribuir_pontos_duplas = _torneio_distribuir_pontos_duplas
+        while True:
+            estado = self._carregar_estado()
+            if estado.get("fase_atual") == "finalizado":
+                break
+            self.simular_npcs_na_fase_atual(self.jogador_nome)
+            estado = self._carregar_estado()
+            self._atualizar_fase_se_necessario(estado)
+            self._salvar_estado(estado)
+        estado_final = self._carregar_estado()
+        return estado_final.get("campeao_simples")
+
+    def _distribuir_pontos_duplas(self, estado, nome_save):
+        from src.dados import carregar_temporada, get_caminho_ranking_duplas
+        from src.ranking import SistemaRanking
+
+        if estado.get("pontos_duplas_distribuidos"):
+            return
+
+        temporada = carregar_temporada(nome_save) or {"semana": 1, "ano": 2026}
+        ranking = SistemaRanking(
+            get_caminho_ranking_duplas(
+                nome_save, genero=getattr(self, "genero", "masculino")
+            ),
+            modalidade="duplas",
+        )
+
+        for fase, resultados in (estado.get("resultados_duplas") or {}).items():
+            for resultado in resultados:
+                vencedor = resultado.get("vencedor", {})
+                nome_vencedor = (
+                    vencedor.get("nome", "")
+                    if isinstance(vencedor, dict)
+                    else str(vencedor)
+                )
+                if not nome_vencedor:
+                    continue
+                ranking.adicionar_pontos(
+                    nome_vencedor,
+                    10,
+                    temporada.get("semana", 1) + 52,
+                    modalidade="duplas",
+                    ano_exp=temporada.get("ano", 2026),
+                    metadados={"torneio": getattr(self, "nome_torneio_atual", "")},
+                )
+        ranking.salvar_ranking()
+        estado["pontos_duplas_distribuidos"] = True

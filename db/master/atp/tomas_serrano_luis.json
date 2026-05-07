@@ -1,0 +1,49 @@
+{
+  "nome": "Tomas Serrano Luis",
+  "nacionalidade": "[PT]",
+  "idade": 23,
+  "overall": 71,
+  "pontos": 24,
+  "atributos": {
+    "saque": 53,
+    "forehand": 44,
+    "backhand": 55,
+    "topspin": 44,
+    "voleio": 40,
+    "slice": 42,
+    "movimento": 46,
+    "lob": 51,
+    "winner": 55,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 932,
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 38,
+    "leitura_de_jogo": 54,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 24,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 902,
+  "pontos_ranking": 24,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

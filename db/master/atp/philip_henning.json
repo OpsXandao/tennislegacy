@@ -1,0 +1,49 @@
+{
+  "nome": "Philip Henning",
+  "nacionalidade": "[ZA]",
+  "idade": 25,
+  "overall": 77,
+  "pontos": 154,
+  "atributos": {
+    "saque": 46,
+    "forehand": 52,
+    "backhand": 40,
+    "topspin": 50,
+    "voleio": 43,
+    "slice": 44,
+    "movimento": 54,
+    "lob": 56,
+    "winner": 56,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 354,
+  "atributos_psicologicos": {
+    "concentracao": 35,
+    "agressividade": 43,
+    "leitura_de_jogo": 32,
+    "determinacao": 33
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 154,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 322,
+  "pontos_ranking": 154,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 65,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

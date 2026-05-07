@@ -1,0 +1,67 @@
+{
+  "nome": "Marcel Granollers",
+  "nacionalidade": "[RU] Rússia",
+  "idade": 18,
+  "overall": 95,
+  "pontos": 8045,
+  "id": 34898,
+  "atributos": {
+    "saque": 93,
+    "forehand": 98,
+    "backhand": 93,
+    "topspin": 98,
+    "voleio": 96,
+    "slice": 96,
+    "movimento": 98,
+    "lob": 95,
+    "fisico": 98,
+    "winner": 87,
+    "duplas": 103
+  },
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 41,
+    "leitura_de_jogo": 64,
+    "determinacao": 41
+  },
+  "pontos_detalhados": [],
+  "trofeus": [
+    {
+      "nome": "Houston",
+      "ano": 2008,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Gstaad",
+      "ano": 2011,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Valencia",
+      "ano": 2011,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Kitzbuhel",
+      "ano": 2013,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 1000,
+  "pontos_duplas": 8045,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 28,
+  "pontos_ranking": 8045,
+  "is_bot": false,
+  "is_lean": false,
+  "genero": "masculino",
+  "altura": 191,
+  "peso": 90,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Aggressive Baseliner",
+  "pontos_ranking_duplas": 8045,
+  "rank_duplas": 3
+}

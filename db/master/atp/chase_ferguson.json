@@ -1,0 +1,49 @@
+{
+  "nome": "Chase Ferguson",
+  "nacionalidade": "[AU]",
+  "idade": 27,
+  "overall": 73,
+  "pontos": 50,
+  "atributos": {
+    "saque": 40,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 51,
+    "movimento": 40,
+    "lob": 41,
+    "winner": 48,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 709,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 49,
+    "leitura_de_jogo": 38,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 50,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 677,
+  "pontos_ranking": 50,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

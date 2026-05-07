@@ -1,0 +1,49 @@
+{
+  "nome": "Ivan Gakhov",
+  "nacionalidade": "[RU]",
+  "idade": 29,
+  "overall": 78,
+  "pontos": 219,
+  "atributos": {
+    "saque": 51,
+    "forehand": 56,
+    "backhand": 50,
+    "topspin": 44,
+    "voleio": 57,
+    "slice": 51,
+    "movimento": 50,
+    "lob": 51,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 285,
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 40,
+    "leitura_de_jogo": 48,
+    "determinacao": 42
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 219,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 253,
+  "pontos_ranking": 219,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 72,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

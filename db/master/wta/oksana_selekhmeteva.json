@@ -1,0 +1,51 @@
+{
+  "nome": "Oksana Selekhmeteva",
+  "nacionalidade": "[RU]",
+  "genero": "feminino",
+  "idade": 23,
+  "pontos": 917,
+  "pontos_ranking": 917,
+  "overall": 84,
+  "atributos": {
+    "saque": 70,
+    "forehand": 71,
+    "backhand": 68,
+    "topspin": 72,
+    "voleio": 68,
+    "slice": 69,
+    "movimento": 73,
+    "lob": 73,
+    "fisico": 77,
+    "winner": 72,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 73,
+    "agressividade": 71,
+    "leitura_de_jogo": 75,
+    "determinacao": 69
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 917,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 174,
+  "peso": 63,
+  "mao_dominante": "Canhota",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

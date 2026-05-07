@@ -1,0 +1,49 @@
+{
+  "nome": "Jan Lennard Struff",
+  "nacionalidade": "[DE] Alemanha",
+  "idade": 18,
+  "overall": 83,
+  "pontos": 706,
+  "atributos": {
+    "saque": 76,
+    "forehand": 65,
+    "backhand": 79,
+    "topspin": 74,
+    "voleio": 64,
+    "slice": 73,
+    "movimento": 69,
+    "lob": 59,
+    "winner": 64,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 2273,
+  "atributos_psicologicos": {
+    "concentracao": 70,
+    "agressividade": 61,
+    "leitura_de_jogo": 58,
+    "determinacao": 56
+  },
+  "pontos_detalhados": [],
+  "trofeus": [
+    {
+      "nome": "Munich",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 80,
+  "pontos_ranking": 706,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 91,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Juan Pablo Ficovich",
+  "nacionalidade": "[AR]",
+  "idade": 29,
+  "overall": 80,
+  "pontos": 343,
+  "atributos": {
+    "saque": 41,
+    "forehand": 57,
+    "backhand": 59,
+    "topspin": 42,
+    "voleio": 41,
+    "slice": 43,
+    "movimento": 50,
+    "lob": 41,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 210,
+  "atributos_psicologicos": {
+    "concentracao": 34,
+    "agressividade": 48,
+    "leitura_de_jogo": 55,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 343,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 178,
+  "pontos_ranking": 343,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

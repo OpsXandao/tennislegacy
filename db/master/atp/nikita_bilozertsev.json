@@ -1,0 +1,49 @@
+{
+  "nome": "Nikita Bilozertsev",
+  "nacionalidade": "[UA]",
+  "idade": 17,
+  "overall": 72,
+  "pontos": 34,
+  "atributos": {
+    "saque": 44,
+    "forehand": 53,
+    "backhand": 46,
+    "topspin": 49,
+    "voleio": 57,
+    "slice": 41,
+    "movimento": 52,
+    "lob": 41,
+    "winner": 48,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 833,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 47,
+    "leitura_de_jogo": 48,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 34,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 801,
+  "pontos_ranking": 34,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,548 @@
+@custom-variant dark (&:is(.dark *));
+
+/* ── Light mode — "Court Day" ───────────────────────────────
+   Paleta baseada em quadra esportiva clara:
+   Anti-White Flash, Pear, Marian Blue e Oxford Blue.
+   Sem neon no light mode; a linguagem visual aqui é limpa,
+   esportiva e gráfica.
+────────────────────────────────────────────────────────────── */
+body.light-mode {
+  /* Superfícies */
+  --bg-dark:          #dfe7f2;
+  --bg-canvas:        #f3f5f7;
+  --surface-card:     #fbfcfd;
+  --surface-elevated: #ffffff;
+  --surface-overlay:  rgba(243, 245, 247, 0.96);
+  --surface-grid:     rgba(0, 39, 82, 0.05);
+
+  /* Texto */
+  --text-primary:     #002752;
+  --text-secondary:   #35506f;
+  --text-faint:       #6e87a2;
+
+  /* Alias semânticos */
+  --background:       var(--bg-canvas);
+  --foreground:       var(--text-primary);
+  --card:             var(--surface-card);
+  --card-foreground:  var(--text-primary);
+  --muted:            #e8edf3;
+  --muted-foreground: var(--text-secondary);
+
+  /* Divisórias */
+  --line-subtle:      rgba(0, 39, 82, 0.08);
+  --line-strong:      rgba(0, 39, 82, 0.16);
+  --panel-shadow:     0 8px 24px rgba(0, 39, 82, 0.08), 0 2px 8px rgba(0, 39, 82, 0.06);
+
+  /* Inputs */
+  --input-background: #eef2f6;
+  --switch-background: #d8e0ea;
+
+  /* Acentos claros */
+  --neon-green:    #bfe800;
+  --neon-pink:     #002752;
+  --neon-yellow:   #003e93;
+  --neon-cyan:     #003e93;
+
+  /* Sem glow neon no modo claro */
+  --glow-green:    0 0 0 transparent;
+  --glow-pink:     0 0 0 transparent;
+  --glow-gold:     0 0 0 transparent;
+  --glow-cyan:     0 0 0 transparent;
+  --glow-green-sm: 0 0 0 transparent;
+  --glow-pink-sm:  0 0 0 transparent;
+  --glow-gold-sm:  0 0 0 transparent;
+  --glow-cyan-sm:  0 0 0 transparent;
+
+  /* Text glow vira texto simples — sem brilho */
+  --text-glow-green: none;
+  --text-glow-pink:  none;
+  --text-glow-gold:  none;
+  --text-glow-cyan:  none;
+}
+
+/* Remove scanlines (não faz sentido em fundo claro) */
+body.light-mode::before {
+  display: none;
+}
+
+/* Vinheta mais suave */
+body.light-mode::after {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 56%,
+    rgba(0, 39, 82, 0.06) 100%
+  );
+}
+
+/* Fundo do body em light mode */
+body.light-mode {
+  background:
+    radial-gradient(ellipse at top left, rgba(191, 232, 0, 0.12), transparent 30%),
+    radial-gradient(ellipse at bottom right, rgba(0, 62, 147, 0.10), transparent 34%),
+    linear-gradient(135deg, rgba(0, 39, 82, 0.05) 0%, transparent 48%),
+    linear-gradient(180deg, var(--bg-canvas) 0%, var(--bg-dark) 100%);
+}
+
+/* Painéis e cards */
+body.light-mode .app-panel {
+  background: linear-gradient(180deg, var(--surface-elevated) 0%, var(--surface-card) 100%);
+  box-shadow: var(--panel-shadow);
+}
+
+/* ── Overrides de cores hardcoded nos screens ── */
+
+/* Textos acinzentados */
+body.light-mode [class*="text-[#888]"],
+body.light-mode [class*="text-[#666]"],
+body.light-mode [class*="text-[#777]"] { color: var(--text-secondary) !important; }
+body.light-mode [class*="text-[#333]"],
+body.light-mode [class*="text-[#444]"] { color: var(--text-faint) !important; }
+
+/* Textos neon → versão diurna do mesmo acento */
+body.light-mode [class*="text-[#00ff88]"] { color: var(--neon-green) !important; }
+body.light-mode [class*="text-[#ff0055]"] { color: var(--neon-pink) !important; }
+body.light-mode [class*="text-[#ffe600]"] { color: var(--neon-yellow) !important; }
+body.light-mode [class*="text-[#00e5ff]"] { color: var(--neon-cyan) !important; }
+body.light-mode [class*="text-[#ff4466]"] { color: var(--neon-pink) !important; }
+body.light-mode [class*="text-pink-600"],
+body.light-mode [class*="text-pink-400"] { color: var(--neon-pink) !important; }
+
+/* Fundos escuros sólidos */
+body.light-mode [class*="bg-[#0a0a0a]"],
+body.light-mode [class*="bg-[#111]"],
+body.light-mode [class*="bg-[#1a1a2e]"] { background-color: var(--surface-card) !important; }
+body.light-mode [class*="bg-[#001a10]"],
+body.light-mode [class*="bg-[#00140a]"] { background-color: color-mix(in srgb, var(--neon-green) 10%, var(--surface-card)) !important; }
+body.light-mode [class*="bg-[#001824]"],
+body.light-mode [class*="bg-[#00040d]"] { background-color: color-mix(in srgb, var(--neon-cyan) 10%, var(--surface-card)) !important; }
+body.light-mode [class*="bg-[#1a0010]"],
+body.light-mode [class*="bg-[#0f0c00]"],
+body.light-mode [class*="bg-[#1a1400]"] { background-color: color-mix(in srgb, var(--neon-pink) 8%, var(--surface-card)) !important; }
+
+/* bg-black e variantes com opacidade */
+body.light-mode [class*="bg-black"] {
+  background-color: rgba(243, 245, 247, var(--tw-bg-opacity, 1)) !important;
+}
+
+/* Bordas escuras */
+body.light-mode [class*="border-[#333]"],
+body.light-mode [class*="border-[#444]"] { border-color: var(--line-strong) !important; }
+
+/* Bordas neon — mantem a cor do acento diurno correspondente */
+body.light-mode [class*="border-[#00ff88]"] { border-color: var(--neon-green) !important; }
+body.light-mode [class*="border-[#ff0055]"] { border-color: var(--neon-pink) !important; }
+body.light-mode [class*="border-[#ffe600]"] { border-color: var(--neon-yellow) !important; }
+body.light-mode [class*="border-[#00e5ff]"] { border-color: var(--neon-cyan) !important; }
+body.light-mode [class*="border-[#ff4466]"] { border-color: var(--neon-pink) !important; }
+
+body.light-mode .app-next-step {
+  border-color: #002752 !important;
+  background: linear-gradient(135deg, rgba(0, 39, 82, 0.10) 0%, rgba(0, 62, 147, 0.06) 100%) !important;
+}
+
+body.light-mode .app-next-step:hover {
+  background: linear-gradient(135deg, rgba(0, 39, 82, 0.16) 0%, rgba(0, 62, 147, 0.10) 100%) !important;
+  box-shadow: 0 0 0 transparent, 0 12px 24px rgba(0, 39, 82, 0.14) !important;
+}
+
+body.light-mode .app-next-step-title {
+  color: #002752 !important;
+}
+
+body.light-mode .app-player-screen {
+  --player-accent-primary: #002752;
+  --player-accent-secondary: #003e93;
+  --player-accent-highlight: #bfe800;
+  --player-accent-soft: #35506f;
+}
+
+body.light-mode .app-player-screen .app-panel,
+body.light-mode .app-player-screen [class*="bg-[#111]"] {
+  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(248,250,252,0.98) 100%) !important;
+  box-shadow: 0 10px 24px rgba(0, 39, 82, 0.08) !important;
+}
+
+body.light-mode .app-player-screen [class*="border-[#00ff88]"] {
+  border-color: var(--player-accent-highlight) !important;
+}
+
+body.light-mode .app-player-screen [class*="border-[#00e5ff]"],
+body.light-mode .app-player-screen [class*="border-[#ffe600]"],
+body.light-mode .app-player-screen [class*="border-[#ff0055]"] {
+  border-color: var(--player-accent-secondary) !important;
+}
+
+body.light-mode .app-player-screen [class*="text-[#00ff88]"] {
+  color: var(--player-accent-highlight) !important;
+}
+
+body.light-mode .app-player-screen [class*="text-[#00e5ff]"],
+body.light-mode .app-player-screen [class*="text-[#ffe600]"],
+body.light-mode .app-player-screen [class*="text-[#ff0055]"] {
+  color: var(--player-accent-secondary) !important;
+}
+
+body.light-mode .app-player-screen [class*="text-white"] {
+  color: var(--player-accent-primary) !important;
+}
+
+body.light-mode .app-player-screen [class*="text-[#888]"],
+body.light-mode .app-player-screen [class*="text-[#666]"],
+body.light-mode .app-player-screen [class*="text-[#555]"],
+body.light-mode .app-player-screen [class*="text-[#444]"],
+body.light-mode .app-player-screen [class*="text-[#333]"] {
+  color: var(--text-secondary) !important;
+}
+
+body.light-mode .app-player-screen [class*="bg-[#ffe600]/5"],
+body.light-mode .app-player-screen [class*="bg-[#00ff88]/20"],
+body.light-mode .app-player-screen [class*="bg-[#ff0055]/20"] {
+  background-color: color-mix(in srgb, var(--player-accent-secondary) 8%, white) !important;
+}
+
+body.light-mode .app-player-screen [class*="bg-[#222]"] {
+  background-color: #dfe7f2 !important;
+}
+
+body.light-mode .app-player-screen [class*="border-[#333]"] ,
+body.light-mode .app-player-screen [class*="border-[#666]"],
+body.light-mode .app-player-screen [class*="border-[#222]"],
+body.light-mode .app-player-screen [class*="border-[#1a1a1a]"],
+body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
+  border-color: rgba(0, 39, 82, 0.12) !important;
+}
+
+:root {
+  /* TennisLegacy arcade theme with role-based accents */
+  --font-pixel: 'Press Start 2P', cursive;
+  --font-arcade: 'Orbitron', sans-serif;
+  
+  /* Core surfaces */
+  --bg-dark: #08131a;
+  --bg-canvas: #0d1b23;
+  --surface-card: #101f28;
+  --surface-elevated: #162934;
+  --surface-overlay: rgba(8, 19, 26, 0.94);
+  --surface-grid: rgba(0, 224, 168, 0.06);
+  --text-primary: #eafbf6;
+  --text-secondary: #90a6af;
+  --text-faint: #61757e;
+  --line-subtle: rgba(186, 255, 234, 0.08);
+  --line-strong: rgba(186, 255, 234, 0.18);
+  --panel-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+
+  /* Role accents */
+  --neon-green: #2ff7a1;
+  --neon-pink: #ff4f7d;
+  --neon-yellow: #ffd447;
+  --neon-cyan: #39d8ff;
+
+  /* Glow box-shadows */
+  --glow-green:  0 0 6px var(--neon-green), 0 0 16px var(--neon-green), 0 0 30px rgba(47,247,161,0.28);
+  --glow-pink:   0 0 6px var(--neon-pink), 0 0 16px var(--neon-pink), 0 0 30px rgba(255,79,125,0.26);
+  --glow-gold:   0 0 6px var(--neon-yellow), 0 0 16px var(--neon-yellow), 0 0 30px rgba(255,212,71,0.24);
+  --glow-cyan:   0 0 6px var(--neon-cyan), 0 0 16px var(--neon-cyan), 0 0 30px rgba(57,216,255,0.26);
+  --glow-green-sm:  0 0 4px var(--neon-green), 0 0 10px rgba(47,247,161,0.26);
+  --glow-pink-sm:   0 0 4px var(--neon-pink), 0 0 10px rgba(255,79,125,0.24);
+  --glow-gold-sm:   0 0 4px var(--neon-yellow), 0 0 10px rgba(255,212,71,0.22);
+  --glow-cyan-sm:   0 0 4px var(--neon-cyan), 0 0 10px rgba(57,216,255,0.24);
+
+  /* Text glows */
+  --text-glow-green: 0 0 6px var(--neon-green), 0 0 12px rgba(47,247,161,0.42);
+  --text-glow-pink:  0 0 6px var(--neon-pink), 0 0 12px rgba(255,79,125,0.38);
+  --text-glow-gold:  0 0 6px var(--neon-yellow), 0 0 12px rgba(255,212,71,0.34);
+  --text-glow-cyan:  0 0 6px var(--neon-cyan), 0 0 12px rgba(57,216,255,0.38);
+  
+  /* Legacy theme variables for compatibility */
+  --font-size: 16px;
+  --background: var(--bg-dark);
+  --foreground: var(--text-primary);
+  --card: var(--surface-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-card);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--neon-green);
+  --primary-foreground: #000000;
+  --secondary: var(--neon-pink);
+  --secondary-foreground: #ffffff;
+  --muted: #2a2a3e;
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--neon-yellow);
+  --accent-foreground: #000000;
+  --destructive: var(--neon-pink);
+  --destructive-foreground: #ffffff;
+  --border: var(--neon-green);
+  --input: transparent;
+  --input-background: #1a1a2e;
+  --switch-background: #2a2a3e;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --ring: var(--neon-green);
+  --radius: 0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  
+  /* TennisLegacy custom colors */
+  --color-neon-green: var(--neon-green);
+  --color-neon-pink: var(--neon-pink);
+  --color-neon-yellow: var(--neon-yellow);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-surface-card: var(--surface-card);
+  
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-arcade);
+    background:
+      radial-gradient(circle at top, rgba(57, 216, 255, 0.08), transparent 34%),
+      radial-gradient(circle at bottom right, rgba(47, 247, 161, 0.08), transparent 28%),
+      linear-gradient(180deg, var(--bg-canvas) 0%, var(--bg-dark) 100%);
+    color-scheme: dark;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body.light-mode {
+    color-scheme: light;
+  }
+
+  /* Scanline overlay effect */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  }
+
+  body.scanlines-off::before {
+    display: none;
+  }
+
+  /* CRT vignette */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      transparent 60%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+  }
+
+  body.vignette-off::after {
+    display: none;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-family: var(--font-pixel);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+  }
+
+  h3 {
+    font-family: var(--font-arcade);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+  }
+
+  h4 {
+    font-family: var(--font-arcade);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+  }
+
+  label {
+    font-family: var(--font-arcade);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  button {
+    font-family: var(--font-arcade);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  input {
+    font-family: var(--font-arcade);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+/* Utility classes for neon effects */
+@layer utilities {
+  .neon-glow-green {
+    box-shadow: 0 0 5px var(--neon-green),
+                0 0 10px var(--neon-green),
+                0 0 20px var(--neon-green);
+  }
+
+  .neon-glow-pink {
+    box-shadow: 0 0 5px var(--neon-pink),
+                0 0 10px var(--neon-pink),
+                0 0 20px var(--neon-pink);
+  }
+
+  .neon-glow-yellow {
+    box-shadow: 0 0 5px var(--neon-yellow),
+                0 0 10px var(--neon-yellow),
+                0 0 20px var(--neon-yellow);
+  }
+
+  .neon-glow-cyan {
+    box-shadow: 0 0 5px var(--neon-cyan),
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-cyan);
+  }
+
+  .text-neon-green {
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green),
+                 0 0 10px var(--neon-green);
+  }
+
+  .text-neon-pink {
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink),
+                 0 0 10px var(--neon-pink);
+  }
+
+  .text-neon-yellow {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 5px var(--neon-yellow),
+                 0 0 10px var(--neon-yellow);
+  }
+
+  .text-neon-cyan {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 5px var(--neon-cyan),
+                 0 0 10px var(--neon-cyan);
+  }
+
+  .pixel-font {
+    font-family: var(--font-pixel);
+  }
+
+  .arcade-font {
+    font-family: var(--font-arcade);
+  }
+
+  .app-shell {
+    background: transparent;
+    color: var(--foreground);
+  }
+
+  .app-panel {
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--surface-elevated) 78%, transparent) 0%,
+        color-mix(in srgb, var(--surface-card) 92%, transparent) 100%
+      );
+    color: var(--foreground);
+    box-shadow: var(--panel-shadow);
+  }
+
+  .app-panel-elevated {
+    background: var(--surface-elevated);
+    color: var(--foreground);
+  }
+
+  .app-overlay {
+    background: var(--surface-overlay);
+    color: var(--foreground);
+  }
+
+  .app-muted {
+    color: var(--text-secondary);
+  }
+
+  .app-faint {
+    color: var(--text-faint);
+  }
+
+  .app-input {
+    background: var(--input-background);
+    color: var(--foreground);
+  }
+
+  .app-divider {
+    border-color: var(--line-subtle);
+  }
+}

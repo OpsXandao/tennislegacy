@@ -1,0 +1,49 @@
+{
+  "nome": "Nicolas Ifi",
+  "nacionalidade": "[BE]",
+  "idade": 27,
+  "overall": 70,
+  "pontos": 16,
+  "atributos": {
+    "saque": 54,
+    "forehand": 55,
+    "backhand": 44,
+    "topspin": 55,
+    "voleio": 54,
+    "slice": 53,
+    "movimento": 48,
+    "lob": 49,
+    "winner": 56,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1053,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 46,
+    "leitura_de_jogo": 51,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 16,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1027,
+  "pontos_ranking": 16,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 179,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

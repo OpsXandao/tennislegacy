@@ -1,0 +1,49 @@
+{
+  "nome": "Cannon Kingsley",
+  "nacionalidade": "[US]",
+  "idade": 24,
+  "overall": 75,
+  "pontos": 101,
+  "atributos": {
+    "saque": 43,
+    "forehand": 53,
+    "backhand": 40,
+    "topspin": 45,
+    "voleio": 56,
+    "slice": 48,
+    "movimento": 48,
+    "lob": 46,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 490,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 31,
+    "leitura_de_jogo": 43,
+    "determinacao": 33
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 101,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 458,
+  "pontos_ranking": 101,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

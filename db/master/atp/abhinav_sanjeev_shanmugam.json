@@ -1,0 +1,49 @@
+{
+  "nome": "Abhinav Sanjeev Shanmugam",
+  "nacionalidade": "[IN]",
+  "idade": 27,
+  "overall": 69,
+  "pontos": 8,
+  "atributos": {
+    "saque": 61,
+    "forehand": 48,
+    "backhand": 58,
+    "topspin": 54,
+    "voleio": 48,
+    "slice": 59,
+    "movimento": 48,
+    "lob": 45,
+    "winner": 62,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1232,
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 45,
+    "leitura_de_jogo": 41,
+    "determinacao": 55
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 8,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1236,
+  "pontos_ranking": 8,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 83,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

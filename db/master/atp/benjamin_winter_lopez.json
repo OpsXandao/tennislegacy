@@ -1,0 +1,49 @@
+{
+  "nome": "Benjamin Winter Lopez",
+  "nacionalidade": "[ES]",
+  "idade": 27,
+  "overall": 71,
+  "pontos": 18,
+  "atributos": {
+    "saque": 51,
+    "forehand": 61,
+    "backhand": 41,
+    "topspin": 45,
+    "voleio": 54,
+    "slice": 44,
+    "movimento": 56,
+    "lob": 50,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1004,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 56,
+    "leitura_de_jogo": 43,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 18,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 976,
+  "pontos_ranking": 18,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

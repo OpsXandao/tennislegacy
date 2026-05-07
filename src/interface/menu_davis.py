@@ -2,12 +2,17 @@
 Menu da Copa Davis - Interface para o torneio por equipes.
 """
 
-from src.calendario import avancar_semana
-from src.interface.menu_temporada import menu_temporada
 from src.dados import get_caminho_ranking_save
 from src.interface.match_info import exibir_stats_adversario, exibir_review_partida
 from src.ranking import SistemaRanking
-from src.io_utils import safe_input, clear_screen, print_blue, print_green, print_red, print_yellow, print_magenta
+from src.io_utils import (
+    safe_input,
+    clear_screen,
+    print_blue,
+    print_green,
+    print_red,
+    print_yellow,
+)
 from src.save import salvar_jogo
 from src.davis_cup import carregar_davis_cup
 
@@ -18,27 +23,41 @@ def menu_davis(jogador, nome_save, davis=None, salvar_automaticamente=False):
         davis = carregar_davis_cup(nome_save, jogador)
 
     if davis is None:
-        print_red("Erro ao carregar a Copa Davis.")
+        print_red("Erro ao carregar a competição por equipes.")
         return
+
+    saiu_manual = False
+    competicao_encerrada = False
 
     while True:
         clear_screen()
         estado = davis._carregar_estado()
-        fase = estado.get("fase_atual", "grupos")
+        fase = estado.get("fase_atual", "qualifiers")
         pais_jogador = estado.get("pais_jogador", jogador.nacionalidade)
+        tipo_competicao = estado.get("tipo", "Davis Cup")
+        nome_competicao = (
+            "Copa Davis" if tipo_competicao == "Davis Cup" else "Billie Jean King Cup"
+        )
 
         print_blue(f"\n{'=' * 60}")
-        print_blue(f"          🏆 COPA DAVIS - {estado.get('torneio', 'Davis Cup')}")
+        print_blue(
+            f"          🏆 {nome_competicao.upper()} - {estado.get('torneio', tipo_competicao)}"
+        )
         print_blue(f"{'=' * 60}")
         print()
         print(f"📍 Sua seleção: {pais_jogador}")
         print(f"📍 Fase atual: {_formatar_fase(fase)}")
-        print(f"📍 Grupo: {estado.get('grupo_jogador', '?')}")
+        info_confronto = davis.obter_info_confronto_atual()
+        if info_confronto:
+            cidade = info_confronto.get("cidade")
+            pais_sede = info_confronto.get("pais_sede")
+            superficie = info_confronto.get("superficie")
+            if cidade and pais_sede:
+                print(f"📍 Sede do tie: {cidade}, {pais_sede}")
+            if superficie:
+                print(f"📍 Superfície: {superficie}")
         print()
-
-        # Exibe a tabela do grupo se estiver na fase de grupos
-        if fase == "grupos":
-            davis.exibir_tabela_grupo()
+        davis.exibir_tabela_grupo()
 
         # Verifica próximo confronto
         proximo = davis.obter_proximo_confronto()
@@ -56,7 +75,7 @@ def menu_davis(jogador, nome_save, davis=None, salvar_automaticamente=False):
             print_yellow("[2] 🔎 Ver stats do adversário")
             print_yellow("[3] 🧪 Review do confronto")
 
-        print_green("[4] 📊 Ver tabela do grupo")
+        print_green("[4] 📊 Ver chave/classificação")
         print_green("[5] 📋 Ver resultados")
         print_green("[6] 💾 Salvar jogo")
         print_green("[7] ↩️ Sair do menu")
@@ -70,7 +89,9 @@ def menu_davis(jogador, nome_save, davis=None, salvar_automaticamente=False):
                 resultado = davis.jogar_confronto(adversario)
 
                 if resultado.get("eliminado"):
-                    print_red(f"\n😔 {pais_jogador} foi eliminado da Copa Davis!")
+                    print_red(
+                        f"\n😔 {pais_jogador} foi eliminado da {nome_competicao}!"
+                    )
                     safe_input("Pressione Enter para continuar...")
                     break
 
@@ -81,35 +102,20 @@ def menu_davis(jogador, nome_save, davis=None, salvar_automaticamente=False):
                 print_yellow("Não há confronto disponível no momento.")
                 safe_input("Pressione Enter para continuar...")
 
-        elif opcao == "2":
+        elif opcao in ("2", "3"):
             if not proximo:
                 print_yellow("Nenhum confronto disponível no momento.")
                 safe_input("Pressione Enter para continuar...")
                 continue
-            adversario = proximo.get("adversario")
-            equipe_adversaria = davis._gerar_equipe_adversaria(adversario)
-            adversario_principal = equipe_adversaria[0] if equipe_adversaria else None
+            adversario_principal = _obter_adversario_principal(proximo, davis)
             if not adversario_principal:
-                print_red("Nao foi possivel carregar o adversario.")
                 safe_input("Pressione Enter para continuar...")
                 continue
             ranking = SistemaRanking(get_caminho_ranking_save(nome_save))
-            exibir_stats_adversario(jogador, adversario_principal, ranking)
-            safe_input("\nPressione Enter para continuar...")
-        elif opcao == "3":
-            if not proximo:
-                print_yellow("Nenhum confronto disponível no momento.")
-                safe_input("Pressione Enter para continuar...")
-                continue
-            adversario = proximo.get("adversario")
-            equipe_adversaria = davis._gerar_equipe_adversaria(adversario)
-            adversario_principal = equipe_adversaria[0] if equipe_adversaria else None
-            if not adversario_principal:
-                print_red("Nao foi possivel carregar o adversario.")
-                safe_input("Pressione Enter para continuar...")
-                continue
-            ranking = SistemaRanking(get_caminho_ranking_save(nome_save))
-            exibir_review_partida(jogador, adversario_principal, ranking)
+            if opcao == "2":
+                exibir_stats_adversario(jogador, adversario_principal, ranking)
+            else:
+                exibir_review_partida(jogador, adversario_principal, ranking)
             safe_input("\nPressione Enter para continuar...")
         elif opcao == "4":
             davis.exibir_tabela_grupo()
@@ -126,7 +132,8 @@ def menu_davis(jogador, nome_save, davis=None, salvar_automaticamente=False):
             safe_input("Pressione Enter para continuar...")
 
         elif opcao == "7":
-            print_yellow("Saindo do menu da Copa Davis...")
+            print_yellow(f"Saindo do menu da {nome_competicao}...")
+            saiu_manual = True
             break
 
         else:
@@ -136,52 +143,63 @@ def menu_davis(jogador, nome_save, davis=None, salvar_automaticamente=False):
         # Verifica se o jogador ainda está ativo
         if not davis.jogador_ainda_ativo():
             estado = davis._carregar_estado()
-            fase_atual = estado.get("fase_atual", "")
+            fase_atual = estado.get("fase_eliminacao") or estado.get("fase_atual", "")
 
             if fase_atual == "eliminado_grupos":
-                print_red(f"\n😔 {pais_jogador} não se classificou para as eliminatórias!")
+                print_red(
+                    f"\n😔 {pais_jogador} não se classificou para as eliminatórias!"
+                )
+            elif fase_atual == "eliminado_qualifiers":
+                print_red(
+                    f"\n😔 {pais_jogador} foi eliminado nos Qualifiers da {nome_competicao}!"
+                )
             else:
-                print_red(f"\n😔 {pais_jogador} foi eliminado na fase {_formatar_fase(fase_atual)}!")
+                print_red(
+                    f"\n😔 {pais_jogador} foi eliminado na fase {_formatar_fase(fase_atual)}!"
+                )
 
             print_yellow("\n💪 Volte mais forte na próxima edição!")
             safe_input("Pressione Enter para continuar...")
+            competicao_encerrada = True
             break
 
         # Verifica se a Copa Davis terminou
         estado = davis._carregar_estado()
         if estado.get("fase_atual") == "finalizado":
-            print_green(f"\n🎉 A Copa Davis foi concluída!")
+            print_green(f"\n🎉 A {nome_competicao} foi concluída!")
             if estado.get("jogador_vivo"):
-                print_green(f"🏆 {pais_jogador} É CAMPEÃO DA COPA DAVIS!")
+                print_green(
+                    f"🏆 {pais_jogador} É CAMPEÃO DA {nome_competicao.upper()}!"
+                )
             safe_input("Pressione Enter para continuar...")
+            competicao_encerrada = True
             break
 
-    # Avança a semana após a Copa Davis
-    if isinstance(jogador, dict):
-        temporada = avancar_semana(nome_save)
-        jogador["semana"] = temporada["semana"]
-        semana_msg = jogador["semana"]
-    else:
-        temporada = avancar_semana(nome_save)
-        jogador.semana = temporada["semana"]
-        semana_msg = jogador.semana
+    if saiu_manual:
+        return "saiu"
+    if competicao_encerrada:
+        return "finalizado"
+    return "saiu"
 
-    if salvar_automaticamente:
-        salvar_jogo(nome_save, jogador)
-        print_green(f"\n📅 Semana avançada para {semana_msg}.")
-    else:
-        print_yellow(f"\n📅 Semana avançada para {semana_msg}.")
 
-    menu_temporada(jogador, nome_save, salvar_automaticamente=salvar_automaticamente)
+def _obter_adversario_principal(proximo, davis):
+    """Retorna o jogador principal do próximo adversário ou None com mensagem de erro."""
+    adversario = proximo.get("adversario")
+    equipe = davis._gerar_equipe_adversaria(adversario)
+    adversario_principal = equipe[0] if equipe else None
+    if not adversario_principal:
+        print_red("Não foi possível carregar o adversário.")
+    return adversario_principal
 
 
 def _formatar_fase(fase):
     """Formata o nome da fase para exibição."""
     fases = {
-        "grupos": "Fase de Grupos",
+        "qualifiers": "Qualifiers",
         "quartas": "Quartas de Final",
         "semifinal": "Semifinal",
         "final": "Final",
+        "eliminado_qualifiers": "Eliminado nos Qualifiers",
         "eliminado_grupos": "Eliminado na Fase de Grupos",
         "finalizado": "Torneio Finalizado",
     }
@@ -192,9 +210,13 @@ def _exibir_resultados_davis(davis):
     """Exibe os resultados dos confrontos da Copa Davis."""
     estado = davis._carregar_estado()
     resultados = estado.get("resultados_confrontos", [])
+    tipo_competicao = estado.get("tipo", "Davis Cup")
+    nome_competicao = (
+        "Copa Davis" if tipo_competicao == "Davis Cup" else "Billie Jean King Cup"
+    )
 
     print_blue(f"\n{'=' * 60}")
-    print_blue("              📊 RESULTADOS DA COPA DAVIS")
+    print_blue(f"              📊 RESULTADOS DA {nome_competicao.upper()}")
     print_blue(f"{'=' * 60}")
 
     if not resultados:
@@ -206,11 +228,19 @@ def _exibir_resultados_davis(davis):
         equipe_b = r.get("equipe_b", "??")
         vencedor = r.get("vencedor", "??")
         placar = r.get("placar", "?-?")
+        cidade = r.get("cidade")
+        pais_sede = r.get("pais_sede")
+        superficie = r.get("superficie")
 
         marcador = " 🏆" if vencedor == equipe_a else ""
         marcador_b = " 🏆" if vencedor == equipe_b else ""
 
         print(f"\n{i}. {equipe_a}{marcador} {placar} {equipe_b}{marcador_b}")
+        if cidade and pais_sede:
+            local_txt = f"   📍 {cidade}, {pais_sede}"
+            if superficie:
+                local_txt += f" | {superficie}"
+            print(local_txt)
 
         # Mostra detalhes das partidas
         partidas = r.get("partidas", [])
@@ -223,7 +253,9 @@ def _exibir_resultados_davis(davis):
                 pl = p.get("placar", "?")
                 vencedor_marca = "✓" if venc == jog_a else ""
                 vencedor_marca_b = "✓" if venc == jog_b else ""
-                print(f"   └ {tipo.capitalize()}: {jog_a} {vencedor_marca} vs {jog_b} {vencedor_marca_b} ({pl})")
+                print(
+                    f"   └ {tipo.capitalize()}: {jog_a} {vencedor_marca} vs {jog_b} {vencedor_marca_b} ({pl})"
+                )
             else:
                 pl = p.get("placar", "?")
                 print(f"   └ {tipo.capitalize()}: {pl}")

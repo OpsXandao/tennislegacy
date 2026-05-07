@@ -1,0 +1,49 @@
+{
+  "nome": "Emilien Demanet",
+  "nacionalidade": "[BE]",
+  "idade": 20,
+  "overall": 74,
+  "pontos": 59,
+  "atributos": {
+    "saque": 58,
+    "forehand": 57,
+    "backhand": 51,
+    "topspin": 52,
+    "voleio": 59,
+    "slice": 49,
+    "movimento": 54,
+    "lob": 41,
+    "winner": 60,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 648,
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 34,
+    "leitura_de_jogo": 43,
+    "determinacao": 49
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 59,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 616,
+  "pontos_ranking": 59,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 71,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

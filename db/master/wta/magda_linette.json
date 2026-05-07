@@ -1,0 +1,67 @@
+{
+  "nome": "Magda Linette",
+  "nacionalidade": "[PL]",
+  "genero": "feminino",
+  "idade": 34,
+  "pontos": 1234,
+  "pontos_ranking": 1234,
+  "overall": 86,
+  "atributos": {
+    "saque": 76,
+    "forehand": 80,
+    "backhand": 83,
+    "topspin": 83,
+    "voleio": 76,
+    "slice": 80,
+    "movimento": 86,
+    "lob": 79,
+    "fisico": 80,
+    "winner": 76,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 79,
+    "agressividade": 81,
+    "leitura_de_jogo": 76,
+    "determinacao": 83
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1234,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "New York",
+      "ano": 2019,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Hua Hin",
+      "ano": 2020,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Prague",
+      "ano": 2024,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 171,
+  "peso": 60,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -7,6 +7,7 @@ import json
 import random
 import os
 
+
 def gerar_atributos_psicologicos(overall):
     """
     Gera atributos psicológicos baseados no overall do jogador.

@@ -1,0 +1,51 @@
+{
+  "nome": "Sinja Kraus",
+  "nacionalidade": "[AT]",
+  "genero": "feminino",
+  "idade": 23,
+  "pontos": 738,
+  "pontos_ranking": 738,
+  "overall": 83,
+  "atributos": {
+    "saque": 65,
+    "forehand": 68,
+    "backhand": 65,
+    "topspin": 66,
+    "voleio": 64,
+    "slice": 64,
+    "movimento": 71,
+    "lob": 66,
+    "fisico": 68,
+    "winner": 71,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 73,
+    "agressividade": 63,
+    "leitura_de_jogo": 72,
+    "determinacao": 68
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 738,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 173,
+  "peso": 68,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

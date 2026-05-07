@@ -1,0 +1,52 @@
+{
+  "nome": "Maya Joint",
+  "nacionalidade": "[AU]",
+  "genero": "feminino",
+  "idade": 19,
+  "pontos": 1465,
+  "pontos_ranking": 1465,
+  "overall": 88,
+  "atributos": {
+    "saque": 81,
+    "forehand": 87,
+    "backhand": 89,
+    "topspin": 80,
+    "voleio": 86,
+    "slice": 80,
+    "movimento": 81,
+    "lob": 88,
+    "fisico": 82,
+    "winner": 90,
+    "duplas": 94
+  },
+  "atributos_psicologicos": {
+    "concentracao": 88,
+    "agressividade": 81,
+    "leitura_de_jogo": 83,
+    "determinacao": 89
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1465,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 2295,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 2295,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 179,
+  "peso": 67,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 34
+}

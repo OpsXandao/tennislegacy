@@ -1,0 +1,49 @@
+{
+  "nome": "Petr Brunclik",
+  "nacionalidade": "[CZ]",
+  "idade": 19,
+  "overall": 78,
+  "pontos": 181,
+  "atributos": {
+    "saque": 53,
+    "forehand": 44,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 52,
+    "slice": 40,
+    "movimento": 49,
+    "lob": 42,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 320,
+  "atributos_psicologicos": {
+    "concentracao": 37,
+    "agressividade": 46,
+    "leitura_de_jogo": 41,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 181,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 288,
+  "pontos_ranking": 181,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 82,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

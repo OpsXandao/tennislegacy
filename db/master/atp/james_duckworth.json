@@ -1,0 +1,49 @@
+{
+  "nome": "James Duckworth",
+  "nacionalidade": "[AU]",
+  "idade": 34,
+  "overall": 83,
+  "pontos": 691,
+  "atributos": {
+    "saque": 70,
+    "forehand": 65,
+    "backhand": 69,
+    "topspin": 68,
+    "voleio": 70,
+    "slice": 69,
+    "movimento": 60,
+    "lob": 64,
+    "winner": 69,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 92,
+  "atributos_psicologicos": {
+    "concentracao": 51,
+    "agressividade": 62,
+    "leitura_de_jogo": 59,
+    "determinacao": 49
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 691,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 26,
+  "pontos_ranking": 691,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 88,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

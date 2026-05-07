@@ -1,0 +1,49 @@
+{
+  "nome": "Federico Cina",
+  "nacionalidade": "[IT]",
+  "idade": 18,
+  "overall": 79,
+  "pontos": 264,
+  "atributos": {
+    "saque": 49,
+    "forehand": 41,
+    "backhand": 47,
+    "topspin": 54,
+    "voleio": 57,
+    "slice": 41,
+    "movimento": 42,
+    "lob": 46,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 255,
+  "atributos_psicologicos": {
+    "concentracao": 38,
+    "agressividade": 56,
+    "leitura_de_jogo": 36,
+    "determinacao": 56
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 264,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 223,
+  "pontos_ranking": 264,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

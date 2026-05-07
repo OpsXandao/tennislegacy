@@ -1,0 +1,65 @@
+{
+  "nome": "Yoshihito Nishioka",
+  "nacionalidade": "[JP]",
+  "idade": 30,
+  "overall": 80,
+  "pontos": 361,
+  "atributos": {
+    "saque": 77,
+    "forehand": 65,
+    "backhand": 75,
+    "topspin": 75,
+    "voleio": 80,
+    "slice": 76,
+    "movimento": 68,
+    "lob": 75,
+    "winner": 67,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 201,
+  "atributos_psicologicos": {
+    "concentracao": 74,
+    "agressividade": 67,
+    "leitura_de_jogo": 71,
+    "determinacao": 59
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 361,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Shenzhen",
+      "ano": 2018,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Seoul",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Atlanta",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 169,
+  "pontos_ranking": 361,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 83,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

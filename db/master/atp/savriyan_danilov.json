@@ -1,0 +1,49 @@
+{
+  "nome": "Savriyan Danilov",
+  "nacionalidade": "[RU]",
+  "idade": 25,
+  "overall": 70,
+  "pontos": 14,
+  "atributos": {
+    "saque": 57,
+    "forehand": 40,
+    "backhand": 43,
+    "topspin": 53,
+    "voleio": 61,
+    "slice": 59,
+    "movimento": 43,
+    "lob": 41,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1077,
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 47,
+    "leitura_de_jogo": 49,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 14,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1053,
+  "pontos_ranking": 14,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

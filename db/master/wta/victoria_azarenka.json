@@ -1,0 +1,157 @@
+{
+  "nome": "Victoria Azarenka",
+  "nacionalidade": "[BY]",
+  "genero": "feminino",
+  "idade": 36,
+  "pontos": 410,
+  "pontos_ranking": 410,
+  "overall": 81,
+  "atributos": {
+    "saque": 70,
+    "forehand": 70,
+    "backhand": 70,
+    "topspin": 70,
+    "voleio": 70,
+    "slice": 70,
+    "movimento": 70,
+    "lob": 70,
+    "fisico": 70,
+    "winner": 70,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 70,
+    "agressividade": 70,
+    "leitura_de_jogo": 70,
+    "determinacao": 70
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 410,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Brisbane",
+      "ano": 2009,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Memphis",
+      "ano": 2009,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Miami",
+      "ano": 2009,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Moscow",
+      "ano": 2010,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Stanford",
+      "ano": 2010,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Luxembourg",
+      "ano": 2011,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Marbella",
+      "ano": 2011,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Miami",
+      "ano": 2011,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2012,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Beijing",
+      "ano": 2012,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Doha",
+      "ano": 2012,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Indian Wells",
+      "ano": 2012,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Linz",
+      "ano": 2012,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Sydney",
+      "ano": 2012,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2013,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Cincinnati",
+      "ano": 2013,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Doha",
+      "ano": 2013,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Brisbane",
+      "ano": 2016,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Indian Wells",
+      "ano": 2016,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Miami",
+      "ano": 2016,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Cincinnati",
+      "ano": 2020,
+      "categoria": "WTA 1000"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 73,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

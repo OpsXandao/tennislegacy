@@ -1,0 +1,49 @@
+{
+  "nome": "Nikolai Barsukov",
+  "nacionalidade": "[DE]",
+  "idade": 19,
+  "overall": 71,
+  "pontos": 23,
+  "atributos": {
+    "saque": 40,
+    "forehand": 44,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 48,
+    "lob": 40,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 944,
+  "atributos_psicologicos": {
+    "concentracao": 32,
+    "agressividade": 43,
+    "leitura_de_jogo": 52,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 23,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 914,
+  "pontos_ranking": 23,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

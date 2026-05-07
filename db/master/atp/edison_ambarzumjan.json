@@ -1,0 +1,49 @@
+{
+  "nome": "Edison Ambarzumjan",
+  "nacionalidade": "[DE]",
+  "idade": 29,
+  "overall": 70,
+  "pontos": 10,
+  "atributos": {
+    "saque": 55,
+    "forehand": 45,
+    "backhand": 44,
+    "topspin": 55,
+    "voleio": 48,
+    "slice": 46,
+    "movimento": 46,
+    "lob": 54,
+    "winner": 45,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1170,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 35,
+    "leitura_de_jogo": 40,
+    "determinacao": 33
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 10,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1164,
+  "pontos_ranking": 10,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,51 @@
+{
+  "nome": "Iga Świątek",
+  "nacionalidade": "[PL]",
+  "genero": "feminino",
+  "idade": 24,
+  "pontos": 7588,
+  "pontos_ranking": 7588,
+  "overall": 96,
+  "atributos": {
+    "saque": 90,
+    "forehand": 91,
+    "backhand": 95,
+    "topspin": 89,
+    "voleio": 95,
+    "slice": 97,
+    "movimento": 92,
+    "lob": 89,
+    "fisico": 94,
+    "winner": 97,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 87,
+    "agressividade": 87,
+    "leitura_de_jogo": 95,
+    "determinacao": 91
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 7588,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 176,
+  "peso": 78,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

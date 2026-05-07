@@ -1,0 +1,57 @@
+{
+  "nome": "Ashlyn Krueger",
+  "nacionalidade": "[US]",
+  "genero": "feminino",
+  "idade": 21,
+  "pontos": 805,
+  "pontos_ranking": 805,
+  "overall": 84,
+  "atributos": {
+    "saque": 68,
+    "forehand": 70,
+    "backhand": 71,
+    "topspin": 67,
+    "voleio": 67,
+    "slice": 71,
+    "movimento": 69,
+    "lob": 63,
+    "fisico": 62,
+    "winner": 72,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 70,
+    "agressividade": 71,
+    "leitura_de_jogo": 62,
+    "determinacao": 68
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 805,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Osaka",
+      "ano": 2023,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 71,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

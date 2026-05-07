@@ -1,0 +1,49 @@
+{
+  "nome": "Valentin Royer",
+  "nacionalidade": "[FR]",
+  "idade": 24,
+  "overall": 84,
+  "pontos": 935,
+  "atributos": {
+    "saque": 64,
+    "forehand": 69,
+    "backhand": 65,
+    "topspin": 65,
+    "voleio": 64,
+    "slice": 64,
+    "movimento": 68,
+    "lob": 60,
+    "winner": 64,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 120,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 51,
+    "leitura_de_jogo": 55,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 935,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 29,
+  "pontos_ranking": 935,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 85,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Vishnu Vardhan",
+  "nacionalidade": "[IN]",
+  "idade": 38,
+  "overall": 72,
+  "pontos": 9,
+  "atributos": {
+    "saque": 79,
+    "forehand": 79,
+    "backhand": 68,
+    "topspin": 70,
+    "voleio": 79,
+    "slice": 78,
+    "movimento": 78,
+    "lob": 70,
+    "winner": 65,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1195,
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 58,
+    "leitura_de_jogo": 56,
+    "determinacao": 61
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 9,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1195,
+  "pontos_ranking": 9,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 88,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

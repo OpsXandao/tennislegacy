@@ -1,0 +1,51 @@
+{
+  "nome": "Lucrezia Stefanini",
+  "nacionalidade": "[IT]",
+  "genero": "feminino",
+  "idade": 27,
+  "pontos": 550,
+  "pontos_ranking": 550,
+  "overall": 82,
+  "atributos": {
+    "saque": 70,
+    "forehand": 60,
+    "backhand": 63,
+    "topspin": 63,
+    "voleio": 70,
+    "slice": 65,
+    "movimento": 70,
+    "lob": 61,
+    "fisico": 64,
+    "winner": 67,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 67,
+    "agressividade": 66,
+    "leitura_de_jogo": 62,
+    "determinacao": 62
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 550,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 164,
+  "peso": 71,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

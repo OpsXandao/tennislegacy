@@ -1,0 +1,51 @@
+{
+  "nome": "Marc Polmans",
+  "nacionalidade": "[AU]",
+  "idade": 28,
+  "overall": 77,
+  "pontos": 128,
+  "atributos": {
+    "saque": 51,
+    "forehand": 61,
+    "backhand": 49,
+    "topspin": 58,
+    "voleio": 51,
+    "slice": 60,
+    "movimento": 59,
+    "lob": 48,
+    "winner": 59,
+    "fisico": 60,
+    "duplas": 92
+  },
+  "id": 398,
+  "atributos_psicologicos": {
+    "concentracao": 57,
+    "agressividade": 40,
+    "leitura_de_jogo": 37,
+    "determinacao": 33
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 128,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 1450,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 366,
+  "pontos_ranking": 128,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court",
+  "pontos_ranking_duplas": 1450,
+  "rank_duplas": 61
+}

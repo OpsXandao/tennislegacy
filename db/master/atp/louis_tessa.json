@@ -1,0 +1,49 @@
+{
+  "nome": "Louis Tessa",
+  "nacionalidade": "[FR]",
+  "idade": 27,
+  "overall": 69,
+  "pontos": 9,
+  "atributos": {
+    "saque": 54,
+    "forehand": 51,
+    "backhand": 40,
+    "topspin": 52,
+    "voleio": 54,
+    "slice": 47,
+    "movimento": 40,
+    "lob": 57,
+    "winner": 50,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1204,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 30,
+    "leitura_de_jogo": 37,
+    "determinacao": 40
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 9,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1204,
+  "pontos_ranking": 9,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Jorge Plans",
+  "nacionalidade": "[ES]",
+  "idade": 24,
+  "overall": 72,
+  "pontos": 33,
+  "atributos": {
+    "saque": 50,
+    "forehand": 44,
+    "backhand": 42,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 50,
+    "movimento": 40,
+    "lob": 48,
+    "winner": 55,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 844,
+  "atributos_psicologicos": {
+    "concentracao": 35,
+    "agressividade": 44,
+    "leitura_de_jogo": 38,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 33,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 812,
+  "pontos_ranking": 33,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Giulio Zeppieri",
+  "nacionalidade": "[IT]",
+  "idade": 24,
+  "overall": 81,
+  "pontos": 397,
+  "atributos": {
+    "saque": 53,
+    "forehand": 44,
+    "backhand": 47,
+    "topspin": 40,
+    "voleio": 42,
+    "slice": 44,
+    "movimento": 43,
+    "lob": 48,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 185,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 47,
+    "leitura_de_jogo": 37,
+    "determinacao": 41
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 397,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 153,
+  "pontos_ranking": 397,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 72,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

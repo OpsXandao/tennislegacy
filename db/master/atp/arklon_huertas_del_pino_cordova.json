@@ -1,0 +1,49 @@
+{
+  "nome": "Arklon Huertas Del Pino Cordova",
+  "nacionalidade": "[PE]",
+  "idade": 31,
+  "overall": 72,
+  "pontos": 29,
+  "atributos": {
+    "saque": 58,
+    "forehand": 40,
+    "backhand": 50,
+    "topspin": 51,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 55,
+    "lob": 51,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 879,
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 50,
+    "leitura_de_jogo": 34,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 29,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 847,
+  "pontos_ranking": 29,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 82,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

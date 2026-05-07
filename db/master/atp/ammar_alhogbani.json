@@ -1,0 +1,49 @@
+{
+  "nome": "Ammar Alhogbani",
+  "nacionalidade": "[SA]",
+  "idade": 27,
+  "overall": 70,
+  "pontos": 12,
+  "atributos": {
+    "saque": 46,
+    "forehand": 61,
+    "backhand": 41,
+    "topspin": 52,
+    "voleio": 47,
+    "slice": 58,
+    "movimento": 54,
+    "lob": 44,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1131,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 50,
+    "leitura_de_jogo": 54,
+    "determinacao": 34
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 12,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1113,
+  "pontos_ranking": 12,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 176,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

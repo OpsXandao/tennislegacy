@@ -1,0 +1,52 @@
+{
+  "nome": "Kateřina Siniaková",
+  "nacionalidade": "[CZ]",
+  "genero": "feminino",
+  "idade": 29,
+  "pontos": 1269,
+  "pontos_ranking": 1269,
+  "overall": 87,
+  "atributos": {
+    "saque": 81,
+    "forehand": 87,
+    "backhand": 78,
+    "topspin": 83,
+    "voleio": 86,
+    "slice": 85,
+    "movimento": 87,
+    "lob": 81,
+    "fisico": 84,
+    "winner": 79,
+    "duplas": 99
+  },
+  "atributos_psicologicos": {
+    "concentracao": 82,
+    "agressividade": 85,
+    "leitura_de_jogo": 83,
+    "determinacao": 80
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1269,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 6460,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 6460,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 174,
+  "peso": 61,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 5
+}

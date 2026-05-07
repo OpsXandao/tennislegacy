@@ -1,0 +1,49 @@
+{
+  "nome": "Alfredo Perez",
+  "nacionalidade": "[US]",
+  "idade": 28,
+  "overall": 76,
+  "pontos": 118,
+  "atributos": {
+    "saque": 40,
+    "forehand": 52,
+    "backhand": 40,
+    "topspin": 45,
+    "voleio": 49,
+    "slice": 45,
+    "movimento": 49,
+    "lob": 42,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 432,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 41,
+    "leitura_de_jogo": 44,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 118,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 400,
+  "pontos_ranking": 118,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

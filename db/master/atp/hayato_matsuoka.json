@@ -1,0 +1,49 @@
+{
+  "nome": "Hayato Matsuoka",
+  "nacionalidade": "[JP]",
+  "idade": 21,
+  "overall": 77,
+  "pontos": 128,
+  "atributos": {
+    "saque": 46,
+    "forehand": 56,
+    "backhand": 50,
+    "topspin": 41,
+    "voleio": 47,
+    "slice": 40,
+    "movimento": 53,
+    "lob": 48,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 399,
+  "atributos_psicologicos": {
+    "concentracao": 37,
+    "agressividade": 47,
+    "leitura_de_jogo": 38,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 128,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 367,
+  "pontos_ranking": 128,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

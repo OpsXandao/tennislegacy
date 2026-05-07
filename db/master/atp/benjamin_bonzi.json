@@ -1,0 +1,55 @@
+{
+  "nome": "Benjamin Bonzi",
+  "nacionalidade": "[FR]",
+  "idade": 29,
+  "overall": 82,
+  "pontos": 564,
+  "atributos": {
+    "saque": 79,
+    "forehand": 76,
+    "backhand": 76,
+    "topspin": 79,
+    "voleio": 79,
+    "slice": 79,
+    "movimento": 69,
+    "lob": 75,
+    "winner": 76,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 60,
+  "atributos_psicologicos": {
+    "concentracao": 77,
+    "agressividade": 82,
+    "leitura_de_jogo": 69,
+    "determinacao": 82
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 564,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Metz",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 27,
+  "pontos_ranking": 564,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 81,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

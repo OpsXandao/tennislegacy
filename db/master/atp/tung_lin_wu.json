@@ -1,0 +1,43 @@
+{
+  "nome": "Tung Lin Wu",
+  "nacionalidade": "[TW] Taipei Chinês",
+  "idade": 26,
+  "overall": 77,
+  "pontos": 127,
+  "atributos": {
+    "saque": 68,
+    "forehand": 63,
+    "backhand": 68,
+    "topspin": 64,
+    "voleio": 59,
+    "slice": 57,
+    "movimento": 56,
+    "lob": 66,
+    "winner": 65,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 2279,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 64,
+    "leitura_de_jogo": 41,
+    "determinacao": 43
+  },
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 370,
+  "pontos_ranking": 127,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

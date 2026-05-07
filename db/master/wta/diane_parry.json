@@ -1,0 +1,51 @@
+{
+  "nome": "Diane Parry",
+  "nacionalidade": "[FR]",
+  "genero": "feminino",
+  "idade": 23,
+  "pontos": 724,
+  "pontos_ranking": 724,
+  "overall": 83,
+  "atributos": {
+    "saque": 67,
+    "forehand": 69,
+    "backhand": 67,
+    "topspin": 61,
+    "voleio": 63,
+    "slice": 70,
+    "movimento": 69,
+    "lob": 63,
+    "fisico": 68,
+    "winner": 62,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 64,
+    "agressividade": 60,
+    "leitura_de_jogo": 70,
+    "determinacao": 68
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 724,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 70,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

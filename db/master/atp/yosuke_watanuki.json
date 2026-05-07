@@ -1,0 +1,49 @@
+{
+  "nome": "Yosuke Watanuki",
+  "nacionalidade": "[JP]",
+  "idade": 27,
+  "overall": 80,
+  "pontos": 349,
+  "atributos": {
+    "saque": 46,
+    "forehand": 47,
+    "backhand": 47,
+    "topspin": 58,
+    "voleio": 47,
+    "slice": 59,
+    "movimento": 59,
+    "lob": 60,
+    "winner": 50,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 207,
+  "atributos_psicologicos": {
+    "concentracao": 35,
+    "agressividade": 38,
+    "leitura_de_jogo": 41,
+    "determinacao": 39
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 349,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 175,
+  "pontos_ranking": 349,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

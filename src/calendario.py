@@ -6,7 +6,7 @@ from src.dados import (
     obter_torneio_por_nome as obter_torneio_por_nome_dados,
     obter_torneios_da_semana as obter_torneios_da_semana_dados,
 )
-from src.jogador import carregar_jogador, normalizar_nome
+from src.jogador import normalizar_nome
 from src.management import (
     processar_gastos_equipe,
     processar_expiracoes_contratos,
@@ -21,7 +21,6 @@ from src.patrocinios import (
     processar_pagamentos_patrocinio,
 )
 from src.ranking import SistemaRanking
-from src.save import salvar_jogo
 from src.calendario_participacao import (
     ajustar_prob_participacao_por_contexto,
     prob_participacao,
@@ -632,8 +631,6 @@ def _simular_torneios_semanais_npc(
                 )
 
     if campeoes_da_semana:
-        from src.io_utils import safe_input
-
         width = 75
         print("\n" + "=" * width)
         print(f"{'🏆 CAMPEÕES DA SEMANA':^75}")
@@ -1091,6 +1088,17 @@ def _processar_recuperacao_npc(j):
     elif j["energia"] >= 85:
         moral_atual += 1
     j["moral"] = max(0, min(100, moral_atual))
+
+    # 2.2 Doença
+    if status_doenca.get("doente"):
+        status_doenca["semanas_restantes"] -= 1
+        if status_doenca["semanas_restantes"] <= 0:
+            status_doenca = _normalizar_status_doenca({"doente": False})
+        else:
+            status_doenca = _normalizar_status_doenca(status_doenca)
+    else:
+        status_doenca = _normalizar_status_doenca(status_doenca)
+    j["status_doenca"] = status_doenca
 
     # 3. Lesão
     status = j.get("status_lesao", {})

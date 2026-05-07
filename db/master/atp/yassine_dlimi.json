@@ -1,0 +1,49 @@
+{
+  "nome": "Yassine Dlimi",
+  "nacionalidade": "[MA]",
+  "idade": 22,
+  "overall": 73,
+  "pontos": 58,
+  "atributos": {
+    "saque": 40,
+    "forehand": 58,
+    "backhand": 52,
+    "topspin": 46,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 46,
+    "lob": 40,
+    "winner": 56,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 650,
+  "atributos_psicologicos": {
+    "concentracao": 37,
+    "agressividade": 45,
+    "leitura_de_jogo": 42,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 58,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 618,
+  "pontos_ranking": 58,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

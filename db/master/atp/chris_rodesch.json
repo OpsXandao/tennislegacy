@@ -1,0 +1,49 @@
+{
+  "nome": "Chris Rodesch",
+  "idade": 24,
+  "pontos": 446,
+  "pontos_ranking": 446,
+  "is_bot": false,
+  "nacionalidade": "[LU]",
+  "overall": 81,
+  "atributos": {
+    "saque": 40,
+    "forehand": 40,
+    "backhand": 54,
+    "topspin": 43,
+    "voleio": 43,
+    "slice": 46,
+    "movimento": 45,
+    "lob": 47,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 175,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 49,
+    "leitura_de_jogo": 37,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 446,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 139,
+  "is_lean": false,
+  "altura": 198,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

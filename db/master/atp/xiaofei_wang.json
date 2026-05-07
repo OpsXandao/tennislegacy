@@ -1,0 +1,49 @@
+{
+  "nome": "Xiaofei Wang",
+  "nacionalidade": "[CN]",
+  "idade": 23,
+  "overall": 71,
+  "pontos": 28,
+  "atributos": {
+    "saque": 49,
+    "forehand": 43,
+    "backhand": 45,
+    "topspin": 48,
+    "voleio": 59,
+    "slice": 40,
+    "movimento": 46,
+    "lob": 54,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 890,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 52,
+    "leitura_de_jogo": 36,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 28,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 858,
+  "pontos_ranking": 28,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

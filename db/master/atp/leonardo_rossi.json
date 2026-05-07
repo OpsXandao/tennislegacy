@@ -1,0 +1,49 @@
+{
+  "nome": "Leonardo Rossi",
+  "nacionalidade": "[IT]",
+  "idade": 23,
+  "overall": 72,
+  "pontos": 37,
+  "atributos": {
+    "saque": 49,
+    "forehand": 41,
+    "backhand": 57,
+    "topspin": 41,
+    "voleio": 60,
+    "slice": 46,
+    "movimento": 54,
+    "lob": 41,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 811,
+  "atributos_psicologicos": {
+    "concentracao": 37,
+    "agressividade": 36,
+    "leitura_de_jogo": 41,
+    "determinacao": 40
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 37,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 779,
+  "pontos_ranking": 37,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

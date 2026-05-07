@@ -1,0 +1,110 @@
+{
+  "nome": "Stefanos Tsitsipas",
+  "nacionalidade": "[GR]",
+  "idade": 27,
+  "overall": 87,
+  "pontos": 1535,
+  "atributos": {
+    "saque": 88,
+    "forehand": 89,
+    "backhand": 90,
+    "topspin": 90,
+    "voleio": 86,
+    "slice": 81,
+    "movimento": 90,
+    "lob": 90,
+    "winner": 84,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 20,
+  "atributos_psicologicos": {
+    "concentracao": 75,
+    "agressividade": 82,
+    "leitura_de_jogo": 70,
+    "determinacao": 86
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1535,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "NextGen Finals",
+      "ano": 2018,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Stockholm",
+      "ano": 2018,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Estoril",
+      "ano": 2019,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Marseille",
+      "ano": 2019,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Tour Finals",
+      "ano": 2019,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Marseille",
+      "ano": 2020,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Lyon",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Monte Carlo Masters",
+      "ano": 2021,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Mallorca",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Monte Carlo Masters",
+      "ano": 2022,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Los Cabos",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Monte Carlo Masters",
+      "ano": 2024,
+      "categoria": "ATP 1000"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 26,
+  "pontos_ranking": 1535,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 90,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

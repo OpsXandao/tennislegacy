@@ -1,0 +1,60 @@
+{
+  "nome": "Jack Draper",
+  "nacionalidade": "[GB]",
+  "idade": 24,
+  "overall": 89,
+  "pontos": 2460,
+  "atributos": {
+    "saque": 94,
+    "forehand": 89,
+    "backhand": 93,
+    "topspin": 88,
+    "voleio": 85,
+    "slice": 83,
+    "movimento": 87,
+    "lob": 84,
+    "winner": 91,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 5,
+  "atributos_psicologicos": {
+    "concentracao": 79,
+    "agressividade": 67,
+    "leitura_de_jogo": 66,
+    "determinacao": 68
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2460,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Stuttgart",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Vienna",
+      "ano": 2024,
+      "categoria": "ATP 500"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 15,
+  "pontos_ranking": 2460,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 85,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

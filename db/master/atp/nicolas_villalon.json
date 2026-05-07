@@ -1,0 +1,49 @@
+{
+  "nome": "Nicolas Villalon",
+  "nacionalidade": "[CL]",
+  "idade": 22,
+  "overall": 71,
+  "pontos": 18,
+  "atributos": {
+    "saque": 41,
+    "forehand": 55,
+    "backhand": 44,
+    "topspin": 54,
+    "voleio": 53,
+    "slice": 51,
+    "movimento": 54,
+    "lob": 49,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1016,
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 30,
+    "leitura_de_jogo": 48,
+    "determinacao": 35
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 18,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 988,
+  "pontos_ranking": 18,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

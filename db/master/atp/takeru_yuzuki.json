@@ -1,0 +1,51 @@
+{
+  "nome": "Takeru Yuzuki",
+  "nacionalidade": "[JP]",
+  "idade": 27,
+  "overall": 69,
+  "pontos": 4,
+  "atributos": {
+    "saque": 53,
+    "forehand": 50,
+    "backhand": 48,
+    "topspin": 54,
+    "voleio": 48,
+    "slice": 57,
+    "movimento": 45,
+    "lob": 53,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 91
+  },
+  "id": 1331,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 49,
+    "leitura_de_jogo": 39,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 4,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 927,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1436,
+  "pontos_ranking": 4,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 196,
+  "peso": 75,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "pontos_ranking_duplas": 927,
+  "rank_duplas": 94
+}

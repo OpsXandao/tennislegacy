@@ -1,0 +1,43 @@
+{
+  "nome": "Chun Hsin Tseng",
+  "nacionalidade": "[TW] Taipei Chinês",
+  "idade": 30,
+  "overall": 81,
+  "pontos": 414,
+  "atributos": {
+    "saque": 52,
+    "forehand": 67,
+    "backhand": 59,
+    "topspin": 63,
+    "voleio": 66,
+    "slice": 56,
+    "movimento": 54,
+    "lob": 51,
+    "winner": 57,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 2275,
+  "atributos_psicologicos": {
+    "concentracao": 64,
+    "agressividade": 49,
+    "leitura_de_jogo": 42,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 148,
+  "pontos_ranking": 414,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

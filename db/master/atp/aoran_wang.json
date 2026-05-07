@@ -1,0 +1,49 @@
+{
+  "nome": "Aoran Wang",
+  "nacionalidade": "[CN]",
+  "idade": 29,
+  "overall": 71,
+  "pontos": 25,
+  "atributos": {
+    "saque": 63,
+    "forehand": 60,
+    "backhand": 71,
+    "topspin": 67,
+    "voleio": 70,
+    "slice": 71,
+    "movimento": 62,
+    "lob": 63,
+    "winner": 73,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 918,
+  "atributos_psicologicos": {
+    "concentracao": 64,
+    "agressividade": 55,
+    "leitura_de_jogo": 51,
+    "determinacao": 65
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 25,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 888,
+  "pontos_ranking": 25,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

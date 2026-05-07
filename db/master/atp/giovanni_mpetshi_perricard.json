@@ -1,0 +1,60 @@
+{
+  "nome": "Giovanni Mpetshi Perricard",
+  "nacionalidade": "[FR]",
+  "idade": 22,
+  "overall": 84,
+  "pontos": 905,
+  "atributos": {
+    "saque": 81,
+    "forehand": 84,
+    "backhand": 82,
+    "topspin": 83,
+    "voleio": 84,
+    "slice": 78,
+    "movimento": 80,
+    "lob": 78,
+    "winner": 83,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 32,
+  "atributos_psicologicos": {
+    "concentracao": 67,
+    "agressividade": 83,
+    "leitura_de_jogo": 81,
+    "determinacao": 81
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 905,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Basel",
+      "ano": 2024,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Lyon",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 28,
+  "pontos_ranking": 905,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 203,
+  "peso": 87,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

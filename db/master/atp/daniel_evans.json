@@ -1,0 +1,60 @@
+{
+  "nome": "Daniel Evans",
+  "nacionalidade": "[GB]",
+  "idade": 35,
+  "overall": 80,
+  "pontos": 300,
+  "atributos": {
+    "saque": 74,
+    "forehand": 66,
+    "backhand": 67,
+    "topspin": 67,
+    "voleio": 76,
+    "slice": 72,
+    "movimento": 79,
+    "lob": 77,
+    "winner": 69,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 235,
+  "atributos_psicologicos": {
+    "concentracao": 55,
+    "agressividade": 58,
+    "leitura_de_jogo": 65,
+    "determinacao": 59
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 300,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Murray River Open",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Washington",
+      "ano": 2023,
+      "categoria": "ATP 500"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 203,
+  "pontos_ranking": 300,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 84,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

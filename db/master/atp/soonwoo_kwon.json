@@ -1,0 +1,49 @@
+{
+  "nome": "Soonwoo Kwon",
+  "nacionalidade": "[KR]",
+  "idade": 28,
+  "overall": 77,
+  "pontos": 142,
+  "atributos": {
+    "saque": 47,
+    "forehand": 48,
+    "backhand": 40,
+    "topspin": 52,
+    "voleio": 53,
+    "slice": 52,
+    "movimento": 42,
+    "lob": 52,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 369,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 36,
+    "leitura_de_jogo": 31,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 142,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 337,
+  "pontos_ranking": 142,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

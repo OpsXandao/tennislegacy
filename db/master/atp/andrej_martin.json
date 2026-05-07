@@ -1,0 +1,49 @@
+{
+  "nome": "Andrej Martin",
+  "nacionalidade": "[SK]",
+  "idade": 36,
+  "overall": 77,
+  "pontos": 148,
+  "atributos": {
+    "saque": 52,
+    "forehand": 53,
+    "backhand": 54,
+    "topspin": 45,
+    "voleio": 48,
+    "slice": 47,
+    "movimento": 50,
+    "lob": 50,
+    "winner": 54,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 361,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 44,
+    "leitura_de_jogo": 32,
+    "determinacao": 39
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 148,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 329,
+  "pontos_ranking": 148,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

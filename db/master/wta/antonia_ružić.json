@@ -1,0 +1,51 @@
+{
+  "nome": "Antonia Ružić",
+  "nacionalidade": "[HR]",
+  "genero": "feminino",
+  "idade": 23,
+  "pontos": 1075,
+  "pontos_ranking": 1075,
+  "overall": 85,
+  "atributos": {
+    "saque": 79,
+    "forehand": 79,
+    "backhand": 77,
+    "topspin": 77,
+    "voleio": 77,
+    "slice": 81,
+    "movimento": 81,
+    "lob": 79,
+    "fisico": 85,
+    "winner": 78,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 83,
+    "agressividade": 76,
+    "leitura_de_jogo": 79,
+    "determinacao": 76
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1075,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 65,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

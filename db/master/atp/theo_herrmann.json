@@ -1,0 +1,49 @@
+{
+  "nome": "Theo Herrmann",
+  "nacionalidade": "[FR]",
+  "idade": 21,
+  "overall": 69,
+  "pontos": 6,
+  "atributos": {
+    "saque": 52,
+    "forehand": 55,
+    "backhand": 51,
+    "topspin": 51,
+    "voleio": 56,
+    "slice": 47,
+    "movimento": 46,
+    "lob": 50,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1282,
+  "atributos_psicologicos": {
+    "concentracao": 45,
+    "agressividade": 33,
+    "leitura_de_jogo": 47,
+    "determinacao": 50
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 6,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1308,
+  "pontos_ranking": 6,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

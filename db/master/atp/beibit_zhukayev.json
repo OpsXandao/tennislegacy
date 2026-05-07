@@ -1,0 +1,49 @@
+{
+  "nome": "Beibit Zhukayev",
+  "nacionalidade": "[KZ]",
+  "idade": 25,
+  "overall": 78,
+  "pontos": 178,
+  "atributos": {
+    "saque": 40,
+    "forehand": 49,
+    "backhand": 45,
+    "topspin": 40,
+    "voleio": 58,
+    "slice": 43,
+    "movimento": 41,
+    "lob": 40,
+    "winner": 50,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 325,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 51,
+    "leitura_de_jogo": 31,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 178,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 293,
+  "pontos_ranking": 178,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 198,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

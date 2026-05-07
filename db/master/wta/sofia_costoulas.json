@@ -1,0 +1,51 @@
+{
+  "nome": "Sofia Costoulas",
+  "nacionalidade": "[BE]",
+  "genero": "feminino",
+  "idade": 20,
+  "pontos": 545,
+  "pontos_ranking": 545,
+  "overall": 82,
+  "atributos": {
+    "saque": 62,
+    "forehand": 67,
+    "backhand": 69,
+    "topspin": 66,
+    "voleio": 63,
+    "slice": 66,
+    "movimento": 61,
+    "lob": 66,
+    "fisico": 68,
+    "winner": 61,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 70,
+    "agressividade": 60,
+    "leitura_de_jogo": 67,
+    "determinacao": 64
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 545,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 169,
+  "peso": 66,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

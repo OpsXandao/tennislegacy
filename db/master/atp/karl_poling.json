@@ -1,0 +1,49 @@
+{
+  "nome": "Karl Poling",
+  "nacionalidade": "[US]",
+  "idade": 26,
+  "overall": 74,
+  "pontos": 69,
+  "atributos": {
+    "saque": 40,
+    "forehand": 48,
+    "backhand": 44,
+    "topspin": 46,
+    "voleio": 56,
+    "slice": 49,
+    "movimento": 46,
+    "lob": 55,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 595,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 31,
+    "leitura_de_jogo": 33,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 69,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 563,
+  "pontos_ranking": 69,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 68,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

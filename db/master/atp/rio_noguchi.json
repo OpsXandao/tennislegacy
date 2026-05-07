@@ -1,0 +1,49 @@
+{
+  "nome": "Rio Noguchi",
+  "nacionalidade": "[JP]",
+  "idade": 27,
+  "overall": 78,
+  "pontos": 232,
+  "atributos": {
+    "saque": 40,
+    "forehand": 40,
+    "backhand": 41,
+    "topspin": 41,
+    "voleio": 40,
+    "slice": 50,
+    "movimento": 51,
+    "lob": 46,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 276,
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 34,
+    "leitura_de_jogo": 32,
+    "determinacao": 34
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 232,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 244,
+  "pontos_ranking": 232,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 168,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

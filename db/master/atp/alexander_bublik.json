@@ -1,0 +1,70 @@
+{
+  "nome": "Alexander Bublik",
+  "nacionalidade": "[KZ]",
+  "idade": 28,
+  "overall": 90,
+  "pontos": 3405,
+  "atributos": {
+    "saque": 78,
+    "forehand": 81,
+    "backhand": 75,
+    "topspin": 78,
+    "voleio": 77,
+    "slice": 79,
+    "movimento": 74,
+    "lob": 77,
+    "winner": 81,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 51,
+  "atributos_psicologicos": {
+    "concentracao": 79,
+    "agressividade": 63,
+    "leitura_de_jogo": 79,
+    "determinacao": 75
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 3405,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Montpellier",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Antwerp",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Halle",
+      "ano": 2023,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Montpellier",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 10,
+  "pontos_ranking": 3405,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 196,
+  "peso": 92,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

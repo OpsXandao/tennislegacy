@@ -1,0 +1,49 @@
+{
+  "nome": "Henry Searle",
+  "nacionalidade": "[GB]",
+  "idade": 19,
+  "overall": 75,
+  "pontos": 93,
+  "atributos": {
+    "saque": 47,
+    "forehand": 54,
+    "backhand": 53,
+    "topspin": 40,
+    "voleio": 56,
+    "slice": 44,
+    "movimento": 40,
+    "lob": 41,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 507,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 42,
+    "leitura_de_jogo": 42,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 93,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 475,
+  "pontos_ranking": 93,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 71,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

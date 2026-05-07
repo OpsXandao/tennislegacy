@@ -1,0 +1,49 @@
+{
+  "nome": "Siddharth Vishwakarma",
+  "nacionalidade": "[IN]",
+  "idade": 31,
+  "overall": 70,
+  "pontos": 11,
+  "atributos": {
+    "saque": 52,
+    "forehand": 41,
+    "backhand": 56,
+    "topspin": 48,
+    "voleio": 50,
+    "slice": 44,
+    "movimento": 58,
+    "lob": 58,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1144,
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 38,
+    "leitura_de_jogo": 47,
+    "determinacao": 53
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 11,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1128,
+  "pontos_ranking": 11,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 78,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

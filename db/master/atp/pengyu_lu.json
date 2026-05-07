@@ -1,0 +1,49 @@
+{
+  "nome": "Pengyu Lu",
+  "nacionalidade": "[CN]",
+  "idade": 24,
+  "overall": 70,
+  "pontos": 14,
+  "atributos": {
+    "saque": 50,
+    "forehand": 44,
+    "backhand": 51,
+    "topspin": 53,
+    "voleio": 57,
+    "slice": 60,
+    "movimento": 46,
+    "lob": 42,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1084,
+  "atributos_psicologicos": {
+    "concentracao": 55,
+    "agressividade": 43,
+    "leitura_de_jogo": 46,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 14,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1062,
+  "pontos_ranking": 14,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

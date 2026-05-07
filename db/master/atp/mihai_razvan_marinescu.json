@@ -1,0 +1,49 @@
+{
+  "nome": "Mihai Razvan Marinescu",
+  "nacionalidade": "[RO]",
+  "idade": 24,
+  "overall": 71,
+  "pontos": 22,
+  "atributos": {
+    "saque": 40,
+    "forehand": 54,
+    "backhand": 54,
+    "topspin": 40,
+    "voleio": 52,
+    "slice": 51,
+    "movimento": 40,
+    "lob": 40,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 962,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 37,
+    "leitura_de_jogo": 30,
+    "determinacao": 39
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 22,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 932,
+  "pontos_ranking": 22,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

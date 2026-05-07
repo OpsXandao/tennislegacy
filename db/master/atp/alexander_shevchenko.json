@@ -1,0 +1,49 @@
+{
+  "nome": "Alexander Shevchenko",
+  "nacionalidade": "[KZ]",
+  "idade": 25,
+  "overall": 83,
+  "pontos": 656,
+  "atributos": {
+    "saque": 69,
+    "forehand": 72,
+    "backhand": 69,
+    "topspin": 66,
+    "voleio": 70,
+    "slice": 67,
+    "movimento": 67,
+    "lob": 66,
+    "winner": 71,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 97,
+  "atributos_psicologicos": {
+    "concentracao": 64,
+    "agressividade": 73,
+    "leitura_de_jogo": 47,
+    "determinacao": 49
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 656,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 29,
+  "pontos_ranking": 656,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 88,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,67 @@
+{
+  "nome": "Dayana Yastremska",
+  "nacionalidade": "[UA]",
+  "genero": "feminino",
+  "idade": 25,
+  "pontos": 1170,
+  "pontos_ranking": 1170,
+  "overall": 85,
+  "atributos": {
+    "saque": 80,
+    "forehand": 78,
+    "backhand": 76,
+    "topspin": 79,
+    "voleio": 75,
+    "slice": 79,
+    "movimento": 85,
+    "lob": 84,
+    "fisico": 76,
+    "winner": 80,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 77,
+    "agressividade": 76,
+    "leitura_de_jogo": 81,
+    "determinacao": 75
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1170,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Hong Kong",
+      "ano": 2018,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Hua Hin",
+      "ano": 2019,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Strasbourg",
+      "ano": 2019,
+      "categoria": "WTA 500"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 64,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

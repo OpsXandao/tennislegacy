@@ -1,0 +1,73 @@
+{
+  "nome": "Leylah Fernandez",
+  "nacionalidade": "[CA]",
+  "genero": "feminino",
+  "idade": 23,
+  "pontos": 1598,
+  "pontos_ranking": 1598,
+  "overall": 88,
+  "atributos": {
+    "saque": 81,
+    "forehand": 81,
+    "backhand": 86,
+    "topspin": 82,
+    "voleio": 85,
+    "slice": 87,
+    "movimento": 89,
+    "lob": 88,
+    "fisico": 89,
+    "winner": 86,
+    "duplas": 92
+  },
+  "atributos_psicologicos": {
+    "concentracao": 81,
+    "agressividade": 84,
+    "leitura_de_jogo": 88,
+    "determinacao": 89
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1598,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Monterrey",
+      "ano": 2021,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Monterrey",
+      "ano": 2022,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "BJK Cup Finals",
+      "ano": 2023,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Hong Kong",
+      "ano": 2023,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 1159,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 1159,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 168,
+  "peso": 64,
+  "mao_dominante": "Canhota",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 78
+}

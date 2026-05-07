@@ -1,0 +1,49 @@
+{
+  "nome": "Antoine Escoffier",
+  "nacionalidade": "[FR]",
+  "idade": 33,
+  "overall": 75,
+  "pontos": 101,
+  "atributos": {
+    "saque": 73,
+    "forehand": 64,
+    "backhand": 78,
+    "topspin": 63,
+    "voleio": 79,
+    "slice": 80,
+    "movimento": 65,
+    "lob": 79,
+    "winner": 62,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 489,
+  "atributos_psicologicos": {
+    "concentracao": 72,
+    "agressividade": 52,
+    "leitura_de_jogo": 61,
+    "determinacao": 66
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 101,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 457,
+  "pontos_ranking": 101,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 76,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

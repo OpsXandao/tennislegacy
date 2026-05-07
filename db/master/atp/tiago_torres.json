@@ -1,0 +1,49 @@
+{
+  "nome": "Tiago Torres",
+  "nacionalidade": "[PT]",
+  "idade": 23,
+  "overall": 73,
+  "pontos": 50,
+  "atributos": {
+    "saque": 48,
+    "forehand": 50,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 46,
+    "movimento": 48,
+    "lob": 52,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 706,
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 31,
+    "leitura_de_jogo": 30,
+    "determinacao": 37
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 50,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 674,
+  "pontos_ranking": 50,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 176,
+  "peso": 75,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

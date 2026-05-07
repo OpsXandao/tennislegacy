@@ -1,0 +1,49 @@
+{
+  "nome": "Oscar Otte",
+  "nacionalidade": "[DE]",
+  "idade": 32,
+  "overall": 70,
+  "pontos": 15,
+  "atributos": {
+    "saque": 67,
+    "forehand": 65,
+    "backhand": 54,
+    "topspin": 60,
+    "voleio": 71,
+    "slice": 51,
+    "movimento": 55,
+    "lob": 51,
+    "winner": 65,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1056,
+  "atributos_psicologicos": {
+    "concentracao": 56,
+    "agressividade": 47,
+    "leitura_de_jogo": 60,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 15,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1030,
+  "pontos_ranking": 15,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

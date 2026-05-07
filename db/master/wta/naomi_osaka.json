@@ -1,0 +1,87 @@
+{
+  "nome": "Naomi Osaka",
+  "nacionalidade": "[JP]",
+  "genero": "feminino",
+  "idade": 28,
+  "pontos": 2324,
+  "pontos_ranking": 2324,
+  "overall": 89,
+  "atributos": {
+    "saque": 90,
+    "forehand": 83,
+    "backhand": 86,
+    "topspin": 85,
+    "voleio": 84,
+    "slice": 89,
+    "movimento": 85,
+    "lob": 87,
+    "fisico": 92,
+    "winner": 83,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 86,
+    "agressividade": 85,
+    "leitura_de_jogo": 92,
+    "determinacao": 84
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2324,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Indian Wells",
+      "ano": 2018,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "US Open",
+      "ano": 2018,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2019,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Beijing",
+      "ano": 2019,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Osaka",
+      "ano": 2019,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Us Open",
+      "ano": 2020,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2021,
+      "categoria": "Grand Slam"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 75,
+  "mao_dominante": "Destra",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

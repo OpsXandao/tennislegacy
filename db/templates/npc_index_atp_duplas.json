@@ -1,0 +1,702 @@
+[
+  {
+    "rank_duplas": 1,
+    "nome": "Neal Skupski",
+    "idade": 36,
+    "pais3": "RUS",
+    "pontos_duplas": 8280
+  },
+  {
+    "rank_duplas": 2,
+    "nome": "Horacio Zeballos",
+    "idade": 40,
+    "pais3": "RUS",
+    "pontos_duplas": 8135
+  },
+  {
+    "rank_duplas": 3,
+    "nome": "Marcel Granollers",
+    "idade": 39,
+    "pais3": "RUS",
+    "pontos_duplas": 8045
+  },
+  {
+    "rank_duplas": 4,
+    "nome": "Lloyd Glasspool",
+    "idade": 32,
+    "pais3": "RUS",
+    "pontos_duplas": 7950
+  },
+  {
+    "rank_duplas": 5,
+    "nome": "Julian Cash",
+    "idade": 29,
+    "pais3": "RUS",
+    "pontos_duplas": 7800
+  },
+  {
+    "rank_duplas": 6,
+    "nome": "Marcelo Arevalo",
+    "idade": 35,
+    "pais3": "RUS",
+    "pontos_duplas": 6980
+  },
+  {
+    "rank_duplas": 6,
+    "nome": "Mate Pavic",
+    "idade": 32,
+    "pais3": "RUS",
+    "pontos_duplas": 6980
+  },
+  {
+    "rank_duplas": 8,
+    "nome": "Harri Heliovaara",
+    "idade": 36,
+    "pais3": "RUS",
+    "pontos_duplas": 6570
+  },
+  {
+    "rank_duplas": 8,
+    "nome": "Henry Patten",
+    "idade": 29,
+    "pais3": "RUS",
+    "pontos_duplas": 6570
+  },
+  {
+    "rank_duplas": 10,
+    "nome": "Joe Salisbury",
+    "idade": 33,
+    "pais3": "RUS",
+    "pontos_duplas": 6190
+  },
+  {
+    "rank_duplas": 11,
+    "nome": "Christian Harrison",
+    "idade": 31,
+    "pais3": "RUS",
+    "pontos_duplas": 4815
+  },
+  {
+    "rank_duplas": 12,
+    "nome": "Kevin Krawietz",
+    "idade": 34,
+    "pais3": "RUS",
+    "pontos_duplas": 4175
+  },
+  {
+    "rank_duplas": 12,
+    "nome": "Tim Puetz",
+    "idade": 38,
+    "pais3": "RUS",
+    "pontos_duplas": 4175
+  },
+  {
+    "rank_duplas": 14,
+    "nome": "Nikola Mektic",
+    "idade": 37,
+    "pais3": "RUS",
+    "pontos_duplas": 3350
+  },
+  {
+    "rank_duplas": 15,
+    "nome": "Simone Bolelli",
+    "idade": 40,
+    "pais3": "RUS",
+    "pontos_duplas": 3100
+  },
+  {
+    "rank_duplas": 16,
+    "nome": "Andrea Vavassori",
+    "idade": 30,
+    "pais3": "RUS",
+    "pontos_duplas": 3100
+  },
+  {
+    "rank_duplas": 17,
+    "nome": "Hugo Nys",
+    "idade": 35,
+    "pais3": "RUS",
+    "pontos_duplas": 3090
+  },
+  {
+    "rank_duplas": 18,
+    "nome": "Edouard Roger-Vasselin",
+    "idade": 42,
+    "pais3": "RUS",
+    "pontos_duplas": 2990
+  },
+  {
+    "rank_duplas": 19,
+    "nome": "Francisco Cabral",
+    "idade": 29,
+    "pais3": "RUS",
+    "pontos_duplas": 2950
+  },
+  {
+    "rank_duplas": 20,
+    "nome": "Evan King",
+    "idade": 33,
+    "pais3": "RUS",
+    "pontos_duplas": 2806
+  },
+  {
+    "rank_duplas": 21,
+    "nome": "Lucas Miedler",
+    "idade": 29,
+    "pais3": "RUS",
+    "pontos_duplas": 2760
+  },
+  {
+    "rank_duplas": 22,
+    "nome": "Manuel Guinard",
+    "idade": 30,
+    "pais3": "RUS",
+    "pontos_duplas": 2740
+  },
+  {
+    "rank_duplas": 23,
+    "nome": "Yuki Bhambri",
+    "idade": 33,
+    "pais3": "RUS",
+    "pontos_duplas": 2500
+  },
+  {
+    "rank_duplas": 24,
+    "nome": "Jan Zielinski",
+    "idade": 29,
+    "pais3": "RUS",
+    "pontos_duplas": 2445
+  },
+  {
+    "rank_duplas": 25,
+    "nome": "Luke Johnson",
+    "idade": 31,
+    "pais3": "RUS",
+    "pontos_duplas": 2435
+  },
+  {
+    "rank_duplas": 26,
+    "nome": "Andres Molteni",
+    "idade": 37,
+    "pais3": "RUS",
+    "pontos_duplas": 2430
+  },
+  {
+    "rank_duplas": 27,
+    "nome": "Sadio Doumbia",
+    "idade": 35,
+    "pais3": "RUS",
+    "pontos_duplas": 2415
+  },
+  {
+    "rank_duplas": 28,
+    "nome": "Theo Arribage",
+    "idade": 25,
+    "pais3": "RUS",
+    "pontos_duplas": 2415
+  },
+  {
+    "rank_duplas": 29,
+    "nome": "David Pel",
+    "idade": 34,
+    "pais3": "RUS",
+    "pontos_duplas": 2396
+  },
+  {
+    "rank_duplas": 30,
+    "nome": "Fabien Reboul",
+    "idade": 30,
+    "pais3": "RUS",
+    "pontos_duplas": 2380
+  },
+  {
+    "rank_duplas": 31,
+    "nome": "Andre Goransson",
+    "idade": 31,
+    "pais3": "RUS",
+    "pontos_duplas": 2315
+  },
+  {
+    "rank_duplas": 32,
+    "nome": "Albano Olivetti",
+    "idade": 34,
+    "pais3": "RUS",
+    "pontos_duplas": 2315
+  },
+  {
+    "rank_duplas": 33,
+    "nome": "JJ Tracy",
+    "idade": 23,
+    "pais3": "RUS",
+    "pontos_duplas": 2247
+  },
+  {
+    "rank_duplas": 34,
+    "nome": "Guido Andreozzi",
+    "idade": 34,
+    "pais3": "RUS",
+    "pontos_duplas": 2245
+  },
+  {
+    "rank_duplas": 35,
+    "nome": "Alexander Erler",
+    "idade": 28,
+    "pais3": "RUS",
+    "pontos_duplas": 2220
+  },
+  {
+    "rank_duplas": 36,
+    "nome": "Maximo Gonzalez",
+    "idade": 42,
+    "pais3": "RUS",
+    "pontos_duplas": 2160
+  },
+  {
+    "rank_duplas": 37,
+    "nome": "Constantin Frantzen",
+    "idade": 27,
+    "pais3": "RUS",
+    "pontos_duplas": 2115
+  },
+  {
+    "rank_duplas": 38,
+    "nome": "Rajeev Ram",
+    "idade": 41,
+    "pais3": "RUS",
+    "pontos_duplas": 2105
+  },
+  {
+    "rank_duplas": 39,
+    "nome": "Michael Venus",
+    "idade": 38,
+    "pais3": "RUS",
+    "pontos_duplas": 2100
+  },
+  {
+    "rank_duplas": 40,
+    "nome": "Rafael Matos",
+    "idade": 30,
+    "pais3": "RUS",
+    "pontos_duplas": 2100
+  },
+  {
+    "rank_duplas": 41,
+    "nome": "Orlando Luz",
+    "idade": 28,
+    "pais3": "RUS",
+    "pontos_duplas": 2087
+  },
+  {
+    "rank_duplas": 42,
+    "nome": "Sander Arends",
+    "idade": 34,
+    "pais3": "RUS",
+    "pontos_duplas": 2035
+  },
+  {
+    "rank_duplas": 43,
+    "nome": "Robert Cash",
+    "idade": 24,
+    "pais3": "RUS",
+    "pontos_duplas": 2022
+  },
+  {
+    "rank_duplas": 44,
+    "nome": "John-Patrick Smith",
+    "idade": 37,
+    "pais3": "RUS",
+    "pontos_duplas": 2002
+  },
+  {
+    "rank_duplas": 45,
+    "nome": "Petr Nouza",
+    "idade": 27,
+    "pais3": "RUS",
+    "pontos_duplas": 1990
+  },
+  {
+    "rank_duplas": 46,
+    "nome": "Marcelo Melo",
+    "idade": 42,
+    "pais3": "RUS",
+    "pontos_duplas": 1985
+  },
+  {
+    "rank_duplas": 47,
+    "nome": "Robert Galloway",
+    "idade": 33,
+    "pais3": "RUS",
+    "pontos_duplas": 1975
+  },
+  {
+    "rank_duplas": 48,
+    "nome": "Patrik Rikl",
+    "idade": 27,
+    "pais3": "RUS",
+    "pontos_duplas": 1970
+  },
+  {
+    "rank_duplas": 49,
+    "nome": "Jakob Schnaitter",
+    "idade": 29,
+    "pais3": "RUS",
+    "pontos_duplas": 1955
+  },
+  {
+    "rank_duplas": 49,
+    "nome": "Mark Wallner",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1955
+  },
+  {
+    "rank_duplas": 51,
+    "nome": "Austin Krajicek",
+    "idade": 35,
+    "pais3": "RUS",
+    "pontos_duplas": 1910
+  },
+  {
+    "rank_duplas": 52,
+    "nome": "Fernando Romboli",
+    "idade": 37,
+    "pais3": "RUS",
+    "pontos_duplas": 1900
+  },
+  {
+    "rank_duplas": 53,
+    "nome": "Santiago Gonzalez",
+    "idade": 43,
+    "pais3": "RUS",
+    "pontos_duplas": 1895
+  },
+  {
+    "rank_duplas": 54,
+    "nome": "Romain Arneodo",
+    "idade": 33,
+    "pais3": "RUS",
+    "pontos_duplas": 1886
+  },
+  {
+    "rank_duplas": 55,
+    "nome": "Adam Pavlasek",
+    "idade": 31,
+    "pais3": "RUS",
+    "pontos_duplas": 1845
+  },
+  {
+    "rank_duplas": 56,
+    "nome": "Vasil Kirkov",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1745
+  },
+  {
+    "rank_duplas": 57,
+    "nome": "Robin Haase",
+    "idade": 38,
+    "pais3": "RUS",
+    "pontos_duplas": 1700
+  },
+  {
+    "rank_duplas": 58,
+    "nome": "Bart Stevens",
+    "idade": 28,
+    "pais3": "RUS",
+    "pontos_duplas": 1635
+  },
+  {
+    "rank_duplas": 59,
+    "nome": "John Peers",
+    "idade": 37,
+    "pais3": "RUS",
+    "pontos_duplas": 1575
+  },
+  {
+    "rank_duplas": 60,
+    "nome": "Sem Verbeek",
+    "idade": 31,
+    "pais3": "RUS",
+    "pontos_duplas": 1500
+  },
+  {
+    "rank_duplas": 61,
+    "nome": "Marc Polmans",
+    "idade": 28,
+    "pais3": "RUS",
+    "pontos_duplas": 1450
+  },
+  {
+    "rank_duplas": 62,
+    "nome": "Rinky Hijikata",
+    "idade": 25,
+    "pais3": "RUS",
+    "pontos_duplas": 1445
+  },
+  {
+    "rank_duplas": 63,
+    "nome": "Sander Gille",
+    "idade": 35,
+    "pais3": "RUS",
+    "pontos_duplas": 1420
+  },
+  {
+    "rank_duplas": 64,
+    "nome": "Ray Ho",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1412
+  },
+  {
+    "rank_duplas": 65,
+    "nome": "Matej Vocel",
+    "idade": 28,
+    "pais3": "RUS",
+    "pontos_duplas": 1403
+  },
+  {
+    "rank_duplas": 66,
+    "nome": "Jordan Thompson",
+    "idade": 31,
+    "pais3": "RUS",
+    "pontos_duplas": 1375
+  },
+  {
+    "rank_duplas": 67,
+    "nome": "Rohan Bopanna",
+    "idade": 45,
+    "pais3": "RUS",
+    "pontos_duplas": 1335
+  },
+  {
+    "rank_duplas": 68,
+    "nome": "Hendrik Jebens",
+    "idade": 30,
+    "pais3": "RUS",
+    "pontos_duplas": 1331
+  },
+  {
+    "rank_duplas": 69,
+    "nome": "Matthew Ebden",
+    "idade": 38,
+    "pais3": "RUS",
+    "pontos_duplas": 1317
+  },
+  {
+    "rank_duplas": 70,
+    "nome": "Ryan Seggerman",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1315
+  },
+  {
+    "rank_duplas": 71,
+    "nome": "Joran Vliegen",
+    "idade": 32,
+    "pais3": "RUS",
+    "pontos_duplas": 1310
+  },
+  {
+    "rank_duplas": 72,
+    "nome": "Pierre-Hugues Herbert",
+    "idade": 34,
+    "pais3": "RUS",
+    "pontos_duplas": 1307
+  },
+  {
+    "rank_duplas": 73,
+    "nome": "Neil Oberleitner",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1241
+  },
+  {
+    "rank_duplas": 74,
+    "nome": "Gonzalo Escobar",
+    "idade": 37,
+    "pais3": "RUS",
+    "pontos_duplas": 1230
+  },
+  {
+    "rank_duplas": 75,
+    "nome": "Marcus Willis",
+    "idade": 35,
+    "pais3": "RUS",
+    "pontos_duplas": 1218
+  },
+  {
+    "rank_duplas": 76,
+    "nome": "Patrik Trhac",
+    "idade": 27,
+    "pais3": "RUS",
+    "pontos_duplas": 1217
+  },
+  {
+    "rank_duplas": 77,
+    "nome": "Jason Kubler",
+    "idade": 32,
+    "pais3": "RUS",
+    "pontos_duplas": 1216
+  },
+  {
+    "rank_duplas": 78,
+    "nome": "Lorenzo Sonego",
+    "idade": 30,
+    "pais3": "RUS",
+    "pontos_duplas": 1145
+  },
+  {
+    "rank_duplas": 79,
+    "nome": "Matthew Romios",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1140
+  },
+  {
+    "rank_duplas": 80,
+    "nome": "Diego Hidalgo",
+    "idade": 32,
+    "pais3": "RUS",
+    "pontos_duplas": 1138
+  },
+  {
+    "rank_duplas": 81,
+    "nome": "N Sriram Balaji",
+    "idade": 35,
+    "pais3": "RUS",
+    "pontos_duplas": 1116
+  },
+  {
+    "rank_duplas": 82,
+    "nome": "Jakub Paul",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1092
+  },
+  {
+    "rank_duplas": 83,
+    "nome": "Ariel Behar",
+    "idade": 36,
+    "pais3": "RUS",
+    "pontos_duplas": 1070
+  },
+  {
+    "rank_duplas": 84,
+    "nome": "Miguel Reyes-Varela",
+    "idade": 38,
+    "pais3": "RUS",
+    "pontos_duplas": 1051
+  },
+  {
+    "rank_duplas": 85,
+    "nome": "Finn Reynolds",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1032
+  },
+  {
+    "rank_duplas": 86,
+    "nome": "James Watt",
+    "idade": 25,
+    "pais3": "RUS",
+    "pontos_duplas": 1032
+  },
+  {
+    "rank_duplas": 87,
+    "nome": "Lorenzo Musetti",
+    "idade": 23,
+    "pais3": "RUS",
+    "pontos_duplas": 1030
+  },
+  {
+    "rank_duplas": 88,
+    "nome": "Mac Kiger",
+    "idade": 27,
+    "pais3": "RUS",
+    "pontos_duplas": 1025
+  },
+  {
+    "rank_duplas": 89,
+    "nome": "Quentin Halys",
+    "idade": 29,
+    "pais3": "RUS",
+    "pontos_duplas": 1002
+  },
+  {
+    "rank_duplas": 90,
+    "nome": "Marcelo Demoliner",
+    "idade": 37,
+    "pais3": "RUS",
+    "pontos_duplas": 1001
+  },
+  {
+    "rank_duplas": 91,
+    "nome": "Luca Sanchez",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1001
+  },
+  {
+    "rank_duplas": 92,
+    "nome": "Alex Michelsen",
+    "idade": 21,
+    "pais3": "RUS",
+    "pontos_duplas": 975
+  },
+  {
+    "rank_duplas": 93,
+    "nome": "Jean-Julien Rojer",
+    "idade": 44,
+    "pais3": "RUS",
+    "pontos_duplas": 943
+  },
+  {
+    "rank_duplas": 94,
+    "nome": "Takeru Yuzuki",
+    "idade": 27,
+    "pais3": "RUS",
+    "pontos_duplas": 927
+  },
+  {
+    "rank_duplas": 95,
+    "nome": "Anirudh Chandrasekar",
+    "idade": 27,
+    "pais3": "RUS",
+    "pontos_duplas": 871
+  },
+  {
+    "rank_duplas": 96,
+    "nome": "Reese Stalder",
+    "idade": 29,
+    "pais3": "RUS",
+    "pontos_duplas": 847
+  },
+  {
+    "rank_duplas": 97,
+    "nome": "Arthur Reymond",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 842
+  },
+  {
+    "rank_duplas": 98,
+    "nome": "Nicolas Barrientos",
+    "idade": 38,
+    "pais3": "RUS",
+    "pontos_duplas": 826
+  },
+  {
+    "rank_duplas": 99,
+    "nome": "David Pichler",
+    "idade": 30,
+    "pais3": "RUS",
+    "pontos_duplas": 814
+  },
+  {
+    "rank_duplas": 100,
+    "nome": "Ben Shelton",
+    "idade": 23,
+    "pais3": "RUS",
+    "pontos_duplas": 810
+  }
+]

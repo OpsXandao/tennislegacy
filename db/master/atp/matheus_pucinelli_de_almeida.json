@@ -1,0 +1,49 @@
+{
+  "nome": "Matheus Pucinelli De Almeida",
+  "nacionalidade": "[BR]",
+  "idade": 24,
+  "overall": 78,
+  "pontos": 177,
+  "atributos": {
+    "saque": 40,
+    "forehand": 48,
+    "backhand": 40,
+    "topspin": 44,
+    "voleio": 44,
+    "slice": 40,
+    "movimento": 40,
+    "lob": 53,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 326,
+  "atributos_psicologicos": {
+    "concentracao": 38,
+    "agressividade": 36,
+    "leitura_de_jogo": 37,
+    "determinacao": 39
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 177,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 294,
+  "pontos_ranking": 177,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

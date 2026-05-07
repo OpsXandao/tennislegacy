@@ -1,0 +1,49 @@
+{
+  "nome": "Alex Knaff",
+  "nacionalidade": "[LU]",
+  "idade": 28,
+  "overall": 73,
+  "pontos": 49,
+  "atributos": {
+    "saque": 49,
+    "forehand": 51,
+    "backhand": 51,
+    "topspin": 51,
+    "voleio": 47,
+    "slice": 51,
+    "movimento": 41,
+    "lob": 50,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 713,
+  "atributos_psicologicos": {
+    "concentracao": 38,
+    "agressividade": 34,
+    "leitura_de_jogo": 41,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 49,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 681,
+  "pontos_ranking": 49,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

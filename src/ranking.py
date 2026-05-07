@@ -1,282 +1,618 @@
-import json
 import os
-
-from src.dados import carregar_ranking, get_caminho_ranking_global
-from src.jogador import normalizar_nome
+from src.dados import (
+    SAVES_DIR,
+    carregar_npc_detalhado,
+    carregar_ranking,
+    get_caminho_ranking_global,
+)
+from src.nome_utils import normalizar_nome
 from src.json_utils import salvar_json_seguro
-
-DEFAULT_ATRIBUTOS = {
-    "saque": 60,
-    "forehand": 60,
-    "backhand": 60,
-    "topspin": 60,
-    "voleio": 60,
-    "slice": 60,
-    "movimento": 60,
-    "lob": 60,
-    "fisico": 60,
-    "winner": 60,
-}
-
-DEFAULT_ATRIBUTOS_PSICOLOGICOS = {
-    "concentracao": 50,
-    "agressividade": 50,
-    "leitura_de_jogo": 50,
-    "determinacao": 50,
-}
+from src.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
+from src.player_ratings import ajustar_atributo_duplas, calcular_overall_contextual
 
 
 class SistemaRanking:
-    def __init__(self, caminho_arquivo):
-        self.caminho_arquivo = caminho_arquivo
-        ranking = self.carregar_ranking()
-        self.ranking, mudou = self._normalizar_ranking(ranking)
-        if mudou:
+    def __init__(
+        self,
+        caminho_arquivo: str,
+        modalidade: str = "simples",
+        persistir_reparos_na_carga: bool = False,
+    ) -> None:
+        self.caminho_arquivo: str = caminho_arquivo
+        self.modalidade: str = modalidade  # 'simples' ou 'duplas'
+        self.persistir_reparos_na_carga: bool = persistir_reparos_na_carga
+        self._sorted_mode: str = modalidade
+        self._pos_cache: dict[str, list | None] = {"simples": None, "duplas": None}
+        self._nome_cache: dict[str, int] | None = None
+        self._calculated_modes: set[str] = set()
+        self._mudou_na_carga: bool = False
+        self._duplas_corrompidas_por_pais3: bool = False
+
+        ranking_bruto = self.carregar_ranking()
+        self._preparar_sinais_de_correcao(ranking_bruto)
+        self.ranking, mudou = self._normalizar_ranking(ranking_bruto)
+
+        # --- Verificação de Saúde do Ranking ---
+        if len(self.ranking) < 300:
+            genero = (
+                "feminino" if "wta" in self.caminho_arquivo.lower() else "masculino"
+            )
+
+            from src.dados import get_caminho_ranking_global_duplas
+
+            if self.modalidade == "duplas":
+                path_global = get_caminho_ranking_global_duplas(genero)
+            else:
+                path_global = get_caminho_ranking_global(genero)
+
+            ranking_global = carregar_ranking(path_global)
+
+            if ranking_global and len(ranking_global) > len(self.ranking):
+                nova_lista, _ = self._normalizar_ranking(ranking_global)
+
+                # Se ainda estivermos carregando do global de SIMPLES para um ranking de DUPLAS
+                # (caso o global de duplas também esteja vazio/ausente), limpamos os pontos.
+                if self.modalidade == "duplas" and "duplas" not in path_global.lower():
+                    for j in nova_lista:
+                        j["pontos_detalhados"] = []
+                        j["pontos_ranking"] = 0
+                        j["pontos"] = 0
+                        j["pontos_detalhados_duplas"] = []
+                        j["pontos_ranking_duplas"] = 0
+                        j["pontos_duplas"] = 0
+
+                self.ranking = nova_lista
+                mudou = True
+
+            # Se ainda for curto (ex: base global corrompida), gera Newgens reais
+            if len(self.ranking) < 300:
+                from src.gerador_nomes import gerar_jogador_fraco
+
+                while len(self.ranking) < 300:
+                    novo = gerar_jogador_fraco(len(self.ranking) + 1, genero=genero)
+                    novo["is_bot"] = False  # Trata como NPC permanente
+                    self.ranking.append(novo)
+                mudou = True
+
+        self._mudou_na_carga = bool(mudou)
+        if mudou and self.persistir_reparos_na_carga:
             self.salvar_ranking()
 
+    @property
+    def tem_reparos_pendentes(self) -> bool:
+        return self._mudou_na_carga
+
     def carregar_ranking(self):
+        from src.dados import (
+            carregar_ranking,
+            get_caminho_ranking_duplas,
+        )
+
+        # Se o caminho fornecido for o genérico, tenta ajustar para a modalidade
+        if "duplas" in self.caminho_arquivo:
+            return carregar_ranking(self.caminho_arquivo)
+
+        # Se for inicializado com modalidade 'duplas' mas caminho de simples, corrige
+        if self.modalidade == "duplas" and "duplas" not in self.caminho_arquivo:
+            genero = (
+                "feminino" if "wta" in self.caminho_arquivo.lower() else "masculino"
+            )
+            # Tenta extrair o nome do save do path
+            partes = self.caminho_arquivo.split(os.sep)
+            if "saves" in partes:
+                idx = partes.index("saves")
+                if idx + 1 < len(partes):
+                    nome_save = partes[idx + 1]
+                    self.caminho_arquivo = get_caminho_ranking_duplas(
+                        nome_save, genero=genero
+                    )
+
         return carregar_ranking(self.caminho_arquivo)
+
+    def _invalidate_caches(self):
+        self._pos_cache = {"simples": None, "duplas": None}
+        self._nome_cache = None
+        self._sorted_mode = None
+        self._calculated_modes = set()
+
+    def _get_nome_cache(self):
+        if self._nome_cache is None:
+            self._nome_cache = {normalizar_nome(j): j for j in self.ranking}
+        return self._nome_cache
+
+    @staticmethod
+    def _is_entrada_bot_invalida(jogador):
+        if not isinstance(jogador, dict):
+            return False
+        nome_norm = normalizar_nome(jogador)
+        if jogador.get("is_bot") or jogador.get("e_ficticio"):
+            return True
+        if nome_norm.startswith("bot ") or nome_norm.startswith("bot externo"):
+            return True
+        return jogador.get("nome", "") == "Lowest_Rank_Bot"
 
     def _normalizar_ranking(self, ranking):
         if not isinstance(ranking, list):
             return [], True
-        
-        ranking_sem_duplicados, mudou_remocao = self._remover_duplicados(ranking)
+        antes = len(ranking)
+        ranking = [j for j in ranking if not self._is_entrada_bot_invalida(j)]
+        ranking_unicos, mudou_dups = self._remover_duplicados(ranking)
 
         mudou_norm = False
         normalizado = []
-        for jogador in ranking_sem_duplicados:
-            jogador_norm, alterado = self._normalizar_jogador(jogador)
-            normalizado.append(jogador_norm)
-            mudou_norm = mudou_norm or alterado
+        for j in ranking_unicos:
+            j_norm, alt = self._normalizar_jogador(j)
+            normalizado.append(j_norm)
+            mudou_norm = mudou_norm or alt
 
-        return normalizado, mudou_remocao or mudou_norm
+        return normalizado, (len(normalizado) != antes) or mudou_dups or mudou_norm
 
-    def _normalizar_jogador(self, jogador):
+    def _preparar_sinais_de_correcao(self, ranking):
+        self._duplas_corrompidas_por_pais3 = False
+
+        if self.modalidade == "duplas" and isinstance(ranking, list):
+            paises = [
+                str(j.get("pais3") or "").strip().upper()
+                for j in ranking
+                if isinstance(j, dict) and j.get("pais3")
+            ]
+            paises_unicos = {p for p in paises if p}
+            # Se todo o ranking veio com o mesmo pais3, o feed está corrompido.
+            if len(paises) >= 20 and len(paises_unicos) == 1:
+                self._duplas_corrompidas_por_pais3 = True
+
+    def _inferir_contexto_ranking(self):
+        genero = "feminino" if "wta" in self.caminho_arquivo.lower() else "masculino"
+        nome_save = None
+        partes = self.caminho_arquivo.split(os.sep)
+        if "saves" in partes:
+            idx = partes.index("saves")
+            if idx + 1 < len(partes):
+                nome_save = partes[idx + 1]
+        return nome_save, genero
+
+    def _resolver_nacionalidade_por_base_local(self, nome_jogador):
+        nome_save, genero = self._inferir_contexto_ranking()
+        dados = carregar_npc_detalhado(nome_save, nome_jogador, genero=genero)
+        if not isinstance(dados, dict):
+            return None
+        nacionalidade = str(dados.get("nacionalidade") or "").strip()
+        return nacionalidade or None
+
+    def _normalizar_jogador(self, j):
         mudou = False
-        if not isinstance(jogador, dict):
-            jogador = {"nome": str(jogador)}
+        if not isinstance(j, dict):
+            j = {"nome": str(j)}
             mudou = True
 
-        nome = jogador.get("nome")
-        if not isinstance(nome, str) or not nome.strip():
-            jogador["nome"] = str(nome) if nome is not None else "Desconhecido"
+        pontos_simples = int(j.get("pontos_ranking", j.get("pontos", 0)) or 0)
+        pontos_duplas = int(j.get("pontos_duplas", 0) or 0)
+        pontos_ranking_duplas = int(j.get("pontos_ranking_duplas", 0) or 0)
+        historico_simples = j.get("pontos_detalhados") or []
+
+        # Alguns índices lean vieram com pontos de duplas gravados no campo de simples.
+        # Quando isso acontece, migramos os pontos para o eixo correto sem bloquear
+        # jogadores que pontuam nas duas modalidades.
+        if (
+            self.modalidade == "simples"
+            and pontos_simples > 0
+            and pontos_duplas > 0
+            and pontos_simples == pontos_duplas
+            and pontos_ranking_duplas == 0
+            and not historico_simples
+        ):
+            j["pontos_ranking_duplas"] = pontos_duplas
+            j["pontos_ranking"] = 0
+            j["pontos"] = 0
             mudou = True
 
-        if "nacionalidade" not in jogador:
-            jogador["nacionalidade"] = "??"
+        # Suporte para o novo ranking de duplas que usa 'pais3' em vez de 'nacionalidade'
+        if "pais3" in j and ("nacionalidade" not in j or j["nacionalidade"] == "??"):
+            pais = str(j["pais3"]).upper()
+            if self._duplas_corrompidas_por_pais3:
+                j["nacionalidade"] = (
+                    self._resolver_nacionalidade_por_base_local(j.get("nome")) or "[??]"
+                )
+            else:
+                j["nacionalidade"] = f"[{pais}]" if not pais.startswith("[") else pais
             mudou = True
 
-        # Normalização da nova estrutura de pontos
-        if "pontos_detalhados" not in jogador:
-            jogador["pontos_detalhados"] = []
+        campos_obrigatorios = [
+            ("nacionalidade", "??"),
+            ("pontos_detalhados", []),
+            ("trofeus", []),
+            ("historico_torneios", []),
+            ("pontos_ytd", 0),
+            ("dinheiro", 0),
+            ("pontos_duplas", 0),
+            ("pontos_detalhados_duplas", []),
+            ("pontos_ranking", j.get("pontos_ranking") or j.get("pontos", 0)),
+            ("pontos_ranking_duplas", 0),
+            ("moral", 70),
+            ("fadiga", 0),
+            ("energia", 100),
+            ("superficie_preferida", "dura"),
+            ("protected_ranking", None),
+            ("protected_ranking_semanas", 0),
+            ("is_bot", False),
+            ("e_jogador_principal", False),
+            ("e_ficticio", False),
+        ]
+
+        for campo, padrao in campos_obrigatorios:
+            if campo not in j:
+                j[campo] = padrao
+                mudou = True
+
+        # Se não tem atributos técnicos, marca como 'is_lean' para carregar do DB depois
+        if "atributos" not in j and not j.get("is_lean"):
+            j["is_lean"] = True
             mudou = True
 
-        if "trofeus" not in jogador:
-            jogador["trofeus"] = []
+        # Se 'pontos' existia mas 'pontos_ranking' não (migração manual)
+        if (
+            "pontos" in j
+            and "pontos_ranking" in j
+            and j["pontos_ranking"] == 0
+            and j["pontos"] > 0
+        ):
+            j["pontos_ranking"] = j["pontos"]
             mudou = True
 
-        pontos = jogador.get("pontos", 0)
-        if not isinstance(pontos, int):
-            try:
-                jogador["pontos"] = int(pontos)
-            except (ValueError, TypeError):
-                jogador["pontos"] = 0
-            mudou = True
-        
-        # Garante que 'pontos' seja a soma de 'pontos_detalhados' se existir
-        soma_detalhada = sum(p.get("pontos", 0) for p in jogador["pontos_detalhados"])
-        if jogador["pontos"] != soma_detalhada and soma_detalhada > 0:
-             jogador["pontos"] = soma_detalhada
-             mudou = True
-        elif "pontos" not in jogador:
-             jogador["pontos"] = 0
-             mudou = True
+        if j.get("is_lean"):
+            return j, mudou
 
-
-        atributos = jogador.get("atributos")
-        if not isinstance(atributos, dict) or not atributos:
-            jogador["atributos"] = DEFAULT_ATRIBUTOS.copy()
-            mudou = True
-        elif "fisico" not in atributos:
-            jogador["atributos"]["fisico"] = DEFAULT_ATRIBUTOS["fisico"]
+        if not j.get("atributos"):
+            j["atributos"] = DEFAULT_ATRIBUTOS.copy()
             mudou = True
 
-        if "overall" not in jogador or mudou:
-            atributos = jogador["atributos"]
-            jogador["overall"] = round(sum(atributos.values()) / len(atributos))
+        if ajustar_atributo_duplas(j):
             mudou = True
 
-        # Normalização de atributos psicológicos
-        atributos_psico = jogador.get("atributos_psicologicos")
-        if not isinstance(atributos_psico, dict) or not atributos_psico:
-            jogador["atributos_psicologicos"] = DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy()
+        if not j.get("atributos_psicologicos"):
+            j["atributos_psicologicos"] = DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy()
             mudou = True
 
-        return jogador, mudou
+        overall_novo = calcular_overall_contextual(j)
+        if int(j.get("overall", 0) or 0) != overall_novo:
+            j["overall"] = overall_novo
+            mudou = True
+
+        return j, mudou
 
     def _remover_duplicados(self, ranking):
-        jogadores_unicos = {}
+        unicos = {}
         mudou = False
-        for jogador in ranking:
-            nome_normalizado = normalizar_nome(jogador)
-            if nome_normalizado not in jogadores_unicos:
-                jogadores_unicos[nome_normalizado] = jogador
+        for j in ranking:
+            chave = (normalizar_nome(j), j.get("nacionalidade", "??"))
+            if chave not in unicos:
+                unicos[chave] = j
             else:
                 mudou = True
-                # Logica de merge: manter o jogador com mais pontos, ou o primeiro encontrado
-                jogador_existente = jogadores_unicos[nome_normalizado]
-                if jogador.get("pontos", 0) > jogador_existente.get("pontos", 0):
-                    jogadores_unicos[nome_normalizado] = jogador
-        
-        return list(jogadores_unicos.values()), mudou
+                if j.get("pontos_ranking", 0) > unicos[chave].get("pontos_ranking", 0):
+                    unicos[chave] = j
+        return list(unicos.values()), mudou
 
-    def salvar_ranking(self):
-        salvar_json_seguro(self.caminho_arquivo, self.ranking)
-
-    def ordenar(self):
-        for jogador in self.ranking:
-            if "pontos" not in jogador:
-                jogador["pontos"] = 0
-        self.ranking.sort(key=lambda jogador: jogador["pontos"], reverse=True)
-
-    def adicionar_pontos(self, nome, pontos, semana_expiracao):
-        """Adiciona um bloco de pontos detalhados a um jogador."""
-        nome_normalizado = normalizar_nome(nome)
-        jogador_encontrado = None
-        for j in self.ranking:
-            if normalizar_nome(j) == nome_normalizado:
-                jogador_encontrado = j
-                break
-        
-        if not jogador_encontrado:
-            # Cria um novo jogador se não for encontrado
-            jogador_encontrado, _ = self._normalizar_jogador({"nome": nome})
-            self.ranking.append(jogador_encontrado)
-
-        # Adiciona o novo bloco de pontos
-        bloco_pontos = {"pontos": pontos, "semana_expiracao": semana_expiracao}
-        jogador_encontrado["pontos_detalhados"].append(bloco_pontos)
-        
-        # Recalcula o total de pontos
-        jogador_encontrado["pontos"] = sum(p["pontos"] for p in jogador_encontrado["pontos_detalhados"])
-
-        self.ordenar()
-        # O salvamento é feito externamente (ex: no final da distribuição)
-
-
-    def obter_posicao(self, nome):
-        self.ordenar()
-        nome_normalizado = normalizar_nome(nome)
-        for idx, jogador in enumerate(self.ranking, 1):
-            if normalizar_nome(jogador) == nome_normalizado:
-                return idx
-        return None
-
-    def top_n(self, n=10):
-        self.ordenar()
-        return self.ranking[:n]
-
-    def adicionar_jogador_novo(self, jogador_dict):
-        """Adiciona um novo jogador ao ranking, caso ainda não exista."""
-        nome_normalizado = normalizar_nome(jogador_dict)
-        if any(normalizar_nome(j) == nome_normalizado for j in self.ranking):
-            print(f"ℹ️ Jogador '{jogador_dict['nome']}' já está no ranking.")
+    def salvar_ranking(self, save_details=True):
+        """
+        Salva o ranking.
+        Se save_details=True, também salva/atualiza os arquivos individuais dos jogadores.
+        O arquivo principal de ranking fica 'lean' (apenas índice).
+        """
+        if not self.ranking:
             return
 
-        if "pontos" not in jogador_dict:
-            jogador_dict["pontos"] = 0
+        # Extrai nome do save do path para saber onde salvar os detalhes
+        partes = self.caminho_arquivo.split(os.sep)
+        nome_save = None
+        if "saves" in partes:
+            idx = partes.index("saves")
+            if idx + 1 < len(partes):
+                nome_save = partes[idx + 1]
 
-        jogador_normalizado, _ = self._normalizar_jogador(jogador_dict)
-        self.ranking.append(jogador_normalizado)
-        self.ordenar()
-        self.salvar_ranking()
-        print(
-            f"✅ Jogador '{jogador_dict['nome']}' foi adicionado ao ranking com sucesso."
+        ranking_lean = []
+        for j in self.ranking:
+            # Salva o arquivo detalhado do jogador se estivermos em um save E tivermos os dados completos
+            if save_details and nome_save and not j.get("is_lean"):
+                subfolder = (
+                    "atp" if "wta" not in self.caminho_arquivo.lower() else "wta"
+                )
+                safe_name = (
+                    j["nome"]
+                    .lower()
+                    .replace(" ", "_")
+                    .replace("'", "")
+                    .replace(".", "")
+                )
+                caminho_npc = os.path.join(
+                    SAVES_DIR, nome_save, "jogadores", subfolder, f"{safe_name}.json"
+                )
+                os.makedirs(os.path.dirname(caminho_npc), exist_ok=True)
+                salvar_json_seguro(caminho_npc, j)
+
+            # Cria a versão lean para o arquivo principal (ÍNDICE PURO)
+            # energia/fadiga/moral são incluídos para preservar estado físico
+            # entre rodadas do mesmo torneio sem precisar salvar o shard completo
+            lean_entry = {
+                "nome": j.get("nome"),
+                "nacionalidade": j.get("nacionalidade"),
+                "pontos": j.get("pontos", 0),
+                "pontos_duplas": j.get("pontos_duplas", 0),
+                "pontos_ranking": j.get("pontos_ranking", 0),
+                "pontos_ranking_duplas": j.get("pontos_ranking_duplas", 0),
+                "pontos_ytd": j.get("pontos_ytd", 0),
+                "is_lean": True,
+                "energia": j.get("energia", 100),
+                "fadiga": j.get("fadiga", 0),
+                "moral": j.get("moral", 70),
+            }
+            ranking_lean.append(lean_entry)
+
+        salvar_json_seguro(self.caminho_arquivo, ranking_lean)
+
+    def ordenar(self, modalidade=None, recalculate=False):
+        modalidade = modalidade or self.modalidade
+        # Força recalculação se o modo nunca foi calculado nesta instância
+        should_recalc = recalculate or (modalidade not in self._calculated_modes)
+
+        if self._sorted_mode == modalidade and not should_recalc:
+            return
+
+        # Define os campos com base na modalidade desejada, garantindo separação total
+        is_s = modalidade == "simples"
+        c_pts = "pontos_detalhados" if is_s else "pontos_detalhados_duplas"
+        c_rk = "pontos_ranking" if is_s else "pontos_ranking_duplas"
+        c_tot = "pontos" if is_s else "pontos_duplas"
+
+        if should_recalc:
+            for j in self.ranking:
+                det = j.get(c_pts, [])
+                if det:
+                    pts_ord = sorted((p.get("pontos", 0) for p in det), reverse=True)
+                    # Simples: top 18 resultados. Duplas: todos os resultados (ATP real)
+                    j[c_rk] = sum(pts_ord[:18]) if is_s else sum(pts_ord)
+                    j[c_tot] = sum(pts_ord)
+                else:
+                    # Se não tem detalhes, pontos_ranking é o total
+                    j[c_rk] = j.get(c_tot, 0)
+            self._calculated_modes.add(modalidade)
+
+        self.ranking.sort(key=lambda x: x.get(c_rk, 0), reverse=True)
+        self._sorted_mode = modalidade
+        self._rebuild_pos_cache(modalidade)
+
+    def _rebuild_pos_cache(self, modalidade):
+        cache = {}
+        for idx, j in enumerate(self.ranking, 1):
+            cache[normalizar_nome(j)] = idx
+        self._pos_cache[modalidade] = cache
+
+    def adicionar_dinheiro(self, nome, valor):
+        if valor <= 0:
+            return
+        j = self.buscar_jogador_por_nome(nome)
+        if j:
+            atual = j.get("dinheiro", 0) or 0
+            j["dinheiro"] = atual + valor
+            return j
+        return None
+
+    def adicionar_pontos(
+        self,
+        nome,
+        pontos,
+        sem_exp,
+        modalidade="simples",
+        ano_exp=None,
+        metadados=None,
+        ano_expiracao=None,
+    ):
+        nome_norm = normalizar_nome(nome)
+        j_enc = self.buscar_jogador_por_nome(nome_norm)
+
+        if not j_enc:
+            j_enc, _ = self._normalizar_jogador({"nome": nome})
+            self.ranking.append(j_enc)
+            self._invalidate_caches()
+
+        # Independente de ser um ranking sharded de duplas ou não,
+        # respeitamos a modalidade do ponto para salvar no campo correto do jogador.
+        c_pts = (
+            "pontos_detalhados"
+            if modalidade == "simples"
+            else "pontos_detalhados_duplas"
         )
 
-        self._atualizar_ranking_global(jogador_dict)
+        bloco = {"pontos": pontos, "semana_expiracao": sem_exp}
+        ano_ref = ano_exp if ano_exp is not None else ano_expiracao
+        if ano_ref is not None:
+            bloco["ano_expiracao"] = int(ano_ref)
+        if isinstance(metadados, dict):
+            for k in [
+                "torneio",
+                "tipo",
+                "semana_origem",
+                "ano_origem",
+                "fase",
+                "modalidade",
+            ]:
+                if k in metadados:
+                    bloco[k] = metadados[k]
+
+        j_enc.setdefault(c_pts, []).append(bloco)
+        # Invalida calculo do modo pois os pontos mudaram
+        if modalidade in self._calculated_modes:
+            self._calculated_modes.remove(modalidade)
+
+        self.ordenar(modalidade, recalculate=True)
+
+    def adicionar_jogador_novo(self, jogador_dict, atualizar_global=False):
+        """
+        Adiciona jogador se ainda não existir no ranking atual.
+        Não atualiza a base global por padrão; saves novos devem partir apenas
+        dos JSONs originais em `db/`.
+        """
+        if not isinstance(jogador_dict, dict):
+            jogador_dict = {"nome": str(jogador_dict)}
+        if jogador_dict.get("is_bot") or jogador_dict.get("e_ficticio"):
+            return None
+        nome = jogador_dict.get("nome", "")
+        if not nome:
+            return None
+
+        existente = self.buscar_jogador_por_nome(nome)
+        if existente:
+            return existente
+
+        jogador_norm, _ = self._normalizar_jogador(dict(jogador_dict))
+        self.ranking.append(jogador_norm)
+        self._invalidate_caches()
+        if atualizar_global:
+            self._atualizar_ranking_global(jogador_dict)
+        return jogador_norm
+
+    def obter_posicao(self, nome, modalidade=None):
+        target_mod = modalidade or self._sorted_mode or "simples"
+        self.ordenar(modalidade=target_mod, recalculate=False)
+        return (self._pos_cache.get(target_mod) or {}).get(normalizar_nome(nome))
+
+    def top_n(self, n=10):
+        self.ordenar(recalculate=False)
+        return self.ranking[:n]
+
+    def ranking_race(self, n=20):
+        return sorted(
+            self.ranking, key=lambda x: int(x.get("pontos_ytd", 0) or 0), reverse=True
+        )[:n]
+
+    def buscar_jogador_por_nome(self, nome):
+        j = self._get_nome_cache().get(normalizar_nome(nome))
+        if j and j.get("is_lean"):
+            # Carrega detalhes se for uma entrada 'lean'
+            partes = self.caminho_arquivo.split(os.sep)
+            nome_save = None
+            if "saves" in partes:
+                idx = partes.index("saves")
+                if idx + 1 < len(partes):
+                    nome_save = partes[idx + 1]
+
+            from src.dados import carregar_npc_detalhado
+
+            genero = (
+                "feminino" if "wta" in self.caminho_arquivo.lower() else "masculino"
+            )
+
+            # Se não estamos em um save, carregar_npc_detalhado usará o Master DB se passarmos nome_save=None
+            detalhes = carregar_npc_detalhado(nome_save, j["nome"], genero=genero)
+            if detalhes:
+                # Preserva valores transientes do torneio (não sobrescrever com dados
+                # do shard que refletem estado base, não o estado atual em torneio)
+                _energia_atual = j.get("energia")
+                _fadiga_atual = j.get("fadiga")
+                _moral_atual = j.get("moral")
+                # Atualiza o objeto no cache (e na lista self.ranking)
+                j.update(detalhes)
+                j["is_lean"] = False
+                # Restaura valores transientes se estavam presentes no lean entry
+                if _energia_atual is not None:
+                    j["energia"] = _energia_atual
+                if _fadiga_atual is not None:
+                    j["fadiga"] = _fadiga_atual
+                if _moral_atual is not None:
+                    j["moral"] = _moral_atual
+        return j
 
     def _atualizar_ranking_global(self, jogador_dict):
-        """Garante que o jogador também está no ranking_atp.json global."""
-        caminho_global = get_caminho_ranking_global()
+        """Garante que o jogador também está no ranking global (ATP ou WTA)."""
+        if (
+            not isinstance(jogador_dict, dict)
+            or jogador_dict.get("is_bot")
+            or jogador_dict.get("e_ficticio")
+            or normalizar_nome(jogador_dict).startswith("bot ")
+            or normalizar_nome(jogador_dict).startswith("bot externo")
+        ):
+            return
+        genero = "feminino" if "wta" in self.caminho_arquivo else "masculino"
+        caminho_global = get_caminho_ranking_global(genero=genero)
         if not os.path.exists(caminho_global):
-            print(f"⚠️ Arquivo de ranking global em {caminho_global} não encontrado.")
             return
 
         dados = carregar_ranking(caminho_global)
-        dados, mudou = self._normalizar_ranking(dados)
-        if not dados:
-            print(
-                f"⚠️ O arquivo de ranking global em {caminho_global} está vazio ou corrompido."
-            )
+        nomes_globais = {normalizar_nome(j) for j in dados}
 
-        nome_normalizado = normalizar_nome(jogador_dict)
-        if any(normalizar_nome(j) == nome_normalizado for j in dados):
-            if mudou:
-                salvar_json_seguro(caminho_global, dados)
+        nome_norm = normalizar_nome(jogador_dict)
+        if nome_norm in nomes_globais:
             return
 
         jogador_completo, _ = self._normalizar_jogador(jogador_dict.copy())
-
         dados.append(jogador_completo)
         salvar_json_seguro(caminho_global, dados)
 
-        print(
-            f"📈 Jogador '{jogador_dict['nome']}' também adicionado ao ranking_atp.json global."
+    def exibir_ranking(self, start_pos=1, end_pos=None, player_name=None):
+        self.ordenar(modalidade=self._sorted_mode or "simples", recalculate=False)
+        if not self.ranking:
+            print("Ranking vazio.")
+            return
+
+        mod_atual = self._sorted_mode or self.modalidade
+        label_pts = (
+            "pontos_ranking" if mod_atual == "simples" else "pontos_ranking_duplas"
         )
 
-    def buscar_jogador_por_nome(self, nome):
-        nome_normalizado = normalizar_nome(nome)
-        for jogador in self.ranking:
-            if normalizar_nome(jogador) == nome_normalizado:
-                return jogador
-        return None
-    def exibir_ranking(self, start_pos=1, end_pos=None, player_name=None):
-        self.ordenar()
-        
-        if not self.ranking:
-            print("\n🚫 Ranking vazio. Nao ha jogadores para exibir.")
-            return
-
-        print("\n--- 🌐 RANKING ---")
-        
-        # Display player's rank if requested
+        print(f"\n--- 🌐 RANKING ({mod_atual.upper()}) ---")
         if player_name:
-            player_rank = self.obter_posicao(player_name)
-            if player_rank:
-                player_info = self.buscar_jogador_por_nome(player_name)
-                print(f"⭐ Sua Posicao: #{player_rank} - {player_info['nome']} ({player_info['nacionalidade']}) - {player_info['pontos']} pts")
-            else:
-                print(f"⭐ {player_name} nao encontrado no ranking atual.")
-            print("--------------------")
+            pos = self.obter_posicao(player_name, modalidade=mod_atual)
+            if pos:
+                p = self.buscar_jogador_por_nome(player_name)
+                print(
+                    f"⭐ Sua Posicao: #{pos} - {p['nome']} ({p['nacionalidade']}) - {p.get(label_pts, 0)} pts"
+                )
+            print("-" * 20)
 
-        # Determine the range to display
-        if end_pos is None:
-            end_pos = len(self.ranking) # Show all if no end specified
-        
-        # Ensure valid range
-        start_idx = max(0, start_pos - 1)
-        end_idx = min(len(self.ranking), end_pos)
+        end_pos = end_pos or (start_pos + 19)
+        s_idx, e_idx = max(0, start_pos - 1), min(len(self.ranking), end_pos)
 
-        if start_idx >= len(self.ranking):
-            print(f"\n🚫 A posicao inicial {start_pos} esta fora do alcance do ranking.")
-            return
-        if end_idx <= start_idx:
-            print(f"\n🚫 Nenhuma posicao para exibir no intervalo {start_pos}-{end_pos}.")
-            return
+        for i in range(s_idx, e_idx):
+            j = self.ranking[i]
+            pts = j.get(label_pts, 0)
+            tag = (
+                " (Voce)"
+                if player_name and normalizar_nome(j) == normalizar_nome(player_name)
+                else ""
+            )
 
-        print(f"\nExibindo posicoes de #{start_pos} a #{end_idx}:")
-        for i in range(start_idx, end_idx):
-            jogador = self.ranking[i]
-            pos = i + 1
-            destaque = " (Voce)" if player_name and normalizar_nome(jogador) == normalizar_nome(player_name) else ""
-            print(f"#{pos} - {jogador['nome']} ({jogador['nacionalidade']}) - {jogador['pontos']} pts{destaque}")
-        print("--------------------")
+            # Busca dados completos para exibir o Overall real no ranking
+            detalhado = self.buscar_jogador_por_nome(j["nome"])
+            overall = detalhado.get("overall", "??")
 
-def get_jogador_by_id(ranking, id_):
-    """Retorna o jogador na posição id_ (começando em 1, igual ao ranking tradicional)."""
-    try:
-        return ranking[id_ - 1]
-    except (IndexError, TypeError):
-        return None
+            print(
+                f"#{i+1} - {j['nome']:25} | OVR: {overall} | {j['nacionalidade']:4} - {pts} pts{tag}"
+            )
+        print("-" * 20)
+
+        # Especialistas de duplas: apenas pontos de duplas, sem simples
+        if self.modalidade == "simples" and mod_atual == "simples":
+            especialistas = [
+                j
+                for j in self.ranking
+                if j.get("pontos_ranking", 0) == 0
+                and j.get("pontos_ranking_duplas", 0) > 0
+            ]
+            if especialistas:
+                especialistas.sort(
+                    key=lambda x: x.get("pontos_ranking_duplas", 0), reverse=True
+                )
+                print("\n--- Especialistas de Duplas ---")
+                for idx, j in enumerate(especialistas, 1):
+                    pts_d = j.get("pontos_ranking_duplas", 0)
+                    tag = (
+                        " (Voce)"
+                        if player_name
+                        and normalizar_nome(j) == normalizar_nome(player_name)
+                        else ""
+                    )
+                    print(
+                        f"#{idx} - {j['nome']} ({j['nacionalidade']})"
+                        f" — 0 pts simples | {pts_d} pts duplas{tag}"
+                    )
+                print("-" * 20)

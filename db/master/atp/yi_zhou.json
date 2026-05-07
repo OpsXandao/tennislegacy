@@ -1,0 +1,49 @@
+{
+  "nome": "Yi Zhou",
+  "nacionalidade": "[CN]",
+  "idade": 20,
+  "overall": 79,
+  "pontos": 261,
+  "atributos": {
+    "saque": 52,
+    "forehand": 43,
+    "backhand": 53,
+    "topspin": 44,
+    "voleio": 52,
+    "slice": 41,
+    "movimento": 57,
+    "lob": 43,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 257,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 45,
+    "leitura_de_jogo": 50,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 261,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 225,
+  "pontos_ranking": 261,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

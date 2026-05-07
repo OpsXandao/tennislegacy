@@ -1,0 +1,49 @@
+{
+  "nome": "Maan Kesharwani",
+  "nacionalidade": "[IN]",
+  "idade": 24,
+  "overall": 70,
+  "pontos": 12,
+  "atributos": {
+    "saque": 54,
+    "forehand": 51,
+    "backhand": 41,
+    "topspin": 47,
+    "voleio": 52,
+    "slice": 40,
+    "movimento": 42,
+    "lob": 42,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1118,
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 44,
+    "leitura_de_jogo": 49,
+    "determinacao": 35
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 12,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1098,
+  "pontos_ranking": 12,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

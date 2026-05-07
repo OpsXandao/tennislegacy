@@ -1,0 +1,49 @@
+{
+  "nome": "Blu Baker",
+  "nacionalidade": "[GB]",
+  "idade": 24,
+  "overall": 73,
+  "pontos": 43,
+  "atributos": {
+    "saque": 51,
+    "forehand": 48,
+    "backhand": 59,
+    "topspin": 45,
+    "voleio": 40,
+    "slice": 48,
+    "movimento": 56,
+    "lob": 52,
+    "winner": 48,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 752,
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 50,
+    "leitura_de_jogo": 35,
+    "determinacao": 42
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 43,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 720,
+  "pontos_ranking": 43,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 65,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

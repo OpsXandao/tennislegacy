@@ -1,0 +1,52 @@
+{
+  "nome": "Caroline Dolehide",
+  "nacionalidade": "[US]",
+  "genero": "feminino",
+  "idade": 27,
+  "pontos": 621,
+  "pontos_ranking": 621,
+  "overall": 83,
+  "atributos": {
+    "saque": 69,
+    "forehand": 66,
+    "backhand": 70,
+    "topspin": 70,
+    "voleio": 61,
+    "slice": 67,
+    "movimento": 70,
+    "lob": 65,
+    "fisico": 64,
+    "winner": 62,
+    "duplas": 93
+  },
+  "atributos_psicologicos": {
+    "concentracao": 62,
+    "agressividade": 65,
+    "leitura_de_jogo": 64,
+    "determinacao": 66
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 621,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 1942,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 1942,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 64,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 40
+}

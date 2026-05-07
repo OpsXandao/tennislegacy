@@ -1,0 +1,49 @@
+{
+  "nome": "Niklas Schell",
+  "nacionalidade": "[DE]",
+  "idade": 27,
+  "overall": 71,
+  "pontos": 25,
+  "atributos": {
+    "saque": 40,
+    "forehand": 40,
+    "backhand": 47,
+    "topspin": 40,
+    "voleio": 41,
+    "slice": 41,
+    "movimento": 41,
+    "lob": 48,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 926,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 33,
+    "leitura_de_jogo": 30,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 25,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 896,
+  "pontos_ranking": 25,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

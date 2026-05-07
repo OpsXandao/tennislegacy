@@ -1,0 +1,49 @@
+{
+  "nome": "Adhithya Ganesan",
+  "nacionalidade": "[US]",
+  "idade": 20,
+  "overall": 74,
+  "pontos": 62,
+  "atributos": {
+    "saque": 40,
+    "forehand": 53,
+    "backhand": 52,
+    "topspin": 56,
+    "voleio": 51,
+    "slice": 56,
+    "movimento": 50,
+    "lob": 51,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 632,
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 39,
+    "leitura_de_jogo": 35,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 62,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 600,
+  "pontos_ranking": 62,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

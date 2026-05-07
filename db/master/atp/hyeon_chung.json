@@ -1,0 +1,55 @@
+{
+  "nome": "Hyeon Chung",
+  "nacionalidade": "[KR]",
+  "idade": 29,
+  "overall": 76,
+  "pontos": 124,
+  "atributos": {
+    "saque": 42,
+    "forehand": 48,
+    "backhand": 59,
+    "topspin": 55,
+    "voleio": 50,
+    "slice": 46,
+    "movimento": 48,
+    "lob": 48,
+    "winner": 59,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 412,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 55,
+    "leitura_de_jogo": 54,
+    "determinacao": 43
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 124,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "NextGen Finals",
+      "ano": 2017,
+      "categoria": "ATP Finals"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 380,
+  "pontos_ranking": 124,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

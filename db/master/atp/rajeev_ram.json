@@ -1,0 +1,57 @@
+{
+  "nome": "Rajeev Ram",
+  "nacionalidade": "[RU] Rússia",
+  "idade": 27,
+  "overall": 90,
+  "pontos": 2105,
+  "id": 28841,
+  "atributos": {
+    "saque": 92,
+    "forehand": 95,
+    "backhand": 82,
+    "topspin": 90,
+    "voleio": 96,
+    "slice": 83,
+    "movimento": 97,
+    "lob": 93,
+    "fisico": 85,
+    "winner": 84,
+    "duplas": 99
+  },
+  "atributos_psicologicos": {
+    "concentracao": 70,
+    "agressividade": 59,
+    "leitura_de_jogo": 74,
+    "determinacao": 70
+  },
+  "pontos_detalhados": [],
+  "trofeus": [
+    {
+      "nome": "Newport",
+      "ano": 2009,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Newport",
+      "ano": 2015,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 1000,
+  "pontos_duplas": 2105,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 27,
+  "pontos_ranking": 2105,
+  "is_bot": false,
+  "is_lean": false,
+  "genero": "masculino",
+  "altura": 193,
+  "peso": 89,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Aggressive Baseliner",
+  "pontos_ranking_duplas": 2105,
+  "rank_duplas": 38
+}

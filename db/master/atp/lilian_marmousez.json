@@ -1,0 +1,49 @@
+{
+  "nome": "Lilian Marmousez",
+  "nacionalidade": "[FR]",
+  "idade": 24,
+  "overall": 78,
+  "pontos": 179,
+  "atributos": {
+    "saque": 51,
+    "forehand": 50,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 44,
+    "movimento": 52,
+    "lob": 48,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 323,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 32,
+    "leitura_de_jogo": 48,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 179,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 291,
+  "pontos_ranking": 179,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

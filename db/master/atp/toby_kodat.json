@@ -1,0 +1,49 @@
+{
+  "nome": "Toby Kodat",
+  "nacionalidade": "[US]",
+  "idade": 23,
+  "overall": 73,
+  "pontos": 52,
+  "atributos": {
+    "saque": 41,
+    "forehand": 48,
+    "backhand": 40,
+    "topspin": 46,
+    "voleio": 49,
+    "slice": 48,
+    "movimento": 48,
+    "lob": 41,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 691,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 40,
+    "leitura_de_jogo": 47,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 52,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 659,
+  "pontos_ranking": 52,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

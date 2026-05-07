@@ -1,0 +1,49 @@
+{
+  "nome": "Yu Hsiou Hsu",
+  "nacionalidade": "[TW]",
+  "idade": 26,
+  "overall": 79,
+  "pontos": 247,
+  "atributos": {
+    "saque": 44,
+    "forehand": 41,
+    "backhand": 54,
+    "topspin": 45,
+    "voleio": 48,
+    "slice": 42,
+    "movimento": 58,
+    "lob": 60,
+    "winner": 45,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 264,
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 39,
+    "leitura_de_jogo": 54,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 247,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 232,
+  "pontos_ranking": 247,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

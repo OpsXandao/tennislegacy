@@ -1,0 +1,49 @@
+{
+  "nome": "Attila Boros",
+  "nacionalidade": "[HU]",
+  "idade": 22,
+  "overall": 72,
+  "pontos": 38,
+  "atributos": {
+    "saque": 42,
+    "forehand": 58,
+    "backhand": 40,
+    "topspin": 55,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 45,
+    "lob": 51,
+    "winner": 55,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 803,
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 52,
+    "leitura_de_jogo": 45,
+    "determinacao": 54
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 38,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 771,
+  "pontos_ranking": 38,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

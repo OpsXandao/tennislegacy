@@ -1,0 +1,49 @@
+{
+  "nome": "Alexander Blockx",
+  "nacionalidade": "[BE]",
+  "idade": 20,
+  "overall": 83,
+  "pontos": 626,
+  "atributos": {
+    "saque": 62,
+    "forehand": 59,
+    "backhand": 65,
+    "topspin": 65,
+    "voleio": 63,
+    "slice": 62,
+    "movimento": 59,
+    "lob": 62,
+    "winner": 64,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 145,
+  "atributos_psicologicos": {
+    "concentracao": 70,
+    "agressividade": 68,
+    "leitura_de_jogo": 62,
+    "determinacao": 68
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 626,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 29,
+  "pontos_ranking": 626,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 76,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

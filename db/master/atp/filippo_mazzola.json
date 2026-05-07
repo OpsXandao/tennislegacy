@@ -1,0 +1,49 @@
+{
+  "nome": "Filippo Mazzola",
+  "nacionalidade": "[IT]",
+  "idade": 20,
+  "overall": 69,
+  "pontos": 4,
+  "atributos": {
+    "saque": 56,
+    "forehand": 55,
+    "backhand": 52,
+    "topspin": 40,
+    "voleio": 56,
+    "slice": 52,
+    "movimento": 40,
+    "lob": 52,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1347,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 30,
+    "leitura_de_jogo": 37,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 4,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1523,
+  "pontos_ranking": 4,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 179,
+  "peso": 76,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

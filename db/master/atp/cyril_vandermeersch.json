@@ -1,0 +1,49 @@
+{
+  "nome": "Cyril Vandermeersch",
+  "nacionalidade": "[FR]",
+  "idade": 26,
+  "overall": 76,
+  "pontos": 111,
+  "atributos": {
+    "saque": 40,
+    "forehand": 40,
+    "backhand": 42,
+    "topspin": 40,
+    "voleio": 44,
+    "slice": 48,
+    "movimento": 49,
+    "lob": 50,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 459,
+  "atributos_psicologicos": {
+    "concentracao": 32,
+    "agressividade": 53,
+    "leitura_de_jogo": 30,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 111,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 427,
+  "pontos_ranking": 111,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

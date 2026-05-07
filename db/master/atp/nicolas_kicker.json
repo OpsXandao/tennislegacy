@@ -1,0 +1,49 @@
+{
+  "nome": "Nicolas Kicker",
+  "nacionalidade": "[AR]",
+  "idade": 33,
+  "overall": 78,
+  "pontos": 204,
+  "atributos": {
+    "saque": 54,
+    "forehand": 54,
+    "backhand": 45,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 40,
+    "lob": 55,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 296,
+  "atributos_psicologicos": {
+    "concentracao": 35,
+    "agressividade": 47,
+    "leitura_de_jogo": 33,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 204,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 264,
+  "pontos_ranking": 204,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

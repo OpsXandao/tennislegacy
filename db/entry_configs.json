@@ -1,0 +1,42 @@
+{
+    "ATP 250": {
+        "max_top20": 2,
+        "min_top20": 0,
+        "usa_top50": false,
+        "fracao_top50": 0.0,
+        "weights": {
+            "top20": 1.0,
+            "top50": 1.0,
+            "mid": 1.0,
+            "mid_by_pos": [
+                {"max_pos": 35, "weight": 1.0},
+                {"max_pos": 60, "weight": 1.3},
+                {"max_pos": 1000, "weight": 1.6}
+            ],
+            "pool80_by_pos": [
+                {"max_pos": 35, "weight": 1.0},
+                {"max_pos": 60, "weight": 1.3},
+                {"max_pos": 1000, "weight": 1.6}
+            ]
+        }
+    },
+    "ATP 500": {
+        "max_top20": 4,
+        "min_top20": 1,
+        "usa_top50": true,
+        "fracao_top50": 0.7,
+        "weights": {
+            "top20": 1.2,
+            "top50": 1.6,
+            "mid": 1.1,
+            "mid_by_pos": [
+                {"max_pos": 1000, "weight": 1.1}
+            ],
+            "pool80_by_pos": [
+                {"max_pos": 20, "weight": 1.2},
+                {"max_pos": 50, "weight": 1.6},
+                {"max_pos": 1000, "weight": 1.1}
+            ]
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Maxwell Mckennon",
+  "nacionalidade": "[US]",
+  "idade": 23,
+  "overall": 74,
+  "pontos": 73,
+  "atributos": {
+    "saque": 48,
+    "forehand": 56,
+    "backhand": 51,
+    "topspin": 43,
+    "voleio": 49,
+    "slice": 40,
+    "movimento": 46,
+    "lob": 43,
+    "winner": 48,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 574,
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 53,
+    "leitura_de_jogo": 52,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 73,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 542,
+  "pontos_ranking": 73,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 69,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

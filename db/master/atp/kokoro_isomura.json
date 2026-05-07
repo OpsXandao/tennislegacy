@@ -1,0 +1,49 @@
+{
+  "nome": "Kokoro Isomura",
+  "nacionalidade": "[JP]",
+  "idade": 23,
+  "overall": 74,
+  "pontos": 73,
+  "atributos": {
+    "saque": 53,
+    "forehand": 42,
+    "backhand": 42,
+    "topspin": 54,
+    "voleio": 58,
+    "slice": 44,
+    "movimento": 53,
+    "lob": 55,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 576,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 50,
+    "leitura_de_jogo": 49,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 73,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 544,
+  "pontos_ranking": 73,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

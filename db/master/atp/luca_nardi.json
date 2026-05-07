@@ -1,0 +1,49 @@
+{
+  "nome": "Luca Nardi",
+  "nacionalidade": "[IT]",
+  "idade": 22,
+  "overall": 82,
+  "pontos": 554,
+  "atributos": {
+    "saque": 68,
+    "forehand": 67,
+    "backhand": 65,
+    "topspin": 72,
+    "voleio": 68,
+    "slice": 67,
+    "movimento": 68,
+    "lob": 66,
+    "winner": 66,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 94,
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 72,
+    "leitura_de_jogo": 74,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 554,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 27,
+  "pontos_ranking": 554,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 86,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

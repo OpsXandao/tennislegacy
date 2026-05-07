@@ -1,0 +1,49 @@
+{
+  "nome": "Ivan Marrero Curbelo",
+  "nacionalidade": "[ES]",
+  "idade": 27,
+  "overall": 74,
+  "pontos": 74,
+  "atributos": {
+    "saque": 53,
+    "forehand": 45,
+    "backhand": 40,
+    "topspin": 44,
+    "voleio": 47,
+    "slice": 40,
+    "movimento": 45,
+    "lob": 50,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 569,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 35,
+    "leitura_de_jogo": 41,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 74,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 537,
+  "pontos_ranking": 74,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

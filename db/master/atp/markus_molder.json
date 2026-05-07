@@ -1,0 +1,49 @@
+{
+  "nome": "Markus Molder",
+  "nacionalidade": "[EE]",
+  "idade": 20,
+  "overall": 70,
+  "pontos": 10,
+  "atributos": {
+    "saque": 48,
+    "forehand": 45,
+    "backhand": 40,
+    "topspin": 44,
+    "voleio": 48,
+    "slice": 41,
+    "movimento": 45,
+    "lob": 40,
+    "winner": 45,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1175,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 49,
+    "leitura_de_jogo": 30,
+    "determinacao": 41
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 10,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1173,
+  "pontos_ranking": 10,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 67,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

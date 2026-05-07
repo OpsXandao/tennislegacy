@@ -1,0 +1,49 @@
+{
+  "nome": "Geoffrey Blancaneaux",
+  "nacionalidade": "[FR]",
+  "idade": 27,
+  "overall": 77,
+  "pontos": 153,
+  "atributos": {
+    "saque": 50,
+    "forehand": 59,
+    "backhand": 54,
+    "topspin": 51,
+    "voleio": 54,
+    "slice": 54,
+    "movimento": 55,
+    "lob": 64,
+    "winner": 59,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 356,
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 42,
+    "leitura_de_jogo": 45,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 153,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 324,
+  "pontos_ranking": 153,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 81,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

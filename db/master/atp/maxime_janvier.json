@@ -1,0 +1,49 @@
+{
+  "nome": "Maxime Janvier",
+  "nacionalidade": "[FR]",
+  "idade": 29,
+  "overall": 74,
+  "pontos": 72,
+  "atributos": {
+    "saque": 65,
+    "forehand": 68,
+    "backhand": 60,
+    "topspin": 59,
+    "voleio": 64,
+    "slice": 77,
+    "movimento": 71,
+    "lob": 64,
+    "winner": 69,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 578,
+  "atributos_psicologicos": {
+    "concentracao": 62,
+    "agressividade": 68,
+    "leitura_de_jogo": 49,
+    "determinacao": 56
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 72,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 546,
+  "pontos_ranking": 72,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 196,
+  "peso": 85,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,85 @@
+{
+  "nome": "Pablo Carreno Busta",
+  "nacionalidade": "[ES]",
+  "idade": 34,
+  "overall": 82,
+  "pontos": 516,
+  "atributos": {
+    "saque": 62,
+    "forehand": 71,
+    "backhand": 73,
+    "topspin": 66,
+    "voleio": 68,
+    "slice": 72,
+    "movimento": 71,
+    "lob": 72,
+    "winner": 71,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 100,
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 75,
+    "leitura_de_jogo": 60,
+    "determinacao": 76
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 516,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Moscow",
+      "ano": 2016,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Winston-Salem",
+      "ano": 2016,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Estoril",
+      "ano": 2017,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Chengdu",
+      "ano": 2019,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Hamburg",
+      "ano": 2021,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Marbella",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Canada Masters",
+      "ano": 2022,
+      "categoria": "ATP 1000"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 29,
+  "pontos_ranking": 516,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

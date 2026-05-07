@@ -1,0 +1,43 @@
+{
+  "nome": "Pierre Hugues Herbert",
+  "nacionalidade": "[FR] França",
+  "idade": 21,
+  "overall": 80,
+  "pontos": 338,
+  "atributos": {
+    "saque": 68,
+    "forehand": 64,
+    "backhand": 70,
+    "topspin": 69,
+    "voleio": 59,
+    "slice": 67,
+    "movimento": 69,
+    "lob": 62,
+    "winner": 64,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 2276,
+  "atributos_psicologicos": {
+    "concentracao": 68,
+    "agressividade": 67,
+    "leitura_de_jogo": 66,
+    "determinacao": 48
+  },
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 182,
+  "pontos_ranking": 338,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

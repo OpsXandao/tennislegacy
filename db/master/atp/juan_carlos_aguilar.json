@@ -1,0 +1,49 @@
+{
+  "nome": "Juan Carlos Aguilar",
+  "nacionalidade": "[CA]",
+  "idade": 27,
+  "overall": 72,
+  "pontos": 39,
+  "atributos": {
+    "saque": 52,
+    "forehand": 40,
+    "backhand": 55,
+    "topspin": 51,
+    "voleio": 49,
+    "slice": 47,
+    "movimento": 43,
+    "lob": 42,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 794,
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 36,
+    "leitura_de_jogo": 40,
+    "determinacao": 35
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 39,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 762,
+  "pontos_ranking": 39,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 168,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

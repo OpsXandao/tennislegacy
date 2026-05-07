@@ -1,0 +1,43 @@
+{
+  "nome": "Christopher O'connell",
+  "nacionalidade": "[AU] Austrália",
+  "idade": 24,
+  "overall": 82,
+  "pontos": 561,
+  "atributos": {
+    "saque": 68,
+    "forehand": 61,
+    "backhand": 60,
+    "topspin": 72,
+    "voleio": 59,
+    "slice": 69,
+    "movimento": 71,
+    "lob": 77,
+    "winner": 66,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 2274,
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 70,
+    "leitura_de_jogo": 61,
+    "determinacao": 64
+  },
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 105,
+  "pontos_ranking": 561,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 181,
+  "peso": 86,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

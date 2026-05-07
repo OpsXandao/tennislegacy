@@ -1,0 +1,55 @@
+{
+  "nome": "Yibing Wu",
+  "nacionalidade": "[CN]",
+  "idade": 26,
+  "overall": 81,
+  "pontos": 434,
+  "atributos": {
+    "saque": 53,
+    "forehand": 57,
+    "backhand": 40,
+    "topspin": 45,
+    "voleio": 40,
+    "slice": 44,
+    "movimento": 43,
+    "lob": 51,
+    "winner": 58,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 177,
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 36,
+    "leitura_de_jogo": 45,
+    "determinacao": 36
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 434,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Dallas",
+      "ano": 2023,
+      "categoria": "ATP 500"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 142,
+  "pontos_ranking": 434,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

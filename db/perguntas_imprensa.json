@@ -1,0 +1,2864 @@
+{
+    "pre_jogo": [
+        {
+            "texto": "Seu calendario esta sobrecarregado. Voce vai reduzir os torneios?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, ja estamos revendo a agenda para proteger meu fisico.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "E um equilibrio dificil entre ranking e recuperacao.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao. Quero jogar o maximo possivel enquanto estou bem.",
+                    "moral": 3,
+                    "reputacao": -1
+                },
+                {
+                    "texto": "A equipe e quem gerencia isso. Confio neles.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "A imprensa te ve como inconsistente. Como voce responde a isso?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Ha inconsistencias? Sim. Estou trabalhando para resolver.",
+                    "moral": 0,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Inconsistencia faz parte de qualquer carreira no esporte.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Prefiro que julguem o conjunto, nao os picos e vales.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "A imprensa quer narrativa. Nem sempre e precisa.",
+                    "moral": 2,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Voce tem algum modelo de jogo que admira e tenta incorporar?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Admiro jogadores que combinam agressividade com inteligencia tática.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Prefiro construir meu proprio estilo sem copiar ninguem.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Sempre se aprende com os melhores. Sim, tenho referencias.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao tenho um modelo especifico. Absorvo o que vejo de bom.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Sua relacao com a torcida esta mais proxima ou mais distante este ano?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Mais proxima. Aprendi a interagir melhor com quem me apoia.",
+                    "moral": 3,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Oscila. Quando ganho, tudo bem. Quando perco, cobram muito.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Torcida e fundamental. Procuro nao decepciona-la.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Tenho focado mais no jogo do que na relacao publica.",
+                    "moral": 1,
+                    "reputacao": 0
+                }
+            ]
+        },
+        {
+            "texto": "Existe pressao financeira afetando suas decisoes de agenda?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sou honesto: ha obrigacoes, mas nao comprometo minha saude por isso.",
+                    "moral": 1,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Nao. Tomo decisoes baseadas em performance e recuperacao.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "E um equilibrio real que qualquer atleta enfrenta.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Aspectos financeiros sao privados.",
+                    "moral": 0,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Qual o adversario que mais te desafia mentalmente no circuito hoje?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Ha dois ou tres que exigem meu melhor tenis. Prefiro nao citar nomes.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Todo adversario e um desafio diferente. Nao classifico.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Eu sou meu maior adversario. Me desafio mais do que qualquer rival.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Tenho um ou dois que me tiram da zona de conforto. Prefiro reservar.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Como voce equilibra vida pessoal e a vida de atleta de alto rendimento?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "E dificil, mas minha familia entende e me apoia muito.",
+                    "moral": 3,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Durante torneios, tudo vira prioridade profissional.",
+                    "moral": 2,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Ainda estou aprendendo esse equilibrio. Nao e perfeito.",
+                    "moral": 1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Prefiro manter minha vida pessoal separada.",
+                    "moral": 0,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Ha quem diga que voce se torna diferente sob favoritismo. O que voce acha?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Pode ser. Estou trabalhando para me sentir confortavel em qualquer papel.",
+                    "moral": 1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Discordo. Meu jogo nao muda com o rotulo de favorito.",
+                    "moral": 2,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "O favoritismo pesa em qualquer atleta. Seria falso negar.",
+                    "moral": 1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Analises externas raramente captam o que acontece dentro do jogo.",
+                    "moral": 1,
+                    "reputacao": 0
+                }
+            ]
+        },
+        {
+            "texto": "A equipe técnica precisa de reforcos ou voce esta satisfeito com o suporte atual?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Estou satisfeito. Ha um alinhamento muito bom no momento.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Sempre ha espaco para melhorar. Avaliamos constantemente.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ha algumas lacunas que esperamos resolver em breve.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Nao discuto estrutura interna publicamente.",
+                    "moral": 0,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Voce pensa em reducao gradativa de participacoes com o avanco da carreira?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Ainda nao. Quero aproveitar enquanto estou competitivo.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Ja penso em ser mais seletivo. Qualidade sobre quantidade.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "E uma conversa que comecamos a ter internamente.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Por enquanto, foco no presente. O futuro cuida de si mesmo.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Qual foi a melhor decisão que voce tomou na sua carreira ate hoje?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Confiar no meu processo quando todo mundo duvidava.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Montar a equipe técnica certa para o momento certo.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Mudar meu estilo de jogo para adaptar ao circuito moderno.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Continuar depois de pensar em desistir em um momento dificil.",
+                    "moral": 4,
+                    "reputacao": 4
+                }
+            ]
+        },
+        {
+            "texto": "As redes sociais te ajudam ou atrapalham sua concentracao durante torneios?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Desligo durante torneios. A concentracao e prioridade.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Uso com moderacao. E parte da vida do atleta moderno.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "As vezes atrapalham. Estou aprendendo a filtrar.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Sao uma ferramenta de comunicacao, mas nao deixo que ditem meu humor.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce acredita que seu potencial maximo ainda esta por ser atingido?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Com certeza. Estou ainda construindo.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ha margem sim. Mas ja cheguei a momentos altos.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Potencial e infinito para quem nao para de trabalhar.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Esse tipo de avaliacao me distrai. Prefiro focar no presente.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Qual e seu maior ponto fraco tecnico hoje e como voce trabalha para supera-lo?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Meu segundo saque sob pressao. Trabalhamos diariamente.",
+                    "moral": 2,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "A variacao tática em sets apertados. Meu tecnico me ajuda.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Nao tenho um ponto fraco evidente neste momento.",
+                    "moral": 3,
+                    "reputacao": -2
+                },
+                {
+                    "texto": "Ha algumas areas, mas prefiro nao anunciar para adversarios.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce tem alguma rivalidade especifica que te motiva neste circuito?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Rivalidades saudaveis existem. Me motivam a melhorar.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao penso em rivais. Penso em evolucao propria.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ha jogadores contra quem especialmente quero vencer. Sim.",
+                    "moral": 3,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Rivalidade e respeito. Admiro os melhores que enfrento.",
+                    "moral": 2,
+                    "reputacao": 4
+                }
+            ]
+        },
+        {
+            "texto": "Voce se considera um bom exemplo para jovens que querem seguir no tenis?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Espero ser. Tento mostrar que dedicacao funciona.",
+                    "moral": 3,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Nao cabe a mim dizer. Quem decide isso e quem assiste.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Tenho imperfeicoes. Mas tento ser honesto com elas.",
+                    "moral": 1,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Se eu for, otimo. Mas nao e meu foco principal.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Voce acha que o nivel do circuito subiu nos ultimos anos?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Muito. A nova geracao e técnicamente mais completa.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O nivel sempre foi alto. Ha mais profundidade agora.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Subiu, e isso me obriga a evoluir tambem. Otimo.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ha um ciclo natural. Cada epoca tem seus desafios.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "O que voce faz fora de quadra que te ajuda mais dentro dela?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Meditacao e foco mental. Muito mais que técnica.",
+                    "moral": 3,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Descanso de qualidade. Sono e performance andam juntos.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Tempo com familia. Me recarrega emocionalmente.",
+                    "moral": 3,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Analise de jogo. Assisto muito tenis, incluindo os meus erros.",
+                    "moral": 3,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "Como voce vê seu futuro no circuito nos proximos dois anos?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Ambicioso. Quero estar entre os melhores regularmente.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Com cautela e trabalho. Cada ano traz seus desafios.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Quero ganhar titulos que ainda nao tenho.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Depende de saude e evolucao técnica. Nao faco previsoes.",
+                    "moral": 1,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "Ha algum torneio que ainda nao ganhou e que representa uma obsessao pessoal?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim. Prefiro nao nomear, mas esta la na minha lista.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Obsessao e forte. Tenho metas, nao obsessoes.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Cada temporada tem seus objetivos. Nao me prendo a um torneio.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Certamente. E o que me levanta da cama todo dia para treinar.",
+                    "moral": 4,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "Voce se acomodou depois de bons resultados recentes?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Nao. Bons resultados aumentam meu apetite por mais.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Ha esse risco. Por isso mantenho a rotina independente dos resultados.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Meu tecnico nao me deixa acomodar, mesmo que eu quisesse.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Questao interessante. Tenho me feito isso tambem ultimamente.",
+                    "moral": 1,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "A midia cobre seu jogo com justica?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "As vezes exagera na critica, as vezes no elogio. E assim.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao leio muito. Evita distorcoes na minha percepcao.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Ha jornalistas excelentes e outros menos. Normal.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "A midia tem papel importante. Respeito mesmo quando discordo.",
+                    "moral": 2,
+                    "reputacao": 4
+                }
+            ]
+        },
+        {
+            "texto": "Como voce reage quando alguem te ataca pessoalmente nas redes sociais?",
+            "etiquetas": [
+                "geral"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Ignoro. Minha energia e melhor investida em quadra.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ja fui afetado. Hoje tenho mais maturidade para filtrar.",
+                    "moral": 1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Incomoda, mas faz parte da vida publica.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao me afeta. Sou seguro o suficiente para isso.",
+                    "moral": 3,
+                    "reputacao": 1
+                }
+            ]
+        }
+    ],
+    "pos_jogo": [
+        {
+            "texto": "Hoje e sua estreia no torneio. O que voce sente chegando a esse momento?",
+            "etiquetas": [
+                "pre_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Estou confiante e pronto para qualquer adversario.",
+                    "moral": 4,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Prefiro deixar meu jogo falar por mim.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ainda tenho muito a provar, trabalho a trabalho.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Sem comentarios antes de entrar em quadra.",
+                    "moral": 0,
+                    "reputacao": 0
+                }
+            ]
+        },
+        {
+            "texto": "Primeira rodada costuma pegar quem subestima. Voce entra 100% focado ou ha distracoes?",
+            "etiquetas": [
+                "pre_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Estou totalmente focado. Nao ha distracoes.",
+                    "moral": 3,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Ha sempre elementos externos, mas aprendi a bloquear.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Tenho algumas preocupacoes, mas vou gerenciar em quadra.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Prefiro nao mentir: ha pressoes. Mas e assim para todos.",
+                    "moral": 0,
+                    "reputacao": 4
+                }
+            ]
+        },
+        {
+            "texto": "Seu adversario de hoje e um jogador em ascensao. Voce o estudou bem?",
+            "etiquetas": [
+                "pre_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, preparamos cada detalhe do jogo dele.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Conheco os pontos principais, mas confio mais no meu jogo.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Estudo o rival, mas no final sou eu quem decide em quadra.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Nao vou revelar minha preparacao aqui.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Esta e a sua primeira aparicao neste torneio. Mais nervos ou mais emoção?",
+            "etiquetas": [
+                "pre_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "So emoção. E onde quero estar.",
+                    "moral": 4,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Um pouco dos dois. E natural.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nervos existem, mas os transformo em adrenalina positiva.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Ja passei por muitas estreias. Sei lidar com isso.",
+                    "moral": 2,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Voce entra como favorito hoje. Isso te liberta ou te pressiona?",
+            "etiquetas": [
+                "pre_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Com certeza. Estou acima do campo técnica e táticamente.",
+                    "moral": 5,
+                    "reputacao": -5
+                },
+                {
+                    "texto": "Respeito o adversario, mas confio muito no meu jogo.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "O favoritismo existe, mas nao me apoia nem me pesa.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "So vence quem entra em quadra para jogar, nao para ser favorito.",
+                    "moral": 4,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Ha rumores de que voce esta vindo de uma semana difícil fisicamente. Pode esclarecer?",
+            "etiquetas": [
+                "pre_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Estou 100%. Melhor forma da temporada.",
+                    "moral": 4,
+                    "reputacao": -3
+                },
+                {
+                    "texto": "Bem preparado, mas vou administrar durante o jogo.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Tenho algumas limitacoes fisicas, mas estou pronto para competir.",
+                    "moral": 1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Prefiro nao comentar minha condicao fisica antes do jogo.",
+                    "moral": 0,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Qual o principal objetivo para esta semana de torneio, alem de vencer?",
+            "etiquetas": [
+                "pre_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sigo focado no processo, nao no resultado.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "E um passo de cada vez.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Prefiro nao criar expectativa.",
+                    "moral": 0,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Vou jogar meu melhor tenis e ver o que acontece.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Seu saque foi inconsistente nas ultimas rodadas. Voce fez algum ajuste especifico?",
+            "etiquetas": [
+                "pre_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, trabalhei especificamente nisso nos treinos.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O saque passa por ciclos. Confio que vai voltar.",
+                    "moral": 1,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Nao concordo que estava inconsistente.",
+                    "moral": 2,
+                    "reputacao": -2
+                },
+                {
+                    "texto": "E algo em andamento. Prefiro nao detalhar agora.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Ja com algumas vitórias no torneio, como voce se sente evoluindo rodada a rodada?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Fiz exatamente o que planejei. Muito satisfeito.",
+                    "moral": 5,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Jogo a jogo. Esta foi boa, mas tem mais pela frente.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O adversario me deu trabalho, mas mantive o nivel.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Ainda ha pontos a corrigir, mesmo com a vitória.",
+                    "moral": 1,
+                    "reputacao": 4
+                }
+            ]
+        },
+        {
+            "texto": "Qual aspecto tecnico voce quer impor no jogo de hoje?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Agressividade no saque e primeira bola.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Consistencia no fundo e paciencia tática.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Pressao na rede para encurtar pontos.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Vou me adaptar durante o jogo conforme o adversario.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce tem plano B caso seu jogo padrao nao funcione hoje?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sempre. Preparamos tres ou quatro variacoes com o tecnico.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Confio na minha leitura de jogo em tempo real.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Plano B e trabalhar mais forte no que ja sei fazer.",
+                    "moral": 1,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Se o padrao nao funcionar, algo vai ter que mudar. Ainda nao sei o que.",
+                    "moral": 0,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Como voce avalia o nivel geral do torneio ate agora?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "E alto. Qualquer descuido custara caro.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Esta dentro do esperado para este nivel de competicao.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Acima do que eu antecipava. Me preparei bem.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Nao analiso o campo. Foco no proximo adversario.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Voce esta dormindo bem durante o torneio? A rotina importa muito nessa fase.",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Otimamente. Rotina impecavel.",
+                    "moral": 3,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Razoavel. Ha sempre alguma tensao, mas gerencio bem.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Sinceramente? Poderia ser melhor. Mas nao afeta meu jogo.",
+                    "moral": 0,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Prefiro nao comentar minha rotina.",
+                    "moral": 0,
+                    "reputacao": 0
+                }
+            ]
+        },
+        {
+            "texto": "O adversario de hoje tem um saque muito forte. Como voce planeja neutralizar isso?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Estudei os padroes de saque dele e preparo devolucoes especificas.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Vou tentar tornar o jogo de fundo de quadra mais longo.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Se ele sacar bem, vou ter que encontrar outros caminhos.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Cada saque e um ponto novo. Vou la.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Seu tecnico fez alguma observacao critica sobre seu jogo que voce vai aplicar hoje?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim. Trabalhamos aspectos especificos nos ultimos dias.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Sempre ha ajustes. Mas prefiro manter isso no vestiario.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "O tecnico e exigente. Isso so me ajuda.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Nosso trabalho e sigiloso por opção.",
+                    "moral": 0,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Ha quem diga que voce tende a recuar em jogos de nivel alto. O que voce responde?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Discordo totalmente. Meu historico mostra o contrario.",
+                    "moral": 3,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Talvez houvesse algo nisso no passado. Estou trabalhando para mudar.",
+                    "moral": 1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Cada jogo e diferente. Espere para ver o que acontece hoje.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Quem fala isso nao assiste meus jogos com atencao.",
+                    "moral": 2,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Semifinal. Poucos chegam ate aqui. O que este momento representa para voce?",
+            "etiquetas": [
+                "pre_jogo",
+                "decisivo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "E o momento mais importante da minha carreira ate agora.",
+                    "moral": 5,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Quero focar no jogo, nao no titulo. Um ponto de cada vez.",
+                    "moral": 3,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Sonhei com este momento. Vou aproveitar cada segundo.",
+                    "moral": 4,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Estou calmo. Treinei para momentos assim.",
+                    "moral": 3,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "A final esta ao alcance. Voce sente que pode ser campeao ou ainda ha resistencia interna?",
+            "etiquetas": [
+                "pre_jogo",
+                "decisivo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Pressao e privilegio. So chega aqui quem merece.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Aceito a pressao. E parte do jogo.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Tento isolar o ruido e focar no que posso controlar.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Sinceramente? A pressao pesa. Mas vou para o jogo.",
+                    "moral": 1,
+                    "reputacao": 5
+                }
+            ]
+        },
+        {
+            "texto": "Seu rival na final tem um historico impressionante aqui. Isso muda algo no seu preparo?",
+            "etiquetas": [
+                "pre_jogo",
+                "decisivo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Respeito o historico, mas eu tambem sei jogar tenis.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Estudamos tudo sobre ele. Chegamos preparados.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Historico e passado. O que vale e o que acontecer hoje.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Claro que muda. Seria arrogancia fingir que nao.",
+                    "moral": 1,
+                    "reputacao": 4
+                }
+            ]
+        },
+        {
+            "texto": "Se perder hoje, como voce avaliaria sua campanha no torneio?",
+            "etiquetas": [
+                "pre_jogo",
+                "decisivo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Seria uma decepcionante. Vim para ganhar.",
+                    "moral": 3,
+                    "reputacao": -2
+                },
+                {
+                    "texto": "Chegar aqui ja e um resultado positivo, mas quero mais.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O processo importa mais que o resultado isolado.",
+                    "moral": 1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Nao penso em derrota antes de entrar em quadra.",
+                    "moral": 3,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "A imprensa te coloca como favorito ao titulo. Isso e um peso ou motivacao?",
+            "etiquetas": [
+                "pre_jogo",
+                "decisivo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Com certeza. Estou acima do campo técnica e táticamente.",
+                    "moral": 5,
+                    "reputacao": -5
+                },
+                {
+                    "texto": "Respeito o adversario, mas confio muito no meu jogo.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "O favoritismo existe, mas nao me apoia nem me pesa.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "So vence quem entra em quadra para jogar, nao para ser favorito.",
+                    "moral": 4,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Qual sera a chave tática para vencer hoje?",
+            "etiquetas": [
+                "pre_jogo",
+                "decisivo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Controle do ritmo. Quem ditar o tempo do jogo ganhara.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Meu saque tem que funcionar. E minha arma principal.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Vencer os break points. E o que sempre decide.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao vou entregar o plano aqui. Desculpe.",
+                    "moral": 0,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce ja venceu este torneio antes? Isso te da vantagem psicologica?",
+            "etiquetas": [
+                "pre_jogo",
+                "decisivo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, e tenho uma relacao especial com este torneio.",
+                    "moral": 4,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "A historia nao joga, eu jogo. O que vale e hoje.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao ganhei ainda. Por isso estou tao motivado.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "E sempre diferente. Nao me apego ao passado.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce treinou algo especifico para este adversario nos ultimos dias?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, focamos em neutralizar o lado mais forte dele.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Analisamos o jogo dele, mas o foco foi na minha evolucao.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "O treino foi normal. Nao mudo muito a rotina para adversarios.",
+                    "moral": 1,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Nao comento preparacao especifica.",
+                    "moral": 0,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Voce prefere jogo longo ou curto? Vai tentar encerrar rapido hoje?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Prefiro eficiencia. Quanto mais curto, melhor para o fisico.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Vou me adaptar ao que o jogo pedir.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Jogo longo me favorece. Tenho fisico para isso.",
+                    "moral": 3,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Nao trazo esse tipo de preferencia para o jogo. Reage-se ao momento.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Qual o maior risco que voce corre hoje se nao entrar focado?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Perder o controle do ritmo logo no inicio.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Deixar o adversario se soltar e ganhar confianca.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Sair do plano tatico cedo demais.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "O risco sempre existe. Por isso entro respeitando o jogo.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce costuma mudar sua postura entre jogar em casa e fora? Como e hoje?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Aqui a torcida me ajuda muito. E um diferencial real.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Jogo da mesma forma em qualquer lugar. E minha consistencia.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Jogar fora exige mais ajuste mental. Mas estou preparado.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Prefiro nao criar distinicao. Cada jogo e unico.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Existe algo que voce quer provar para si mesmo hoje, nao so para os outros?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Quero confirmar que meu nivel tecnico chegou a um novo patamar.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Tenho trabalhado meu emocional. Quero ver o resultado em jogo.",
+                    "moral": 3,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Sempre ha algo interno a provar. Mas prefiro guardar isso.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O que importa e o resultado. Motivacoes sao minhas.",
+                    "moral": 2,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Seu adversario declarou que vencer voce seria o resultado mais importante da semana para ele. Isso te afeta?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sinto-me honrado. Significa que sou um adversario relevante.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Cada um tem suas motivacoes. A minha e ganhar tambem.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Talvez isso jogue contra ele. Pressao pode ser traicoeira.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Nao leio declaracoes de adversario antes de jogos.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Esse torneio tem uma superfice que nao e a sua favorita. Isso te preocupa?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Trabalhei muito para neutralizar essa desvantagem. Estou preparado.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Toda superfice exige adaptacao. Nao e desculpa.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "E uma dificuldade a mais, mas faz parte do circuito.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Nao tenho superfice favorita. Adaptabilidade e meu ponto forte.",
+                    "moral": 3,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce ja imaginou como sera jogar em um Grand Slam ou isso ainda parece distante?",
+            "etiquetas": [
+                "pre_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "E meu objetivo. Cada torneio e um passo nessa direcao.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Foco no presente. Grand Slams chegam para quem trabalha.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ja penso nisso. Mas sei que preciso evoluir mais.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ja cheguei antes e quero mais. E la que os melhores se provam.",
+                    "moral": 4,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Como voce lida quando o placar vira cedo contra voce?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Reajo com mais agressividade e quebro o ritmo do adversario.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Mantenho o plano e confio na virada pela consistencia.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Chamo time-out mental e reformulo a estrategia.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Depende do dia. Cada situação pede uma resposta diferente.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "O que sua equipe técnica disse para voce antes de sair para a quadra hoje?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Para confiar no trabalho feito e focar ponto a ponto.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nos lembramos dos ajustes taticos para este adversario.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nada demais. Ja sabemos o que precisa ser feito.",
+                    "moral": 2,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "E confidencial.",
+                    "moral": 0,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Voce ja avisou que quer chegar longe neste torneio. E se cair cedo?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Continuo na mesma. Declaracoes de ambicao nao me envergonham.",
+                    "moral": 3,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Se acontecer, processarei com maturidade. Mas nao penso nisso.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Foco no presente. Perguntas hipotéticas nao me ajudam.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Qualquer resultado e possivel. Vim para jogar meu melhor tenis.",
+                    "moral": 2,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "Se a partida for para o terceiro set, voce confia no seu fisico?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Estou 100%. Melhor forma da temporada.",
+                    "moral": 4,
+                    "reputacao": -3
+                },
+                {
+                    "texto": "Bem preparado, mas vou administrar durante o jogo.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Tenho algumas limitacoes fisicas, mas estou pronto para competir.",
+                    "moral": 1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Prefiro nao comentar minha condicao fisica antes do jogo.",
+                    "moral": 0,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "O que seria uma boa performance para voce hoje, independente do resultado?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Executar o plano tatico com consistencia do inicio ao fim.",
+                    "moral": 3,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Nao cometer erros nao-forcados em excesso.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Entrar agressivo desde o primeiro ponto e manter isso.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Honestamente, uma boa performance significa vitória para mim.",
+                    "moral": 3,
+                    "reputacao": -1
+                }
+            ]
+        },
+        {
+            "texto": "Como voce ve as suas chances reais neste torneio?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Acredito que posso chegar longe se mantiver meu nivel.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Cada partida e um universo. Nao projeto resultados.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Realista: o campo e forte, mas estou bem preparado.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Tenho tudo para ganhar este torneio. Vim para isso.",
+                    "moral": 4,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Ha algo nos treinos desta semana que te da confianca extra para hoje?",
+            "etiquetas": [
+                "pre_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, meu saque esteve excelente nos treinos.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "A intensidade dos treinos foi alta. Estou afiado.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Prefiro nao criar confianca em treino. Cada jogo e diferente.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Os treinos foram produtivos. Me sinto pronto.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        }
+    ],
+    "geral": [
+        {
+            "texto": "Vitória convincente. Voce sentiu que controlou o jogo do inicio ao fim?",
+            "etiquetas": [
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Fiz exatamente o que planejei. Muito satisfeito.",
+                    "moral": 5,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Jogo a jogo. Esta foi boa, mas tem mais pela frente.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O adversario me deu trabalho, mas mantive o nivel.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Ainda ha pontos a corrigir, mesmo com a vitória.",
+                    "moral": 1,
+                    "reputacao": 4
+                }
+            ]
+        },
+        {
+            "texto": "Seu nivel tecnico hoje foi notavel. O que explica essa solidez?",
+            "etiquetas": [
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Trabalhamos muito esta semana. O treino apareceu em quadra.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Sempre acreditei que podia jogar assim. Hoje aconteceu.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "O adversario me deu ritmo e aprendi a resposta certa.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Esses dias acontecem. Espero que se repitam.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce economizou bem a energia hoje. Foi opção tática?",
+            "etiquetas": [
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, sabemos que vem mais jogos pela frente.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao foi calculado, fluiu naturalmente.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Sempre tento fechar rapido. Ponto por ponto.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "A gestao de energia e uma das minhas prioridades neste torneio.",
+                    "moral": 3,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "O que voce vai corrigir para a proxima rodada, mesmo tendo vencido?",
+            "etiquetas": [
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Alguns erros nao forcados no segundo set que precisam ser eliminados.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Meu segundo saque ficou vulneravel em alguns momentos.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Pequenos detalhes de posicionamento. O tecnico vai apontar.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Nao tem muito o que mudar, honestamente.",
+                    "moral": 3,
+                    "reputacao": -1
+                }
+            ]
+        },
+        {
+            "texto": "Depois desta vitória voce se sente candidato real ao titulo?",
+            "etiquetas": [
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim. Estou jogando meu melhor tenis da temporada.",
+                    "moral": 4,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Prefiro focar no proximo adversario.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao faco contas de titulo. Jogo a jogo.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Com certeza. Vim para ganhar.",
+                    "moral": 5,
+                    "reputacao": -3
+                }
+            ]
+        },
+        {
+            "texto": "Voce venceu, mas o jogo foi muito mais disputado do que o esperado. O que aconteceu?",
+            "etiquetas": [
+                "jogo_ruim",
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Lutei ate o fim. Mostrei carater em quadra.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Tive sorte em alguns momentos, mas a vitória foi merecida.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Poderia ter fechado mais cedo, mas o adversario foi solido.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Importante e que ganhou. Analiso os erros depois.",
+                    "moral": 2,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Houve momentos em que parecia que voce poderia perder. O que te manteve no jogo?",
+            "etiquetas": [
+                "jogo_ruim",
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Determinacao. Nunca abri mao do ponto.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Minha experiencia em situacoes de pressao.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O adversario tambem errou na hora certa. Aproveitei.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Honestamente, um pouco de sorte tambem ajudou.",
+                    "moral": 1,
+                    "reputacao": 4
+                }
+            ]
+        },
+        {
+            "texto": "Sair com a vitória depois de um jogo desses mostra carater ou foi falta de eficiencia?",
+            "etiquetas": [
+                "jogo_ruim",
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Mostrar carater em jogo duro e o que separa os bons dos melhores.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Fui ineficiente em alguns momentos, mas a vitória e o que vale.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O adversario me forcou a jogar assim. Merito dele tambem.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Seria ingrato reclamar de vitória.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Sua linguagem corporal em quadra mostrou frustracao. Isso afetou seu jogo?",
+            "etiquetas": [
+                "jogo_ruim",
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "A frustracao existiu, mas controlei o impacto dela.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Sou um jogador emocional. Faz parte de quem eu sou.",
+                    "moral": 2,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Preciso melhorar nisso. Reconheco.",
+                    "moral": 1,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Acho que minha leitura de mim mesmo e diferente da de fora.",
+                    "moral": 1,
+                    "reputacao": -1
+                }
+            ]
+        },
+        {
+            "texto": "Derrota na estreia. Como voce recebe isso?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo",
+                "inicio_torneio"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Assumi total responsabilidade. Fui superado hoje.",
+                    "moral": -2,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Houve erros meus, mas o adversario foi muito forte.",
+                    "moral": 0,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao foi meu melhor dia, mas sigo trabalhando.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Prefiro processar isso antes de comentar.",
+                    "moral": 2,
+                    "reputacao": -1
+                }
+            ]
+        },
+        {
+            "texto": "Voce foi dominado em varios aspectos hoje. Como voce recebe essa critica?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Assumi o erro. Nao ha desculpa.",
+                    "moral": -3,
+                    "reputacao": 6
+                },
+                {
+                    "texto": "Foi uma derrota dura, mas vou aprender com ela.",
+                    "moral": -1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Nem tudo que a imprensa diz reflete o que aconteceu.",
+                    "moral": 2,
+                    "reputacao": -3
+                },
+                {
+                    "texto": "Sem comentarios. Vou me preparar para a proxima.",
+                    "moral": 1,
+                    "reputacao": -1
+                }
+            ]
+        },
+        {
+            "texto": "Antes do torneio voce falou em chegar longe. O que aconteceu?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Fui superado. Ha uma diferenca entre o que planejei e o que executei.",
+                    "moral": -1,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "As declaracoes de antes refletem minha ambicao. Nao tenho vergonha.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "A confianca estava la. O jogo nao acompanhou.",
+                    "moral": 0,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ja superei. Foco no proximo torneio.",
+                    "moral": 2,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Faltou atitude nos pontos grandes. Voce concorda?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "A responsabilidade e minha. Ponto.",
+                    "moral": -2,
+                    "reputacao": 6
+                },
+                {
+                    "texto": "Foi um conjunto de fatores. Preciso analisar com calma.",
+                    "moral": 0,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Varios fatores contribuiram. Nao aponto so para mim.",
+                    "moral": 1,
+                    "reputacao": -3
+                },
+                {
+                    "texto": "Perder faz parte. Amanha e outro dia.",
+                    "moral": 2,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Ha um padrao de derrotas em situacoes de pressao no seu jogo. Voce enxerga isso?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Reconheco. E um ponto que estou trabalhando ativamente.",
+                    "moral": -1,
+                    "reputacao": 6
+                },
+                {
+                    "texto": "Ha situacoes especificas que precisam evoluir, sim.",
+                    "moral": 0,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Nao concordo com essa leitura. Tenho vitórias em situacoes pressao.",
+                    "moral": 2,
+                    "reputacao": -1
+                },
+                {
+                    "texto": "Padrao e analise de fora. Quem joga sabe o que acontece.",
+                    "moral": 1,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Seu adversario disse que voce foi mais facil de bater do que esperava. Como voce recebe isso?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Se ele sentiu assim, foi porque eu deixei. E minha responsabilidade.",
+                    "moral": -1,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Declaracoes pos-jogo nao me afetam. Foco em evoluir.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Amanha e outro dia. Ele vai me enfrentar de novo em algum momento.",
+                    "moral": 2,
+                    "reputacao": 0
+                },
+                {
+                    "texto": "Interessante ele falar isso. Espero que se lembre quando perder.",
+                    "moral": 3,
+                    "reputacao": -5
+                }
+            ]
+        },
+        {
+            "texto": "A torcida ficou visivelmente frustrada com seu desempenho hoje. Voce sentiu isso em quadra?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Senti. E pesou. Mas e responsabilidade minha nao deixar isso me afetar.",
+                    "moral": -1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "A torcida tem direito de sentir o que sente. Eu falhei.",
+                    "moral": -2,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "A torcida quer vitória. Entendo e respeito.",
+                    "moral": 0,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Prefiro nao misturar reacao da torcida com minha analise técnica.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Voce saiu de quadra sem cumprimentar a equipe. O que estava passando pela sua cabeca?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Foi uma reacao emocional imediata. Me arrependo e vou me desculpar.",
+                    "moral": -2,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Precisava de um momento so. Nao foi falta de respeito.",
+                    "moral": 0,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Em momentos de frustração, cada um precisa do seu espaco.",
+                    "moral": 1,
+                    "reputacao": 1
+                },
+                {
+                    "texto": "Nao comentarei detalhes de como reajo na derrota.",
+                    "moral": 1,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Voce acha que seu tecnico pode ter parcela de responsabilidade neste resultado?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "A responsabilidade e exclusivamente minha. Ele fez tudo certo.",
+                    "moral": -1,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Sempre ha aprendizados coletivos. Vamos analisar juntos.",
+                    "moral": 0,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Ha algumas escolhas táticas que precisamos rever.",
+                    "moral": 1,
+                    "reputacao": 0
+                },
+                {
+                    "texto": "Seria covarde jogar isso para alguem da minha equipe.",
+                    "moral": 2,
+                    "reputacao": 4
+                }
+            ]
+        },
+        {
+            "texto": "Como voce vai se recuperar desta derrota para a proxima semana?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Analisando os erros, descansando e voltando mais forte.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Cada derrota e uma aula. Vou aprender e continuar.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O processo nao muda. A rotina segue.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Preciso de um tempo para processar antes de responder isso.",
+                    "moral": 0,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Esta foi sua pior derrota do ano ou ja houve pior?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "E uma das mais duras. Nao vou suavizar.",
+                    "moral": -2,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Ha contextos diferentes em cada derrota. Esta doeu.",
+                    "moral": 0,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao classifico derrotas. Cada uma ensina algo diferente.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Ja tive piores. Mas isso nao torna esta melhor.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce e o campeao! O que passa pela sua cabeca agora?",
+            "etiquetas": [
+                "campeao",
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Gratidao. Para todos que acreditaram quando eu duvidei.",
+                    "moral": 6,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Ainda estou processando. Sonhei com este momento.",
+                    "moral": 5,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Resultado de muito trabalho. De toda a equipe.",
+                    "moral": 5,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "O sentimento e unico. Nao consigo nem descrever.",
+                    "moral": 4,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "Para quem voce dedica este titulo?",
+            "etiquetas": [
+                "campeao",
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Para minha familia. Eles abriram mao de muito por mim.",
+                    "moral": 5,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Para toda a minha equipe técnica. Trabalho coletivo.",
+                    "moral": 4,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Para todos que duvidaram. Sinto que precisava provar algo.",
+                    "moral": 5,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Nao dedico. Conquistas sao minha. Merecem quem trabalha.",
+                    "moral": 3,
+                    "reputacao": -3
+                }
+            ]
+        },
+        {
+            "texto": "Este e seu maior titulo ate aqui. Como voce mede sua evolucao?",
+            "etiquetas": [
+                "campeao",
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Fui agressivo onde precisava e paciente onde devia. Isso mostrou maturidade.",
+                    "moral": 5,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Sei que ainda posso evoluir mais. Isso me motiva.",
+                    "moral": 4,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "E uma confirmacao do trabalho dos ultimos meses.",
+                    "moral": 4,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Chegar aqui nao foi sorte. Foi construcao diaria.",
+                    "moral": 5,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "Qual a proxima meta depois desta conquista?",
+            "etiquetas": [
+                "campeao",
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Manter o nivel. Titulo abre portas mas exige mais responsabilidade.",
+                    "moral": 4,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Quero mais. Esse titulo me deu fome de outros.",
+                    "moral": 5,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Agora descanso. Depois tracamos os proximos passos.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Preciso aproveitar o momento. Planos vem depois.",
+                    "moral": 3,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Qual o momento que definiu a partida de hoje, na sua visao?",
+            "etiquetas": [
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "O break no quarto game do segundo set. Foi decisivo.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Quando consegui neutralizar o saque dele nos momentos criticos.",
+                    "moral": 3,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "A virada de postura no inicio do terceiro set.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Sao varios momentos. Nao consigo apontar so um.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Seu nivel de energia ao final do jogo mostrou quanto custou fisicamente. Voce vai ter tempo para se recuperar?",
+            "etiquetas": [
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Ja comecaremos a recuperacao agora. Protocolo bem definido.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Custou, mas tenho dias ate o proximo jogo. Vai dar.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Vou avaliar com o medico. Nao quero forcar se nao estiver bem.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "E parte do esporte. Nao e a primeira vez que saio esgotado.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Você exibiu uma postura mais agressiva mentalmente hoje. Isso e resultado de trabalho psicologico?",
+            "etiquetas": [
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, trabalhamos muito a parte mental. E resultado disso.",
+                    "moral": 4,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Sempre fui agressivo. Talvez apareceu mais hoje.",
+                    "moral": 2,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "O adversario me obrigou a isso. Foi uma resposta ao jogo.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Aggressividade e parte do meu jogo natural.",
+                    "moral": 3,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Ha quem critique seu comportamento com a arbitragem em quadra. Voce acha justo?",
+            "etiquetas": [
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Em alguns momentos fui longe demais. Vou melhorar.",
+                    "moral": -1,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Sou emocional. Nao concordo que ultrapassei o limite.",
+                    "moral": 2,
+                    "reputacao": -1
+                },
+                {
+                    "texto": "A arbitragem tambem nao foi perfeita hoje.",
+                    "moral": 2,
+                    "reputacao": -3
+                },
+                {
+                    "texto": "Competidores brigam por cada ponto. Respeito as decisoes mas questiono erros.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Voce aproveitou bem os break points hoje?",
+            "etiquetas": [
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, convertemos bem nos momentos certos.",
+                    "moral": 4,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Razoavel. Desperdicei alguns que poderiam ter abreviado o jogo.",
+                    "moral": 1,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao. E um ponto que vou trabalhar com o tecnico.",
+                    "moral": -1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Nao analiso so por estatistica. O contexto importa.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Como voce compara seu jogo de hoje com o de tres meses atras?",
+            "etiquetas": [
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Ha uma evolucao clara. Sinto isso em quadra.",
+                    "moral": 4,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Estou mais consistente nos momentos que importam.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Melhorei em alguns aspectos, em outros ainda tenho trabalho.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao faco comparacoes. Cada fase e diferente.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Voce sofreu por erros nao-forcados em excesso hoje. Como avalia isso?",
+            "etiquetas": [
+                "jogo_ruim",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Sim, fui impreciso. Ha ajuste tecnico necessario.",
+                    "moral": 0,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "O adversario me forcou a erros que pareceram nao-forcados.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Dia ruim de bola. Acontece. Preciso reajustar.",
+                    "moral": 0,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao concordo que foram erros nao-forcados. Ele jogou bem.",
+                    "moral": 1,
+                    "reputacao": -1
+                }
+            ]
+        },
+        {
+            "texto": "Sua torcida foi fundamental hoje. Voce sente essa energia da arquibancada?",
+            "etiquetas": [
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Completamente. A torcida me empurra em momentos criticos.",
+                    "moral": 4,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Sinto, mas tento focar no jogo independente do barulho.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "E sempre especial jogar com apoio assim.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Prefiro nao criar dependencia da torcida. Preciso jogar bem com ou sem ela.",
+                    "moral": 2,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "Qual a mensagem que voce manda para os adversarios que ainda vem pela frente?",
+            "etiquetas": [
+                "pos_jogo",
+                "vitoria"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Que estou jogando meu melhor tenis e nao pretendo parar.",
+                    "moral": 4,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Nenhuma mensagem. Que se preparem, isso e suficiente.",
+                    "moral": 3,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Respeito todos. Que venham preparados.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao mando mensagem. Meu tenis que vai falar.",
+                    "moral": 3,
+                    "reputacao": 3
+                }
+            ]
+        },
+        {
+            "texto": "Se tivesse que mudar uma coisa no seu jogo agora mesmo, o que seria?",
+            "etiquetas": [
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "A eficiencia nos break points. E o que mais pode definir jogos.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Meu segundo saque. Precisa ser mais agressivo.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Controle emocional em sets apertados. Ainda oscila.",
+                    "moral": 1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Honestamente? Nao mudaria nada neste momento.",
+                    "moral": 3,
+                    "reputacao": -2
+                }
+            ]
+        },
+        {
+            "texto": "Voce evita responsabilidade quando perde, ou enfrenta de frente?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Enfrento sempre. Desviar nao resolve nada.",
+                    "moral": -1,
+                    "reputacao": 6
+                },
+                {
+                    "texto": "Tento balancear autocritica com contexto.",
+                    "moral": 0,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao gosto dessa pergunta. Implica algo que discordo.",
+                    "moral": 2,
+                    "reputacao": -4
+                },
+                {
+                    "texto": "Cada derrota e diferente. Nao generalizo.",
+                    "moral": 1,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Ha quem diga que voce desaparece em jogos grandes. O que voce faz para provar o contrario?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Trabalho. Resultados vao falar mais alto que palavras.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Discordo do diagnostico. Tenho vitórias em jogos grandes.",
+                    "moral": 2,
+                    "reputacao": 0
+                },
+                {
+                    "texto": "Ha algo nisso. Estou trabalhando ativamente para mudar.",
+                    "moral": 0,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Deixo essa conversa para depois que eu vencer um jogo grande.",
+                    "moral": 3,
+                    "reputacao": 1
+                }
+            ]
+        },
+        {
+            "texto": "Seu tecnico pareceu insatisfeito depois desta derrota. Ha tensao na equipe?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Assumo total responsabilidade. Nao foi falha da equipe.",
+                    "moral": -2,
+                    "reputacao": 5
+                },
+                {
+                    "texto": "Houve erros coletivos. Vamos revisar juntos.",
+                    "moral": 0,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao vou expor o que acontece internamente.",
+                    "moral": 1,
+                    "reputacao": -1
+                },
+                {
+                    "texto": "Nao concordo com essa leitura da situação.",
+                    "moral": 2,
+                    "reputacao": -4
+                }
+            ]
+        },
+        {
+            "texto": "Se pudesse apagar um jogo da sua carreira, seria este?",
+            "etiquetas": [
+                "derrota",
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "Ha partidas piores. Mas esta deu muito para aprender.",
+                    "moral": 0,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "Nao apago nada. Cada jogo me fez quem sou.",
+                    "moral": 2,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Honestamente, sim. Esse foi duro de aceitar.",
+                    "moral": -1,
+                    "reputacao": 4
+                },
+                {
+                    "texto": "Nao penso assim. O passado nao pode ser mudado.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        },
+        {
+            "texto": "O placar final nao reflete a dificuldade real do jogo. Voce concorda?",
+            "etiquetas": [
+                "pos_jogo"
+            ],
+            "opcoes": [
+                {
+                    "texto": "O jogo foi mais equilibrado do que o placar sugere.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Placar e placar. Nao busco justificativas em numeros.",
+                    "moral": 2,
+                    "reputacao": 3
+                },
+                {
+                    "texto": "O placar reflete os pontos, nao necessariamente o esforco.",
+                    "moral": 1,
+                    "reputacao": 2
+                },
+                {
+                    "texto": "Nao comento o placar. O que importa e o que aprendi.",
+                    "moral": 1,
+                    "reputacao": 2
+                }
+            ]
+        }
+    ]
+}

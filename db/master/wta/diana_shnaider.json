@@ -1,0 +1,73 @@
+{
+  "nome": "Diana Shnaider",
+  "nacionalidade": "[RU]",
+  "genero": "feminino",
+  "idade": 21,
+  "pontos": 1953,
+  "pontos_ranking": 1953,
+  "overall": 88,
+  "atributos": {
+    "saque": 88,
+    "forehand": 85,
+    "backhand": 82,
+    "topspin": 84,
+    "voleio": 87,
+    "slice": 86,
+    "movimento": 89,
+    "lob": 85,
+    "fisico": 90,
+    "winner": 89,
+    "duplas": 96
+  },
+  "atributos_psicologicos": {
+    "concentracao": 87,
+    "agressividade": 92,
+    "leitura_de_jogo": 83,
+    "determinacao": 88
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1953,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Bad Homburg",
+      "ano": 2024,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Budapest",
+      "ano": 2024,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Hong Kong",
+      "ano": 2024,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Hua Hin",
+      "ano": 2024,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 3740,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 3740,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 67,
+  "mao_dominante": "Canhota",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 16
+}

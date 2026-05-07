@@ -1,0 +1,49 @@
+{
+  "nome": "Micah Braswell",
+  "nacionalidade": "[US]",
+  "idade": 24,
+  "overall": 71,
+  "pontos": 21,
+  "atributos": {
+    "saque": 55,
+    "forehand": 50,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 44,
+    "movimento": 40,
+    "lob": 50,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 967,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 37,
+    "leitura_de_jogo": 32,
+    "determinacao": 36
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 21,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 937,
+  "pontos_ranking": 21,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

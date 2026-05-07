@@ -1,0 +1,49 @@
+{
+  "nome": "Tobia Costanzo Baragiola Mordini",
+  "nacionalidade": "[IT]",
+  "idade": 19,
+  "overall": 69,
+  "pontos": 8,
+  "atributos": {
+    "saque": 40,
+    "forehand": 42,
+    "backhand": 47,
+    "topspin": 54,
+    "voleio": 53,
+    "slice": 40,
+    "movimento": 54,
+    "lob": 52,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1225,
+  "atributos_psicologicos": {
+    "concentracao": 45,
+    "agressividade": 39,
+    "leitura_de_jogo": 45,
+    "determinacao": 35
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 8,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1229,
+  "pontos_ranking": 8,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

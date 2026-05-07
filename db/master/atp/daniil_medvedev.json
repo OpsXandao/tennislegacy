@@ -1,0 +1,155 @@
+{
+  "nome": "Daniil Medvedev",
+  "nacionalidade": "[RU]",
+  "idade": 30,
+  "overall": 90,
+  "pontos": 2960,
+  "atributos": {
+    "saque": 89,
+    "forehand": 91,
+    "backhand": 91,
+    "topspin": 89,
+    "voleio": 84,
+    "slice": 91,
+    "movimento": 93,
+    "lob": 89,
+    "winner": 87,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 11,
+  "atributos_psicologicos": {
+    "concentracao": 90,
+    "agressividade": 70,
+    "leitura_de_jogo": 87,
+    "determinacao": 78
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2960,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Sydney",
+      "ano": 2018,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Tokyo",
+      "ano": 2018,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Winston-Salem",
+      "ano": 2018,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Cincinnati Masters",
+      "ano": 2019,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Shanghai Masters",
+      "ano": 2019,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Sofia",
+      "ano": 2019,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "St. Petersburg",
+      "ano": 2019,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Paris Masters",
+      "ano": 2020,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Tour Finals",
+      "ano": 2020,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Atp Cup",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Canada Masters",
+      "ano": 2021,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Mallorca",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Marseille",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Us Open",
+      "ano": 2021,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Los Cabos",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Vienna",
+      "ano": 2022,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Doha",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Dubai",
+      "ano": 2023,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Miami Masters",
+      "ano": 2023,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Rome Masters",
+      "ano": 2023,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Rotterdam",
+      "ano": 2023,
+      "categoria": "ATP 500"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 11,
+  "pontos_ranking": 2960,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 198,
+  "peso": 83,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Counter-puncher"
+}

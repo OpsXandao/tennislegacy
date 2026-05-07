@@ -1,0 +1,49 @@
+{
+  "nome": "Jack Pinnington Jones",
+  "idade": 22,
+  "pontos": 456,
+  "pontos_ranking": 456,
+  "is_bot": false,
+  "nacionalidade": "[GB]",
+  "overall": 81,
+  "atributos": {
+    "saque": 51,
+    "forehand": 49,
+    "backhand": 47,
+    "topspin": 53,
+    "voleio": 46,
+    "slice": 49,
+    "movimento": 55,
+    "lob": 45,
+    "winner": 61,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 172,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 46,
+    "leitura_de_jogo": 42,
+    "determinacao": 56
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 456,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 136,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

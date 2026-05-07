@@ -1,0 +1,52 @@
+{
+  "nome": "Kimberly Birrell",
+  "nacionalidade": "[AU]",
+  "genero": "feminino",
+  "idade": 27,
+  "pontos": 881,
+  "pontos_ranking": 881,
+  "overall": 84,
+  "atributos": {
+    "saque": 67,
+    "forehand": 77,
+    "backhand": 74,
+    "topspin": 72,
+    "voleio": 70,
+    "slice": 67,
+    "movimento": 69,
+    "lob": 68,
+    "fisico": 72,
+    "winner": 68,
+    "duplas": 91
+  },
+  "atributos_psicologicos": {
+    "concentracao": 77,
+    "agressividade": 75,
+    "leitura_de_jogo": 71,
+    "determinacao": 75
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 881,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 827,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 827,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 64,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 97
+}

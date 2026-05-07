@@ -1,0 +1,95 @@
+{
+  "nome": "Taylor Fritz",
+  "nacionalidade": "[US]",
+  "idade": 28,
+  "overall": 90,
+  "pontos": 4220,
+  "atributos": {
+    "saque": 95,
+    "forehand": 94,
+    "backhand": 90,
+    "topspin": 89,
+    "voleio": 85,
+    "slice": 87,
+    "movimento": 86,
+    "lob": 88,
+    "winner": 93,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 4,
+  "atributos_psicologicos": {
+    "concentracao": 94,
+    "agressividade": 83,
+    "leitura_de_jogo": 68,
+    "determinacao": 84
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 4220,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Eastbourne",
+      "ano": 2019,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Eastbourne",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Indian Wells Masters",
+      "ano": 2022,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Tokyo",
+      "ano": 2022,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Atlanta",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Delray Beach",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "United Cup",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Delray Beach",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Eastbourne",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 7,
+  "pontos_ranking": 4220,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 196,
+  "peso": 86,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Baselines Aggressive"
+}

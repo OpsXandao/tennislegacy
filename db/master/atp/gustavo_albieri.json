@@ -1,0 +1,49 @@
+{
+  "nome": "Gustavo Albieri",
+  "nacionalidade": "[BR]",
+  "idade": 18,
+  "overall": 69,
+  "pontos": 4,
+  "atributos": {
+    "saque": 52,
+    "forehand": 43,
+    "backhand": 45,
+    "topspin": 40,
+    "voleio": 56,
+    "slice": 45,
+    "movimento": 45,
+    "lob": 44,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1337,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 49,
+    "leitura_de_jogo": 30,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 4,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1477,
+  "pontos_ranking": 4,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

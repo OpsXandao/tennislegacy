@@ -1,0 +1,49 @@
+{
+  "nome": "Ryan Peniston",
+  "nacionalidade": "[GB]",
+  "idade": 30,
+  "overall": 79,
+  "pontos": 242,
+  "atributos": {
+    "saque": 47,
+    "forehand": 55,
+    "backhand": 48,
+    "topspin": 59,
+    "voleio": 52,
+    "slice": 53,
+    "movimento": 51,
+    "lob": 55,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 266,
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 57,
+    "leitura_de_jogo": 40,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 242,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 234,
+  "pontos_ranking": 242,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 74,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

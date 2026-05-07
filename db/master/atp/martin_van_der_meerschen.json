@@ -1,0 +1,49 @@
+{
+  "nome": "Martin Van Der Meerschen",
+  "nacionalidade": "[BE]",
+  "idade": 25,
+  "overall": 72,
+  "pontos": 37,
+  "atributos": {
+    "saque": 49,
+    "forehand": 58,
+    "backhand": 55,
+    "topspin": 43,
+    "voleio": 52,
+    "slice": 61,
+    "movimento": 44,
+    "lob": 51,
+    "winner": 54,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 809,
+  "atributos_psicologicos": {
+    "concentracao": 45,
+    "agressividade": 40,
+    "leitura_de_jogo": 35,
+    "determinacao": 53
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 37,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 777,
+  "pontos_ranking": 37,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 177,
+  "peso": 80,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

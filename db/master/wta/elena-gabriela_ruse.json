@@ -1,0 +1,52 @@
+{
+  "nome": "Elena-Gabriela Ruse",
+  "nacionalidade": "[RO]",
+  "genero": "feminino",
+  "idade": 28,
+  "pontos": 892,
+  "pontos_ranking": 892,
+  "overall": 84,
+  "atributos": {
+    "saque": 79,
+    "forehand": 71,
+    "backhand": 71,
+    "topspin": 79,
+    "voleio": 72,
+    "slice": 77,
+    "movimento": 78,
+    "lob": 72,
+    "fisico": 79,
+    "winner": 73,
+    "duplas": 92
+  },
+  "atributos_psicologicos": {
+    "concentracao": 72,
+    "agressividade": 72,
+    "leitura_de_jogo": 73,
+    "determinacao": 74
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 892,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 1150,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 1150,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 70,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 79
+}

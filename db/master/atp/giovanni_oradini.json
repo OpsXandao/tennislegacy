@@ -1,0 +1,49 @@
+{
+  "nome": "Giovanni Oradini",
+  "nacionalidade": "[IT]",
+  "idade": 28,
+  "overall": 73,
+  "pontos": 53,
+  "atributos": {
+    "saque": 73,
+    "forehand": 72,
+    "backhand": 73,
+    "topspin": 70,
+    "voleio": 62,
+    "slice": 72,
+    "movimento": 74,
+    "lob": 63,
+    "winner": 77,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 687,
+  "atributos_psicologicos": {
+    "concentracao": 67,
+    "agressividade": 50,
+    "leitura_de_jogo": 52,
+    "determinacao": 54
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 53,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 655,
+  "pontos_ranking": 53,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 81,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

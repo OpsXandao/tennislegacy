@@ -1,0 +1,55 @@
+{
+  "nome": "Miomir Kecmanovic",
+  "nacionalidade": "[RS]",
+  "idade": 26,
+  "overall": 83,
+  "pontos": 685,
+  "atributos": {
+    "saque": 77,
+    "forehand": 79,
+    "backhand": 83,
+    "topspin": 76,
+    "voleio": 75,
+    "slice": 82,
+    "movimento": 82,
+    "lob": 77,
+    "winner": 77,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 46,
+  "atributos_psicologicos": {
+    "concentracao": 77,
+    "agressividade": 69,
+    "leitura_de_jogo": 75,
+    "determinacao": 58
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 685,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Kitzbuhel",
+      "ano": 2020,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 29,
+  "pontos_ranking": 685,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 82,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

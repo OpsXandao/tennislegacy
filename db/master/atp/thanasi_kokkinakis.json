@@ -1,0 +1,55 @@
+{
+  "nome": "Thanasi Kokkinakis",
+  "nacionalidade": "[AU]",
+  "idade": 29,
+  "overall": 71,
+  "pontos": 25,
+  "atributos": {
+    "saque": 56,
+    "forehand": 47,
+    "backhand": 45,
+    "topspin": 44,
+    "voleio": 49,
+    "slice": 44,
+    "movimento": 58,
+    "lob": 51,
+    "winner": 41,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 915,
+  "atributos_psicologicos": {
+    "concentracao": 45,
+    "agressividade": 47,
+    "leitura_de_jogo": 44,
+    "determinacao": 37
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 25,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Adelaide 2",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 885,
+  "pontos_ranking": 25,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

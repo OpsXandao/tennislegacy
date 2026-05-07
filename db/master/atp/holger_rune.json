@@ -1,0 +1,70 @@
+{
+  "nome": "Holger Rune",
+  "nacionalidade": "[DK]",
+  "idade": 22,
+  "overall": 88,
+  "pontos": 2340,
+  "atributos": {
+    "saque": 87,
+    "forehand": 89,
+    "backhand": 89,
+    "topspin": 92,
+    "voleio": 85,
+    "slice": 84,
+    "movimento": 88,
+    "lob": 83,
+    "winner": 92,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 10,
+  "atributos_psicologicos": {
+    "concentracao": 89,
+    "agressividade": 91,
+    "leitura_de_jogo": 64,
+    "determinacao": 88
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2340,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Munich",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Paris Masters",
+      "ano": 2022,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Stockholm",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Munich",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 17,
+  "pontos_ranking": 2340,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Baselines Aggressive"
+}

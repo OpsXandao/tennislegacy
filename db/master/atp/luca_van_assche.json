@@ -1,0 +1,49 @@
+{
+  "nome": "Luca Van Assche",
+  "idade": 21,
+  "pontos": 596,
+  "pontos_ranking": 596,
+  "is_bot": false,
+  "nacionalidade": "[FR]",
+  "overall": 82,
+  "atributos": {
+    "saque": 52,
+    "forehand": 60,
+    "backhand": 54,
+    "topspin": 46,
+    "voleio": 46,
+    "slice": 44,
+    "movimento": 49,
+    "lob": 57,
+    "winner": 57,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 156,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 55,
+    "leitura_de_jogo": 50,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 596,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 100,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

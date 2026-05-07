@@ -1,0 +1,49 @@
+{
+  "nome": "Marc Andrea Huesler",
+  "nacionalidade": "[CH] Suíça",
+  "idade": 23,
+  "overall": 79,
+  "pontos": 250,
+  "atributos": {
+    "saque": 71,
+    "forehand": 61,
+    "backhand": 59,
+    "topspin": 70,
+    "voleio": 64,
+    "slice": 62,
+    "movimento": 63,
+    "lob": 64,
+    "winner": 55,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 2277,
+  "atributos_psicologicos": {
+    "concentracao": 51,
+    "agressividade": 45,
+    "leitura_de_jogo": 54,
+    "determinacao": 56
+  },
+  "pontos_detalhados": [],
+  "trofeus": [
+    {
+      "nome": "Sofia",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 229,
+  "pontos_ranking": 250,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 196,
+  "peso": 85,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

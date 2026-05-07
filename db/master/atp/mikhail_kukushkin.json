@@ -1,0 +1,55 @@
+{
+  "nome": "Mikhail Kukushkin",
+  "nacionalidade": "[KZ]",
+  "idade": 38,
+  "overall": 78,
+  "pontos": 203,
+  "atributos": {
+    "saque": 70,
+    "forehand": 69,
+    "backhand": 71,
+    "topspin": 72,
+    "voleio": 60,
+    "slice": 66,
+    "movimento": 62,
+    "lob": 66,
+    "winner": 66,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 298,
+  "atributos_psicologicos": {
+    "concentracao": 69,
+    "agressividade": 57,
+    "leitura_de_jogo": 58,
+    "determinacao": 50
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 203,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "St. Petersburg",
+      "ano": 2010,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 266,
+  "pontos_ranking": 203,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 81,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

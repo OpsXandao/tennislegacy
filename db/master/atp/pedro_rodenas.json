@@ -1,0 +1,49 @@
+{
+  "nome": "Pedro Rodenas",
+  "nacionalidade": "[ES]",
+  "idade": 21,
+  "overall": 72,
+  "pontos": 33,
+  "atributos": {
+    "saque": 52,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 52,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 43,
+    "lob": 40,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 841,
+  "atributos_psicologicos": {
+    "concentracao": 36,
+    "agressividade": 33,
+    "leitura_de_jogo": 34,
+    "determinacao": 36
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 33,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 809,
+  "pontos_ranking": 33,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 80,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

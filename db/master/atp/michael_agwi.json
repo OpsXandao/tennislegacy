@@ -1,0 +1,49 @@
+{
+  "nome": "Michael Agwi",
+  "nacionalidade": "[IE]",
+  "idade": 22,
+  "overall": 73,
+  "pontos": 50,
+  "atributos": {
+    "saque": 57,
+    "forehand": 53,
+    "backhand": 49,
+    "topspin": 55,
+    "voleio": 44,
+    "slice": 42,
+    "movimento": 57,
+    "lob": 51,
+    "winner": 45,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 705,
+  "atributos_psicologicos": {
+    "concentracao": 32,
+    "agressividade": 53,
+    "leitura_de_jogo": 47,
+    "determinacao": 53
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 50,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 673,
+  "pontos_ranking": 50,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

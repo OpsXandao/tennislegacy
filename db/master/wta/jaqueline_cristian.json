@@ -1,0 +1,51 @@
+{
+  "nome": "Jaqueline Cristian",
+  "nacionalidade": "[RO]",
+  "genero": "feminino",
+  "idade": 27,
+  "pontos": 1367,
+  "pontos_ranking": 1367,
+  "overall": 87,
+  "atributos": {
+    "saque": 89,
+    "forehand": 80,
+    "backhand": 81,
+    "topspin": 82,
+    "voleio": 86,
+    "slice": 89,
+    "movimento": 83,
+    "lob": 85,
+    "fisico": 89,
+    "winner": 89,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 80,
+    "agressividade": 81,
+    "leitura_de_jogo": 84,
+    "determinacao": 88
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1367,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 68,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

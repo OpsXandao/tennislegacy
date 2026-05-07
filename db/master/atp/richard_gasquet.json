@@ -1,0 +1,130 @@
+{
+  "nome": "Richard Gasquet",
+  "nacionalidade": "[FR]",
+  "idade": 39,
+  "overall": 77,
+  "pontos": 125,
+  "atributos": {
+    "saque": 71,
+    "forehand": 58,
+    "backhand": 62,
+    "topspin": 72,
+    "voleio": 78,
+    "slice": 69,
+    "movimento": 74,
+    "lob": 57,
+    "winner": 69,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 407,
+  "atributos_psicologicos": {
+    "concentracao": 67,
+    "agressividade": 59,
+    "leitura_de_jogo": 51,
+    "determinacao": 57
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 125,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Nottingham",
+      "ano": 2005,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Gstaad",
+      "ano": 2006,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Lyon",
+      "ano": 2006,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Nottingham",
+      "ano": 2006,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Mumbai",
+      "ano": 2007,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Nice",
+      "ano": 2010,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Bangkok",
+      "ano": 2012,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Doha",
+      "ano": 2013,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Montpellier",
+      "ano": 2013,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Moscow",
+      "ano": 2013,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Estoril",
+      "ano": 2015,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Montpellier",
+      "ano": 2015,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Antwerp",
+      "ano": 2016,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Montpellier",
+      "ano": 2016,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "s Hertogenbosch",
+      "ano": 2018,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Auckland",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 375,
+  "pontos_ranking": 125,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

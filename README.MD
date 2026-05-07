@@ -5,6 +5,17 @@
 - Executar o jogo: `python main.py`
 - Saves ficam na pasta `saves/` (o jogo oferece opcao de salvar no menu do torneio)
 
+## Sincronizar dados relevantes do repositório local
+
+- `make sync-relevante`: sincroniza `db/master/{atp,wta}` com os dados locais do Jeff Sackmann e recria os índices lean.
+- `make sync-relevante-dry-run`: mostra quantos arquivos mudariam sem gravar.
+- `make sync-bio-historico`: alias mais explícito para a mesma sincronização de biografia + histórico de títulos.
+- Defaults: `TOUR=ambos`, `START_YEAR=2000`, `END_YEAR=2025`.
+- Exemplos:
+  - `make sync-relevante`
+  - `make sync-relevante TOUR=atp END_YEAR=2024`
+  - `make sync-relevante-dry-run TOUR=wta`
+
 ## Fluxograma de Navegacao
 
 ### 1. Menu Inicial

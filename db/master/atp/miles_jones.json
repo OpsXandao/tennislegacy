@@ -1,0 +1,49 @@
+{
+  "nome": "Miles Jones",
+  "nacionalidade": "[US]",
+  "idade": 25,
+  "overall": 71,
+  "pontos": 22,
+  "atributos": {
+    "saque": 42,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 50,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 52,
+    "lob": 40,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 956,
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 36,
+    "leitura_de_jogo": 42,
+    "determinacao": 40
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 22,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 926,
+  "pontos_ranking": 22,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 71,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

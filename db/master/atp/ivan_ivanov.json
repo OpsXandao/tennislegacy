@@ -1,0 +1,49 @@
+{
+  "nome": "Ivan Ivanov",
+  "nacionalidade": "[BG]",
+  "idade": 17,
+  "overall": 72,
+  "pontos": 36,
+  "atributos": {
+    "saque": 40,
+    "forehand": 45,
+    "backhand": 43,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 49,
+    "lob": 40,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 814,
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 45,
+    "leitura_de_jogo": 38,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 36,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 782,
+  "pontos_ranking": 36,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

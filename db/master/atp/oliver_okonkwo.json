@@ -1,0 +1,49 @@
+{
+  "nome": "Oliver Okonkwo",
+  "nacionalidade": "[GB]",
+  "idade": 25,
+  "overall": 70,
+  "pontos": 11,
+  "atributos": {
+    "saque": 40,
+    "forehand": 44,
+    "backhand": 44,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 42,
+    "movimento": 43,
+    "lob": 48,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1143,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 34,
+    "leitura_de_jogo": 31,
+    "determinacao": 48
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 11,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1125,
+  "pontos_ranking": 11,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

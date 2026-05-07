@@ -1,0 +1,49 @@
+{
+  "nome": "Pieter De Lange",
+  "nacionalidade": "[NL]",
+  "idade": 19,
+  "overall": 70,
+  "pontos": 14,
+  "atributos": {
+    "saque": 46,
+    "forehand": 45,
+    "backhand": 54,
+    "topspin": 42,
+    "voleio": 43,
+    "slice": 43,
+    "movimento": 55,
+    "lob": 48,
+    "winner": 57,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1082,
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 47,
+    "leitura_de_jogo": 55,
+    "determinacao": 35
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 14,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1060,
+  "pontos_ranking": 14,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

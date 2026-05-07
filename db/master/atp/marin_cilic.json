@@ -1,0 +1,155 @@
+{
+  "nome": "Marin Cilic",
+  "nacionalidade": "[HR]",
+  "idade": 37,
+  "overall": 85,
+  "pontos": 1090,
+  "atributos": {
+    "saque": 72,
+    "forehand": 67,
+    "backhand": 71,
+    "topspin": 68,
+    "voleio": 67,
+    "slice": 69,
+    "movimento": 65,
+    "lob": 71,
+    "winner": 71,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 104,
+  "atributos_psicologicos": {
+    "concentracao": 69,
+    "agressividade": 77,
+    "leitura_de_jogo": 70,
+    "determinacao": 72
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1090,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "New Haven",
+      "ano": 2008,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Chennai",
+      "ano": 2009,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Zagreb",
+      "ano": 2009,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Chennai",
+      "ano": 2010,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Zagreb",
+      "ano": 2010,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "St. Petersburg",
+      "ano": 2011,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Queen's Club",
+      "ano": 2012,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Umag",
+      "ano": 2012,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Zagreb",
+      "ano": 2013,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Delray Beach",
+      "ano": 2014,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Moscow",
+      "ano": 2014,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "US Open",
+      "ano": 2014,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Zagreb",
+      "ano": 2014,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Moscow",
+      "ano": 2015,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Basel",
+      "ano": 2016,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Cincinnati Masters",
+      "ano": 2016,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Istanbul",
+      "ano": 2017,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Queen's Club",
+      "ano": 2018,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "St. Petersburg",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Stuttgart",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Hangzhou",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 26,
+  "pontos_ranking": 1090,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 198,
+  "peso": 82,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

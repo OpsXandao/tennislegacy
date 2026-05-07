@@ -1,0 +1,49 @@
+{
+  "nome": "Tomas Machac",
+  "nacionalidade": "[CZ]",
+  "idade": 25,
+  "overall": 86,
+  "pontos": 1510,
+  "atributos": {
+    "saque": 80,
+    "forehand": 79,
+    "backhand": 83,
+    "topspin": 81,
+    "voleio": 79,
+    "slice": 82,
+    "movimento": 84,
+    "lob": 84,
+    "winner": 83,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 21,
+  "atributos_psicologicos": {
+    "concentracao": 60,
+    "agressividade": 59,
+    "leitura_de_jogo": 79,
+    "determinacao": 65
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1510,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 29,
+  "pontos_ranking": 1510,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 83,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

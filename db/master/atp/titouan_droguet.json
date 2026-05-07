@@ -1,0 +1,49 @@
+{
+  "nome": "Titouan Droguet",
+  "idade": 24,
+  "pontos": 520,
+  "pontos_ranking": 520,
+  "is_bot": false,
+  "nacionalidade": "[FR]",
+  "overall": 82,
+  "atributos": {
+    "saque": 50,
+    "forehand": 52,
+    "backhand": 52,
+    "topspin": 55,
+    "voleio": 60,
+    "slice": 40,
+    "movimento": 44,
+    "lob": 40,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 166,
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 41,
+    "leitura_de_jogo": 34,
+    "determinacao": 38
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 520,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 122,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

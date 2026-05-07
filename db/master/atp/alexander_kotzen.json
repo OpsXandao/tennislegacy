@@ -1,0 +1,49 @@
+{
+  "nome": "Alexander Kotzen",
+  "nacionalidade": "[US]",
+  "idade": 25,
+  "overall": 70,
+  "pontos": 16,
+  "atributos": {
+    "saque": 57,
+    "forehand": 49,
+    "backhand": 45,
+    "topspin": 53,
+    "voleio": 57,
+    "slice": 59,
+    "movimento": 54,
+    "lob": 59,
+    "winner": 60,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1045,
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 34,
+    "leitura_de_jogo": 33,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 16,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1019,
+  "pontos_ranking": 16,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

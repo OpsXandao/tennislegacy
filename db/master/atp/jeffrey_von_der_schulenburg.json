@@ -1,0 +1,49 @@
+{
+  "nome": "Jeffrey Von Der Schulenburg",
+  "nacionalidade": "[CH]",
+  "idade": 24,
+  "overall": 72,
+  "pontos": 30,
+  "atributos": {
+    "saque": 56,
+    "forehand": 43,
+    "backhand": 54,
+    "topspin": 48,
+    "voleio": 43,
+    "slice": 46,
+    "movimento": 43,
+    "lob": 45,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 875,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 45,
+    "leitura_de_jogo": 46,
+    "determinacao": 52
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 30,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 843,
+  "pontos_ranking": 30,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

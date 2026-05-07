@@ -1,0 +1,51 @@
+{
+  "nome": "Katie Volynets",
+  "nacionalidade": "[US]",
+  "genero": "feminino",
+  "idade": 24,
+  "pontos": 786,
+  "pontos_ranking": 786,
+  "overall": 84,
+  "atributos": {
+    "saque": 72,
+    "forehand": 64,
+    "backhand": 69,
+    "topspin": 66,
+    "voleio": 73,
+    "slice": 69,
+    "movimento": 64,
+    "lob": 64,
+    "fisico": 64,
+    "winner": 68,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 69,
+    "agressividade": 72,
+    "leitura_de_jogo": 64,
+    "determinacao": 70
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 786,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 65,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

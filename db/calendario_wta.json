@@ -1,0 +1,878 @@
+{
+  "1": [
+    {
+      "nome": "United Cup",
+      "tipo": "United Cup",
+      "local": "Perth/Sydney",
+      "quadra": "dura",
+      "premiacao": 5125000,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": false,
+      "pais_sede": "[AU] Austrália",
+      "ultimo_campeao": "Estados Unidos",
+      "semana": 1,
+      "ultimo_campeao_duplas": null
+    },
+    {
+      "nome": "WTA 500 Brisbane",
+      "tipo": "WTA 500",
+      "local": "Brisbane",
+      "quadra": "dura",
+      "premiacao": 1520600,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[AU] Austrália",
+      "semana": 1,
+      "ultimo_campeao_duplas": "Mirra Andreeva / Diana Shnaider",
+      "ultimo_campeao": "Aryna Sabalenka"
+    },
+    {
+      "nome": "WTA 250 Auckland",
+      "tipo": "WTA 250",
+      "local": "Auckland",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[NZ] Nova Zelândia",
+      "semana": 1,
+      "ultimo_campeao_duplas": "Jiang Xinyu / Wu Fang-hsien",
+      "ultimo_campeao": "Clara Tauson"
+    }
+  ],
+  "2": [
+    {
+      "nome": "WTA 500 Adelaide",
+      "tipo": "WTA 500",
+      "local": "Adelaide",
+      "quadra": "dura",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[AU] Austrália",
+      "semana": 2,
+      "ultimo_campeao_duplas": "Guo Hanyu / Alexandra Panova",
+      "ultimo_campeao": "Madison Keys"
+    },
+    {
+      "nome": "WTA 250 Hobart",
+      "tipo": "WTA 250",
+      "local": "Hobart",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[AU] Austrália",
+      "semana": 2,
+      "ultimo_campeao_duplas": "Jiang Xinyu / Wu Fang-hsien",
+      "ultimo_campeao": "McCartney Kessler"
+    }
+  ],
+  "3": [
+    {
+      "nome": "Australian Open",
+      "tipo": "Grand Slam",
+      "permite_mistas": true,
+      "local": "Melbourne",
+      "quadra": "dura",
+      "premiacao": 43250000,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": true,
+      "pais_sede": "[AU] Austrália",
+      "semana": 3,
+      "ultimo_campeao_duplas": "Kateřina Siniaková / Taylor Townsend",
+      "ultimo_campeao": "Madison Keys"
+    }
+  ],
+  "4": [],
+  "5": [
+    {
+      "nome": "WTA 500 Abu Dhabi",
+      "tipo": "WTA 500",
+      "local": "Abu Dhabi",
+      "quadra": "dura",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[AE] Emirados Árabes",
+      "semana": 5,
+      "ultimo_campeao_duplas": "Jeļena Ostapenko / Ellen Perez",
+      "ultimo_campeao": "Belinda Bencic"
+    },
+    {
+      "nome": "WTA 250 Cluj-Napoca",
+      "tipo": "WTA 250",
+      "local": "Cluj-Napoca",
+      "quadra": "dura (indoor)",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[RO] Romênia",
+      "semana": 5,
+      "ultimo_campeao_duplas": "Magali Kempen / Anna Sisková",
+      "ultimo_campeao": "Anastasia Potapova"
+    }
+  ],
+  "6": [
+    {
+      "nome": "WTA 1000 Doha",
+      "tipo": "WTA 1000",
+      "local": "Doha",
+      "quadra": "dura",
+      "premiacao": 3654963,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[QA] Catar",
+      "semana": 6,
+      "ultimo_campeao_duplas": "Sara Errani / Jasmine Paolini",
+      "ultimo_campeao": "Amanda Anisimova"
+    }
+  ],
+  "7": [
+    {
+      "nome": "WTA 1000 Dubai",
+      "tipo": "WTA 1000",
+      "local": "Dubai",
+      "quadra": "dura",
+      "premiacao": 3654963,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[AE] Emirados Árabes",
+      "semana": 7,
+      "ultimo_campeao_duplas": "Kateřina Siniaková / Taylor Townsend",
+      "ultimo_campeao": "Mirra Andreeva"
+    }
+  ],
+  "8": [
+    {
+      "nome": "WTA 500 San Diego",
+      "tipo": "WTA 500",
+      "local": "San Diego",
+      "quadra": "dura",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 8,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": "Katie Boulter"
+    },
+    {
+      "nome": "WTA 250 Austin",
+      "tipo": "WTA 250",
+      "local": "Austin",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 8,
+      "ultimo_campeao_duplas": "Anna Blinkova / Yuan Yue",
+      "ultimo_campeao": "Jessica Pegula"
+    }
+  ],
+  "9": [],
+  "10": [
+    {
+      "nome": "WTA 1000 Indian Wells",
+      "tipo": "WTA 1000",
+      "local": "Indian Wells",
+      "quadra": "dura",
+      "premiacao": 8963700,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 10,
+      "ultimo_campeao_duplas": "Asia Muhammad / Demi Schuurs",
+      "ultimo_campeao": "Mirra Andreeva"
+    }
+  ],
+  "11": [],
+  "12": [
+    {
+      "nome": "WTA 1000 Miami",
+      "tipo": "WTA 1000",
+      "local": "Miami Gardens",
+      "quadra": "dura",
+      "premiacao": 8963700,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 12,
+      "ultimo_campeao_duplas": "Mirra Andreeva / Diana Shnaider",
+      "ultimo_campeao": "Aryna Sabalenka"
+    }
+  ],
+  "13": [],
+  "14": [
+    {
+      "nome": "WTA 500 Charleston",
+      "tipo": "WTA 500",
+      "local": "Charleston",
+      "quadra": "saibro",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 14,
+      "ultimo_campeao_duplas": "Jeļena Ostapenko / Erin Routliffe",
+      "ultimo_campeao": "Jessica Pegula"
+    },
+    {
+      "nome": "WTA 250 Bogota",
+      "tipo": "WTA 250",
+      "local": "Bogota",
+      "quadra": "saibro",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CO] Colômbia",
+      "semana": 14,
+      "ultimo_campeao_duplas": "Cristina Bucșa / Sara Sorribes Tormo",
+      "ultimo_campeao": "Camila Osorio"
+    }
+  ],
+  "15": [
+    {
+      "nome": "Billie Jean King Cup Qualifiers",
+      "tipo": "Billie Jean King Cup",
+      "local": "Vários locais",
+      "quadra": "dura",
+      "premiacao": 0,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": false,
+      "pais_sede": "Internacional",
+      "semana": 15,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "16": [
+    {
+      "nome": "WTA 500 Stuttgart",
+      "tipo": "WTA 500",
+      "local": "Stuttgart",
+      "quadra": "saibro (indoor)",
+      "premiacao": 925661,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "semana": 16,
+      "ultimo_campeao_duplas": "Gabriela Dabrowski / Erin Routliffe",
+      "ultimo_campeao": "Jeļena Ostapenko"
+    },
+    {
+      "nome": "WTA 250 Rouen",
+      "tipo": "WTA 250",
+      "local": "Rouen",
+      "quadra": "saibro (indoor)",
+      "premiacao": 239212,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "semana": 16,
+      "ultimo_campeao_duplas": "Aleksandra Krunić / Sabrina Santamaria",
+      "ultimo_campeao": "Elina Svitolina"
+    }
+  ],
+  "17": [
+    {
+      "nome": "WTA 1000 Madrid",
+      "tipo": "WTA 1000",
+      "local": "Madrid",
+      "quadra": "saibro",
+      "premiacao": 7854000,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[ES] Espanha",
+      "semana": 17,
+      "ultimo_campeao_duplas": "Sorana Cîrstea / Anna Kalinskaya",
+      "ultimo_campeao": "Aryna Sabalenka"
+    }
+  ],
+  "18": [],
+  "19": [
+    {
+      "nome": "WTA 1000 Rome",
+      "tipo": "WTA 1000",
+      "local": "Rome",
+      "quadra": "saibro",
+      "premiacao": 6009593,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[IT] Itália",
+      "semana": 19,
+      "ultimo_campeao_duplas": "Sara Errani / Jasmine Paolini",
+      "ultimo_campeao": "Jasmine Paolini"
+    }
+  ],
+  "20": [],
+  "21": [
+    {
+      "nome": "WTA 500 Strasbourg",
+      "tipo": "WTA 500",
+      "local": "Strasbourg",
+      "quadra": "saibro",
+      "premiacao": 925661,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "semana": 21,
+      "ultimo_campeao_duplas": "Tímea Babos / Luisa Stefani",
+      "ultimo_campeao": "Elena Rybakina"
+    },
+    {
+      "nome": "WTA 250 Rabat",
+      "tipo": "WTA 250",
+      "local": "Rabat",
+      "quadra": "saibro",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[MA] Marrocos",
+      "semana": 21,
+      "ultimo_campeao_duplas": "Maya Joint / Oksana Kalashnikova",
+      "ultimo_campeao": "Maya Joint"
+    }
+  ],
+  "22": [
+    {
+      "nome": "French Open",
+      "tipo": "Grand Slam",
+      "permite_mistas": true,
+      "local": "Paris",
+      "quadra": "saibro",
+      "premiacao": 26334000,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": true,
+      "pais_sede": "[FR] França",
+      "semana": 22,
+      "ultimo_campeao_duplas": "Sara Errani / Jasmine Paolini",
+      "ultimo_campeao": "Coco Gauff"
+    }
+  ],
+  "23": [],
+  "24": [
+    {
+      "nome": "WTA 250 Nottingham",
+      "tipo": "WTA 250",
+      "local": "Nottingham",
+      "quadra": "grama",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[GB] Reino Unido",
+      "semana": 24,
+      "ultimo_campeao_duplas": "Beatriz Haddad Maia / Laura Siegemund",
+      "ultimo_campeao": "McCartney Kessler"
+    },
+    {
+      "nome": "WTA 250 's-Hertogenbosch",
+      "tipo": "WTA 250",
+      "local": "Rosmalen",
+      "quadra": "grama",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[NL] Países Baixos",
+      "semana": 24,
+      "ultimo_campeao_duplas": "Irina Khromacheva / Fanny Stollár",
+      "ultimo_campeao": "Elise Mertens"
+    }
+  ],
+  "25": [
+    {
+      "nome": "WTA 500 Berlin",
+      "tipo": "WTA 500",
+      "local": "Berlin",
+      "quadra": "grama",
+      "premiacao": 925661,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "semana": 25,
+      "ultimo_campeao_duplas": "Tereza Mihalíková / Olivia Nicholls",
+      "ultimo_campeao": "Markéta Vondroušová"
+    },
+    {
+      "nome": "WTA 250 Birmingham",
+      "tipo": "WTA 250",
+      "local": "Birmingham",
+      "quadra": "grama",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[GB] Reino Unido",
+      "semana": 25,
+      "ultimo_campeao_duplas": "Hsieh Su-wei / Elise Mertens",
+      "ultimo_campeao": "Yulia Putintseva"
+    }
+  ],
+  "26": [
+    {
+      "nome": "WTA 500 Bad Homburg",
+      "tipo": "WTA 500",
+      "local": "Bad Homburg",
+      "quadra": "grama",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[DE] Alemanha",
+      "semana": 26,
+      "ultimo_campeao_duplas": "Guo Hanyu / Alexandra Panova",
+      "ultimo_campeao": "Jessica Pegula"
+    },
+    {
+      "nome": "WTA 500 Eastbourne",
+      "tipo": "WTA 500",
+      "local": "Eastbourne",
+      "quadra": "grama",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[GB] Reino Unido",
+      "semana": 26,
+      "ultimo_campeao_duplas": "Marie Bouzková / Anna Danilina",
+      "ultimo_campeao": "Maya Joint"
+    }
+  ],
+  "27": [
+    {
+      "nome": "Wimbledon",
+      "tipo": "Grand Slam",
+      "permite_mistas": true,
+      "local": "London",
+      "quadra": "grama",
+      "premiacao": 25161500,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": true,
+      "pais_sede": "[GB] Reino Unido",
+      "semana": 27,
+      "ultimo_campeao_duplas": "Veronika Kudermetova / Elise Mertens",
+      "ultimo_campeao": "Iga Świątek"
+    }
+  ],
+  "28": [],
+  "29": [
+    {
+      "nome": "WTA 250 Palermo",
+      "tipo": "WTA 250",
+      "local": "Palermo",
+      "quadra": "saibro",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[IT] Itália",
+      "semana": 29,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": "Francesca Jones"
+    },
+    {
+      "nome": "WTA 250 Budapest",
+      "tipo": "WTA 250",
+      "local": "Budapest",
+      "quadra": "saibro",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[HU] Hungria",
+      "semana": 29,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "30": [
+    {
+      "nome": "WTA 250 Prague",
+      "tipo": "WTA 250",
+      "local": "Prague",
+      "quadra": "saibro",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CZ] República Tcheca",
+      "semana": 30,
+      "ultimo_campeao_duplas": "Nadiia Kichenok / Makoto Ninomiya",
+      "ultimo_campeao": "Marie Bouzková"
+    },
+    {
+      "nome": "WTA 250 Iasi",
+      "tipo": "WTA 250",
+      "local": "Iasi",
+      "quadra": "saibro",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[RO] Romênia",
+      "semana": 30,
+      "ultimo_campeao_duplas": "Veronika Erjavec / Panna Udvardy",
+      "ultimo_campeao": "Irina-Camelia Begu"
+    }
+  ],
+  "31": [
+    {
+      "nome": "WTA 500 Washington",
+      "tipo": "WTA 500",
+      "local": "Washington DC",
+      "quadra": "dura",
+      "premiacao": 1282951,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 31,
+      "ultimo_campeao_duplas": "Taylor Townsend / Zhang Shuai",
+      "ultimo_campeao": "Leylah Fernandez"
+    }
+  ],
+  "32": [
+    {
+      "nome": "WTA 1000 Canada",
+      "tipo": "WTA 1000",
+      "local": "Toronto/Montreal",
+      "quadra": "dura",
+      "premiacao": 5152599,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[CA] Canadá",
+      "semana": 32,
+      "ultimo_campeao_duplas": "Coco Gauff / McCartney Kessler",
+      "ultimo_campeao": "Victoria Mboko"
+    }
+  ],
+  "33": [
+    {
+      "nome": "WTA 1000 Cincinnati",
+      "tipo": "WTA 1000",
+      "local": "Mason",
+      "quadra": "dura",
+      "premiacao": 5152599,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 33,
+      "ultimo_campeao_duplas": "Gabriela Dabrowski / Erin Routliffe",
+      "ultimo_campeao": "Iga Świątek"
+    }
+  ],
+  "34": [
+    {
+      "nome": "WTA 500 Monterrey",
+      "tipo": "WTA 500",
+      "local": "Monterrey",
+      "quadra": "dura",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[MX] México",
+      "semana": 34,
+      "ultimo_campeao_duplas": "Cristina Bucșa / Nicole Melichar-Martinez",
+      "ultimo_campeao": "Diana Shnaider"
+    },
+    {
+      "nome": "WTA 250 Cleveland",
+      "tipo": "WTA 250",
+      "local": "Cleveland",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 34,
+      "ultimo_campeao_duplas": "Anna Danilina / Aleksandra Krunić",
+      "ultimo_campeao": "Sorana Cîrstea"
+    }
+  ],
+  "35": [
+    {
+      "nome": "US Open",
+      "tipo": "Grand Slam",
+      "permite_mistas": true,
+      "local": "New York",
+      "quadra": "dura",
+      "premiacao": 41592800,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": true,
+      "pais_sede": "[US] Estados Unidos",
+      "semana": 35,
+      "ultimo_campeao_duplas": "Gabriela Dabrowski / Erin Routliffe",
+      "ultimo_campeao": "Aryna Sabalenka"
+    }
+  ],
+  "36": [],
+  "37": [
+    {
+      "nome": "WTA 500 Guadalajara",
+      "tipo": "WTA 500",
+      "local": "Guadalajara",
+      "quadra": "dura",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[MX] México",
+      "semana": 37,
+      "ultimo_campeao_duplas": "Irina Khromacheva / Nicole Melichar-Martinez",
+      "ultimo_campeao": "Iva Jovic"
+    },
+    {
+      "nome": "WTA 250 Monastir",
+      "tipo": "WTA 250",
+      "local": "Monastir",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[TN] Tunísia",
+      "semana": 37,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": null
+    }
+  ],
+  "38": [
+    {
+      "nome": "WTA 500 Seoul",
+      "tipo": "WTA 500",
+      "local": "Seul",
+      "quadra": "dura",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[KR] Coreia do Sul",
+      "semana": 38,
+      "ultimo_campeao_duplas": "Barbora Krejčíková / Kateřina Siniaková",
+      "ultimo_campeao": "Iga Świątek"
+    },
+    {
+      "nome": "WTA 250 Hua Hin",
+      "tipo": "WTA 250",
+      "local": "Hua Hin",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[TH] Tailândia",
+      "semana": 38,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": "Rebecca Šramková"
+    }
+  ],
+  "39": [
+    {
+      "nome": "WTA 1000 Beijing",
+      "tipo": "WTA 1000",
+      "local": "Beijing",
+      "quadra": "dura",
+      "premiacao": 8963700,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "semana": 39,
+      "ultimo_campeao_duplas": "Sara Errani / Jasmine Paolini",
+      "ultimo_campeao": "Amanda Anisimova"
+    }
+  ],
+  "40": [],
+  "41": [
+    {
+      "nome": "WTA 1000 Wuhan",
+      "tipo": "WTA 1000",
+      "local": "Wuhan",
+      "quadra": "dura",
+      "premiacao": 3654963,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "semana": 41,
+      "ultimo_campeao_duplas": "Storm Hunter / Kateřina Siniaková",
+      "ultimo_campeao": "Coco Gauff"
+    }
+  ],
+  "42": [
+    {
+      "nome": "WTA 500 Ningbo",
+      "tipo": "WTA 500",
+      "local": "Ningbo",
+      "quadra": "dura",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "semana": 42,
+      "ultimo_campeao_duplas": "Nicole Melichar-Martinez / Liudmila Samsonova",
+      "ultimo_campeao": "Elena Rybakina"
+    },
+    {
+      "nome": "WTA 250 Osaka",
+      "tipo": "WTA 250",
+      "local": "Osaka",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[JP] Japão",
+      "semana": 42,
+      "ultimo_campeao_duplas": "Kristina Mladenovic / Taylor Townsend",
+      "ultimo_campeao": "Leylah Fernandez"
+    }
+  ],
+  "43": [
+    {
+      "nome": "WTA 500 Tokyo",
+      "tipo": "WTA 500",
+      "local": "Tóquio",
+      "quadra": "dura",
+      "premiacao": 1064510,
+      "dificuldade": 3,
+      "popularidade": 3,
+      "qualificacao": true,
+      "pais_sede": "[JP] Japão",
+      "semana": 43,
+      "ultimo_campeao_duplas": "Tímea Babos / Luisa Stefani",
+      "ultimo_campeao": "Belinda Bencic"
+    },
+    {
+      "nome": "WTA 250 Guangzhou",
+      "tipo": "WTA 250",
+      "local": "Guangzhou",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "semana": 43,
+      "ultimo_campeao_duplas": "Katarzyna Piter / Janice Tjen",
+      "ultimo_campeao": "Ann Li"
+    }
+  ],
+  "44": [
+    {
+      "nome": "WTA 250 Hong Kong",
+      "tipo": "WTA 250",
+      "local": "Hong Kong",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "semana": 44,
+      "ultimo_campeao_duplas": "Jiang Xinyu / Wang Yafan",
+      "ultimo_campeao": "Victoria Mboko"
+    },
+    {
+      "nome": "WTA 250 Jiujiang",
+      "tipo": "WTA 250",
+      "local": "Jiujiang",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[CN] China",
+      "semana": 44,
+      "ultimo_campeao_duplas": "Quinn Gleason / Elena Pridankina",
+      "ultimo_campeao": "Anna Blinkova"
+    },
+    {
+      "nome": "WTA 250 Merida",
+      "tipo": "WTA 250",
+      "local": "Merida",
+      "quadra": "dura",
+      "premiacao": 275094,
+      "dificuldade": 2,
+      "popularidade": 2,
+      "qualificacao": true,
+      "pais_sede": "[MX] México",
+      "semana": 44,
+      "ultimo_campeao_duplas": "Katarzyna Piter / Mayar Sherif",
+      "ultimo_campeao": "Emma Navarro"
+    }
+  ],
+  "45": [
+    {
+      "nome": "WTA Finals",
+      "tipo": "WTA Finals",
+      "local": "Riyadh",
+      "quadra": "dura (indoor)",
+      "premiacao": 15500000,
+      "dificuldade": 5,
+      "popularidade": 5,
+      "qualificacao": false,
+      "pais_sede": "[SA] Arábia Saudita",
+      "semana": 45,
+      "ultimo_campeao_duplas": "Veronika Kudermetova / Elise Mertens",
+      "ultimo_campeao": "Elena Rybakina"
+    }
+  ],
+  "46": [
+    {
+      "nome": "Billie Jean King Cup Finals",
+      "tipo": "Billie Jean King Cup",
+      "local": "Malaga",
+      "quadra": "dura (indoor)",
+      "premiacao": 0,
+      "dificuldade": 4,
+      "popularidade": 4,
+      "qualificacao": false,
+      "pais_sede": "[ES] Espanha",
+      "semana": 46,
+      "ultimo_campeao_duplas": null,
+      "ultimo_campeao": "Itália"
+    }
+  ],
+  "47": [],
+  "48": [],
+  "49": [],
+  "50": [],
+  "51": [],
+  "52": []
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Samuele Seghetti",
+  "nacionalidade": "[IT]",
+  "idade": 19,
+  "overall": 69,
+  "pontos": 8,
+  "atributos": {
+    "saque": 48,
+    "forehand": 51,
+    "backhand": 50,
+    "topspin": 46,
+    "voleio": 62,
+    "slice": 43,
+    "movimento": 55,
+    "lob": 51,
+    "winner": 60,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1240,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 52,
+    "leitura_de_jogo": 37,
+    "determinacao": 56
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 8,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1244,
+  "pontos_ranking": 8,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

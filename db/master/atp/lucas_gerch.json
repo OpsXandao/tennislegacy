@@ -1,0 +1,49 @@
+{
+  "nome": "Lucas Gerch",
+  "nacionalidade": "[DE]",
+  "idade": 31,
+  "overall": 73,
+  "pontos": 43,
+  "atributos": {
+    "saque": 50,
+    "forehand": 58,
+    "backhand": 44,
+    "topspin": 54,
+    "voleio": 57,
+    "slice": 52,
+    "movimento": 43,
+    "lob": 40,
+    "winner": 55,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 754,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 45,
+    "leitura_de_jogo": 52,
+    "determinacao": 38
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 43,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 722,
+  "pontos_ranking": 43,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 74,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

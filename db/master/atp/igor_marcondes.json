@@ -1,0 +1,49 @@
+{
+  "nome": "Igor Marcondes",
+  "nacionalidade": "[BR]",
+  "idade": 28,
+  "overall": 77,
+  "pontos": 162,
+  "atributos": {
+    "saque": 49,
+    "forehand": 41,
+    "backhand": 50,
+    "topspin": 44,
+    "voleio": 40,
+    "slice": 49,
+    "movimento": 48,
+    "lob": 40,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 342,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 41,
+    "leitura_de_jogo": 30,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 162,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 310,
+  "pontos_ranking": 162,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 177,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

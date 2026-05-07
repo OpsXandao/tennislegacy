@@ -1,0 +1,51 @@
+{
+  "nome": "Rinky Hijikata",
+  "nacionalidade": "[AU]",
+  "idade": 24,
+  "overall": 82,
+  "pontos": 547,
+  "atributos": {
+    "saque": 75,
+    "forehand": 72,
+    "backhand": 74,
+    "topspin": 72,
+    "voleio": 73,
+    "slice": 64,
+    "movimento": 72,
+    "lob": 70,
+    "winner": 74,
+    "fisico": 60,
+    "duplas": 92
+  },
+  "id": 79,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 56,
+    "leitura_de_jogo": 51,
+    "determinacao": 77
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 547,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 1445,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 27,
+  "pontos_ranking": 547,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 87,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "pontos_ranking_duplas": 1445,
+  "rank_duplas": 62
+}

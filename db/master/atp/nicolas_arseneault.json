@@ -1,0 +1,49 @@
+{
+  "nome": "Nicolas Arseneault",
+  "nacionalidade": "[CA]",
+  "idade": 19,
+  "overall": 75,
+  "pontos": 80,
+  "atributos": {
+    "saque": 59,
+    "forehand": 55,
+    "backhand": 46,
+    "topspin": 52,
+    "voleio": 40,
+    "slice": 44,
+    "movimento": 43,
+    "lob": 57,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 546,
+  "atributos_psicologicos": {
+    "concentracao": 37,
+    "agressividade": 35,
+    "leitura_de_jogo": 41,
+    "determinacao": 40
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 80,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 514,
+  "pontos_ranking": 80,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 182,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

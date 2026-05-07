@@ -1,0 +1,49 @@
+{
+  "nome": "Matias Soto",
+  "nacionalidade": "[CL]",
+  "idade": 26,
+  "overall": 77,
+  "pontos": 157,
+  "atributos": {
+    "saque": 41,
+    "forehand": 51,
+    "backhand": 45,
+    "topspin": 42,
+    "voleio": 46,
+    "slice": 57,
+    "movimento": 52,
+    "lob": 48,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 348,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 38,
+    "leitura_de_jogo": 44,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 157,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 316,
+  "pontos_ranking": 157,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

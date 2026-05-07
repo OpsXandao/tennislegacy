@@ -1,0 +1,49 @@
+{
+  "nome": "Junhyeon Lee",
+  "nacionalidade": "[KR]",
+  "idade": 23,
+  "overall": 69,
+  "pontos": 8,
+  "atributos": {
+    "saque": 48,
+    "forehand": 48,
+    "backhand": 44,
+    "topspin": 41,
+    "voleio": 51,
+    "slice": 51,
+    "movimento": 47,
+    "lob": 47,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1221,
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 44,
+    "leitura_de_jogo": 33,
+    "determinacao": 42
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 8,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1225,
+  "pontos_ranking": 8,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 78,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

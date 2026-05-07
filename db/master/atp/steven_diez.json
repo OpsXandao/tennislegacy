@@ -1,0 +1,49 @@
+{
+  "nome": "Steven Diez",
+  "nacionalidade": "[CA]",
+  "idade": 34,
+  "overall": 70,
+  "pontos": 10,
+  "atributos": {
+    "saque": 65,
+    "forehand": 73,
+    "backhand": 71,
+    "topspin": 65,
+    "voleio": 66,
+    "slice": 73,
+    "movimento": 62,
+    "lob": 68,
+    "winner": 75,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1164,
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 49,
+    "leitura_de_jogo": 58,
+    "determinacao": 52
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 10,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1158,
+  "pontos_ranking": 10,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 81,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

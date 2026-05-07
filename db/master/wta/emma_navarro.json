@@ -1,0 +1,57 @@
+{
+  "nome": "Emma Navarro",
+  "nacionalidade": "[US]",
+  "genero": "feminino",
+  "idade": 24,
+  "pontos": 1605,
+  "pontos_ranking": 1605,
+  "overall": 88,
+  "atributos": {
+    "saque": 90,
+    "forehand": 84,
+    "backhand": 85,
+    "topspin": 84,
+    "voleio": 90,
+    "slice": 88,
+    "movimento": 91,
+    "lob": 83,
+    "fisico": 89,
+    "winner": 90,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 82,
+    "agressividade": 82,
+    "leitura_de_jogo": 89,
+    "determinacao": 86
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1605,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Hobart",
+      "ano": 2024,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 72,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

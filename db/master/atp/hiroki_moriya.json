@@ -1,0 +1,49 @@
+{
+  "nome": "Hiroki Moriya",
+  "nacionalidade": "[JP]",
+  "idade": 35,
+  "overall": 75,
+  "pontos": 86,
+  "atributos": {
+    "saque": 47,
+    "forehand": 47,
+    "backhand": 48,
+    "topspin": 46,
+    "voleio": 48,
+    "slice": 41,
+    "movimento": 42,
+    "lob": 54,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 530,
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 51,
+    "leitura_de_jogo": 36,
+    "determinacao": 35
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 86,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 498,
+  "pontos_ranking": 86,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 168,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

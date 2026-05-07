@@ -1,0 +1,49 @@
+{
+  "nome": "Matthew Dellavedova",
+  "nacionalidade": "[AU]",
+  "idade": 25,
+  "overall": 75,
+  "pontos": 79,
+  "atributos": {
+    "saque": 40,
+    "forehand": 54,
+    "backhand": 51,
+    "topspin": 42,
+    "voleio": 45,
+    "slice": 40,
+    "movimento": 45,
+    "lob": 41,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 552,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 49,
+    "leitura_de_jogo": 47,
+    "determinacao": 38
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 79,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 520,
+  "pontos_ranking": 79,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

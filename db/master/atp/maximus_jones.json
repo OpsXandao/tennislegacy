@@ -1,0 +1,49 @@
+{
+  "nome": "Maximus Jones",
+  "nacionalidade": "[TH]",
+  "idade": 21,
+  "overall": 77,
+  "pontos": 159,
+  "atributos": {
+    "saque": 40,
+    "forehand": 57,
+    "backhand": 57,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 49,
+    "movimento": 51,
+    "lob": 49,
+    "winner": 54,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 344,
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 30,
+    "leitura_de_jogo": 49,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 159,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 312,
+  "pontos_ranking": 159,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

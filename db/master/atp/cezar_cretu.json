@@ -1,0 +1,49 @@
+{
+  "nome": "Cezar Cretu",
+  "nacionalidade": "[RO]",
+  "idade": 24,
+  "overall": 76,
+  "pontos": 118,
+  "atributos": {
+    "saque": 49,
+    "forehand": 57,
+    "backhand": 55,
+    "topspin": 43,
+    "voleio": 61,
+    "slice": 60,
+    "movimento": 59,
+    "lob": 54,
+    "winner": 44,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 431,
+  "atributos_psicologicos": {
+    "concentracao": 45,
+    "agressividade": 36,
+    "leitura_de_jogo": 36,
+    "determinacao": 50
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 118,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 399,
+  "pontos_ranking": 118,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

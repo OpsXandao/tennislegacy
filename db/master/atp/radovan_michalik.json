@@ -1,0 +1,49 @@
+{
+  "nome": "Radovan Michalik",
+  "nacionalidade": "[SK]",
+  "idade": 22,
+  "overall": 69,
+  "pontos": 6,
+  "atributos": {
+    "saque": 50,
+    "forehand": 46,
+    "backhand": 55,
+    "topspin": 41,
+    "voleio": 57,
+    "slice": 47,
+    "movimento": 50,
+    "lob": 44,
+    "winner": 41,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1302,
+  "atributos_psicologicos": {
+    "concentracao": 32,
+    "agressividade": 33,
+    "leitura_de_jogo": 46,
+    "determinacao": 42
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 6,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1345,
+  "pontos_ranking": 6,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 177,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

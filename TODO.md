@@ -3,14 +3,14 @@
 ## Bugs Críticos
 
 - [x] Jogadores duplicados podem aparecer no ranking/qualifying
-- [ ] Arquivos JSON podem corromper (sem backup antes de salvar)
+- [x] Arquivos JSON podem corromper (implementado salvamento seguro com backups)
 
 ---
 
 ## Sistema de Ranking
 
-- [ ] Implementar expiração de pontos (sistema "Best 18")
-- [ ] NPCs devem ganhar/perder pontos de torneios
+- [x] Implementar expiração de pontos (sistema de rolling 52 semanas / Best 18 implementado)
+- [x] NPCs devem ganhar/perder pontos de torneios
 - [ ] Histórico de progressão de ranking por jogador
 - [ ] Ranking separado por superfície (clay/grass/hard)
 - [ ] Volatilidade de ranking
@@ -19,92 +19,69 @@
 
 ## Progressão do Jogador
 
-- [ ] Sistema de treino para melhorar atributos
-- [ ] Usar sistema de moral nos cálculos de partida
-- [ ] Recuperação gradual de lesões (não binária)
-- [ ] Sistema de técnico/equipe de apoio
+- [x] Sistema de treino para melhorar atributos
+- [x] Usar sistema de moral nos cálculos de partida
+- [x] Recuperação gradual de lesões (não binária)
+- [x] Sistema de técnico/equipe de apoio
+- [x] Penalidades para atributos psicológicos baixos
 - [ ] Equipamentos que afetam atributos
-- [ ] Penalidades para atributos psicológicos baixos
 
 ---
 
 ## Simulação de Partidas
 
-- [ ] Efeitos de clima (vento, umidade)
-- [ ] Efeito de altitude
-- [ ] Momentum mais complexo (swing mid-set)
-- [ ] Estratégia de saque adaptativa baseada na pressão
+- [x] Efeitos de clima (vento, umidade)
+- [x] Momentum mais complexo (pressão, estilo de jogo)
+- [x] Estratégia de saque adaptativa baseada na pressão
+- [x] Degradação de stamina / Platô de fadiga
+- [x] Efeito da superfície (hard, clay, grass)
 - [ ] Ajustes táticos entre sets
-- [ ] Degradação da quadra durante partida
-- [ ] Platô de fadiga (não apenas decay linear)
-- [ ] Vantagem de estilos (saque-e-voleio vs baseline)
+- [ ] Efeito de altitude
 
 ---
 
-## Torneios
+## Torneios e Calendário
 
-- [ ] Calendário completo (muitos torneios faltando)
+- [x] Calendário ATP/WTA completo (52 semanas)
+- [x] Circuito WTA (Feminino) 100% integrado
+- [x] Geração de NPCs reais em vez de "Bots Externos"
 - [ ] Circuito ITF/Challenger
-- [ ] Detalhes específicos de Wimbledon
-- [ ] Corrigir transição R96 → R64 no ATP 1000
+- [ ] Integração real da United Cup
 
 ---
 
-## Circuito WTA
+## Davis Cup / Equipes
 
-- [ ] Implementar circuito feminino completo
-- [ ] Geração de jogadoras femininas
-- [ ] Ranking WTA separado
-- [ ] Estrutura de pontos WTA
-
----
-
-## Davis Cup / United Cup
-
-- [x] ~~Corrigir finalização do torneio~~ (verificado - lógica está correta)
-- [ ] Formato de equipe completo
-- [ ] Integração de duplas (jogador participar das duplas)
-- [ ] United Cup não implementado
+- [x] Sistema de confrontos entre nações (singles e duplas)
+- [x] Formato de equipe completo (convocações)
+- [x] Integração API -> Front para confrontos de Davis Cup
+- [ ] Lógica aprofundada de grupos da Davis Cup
 
 ---
 
-## Interface
+## Gestão e Carreira
 
-- [ ] Feedback claro para inputs inválidos
-- [ ] Barra de progresso para simulação de torneios
-- [ ] Menu de pausa no modo detalhado
-- [ ] Página de estatísticas de carreira detalhadas
-- [ ] Arquivo de temporadas e hall da fama
-- [ ] Visualização semanal do calendário
-
----
-
-## Qualidade de Dados
-
-- [ ] Validação de IDs únicos de jogadores
-- [ ] NPCs com personalidade (não apenas "Bot N")
-- [ ] Ranking inicial com jogadores reais completos
+- [x] Sistema de patrocinadores
+- [x] Conferências de imprensa (entrevistas pós-jogo)
+- [x] Vínculo de Duplas (sinergia e parcerias)
+- [x] **Hub de Duplas:** Sistema avançado de convites e parcerias (UI + API)
+- [ ] Rivalidades dinâmicas entre jogadores
+- [ ] Eventos narrativos (ex: polêmicas, propostas inesperadas)
 
 ---
 
 ## Código / Técnico
 
-- [ ] Dividir `torneio.py` (1.550 linhas)
-- [ ] Dividir `simulacao_partida.py` (1.035 linhas)
-- [ ] Arquivo de configuração central (remover números mágicos)
-- [ ] Testes automatizados
-- [ ] Sistema de logging/debug
-- [ ] Tratamento de erros consistente
-- [ ] Backup antes de sobrescrever saves
-- [ ] Otimizar carregamento/salvamento de ranking
+- [x] CI/Qualidade: Ruff, Mypy e Coverage Gate configurados (10/10)
+- [x] **Estrutura de Dados:** Pydantic Models para validação de schema (Jogador, Ranking) (8/10)
+- [x] Dividir `torneio.py`
+- [x] Dividir `simulacao_partida.py`
+- [x] Modularização e separação de responsabilidades (`fadiga.py`, `imprensa.py`, `patrocinios.py`)
+- [x] Sistema de backup (`.bak`)
+- [x] **Arquitetura Sharded:** Fragmentação de saves (jogadores e calendário) para performance
+- [x] **Hub de Duplas:** Sistema avançado de convites e parcerias
+- [ ] Otimizar busca global de jogadores (índice por nacionalidade em memória)
+- [ ] Implementar limpeza de shards de torneios antigos (>2 temporadas) para economizar espaço
+- [ ] Adicionar mais testes unitários (cobrir refatorações recentes)
+- [ ] Remover números mágicos restantes
 
----
-
-## Futuras Features
-
-- [ ] Modo multiplayer local
-- [ ] Torneios de exibição
-- [ ] Sistema de patrocinadores
-- [ ] Conferências de imprensa
-- [ ] Rivalidades entre jogadores
-- [ ] Forma/confiança do jogador (além de momentum)

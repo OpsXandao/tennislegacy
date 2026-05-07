@@ -1,0 +1,49 @@
+{
+  "nome": "Salvador Price",
+  "nacionalidade": "[CO]",
+  "idade": 21,
+  "overall": 71,
+  "pontos": 22,
+  "atributos": {
+    "saque": 45,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 43,
+    "slice": 51,
+    "movimento": 51,
+    "lob": 40,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 953,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 37,
+    "leitura_de_jogo": 37,
+    "determinacao": 50
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 22,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 923,
+  "pontos_ranking": 22,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

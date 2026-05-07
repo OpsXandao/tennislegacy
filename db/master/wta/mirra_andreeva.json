@@ -1,0 +1,58 @@
+{
+  "nome": "Mirra Andreeva",
+  "nacionalidade": "[RU]",
+  "genero": "feminino",
+  "idade": 18,
+  "pontos": 4001,
+  "pontos_ranking": 4001,
+  "overall": 92,
+  "atributos": {
+    "saque": 93,
+    "forehand": 91,
+    "backhand": 89,
+    "topspin": 87,
+    "voleio": 95,
+    "slice": 88,
+    "movimento": 95,
+    "lob": 89,
+    "fisico": 86,
+    "winner": 87,
+    "duplas": 95
+  },
+  "atributos_psicologicos": {
+    "concentracao": 85,
+    "agressividade": 86,
+    "leitura_de_jogo": 88,
+    "determinacao": 91
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 4001,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Iasi",
+      "ano": 2024,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 3099,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 3099,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 73,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 20
+}

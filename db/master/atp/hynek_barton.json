@@ -1,0 +1,49 @@
+{
+  "nome": "Hynek Barton",
+  "nacionalidade": "[CZ]",
+  "idade": 21,
+  "overall": 78,
+  "pontos": 179,
+  "atributos": {
+    "saque": 56,
+    "forehand": 54,
+    "backhand": 41,
+    "topspin": 56,
+    "voleio": 42,
+    "slice": 56,
+    "movimento": 55,
+    "lob": 54,
+    "winner": 58,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 324,
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 49,
+    "leitura_de_jogo": 46,
+    "determinacao": 53
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 179,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 292,
+  "pontos_ranking": 179,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

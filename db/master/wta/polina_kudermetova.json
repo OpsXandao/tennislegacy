@@ -1,0 +1,51 @@
+{
+  "nome": "Polina Kudermetova",
+  "nacionalidade": "[UZ]",
+  "genero": "feminino",
+  "idade": 22,
+  "pontos": 514,
+  "pontos_ranking": 514,
+  "overall": 82,
+  "atributos": {
+    "saque": 67,
+    "forehand": 70,
+    "backhand": 63,
+    "topspin": 68,
+    "voleio": 66,
+    "slice": 68,
+    "movimento": 60,
+    "lob": 60,
+    "fisico": 61,
+    "winner": 64,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 65,
+    "agressividade": 62,
+    "leitura_de_jogo": 68,
+    "determinacao": 66
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 514,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 64,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

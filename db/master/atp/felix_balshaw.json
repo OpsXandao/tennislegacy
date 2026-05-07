@@ -1,0 +1,49 @@
+{
+  "nome": "Felix Balshaw",
+  "nacionalidade": "[FR]",
+  "idade": 19,
+  "overall": 74,
+  "pontos": 62,
+  "atributos": {
+    "saque": 55,
+    "forehand": 45,
+    "backhand": 40,
+    "topspin": 54,
+    "voleio": 53,
+    "slice": 42,
+    "movimento": 40,
+    "lob": 46,
+    "winner": 56,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 633,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 38,
+    "leitura_de_jogo": 44,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 62,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 601,
+  "pontos_ranking": 62,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 179,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

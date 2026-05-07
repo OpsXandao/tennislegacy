@@ -1,0 +1,49 @@
+{
+  "nome": "Saba Purtseladze",
+  "nacionalidade": "[GE]",
+  "idade": 24,
+  "overall": 78,
+  "pontos": 192,
+  "atributos": {
+    "saque": 47,
+    "forehand": 53,
+    "backhand": 53,
+    "topspin": 54,
+    "voleio": 57,
+    "slice": 55,
+    "movimento": 48,
+    "lob": 52,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 306,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 39,
+    "leitura_de_jogo": 50,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 192,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 274,
+  "pontos_ranking": 192,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

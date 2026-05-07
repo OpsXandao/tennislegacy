@@ -1,0 +1,49 @@
+{
+  "nome": "Luca Wiedenmann",
+  "nacionalidade": "[DE]",
+  "idade": 27,
+  "overall": 71,
+  "pontos": 27,
+  "atributos": {
+    "saque": 61,
+    "forehand": 44,
+    "backhand": 47,
+    "topspin": 46,
+    "voleio": 44,
+    "slice": 60,
+    "movimento": 48,
+    "lob": 41,
+    "winner": 58,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 899,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 42,
+    "leitura_de_jogo": 35,
+    "determinacao": 33
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 27,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 867,
+  "pontos_ranking": 27,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

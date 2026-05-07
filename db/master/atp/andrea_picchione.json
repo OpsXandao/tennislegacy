@@ -1,0 +1,49 @@
+{
+  "nome": "Andrea Picchione",
+  "nacionalidade": "[IT]",
+  "idade": 27,
+  "overall": 76,
+  "pontos": 117,
+  "atributos": {
+    "saque": 46,
+    "forehand": 43,
+    "backhand": 50,
+    "topspin": 59,
+    "voleio": 51,
+    "slice": 45,
+    "movimento": 59,
+    "lob": 59,
+    "winner": 41,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 436,
+  "atributos_psicologicos": {
+    "concentracao": 37,
+    "agressividade": 38,
+    "leitura_de_jogo": 38,
+    "determinacao": 33
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 117,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 404,
+  "pontos_ranking": 117,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

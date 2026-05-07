@@ -1,0 +1,52 @@
+{
+  "nome": "Simona Waltert",
+  "nacionalidade": "[CH]",
+  "genero": "feminino",
+  "idade": 25,
+  "pontos": 850,
+  "pontos_ranking": 850,
+  "overall": 84,
+  "atributos": {
+    "saque": 69,
+    "forehand": 69,
+    "backhand": 75,
+    "topspin": 73,
+    "voleio": 70,
+    "slice": 74,
+    "movimento": 72,
+    "lob": 75,
+    "fisico": 76,
+    "winner": 71,
+    "duplas": 91
+  },
+  "atributos_psicologicos": {
+    "concentracao": 72,
+    "agressividade": 70,
+    "leitura_de_jogo": 67,
+    "determinacao": 68
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 850,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 892,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 892,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 174,
+  "peso": 66,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 90
+}

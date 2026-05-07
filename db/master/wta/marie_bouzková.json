@@ -1,0 +1,52 @@
+{
+  "nome": "Marie Bouzková",
+  "nacionalidade": "[CZ]",
+  "genero": "feminino",
+  "idade": 27,
+  "pontos": 1425,
+  "pontos_ranking": 1425,
+  "overall": 87,
+  "atributos": {
+    "saque": 87,
+    "forehand": 83,
+    "backhand": 84,
+    "topspin": 83,
+    "voleio": 79,
+    "slice": 89,
+    "movimento": 85,
+    "lob": 82,
+    "fisico": 83,
+    "winner": 83,
+    "duplas": 92
+  },
+  "atributos_psicologicos": {
+    "concentracao": 84,
+    "agressividade": 82,
+    "leitura_de_jogo": 86,
+    "determinacao": 87
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1425,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 1084,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 1084,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 179,
+  "peso": 64,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 83
+}

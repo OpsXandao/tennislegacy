@@ -1,0 +1,75 @@
+{
+  "nome": "Cameron Norrie",
+  "nacionalidade": "[GB]",
+  "idade": 30,
+  "overall": 86,
+  "pontos": 1603,
+  "atributos": {
+    "saque": 74,
+    "forehand": 72,
+    "backhand": 72,
+    "topspin": 72,
+    "voleio": 74,
+    "slice": 72,
+    "movimento": 72,
+    "lob": 72,
+    "winner": 68,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 90,
+  "atributos_psicologicos": {
+    "concentracao": 61,
+    "agressividade": 72,
+    "leitura_de_jogo": 59,
+    "determinacao": 74
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1603,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Indian Wells Masters",
+      "ano": 2021,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Los Cabos",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Delray Beach",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Lyon",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Rio De Janeiro",
+      "ano": 2023,
+      "categoria": "ATP 500"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 26,
+  "pontos_ranking": 1603,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 86,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

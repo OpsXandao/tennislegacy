@@ -1,0 +1,49 @@
+{
+  "nome": "Yuki Mochizuki",
+  "nacionalidade": "[JP]",
+  "idade": 28,
+  "overall": 75,
+  "pontos": 80,
+  "atributos": {
+    "saque": 49,
+    "forehand": 40,
+    "backhand": 42,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 52,
+    "lob": 41,
+    "winner": 45,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 547,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 36,
+    "leitura_de_jogo": 42,
+    "determinacao": 38
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 80,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 515,
+  "pontos_ranking": 80,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

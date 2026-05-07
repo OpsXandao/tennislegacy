@@ -1,0 +1,51 @@
+{
+  "nome": "Lilli Tagger",
+  "nacionalidade": "[AT]",
+  "genero": "feminino",
+  "idade": 18,
+  "pontos": 673,
+  "pontos_ranking": 673,
+  "overall": 83,
+  "atributos": {
+    "saque": 67,
+    "forehand": 67,
+    "backhand": 69,
+    "topspin": 62,
+    "voleio": 67,
+    "slice": 67,
+    "movimento": 61,
+    "lob": 63,
+    "fisico": 62,
+    "winner": 60,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 68,
+    "agressividade": 70,
+    "leitura_de_jogo": 70,
+    "determinacao": 66
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 673,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 169,
+  "peso": 57,
+  "mao_dominante": "Destra",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

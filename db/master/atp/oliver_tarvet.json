@@ -1,0 +1,49 @@
+{
+  "nome": "Oliver Tarvet",
+  "nacionalidade": "[GB]",
+  "idade": 22,
+  "overall": 77,
+  "pontos": 150,
+  "atributos": {
+    "saque": 53,
+    "forehand": 58,
+    "backhand": 54,
+    "topspin": 53,
+    "voleio": 54,
+    "slice": 55,
+    "movimento": 54,
+    "lob": 56,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 359,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 53,
+    "leitura_de_jogo": 48,
+    "determinacao": 50
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 150,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 327,
+  "pontos_ranking": 150,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 179,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Dan Martin",
+  "nacionalidade": "[CA]",
+  "idade": 26,
+  "overall": 76,
+  "pontos": 121,
+  "atributos": {
+    "saque": 43,
+    "forehand": 58,
+    "backhand": 40,
+    "topspin": 50,
+    "voleio": 50,
+    "slice": 40,
+    "movimento": 48,
+    "lob": 44,
+    "winner": 45,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 419,
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 32,
+    "leitura_de_jogo": 41,
+    "determinacao": 38
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 121,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 387,
+  "pontos_ranking": 121,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

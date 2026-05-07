@@ -1,0 +1,55 @@
+{
+  "nome": "Luciano Darderi",
+  "nacionalidade": "[IT]",
+  "idade": 24,
+  "overall": 87,
+  "pontos": 1904,
+  "atributos": {
+    "saque": 77,
+    "forehand": 77,
+    "backhand": 75,
+    "topspin": 80,
+    "voleio": 76,
+    "slice": 72,
+    "movimento": 75,
+    "lob": 75,
+    "winner": 76,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 45,
+  "atributos_psicologicos": {
+    "concentracao": 57,
+    "agressividade": 73,
+    "leitura_de_jogo": 58,
+    "determinacao": 78
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1904,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Cordoba",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 21,
+  "pontos_ranking": 1904,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 84,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

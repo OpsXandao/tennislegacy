@@ -1,0 +1,49 @@
+{
+  "nome": "Pierre Yves Bailly",
+  "nacionalidade": "[BE]",
+  "idade": 22,
+  "overall": 72,
+  "pontos": 39,
+  "atributos": {
+    "saque": 55,
+    "forehand": 49,
+    "backhand": 49,
+    "topspin": 51,
+    "voleio": 40,
+    "slice": 45,
+    "movimento": 40,
+    "lob": 54,
+    "winner": 54,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 790,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 39,
+    "leitura_de_jogo": 34,
+    "determinacao": 39
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 39,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 758,
+  "pontos_ranking": 39,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 76,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

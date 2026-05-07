@@ -1,0 +1,67 @@
+{
+  "nome": "Yulia Putintseva",
+  "nacionalidade": "[KZ]",
+  "genero": "feminino",
+  "idade": 31,
+  "pontos": 871,
+  "pontos_ranking": 871,
+  "overall": 84,
+  "atributos": {
+    "saque": 69,
+    "forehand": 76,
+    "backhand": 76,
+    "topspin": 75,
+    "voleio": 70,
+    "slice": 68,
+    "movimento": 76,
+    "lob": 69,
+    "fisico": 69,
+    "winner": 77,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 72,
+    "agressividade": 76,
+    "leitura_de_jogo": 70,
+    "determinacao": 68
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 871,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Nurnberg",
+      "ano": 2019,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Budapest",
+      "ano": 2021,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Birmingham",
+      "ano": 2024,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 163,
+  "peso": 64,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

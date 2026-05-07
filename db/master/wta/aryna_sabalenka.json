@@ -1,0 +1,137 @@
+{
+  "nome": "Aryna Sabalenka",
+  "nacionalidade": "[BY]",
+  "genero": "feminino",
+  "idade": 27,
+  "pontos": 10675,
+  "pontos_ranking": 10675,
+  "overall": 96,
+  "atributos": {
+    "saque": 92,
+    "forehand": 90,
+    "backhand": 87,
+    "topspin": 87,
+    "voleio": 91,
+    "slice": 92,
+    "movimento": 95,
+    "lob": 89,
+    "fisico": 93,
+    "winner": 88,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 94,
+    "agressividade": 94,
+    "leitura_de_jogo": 96,
+    "determinacao": 96
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 10675,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "New Haven",
+      "ano": 2018,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Wuhan",
+      "ano": 2018,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Shenzhen",
+      "ano": 2019,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Wuhan",
+      "ano": 2019,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Zhuhai",
+      "ano": 2019,
+      "categoria": "WTA Finals"
+    },
+    {
+      "nome": "Doha",
+      "ano": 2020,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Linz",
+      "ano": 2020,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Ostrava",
+      "ano": 2020,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Abu Dhabi",
+      "ano": 2021,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Madrid",
+      "ano": 2021,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Adelaide 1",
+      "ano": 2023,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2023,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Madrid",
+      "ano": 2023,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2024,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Cincinnati",
+      "ano": 2024,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Us Open",
+      "ano": 2024,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Wuhan",
+      "ano": 2024,
+      "categoria": "WTA 1000"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 182,
+  "peso": 80,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

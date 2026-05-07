@@ -1,0 +1,49 @@
+{
+  "nome": "Valentin Vacherot",
+  "idade": 27,
+  "pontos": 1591,
+  "pontos_ranking": 1591,
+  "is_bot": false,
+  "nacionalidade": "[MC]",
+  "overall": 86,
+  "atributos": {
+    "saque": 52,
+    "forehand": 55,
+    "backhand": 40,
+    "topspin": 44,
+    "voleio": 56,
+    "slice": 56,
+    "movimento": 51,
+    "lob": 43,
+    "winner": 50,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 150,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 36,
+    "leitura_de_jogo": 30,
+    "determinacao": 52
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1591,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 27,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,52 @@
+{
+  "nome": "Taylor Townsend",
+  "nacionalidade": "[US]",
+  "genero": "feminino",
+  "idade": 29,
+  "pontos": 720,
+  "pontos_ranking": 720,
+  "overall": 83,
+  "atributos": {
+    "saque": 62,
+    "forehand": 66,
+    "backhand": 64,
+    "topspin": 62,
+    "voleio": 67,
+    "slice": 63,
+    "movimento": 63,
+    "lob": 60,
+    "fisico": 61,
+    "winner": 67,
+    "duplas": 97
+  },
+  "atributos_psicologicos": {
+    "concentracao": 61,
+    "agressividade": 61,
+    "leitura_de_jogo": 70,
+    "determinacao": 62
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 720,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 5785,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 5785,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 69,
+  "mao_dominante": "Canhota",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 11
+}

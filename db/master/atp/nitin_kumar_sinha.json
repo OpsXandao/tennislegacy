@@ -1,0 +1,49 @@
+{
+  "nome": "Nitin Kumar Sinha",
+  "nacionalidade": "[IN]",
+  "idade": 27,
+  "overall": 71,
+  "pontos": 27,
+  "atributos": {
+    "saque": 50,
+    "forehand": 53,
+    "backhand": 54,
+    "topspin": 48,
+    "voleio": 47,
+    "slice": 58,
+    "movimento": 55,
+    "lob": 58,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 907,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 42,
+    "leitura_de_jogo": 53,
+    "determinacao": 60
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 27,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 875,
+  "pontos_ranking": 27,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,97 @@
+{
+  "nome": "Madison Keys",
+  "nacionalidade": "[US]",
+  "genero": "feminino",
+  "idade": 31,
+  "pontos": 2351,
+  "pontos_ranking": 2351,
+  "overall": 89,
+  "atributos": {
+    "saque": 84,
+    "forehand": 87,
+    "backhand": 85,
+    "topspin": 91,
+    "voleio": 85,
+    "slice": 87,
+    "movimento": 85,
+    "lob": 89,
+    "fisico": 90,
+    "winner": 90,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 84,
+    "agressividade": 86,
+    "leitura_de_jogo": 87,
+    "determinacao": 92
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2351,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Eastbourne",
+      "ano": 2014,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Birmingham",
+      "ano": 2016,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Stanford",
+      "ano": 2017,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Charleston",
+      "ano": 2019,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Cincinnati",
+      "ano": 2019,
+      "categoria": "WTA 1000"
+    },
+    {
+      "nome": "Adelaide 2",
+      "ano": 2022,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Eastbourne",
+      "ano": 2023,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "United Cup",
+      "ano": 2023,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Strasbourg",
+      "ano": 2024,
+      "categoria": "WTA 500"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 70,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

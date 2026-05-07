@@ -1,0 +1,49 @@
+{
+  "nome": "Vadym Ursu",
+  "nacionalidade": "[UA]",
+  "idade": 29,
+  "overall": 76,
+  "pontos": 110,
+  "atributos": {
+    "saque": 66,
+    "forehand": 62,
+    "backhand": 53,
+    "topspin": 62,
+    "voleio": 70,
+    "slice": 59,
+    "movimento": 50,
+    "lob": 52,
+    "winner": 63,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 462,
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 42,
+    "leitura_de_jogo": 52,
+    "determinacao": 53
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 110,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 430,
+  "pontos_ranking": 110,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

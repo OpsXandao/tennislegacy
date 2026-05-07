@@ -1,0 +1,49 @@
+{
+  "nome": "Andrea Fiorentini",
+  "nacionalidade": "[IT]",
+  "idade": 25,
+  "overall": 71,
+  "pontos": 26,
+  "atributos": {
+    "saque": 56,
+    "forehand": 41,
+    "backhand": 54,
+    "topspin": 59,
+    "voleio": 62,
+    "slice": 45,
+    "movimento": 58,
+    "lob": 56,
+    "winner": 57,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 913,
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 53,
+    "leitura_de_jogo": 49,
+    "determinacao": 54
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 26,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 883,
+  "pontos_ranking": 26,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

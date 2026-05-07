@@ -1,0 +1,78 @@
+{
+  "nome": "Ekaterina Alexandrova",
+  "nacionalidade": "[RU]",
+  "genero": "feminino",
+  "idade": 31,
+  "pontos": 2918,
+  "pontos_ranking": 2918,
+  "overall": 91,
+  "atributos": {
+    "saque": 88,
+    "forehand": 92,
+    "backhand": 85,
+    "topspin": 93,
+    "voleio": 93,
+    "slice": 90,
+    "movimento": 94,
+    "lob": 92,
+    "fisico": 93,
+    "winner": 95,
+    "duplas": 94
+  },
+  "atributos_psicologicos": {
+    "concentracao": 94,
+    "agressividade": 86,
+    "leitura_de_jogo": 91,
+    "determinacao": 85
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2918,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Limoges",
+      "ano": 2019,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Shenzhen",
+      "ano": 2020,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Seoul",
+      "ano": 2022,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "s Hertogenbosch",
+      "ano": 2022,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "s Hertogenbosch",
+      "ano": 2023,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 2007,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 2007,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 76,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 38
+}

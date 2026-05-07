@@ -1,0 +1,51 @@
+{
+  "nome": "Francesca Jones",
+  "nacionalidade": "[GB]",
+  "genero": "feminino",
+  "idade": 25,
+  "pontos": 806,
+  "pontos_ranking": 806,
+  "overall": 84,
+  "atributos": {
+    "saque": 75,
+    "forehand": 73,
+    "backhand": 77,
+    "topspin": 71,
+    "voleio": 69,
+    "slice": 69,
+    "movimento": 72,
+    "lob": 75,
+    "fisico": 78,
+    "winner": 76,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 69,
+    "agressividade": 74,
+    "leitura_de_jogo": 78,
+    "determinacao": 75
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 806,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 173,
+  "peso": 65,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

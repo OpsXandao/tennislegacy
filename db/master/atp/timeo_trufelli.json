@@ -1,0 +1,49 @@
+{
+  "nome": "Timeo Trufelli",
+  "nacionalidade": "[FR]",
+  "idade": 18,
+  "overall": 69,
+  "pontos": 5,
+  "atributos": {
+    "saque": 42,
+    "forehand": 52,
+    "backhand": 58,
+    "topspin": 52,
+    "voleio": 53,
+    "slice": 43,
+    "movimento": 54,
+    "lob": 48,
+    "winner": 41,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1318,
+  "atributos_psicologicos": {
+    "concentracao": 38,
+    "agressividade": 44,
+    "leitura_de_jogo": 38,
+    "determinacao": 36
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 5,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1391,
+  "pontos_ranking": 5,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Renta Tokuda",
+  "nacionalidade": "[JP]",
+  "idade": 27,
+  "overall": 77,
+  "pontos": 157,
+  "atributos": {
+    "saque": 45,
+    "forehand": 58,
+    "backhand": 47,
+    "topspin": 54,
+    "voleio": 59,
+    "slice": 57,
+    "movimento": 52,
+    "lob": 52,
+    "winner": 44,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 347,
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 55,
+    "leitura_de_jogo": 34,
+    "determinacao": 48
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 157,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 315,
+  "pontos_ranking": 157,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

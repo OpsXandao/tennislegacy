@@ -1,0 +1,49 @@
+{
+  "nome": "Evan Bynoe",
+  "nacionalidade": "[US]",
+  "idade": 26,
+  "overall": 71,
+  "pontos": 23,
+  "atributos": {
+    "saque": 49,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 44,
+    "voleio": 41,
+    "slice": 51,
+    "movimento": 56,
+    "lob": 48,
+    "winner": 57,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 948,
+  "atributos_psicologicos": {
+    "concentracao": 35,
+    "agressividade": 51,
+    "leitura_de_jogo": 43,
+    "determinacao": 34
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 23,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 918,
+  "pontos_ranking": 23,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

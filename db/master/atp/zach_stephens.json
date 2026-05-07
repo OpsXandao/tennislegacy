@@ -1,0 +1,49 @@
+{
+  "nome": "Zach Stephens",
+  "nacionalidade": "[GB]",
+  "idade": 19,
+  "overall": 70,
+  "pontos": 17,
+  "atributos": {
+    "saque": 52,
+    "forehand": 47,
+    "backhand": 48,
+    "topspin": 47,
+    "voleio": 40,
+    "slice": 57,
+    "movimento": 57,
+    "lob": 49,
+    "winner": 58,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1026,
+  "atributos_psicologicos": {
+    "concentracao": 34,
+    "agressividade": 44,
+    "leitura_de_jogo": 45,
+    "determinacao": 49
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 17,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 998,
+  "pontos_ranking": 17,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 177,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

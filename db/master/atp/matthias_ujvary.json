@@ -1,0 +1,49 @@
+{
+  "nome": "Matthias Ujvary",
+  "nacionalidade": "[AT]",
+  "idade": 21,
+  "overall": 70,
+  "pontos": 13,
+  "atributos": {
+    "saque": 40,
+    "forehand": 40,
+    "backhand": 52,
+    "topspin": 41,
+    "voleio": 50,
+    "slice": 48,
+    "movimento": 53,
+    "lob": 40,
+    "winner": 41,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1104,
+  "atributos_psicologicos": {
+    "concentracao": 37,
+    "agressividade": 37,
+    "leitura_de_jogo": 30,
+    "determinacao": 35
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 13,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1084,
+  "pontos_ranking": 13,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

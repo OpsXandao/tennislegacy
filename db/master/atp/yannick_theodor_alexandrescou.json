@@ -1,0 +1,49 @@
+{
+  "nome": "Yannick Theodor Alexandrescou",
+  "nacionalidade": "[FR]",
+  "idade": 18,
+  "overall": 69,
+  "pontos": 5,
+  "atributos": {
+    "saque": 55,
+    "forehand": 44,
+    "backhand": 54,
+    "topspin": 50,
+    "voleio": 52,
+    "slice": 40,
+    "movimento": 41,
+    "lob": 51,
+    "winner": 44,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1310,
+  "atributos_psicologicos": {
+    "concentracao": 37,
+    "agressividade": 50,
+    "leitura_de_jogo": 38,
+    "determinacao": 49
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 5,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1363,
+  "pontos_ranking": 5,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Derek Pham",
+  "nacionalidade": "[AU]",
+  "idade": 21,
+  "overall": 69,
+  "pontos": 9,
+  "atributos": {
+    "saque": 50,
+    "forehand": 41,
+    "backhand": 40,
+    "topspin": 46,
+    "voleio": 51,
+    "slice": 44,
+    "movimento": 40,
+    "lob": 42,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1184,
+  "atributos_psicologicos": {
+    "concentracao": 32,
+    "agressividade": 44,
+    "leitura_de_jogo": 37,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 9,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1182,
+  "pontos_ranking": 9,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

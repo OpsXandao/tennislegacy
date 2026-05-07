@@ -1,0 +1,49 @@
+{
+  "nome": "Michael Bassem Sobhy",
+  "nacionalidade": "[EG]",
+  "idade": 21,
+  "overall": 73,
+  "pontos": 48,
+  "atributos": {
+    "saque": 47,
+    "forehand": 58,
+    "backhand": 55,
+    "topspin": 55,
+    "voleio": 58,
+    "slice": 56,
+    "movimento": 46,
+    "lob": 40,
+    "winner": 59,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 721,
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 47,
+    "leitura_de_jogo": 36,
+    "determinacao": 49
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 48,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 689,
+  "pontos_ranking": 48,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

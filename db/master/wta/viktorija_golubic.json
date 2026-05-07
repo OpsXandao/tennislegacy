@@ -1,0 +1,62 @@
+{
+  "nome": "Viktorija Golubic",
+  "nacionalidade": "[CH]",
+  "genero": "feminino",
+  "idade": 33,
+  "pontos": 881,
+  "pontos_ranking": 881,
+  "overall": 84,
+  "atributos": {
+    "saque": 75,
+    "forehand": 78,
+    "backhand": 79,
+    "topspin": 75,
+    "voleio": 79,
+    "slice": 79,
+    "movimento": 77,
+    "lob": 76,
+    "fisico": 71,
+    "winner": 70,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 75,
+    "agressividade": 76,
+    "leitura_de_jogo": 75,
+    "determinacao": 76
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 881,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Gstaad",
+      "ano": 2016,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Jiujiang",
+      "ano": 2024,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 169,
+  "peso": 73,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

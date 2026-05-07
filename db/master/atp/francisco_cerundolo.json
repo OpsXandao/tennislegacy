@@ -1,0 +1,65 @@
+{
+  "nome": "Francisco Cerundolo",
+  "nacionalidade": "[AR]",
+  "idade": 27,
+  "overall": 88,
+  "pontos": 2170,
+  "atributos": {
+    "saque": 83,
+    "forehand": 86,
+    "backhand": 82,
+    "topspin": 85,
+    "voleio": 81,
+    "slice": 81,
+    "movimento": 86,
+    "lob": 85,
+    "winner": 86,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 18,
+  "atributos_psicologicos": {
+    "concentracao": 62,
+    "agressividade": 77,
+    "leitura_de_jogo": 69,
+    "determinacao": 86
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2170,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Bastad",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Eastbourne",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Umag",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 19,
+  "pontos_ranking": 2170,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 98,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Aggressive Baseliner"
+}

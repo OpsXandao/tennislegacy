@@ -1,0 +1,62 @@
+{
+  "nome": "Lorenzo Musetti",
+  "nacionalidade": "[IT]",
+  "idade": 23,
+  "overall": 91,
+  "pontos": 4405,
+  "atributos": {
+    "saque": 85,
+    "forehand": 88,
+    "backhand": 92,
+    "topspin": 86,
+    "voleio": 89,
+    "slice": 88,
+    "movimento": 89,
+    "lob": 87,
+    "winner": 85,
+    "fisico": 60,
+    "duplas": 91
+  },
+  "id": 8,
+  "atributos_psicologicos": {
+    "concentracao": 84,
+    "agressividade": 86,
+    "leitura_de_jogo": 81,
+    "determinacao": 77
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 4405,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Hamburg",
+      "ano": 2022,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Naples",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 1030,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 5,
+  "pontos_ranking": 4405,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court",
+  "pontos_ranking_duplas": 1030,
+  "rank_duplas": 87
+}

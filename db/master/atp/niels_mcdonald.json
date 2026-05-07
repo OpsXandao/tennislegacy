@@ -1,0 +1,49 @@
+{
+  "nome": "Niels McDonald",
+  "nacionalidade": "[DE]",
+  "idade": 18,
+  "overall": 70,
+  "pontos": 15,
+  "atributos": {
+    "saque": 43,
+    "forehand": 52,
+    "backhand": 52,
+    "topspin": 45,
+    "voleio": 40,
+    "slice": 53,
+    "movimento": 44,
+    "lob": 58,
+    "winner": 50,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1058,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 37,
+    "leitura_de_jogo": 41,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 15,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1032,
+  "pontos_ranking": 15,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Strong Kirchheimer",
+  "nacionalidade": "[US]",
+  "idade": 30,
+  "overall": 73,
+  "pontos": 45,
+  "atributos": {
+    "saque": 57,
+    "forehand": 42,
+    "backhand": 49,
+    "topspin": 45,
+    "voleio": 40,
+    "slice": 41,
+    "movimento": 55,
+    "lob": 54,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 749,
+  "atributos_psicologicos": {
+    "concentracao": 51,
+    "agressividade": 39,
+    "leitura_de_jogo": 50,
+    "determinacao": 52
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 45,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 717,
+  "pontos_ranking": 45,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -532,26 +532,13 @@
     },
     "BR": {
       "names": [
-        "Antônio",
-        "Arthur",
-        "Berrdo",
-        "Carlos",
-        "Davi",
-        "Francisco",
-        "Gabriel",
-        "Gael",
-        "Heitor",
-        "José",
-        "João",
-        "Lucas",
-        "Luiz",
-        "Marcos",
-        "Miguel",
-        "Noah",
-        "Paulo",
-        "Pedro",
-        "Ravi",
-        "Théo"
+        "Antônio", "Arthur", "Berrdo", "Carlos", "Davi", "Francisco", "Gabriel", "Gael",
+        "Heitor", "José", "João", "Lucas", "Luiz", "Marcos", "Miguel", "Noah", "Paulo",
+        "Pedro", "Ravi", "Théo"
+      ],
+      "female_names": [
+        "Alice", "Ana", "Beatriz", "Camila", "Carolina", "Fernanda", "Gabriela", "Giovanna",
+        "Helena", "Isabela", "Júlia", "Larissa", "Letícia", "Mariana", "Manuela", "Sophia"
       ],
       "surnames": [
         "Almeida",
@@ -3131,24 +3118,13 @@
     },
     "US": {
       "names": [
-        "Benjamin",
-        "Charles",
-        "David",
-        "Elijah",
-        "Henry",
-        "James",
-        "John",
-        "Joseph",
-        "Liam",
-        "Lucas",
-        "Michael",
-        "Noah",
-        "Oliver",
-        "Richard",
-        "Robert",
-        "Theodore",
-        "Thomas",
-        "William"
+        "Benjamin", "Charles", "David", "Elijah", "Henry", "James", "John", "Joseph",
+        "Liam", "Lucas", "Michael", "Noah", "Oliver", "Richard", "Robert", "Theodore",
+        "Thomas", "William"
+      ],
+      "female_names": [
+        "Emma", "Olivia", "Sophia", "Isabella", "Mia", "Charlotte", "Amelia", "Harper",
+        "Evelyn", "Abigail", "Emily", "Elizabeth", "Sofia", "Madison", "Avery", "Ella"
       ],
       "surnames": [
         "Adams",

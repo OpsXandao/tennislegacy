@@ -1,0 +1,49 @@
+{
+  "nome": "Aidan McHugh",
+  "nacionalidade": "[GB]",
+  "idade": 25,
+  "overall": 76,
+  "pontos": 115,
+  "atributos": {
+    "saque": 47,
+    "forehand": 48,
+    "backhand": 45,
+    "topspin": 48,
+    "voleio": 49,
+    "slice": 40,
+    "movimento": 54,
+    "lob": 40,
+    "winner": 57,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 446,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 47,
+    "leitura_de_jogo": 48,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 115,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 414,
+  "pontos_ranking": 115,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

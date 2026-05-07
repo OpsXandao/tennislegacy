@@ -1,0 +1,49 @@
+{
+  "nome": "Denis Yevseyev",
+  "nacionalidade": "[KZ]",
+  "idade": 32,
+  "overall": 77,
+  "pontos": 130,
+  "atributos": {
+    "saque": 50,
+    "forehand": 64,
+    "backhand": 67,
+    "topspin": 56,
+    "voleio": 58,
+    "slice": 54,
+    "movimento": 59,
+    "lob": 52,
+    "winner": 67,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 394,
+  "atributos_psicologicos": {
+    "concentracao": 60,
+    "agressividade": 62,
+    "leitura_de_jogo": 42,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 130,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 362,
+  "pontos_ranking": 130,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

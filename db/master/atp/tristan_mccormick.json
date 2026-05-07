@@ -1,0 +1,49 @@
+{
+  "nome": "Tristan McCormick",
+  "nacionalidade": "[US]",
+  "idade": 26,
+  "overall": 75,
+  "pontos": 83,
+  "atributos": {
+    "saque": 40,
+    "forehand": 46,
+    "backhand": 45,
+    "topspin": 52,
+    "voleio": 47,
+    "slice": 52,
+    "movimento": 45,
+    "lob": 52,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 540,
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 49,
+    "leitura_de_jogo": 44,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 83,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 508,
+  "pontos_ranking": 83,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

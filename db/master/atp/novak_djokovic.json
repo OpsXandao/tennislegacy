@@ -1,0 +1,550 @@
+{
+  "nome": "Novak Djokovic",
+  "nacionalidade": "[RS]",
+  "idade": 38,
+  "overall": 93,
+  "pontos": 5280,
+  "atributos": {
+    "saque": 100,
+    "forehand": 94,
+    "backhand": 98,
+    "topspin": 100,
+    "voleio": 91,
+    "slice": 98,
+    "movimento": 100,
+    "lob": 95,
+    "winner": 98,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 6,
+  "atributos_psicologicos": {
+    "concentracao": 78,
+    "agressividade": 79,
+    "leitura_de_jogo": 88,
+    "determinacao": 91
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 5280,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Amersfoort",
+      "ano": 2006,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Metz",
+      "ano": 2006,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Adelaide",
+      "ano": 2007,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Canada Masters",
+      "ano": 2007,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Estoril",
+      "ano": 2007,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Miami Masters",
+      "ano": 2007,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Vienna",
+      "ano": 2007,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2008,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Indian Wells Masters",
+      "ano": 2008,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Masters Cup",
+      "ano": 2008,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Rome Masters",
+      "ano": 2008,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Basel",
+      "ano": 2009,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Beijing",
+      "ano": 2009,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Belgrade",
+      "ano": 2009,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Dubai",
+      "ano": 2009,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Paris Masters",
+      "ano": 2009,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Beijing",
+      "ano": 2010,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Dubai",
+      "ano": 2010,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2011,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Belgrade",
+      "ano": 2011,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Canada Masters",
+      "ano": 2011,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Dubai",
+      "ano": 2011,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Indian Wells Masters",
+      "ano": 2011,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Madrid Masters",
+      "ano": 2011,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Miami Masters",
+      "ano": 2011,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Rome Masters",
+      "ano": 2011,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "US Open",
+      "ano": 2011,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Wimbledon",
+      "ano": 2011,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2012,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Beijing",
+      "ano": 2012,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Canada Masters",
+      "ano": 2012,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Miami Masters",
+      "ano": 2012,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Shanghai Masters",
+      "ano": 2012,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Tour Finals",
+      "ano": 2012,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2013,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Beijing",
+      "ano": 2013,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Dubai",
+      "ano": 2013,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Monte Carlo Masters",
+      "ano": 2013,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Paris Masters",
+      "ano": 2013,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Shanghai Masters",
+      "ano": 2013,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Tour Finals",
+      "ano": 2013,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Beijing",
+      "ano": 2014,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Indian Wells Masters",
+      "ano": 2014,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Miami Masters",
+      "ano": 2014,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Paris Masters",
+      "ano": 2014,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Rome Masters",
+      "ano": 2014,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Tour Finals",
+      "ano": 2014,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Wimbledon",
+      "ano": 2014,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2015,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Beijing",
+      "ano": 2015,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Indian Wells Masters",
+      "ano": 2015,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Miami Masters",
+      "ano": 2015,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Monte Carlo Masters",
+      "ano": 2015,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Paris Masters",
+      "ano": 2015,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Rome Masters",
+      "ano": 2015,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Shanghai Masters",
+      "ano": 2015,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Tour Finals",
+      "ano": 2015,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "US Open",
+      "ano": 2015,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Wimbledon",
+      "ano": 2015,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2016,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Canada Masters",
+      "ano": 2016,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Doha",
+      "ano": 2016,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Indian Wells Masters",
+      "ano": 2016,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Madrid Masters",
+      "ano": 2016,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Miami Masters",
+      "ano": 2016,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Roland Garros",
+      "ano": 2016,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Doha",
+      "ano": 2017,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Eastbourne",
+      "ano": 2017,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Cincinnati Masters",
+      "ano": 2018,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Shanghai Masters",
+      "ano": 2018,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "US Open",
+      "ano": 2018,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Wimbledon",
+      "ano": 2018,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2019,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Madrid Masters",
+      "ano": 2019,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Paris Masters",
+      "ano": 2019,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Tokyo",
+      "ano": 2019,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Wimbledon",
+      "ano": 2019,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Atp Cup",
+      "ano": 2020,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2020,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Cincinnati Masters",
+      "ano": 2020,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Dubai",
+      "ano": 2020,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Rome Masters",
+      "ano": 2020,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2021,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Belgrade 2",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Paris Masters",
+      "ano": 2021,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Roland Garros",
+      "ano": 2021,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Wimbledon",
+      "ano": 2021,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Astana",
+      "ano": 2022,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Rome Masters",
+      "ano": 2022,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Tel Aviv",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Tour Finals",
+      "ano": 2022,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Wimbledon",
+      "ano": 2022,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Adelaide 1",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2023,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Cincinnati Masters",
+      "ano": 2023,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Paris Masters",
+      "ano": 2023,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Roland Garros",
+      "ano": 2023,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Tour Finals",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Us Open",
+      "ano": 2023,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Paris Olympics",
+      "ano": 2024,
+      "categoria": "Olympics"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 3,
+  "pontos_ranking": 5280,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Counter-puncher"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Gabriele Maria Noce",
+  "nacionalidade": "[IT]",
+  "idade": 30,
+  "overall": 71,
+  "pontos": 21,
+  "atributos": {
+    "saque": 71,
+    "forehand": 77,
+    "backhand": 64,
+    "topspin": 69,
+    "voleio": 76,
+    "slice": 67,
+    "movimento": 71,
+    "lob": 73,
+    "winner": 81,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 973,
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 71,
+    "leitura_de_jogo": 76,
+    "determinacao": 64
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 21,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 943,
+  "pontos_ranking": 21,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 87,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

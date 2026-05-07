@@ -1,0 +1,49 @@
+{
+  "nome": "Murkel Dellien",
+  "nacionalidade": "[BO]",
+  "idade": 28,
+  "overall": 78,
+  "pontos": 186,
+  "atributos": {
+    "saque": 43,
+    "forehand": 52,
+    "backhand": 47,
+    "topspin": 54,
+    "voleio": 46,
+    "slice": 54,
+    "movimento": 47,
+    "lob": 46,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 311,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 50,
+    "leitura_de_jogo": 46,
+    "determinacao": 41
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 186,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 279,
+  "pontos_ranking": 186,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,51 @@
+{
+  "nome": "Hailey Baptiste",
+  "nacionalidade": "[US]",
+  "genero": "feminino",
+  "idade": 24,
+  "pontos": 1274,
+  "pontos_ranking": 1274,
+  "overall": 86,
+  "atributos": {
+    "saque": 77,
+    "forehand": 82,
+    "backhand": 80,
+    "topspin": 86,
+    "voleio": 81,
+    "slice": 83,
+    "movimento": 77,
+    "lob": 80,
+    "fisico": 79,
+    "winner": 86,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 79,
+    "agressividade": 78,
+    "leitura_de_jogo": 81,
+    "determinacao": 82
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1274,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 65,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

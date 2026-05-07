@@ -22,6 +22,26 @@ from src.torneio_constants import RANKING_LIMITE_CHALLENGER, RANKING_LIMITE_ITF
 from src.torneio import avancar_fase, criar_torneio
 
 
+def _destino_click_hub_por_tipo(tipo: str, davis: bool = False) -> str:
+    return (
+        "/davis"
+        if tipo in {"Davis Cup", "Billie Jean King Cup"} or davis
+        else "/tournament"
+    )
+
+
+def _estado_torneio_ativo_na_semana(
+    estado: dict[str, Any] | None, semana_atual: int
+) -> bool:
+    if not estado:
+        return False
+    try:
+        semana_estado = int(estado.get("semana", 0) or 0)
+    except (TypeError, ValueError):
+        semana_estado = 0
+    return semana_estado == semana_atual and estado.get("fase_atual") != "finalizado"
+
+
 def _torneio_disponivel_por_ranking(
     torneio: dict[str, Any], ranking_pos: int | None
 ) -> bool:
@@ -118,6 +138,92 @@ def _resolver_parceiro(
     return {"nome": parceiro, "nacionalidade": "??"}
 
 
+def _configurar_modalidade_jogador(jogador: Any, modalidade: str) -> str:
+    modalidade_normalizada = modalidade.strip().lower()
+    tipo_duplas = "mesmo_genero"
+    if modalidade_normalizada == "mistas":
+        jogador.modalidade_atual = "duplas"
+        tipo_duplas = "mista"
+    elif modalidade_normalizada in {"simples", "duplas", "ambos"}:
+        jogador.modalidade_atual = modalidade_normalizada
+    else:
+        raise HTTPException(status_code=422, detail="Modalidade invalida.")
+    jogador.tipo_duplas_atual = tipo_duplas
+    return modalidade_normalizada
+
+
+def _enriquecer_adversario_info(instancia: Any, adversario_raw: Any) -> Any:
+    adversario_info = (
+        instancia.garantir_dados_completos(adversario_raw)
+        if hasattr(instancia, "garantir_dados_completos")
+        else adversario_raw
+    )
+    if not isinstance(adversario_info, dict):
+        return adversario_info
+
+    nome_adv = str(adversario_info.get("nome", "")).strip()
+    ranking_instancia = getattr(instancia, "ranking", None)
+    if nome_adv and ranking_instancia and hasattr(ranking_instancia, "obter_posicao"):
+        if not adversario_info.get("ranking_pos"):
+            adversario_info["ranking_pos"] = ranking_instancia.obter_posicao(nome_adv) or 0
+
+    if "overall" not in adversario_info and isinstance(
+        adversario_info.get("atributos"), dict
+    ):
+        atributos = adversario_info.get("atributos", {}) or {}
+        psico = adversario_info.get("atributos_psicologicos", {}) or {}
+        tec = list(atributos.values())
+        psi = list(psico.values())
+        avg_tec = sum(tec) / len(tec) if tec else 50
+        avg_psi = sum(psi) / len(psi) if psi else 50
+        adversario_info["overall"] = round((avg_tec * 0.8) + (avg_psi * 0.2))
+    return adversario_info
+
+
+def _montar_partida_pendente_regular(instancia: Any, state: dict[str, Any]) -> dict | None:
+    jogador_nome = state.get("estado", {}).get("jogador")
+    fase = state.get("fase_atual")
+    rodadas = state.get("estado", {}).get("rodadas", {})
+    confrontos_fase = rodadas.get(fase, [])
+    norm_j = normalizar_nome(jogador_nome)
+
+    for confronto in confrontos_fase:
+        n1 = normalizar_nome(
+            confronto[0]["nome"] if isinstance(confronto[0], dict) else confronto[0]
+        )
+        n2 = normalizar_nome(
+            confronto[1]["nome"] if isinstance(confronto[1], dict) else confronto[1]
+        )
+        if norm_j not in (n1, n2):
+            continue
+
+        adversario_raw = confronto[1] if norm_j == n1 else confronto[0]
+        return {
+            "jogador1": confronto[0]["nome"] if isinstance(confronto[0], dict) else confronto[0],
+            "jogador2": confronto[1]["nome"] if isinstance(confronto[1], dict) else confronto[1],
+            "fase": fase,
+            "adversario": _enriquecer_adversario_info(instancia, adversario_raw),
+        }
+    return None
+
+
+def _anexar_estado_davis(instancia: Any, state: dict[str, Any]) -> dict[str, Any]:
+    from src.davis_cup import DavisCup
+
+    if isinstance(instancia, DavisCup):
+        conf = instancia.obter_confronto_jogador()
+        state["partida_disponivel"] = conf is not None
+        state["info_partida"] = conf
+    return state
+
+
+def _anexar_estado_regular(instancia: Any, state: dict[str, Any]) -> dict[str, Any]:
+    partida_pendente = _montar_partida_pendente_regular(instancia, state)
+    state["partida_disponivel"] = partida_pendente is not None
+    state["info_partida"] = partida_pendente
+    return state
+
+
 def create_tournament(
     nome_save: str,
     jogador: Any,
@@ -131,40 +237,19 @@ def create_tournament(
     instancia_ativa = carregar_torneio_api(nome_save)
     if instancia_ativa and hasattr(instancia_ativa, "_carregar_estado"):
         estado_ativo = instancia_ativa._carregar_estado()
-        semana_estado = estado_ativo.get("semana", 0) if estado_ativo else 0
-        try:
-            semana_estado = int(semana_estado)
-        except (TypeError, ValueError):
-            semana_estado = 0
-
-        if (
-            estado_ativo
-            and semana_estado == semana_atual
-            and estado_ativo.get("fase_atual") != "finalizado"
-        ):
+        if _estado_torneio_ativo_na_semana(estado_ativo, semana_atual):
             state = instancia_ativa.to_api_state()
             tipo = str(state.get("tipo", "") or "")
-            state["destino_click_hub"] = (
-                "/davis"
-                if tipo in {"Davis Cup", "Billie Jean King Cup"} or state.get("davis")
-                else "/tournament"
+            state["destino_click_hub"] = _destino_click_hub_por_tipo(
+                tipo, davis=bool(state.get("davis"))
             )
             return {"ok": True, "torneio": state}
 
     estado_atual = load_tournament_state(nome_save, genero=jogador.genero)
-    semana_estado = estado_atual.get("semana", 0) if estado_atual else 0
-    try:
-        semana_estado = int(semana_estado)
-    except (TypeError, ValueError):
-        semana_estado = 0
-    if (
-        estado_atual
-        and semana_estado == semana_atual
-        and estado_atual.get("fase_atual") != "finalizado"
-    ):
+    if _estado_torneio_ativo_na_semana(estado_atual, semana_atual):
         tipo = estado_atual.get("tipo", "")
-        estado_atual["destino_click_hub"] = (
-            "/davis" if tipo in {"Davis Cup", "Billie Jean King Cup"} else "/tournament"
+        estado_atual["destino_click_hub"] = _destino_click_hub_por_tipo(
+            str(tipo or "")
         )
         return {"ok": True, "torneio": estado_atual}
 
@@ -205,19 +290,9 @@ def create_tournament(
             },
         }
 
-    modalidade_normalizada = modalidade.strip().lower()
-    tipo_duplas = "mesmo_genero"
-    if modalidade_normalizada == "mistas":
-        jogador.modalidade_atual = "duplas"
-        tipo_duplas = "mista"
-    elif modalidade_normalizada in {"simples", "duplas", "ambos"}:
-        jogador.modalidade_atual = modalidade_normalizada
-    else:
-        raise HTTPException(status_code=422, detail="Modalidade invalida.")
-
-    jogador.tipo_duplas_atual = tipo_duplas
+    modalidade_normalizada = _configurar_modalidade_jogador(jogador, modalidade)
     jogador.parceiro_duplas = _resolver_parceiro(
-        nome_save, jogador, parceiro, tipo_duplas
+        nome_save, jogador, parceiro, jogador.tipo_duplas_atual
     )
     save_player(nome_save, jogador)
 
@@ -248,7 +323,9 @@ def create_tournament(
         torneio=torneio_escolhido.get("nome"),
         modalidade=modalidade_normalizada,
     )
-    state["destino_click_hub"] = "/tournament"
+    state["destino_click_hub"] = _destino_click_hub_por_tipo(
+        str(state.get("tipo", "") or ""), davis=bool(state.get("davis"))
+    )
     return {"ok": True, "torneio": state}
 
 
@@ -280,68 +357,13 @@ def get_tournament_state(nome_save: str) -> dict | None:
         ) from exc
 
     is_davis = state.get("davis", False)
-    state["destino_click_hub"] = "/davis" if is_davis else "/tournament"
+    state["destino_click_hub"] = _destino_click_hub_por_tipo(
+        str(state.get("tipo", "") or ""), davis=bool(is_davis)
+    )
 
     if is_davis:
-        from src.davis_cup import DavisCup
-
-        if isinstance(instancia, DavisCup):
-            conf = instancia.obter_confronto_jogador()
-            state["partida_disponivel"] = conf is not None
-            state["info_partida"] = conf
-        return state
-
-    jogador_nome = state.get("estado", {}).get("jogador")
-    fase = state.get("fase_atual")
-    rodadas = state.get("estado", {}).get("rodadas", {})
-    confrontos_fase = rodadas.get(fase, [])
-
-    partida_pendente = None
-    norm_j = normalizar_nome(jogador_nome)
-    for c in confrontos_fase:
-        n1 = normalizar_nome(c[0]["nome"] if isinstance(c[0], dict) else c[0])
-        n2 = normalizar_nome(c[1]["nome"] if isinstance(c[1], dict) else c[1])
-        if norm_j not in (n1, n2):
-            continue
-        adversario_raw = c[1] if norm_j == n1 else c[0]
-        adversario_info = (
-            instancia.garantir_dados_completos(adversario_raw)
-            if hasattr(instancia, "garantir_dados_completos")
-            else adversario_raw
-        )
-        if isinstance(adversario_info, dict):
-            nome_adv = str(adversario_info.get("nome", "")).strip()
-            ranking_instancia = getattr(instancia, "ranking", None)
-            if (
-                nome_adv
-                and ranking_instancia
-                and hasattr(ranking_instancia, "obter_posicao")
-            ):
-                if not adversario_info.get("ranking_pos"):
-                    adversario_info["ranking_pos"] = (
-                        ranking_instancia.obter_posicao(nome_adv) or 0
-                    )
-            if "overall" not in adversario_info and isinstance(
-                adversario_info.get("atributos"), dict
-            ):
-                atributos = adversario_info.get("atributos", {}) or {}
-                psico = adversario_info.get("atributos_psicologicos", {}) or {}
-                tec = list(atributos.values())
-                psi = list(psico.values())
-                avg_tec = sum(tec) / len(tec) if tec else 50
-                avg_psi = sum(psi) / len(psi) if psi else 50
-                adversario_info["overall"] = round((avg_tec * 0.8) + (avg_psi * 0.2))
-        partida_pendente = {
-            "jogador1": c[0]["nome"] if isinstance(c[0], dict) else c[0],
-            "jogador2": c[1]["nome"] if isinstance(c[1], dict) else c[1],
-            "fase": fase,
-            "adversario": adversario_info,
-        }
-        break
-
-    state["partida_disponivel"] = partida_pendente is not None
-    state["info_partida"] = partida_pendente
-    return state
+        return _anexar_estado_davis(instancia, state)
+    return _anexar_estado_regular(instancia, state)
 
 
 def advance_tournament_phase(nome_save: str) -> dict:

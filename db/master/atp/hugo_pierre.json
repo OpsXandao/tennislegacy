@@ -1,0 +1,49 @@
+{
+  "nome": "Hugo Pierre",
+  "nacionalidade": "[FR]",
+  "idade": 29,
+  "overall": 70,
+  "pontos": 14,
+  "atributos": {
+    "saque": 50,
+    "forehand": 54,
+    "backhand": 45,
+    "topspin": 58,
+    "voleio": 61,
+    "slice": 58,
+    "movimento": 50,
+    "lob": 43,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1086,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 47,
+    "leitura_de_jogo": 42,
+    "determinacao": 33
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 14,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1064,
+  "pontos_ranking": 14,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Arthur Fery",
+  "nacionalidade": "[GB]",
+  "idade": 23,
+  "overall": 80,
+  "pontos": 355,
+  "atributos": {
+    "saque": 56,
+    "forehand": 49,
+    "backhand": 50,
+    "topspin": 55,
+    "voleio": 45,
+    "slice": 48,
+    "movimento": 49,
+    "lob": 46,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 206,
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 37,
+    "leitura_de_jogo": 41,
+    "determinacao": 34
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 355,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 174,
+  "pontos_ranking": 355,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Joshua Charlton",
+  "nacionalidade": "[AU]",
+  "idade": 26,
+  "overall": 72,
+  "pontos": 32,
+  "atributos": {
+    "saque": 40,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 45,
+    "slice": 50,
+    "movimento": 40,
+    "lob": 44,
+    "winner": 44,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 854,
+  "atributos_psicologicos": {
+    "concentracao": 43,
+    "agressividade": 46,
+    "leitura_de_jogo": 32,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 32,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 822,
+  "pontos_ranking": 32,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

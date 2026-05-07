@@ -1,0 +1,49 @@
+{
+  "nome": "Federico Iannaccone",
+  "nacionalidade": "[IT]",
+  "idade": 26,
+  "overall": 73,
+  "pontos": 54,
+  "atributos": {
+    "saque": 46,
+    "forehand": 46,
+    "backhand": 45,
+    "topspin": 48,
+    "voleio": 46,
+    "slice": 44,
+    "movimento": 44,
+    "lob": 51,
+    "winner": 59,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 680,
+  "atributos_psicologicos": {
+    "concentracao": 36,
+    "agressividade": 46,
+    "leitura_de_jogo": 40,
+    "determinacao": 43
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 54,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 648,
+  "pontos_ranking": 54,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

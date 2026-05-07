@@ -1,0 +1,49 @@
+{
+  "nome": "Manel Lazaro Juncadella",
+  "nacionalidade": "[ES]",
+  "idade": 19,
+  "overall": 69,
+  "pontos": 4,
+  "atributos": {
+    "saque": 42,
+    "forehand": 51,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 54,
+    "movimento": 40,
+    "lob": 48,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1349,
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 36,
+    "leitura_de_jogo": 33,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 4,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1525,
+  "pontos_ranking": 4,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 78,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

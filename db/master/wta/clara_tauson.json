@@ -1,0 +1,63 @@
+{
+  "nome": "Clara Tauson",
+  "nacionalidade": "[DK]",
+  "genero": "feminino",
+  "idade": 23,
+  "pontos": 2095,
+  "pontos_ranking": 2095,
+  "overall": 90,
+  "atributos": {
+    "saque": 87,
+    "forehand": 83,
+    "backhand": 93,
+    "topspin": 88,
+    "voleio": 86,
+    "slice": 89,
+    "movimento": 90,
+    "lob": 89,
+    "fisico": 86,
+    "winner": 93,
+    "duplas": 92
+  },
+  "atributos_psicologicos": {
+    "concentracao": 93,
+    "agressividade": 84,
+    "leitura_de_jogo": 86,
+    "determinacao": 90
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2095,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Luxembourg",
+      "ano": 2021,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Lyon",
+      "ano": 2021,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 1368,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 1368,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 182,
+  "peso": 64,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 64
+}

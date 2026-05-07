@@ -1,0 +1,151 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* TennisLegacy Neon Palette */
+  --bg-main: #0a0a0a;
+  --bg-card: #1a1a2e;
+  --neon-green: #00ff88;
+  --neon-pink: #ff0055;
+  --neon-cyan: #00e5ff;
+  --neon-gold: #ffe600;
+  --neon-red: #ff1744;
+  --muted-gray: #444466;
+  
+  /* Typography */
+  --font-arcade: 'Press Start 2P', cursive;
+  --font-mono: 'Share Tech Mono', monospace;
+  
+  /* Effects */
+  --glow-green: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.3);
+  --glow-pink: 0 0 10px rgba(255, 0, 85, 0.5), 0 0 20px rgba(255, 0, 85, 0.3);
+  --glow-cyan: 0 0 10px rgba(0, 229, 255, 0.5), 0 0 20px rgba(0, 229, 255, 0.3);
+  --glow-gold: 0 0 10px rgba(255, 230, 0, 0.5), 0 0 20px rgba(255, 230, 0, 0.3);
+  
+  /* Legacy theme tokens (for compatibility) */
+  --font-size: 16px;
+  --background: #0a0a0a;
+  --foreground: #00ff88;
+  --card: #1a1a2e;
+  --card-foreground: #00e5ff;
+  --primary: #00ff88;
+  --primary-foreground: #0a0a0a;
+  --radius: 0;
+}
+
+@theme inline {
+  --color-bg-main: var(--bg-main);
+  --color-bg-card: var(--bg-card);
+  --color-neon-green: var(--neon-green);
+  --color-neon-pink: var(--neon-pink);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-gold: var(--neon-gold);
+  --color-neon-red: var(--neon-red);
+  --color-muted-gray: var(--muted-gray);
+}
+
+@layer base {
+  * {
+    @apply border-0;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  body {
+    background: var(--bg-main);
+    color: var(--neon-green);
+    font-family: var(--font-mono);
+    overflow-x: hidden;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-arcade);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* CRT Scanline Effect */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Neon Pulse Animation */
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+/* Flicker Effect */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  41% { opacity: 0.9; }
+  43% { opacity: 1; }
+  45% { opacity: 0.95; }
+  47% { opacity: 1; }
+}
+
+/* Chromatic Aberration */
+@keyframes chromatic {
+  0%, 100% {
+    text-shadow: 2px 0 0 rgba(255, 0, 85, 0.3), -2px 0 0 rgba(0, 229, 255, 0.3);
+  }
+  50% {
+    text-shadow: -2px 0 0 rgba(255, 0, 85, 0.3), 2px 0 0 rgba(0, 229, 255, 0.3);
+  }
+}
+
+.scanline-overlay {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+  z-index: 9999;
+  animation: scanline 8s linear infinite;
+  opacity: 0.3;
+}
+
+.crt-screen {
+  position: relative;
+}
+
+.crt-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+  pointer-events: none;
+  z-index: 1;
+}

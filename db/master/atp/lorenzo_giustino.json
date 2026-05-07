@@ -1,0 +1,49 @@
+{
+  "nome": "Lorenzo Giustino",
+  "nacionalidade": "[IT]",
+  "idade": 34,
+  "overall": 79,
+  "pontos": 292,
+  "atributos": {
+    "saque": 47,
+    "forehand": 57,
+    "backhand": 44,
+    "topspin": 54,
+    "voleio": 52,
+    "slice": 51,
+    "movimento": 55,
+    "lob": 58,
+    "winner": 44,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 239,
+  "atributos_psicologicos": {
+    "concentracao": 45,
+    "agressividade": 52,
+    "leitura_de_jogo": 35,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 292,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 207,
+  "pontos_ranking": 292,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

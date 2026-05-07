@@ -1,0 +1,49 @@
+{
+  "nome": "David Poljak",
+  "nacionalidade": "[CZ]",
+  "idade": 29,
+  "overall": 70,
+  "pontos": 15,
+  "atributos": {
+    "saque": 53,
+    "forehand": 62,
+    "backhand": 54,
+    "topspin": 58,
+    "voleio": 66,
+    "slice": 63,
+    "movimento": 64,
+    "lob": 49,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1062,
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 50,
+    "leitura_de_jogo": 59,
+    "determinacao": 56
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 15,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1038,
+  "pontos_ranking": 15,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

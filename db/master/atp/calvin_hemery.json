@@ -1,0 +1,49 @@
+{
+  "nome": "Calvin Hemery",
+  "nacionalidade": "[FR]",
+  "idade": 31,
+  "overall": 77,
+  "pontos": 157,
+  "atributos": {
+    "saque": 40,
+    "forehand": 45,
+    "backhand": 54,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 47,
+    "movimento": 40,
+    "lob": 43,
+    "winner": 55,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 346,
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 53,
+    "leitura_de_jogo": 51,
+    "determinacao": 41
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 157,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 314,
+  "pontos_ranking": 157,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

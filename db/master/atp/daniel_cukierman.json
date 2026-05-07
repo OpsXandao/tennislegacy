@@ -1,0 +1,49 @@
+{
+  "nome": "Daniel Cukierman",
+  "nacionalidade": "[IL]",
+  "idade": 30,
+  "overall": 69,
+  "pontos": 6,
+  "atributos": {
+    "saque": 50,
+    "forehand": 58,
+    "backhand": 62,
+    "topspin": 53,
+    "voleio": 52,
+    "slice": 63,
+    "movimento": 59,
+    "lob": 58,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1278,
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 51,
+    "leitura_de_jogo": 45,
+    "determinacao": 41
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 6,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1304,
+  "pontos_ranking": 6,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

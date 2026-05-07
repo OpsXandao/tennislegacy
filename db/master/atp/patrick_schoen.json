@@ -1,0 +1,49 @@
+{
+  "nome": "Patrick Schoen",
+  "nacionalidade": "[CH]",
+  "idade": 20,
+  "overall": 71,
+  "pontos": 28,
+  "atributos": {
+    "saque": 45,
+    "forehand": 56,
+    "backhand": 57,
+    "topspin": 42,
+    "voleio": 56,
+    "slice": 48,
+    "movimento": 52,
+    "lob": 50,
+    "winner": 58,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 885,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 47,
+    "leitura_de_jogo": 43,
+    "determinacao": 37
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 28,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 853,
+  "pontos_ranking": 28,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

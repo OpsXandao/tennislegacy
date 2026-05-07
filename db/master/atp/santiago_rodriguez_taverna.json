@@ -1,0 +1,49 @@
+{
+  "nome": "Santiago Rodriguez Taverna",
+  "nacionalidade": "[AR]",
+  "idade": 26,
+  "overall": 79,
+  "pontos": 241,
+  "atributos": {
+    "saque": 61,
+    "forehand": 47,
+    "backhand": 65,
+    "topspin": 60,
+    "voleio": 59,
+    "slice": 56,
+    "movimento": 47,
+    "lob": 56,
+    "winner": 54,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 268,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 42,
+    "leitura_de_jogo": 46,
+    "determinacao": 60
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 241,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 236,
+  "pontos_ranking": 241,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 179,
+  "peso": 84,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

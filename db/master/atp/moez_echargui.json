@@ -1,0 +1,49 @@
+{
+  "nome": "Moez Echargui",
+  "idade": 33,
+  "pontos": 435,
+  "pontos_ranking": 435,
+  "is_bot": false,
+  "nacionalidade": "[TN]",
+  "overall": 81,
+  "atributos": {
+    "saque": 48,
+    "forehand": 41,
+    "backhand": 42,
+    "topspin": 55,
+    "voleio": 46,
+    "slice": 41,
+    "movimento": 42,
+    "lob": 50,
+    "winner": 44,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 176,
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 40,
+    "leitura_de_jogo": 37,
+    "determinacao": 55
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 435,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 141,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

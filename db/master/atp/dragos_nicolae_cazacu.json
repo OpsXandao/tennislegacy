@@ -1,0 +1,49 @@
+{
+  "nome": "Dragos Nicolae Cazacu",
+  "nacionalidade": "[RO]",
+  "idade": 22,
+  "overall": 72,
+  "pontos": 33,
+  "atributos": {
+    "saque": 50,
+    "forehand": 52,
+    "backhand": 46,
+    "topspin": 54,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 50,
+    "lob": 43,
+    "winner": 44,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 849,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 53,
+    "leitura_de_jogo": 55,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 33,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 817,
+  "pontos_ranking": 33,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 79,
+  "mao_dominante": "Canhoto",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

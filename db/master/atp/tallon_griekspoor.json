@@ -1,0 +1,60 @@
+{
+  "nome": "Tallon Griekspoor",
+  "nacionalidade": "[NL]",
+  "idade": 29,
+  "overall": 87,
+  "pontos": 1655,
+  "atributos": {
+    "saque": 81,
+    "forehand": 80,
+    "backhand": 84,
+    "topspin": 79,
+    "voleio": 84,
+    "slice": 83,
+    "movimento": 84,
+    "lob": 79,
+    "winner": 80,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 34,
+  "atributos_psicologicos": {
+    "concentracao": 83,
+    "agressividade": 68,
+    "leitura_de_jogo": 70,
+    "determinacao": 66
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1655,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Pune",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "s Hertogenbosch",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 25,
+  "pontos_ranking": 1655,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 93,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

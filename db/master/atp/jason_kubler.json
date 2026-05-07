@@ -1,0 +1,51 @@
+{
+  "nome": "Jason Kubler",
+  "nacionalidade": "[AU]",
+  "idade": 32,
+  "overall": 79,
+  "pontos": 295,
+  "atributos": {
+    "saque": 64,
+    "forehand": 46,
+    "backhand": 64,
+    "topspin": 60,
+    "voleio": 64,
+    "slice": 53,
+    "movimento": 59,
+    "lob": 47,
+    "winner": 48,
+    "fisico": 60,
+    "duplas": 92
+  },
+  "id": 238,
+  "atributos_psicologicos": {
+    "concentracao": 36,
+    "agressividade": 36,
+    "leitura_de_jogo": 44,
+    "determinacao": 50
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 295,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 1216,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 206,
+  "pontos_ranking": 295,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "pontos_ranking_duplas": 1216,
+  "rank_duplas": 77
+}

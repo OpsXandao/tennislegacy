@@ -1,0 +1,57 @@
+{
+  "nome": "Anna Blinkova",
+  "nacionalidade": "[RU]",
+  "genero": "feminino",
+  "idade": 27,
+  "pontos": 795,
+  "pontos_ranking": 795,
+  "overall": 84,
+  "atributos": {
+    "saque": 72,
+    "forehand": 76,
+    "backhand": 73,
+    "topspin": 74,
+    "voleio": 69,
+    "slice": 67,
+    "movimento": 69,
+    "lob": 76,
+    "fisico": 76,
+    "winner": 73,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 71,
+    "agressividade": 76,
+    "leitura_de_jogo": 70,
+    "determinacao": 68
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 795,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Cluj Napoca",
+      "ano": 2022,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 179,
+  "peso": 61,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

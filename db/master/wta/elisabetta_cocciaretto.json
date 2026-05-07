@@ -1,0 +1,57 @@
+{
+  "nome": "Elisabetta Cocciaretto",
+  "nacionalidade": "[IT]",
+  "genero": "feminino",
+  "idade": 25,
+  "pontos": 1290,
+  "pontos_ranking": 1290,
+  "overall": 87,
+  "atributos": {
+    "saque": 87,
+    "forehand": 86,
+    "backhand": 82,
+    "topspin": 87,
+    "voleio": 81,
+    "slice": 81,
+    "movimento": 79,
+    "lob": 84,
+    "fisico": 86,
+    "winner": 87,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 84,
+    "agressividade": 86,
+    "leitura_de_jogo": 78,
+    "determinacao": 79
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1290,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Lausanne",
+      "ano": 2023,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 166,
+  "peso": 75,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

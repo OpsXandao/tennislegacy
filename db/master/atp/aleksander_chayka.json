@@ -1,0 +1,49 @@
+{
+  "nome": "Aleksander Chayka",
+  "nacionalidade": "[RU]",
+  "idade": 21,
+  "overall": 70,
+  "pontos": 12,
+  "atributos": {
+    "saque": 41,
+    "forehand": 43,
+    "backhand": 54,
+    "topspin": 42,
+    "voleio": 55,
+    "slice": 40,
+    "movimento": 45,
+    "lob": 40,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1133,
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 35,
+    "leitura_de_jogo": 31,
+    "determinacao": 34
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 12,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1115,
+  "pontos_ranking": 12,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 76,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Gilles Arnaud Bailly",
+  "nacionalidade": "[BE]",
+  "idade": 20,
+  "overall": 79,
+  "pontos": 280,
+  "atributos": {
+    "saque": 42,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 43,
+    "voleio": 40,
+    "slice": 48,
+    "movimento": 46,
+    "lob": 55,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 243,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 34,
+    "leitura_de_jogo": 37,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 280,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 211,
+  "pontos_ranking": 280,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

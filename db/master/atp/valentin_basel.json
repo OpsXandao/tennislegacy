@@ -1,0 +1,49 @@
+{
+  "nome": "Valentin Basel",
+  "nacionalidade": "[AR]",
+  "idade": 21,
+  "overall": 70,
+  "pontos": 12,
+  "atributos": {
+    "saque": 51,
+    "forehand": 45,
+    "backhand": 40,
+    "topspin": 42,
+    "voleio": 51,
+    "slice": 57,
+    "movimento": 44,
+    "lob": 52,
+    "winner": 41,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1137,
+  "atributos_psicologicos": {
+    "concentracao": 43,
+    "agressividade": 47,
+    "leitura_de_jogo": 39,
+    "determinacao": 40
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 12,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1119,
+  "pontos_ranking": 12,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

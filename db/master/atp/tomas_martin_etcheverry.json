@@ -1,0 +1,49 @@
+{
+  "nome": "Tomas Martin Etcheverry",
+  "nacionalidade": "[AR]",
+  "idade": 26,
+  "overall": 86,
+  "pontos": 1470,
+  "atributos": {
+    "saque": 78,
+    "forehand": 74,
+    "backhand": 74,
+    "topspin": 78,
+    "voleio": 74,
+    "slice": 77,
+    "movimento": 76,
+    "lob": 75,
+    "winner": 77,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 55,
+  "atributos_psicologicos": {
+    "concentracao": 69,
+    "agressividade": 77,
+    "leitura_de_jogo": 58,
+    "determinacao": 69
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1470,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 29,
+  "pontos_ranking": 1470,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 196,
+  "peso": 85,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

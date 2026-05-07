@@ -1,0 +1,51 @@
+{
+  "nome": "Donna Vekić",
+  "nacionalidade": "[HR]",
+  "genero": "feminino",
+  "idade": 29,
+  "pontos": 768,
+  "pontos_ranking": 768,
+  "overall": 83,
+  "atributos": {
+    "saque": 66,
+    "forehand": 67,
+    "backhand": 63,
+    "topspin": 69,
+    "voleio": 72,
+    "slice": 66,
+    "movimento": 67,
+    "lob": 67,
+    "fisico": 69,
+    "winner": 65,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 66,
+    "agressividade": 68,
+    "leitura_de_jogo": 72,
+    "determinacao": 62
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 768,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 57,
+  "mao_dominante": "Destra",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

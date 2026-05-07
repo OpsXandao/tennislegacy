@@ -1,0 +1,49 @@
+{
+  "nome": "Mae Malige",
+  "nacionalidade": "[FR]",
+  "idade": 19,
+  "overall": 75,
+  "pontos": 79,
+  "atributos": {
+    "saque": 40,
+    "forehand": 44,
+    "backhand": 41,
+    "topspin": 47,
+    "voleio": 56,
+    "slice": 51,
+    "movimento": 50,
+    "lob": 40,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 551,
+  "atributos_psicologicos": {
+    "concentracao": 38,
+    "agressividade": 48,
+    "leitura_de_jogo": 33,
+    "determinacao": 42
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 79,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 519,
+  "pontos_ranking": 79,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 65,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,110 @@
+{
+  "nome": "Casper Ruud",
+  "nacionalidade": "[NO]",
+  "idade": 27,
+  "overall": 90,
+  "pontos": 2665,
+  "atributos": {
+    "saque": 92,
+    "forehand": 88,
+    "backhand": 90,
+    "topspin": 88,
+    "voleio": 87,
+    "slice": 82,
+    "movimento": 89,
+    "lob": 90,
+    "winner": 90,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 7,
+  "atributos_psicologicos": {
+    "concentracao": 64,
+    "agressividade": 81,
+    "leitura_de_jogo": 70,
+    "determinacao": 86
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2665,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Buenos Aires",
+      "ano": 2020,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Bastad",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Geneva",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Gstaad",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Kitzbuhel",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "San Diego",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Buenos Aires",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Geneva",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Gstaad",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Estoril",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Barcelona",
+      "ano": 2024,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Geneva",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 12,
+  "pontos_ranking": 2665,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Baselines Aggressive"
+}

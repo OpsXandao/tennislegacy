@@ -1,0 +1,49 @@
+{
+  "nome": "Paul Jubb",
+  "nacionalidade": "[GB]",
+  "idade": 26,
+  "overall": 77,
+  "pontos": 163,
+  "atributos": {
+    "saque": 41,
+    "forehand": 51,
+    "backhand": 49,
+    "topspin": 48,
+    "voleio": 40,
+    "slice": 54,
+    "movimento": 52,
+    "lob": 50,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 341,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 44,
+    "leitura_de_jogo": 44,
+    "determinacao": 40
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 163,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 309,
+  "pontos_ranking": 163,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

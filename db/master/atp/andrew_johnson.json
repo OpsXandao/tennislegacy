@@ -1,0 +1,49 @@
+{
+  "nome": "Andrew Johnson",
+  "nacionalidade": "[US]",
+  "idade": 16,
+  "overall": 71,
+  "pontos": 20,
+  "atributos": {
+    "saque": 43,
+    "forehand": 47,
+    "backhand": 40,
+    "topspin": 46,
+    "voleio": 55,
+    "slice": 49,
+    "movimento": 50,
+    "lob": 51,
+    "winner": 41,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 975,
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 35,
+    "leitura_de_jogo": 32,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 20,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 945,
+  "pontos_ranking": 20,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

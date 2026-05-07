@@ -1,0 +1,49 @@
+{
+  "nome": "Keenan Mayo",
+  "nacionalidade": "[US]",
+  "idade": 25,
+  "overall": 69,
+  "pontos": 8,
+  "atributos": {
+    "saque": 53,
+    "forehand": 45,
+    "backhand": 51,
+    "topspin": 42,
+    "voleio": 51,
+    "slice": 53,
+    "movimento": 53,
+    "lob": 45,
+    "winner": 45,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1208,
+  "atributos_psicologicos": {
+    "concentracao": 55,
+    "agressividade": 43,
+    "leitura_de_jogo": 49,
+    "determinacao": 34
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 8,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1210,
+  "pontos_ranking": 8,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 198,
+  "peso": 81,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,702 @@
+[
+  {
+    "rank_duplas": 1,
+    "nome": "Elise Mertens",
+    "idade": 30,
+    "pais3": "BEL",
+    "pontos_duplas": 8483
+  },
+  {
+    "rank_duplas": 2,
+    "nome": "Gabriela Dabrowski",
+    "idade": 33,
+    "pais3": "CAN",
+    "pontos_duplas": 6926
+  },
+  {
+    "rank_duplas": 3,
+    "nome": "Jasmine Paolini",
+    "idade": 30,
+    "pais3": "ITA",
+    "pontos_duplas": 6585
+  },
+  {
+    "rank_duplas": 3,
+    "nome": "Sara Errani",
+    "idade": 38,
+    "pais3": "ITA",
+    "pontos_duplas": 6585
+  },
+  {
+    "rank_duplas": 5,
+    "nome": "Kateřina Siniaková",
+    "idade": 29,
+    "pais3": "CZE",
+    "pontos_duplas": 6460
+  },
+  {
+    "rank_duplas": 6,
+    "nome": "Anna Danilina",
+    "idade": 30,
+    "pais3": "KAZ",
+    "pontos_duplas": 6440
+  },
+  {
+    "rank_duplas": 7,
+    "nome": "Veronika Kudermetova",
+    "idade": 28,
+    "pais3": "RUS",
+    "pontos_duplas": 6386
+  },
+  {
+    "rank_duplas": 8,
+    "nome": "Aleksandra Krunić",
+    "idade": 32,
+    "pais3": "SRB",
+    "pontos_duplas": 6310
+  },
+  {
+    "rank_duplas": 9,
+    "nome": "Luisa Stefani",
+    "idade": 28,
+    "pais3": "BRA",
+    "pontos_duplas": 5860
+  },
+  {
+    "rank_duplas": 10,
+    "nome": "Erin Routliffe",
+    "idade": 30,
+    "pais3": "NZL",
+    "pontos_duplas": 5790
+  },
+  {
+    "rank_duplas": 11,
+    "nome": "Taylor Townsend",
+    "idade": 29,
+    "pais3": "USA",
+    "pontos_duplas": 5785
+  },
+  {
+    "rank_duplas": 12,
+    "nome": "Jeļena Ostapenko",
+    "idade": 28,
+    "pais3": "LAT",
+    "pontos_duplas": 5440
+  },
+  {
+    "rank_duplas": 13,
+    "nome": "Su-wei Hsieh",
+    "idade": 40,
+    "pais3": "TWN",
+    "pontos_duplas": 5258
+  },
+  {
+    "rank_duplas": 14,
+    "nome": "Shuai Zhang",
+    "idade": 37,
+    "pais3": "CHN",
+    "pontos_duplas": 5206
+  },
+  {
+    "rank_duplas": 15,
+    "nome": "Tímea Babos",
+    "idade": 32,
+    "pais3": "HUN",
+    "pontos_duplas": 4200
+  },
+  {
+    "rank_duplas": 16,
+    "nome": "Diana Shnaider",
+    "idade": 21,
+    "pais3": "RUS",
+    "pontos_duplas": 3740
+  },
+  {
+    "rank_duplas": 17,
+    "nome": "Cristina Bucșa",
+    "idade": 28,
+    "pais3": "ESP",
+    "pontos_duplas": 3580
+  },
+  {
+    "rank_duplas": 18,
+    "nome": "Nicole Melichar-Martinez",
+    "idade": 32,
+    "pais3": "USA",
+    "pontos_duplas": 3463
+  },
+  {
+    "rank_duplas": 19,
+    "nome": "Storm Hunter",
+    "idade": 31,
+    "pais3": "AUS",
+    "pontos_duplas": 3209
+  },
+  {
+    "rank_duplas": 20,
+    "nome": "Mirra Andreeva",
+    "idade": 18,
+    "pais3": "RUS",
+    "pontos_duplas": 3099
+  },
+  {
+    "rank_duplas": 21,
+    "nome": "Hanyu Guo",
+    "idade": 27,
+    "pais3": "CHN",
+    "pontos_duplas": 2995
+  },
+  {
+    "rank_duplas": 22,
+    "nome": "Ellen Perez",
+    "idade": 30,
+    "pais3": "AUS",
+    "pontos_duplas": 2855
+  },
+  {
+    "rank_duplas": 23,
+    "nome": "Laura Siegemund",
+    "idade": 37,
+    "pais3": "GER",
+    "pontos_duplas": 2701
+  },
+  {
+    "rank_duplas": 24,
+    "nome": "Alexandra Panova",
+    "idade": 37,
+    "pais3": "RUS",
+    "pontos_duplas": 2634
+  },
+  {
+    "rank_duplas": 25,
+    "nome": "Demi Schuurs",
+    "idade": 32,
+    "pais3": "NED",
+    "pontos_duplas": 2625
+  },
+  {
+    "rank_duplas": 26,
+    "nome": "Asia Muhammad",
+    "idade": 34,
+    "pais3": "USA",
+    "pontos_duplas": 2601
+  },
+  {
+    "rank_duplas": 27,
+    "nome": "Lyudmyla Kichenok",
+    "idade": 33,
+    "pais3": "UKR",
+    "pontos_duplas": 2580
+  },
+  {
+    "rank_duplas": 28,
+    "nome": "Xinyu Jiang",
+    "idade": 26,
+    "pais3": "CHN",
+    "pontos_duplas": 2524
+  },
+  {
+    "rank_duplas": 29,
+    "nome": "Desirae Krawczyk",
+    "idade": 32,
+    "pais3": "USA",
+    "pontos_duplas": 2469
+  },
+  {
+    "rank_duplas": 30,
+    "nome": "Fanny Stollár",
+    "idade": 27,
+    "pais3": "HUN",
+    "pontos_duplas": 2469
+  },
+  {
+    "rank_duplas": 31,
+    "nome": "Tereza Mihalíková",
+    "idade": 27,
+    "pais3": "SVK",
+    "pontos_duplas": 2442
+  },
+  {
+    "rank_duplas": 31,
+    "nome": "Olivia Nicholls",
+    "idade": 31,
+    "pais3": "GBR",
+    "pontos_duplas": 2442
+  },
+  {
+    "rank_duplas": 33,
+    "nome": "Sofia Kenin",
+    "idade": 27,
+    "pais3": "USA",
+    "pontos_duplas": 2369
+  },
+  {
+    "rank_duplas": 34,
+    "nome": "Maya Joint",
+    "idade": 19,
+    "pais3": "AUS",
+    "pontos_duplas": 2295
+  },
+  {
+    "rank_duplas": 35,
+    "nome": "Eri Hozumi",
+    "idade": 32,
+    "pais3": "JPN",
+    "pontos_duplas": 2283
+  },
+  {
+    "rank_duplas": 36,
+    "nome": "Hao-ching Chan",
+    "idade": 32,
+    "pais3": "TWN",
+    "pontos_duplas": 2032
+  },
+  {
+    "rank_duplas": 37,
+    "nome": "Ulrikke Eikeri",
+    "idade": 33,
+    "pais3": "NOR",
+    "pontos_duplas": 2025
+  },
+  {
+    "rank_duplas": 38,
+    "nome": "Ekaterina Alexandrova",
+    "idade": 31,
+    "pais3": "RUS",
+    "pontos_duplas": 2007
+  },
+  {
+    "rank_duplas": 39,
+    "nome": "Irina Khromacheva",
+    "idade": 30,
+    "pais3": "RUS",
+    "pontos_duplas": 1962
+  },
+  {
+    "rank_duplas": 40,
+    "nome": "Caroline Dolehide",
+    "idade": 27,
+    "pais3": "USA",
+    "pontos_duplas": 1942
+  },
+  {
+    "rank_duplas": 41,
+    "nome": "Fang-Hsien Wu",
+    "idade": 26,
+    "pais3": "TWN",
+    "pontos_duplas": 1871
+  },
+  {
+    "rank_duplas": 42,
+    "nome": "Ludmilla Samsonova",
+    "idade": 27,
+    "pais3": "RUS",
+    "pontos_duplas": 1833
+  },
+  {
+    "rank_duplas": 43,
+    "nome": "Yifan Xu",
+    "idade": 37,
+    "pais3": "CHN",
+    "pontos_duplas": 1802
+  },
+  {
+    "rank_duplas": 44,
+    "nome": "Giuliana Olmos",
+    "idade": 32,
+    "pais3": "MEX",
+    "pontos_duplas": 1765
+  },
+  {
+    "rank_duplas": 45,
+    "nome": "Miyu Kato",
+    "idade": 31,
+    "pais3": "JPN",
+    "pontos_duplas": 1741
+  },
+  {
+    "rank_duplas": 46,
+    "nome": "Janice Tjen",
+    "idade": 23,
+    "pais3": "INA",
+    "pontos_duplas": 1705
+  },
+  {
+    "rank_duplas": 47,
+    "nome": "Vera Zvonareva",
+    "idade": 41,
+    "pais3": "RUS",
+    "pontos_duplas": 1697
+  },
+  {
+    "rank_duplas": 48,
+    "nome": "Aldila Sutjiadi",
+    "idade": 30,
+    "pais3": "INA",
+    "pontos_duplas": 1619
+  },
+  {
+    "rank_duplas": 49,
+    "nome": "Anna Kalinskaya",
+    "idade": 27,
+    "pais3": "RUS",
+    "pontos_duplas": 1590
+  },
+  {
+    "rank_duplas": 50,
+    "nome": "Shuko Aoyama",
+    "idade": 38,
+    "pais3": "JPN",
+    "pontos_duplas": 1579
+  },
+  {
+    "rank_duplas": 51,
+    "nome": "Quinn Gleason",
+    "idade": 31,
+    "pais3": "USA",
+    "pontos_duplas": 1519
+  },
+  {
+    "rank_duplas": 52,
+    "nome": "Peyton Stearns",
+    "idade": 24,
+    "pais3": "USA",
+    "pontos_duplas": 1497
+  },
+  {
+    "rank_duplas": 53,
+    "nome": "Sabrina Santamaria",
+    "idade": 33,
+    "pais3": "USA",
+    "pontos_duplas": 1480
+  },
+  {
+    "rank_duplas": 54,
+    "nome": "Kamilla Rakhimova",
+    "idade": 24,
+    "pais3": "UZB",
+    "pontos_duplas": 1475
+  },
+  {
+    "rank_duplas": 55,
+    "nome": "Sorana Cîrstea",
+    "idade": 35,
+    "pais3": "ROU",
+    "pontos_duplas": 1470
+  },
+  {
+    "rank_duplas": 56,
+    "nome": "Barbora Krejčíková",
+    "idade": 30,
+    "pais3": "CZE",
+    "pontos_duplas": 1464
+  },
+  {
+    "rank_duplas": 57,
+    "nome": "Ena Shibahara",
+    "idade": 28,
+    "pais3": "JPN",
+    "pontos_duplas": 1464
+  },
+  {
+    "rank_duplas": 58,
+    "nome": "Maria Kozyreva",
+    "idade": 26,
+    "pais3": "RUS",
+    "pontos_duplas": 1458
+  },
+  {
+    "rank_duplas": 59,
+    "nome": "Anna Sisková",
+    "idade": 24,
+    "pais3": "CZE",
+    "pontos_duplas": 1444
+  },
+  {
+    "rank_duplas": 60,
+    "nome": "Zhaoxuan Yang",
+    "idade": 31,
+    "pais3": "CHN",
+    "pontos_duplas": 1443
+  },
+  {
+    "rank_duplas": 61,
+    "nome": "Coco Gauff",
+    "idade": 21,
+    "pais3": "USA",
+    "pontos_duplas": 1440
+  },
+  {
+    "rank_duplas": 62,
+    "nome": "Makoto Ninomiya",
+    "idade": 31,
+    "pais3": "JPN",
+    "pontos_duplas": 1410
+  },
+  {
+    "rank_duplas": 63,
+    "nome": "Nadiia Kichenok",
+    "idade": 33,
+    "pais3": "UKR",
+    "pontos_duplas": 1377
+  },
+  {
+    "rank_duplas": 64,
+    "nome": "Clara Tauson",
+    "idade": 23,
+    "pais3": "DEN",
+    "pontos_duplas": 1368
+  },
+  {
+    "rank_duplas": 65,
+    "nome": "Miriam Kolodziejová",
+    "idade": 28,
+    "pais3": "CZE",
+    "pontos_duplas": 1363
+  },
+  {
+    "rank_duplas": 66,
+    "nome": "Maia Lumsden",
+    "idade": 28,
+    "pais3": "GBR",
+    "pontos_duplas": 1337
+  },
+  {
+    "rank_duplas": 67,
+    "nome": "Caty McNally",
+    "idade": 24,
+    "pais3": "USA",
+    "pontos_duplas": 1334
+  },
+  {
+    "rank_duplas": 68,
+    "nome": "Katarzyna Piter",
+    "idade": 35,
+    "pais3": "POL",
+    "pontos_duplas": 1305
+  },
+  {
+    "rank_duplas": 69,
+    "nome": "Mccartney Kessler",
+    "idade": 26,
+    "pais3": "USA",
+    "pontos_duplas": 1302
+  },
+  {
+    "rank_duplas": 70,
+    "nome": "Iryna Shymanovich",
+    "idade": 28,
+    "pais3": "BLR",
+    "pontos_duplas": 1292
+  },
+  {
+    "rank_duplas": 71,
+    "nome": "Anastasia Dețiuc",
+    "idade": 27,
+    "pais3": "CZE",
+    "pontos_duplas": 1263
+  },
+  {
+    "rank_duplas": 72,
+    "nome": "Jesika Malečková",
+    "idade": 31,
+    "pais3": "CZE",
+    "pontos_duplas": 1259
+  },
+  {
+    "rank_duplas": 73,
+    "nome": "Olivia Gadecki",
+    "idade": 23,
+    "pais3": "AUS",
+    "pontos_duplas": 1243
+  },
+  {
+    "rank_duplas": 74,
+    "nome": "Isabelle Haverlag",
+    "idade": 24,
+    "pais3": "NED",
+    "pontos_duplas": 1231
+  },
+  {
+    "rank_duplas": 75,
+    "nome": "En-shuo Liang",
+    "idade": 25,
+    "pais3": "TWN",
+    "pontos_duplas": 1209
+  },
+  {
+    "rank_duplas": 76,
+    "nome": "Qianhui Tang",
+    "idade": 25,
+    "pais3": "CHN",
+    "pontos_duplas": 1197
+  },
+  {
+    "rank_duplas": 77,
+    "nome": "Magali Kempen",
+    "idade": 28,
+    "pais3": "BEL",
+    "pontos_duplas": 1179
+  },
+  {
+    "rank_duplas": 78,
+    "nome": "Leylah Fernandez",
+    "idade": 23,
+    "pais3": "CAN",
+    "pontos_duplas": 1159
+  },
+  {
+    "rank_duplas": 79,
+    "nome": "Elena-Gabriela Ruse",
+    "idade": 28,
+    "pais3": "ROU",
+    "pontos_duplas": 1150
+  },
+  {
+    "rank_duplas": 80,
+    "nome": "Beatriz Haddad Maia",
+    "idade": 29,
+    "pais3": "BRA",
+    "pontos_duplas": 1087
+  },
+  {
+    "rank_duplas": 81,
+    "nome": "Eudice Chong",
+    "idade": 29,
+    "pais3": "HKG",
+    "pontos_duplas": 1087
+  },
+  {
+    "rank_duplas": 82,
+    "nome": "Elena Pridankina",
+    "idade": 20,
+    "pais3": "RUS",
+    "pontos_duplas": 1086
+  },
+  {
+    "rank_duplas": 83,
+    "nome": "Marie Bouzková",
+    "idade": 27,
+    "pais3": "CZE",
+    "pontos_duplas": 1084
+  },
+  {
+    "rank_duplas": 84,
+    "nome": "Linda Nosková",
+    "idade": 21,
+    "pais3": "CZE",
+    "pontos_duplas": 1073
+  },
+  {
+    "rank_duplas": 85,
+    "nome": "Ingrid Gamarra Martins",
+    "idade": 29,
+    "pais3": "BRA",
+    "pontos_duplas": 1052
+  },
+  {
+    "rank_duplas": 86,
+    "nome": "Olga Danilović",
+    "idade": 25,
+    "pais3": "SRB",
+    "pontos_duplas": 1025
+  },
+  {
+    "rank_duplas": 87,
+    "nome": "Laura Pigossi",
+    "idade": 31,
+    "pais3": "BRA",
+    "pontos_duplas": 968
+  },
+  {
+    "rank_duplas": 88,
+    "nome": "Kristina Mladenovic",
+    "idade": 32,
+    "pais3": "FRA",
+    "pontos_duplas": 938
+  },
+  {
+    "rank_duplas": 89,
+    "nome": "Carmen Corley",
+    "idade": 24,
+    "pais3": "USA",
+    "pontos_duplas": 901
+  },
+  {
+    "rank_duplas": 90,
+    "nome": "Simona Waltert",
+    "idade": 25,
+    "pais3": "SUI",
+    "pontos_duplas": 892
+  },
+  {
+    "rank_duplas": 91,
+    "nome": "Oksana Kalashnikova",
+    "idade": 35,
+    "pais3": "GEO",
+    "pontos_duplas": 885
+  },
+  {
+    "rank_duplas": 92,
+    "nome": "Momoko Kobori",
+    "idade": 27,
+    "pais3": "JPN",
+    "pontos_duplas": 884
+  },
+  {
+    "rank_duplas": 93,
+    "nome": "Ivana Corley",
+    "idade": 26,
+    "pais3": "USA",
+    "pontos_duplas": 875
+  },
+  {
+    "rank_duplas": 94,
+    "nome": "Emily Appleton",
+    "idade": 26,
+    "pais3": "GBR",
+    "pontos_duplas": 873
+  },
+  {
+    "rank_duplas": 95,
+    "nome": "Anastasia Tikhonova",
+    "idade": 25,
+    "pais3": "RUS",
+    "pontos_duplas": 868
+  },
+  {
+    "rank_duplas": 96,
+    "nome": "Saisai Zheng",
+    "idade": 32,
+    "pais3": "CHN",
+    "pontos_duplas": 828
+  },
+  {
+    "rank_duplas": 97,
+    "nome": "Kimberly Birrell",
+    "idade": 27,
+    "pais3": "AUS",
+    "pontos_duplas": 827
+  },
+  {
+    "rank_duplas": 98,
+    "nome": "Shuo Feng",
+    "idade": 28,
+    "pais3": "CHN",
+    "pontos_duplas": 815
+  },
+  {
+    "rank_duplas": 99,
+    "nome": "Matilde Jorge",
+    "idade": 21,
+    "pais3": "POR",
+    "pontos_duplas": 809
+  },
+  {
+    "rank_duplas": 100,
+    "nome": "Alicia Herrero Liñana",
+    "idade": 27,
+    "pais3": "ESP",
+    "pontos_duplas": 792
+  }
+]

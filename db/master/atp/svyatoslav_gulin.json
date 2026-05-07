@@ -1,0 +1,49 @@
+{
+  "nome": "Svyatoslav Gulin",
+  "nacionalidade": "[RU]",
+  "idade": 23,
+  "overall": 76,
+  "pontos": 106,
+  "atributos": {
+    "saque": 54,
+    "forehand": 59,
+    "backhand": 56,
+    "topspin": 59,
+    "voleio": 63,
+    "slice": 46,
+    "movimento": 48,
+    "lob": 45,
+    "winner": 44,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 472,
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 53,
+    "leitura_de_jogo": 51,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 106,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 440,
+  "pontos_ranking": 106,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -423,7 +423,12 @@ def distribuir_pontos_davis(nome_save, target_save_name=None):
     # Distribui os pontos de vitórias individuais
     for nome_norm, pontos in vitorias_por_jogador.items():
         if pontos > 0:
-            ranking.adicionar_pontos(nome_norm, pontos, semana_expiracao)
+            ranking.adicionar_pontos(
+                nome_norm,
+                pontos,
+                semana_expiracao,
+                ano_exp=ano_expiracao,
+            )
 
             # Atualiza YTD do jogador no ranking
             jogador_reg = ranking.buscar_jogador_por_nome(nome_norm)
@@ -446,6 +451,7 @@ def distribuir_pontos_davis(nome_save, target_save_name=None):
                 vencedor_final,
                 PONTOS_DAVIS_CUP["campeao_bonus"],
                 semana_expiracao,
+                ano_expiracao,
             )
         if finalista:
             _distribuir_bonus_equipe(
@@ -453,6 +459,7 @@ def distribuir_pontos_davis(nome_save, target_save_name=None):
                 finalista,
                 PONTOS_DAVIS_CUP["finalista_bonus"],
                 semana_expiracao,
+                ano_expiracao,
             )
 
     ranking.ordenar()
@@ -461,7 +468,9 @@ def distribuir_pontos_davis(nome_save, target_save_name=None):
     log_simulacao("Pontos da Copa Davis distribuídos.", nome_save)
 
 
-def _distribuir_bonus_equipe(ranking, pais, pontos, semana_expiracao):
+def _distribuir_bonus_equipe(
+    ranking, pais, pontos, semana_expiracao, ano_expiracao=None
+):
     """Da bonus para todos os jogadores principais do pais."""
     # Pega o top 4 do país no ranking para dar o bônus de equipe
     jogadores_pais = [
@@ -473,7 +482,12 @@ def _distribuir_bonus_equipe(ranking, pais, pontos, semana_expiracao):
 
     for j in jogadores_pais[:4]:
         nome_norm = normalizar_nome(j.get("nome", ""))
-        ranking.adicionar_pontos(nome_norm, pontos, semana_expiracao)
+        ranking.adicionar_pontos(
+            nome_norm,
+            pontos,
+            semana_expiracao,
+            ano_exp=ano_expiracao,
+        )
         j["pontos_ytd"] = j.get("pontos_ytd", 0) + pontos
 
 
@@ -513,7 +527,6 @@ def distribuir_pontos_torneio(nome_save, target_save_name=None, genero="masculin
         semana_atual, ano_atual
     )
 
-    jogador_humano_nome = normalizar_nome(estado_torneio.get("jogador", ""))
     genero_torneio = estado_torneio.get("genero", "masculino")
     tournament_type = estado_torneio.get("tournament_data", {}).get("tipo", "ATP 250")
     nome_torneio = estado_torneio.get("torneio", "Torneio Desconhecido")
@@ -692,6 +705,7 @@ def _processar_pontos_modalidade(
     for jogador_nome_norm, progresso_fase in progresso_jogador.items():
         fase_historico = progresso_fase
         pontos_base = pontos_map.get(progresso_fase, 0)
+        jogador_ranking = ranking.buscar_jogador_por_nome(jogador_nome_norm)
 
         if (
             modalidade == "simples"
@@ -737,6 +751,15 @@ def _processar_pontos_modalidade(
                     "modalidade": modalidade,
                 },
             )
+            if modalidade == "simples":
+                if jogador_ranking:
+                    jogador_ranking["pontos_ytd"] = (
+                        jogador_ranking.get("pontos_ytd", 0) + pontos_base
+                    )
+                if jogador_nome_norm == human_name_norm and jogador_humano:
+                    jogador_humano.pontos_ytd = (
+                        getattr(jogador_humano, "pontos_ytd", 0) + pontos_base
+                    )
 
         # 2. Credita dinheiro no ranking
         if prize > 0:
@@ -746,7 +769,6 @@ def _processar_pontos_modalidade(
             if jogador_nome_norm == human_name_norm and jogador_humano:
                 jogador_humano.dinheiro = getattr(jogador_humano, "dinheiro", 0) + prize
 
-        jogador_ranking = ranking.buscar_jogador_por_nome(jogador_nome_norm)
         entrada_historico = {
             "nome": nome_torneio,
             "torneio": nome_torneio,

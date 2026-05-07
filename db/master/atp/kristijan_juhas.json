@@ -1,0 +1,49 @@
+{
+  "nome": "Kristijan Juhas",
+  "nacionalidade": "[RS]",
+  "idade": 24,
+  "overall": 72,
+  "pontos": 30,
+  "atributos": {
+    "saque": 54,
+    "forehand": 52,
+    "backhand": 45,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 48,
+    "lob": 43,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 873,
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 41,
+    "leitura_de_jogo": 30,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 30,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 841,
+  "pontos_ranking": 30,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 177,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

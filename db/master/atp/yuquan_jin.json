@@ -1,0 +1,49 @@
+{
+  "nome": "Yuquan Jin",
+  "nacionalidade": "[CN]",
+  "idade": 25,
+  "overall": 70,
+  "pontos": 10,
+  "atributos": {
+    "saque": 55,
+    "forehand": 40,
+    "backhand": 45,
+    "topspin": 50,
+    "voleio": 58,
+    "slice": 53,
+    "movimento": 55,
+    "lob": 49,
+    "winner": 52,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1179,
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 34,
+    "leitura_de_jogo": 40,
+    "determinacao": 49
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 10,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1177,
+  "pontos_ranking": 10,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Luca Castagnola",
+  "nacionalidade": "[IT]",
+  "idade": 23,
+  "overall": 73,
+  "pontos": 51,
+  "atributos": {
+    "saque": 54,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 45,
+    "voleio": 51,
+    "slice": 52,
+    "movimento": 50,
+    "lob": 55,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 702,
+  "atributos_psicologicos": {
+    "concentracao": 43,
+    "agressividade": 50,
+    "leitura_de_jogo": 32,
+    "determinacao": 34
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 51,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 670,
+  "pontos_ranking": 51,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 83,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

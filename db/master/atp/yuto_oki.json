@@ -1,0 +1,49 @@
+{
+  "nome": "Yuto Oki",
+  "nacionalidade": "[JP]",
+  "idade": 20,
+  "overall": 70,
+  "pontos": 15,
+  "atributos": {
+    "saque": 41,
+    "forehand": 44,
+    "backhand": 41,
+    "topspin": 43,
+    "voleio": 51,
+    "slice": 52,
+    "movimento": 40,
+    "lob": 40,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1069,
+  "atributos_psicologicos": {
+    "concentracao": 43,
+    "agressividade": 46,
+    "leitura_de_jogo": 35,
+    "determinacao": 33
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 15,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1045,
+  "pontos_ranking": 15,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

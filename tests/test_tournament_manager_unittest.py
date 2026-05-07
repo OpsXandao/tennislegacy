@@ -1,6 +1,7 @@
 import unittest
 import types
 import sys
+from unittest.mock import patch
 
 if "colorama" not in sys.modules:
     colorama_stub = types.SimpleNamespace(
@@ -16,6 +17,21 @@ from src.tournament_manager import WeekTournamentManager, fases_por_tipo_torneio
 
 
 class WeekTournamentManagerTests(unittest.TestCase):
+    def test_init_usa_caminho_atual_de_ranking_do_save(self):
+        with (
+            patch("src.tournament_manager.os.makedirs"),
+            patch(
+                "src.tournament_manager.get_caminho_ranking_save",
+                return_value="/tmp/rankings/singles_atp.json",
+            ) as mock_path,
+            patch("src.tournament_manager.SistemaRanking") as mock_ranking,
+        ):
+            mock_ranking.return_value.ranking = [{}]
+            WeekTournamentManager("save_teste", 3, genero="masculino")
+
+        mock_path.assert_called_once_with("save_teste", genero="masculino")
+        mock_ranking.assert_called_once_with("/tmp/rankings/singles_atp.json")
+
     def test_fases_por_tipo_torneio_suporta_circuito_challenger_e_itf(self):
         self.assertEqual(
             fases_por_tipo_torneio("Challenger 125"),

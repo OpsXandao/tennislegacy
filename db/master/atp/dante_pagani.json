@@ -1,0 +1,49 @@
+{
+  "nome": "Dante Pagani",
+  "nacionalidade": "[AR]",
+  "idade": 17,
+  "overall": 71,
+  "pontos": 18,
+  "atributos": {
+    "saque": 50,
+    "forehand": 45,
+    "backhand": 56,
+    "topspin": 40,
+    "voleio": 45,
+    "slice": 40,
+    "movimento": 40,
+    "lob": 52,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1003,
+  "atributos_psicologicos": {
+    "concentracao": 34,
+    "agressividade": 42,
+    "leitura_de_jogo": 31,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 18,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 975,
+  "pontos_ranking": 18,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 176,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,75 @@
+{
+  "nome": "Nikoloz Basilashvili",
+  "nacionalidade": "[GE]",
+  "idade": 34,
+  "overall": 81,
+  "pontos": 464,
+  "atributos": {
+    "saque": 67,
+    "forehand": 66,
+    "backhand": 68,
+    "topspin": 68,
+    "voleio": 64,
+    "slice": 68,
+    "movimento": 61,
+    "lob": 64,
+    "winner": 67,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 132,
+  "atributos_psicologicos": {
+    "concentracao": 65,
+    "agressividade": 47,
+    "leitura_de_jogo": 74,
+    "determinacao": 72
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 464,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Beijing",
+      "ano": 2018,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Hamburg",
+      "ano": 2018,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Hamburg",
+      "ano": 2019,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Doha",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Munich",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 26,
+  "pontos_ranking": 464,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 83,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

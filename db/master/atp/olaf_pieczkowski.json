@@ -1,0 +1,49 @@
+{
+  "nome": "Olaf Pieczkowski",
+  "nacionalidade": "[PL]",
+  "idade": 21,
+  "overall": 75,
+  "pontos": 89,
+  "atributos": {
+    "saque": 49,
+    "forehand": 43,
+    "backhand": 50,
+    "topspin": 54,
+    "voleio": 40,
+    "slice": 48,
+    "movimento": 54,
+    "lob": 45,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 514,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 40,
+    "leitura_de_jogo": 53,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 89,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 482,
+  "pontos_ranking": 89,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 65,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

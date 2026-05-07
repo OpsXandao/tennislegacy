@@ -1,0 +1,49 @@
+{
+  "nome": "Stefan Palosi",
+  "nacionalidade": "[RO]",
+  "idade": 26,
+  "overall": 76,
+  "pontos": 109,
+  "atributos": {
+    "saque": 41,
+    "forehand": 53,
+    "backhand": 43,
+    "topspin": 40,
+    "voleio": 53,
+    "slice": 49,
+    "movimento": 42,
+    "lob": 43,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 463,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 47,
+    "leitura_de_jogo": 47,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 109,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 431,
+  "pontos_ranking": 109,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

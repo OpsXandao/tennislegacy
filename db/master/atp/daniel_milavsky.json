@@ -1,0 +1,49 @@
+{
+  "nome": "Daniel Milavsky",
+  "nacionalidade": "[US]",
+  "idade": 24,
+  "overall": 76,
+  "pontos": 124,
+  "atributos": {
+    "saque": 52,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 51,
+    "voleio": 46,
+    "slice": 40,
+    "movimento": 45,
+    "lob": 52,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 414,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 35,
+    "leitura_de_jogo": 47,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 124,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 382,
+  "pontos_ranking": 124,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 176,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

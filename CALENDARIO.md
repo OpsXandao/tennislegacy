@@ -1,33 +1,30 @@
-# Calendario de implementacao
+# Calendário de Implementação (Status Atual)
 
-Proposta de cronograma em 6 semanas (ajuste conforme o ritmo do projeto).
+Última atualização: 2026-03-01.
 
-## Semana 1 - Base tecnica
-- Padronizar imports e estrutura do pacote
-- Limpar warnings e inconsistencias de dados
-- Documentar fluxo principal e arquivos de save
+Este arquivo agora representa o **roteiro vivo** do projeto (não mais proposta fixa de 6 semanas).
 
-## Semana 2 - Fluxo de temporada
-- Melhorar selecao de torneios por semana
-- Ajustar avancos de semana e descanso
-- Garantir consistencia no estado do jogador
+## Concluído
 
-## Semana 3 - Torneios
-- Revisar geracao de confrontos e avancos de fase
-- Garantir simulacao correta de NPCs
-- Padronizar resultados e placares
+- Split inicial de monólitos com compatibilidade por re-export:
+  - `management -> imprensa + patrocinios`
+  - `progressao -> fadiga`
+  - `jogar_partida -> match_config`
+- Estrutura ATP/WTA com ranking e calendário separados.
+- Fluxo de duplas com vínculo de parceiro salvo no jogador.
+- Exibição de especialistas de duplas no ranking.
 
-## Semana 4 - Ranking e progressao
-- Revisar pontuacao por fase
-- Atualizar ranking ao fim dos torneios
-- Ajustar recompensas e economia
+## Em progresso
 
-## Semana 5 - UX e equilibrio
-- Melhorar mensagens e feedbacks
-- Ajustar dificuldade e atributos
-- Adicionar opcoes de estrategia
+- Padronização total dos calendários em `db/` (ATP e WTA) para aderência ao circuito real.
+- Ajustes finos de UI vs ação real (menus, estados de fase e mensagens).
+- Revisão de torneios por equipes para aderência 1:1 ao formato oficial.
 
-## Semana 6 - Qualidade e testes
-- Testes basicos de leitura/gravar JSON
-- Validacao de integridade dos saves
-- Revisao final de bugs e polimento
+## Próximos passos
+
+1. Consolidar integridade de `db/calendario.json` e `db/calendario_wta.json`.
+2. Expandir cobertura de testes para:
+   - avanço de fase,
+   - distribuição de pontos,
+   - fluxo de duplas e vínculo.
+3. Revisar sincronização mundial (`world_tour_sync`) com torneios jogáveis.

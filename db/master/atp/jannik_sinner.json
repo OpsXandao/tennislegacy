@@ -1,0 +1,145 @@
+{
+  "nome": "Jannik Sinner",
+  "nacionalidade": "[IT]",
+  "idade": 24,
+  "overall": 95,
+  "pontos": 10400,
+  "atributos": {
+    "saque": 90,
+    "forehand": 96,
+    "backhand": 92,
+    "topspin": 93,
+    "voleio": 87,
+    "slice": 85,
+    "movimento": 95,
+    "lob": 90,
+    "winner": 97,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1,
+  "atributos_psicologicos": {
+    "concentracao": 89,
+    "agressividade": 72,
+    "leitura_de_jogo": 69,
+    "determinacao": 92
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 10400,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "NextGen Finals",
+      "ano": 2019,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Sofia",
+      "ano": 2020,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Antwerp",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Great Ocean Road Open",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Sofia",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Washington",
+      "ano": 2021,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Umag",
+      "ano": 2022,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Beijing",
+      "ano": 2023,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Canada Masters",
+      "ano": 2023,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Montpellier",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Vienna",
+      "ano": 2023,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Australian Open",
+      "ano": 2024,
+      "categoria": "Grand Slam"
+    },
+    {
+      "nome": "Cincinnati Masters",
+      "ano": 2024,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Halle",
+      "ano": 2024,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Miami Masters",
+      "ano": 2024,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Rotterdam",
+      "ano": 2024,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Shanghai Masters",
+      "ano": 2024,
+      "categoria": "ATP 1000"
+    },
+    {
+      "nome": "Tour Finals",
+      "ano": 2024,
+      "categoria": "ATP Finals"
+    },
+    {
+      "nome": "Us Open",
+      "ano": 2024,
+      "categoria": "Grand Slam"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 2,
+  "pontos_ranking": 10400,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 77,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Baselines Aggressive"
+}

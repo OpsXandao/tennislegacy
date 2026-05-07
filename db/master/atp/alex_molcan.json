@@ -1,0 +1,49 @@
+{
+  "nome": "Alex Molcan",
+  "nacionalidade": "[SK]",
+  "idade": 28,
+  "overall": 80,
+  "pontos": 302,
+  "atributos": {
+    "saque": 40,
+    "forehand": 55,
+    "backhand": 55,
+    "topspin": 40,
+    "voleio": 42,
+    "slice": 49,
+    "movimento": 40,
+    "lob": 53,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 234,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 31,
+    "leitura_de_jogo": 30,
+    "determinacao": 36
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 302,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 202,
+  "pontos_ranking": 302,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 65,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

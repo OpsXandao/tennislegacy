@@ -1,0 +1,49 @@
+{
+  "nome": "Aleksandr Braynin",
+  "nacionalidade": "[UA]",
+  "idade": 26,
+  "overall": 72,
+  "pontos": 38,
+  "atributos": {
+    "saque": 40,
+    "forehand": 57,
+    "backhand": 58,
+    "topspin": 49,
+    "voleio": 58,
+    "slice": 45,
+    "movimento": 47,
+    "lob": 53,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 806,
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 38,
+    "leitura_de_jogo": 45,
+    "determinacao": 52
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 38,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 774,
+  "pontos_ranking": 38,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 201,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

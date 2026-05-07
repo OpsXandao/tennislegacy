@@ -6,62 +6,114 @@ from src.dados import (
     get_caminho_jogador_save,
     get_caminho_ranking_save,
     get_caminho_torneio_save,
+    validar_nome_save,
 )
-from src.jogador import normalizar_nome
+from src.nome_utils import normalizar_nome
+from src.json_utils import salvar_json_seguro
+from src.log_jogo import log_erro
 
 
 def criar_pasta_save(nome_save):
+    nome_save = validar_nome_save(nome_save)
     caminho = os.path.join(SAVES_DIR, nome_save)
     os.makedirs(caminho, exist_ok=True)
     return caminho
 
 
-def salvar_jogo(nome_save, jogador_inst):
+def salvar_jogo(nome_save: str, jogador_inst):
+    """Salva os dados do jogador e atualiza sua entrada no ranking do save."""
     try:
-        # Salvar jogador.json
+        # 1. Preparar dados para salvar
         if hasattr(jogador_inst, "to_dict"):
             dados = jogador_inst.to_dict()
-        elif isinstance(jogador_inst, dict):
-            dados = jogador_inst
         else:
-            raise ValueError("Tipo de jogador não suportado!")
+            raise ValueError(
+                f"Tipo de objeto jogador inválido: {type(jogador_inst)}. Utilize Jogador.from_dict primeiro."
+            )
 
+        # 2. Salvar o arquivo jogador.json
         criar_pasta_save(nome_save)
         jogador_path = get_caminho_jogador_save(nome_save)
-        with open(jogador_path, "w", encoding="utf-8") as f:
-            json.dump(dados, f, indent=2, ensure_ascii=False)
+        salvar_json_seguro(jogador_path, dados)
 
-        # Atualizar ranking_atp.json (opcional)
-        ranking_path = get_caminho_ranking_save(nome_save)
-        if os.path.exists(ranking_path):
-            with open(ranking_path, encoding="utf-8") as f:
-                ranking = json.load(f)
-
-            # Atualiza informações do jogador no ranking, se existir
-            for j in ranking:
-                if normalizar_nome(j.get("nome", "")) == normalizar_nome(
-                    dados.get("nome", "")
-                ):
-                    j.update(
-                        {
-                            "idade": dados.get("idade"),
-                            "xp": dados.get("xp"),
-                            "nivel": dados.get("nivel"),
-                            "energia": dados.get("energia"),
-                            "ritmo_jogo": dados.get("ritmo_jogo"),
-                            "moral": dados.get("moral"),
-                            "dinheiro": dados.get("dinheiro"),
-                            "atributos": dados.get("atributos"),
-                        }
-                    )
-
-            with open(ranking_path, "w", encoding="utf-8") as f:
-                json.dump(ranking, f, indent=2, ensure_ascii=False)
-
-        print("💾 Jogo salvo automaticamente")
+        # 3. Atualizar o ranking local do save
+        atualizar_jogador_no_ranking(nome_save, dados)
 
     except Exception as e:
-        print(f"❌ Erro ao salvar jogo: {e}")
+        log_erro(nome_save, "salvar_jogo", e)
+
+
+def atualizar_jogador_no_ranking(nome_save: str, dados_jogador: dict):
+    """Atualiza as estatísticas do jogador humano no arquivo de ranking do save."""
+    genero = dados_jogador.get("genero", "masculino")
+    ranking_path = get_caminho_ranking_save(nome_save, genero=genero)
+
+    if not os.path.exists(ranking_path):
+        return
+
+    try:
+        from src.ranking import SistemaRanking
+
+        rk_obj = SistemaRanking(ranking_path)
+        nome_norm = normalizar_nome(dados_jogador.get("nome", ""))
+
+        # Busca o jogador no ranking (rk_obj.buscar_jogador_por_nome já lida com cache e normalização)
+        j = rk_obj.buscar_jogador_por_nome(nome_norm)
+
+        if j:
+            # Campos que devem ser sincronizados com o ranking
+            campos_sync = [
+                "idade",
+                "xp",
+                "nivel",
+                "energia",
+                "ritmo_jogo",
+                "moral",
+                "dinheiro",
+                "atributos",
+                "atributos_psicologicos",
+                "fadiga",
+                "status_lesao",
+                "status_doenca",
+                "pontos_de_skill",
+                "pontos_ytd",
+                "historico_torneios",
+                "transacoes",
+            ]
+            for campo in campos_sync:
+                if campo in dados_jogador:
+                    j[campo] = dados_jogador[campo]
+
+            from src.player_ratings import ajustar_atributo_duplas, calcular_overall_contextual
+
+            ajustar_atributo_duplas(j)
+            j["overall"] = calcular_overall_contextual(j)
+
+            # Salva usando a lógica de sharding (índice lean + arquivo individual)
+            rk_obj.ordenar(recalculate=True)
+            rk_obj.salvar_ranking()
+
+    except Exception as e:
+        log_erro(nome_save, "atualizar_jogador_no_ranking", e)
+
+
+def tirar_snapshot_carreira(jogador, ano=None):
+    """Salva um snapshot dos atributos do jogador para histórico de progressão."""
+    snapshot = {
+        "ano": int(ano if ano is not None else getattr(jogador, "ano", 2026)),
+        "semana": jogador.semana,
+        "nivel": jogador.nivel,
+        "overall": jogador.calcular_overall(),
+        "atributos": jogador.atributos.copy(),
+    }
+
+    # Evita duplicatas na mesma semana e ano
+    if (
+        not jogador.snapshots_carreira
+        or (jogador.snapshots_carreira[-1]["semana"], jogador.snapshots_carreira[-1].get("ano")) 
+           != (jogador.semana, snapshot["ano"])
+    ):
+        jogador.snapshots_carreira.append(snapshot)
 
 
 def salvar_estado_atual_torneio(
@@ -93,52 +145,15 @@ def salvar_estado_atual_torneio(
         estado["jogador_vivo"] = jogador_vivo
         estado["fase_atual"] = fase_atual
 
-        with open(caminho, "w", encoding="utf-8") as f:
-            json.dump(estado, f, indent=2, ensure_ascii=False)
-
-        print("💾 Estado do torneio salvo com sucesso")
+        salvar_json_seguro(caminho, estado)
 
     except Exception as e:
-        print(f"❌ Erro ao salvar estado atual do torneio: {e}")
-
-
-def carregar_estado_torneio(caminho):
-    try:
-        with open(caminho, "r", encoding="utf-8") as f:
-            estado = json.load(f)
-
-        fase = estado.get("fase_atual")
-        rodadas = estado.get("rodadas", {}).get(fase, [])
-        resultados = estado.get("resultados", {}).get(fase, [])
-        jogador_vivo = estado.get("jogador_vivo", True)
-
-        if fase is None:
-            print("⚠️ Erro: Fase atual não definida no estado do torneio.")
-        if not isinstance(rodadas, list):
-            print("⚠️ Erro: Confrontos malformados. Esperado lista.")
-            rodadas = []
-        if not isinstance(resultados, list):
-            print("⚠️ Erro: Resultados malformados. Esperado lista.")
-            resultados = []
-
-        return {
-            "fase_atual": fase or "fase_indefinida",
-            "confrontos": rodadas,
-            "resultados": resultados,
-            "jogador_vivo": jogador_vivo,
-        }
-
-    except (FileNotFoundError, json.JSONDecodeError, TypeError) as e:
-        print(f"⚠️ Estado inválido ou ausente ({e.__class__.__name__}): {e}")
-    except Exception as e:
-        print(f"❌ Erro inesperado ao carregar estado do torneio: {e}")
-
-    return {
-        "fase_atual": "fase_indefinida",
-        "confrontos": [],
-        "resultados": [],
-        "jogador_vivo": True,
-    }
+        log_erro(
+            nome_save,
+            "salvar_estado_atual_torneio",
+            e,
+            {"fase_atual": fase_atual, "jogador_vivo": jogador_vivo},
+        )
 
 
 def atualizar_estado_jogador(caminho, vivo=True, fase_finalizada=False):
@@ -148,7 +163,11 @@ def atualizar_estado_jogador(caminho, vivo=True, fase_finalizada=False):
         estado["jogador_vivo"] = vivo
         if fase_finalizada:
             estado["fase_atual"] = "finalizado"
-        with open(caminho, "w", encoding="utf-8") as f:
-            json.dump(estado, f, indent=2, ensure_ascii=False)
+        salvar_json_seguro(caminho, estado)
     except Exception as e:
-        print(f"❌ Erro ao atualizar status do jogador: {e}")
+        log_erro(
+            None,
+            "atualizar_estado_jogador",
+            e,
+            {"caminho": caminho, "vivo": vivo, "fase_finalizada": fase_finalizada},
+        )

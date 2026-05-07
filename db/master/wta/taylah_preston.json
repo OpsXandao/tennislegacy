@@ -1,0 +1,51 @@
+{
+  "nome": "Taylah Preston",
+  "nacionalidade": "[AU]",
+  "genero": "feminino",
+  "idade": 20,
+  "pontos": 497,
+  "pontos_ranking": 497,
+  "overall": 82,
+  "atributos": {
+    "saque": 64,
+    "forehand": 63,
+    "backhand": 68,
+    "topspin": 67,
+    "voleio": 61,
+    "slice": 62,
+    "movimento": 70,
+    "lob": 65,
+    "fisico": 67,
+    "winner": 66,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 61,
+    "agressividade": 63,
+    "leitura_de_jogo": 68,
+    "determinacao": 62
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 497,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 169,
+  "peso": 59,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

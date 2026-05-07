@@ -1,0 +1,49 @@
+{
+  "nome": "Grigoriy Lomakin",
+  "nacionalidade": "[KZ]",
+  "idade": 27,
+  "overall": 71,
+  "pontos": 22,
+  "atributos": {
+    "saque": 53,
+    "forehand": 43,
+    "backhand": 47,
+    "topspin": 51,
+    "voleio": 58,
+    "slice": 48,
+    "movimento": 43,
+    "lob": 40,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 963,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 52,
+    "leitura_de_jogo": 45,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 22,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 933,
+  "pontos_ranking": 22,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 198,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

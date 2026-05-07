@@ -1,0 +1,85 @@
+{
+  "nome": "Nick Kyrgios",
+  "nacionalidade": "[AU]",
+  "idade": 30,
+  "overall": 72,
+  "pontos": 40,
+  "atributos": {
+    "saque": 44,
+    "forehand": 42,
+    "backhand": 61,
+    "topspin": 46,
+    "voleio": 53,
+    "slice": 50,
+    "movimento": 43,
+    "lob": 55,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 781,
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 55,
+    "leitura_de_jogo": 50,
+    "determinacao": 50
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 40,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Atlanta",
+      "ano": 2016,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Marseille",
+      "ano": 2016,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Tokyo",
+      "ano": 2016,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Brisbane",
+      "ano": 2018,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Acapulco",
+      "ano": 2019,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Washington",
+      "ano": 2019,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Washington",
+      "ano": 2022,
+      "categoria": "ATP 500"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 749,
+  "pontos_ranking": 40,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

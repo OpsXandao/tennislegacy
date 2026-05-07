@@ -1,0 +1,49 @@
+{
+  "nome": "Michael Mmoh",
+  "nacionalidade": "[US]",
+  "idade": 28,
+  "overall": 77,
+  "pontos": 134,
+  "atributos": {
+    "saque": 40,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 50,
+    "voleio": 45,
+    "slice": 49,
+    "movimento": 48,
+    "lob": 40,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 385,
+  "atributos_psicologicos": {
+    "concentracao": 36,
+    "agressividade": 48,
+    "leitura_de_jogo": 30,
+    "determinacao": 35
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 134,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 353,
+  "pontos_ranking": 134,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

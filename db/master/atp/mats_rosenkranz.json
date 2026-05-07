@@ -1,0 +1,49 @@
+{
+  "nome": "Mats Rosenkranz",
+  "nacionalidade": "[DE]",
+  "idade": 27,
+  "overall": 77,
+  "pontos": 164,
+  "atributos": {
+    "saque": 45,
+    "forehand": 60,
+    "backhand": 45,
+    "topspin": 48,
+    "voleio": 63,
+    "slice": 45,
+    "movimento": 46,
+    "lob": 57,
+    "winner": 48,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 340,
+  "atributos_psicologicos": {
+    "concentracao": 55,
+    "agressividade": 42,
+    "leitura_de_jogo": 37,
+    "determinacao": 57
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 164,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 308,
+  "pontos_ranking": 164,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 72,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

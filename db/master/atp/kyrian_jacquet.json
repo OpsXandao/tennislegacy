@@ -1,0 +1,49 @@
+{
+  "nome": "Kyrian Jacquet",
+  "idade": 24,
+  "pontos": 407,
+  "pontos_ranking": 407,
+  "is_bot": false,
+  "nacionalidade": "[FR]",
+  "overall": 81,
+  "atributos": {
+    "saque": 40,
+    "forehand": 52,
+    "backhand": 46,
+    "topspin": 46,
+    "voleio": 54,
+    "slice": 43,
+    "movimento": 48,
+    "lob": 52,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 182,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 37,
+    "leitura_de_jogo": 43,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 407,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 150,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

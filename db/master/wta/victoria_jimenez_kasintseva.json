@@ -1,0 +1,51 @@
+{
+  "nome": "Victoria Jimenez Kasintseva",
+  "nacionalidade": "[AD]",
+  "genero": "feminino",
+  "idade": 20,
+  "pontos": 788,
+  "pontos_ranking": 788,
+  "overall": 84,
+  "atributos": {
+    "saque": 64,
+    "forehand": 64,
+    "backhand": 67,
+    "topspin": 63,
+    "voleio": 65,
+    "slice": 66,
+    "movimento": 69,
+    "lob": 68,
+    "fisico": 67,
+    "winner": 70,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 68,
+    "agressividade": 60,
+    "leitura_de_jogo": 70,
+    "determinacao": 60
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 788,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 59,
+  "mao_dominante": "Canhota",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

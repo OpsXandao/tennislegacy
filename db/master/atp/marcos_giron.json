@@ -1,0 +1,55 @@
+{
+  "nome": "Marcos Giron",
+  "nacionalidade": "[US]",
+  "idade": 32,
+  "overall": 84,
+  "pontos": 870,
+  "atributos": {
+    "saque": 78,
+    "forehand": 79,
+    "backhand": 78,
+    "topspin": 79,
+    "voleio": 78,
+    "slice": 73,
+    "movimento": 78,
+    "lob": 76,
+    "winner": 77,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 43,
+  "atributos_psicologicos": {
+    "concentracao": 58,
+    "agressividade": 70,
+    "leitura_de_jogo": 69,
+    "determinacao": 56
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 870,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Newport",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 29,
+  "pontos_ranking": 870,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 81,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

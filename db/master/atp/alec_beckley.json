@@ -1,0 +1,49 @@
+{
+  "nome": "Alec Beckley",
+  "nacionalidade": "[ZA]",
+  "idade": 24,
+  "overall": 72,
+  "pontos": 35,
+  "atributos": {
+    "saque": 44,
+    "forehand": 48,
+    "backhand": 48,
+    "topspin": 44,
+    "voleio": 51,
+    "slice": 56,
+    "movimento": 52,
+    "lob": 40,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 826,
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 33,
+    "leitura_de_jogo": 35,
+    "determinacao": 35
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 35,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 794,
+  "pontos_ranking": 35,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

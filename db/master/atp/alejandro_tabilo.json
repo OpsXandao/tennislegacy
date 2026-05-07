@@ -1,0 +1,60 @@
+{
+  "nome": "Alejandro Tabilo",
+  "nacionalidade": "[CL]",
+  "idade": 28,
+  "overall": 85,
+  "pontos": 1113,
+  "atributos": {
+    "saque": 76,
+    "forehand": 74,
+    "backhand": 71,
+    "topspin": 76,
+    "voleio": 76,
+    "slice": 68,
+    "movimento": 72,
+    "lob": 73,
+    "winner": 70,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 61,
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 69,
+    "leitura_de_jogo": 60,
+    "determinacao": 65
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1113,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Auckland",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Mallorca",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 27,
+  "pontos_ranking": 1113,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 78,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

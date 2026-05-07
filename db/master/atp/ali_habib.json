@@ -1,0 +1,49 @@
+{
+  "nome": "Ali Habib",
+  "nacionalidade": "[GB]",
+  "idade": 23,
+  "overall": 70,
+  "pontos": 12,
+  "atributos": {
+    "saque": 47,
+    "forehand": 54,
+    "backhand": 45,
+    "topspin": 41,
+    "voleio": 40,
+    "slice": 45,
+    "movimento": 50,
+    "lob": 45,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1124,
+  "atributos_psicologicos": {
+    "concentracao": 32,
+    "agressividade": 45,
+    "leitura_de_jogo": 43,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 12,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1104,
+  "pontos_ranking": 12,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

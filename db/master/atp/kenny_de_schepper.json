@@ -1,0 +1,49 @@
+{
+  "nome": "Kenny De Schepper",
+  "nacionalidade": "[FR]",
+  "idade": 38,
+  "overall": 73,
+  "pontos": 43,
+  "atributos": {
+    "saque": 75,
+    "forehand": 65,
+    "backhand": 68,
+    "topspin": 67,
+    "voleio": 73,
+    "slice": 59,
+    "movimento": 75,
+    "lob": 57,
+    "winner": 60,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 757,
+  "atributos_psicologicos": {
+    "concentracao": 69,
+    "agressividade": 67,
+    "leitura_de_jogo": 60,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 43,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 725,
+  "pontos_ranking": 43,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 203,
+  "peso": 77,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

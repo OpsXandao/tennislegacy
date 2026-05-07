@@ -1,0 +1,49 @@
+{
+  "nome": "Andrea Collarini",
+  "nacionalidade": "[AR]",
+  "idade": 34,
+  "overall": 79,
+  "pontos": 246,
+  "atributos": {
+    "saque": 59,
+    "forehand": 62,
+    "backhand": 48,
+    "topspin": 56,
+    "voleio": 52,
+    "slice": 52,
+    "movimento": 57,
+    "lob": 56,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 265,
+  "atributos_psicologicos": {
+    "concentracao": 55,
+    "agressividade": 53,
+    "leitura_de_jogo": 35,
+    "determinacao": 54
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 246,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 233,
+  "pontos_ranking": 246,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 80,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

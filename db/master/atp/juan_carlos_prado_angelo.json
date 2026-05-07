@@ -1,0 +1,49 @@
+{
+  "nome": "Juan Carlos Prado Angelo",
+  "nacionalidade": "[BO]",
+  "idade": 20,
+  "overall": 79,
+  "pontos": 279,
+  "atributos": {
+    "saque": 48,
+    "forehand": 51,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 48,
+    "slice": 49,
+    "movimento": 48,
+    "lob": 51,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 244,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 41,
+    "leitura_de_jogo": 43,
+    "determinacao": 34
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 279,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 212,
+  "pontos_ranking": 279,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

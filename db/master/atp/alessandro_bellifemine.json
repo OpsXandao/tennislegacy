@@ -1,0 +1,49 @@
+{
+  "nome": "Alessandro Bellifemine",
+  "nacionalidade": "[IT]",
+  "idade": 24,
+  "overall": 69,
+  "pontos": 3,
+  "atributos": {
+    "saque": 56,
+    "forehand": 40,
+    "backhand": 46,
+    "topspin": 47,
+    "voleio": 41,
+    "slice": 48,
+    "movimento": 45,
+    "lob": 51,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1358,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 32,
+    "leitura_de_jogo": 47,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 3,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1644,
+  "pontos_ranking": 3,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 65,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

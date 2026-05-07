@@ -1,0 +1,49 @@
+{
+  "nome": "Thiago Agustin Pernas",
+  "nacionalidade": "[AR]",
+  "idade": 24,
+  "overall": 70,
+  "pontos": 11,
+  "atributos": {
+    "saque": 54,
+    "forehand": 54,
+    "backhand": 49,
+    "topspin": 55,
+    "voleio": 57,
+    "slice": 41,
+    "movimento": 48,
+    "lob": 57,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1141,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 51,
+    "leitura_de_jogo": 54,
+    "determinacao": 48
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 11,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1123,
+  "pontos_ranking": 11,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 85,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

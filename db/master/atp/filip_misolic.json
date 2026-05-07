@@ -1,0 +1,49 @@
+{
+  "nome": "Filip Misolic",
+  "idade": 24,
+  "pontos": 671,
+  "pontos_ranking": 671,
+  "is_bot": false,
+  "nacionalidade": "[AT]",
+  "overall": 83,
+  "atributos": {
+    "saque": 44,
+    "forehand": 56,
+    "backhand": 40,
+    "topspin": 43,
+    "voleio": 51,
+    "slice": 43,
+    "movimento": 43,
+    "lob": 50,
+    "winner": 48,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 154,
+  "atributos_psicologicos": {
+    "concentracao": 36,
+    "agressividade": 48,
+    "leitura_de_jogo": 50,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 671,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 86,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

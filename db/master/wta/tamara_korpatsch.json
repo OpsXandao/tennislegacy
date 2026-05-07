@@ -1,0 +1,57 @@
+{
+  "nome": "Tamara Korpatsch",
+  "nacionalidade": "[DE]",
+  "genero": "feminino",
+  "idade": 30,
+  "pontos": 734,
+  "pontos_ranking": 734,
+  "overall": 83,
+  "atributos": {
+    "saque": 69,
+    "forehand": 68,
+    "backhand": 69,
+    "topspin": 64,
+    "voleio": 65,
+    "slice": 66,
+    "movimento": 62,
+    "lob": 67,
+    "fisico": 63,
+    "winner": 70,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 61,
+    "agressividade": 64,
+    "leitura_de_jogo": 69,
+    "determinacao": 65
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 734,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Cluj Napoca",
+      "ano": 2023,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 170,
+  "peso": 66,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

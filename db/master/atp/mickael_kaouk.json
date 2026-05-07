@@ -1,0 +1,49 @@
+{
+  "nome": "Mickael Kaouk",
+  "nacionalidade": "[FR]",
+  "idade": 17,
+  "overall": 70,
+  "pontos": 10,
+  "atributos": {
+    "saque": 54,
+    "forehand": 45,
+    "backhand": 41,
+    "topspin": 43,
+    "voleio": 58,
+    "slice": 48,
+    "movimento": 51,
+    "lob": 47,
+    "winner": 42,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1165,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 47,
+    "leitura_de_jogo": 36,
+    "determinacao": 38
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 10,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1159,
+  "pontos_ranking": 10,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 176,
+  "peso": 76,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

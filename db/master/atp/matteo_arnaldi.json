@@ -1,0 +1,49 @@
+{
+  "nome": "Matteo Arnaldi",
+  "nacionalidade": "[IT]",
+  "idade": 25,
+  "overall": 83,
+  "pontos": 665,
+  "atributos": {
+    "saque": 82,
+    "forehand": 80,
+    "backhand": 78,
+    "topspin": 82,
+    "voleio": 76,
+    "slice": 83,
+    "movimento": 81,
+    "lob": 78,
+    "winner": 81,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 39,
+  "atributos_psicologicos": {
+    "concentracao": 61,
+    "agressividade": 65,
+    "leitura_de_jogo": 61,
+    "determinacao": 64
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 665,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 29,
+  "pontos_ranking": 665,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 83,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

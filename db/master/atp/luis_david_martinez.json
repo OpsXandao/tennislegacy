@@ -1,0 +1,49 @@
+{
+  "nome": "Luis David Martinez",
+  "nacionalidade": "[VE]",
+  "idade": 36,
+  "overall": 70,
+  "pontos": 10,
+  "atributos": {
+    "saque": 48,
+    "forehand": 60,
+    "backhand": 42,
+    "topspin": 55,
+    "voleio": 41,
+    "slice": 46,
+    "movimento": 50,
+    "lob": 49,
+    "winner": 59,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1157,
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 49,
+    "leitura_de_jogo": 39,
+    "determinacao": 54
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 10,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1147,
+  "pontos_ranking": 10,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

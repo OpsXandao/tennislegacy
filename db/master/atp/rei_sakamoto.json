@@ -1,0 +1,49 @@
+{
+  "nome": "Rei Sakamoto",
+  "nacionalidade": "[JP]",
+  "idade": 19,
+  "overall": 81,
+  "pontos": 386,
+  "atributos": {
+    "saque": 57,
+    "forehand": 47,
+    "backhand": 43,
+    "topspin": 56,
+    "voleio": 42,
+    "slice": 54,
+    "movimento": 58,
+    "lob": 57,
+    "winner": 59,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 189,
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 56,
+    "leitura_de_jogo": 46,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 386,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 157,
+  "pontos_ranking": 386,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 193,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

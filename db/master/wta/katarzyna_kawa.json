@@ -1,0 +1,51 @@
+{
+  "nome": "Katarzyna Kawa",
+  "nacionalidade": "[PL]",
+  "genero": "feminino",
+  "idade": 33,
+  "pontos": 516,
+  "pontos_ranking": 516,
+  "overall": 82,
+  "atributos": {
+    "saque": 60,
+    "forehand": 70,
+    "backhand": 65,
+    "topspin": 68,
+    "voleio": 64,
+    "slice": 68,
+    "movimento": 69,
+    "lob": 60,
+    "fisico": 66,
+    "winner": 66,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 68,
+    "agressividade": 63,
+    "leitura_de_jogo": 64,
+    "determinacao": 68
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 516,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 70,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

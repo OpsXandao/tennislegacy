@@ -1,0 +1,49 @@
+{
+  "nome": "Federico Arnaboldi",
+  "nacionalidade": "[IT]",
+  "idade": 25,
+  "overall": 76,
+  "pontos": 120,
+  "atributos": {
+    "saque": 44,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 51,
+    "voleio": 53,
+    "slice": 54,
+    "movimento": 54,
+    "lob": 41,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 424,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 30,
+    "leitura_de_jogo": 42,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 120,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 392,
+  "pontos_ranking": 120,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

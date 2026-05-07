@@ -1,0 +1,49 @@
+{
+  "nome": "Guido Ivan Justo",
+  "nacionalidade": "[AR]",
+  "idade": 28,
+  "overall": 78,
+  "pontos": 187,
+  "atributos": {
+    "saque": 58,
+    "forehand": 54,
+    "backhand": 40,
+    "topspin": 45,
+    "voleio": 53,
+    "slice": 45,
+    "movimento": 51,
+    "lob": 54,
+    "winner": 55,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 309,
+  "atributos_psicologicos": {
+    "concentracao": 43,
+    "agressividade": 41,
+    "leitura_de_jogo": 36,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 187,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 277,
+  "pontos_ranking": 187,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

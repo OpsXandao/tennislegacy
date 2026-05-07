@@ -1,0 +1,49 @@
+{
+  "nome": "Hiromasa Koyama",
+  "nacionalidade": "[JP]",
+  "idade": 18,
+  "overall": 69,
+  "pontos": 5,
+  "atributos": {
+    "saque": 45,
+    "forehand": 45,
+    "backhand": 44,
+    "topspin": 40,
+    "voleio": 45,
+    "slice": 44,
+    "movimento": 40,
+    "lob": 49,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1322,
+  "atributos_psicologicos": {
+    "concentracao": 43,
+    "agressividade": 30,
+    "leitura_de_jogo": 42,
+    "determinacao": 39
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 5,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1417,
+  "pontos_ranking": 5,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 65,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

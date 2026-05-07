@@ -1,0 +1,49 @@
+{
+  "nome": "Vadym Konovchuk",
+  "nacionalidade": "[UA]",
+  "idade": 22,
+  "overall": 69,
+  "pontos": 8,
+  "atributos": {
+    "saque": 52,
+    "forehand": 52,
+    "backhand": 55,
+    "topspin": 47,
+    "voleio": 56,
+    "slice": 47,
+    "movimento": 48,
+    "lob": 40,
+    "winner": 50,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1239,
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 37,
+    "leitura_de_jogo": 38,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 8,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1243,
+  "pontos_ranking": 8,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 178,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

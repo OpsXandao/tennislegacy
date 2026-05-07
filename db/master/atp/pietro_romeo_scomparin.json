@@ -1,0 +1,49 @@
+{
+  "nome": "Pietro Romeo Scomparin",
+  "nacionalidade": "[IT]",
+  "idade": 24,
+  "overall": 71,
+  "pontos": 19,
+  "atributos": {
+    "saque": 44,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 45,
+    "movimento": 48,
+    "lob": 50,
+    "winner": 54,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 993,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 44,
+    "leitura_de_jogo": 30,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 19,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 965,
+  "pontos_ranking": 19,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

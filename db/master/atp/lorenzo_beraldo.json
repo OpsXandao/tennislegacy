@@ -1,0 +1,49 @@
+{
+  "nome": "Lorenzo Beraldo",
+  "nacionalidade": "[IT]",
+  "idade": 19,
+  "overall": 69,
+  "pontos": 8,
+  "atributos": {
+    "saque": 48,
+    "forehand": 60,
+    "backhand": 56,
+    "topspin": 52,
+    "voleio": 48,
+    "slice": 45,
+    "movimento": 50,
+    "lob": 50,
+    "winner": 55,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1222,
+  "atributos_psicologicos": {
+    "concentracao": 56,
+    "agressividade": 49,
+    "leitura_de_jogo": 46,
+    "determinacao": 53
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 8,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1226,
+  "pontos_ranking": 8,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

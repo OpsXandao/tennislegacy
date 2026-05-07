@@ -1,0 +1,49 @@
+{
+  "nome": "Facundo Mena",
+  "nacionalidade": "[AR]",
+  "idade": 33,
+  "overall": 77,
+  "pontos": 145,
+  "atributos": {
+    "saque": 58,
+    "forehand": 57,
+    "backhand": 45,
+    "topspin": 53,
+    "voleio": 57,
+    "slice": 63,
+    "movimento": 60,
+    "lob": 57,
+    "winner": 45,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 365,
+  "atributos_psicologicos": {
+    "concentracao": 58,
+    "agressividade": 42,
+    "leitura_de_jogo": 42,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 145,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 333,
+  "pontos_ranking": 145,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Younes Lalami",
+  "nacionalidade": "[MA]",
+  "idade": 24,
+  "overall": 71,
+  "pontos": 20,
+  "atributos": {
+    "saque": 57,
+    "forehand": 51,
+    "backhand": 44,
+    "topspin": 48,
+    "voleio": 53,
+    "slice": 54,
+    "movimento": 54,
+    "lob": 46,
+    "winner": 58,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 981,
+  "atributos_psicologicos": {
+    "concentracao": 51,
+    "agressividade": 37,
+    "leitura_de_jogo": 49,
+    "determinacao": 45
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 20,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 953,
+  "pontos_ranking": 20,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

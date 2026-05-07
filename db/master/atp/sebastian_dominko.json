@@ -1,0 +1,49 @@
+{
+  "nome": "Sebastian Dominko",
+  "nacionalidade": "[SI]",
+  "idade": 22,
+  "overall": 70,
+  "pontos": 13,
+  "atributos": {
+    "saque": 44,
+    "forehand": 40,
+    "backhand": 47,
+    "topspin": 40,
+    "voleio": 54,
+    "slice": 50,
+    "movimento": 46,
+    "lob": 40,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1093,
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 46,
+    "leitura_de_jogo": 30,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 13,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1071,
+  "pontos_ranking": 13,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 203,
+  "peso": 79,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,62 @@
+{
+  "nome": "Mayar Sherif",
+  "nacionalidade": "[EG]",
+  "genero": "feminino",
+  "idade": 29,
+  "pontos": 754,
+  "pontos_ranking": 754,
+  "overall": 83,
+  "atributos": {
+    "saque": 66,
+    "forehand": 65,
+    "backhand": 62,
+    "topspin": 68,
+    "voleio": 60,
+    "slice": 60,
+    "movimento": 69,
+    "lob": 62,
+    "fisico": 61,
+    "winner": 60,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 69,
+    "agressividade": 60,
+    "leitura_de_jogo": 66,
+    "determinacao": 65
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 754,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Parma",
+      "ano": 2022,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Buenos Aires 125",
+      "ano": 2024,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 59,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

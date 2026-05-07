@@ -1,0 +1,80 @@
+{
+  "nome": "Ugo Humbert",
+  "nacionalidade": "[FR]",
+  "idade": 27,
+  "overall": 86,
+  "pontos": 1285,
+  "atributos": {
+    "saque": 83,
+    "forehand": 86,
+    "backhand": 83,
+    "topspin": 83,
+    "voleio": 75,
+    "slice": 79,
+    "movimento": 79,
+    "lob": 83,
+    "winner": 79,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 22,
+  "atributos_psicologicos": {
+    "concentracao": 81,
+    "agressividade": 66,
+    "leitura_de_jogo": 59,
+    "determinacao": 84
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 1285,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Antwerp",
+      "ano": 2020,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Auckland",
+      "ano": 2020,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Halle",
+      "ano": 2021,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Metz",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Dubai",
+      "ano": 2024,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Marseille",
+      "ano": 2024,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 28,
+  "pontos_ranking": 1285,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 89,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "Aggressive Baseliner"
+}

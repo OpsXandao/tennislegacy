@@ -1,0 +1,112 @@
+{
+  "nome": "Anastasia Pavlyuchenkova",
+  "nacionalidade": "[RU]",
+  "genero": "feminino",
+  "idade": 34,
+  "pontos": 716,
+  "pontos_ranking": 716,
+  "overall": 83,
+  "atributos": {
+    "saque": 70,
+    "forehand": 70,
+    "backhand": 67,
+    "topspin": 61,
+    "voleio": 70,
+    "slice": 67,
+    "movimento": 67,
+    "lob": 61,
+    "fisico": 61,
+    "winner": 64,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 63,
+    "agressividade": 66,
+    "leitura_de_jogo": 66,
+    "determinacao": 63
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 716,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Istanbul",
+      "ano": 2010,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Monterrey",
+      "ano": 2010,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Monterrey",
+      "ano": 2011,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Monterrey",
+      "ano": 2013,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Oeiras",
+      "ano": 2013,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Moscow",
+      "ano": 2014,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Paris",
+      "ano": 2014,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Linz",
+      "ano": 2015,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Hong Kong",
+      "ano": 2017,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Monterrey",
+      "ano": 2017,
+      "categoria": "WTA 500"
+    },
+    {
+      "nome": "Rabat",
+      "ano": 2017,
+      "categoria": "WTA 250"
+    },
+    {
+      "nome": "Strasbourg",
+      "ano": 2018,
+      "categoria": "WTA 500"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 177,
+  "peso": 64,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Ramkumar Ramanathan",
+  "nacionalidade": "[IN]",
+  "idade": 31,
+  "overall": 69,
+  "pontos": 9,
+  "atributos": {
+    "saque": 60,
+    "forehand": 53,
+    "backhand": 64,
+    "topspin": 55,
+    "voleio": 50,
+    "slice": 61,
+    "movimento": 53,
+    "lob": 54,
+    "winner": 52,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1188,
+  "atributos_psicologicos": {
+    "concentracao": 56,
+    "agressividade": 52,
+    "leitura_de_jogo": 51,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 9,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1188,
+  "pontos_ranking": 9,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 86,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

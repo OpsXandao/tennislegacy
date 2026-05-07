@@ -1,0 +1,49 @@
+{
+  "nome": "Daniel Siniakov",
+  "nacionalidade": "[CZ]",
+  "idade": 23,
+  "overall": 73,
+  "pontos": 55,
+  "atributos": {
+    "saque": 40,
+    "forehand": 47,
+    "backhand": 51,
+    "topspin": 48,
+    "voleio": 58,
+    "slice": 57,
+    "movimento": 46,
+    "lob": 40,
+    "winner": 57,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 671,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 53,
+    "leitura_de_jogo": 31,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 55,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 639,
+  "pontos_ranking": 55,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

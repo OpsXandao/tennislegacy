@@ -1,0 +1,49 @@
+{
+  "nome": "Kamil Majchrzak",
+  "nacionalidade": "[PL]",
+  "idade": 30,
+  "overall": 84,
+  "pontos": 920,
+  "atributos": {
+    "saque": 66,
+    "forehand": 70,
+    "backhand": 68,
+    "topspin": 72,
+    "voleio": 66,
+    "slice": 71,
+    "movimento": 69,
+    "lob": 66,
+    "winner": 62,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 88,
+  "atributos_psicologicos": {
+    "concentracao": 73,
+    "agressividade": 69,
+    "leitura_de_jogo": 47,
+    "determinacao": 67
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 920,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 26,
+  "pontos_ranking": 920,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 81,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

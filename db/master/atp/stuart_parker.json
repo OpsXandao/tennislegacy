@@ -1,0 +1,49 @@
+{
+  "nome": "Stuart Parker",
+  "nacionalidade": "[GB]",
+  "idade": 28,
+  "overall": 76,
+  "pontos": 106,
+  "atributos": {
+    "saque": 47,
+    "forehand": 58,
+    "backhand": 45,
+    "topspin": 47,
+    "voleio": 40,
+    "slice": 51,
+    "movimento": 47,
+    "lob": 53,
+    "winner": 45,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 470,
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 41,
+    "leitura_de_jogo": 34,
+    "determinacao": 55
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 106,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 438,
+  "pontos_ranking": 106,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

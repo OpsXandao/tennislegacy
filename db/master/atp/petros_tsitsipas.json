@@ -1,0 +1,49 @@
+{
+  "nome": "Petros Tsitsipas",
+  "nacionalidade": "[GR]",
+  "idade": 25,
+  "overall": 72,
+  "pontos": 32,
+  "atributos": {
+    "saque": 45,
+    "forehand": 45,
+    "backhand": 60,
+    "topspin": 52,
+    "voleio": 63,
+    "slice": 57,
+    "movimento": 49,
+    "lob": 58,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 850,
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 39,
+    "leitura_de_jogo": 34,
+    "determinacao": 53
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 32,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 818,
+  "pontos_ranking": 32,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

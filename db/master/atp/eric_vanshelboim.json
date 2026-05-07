@@ -1,0 +1,49 @@
+{
+  "nome": "Eric Vanshelboim",
+  "nacionalidade": "[UA]",
+  "idade": 24,
+  "overall": 75,
+  "pontos": 76,
+  "atributos": {
+    "saque": 43,
+    "forehand": 55,
+    "backhand": 57,
+    "topspin": 54,
+    "voleio": 47,
+    "slice": 48,
+    "movimento": 50,
+    "lob": 49,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 563,
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 50,
+    "leitura_de_jogo": 43,
+    "determinacao": 53
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 76,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 531,
+  "pontos_ranking": 76,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Filip Cristian Jianu",
+  "nacionalidade": "[RO]",
+  "idade": 24,
+  "overall": 78,
+  "pontos": 225,
+  "atributos": {
+    "saque": 40,
+    "forehand": 48,
+    "backhand": 40,
+    "topspin": 50,
+    "voleio": 42,
+    "slice": 57,
+    "movimento": 42,
+    "lob": 55,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 280,
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 30,
+    "leitura_de_jogo": 40,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 225,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 248,
+  "pontos_ranking": 225,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

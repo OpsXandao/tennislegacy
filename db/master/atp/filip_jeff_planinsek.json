@@ -1,0 +1,49 @@
+{
+  "nome": "Filip Jeff Planinsek",
+  "nacionalidade": "[SI]",
+  "idade": 24,
+  "overall": 74,
+  "pontos": 65,
+  "atributos": {
+    "saque": 48,
+    "forehand": 52,
+    "backhand": 53,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 53,
+    "movimento": 43,
+    "lob": 49,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 618,
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 35,
+    "leitura_de_jogo": 39,
+    "determinacao": 54
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 65,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 586,
+  "pontos_ranking": 65,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

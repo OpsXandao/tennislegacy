@@ -1,0 +1,49 @@
+{
+  "nome": "Stefano Travaglia",
+  "nacionalidade": "[IT]",
+  "idade": 34,
+  "overall": 80,
+  "pontos": 370,
+  "atributos": {
+    "saque": 49,
+    "forehand": 40,
+    "backhand": 54,
+    "topspin": 40,
+    "voleio": 45,
+    "slice": 53,
+    "movimento": 40,
+    "lob": 40,
+    "winner": 55,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 195,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 31,
+    "leitura_de_jogo": 41,
+    "determinacao": 32
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 370,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 163,
+  "pontos_ranking": 370,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 185,
+  "peso": 82,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

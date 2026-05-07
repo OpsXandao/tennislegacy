@@ -1,0 +1,49 @@
+{
+  "nome": "Sheng Tang",
+  "nacionalidade": "[CN]",
+  "idade": 26,
+  "overall": 69,
+  "pontos": 2,
+  "atributos": {
+    "saque": 55,
+    "forehand": 57,
+    "backhand": 48,
+    "topspin": 49,
+    "voleio": 51,
+    "slice": 54,
+    "movimento": 55,
+    "lob": 50,
+    "winner": 56,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1365,
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 47,
+    "leitura_de_jogo": 51,
+    "determinacao": 49
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 2,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1851,
+  "pontos_ranking": 2,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

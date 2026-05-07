@@ -1,0 +1,49 @@
+{
+  "nome": "Qian Sun",
+  "nacionalidade": "[CN]",
+  "idade": 24,
+  "overall": 71,
+  "pontos": 20,
+  "atributos": {
+    "saque": 40,
+    "forehand": 46,
+    "backhand": 50,
+    "topspin": 40,
+    "voleio": 50,
+    "slice": 45,
+    "movimento": 41,
+    "lob": 44,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 979,
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 46,
+    "leitura_de_jogo": 43,
+    "determinacao": 30
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 20,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 949,
+  "pontos_ranking": 20,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

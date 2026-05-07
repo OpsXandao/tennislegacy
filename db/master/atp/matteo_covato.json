@@ -1,0 +1,49 @@
+{
+  "nome": "Matteo Covato",
+  "nacionalidade": "[IT]",
+  "idade": 20,
+  "overall": 72,
+  "pontos": 42,
+  "atributos": {
+    "saque": 53,
+    "forehand": 43,
+    "backhand": 51,
+    "topspin": 46,
+    "voleio": 44,
+    "slice": 47,
+    "movimento": 40,
+    "lob": 53,
+    "winner": 44,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 770,
+  "atributos_psicologicos": {
+    "concentracao": 32,
+    "agressividade": 50,
+    "leitura_de_jogo": 44,
+    "determinacao": 47
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 42,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 738,
+  "pontos_ranking": 42,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 74,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

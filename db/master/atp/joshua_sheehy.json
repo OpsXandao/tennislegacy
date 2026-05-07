@@ -1,0 +1,49 @@
+{
+  "nome": "Joshua Sheehy",
+  "nacionalidade": "[US]",
+  "idade": 29,
+  "overall": 74,
+  "pontos": 74,
+  "atributos": {
+    "saque": 54,
+    "forehand": 43,
+    "backhand": 40,
+    "topspin": 48,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 46,
+    "lob": 45,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 568,
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 30,
+    "leitura_de_jogo": 50,
+    "determinacao": 33
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 74,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 536,
+  "pontos_ranking": 74,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 188,
+  "peso": 74,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

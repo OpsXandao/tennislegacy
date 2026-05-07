@@ -1,0 +1,49 @@
+{
+  "nome": "Simon Reveniau",
+  "nacionalidade": "[FR]",
+  "idade": 27,
+  "overall": 70,
+  "pontos": 15,
+  "atributos": {
+    "saque": 48,
+    "forehand": 46,
+    "backhand": 40,
+    "topspin": 42,
+    "voleio": 40,
+    "slice": 45,
+    "movimento": 53,
+    "lob": 40,
+    "winner": 56,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1057,
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 32,
+    "leitura_de_jogo": 43,
+    "determinacao": 55
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 15,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1031,
+  "pontos_ranking": 15,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

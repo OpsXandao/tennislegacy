@@ -1,0 +1,49 @@
+{
+  "nome": "Juan Sebastian Gomez",
+  "nacionalidade": "[CO]",
+  "idade": 33,
+  "overall": 74,
+  "pontos": 65,
+  "atributos": {
+    "saque": 51,
+    "forehand": 49,
+    "backhand": 50,
+    "topspin": 48,
+    "voleio": 60,
+    "slice": 57,
+    "movimento": 44,
+    "lob": 54,
+    "winner": 58,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 616,
+  "atributos_psicologicos": {
+    "concentracao": 36,
+    "agressividade": 34,
+    "leitura_de_jogo": 54,
+    "determinacao": 46
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 65,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 584,
+  "pontos_ranking": 65,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

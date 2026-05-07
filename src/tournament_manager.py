@@ -1,7 +1,11 @@
 import os
 import json
 import random
-from src.dados import SAVES_DIR, carregar_ranking, get_caminho_ranking_global
+from src.dados import (
+    carregar_ranking,
+    get_caminho_ranking_global,
+    get_caminho_ranking_save,
+)
 from src.json_utils import salvar_json_seguro
 from src.ranking import SistemaRanking
 from src.jogador import normalizar_nome
@@ -77,11 +81,7 @@ class WeekTournamentManager:
         self.caminho_base = get_caminho_calendario_save(nome_save, genero=genero)
         os.makedirs(self.caminho_base, exist_ok=True)
 
-        ranking_path = os.path.join(
-            SAVES_DIR,
-            nome_save,
-            f"ranking_{'atp' if genero == 'masculino' else 'wta'}.json",
-        )
+        ranking_path = get_caminho_ranking_save(nome_save, genero=genero)
         self.ranking = SistemaRanking(ranking_path)
         # Fallback: se o ranking do save estiver vazio, usa o ranking global.
         # Ocorre em saves criados antes de copiar ambos os rankings.

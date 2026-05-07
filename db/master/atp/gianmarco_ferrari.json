@@ -1,0 +1,49 @@
+{
+  "nome": "Gianmarco Ferrari",
+  "nacionalidade": "[IT]",
+  "idade": 25,
+  "overall": 75,
+  "pontos": 97,
+  "atributos": {
+    "saque": 55,
+    "forehand": 41,
+    "backhand": 52,
+    "topspin": 42,
+    "voleio": 48,
+    "slice": 41,
+    "movimento": 43,
+    "lob": 54,
+    "winner": 54,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 500,
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 32,
+    "leitura_de_jogo": 51,
+    "determinacao": 51
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 97,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 468,
+  "pontos_ranking": 97,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 75,
+  "mao_dominante": "Canhoto",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

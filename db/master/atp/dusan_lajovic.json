@@ -1,0 +1,60 @@
+{
+  "nome": "Dusan Lajovic",
+  "nacionalidade": "[RS]",
+  "idade": 35,
+  "overall": 82,
+  "pontos": 541,
+  "atributos": {
+    "saque": 66,
+    "forehand": 64,
+    "backhand": 70,
+    "topspin": 65,
+    "voleio": 70,
+    "slice": 67,
+    "movimento": 60,
+    "lob": 68,
+    "winner": 70,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 124,
+  "atributos_psicologicos": {
+    "concentracao": 63,
+    "agressividade": 48,
+    "leitura_de_jogo": 47,
+    "determinacao": 62
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 541,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [
+    {
+      "nome": "Umag",
+      "ano": 2019,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Banja Luka",
+      "ano": 2023,
+      "categoria": "ATP 250"
+    }
+  ],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 26,
+  "pontos_ranking": 541,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

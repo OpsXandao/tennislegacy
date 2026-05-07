@@ -1,0 +1,57 @@
+{
+  "nome": "Arantxa Rus",
+  "nacionalidade": "[NL]",
+  "genero": "feminino",
+  "idade": 35,
+  "pontos": 560,
+  "pontos_ranking": 560,
+  "overall": 82,
+  "atributos": {
+    "saque": 68,
+    "forehand": 68,
+    "backhand": 68,
+    "topspin": 65,
+    "voleio": 61,
+    "slice": 60,
+    "movimento": 65,
+    "lob": 65,
+    "fisico": 63,
+    "winner": 70,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 66,
+    "agressividade": 68,
+    "leitura_de_jogo": 70,
+    "determinacao": 66
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 560,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [
+    {
+      "nome": "Hamburg",
+      "ano": 2023,
+      "categoria": "WTA 250"
+    }
+  ],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 180,
+  "peso": 59,
+  "mao_dominante": "Canhota",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

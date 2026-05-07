@@ -1,0 +1,51 @@
+{
+  "nome": "Linda Klimovičová",
+  "nacionalidade": "[PL]",
+  "genero": "feminino",
+  "idade": 21,
+  "pontos": 537,
+  "pontos_ranking": 537,
+  "overall": 82,
+  "atributos": {
+    "saque": 66,
+    "forehand": 67,
+    "backhand": 61,
+    "topspin": 64,
+    "voleio": 65,
+    "slice": 69,
+    "movimento": 68,
+    "lob": 67,
+    "fisico": 70,
+    "winner": 62,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 60,
+    "agressividade": 69,
+    "leitura_de_jogo": 61,
+    "determinacao": 60
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 537,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 171,
+  "peso": 59,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Jan Choinski",
+  "idade": 29,
+  "pontos": 523,
+  "pontos_ranking": 523,
+  "is_bot": false,
+  "nacionalidade": "[GB]",
+  "overall": 82,
+  "atributos": {
+    "saque": 44,
+    "forehand": 51,
+    "backhand": 42,
+    "topspin": 42,
+    "voleio": 57,
+    "slice": 54,
+    "movimento": 53,
+    "lob": 43,
+    "winner": 51,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 165,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 34,
+    "leitura_de_jogo": 31,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 523,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 121,
+  "is_lean": false,
+  "altura": 196,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court"
+}

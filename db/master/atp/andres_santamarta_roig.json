@@ -1,0 +1,49 @@
+{
+  "nome": "Andres Santamarta Roig",
+  "nacionalidade": "[ES]",
+  "idade": 19,
+  "overall": 74,
+  "pontos": 58,
+  "atributos": {
+    "saque": 52,
+    "forehand": 40,
+    "backhand": 40,
+    "topspin": 40,
+    "voleio": 40,
+    "slice": 40,
+    "movimento": 40,
+    "lob": 42,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 653,
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 44,
+    "leitura_de_jogo": 30,
+    "determinacao": 43
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 58,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 621,
+  "pontos_ranking": 58,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

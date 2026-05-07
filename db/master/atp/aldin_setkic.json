@@ -1,0 +1,49 @@
+{
+  "nome": "Aldin Setkic",
+  "nacionalidade": "[BA]",
+  "idade": 38,
+  "overall": 69,
+  "pontos": 7,
+  "atributos": {
+    "saque": 53,
+    "forehand": 58,
+    "backhand": 61,
+    "topspin": 49,
+    "voleio": 48,
+    "slice": 51,
+    "movimento": 47,
+    "lob": 55,
+    "winner": 47,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 1261,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 52,
+    "leitura_de_jogo": 45,
+    "determinacao": 44
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 7,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 1277,
+  "pontos_ranking": 7,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 191,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

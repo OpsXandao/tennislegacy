@@ -1,0 +1,49 @@
+{
+  "nome": "Jay Friend",
+  "nacionalidade": "[JP]",
+  "idade": 22,
+  "overall": 75,
+  "pontos": 88,
+  "atributos": {
+    "saque": 45,
+    "forehand": 45,
+    "backhand": 52,
+    "topspin": 51,
+    "voleio": 40,
+    "slice": 52,
+    "movimento": 40,
+    "lob": 40,
+    "winner": 53,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 517,
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 39,
+    "leitura_de_jogo": 30,
+    "determinacao": 31
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 88,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 485,
+  "pontos_ranking": 88,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 175,
+  "peso": 68,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

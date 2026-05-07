@@ -1,0 +1,49 @@
+{
+  "nome": "Enzo Couacaud",
+  "nacionalidade": "[FR]",
+  "idade": 30,
+  "overall": 73,
+  "pontos": 47,
+  "atributos": {
+    "saque": 50,
+    "forehand": 54,
+    "backhand": 54,
+    "topspin": 53,
+    "voleio": 41,
+    "slice": 61,
+    "movimento": 49,
+    "lob": 54,
+    "winner": 49,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "id": 723,
+  "atributos_psicologicos": {
+    "concentracao": 41,
+    "agressividade": 52,
+    "leitura_de_jogo": 37,
+    "determinacao": 40
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 47,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "trofeus": [],
+  "historico_torneios": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pico_carreira": 691,
+  "pontos_ranking": 47,
+  "is_bot": false,
+  "is_lean": false,
+  "altura": 183,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

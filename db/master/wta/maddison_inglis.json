@@ -1,0 +1,51 @@
+{
+  "nome": "Maddison Inglis",
+  "nacionalidade": "[AU]",
+  "genero": "feminino",
+  "idade": 28,
+  "pontos": 597,
+  "pontos_ranking": 597,
+  "overall": 82,
+  "atributos": {
+    "saque": 67,
+    "forehand": 69,
+    "backhand": 62,
+    "topspin": 66,
+    "voleio": 67,
+    "slice": 60,
+    "movimento": 63,
+    "lob": 68,
+    "fisico": 62,
+    "winner": 62,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 61,
+    "agressividade": 70,
+    "leitura_de_jogo": 66,
+    "determinacao": 65
+  },
+  "pontos_detalhados": [
+    {
+      "pontos": 597,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "historico_torneios": [],
+  "trofeus": [],
+  "pontos_ytd": 0,
+  "dinheiro": 0,
+  "pontos_duplas": 0,
+  "pontos_detalhados_duplas": [],
+  "pontos_ranking_duplas": 0,
+  "moral": 70,
+  "fadiga": 0,
+  "energia": 100,
+  "is_lean": false,
+  "altura": 171,
+  "peso": 66,
+  "mao_dominante": "Destra",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}
