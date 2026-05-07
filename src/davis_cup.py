@@ -11,6 +11,7 @@ mas precisa ser convocado pela seleção nacional.
 """
 
 import random
+import logging
 
 from src.dados import (
     get_caminho_ranking_save,
@@ -29,498 +30,24 @@ from src.progressao import handle_xp_e_level_up
 from src.fadiga import handle_fadiga_e_lesao
 from src.save import salvar_jogo
 from src.json_utils import salvar_json_seguro
-from src.io_utils import (
-    safe_input,
-    print_blue,
-    print_green,
-    print_yellow,
-    print_red,
-    clear_screen,
-)
 from src.log_jogo import log_erro
 from src.duplas import fundir_dupla as _fundir_dupla
+from src.davis_cup_constants import (
+    PAISES_DAVIS_CUP,
+    EQUIPES_QUALIFIERS_R1_2026,
+    EQUIPES_QUALIFIERS_R2_2026,
+    EQUIPES_FINAL8_2026,
+    TIES_QUALIFIERS_R1_2026,
+    TIES_QUALIFIERS_R2_2026,
+    TIES_FINAL8_QUARTAS_2026,
+    TIES_QUALIFIERS_R1_INFO_2026,
+    TIES_QUALIFIERS_R2_INFO_2026,
+    FINAL8_INFO_2026,
+    _MAPA_PAIS_3_PARA_2,
+)
+from src.davis_selecao import SelecaoNacional, _codigo_pais_canonico
 
-# Países participantes da Davis Cup (18 equipes no formato atual)
-# Nomes seguem o formato do ranking_atp.json
-PAISES_DAVIS_CUP = [
-    "[IT] Itália",
-    "[ES] Espanha",
-    "[AU] Austrália",
-    "[CA] Canadá",
-    "[HR] Croácia",
-    "[NL] Holanda",
-    "[US] USA",
-    "[GB] Grã-Bretanha",
-    "[DE] Alemanha",
-    "[FR] França",
-    "[AR] Argentina",
-    "[CZ] Czechia",
-    "[SE] Suécia",
-    "[BE] Bélgica",
-    "[CH] Suíça",
-    "[RS] Sérvia",
-    "[CL] Chile",
-    "[KR] Coreia do Sul",
-    "[BR] Brasil",
-    "[PT] Portugal",
-    "[JP] Japão",
-    "[PL] Polônia",
-]
-
-# Formato real de 2026:
-# - Qualifiers 1ª Rodada: 13 ties (26 equipes), confronto melhor de 5 partidas.
-# - Qualifiers 2ª Rodada: 7 ties (14 equipes), confronto melhor de 5 partidas.
-# - Final 8: mata-mata (quartas, semifinal, final), confronto melhor de 3 partidas.
-EQUIPES_QUALIFIERS_R1_2026 = [
-    "[AU] Austrália",
-    "[HU] Hungria",
-    "[DE] Alemanha",
-    "[US] USA",
-    "[DK] Dinamarca",
-    "[HR] Croácia",
-    "[FR] França",
-    "[ES] Espanha",
-    "[CZ] Czechia",
-    "[JP] Japão",
-    "[AT] Áustria",
-    "[BE] Bélgica",
-    "[AR] Argentina",
-    "[SE] Suécia",
-    "[CA] Canadá",
-    "[IL] Israel",
-    "[TW] Chinese Taipei",
-    "[RS] Sérvia",
-    "[SK] Eslováquia",
-    "[BR] Brasil",
-    "[CH] Suíça",
-    "[KR] Coreia do Sul",
-    "[GB] Grã-Bretanha",
-    "[FI] Finlândia",
-    "[CL] Chile",
-    "[NO] Noruega",
-]
-
-EQUIPES_QUALIFIERS_R2_2026 = [
-    "[AR] Argentina",
-    "[BE] Bélgica",
-    "[AT] Áustria",
-    "[DE] Alemanha",
-    "[CZ] Czechia",
-    "[ES] Espanha",
-    "[FR] França",
-    "[NL] Holanda",
-    "[AU] Austrália",
-    "[HU] Hungria",
-    "[JP] Japão",
-    "[US] USA",
-    "[DK] Dinamarca",
-    "[HR] Croácia",
-]
-
-EQUIPES_FINAL8_2026 = [
-    "[IT] Itália",
-    "[AR] Argentina",
-    "[BE] Bélgica",
-    "[AT] Áustria",
-    "[DE] Alemanha",
-    "[CZ] Czechia",
-    "[ES] Espanha",
-    "[FR] França",
-]
-
-TIES_QUALIFIERS_R1_2026 = [
-    ("[AU] Austrália", "[SE] Suécia"),
-    ("[HU] Hungria", "[CA] Canadá"),
-    ("[DE] Alemanha", "[IL] Israel"),
-    ("[US] USA", "[TW] Chinese Taipei"),
-    ("[DK] Dinamarca", "[RS] Sérvia"),
-    ("[HR] Croácia", "[SK] Eslováquia"),
-    ("[FR] França", "[BR] Brasil"),
-    ("[ES] Espanha", "[CH] Suíça"),
-    ("[CZ] Czechia", "[KR] Coreia do Sul"),
-    ("[JP] Japão", "[GB] Grã-Bretanha"),
-    ("[AT] Áustria", "[FI] Finlândia"),
-    ("[BE] Bélgica", "[CL] Chile"),
-    ("[AR] Argentina", "[NO] Noruega"),
-]
-
-TIES_QUALIFIERS_R2_2026 = [
-    ("[NL] Holanda", "[AR] Argentina"),
-    ("[AU] Austrália", "[BE] Bélgica"),
-    ("[HU] Hungria", "[AT] Áustria"),
-    ("[JP] Japão", "[DE] Alemanha"),
-    ("[US] USA", "[CZ] Czechia"),
-    ("[DK] Dinamarca", "[ES] Espanha"),
-    ("[HR] Croácia", "[FR] França"),
-]
-
-TIES_FINAL8_QUARTAS_2026 = [
-    ("[FR] França", "[BE] Bélgica"),
-    ("[IT] Itália", "[AT] Áustria"),
-    ("[ES] Espanha", "[CZ] Czechia"),
-    ("[AR] Argentina", "[DE] Alemanha"),
-]
-
-# Sedes oficiais 2026 por tie (team A = mandante), conforme calendário real.
-TIES_QUALIFIERS_R1_INFO_2026 = {
-    ("AU", "SE"): {"cidade": "Stockholm", "pais": "Suécia", "superficie": "Hard (i)"},
-    ("HU", "CA"): {"cidade": "Montreal", "pais": "Canadá", "superficie": "Hard (i)"},
-    ("DE", "IL"): {"cidade": "Vilnius", "pais": "Lituânia", "superficie": "Hard (i)"},
-    ("US", "TW"): {
-        "cidade": "Taipei",
-        "pais": "Chinese Taipei",
-        "superficie": "Hard (i)",
-    },
-    ("DK", "RS"): {
-        "cidade": "Copenhagen",
-        "pais": "Dinamarca",
-        "superficie": "Hard (i)",
-    },
-    ("HR", "SK"): {"cidade": "Osijek", "pais": "Croácia", "superficie": "Hard (i)"},
-    ("FR", "BR"): {"cidade": "Orléans", "pais": "França", "superficie": "Hard (i)"},
-    ("ES", "CH"): {"cidade": "Biel", "pais": "Suíça", "superficie": "Hard (i)"},
-    ("CZ", "KR"): {
-        "cidade": "Ostrava",
-        "pais": "Czechia",
-        "superficie": "Hard (i)",
-    },
-    ("JP", "GB"): {"cidade": "Miki", "pais": "Japão", "superficie": "Hard (i)"},
-    ("AT", "FI"): {"cidade": "Schwechat", "pais": "Áustria", "superficie": "Clay (i)"},
-    ("BE", "CL"): {"cidade": "Hasselt", "pais": "Bélgica", "superficie": "Hard (i)"},
-    ("AR", "NO"): {"cidade": "Fjellhamar", "pais": "Noruega", "superficie": "Hard (i)"},
-}
-
-TIES_QUALIFIERS_R2_INFO_2026 = {
-    ("NL", "AR"): {"cidade": "Groningen", "pais": "Holanda", "superficie": "Hard (i)"},
-    ("AU", "BE"): {"cidade": "Sydney", "pais": "Austrália", "superficie": "Hard"},
-    ("HU", "AT"): {"cidade": "Debrecen", "pais": "Hungria", "superficie": "Hard (i)"},
-    ("JP", "DE"): {"cidade": "Tokyo", "pais": "Japão", "superficie": "Hard (i)"},
-    ("US", "CZ"): {
-        "cidade": "Delray Beach",
-        "pais": "Estados Unidos",
-        "superficie": "Hard",
-    },
-    ("DK", "ES"): {"cidade": "Marbella", "pais": "Espanha", "superficie": "Clay"},
-    ("HR", "FR"): {"cidade": "Osijek", "pais": "Croácia", "superficie": "Clay (i)"},
-}
-
-FINAL8_INFO_2026 = {"cidade": "Bologna", "pais": "Itália", "superficie": "Hard (i)"}
-
-_MAPA_PAIS_3_PARA_2 = {
-    "ITA": "IT",
-    "ESP": "ES",
-    "AUS": "AU",
-    "CAN": "CA",
-    "CRO": "HR",
-    "NED": "NL",
-    "USA": "US",
-    "GBR": "GB",
-    "GER": "DE",
-    "FRA": "FR",
-    "ARG": "AR",
-    "CZE": "CZ",
-    "SWE": "SE",
-    "BEL": "BE",
-    "SUI": "CH",
-    "SRB": "RS",
-    "CHI": "CL",
-    "KOR": "KR",
-    "BRA": "BR",
-    "POR": "PT",
-    "JPN": "JP",
-    "POL": "PL",
-    "AUT": "AT",
-    "HUN": "HU",
-    "DEN": "DK",
-    "ITA": "IT",
-    "ESP": "ES",
-    "AUS": "AU",
-    "CAN": "CA",
-    "CRO": "HR",
-    "RUS": "RU",
-    "CHN": "CN",
-    "KAZ": "KZ",
-    "SVK": "SK",
-    "FIN": "FI",
-    "NOR": "NO",
-    "ISR": "IL",
-    "IND": "IN",
-    "GRE": "GR",
-    "UKR": "UA",
-    "ROU": "RO",
-    "RSA": "ZA",
-    "MEX": "MX",
-}
-
-
-def _codigo_pais_canonico(pais):
-    """Normaliza país para código ISO-2 (sem colchetes), para comparação robusta."""
-    if not pais:
-        return ""
-    texto = str(pais).strip()
-    if texto.startswith("[") and "]" in texto:
-        fechamento = texto.find("]")
-        codigo = texto[1:fechamento].strip().upper()
-    else:
-        codigo = texto.strip().upper()
-    if len(codigo) == 3:
-        return _MAPA_PAIS_3_PARA_2.get(codigo, codigo)
-    return codigo
-
-
-class SelecaoNacional:
-    """Representa uma seleção nacional na Copa Davis / BJK Cup."""
-
-    def __init__(self, pais, ranking, genero="masculino"):
-        self.pais = pais
-        self.ranking = ranking
-        self.genero = genero
-        self.jogadores = self._buscar_jogadores_do_pais()
-        self.convocados = []
-        self.capitao = self._gerar_capitao(genero)
-        self.nome_copa = (
-            "Copa Davis" if genero == "masculino" else "Billie Jean King Cup"
-        )
-
-    def _buscar_jogadores_do_pais(self):
-        """Busca jogadores reais do país (save + global) para convocação, filtrando lesionados."""
-        pais_norm = self._normalizar_pais(self.pais)
-        jogadores = []
-        vistos = set()
-
-        def _adicionar_fonte(lista):
-            for j in lista:
-                if not isinstance(j, dict):
-                    continue
-                if self._normalizar_pais(j.get("nacionalidade", "")) != pais_norm:
-                    continue
-
-                # Filtra jogadores lesionados da convocação
-                status_lesao = j.get("status_lesao", {})
-                if isinstance(status_lesao, dict) and status_lesao.get("lesionado"):
-                    continue
-
-                nome = j.get("nome", "")
-                nome_norm = normalizar_nome(nome)
-                if not nome_norm or nome_norm in vistos:
-                    continue
-                if str(nome).startswith("Jogador "):
-                    continue
-                jogadores.append(j)
-                vistos.add(nome_norm)
-
-        # Fonte principal: ranking da carreira/save.
-        _adicionar_fonte(self.ranking.ranking)
-
-        # Fonte complementar: ranking global do gênero, para evitar elenco genérico.
-        genero_ref = "feminino" if self.genero == "feminino" else "masculino"
-        ranking_global = carregar_ranking(get_caminho_ranking_global(genero=genero_ref))
-        _adicionar_fonte(ranking_global)
-
-        # Ordena por força competitiva.
-        jogadores.sort(
-            key=lambda x: (
-                int(x.get("pontos_ranking", 0) or 0),
-                int(x.get("pontos", 0) or 0),
-                int(x.get("overall", 0) or 0),
-            ),
-            reverse=True,
-        )
-        return jogadores
-
-    def _normalizar_pais(self, pais):
-        """Normaliza o nome do país para comparação."""
-        return _codigo_pais_canonico(pais)
-
-    def _gerar_capitao(self, genero="masculino"):
-        """Gera um capitão real para a seleção baseada no gênero."""
-        capitaes_atp = {
-            "[IT]": "Filippo Volandri",
-            "[ES]": "David Ferrer",
-            "[AU]": "Lleyton Hewitt",
-            "[CA]": "Frank Dancevic",
-            "[HR]": "Vedran Martić",
-            "[NL]": "Paul Haarhuis",
-            "[US]": "Bob Bryan",
-            "[GB]": "Leon Smith",
-            "[DE]": "Michael Kohlmann",
-            "[FR]": "Arnaud Clément",
-            "[AR]": "Guillermo Coria",
-            "[CZ]": "Jaroslav Navrátil",
-            "[BR]": "Jaime Oncins",
-            "[RS]": "Viktor Troicki",
-            "[CL]": "Nicolás Massú",
-        }
-
-        capitaes_wta = {
-            "[IT]": "Tathiana Garbin",
-            "[ES]": "Anabel Medina Garrigues",
-            "[AU]": "Alicia Molik",
-            "[CA]": "Heidi El Tabakh",
-            "[US]": "Lindsay Davenport",
-            "[GB]": "Anne Keothavong",
-            "[DE]": "Rainer Schüttler",
-            "[FR]": "Julien Benneteau",
-            "[CZ]": "Petr Pála",
-            "[BR]": "Luiz Peniza",
-            "[PL]": "Dawid Celt",
-            "[CH]": "Heinz Günthardt",
-        }
-
-        codigo = self.pais.split("]")[0] + "]" if self.pais.startswith("[") else ""
-        if genero == "feminino":
-            return capitaes_wta.get(codigo, f"Capitã de {self.pais}")
-        return capitaes_atp.get(codigo, f"Capitão de {self.pais}")
-
-    def verificar_elegibilidade(self, jogador):
-        """
-        Verifica se o jogador é elegível para convocação.
-        Retorna (elegivel, posicao_no_pais, mensagem).
-        """
-        nome_normalizado = normalizar_nome(jogador.nome)
-
-        # Verifica se o jogador é do mesmo país
-        if self._normalizar_pais(jogador.nacionalidade) != self._normalizar_pais(
-            self.pais
-        ):
-            return False, None, "Você não é elegível para esta seleção."
-
-        # Encontra a posição do jogador entre os compatriotas
-        for i, j in enumerate(self.jogadores):
-            if normalizar_nome(j.get("nome", "")) == nome_normalizado:
-                return True, i + 1, f"Você é o #{i + 1} do seu país."
-
-        # Jogador não está no ranking, adiciona temporariamente
-        return True, len(self.jogadores) + 1, "Você ainda não está no ranking nacional."
-
-    def convocar_jogador(self, jogador, posicao_convocacao=1):
-        """
-        Convoca um jogador para a seleção.
-        posicao_convocacao: 1 = titular principal, 2 = segundo titular
-        """
-        jogador_dict = {
-            "nome": jogador.nome,
-            "nacionalidade": jogador.nacionalidade,
-            "overall": (
-                jogador.calcular_overall()
-                if hasattr(jogador, "calcular_overall")
-                else jogador.get("overall", 70)
-            ),
-            "atributos": (
-                jogador.atributos
-                if hasattr(jogador, "atributos")
-                else jogador.get("atributos", {})
-            ),
-            "posicao_convocacao": posicao_convocacao,
-            "e_jogador_principal": True,
-        }
-
-        # Remove se já estava convocado
-        self.convocados = [
-            c
-            for c in self.convocados
-            if normalizar_nome(c.get("nome", "")) != normalizar_nome(jogador.nome)
-        ]
-
-        # Adiciona na posição correta
-        self.convocados.insert(posicao_convocacao - 1, jogador_dict)
-
-    def completar_convocacao(self, num_jogadores=5):
-        """Completa a convocação com outros jogadores do país."""
-        nomes_convocados = {normalizar_nome(c.get("nome", "")) for c in self.convocados}
-
-        for j in self.jogadores:
-            if len(self.convocados) >= num_jogadores:
-                break
-            if normalizar_nome(j.get("nome", "")) not in nomes_convocados:
-                j_copia = dict(j)
-                j_copia["posicao_convocacao"] = len(self.convocados) + 1
-                j_copia["e_jogador_principal"] = False
-                self.convocados.append(j_copia)
-                nomes_convocados.add(normalizar_nome(j.get("nome", "")))
-
-        # Se ainda faltam jogadores, gera fictícios baseados na força da nação
-        if len(self.convocados) < num_jogadores:
-            # Obtém posição da nação para calibrar força dos fictícios
-            nacoes_dados = carregar_ranking_nacoes_davis()
-            nacoes_lista = nacoes_dados.get("nations", [])
-            pos_nacao = 50  # Default se não encontrada
-            for i, n in enumerate(
-                sorted(nacoes_lista, key=lambda x: x.get("points", 0), reverse=True), 1
-            ):
-                if self._normalizar_pais(n.get("name", "")) == self._normalizar_pais(
-                    self.pais
-                ):
-                    pos_nacao = i
-                    break
-
-            # Base de overall: Top 10 ganha bônus, fora do Top 50 penalidade
-            base_ovr = 75 - min(25, pos_nacao // 2)
-
-            while len(self.convocados) < num_jogadores:
-                pos = len(self.convocados) + 1
-                nome_ficticio = gerar_nome_completo(self.pais, self.genero)
-
-                # Garante que o nome não é duplicado na equipe
-                while normalizar_nome(nome_ficticio) in nomes_convocados:
-                    nome_ficticio = gerar_nome_completo(self.pais, self.genero)
-
-                ovr_ficticio = max(45, min(85, base_ovr + random.randint(-5, 5)))
-                ficticio = {
-                    "nome": nome_ficticio,
-                    "nacionalidade": self.pais,
-                    "overall": ovr_ficticio,
-                    "atributos": self._gerar_atributos_ficticios(ovr_ficticio),
-                    "posicao_convocacao": pos,
-                    "e_jogador_principal": False,
-                    "e_ficticio": True,
-                }
-                self.convocados.append(ficticio)
-                nomes_convocados.add(normalizar_nome(nome_ficticio))
-
-    def _gerar_atributos_ficticios(self, overall=60):
-        """Gera atributos para jogadores fictícios baseados em um overall alvo."""
-        variacao = 10
-        return {
-            "saque": random.randint(overall - variacao, overall + variacao),
-            "forehand": random.randint(overall - variacao, overall + variacao),
-            "backhand": random.randint(overall - variacao, overall + variacao),
-            "topspin": random.randint(overall - variacao, overall + variacao),
-            "voleio": random.randint(overall - variacao, overall + variacao),
-            "slice": random.randint(overall - variacao, overall + variacao),
-            "movimento": random.randint(overall - variacao, overall + variacao),
-            "lob": random.randint(overall - variacao, overall + variacao),
-            "winner": random.randint(overall - variacao, overall + variacao),
-            "fisico": random.randint(overall - variacao, overall + variacao),
-        }
-
-    def obter_titulares_simples(self):
-        """Retorna os 2 jogadores que jogarão os simples."""
-        return self.convocados[:2] if len(self.convocados) >= 2 else self.convocados
-
-    def exibir_convocacao(self):
-        """Exibe a lista de convocados."""
-        print(f"\n📋 CONVOCAÇÃO - {self.pais}")
-        print(f"   Capitão: {self.capitao}")
-        print("=" * 50)
-
-        for i, jogador in enumerate(self.convocados, 1):
-            nome = jogador.get("nome", "??")
-            overall = jogador.get("overall", "??")
-            posicao = (
-                "Simples 1"
-                if i == 1
-                else ("Simples 2" if i == 2 else ("Duplas" if i <= 4 else "Reserva"))
-            )
-
-            if jogador.get("e_jogador_principal"):
-                print_green(f"  {i}. ⭐ {nome} (OVR: {overall}) - {posicao}")
-            elif jogador.get("e_ficticio"):
-                print_yellow(f"  {i}. 🆕 {nome} (OVR: {overall}) - {posicao}")
-            else:
-                print(f"  {i}. {nome} (OVR: {overall}) - {posicao}")
-
-        print("=" * 50)
+logger = logging.getLogger(__name__)
 
 
 class DavisCup:
@@ -642,10 +169,12 @@ class DavisCup:
         Retorna True se foi convocado E aceitou, False caso contrário.
         """
         if interactive:
-            clear_screen()
-            print_blue("\n" + "=" * 60)
-            print_blue(f"           🏆 {self._nome_competicao().upper()} - CONVOCAÇÃO")
-            print_blue("=" * 60)
+            None  # clear_screen removed
+            logger.debug("\n" + "=" * 60)
+            logger.debug(
+                f"           🏆 {self._nome_competicao().upper()} - CONVOCAÇÃO"
+            )
+            logger.debug("=" * 60)
 
             print(f"\n📍 Sua nacionalidade: {self.pais_jogador}")
             print("📍 Capitão da seleção: ", end="")
@@ -677,20 +206,20 @@ class DavisCup:
 
             print("-" * 60)
 
-            safe_input("\nPressione Enter para ver a convocação...")
+            None  # input removed
 
         # Verifica convocação
         convocado, posicao, mensagem = self.verificar_convocacao()
 
         if interactive:
-            clear_screen()
-            print_blue("\n" + "=" * 60)
-            print_blue("           📋 LISTA DE CONVOCADOS")
-            print_blue("=" * 60)
+            None  # clear_screen removed
+            logger.debug("\n" + "=" * 60)
+            logger.debug("           📋 LISTA DE CONVOCADOS")
+            logger.debug("=" * 60)
 
         if convocado:
             if interactive:
-                print_green(f"\n✅ {mensagem}")
+                logger.debug(f"\n✅ {mensagem}")
 
             # Define posição do jogador na convocação
             if posicao == 1:
@@ -713,56 +242,56 @@ class DavisCup:
 
                 # Pergunta se aceita a convocação
                 print()
-                print_yellow("=" * 60)
-                print_yellow("   O capitão aguarda sua resposta sobre a convocação...")
-                print_yellow("=" * 60)
+                logger.debug("=" * 60)
+                logger.debug("   O capitão aguarda sua resposta sobre a convocação...")
+                logger.debug("=" * 60)
                 print()
                 print("[1] ✅ Aceitar convocação - Defender as cores do país")
                 print("[2] ❌ Recusar convocação - Priorizar carreira individual")
                 print()
 
                 while True:
-                    escolha = safe_input("Sua decisão: ").strip()
+                    escolha = None  # input removed.strip()
                     if escolha == "1":
-                        print_green(
+                        logger.debug(
                             f"\n🎉 Você aceitou representar {self.pais_jogador} na {self._nome_competicao()}!"
                         )
-                        safe_input("Pressione Enter para continuar...")
+                        None  # input removed
                         return True
                     elif escolha == "2":
                         return self._processar_recusa_convocacao(posicao)
                     else:
-                        print_red("Opção inválida. Digite 1 ou 2.")
+                        logger.debug("Opção inválida. Digite 1 ou 2.")
             else:
                 # No backend da API, assumimos aceite instantâneo.
                 return True
 
         else:
             if interactive:
-                print_red(f"\n❌ {mensagem}")
+                logger.debug(f"\n❌ {mensagem}")
 
                 # Mostra a convocação sem o jogador
                 self.selecao.completar_convocacao(5)
                 print("\n📋 Convocados para representar o país:")
                 self.selecao.exibir_convocacao()
 
-                print_yellow(
+                logger.debug(
                     "\n💪 Continue trabalhando duro para ser convocado na próxima!"
                 )
 
-                safe_input("\nPressione Enter para continuar...")
+                None  # input removed
             else:
                 self.selecao.completar_convocacao(5)
             return False
 
     def _processar_recusa_convocacao(self, posicao):
         """Processa a recusa de convocação pelo jogador."""
-        clear_screen()
-        print_blue("\n" + "=" * 60)
-        print_blue("           ❌ CONVOCAÇÃO RECUSADA")
-        print_blue("=" * 60)
+        None  # clear_screen removed
+        logger.debug("\n" + "=" * 60)
+        logger.debug("           ❌ CONVOCAÇÃO RECUSADA")
+        logger.debug("=" * 60)
 
-        print_yellow(
+        logger.debug(
             f"\n📰 NOTÍCIA: {self.jogador.nome} recusa convocação para a {self._nome_competicao()}!"
         )
         print()
@@ -792,7 +321,7 @@ class DavisCup:
             impacto_moral = -3
 
         print()
-        print_yellow(f"📊 Impacto: Moral {impacto_moral}")
+        logger.debug(f"📊 Impacto: Moral {impacto_moral}")
 
         # Aplica penalidade de moral
         if hasattr(self.jogador, "moral"):
@@ -801,7 +330,7 @@ class DavisCup:
         # Mostra a convocação substituta
         print()
         print("-" * 60)
-        print_yellow("O capitão convocou um substituto:")
+        logger.debug("O capitão convocou um substituto:")
         print("-" * 60)
 
         # Reconstrói a convocação sem o jogador
@@ -812,10 +341,10 @@ class DavisCup:
         self.selecao.exibir_convocacao()
 
         print()
-        print_yellow(f"A {self._nome_competicao()} seguirá sem sua participação.")
-        print_yellow("Você poderá focar em outros torneios do calendário.")
+        logger.debug(f"A {self._nome_competicao()} seguirá sem sua participação.")
+        logger.debug("Você poderá focar em outros torneios do calendário.")
 
-        safe_input("\nPressione Enter para continuar...")
+        None  # input removed
         return False
 
     def _modo_competicao(self):
@@ -1248,20 +777,20 @@ class DavisCup:
         if fase == "qualifiers" and not mandante_jogador:
             bonus_mando = -0.03
 
-        clear_screen()
-        print_blue(f"\n{'=' * 60}")
+        None  # clear_screen removed
+        logger.debug(f"\n{'=' * 60}")
         titulo_comp = (
             "COPA DAVIS"
             if self._nome_competicao() == "Davis Cup"
             else "BILLIE JEAN KING CUP"
         )
-        print_blue(
+        logger.debug(
             f"     🏆 {titulo_comp} ({fase.upper()}) - {pais_jogador} vs {adversario_pais}"
         )
-        print_blue(f"{'=' * 60}")
+        logger.debug(f"{'=' * 60}")
         if fase == "qualifiers":
             label_mando = "MANDANTE" if mandante_jogador else "VISITANTE"
-            print_yellow(f"📍 Condição do tie: {label_mando}")
+            logger.debug(f"📍 Condição do tie: {label_mando}")
 
         equipe_adversaria = [
             self._garantir_atributos_jogador(j)
@@ -1307,7 +836,7 @@ class DavisCup:
         for i, adv in enumerate(equipe_adversaria[:4], 1):
             print(f"   {i}. {adv.get('nome', '??')} (OVR: {adv.get('overall', '??')})")
 
-        safe_input("\nPressione Enter para começar o confronto...")
+        None  # input removed
 
         vitorias_jogador = 0
         vitorias_adversario = 0
@@ -1347,18 +876,18 @@ class DavisCup:
             }
             self._atualizar_estado_apos_confronto(resultado_confronto)
 
-            clear_screen()
-            print_blue(f"\n{'=' * 60}")
-            print_blue("           RESULTADO FINAL")
-            print_blue(f"{'=' * 60}\n")
+            None  # clear_screen removed
+            logger.debug(f"\n{'=' * 60}")
+            logger.debug("           RESULTADO FINAL")
+            logger.debug(f"{'=' * 60}\n")
             print(
                 f"   {pais_jogador}  {vitorias_jogador}  x  {vitorias_adversario}  {adversario_pais}\n"
             )
             if vencedor_confronto == pais_jogador:
-                print_green(f"🎉 {pais_jogador} VENCE O CONFRONTO!")
+                logger.debug(f"🎉 {pais_jogador} VENCE O CONFRONTO!")
             else:
-                print_red(f"😔 {adversario_pais} vence o confronto.")
-            safe_input("\nPressione Enter para continuar...")
+                logger.debug(f"😔 {adversario_pais} vence o confronto.")
+            None  # input removed
             return {
                 "vencedor": vencedor_confronto,
                 "placar": f"{vitorias_jogador}-{vitorias_adversario}",
@@ -1484,13 +1013,13 @@ class DavisCup:
                 vitorias_jogador >= alvo_vitorias
                 or vitorias_adversario >= alvo_vitorias
             ):
-                print_yellow(
+                logger.debug(
                     f"\n🏁 O confronto já foi decidido ({vitorias_jogador}x{vitorias_adversario})!"
                 )
-                print_yellow("As partidas restantes não serão disputadas.")
+                logger.debug("As partidas restantes não serão disputadas.")
                 break
 
-            clear_screen()
+            None  # clear_screen removed
             _registrar_placar_parcial()
             print(f"\n🎾 Partida {idx}: {tipo_partida.upper()}")
 
@@ -1511,11 +1040,11 @@ class DavisCup:
                 ):
                     # Segurança extra: não simula duplas se o tie já estiver decidido.
                     break
-                clear_screen()
-                print_blue(f"\n{'=' * 60}")
-                print_blue(f"     DUPLAS: {pais_jogador} vs {adversario_pais}")
-                print_blue(f"{'=' * 60}\n")
-                print_yellow("🎾 A partida de duplas será simulada...")
+                None  # clear_screen removed
+                logger.debug(f"\n{'=' * 60}")
+                logger.debug(f"     DUPLAS: {pais_jogador} vs {adversario_pais}")
+                logger.debug(f"{'=' * 60}\n")
+                logger.debug("🎾 A partida de duplas será simulada...")
                 print(
                     f"   {dupla_j_a.get('nome', 'Dupla A')} / {dupla_j_b.get('nome', 'Dupla B')}"
                 )
@@ -1542,12 +1071,12 @@ class DavisCup:
                     vitorias_jogador += 1
                     placar = f"{sets_a}-{sets_b}"
                     vencedor = pais_jogador
-                    print_green(f"\n✅ {pais_jogador} vence as duplas! ({placar})")
+                    logger.debug(f"\n✅ {pais_jogador} vence as duplas! ({placar})")
                 else:
                     vitorias_adversario += 1
                     placar = f"{sets_b}-{sets_a}"
                     vencedor = adversario_pais
-                    print_red(f"\n❌ {adversario_pais} vence as duplas! ({placar})")
+                    logger.debug(f"\n❌ {adversario_pais} vence as duplas! ({placar})")
 
                 # Registrar vínculo com o parceiro (se o jogador estava na dupla)
                 nome_j_norm = normalizar_nome(self.jogador.nome)
@@ -1587,10 +1116,10 @@ class DavisCup:
                 if isinstance(p_b, dict)
                 else getattr(p_b, "nome", "??")
             )
-            clear_screen()
-            print_blue(f"\n{'=' * 60}")
-            print_blue(f"     SIMPLES {idx}: {nome_a} vs {nome_b}")
-            print_blue(f"{'=' * 60}\n")
+            None  # clear_screen removed
+            logger.debug(f"\n{'=' * 60}")
+            logger.debug(f"     SIMPLES {idx}: {nome_a} vs {nome_b}")
+            logger.debug(f"{'=' * 60}\n")
 
             jogador_humano_no_jogo = normalizar_nome(nome_a) == normalizar_nome(
                 self.jogador.nome
@@ -1643,10 +1172,10 @@ class DavisCup:
 
             if venceu:
                 vitorias_jogador += 1
-                print_green(f"\n✅ {pais_jogador} vence! Placar: {placar}")
+                logger.debug(f"\n✅ {pais_jogador} vence! Placar: {placar}")
             else:
                 vitorias_adversario += 1
-                print_red(f"\n❌ {adversario_pais} vence! Placar: {placar}")
+                logger.debug(f"\n❌ {adversario_pais} vence! Placar: {placar}")
 
             resultados_partidas.append(
                 {
@@ -1661,7 +1190,7 @@ class DavisCup:
             )
             _registrar_placar_parcial()
             if vitorias_jogador < alvo_vitorias and vitorias_adversario < alvo_vitorias:
-                safe_input("\nPressione Enter para a próxima partida...")
+                None  # input removed
 
         return _finalizar_confronto()
 
@@ -1874,9 +1403,9 @@ class DavisCup:
                 )
                 or {}
             )
-            print_blue(f"\n{'=' * 60}")
-            print_blue("           📊 DAVIS CUP QUALIFIERS")
-            print_blue(f"{'=' * 60}")
+            logger.debug(f"\n{'=' * 60}")
+            logger.debug("           📊 DAVIS CUP QUALIFIERS")
+            logger.debug(f"{'=' * 60}")
             modo_davis = estado.get("modo_davis")
             modo_label = (
                 "Carreira (ranking de nações)"
@@ -1895,9 +1424,9 @@ class DavisCup:
             print("Formato: melhor de 5 partidas (2 simples + 1 duplas + 2 simples)")
             return
 
-        print_blue(f"\n{'=' * 60}")
-        print_blue("             📊 DAVIS CUP - FINAL 8")
-        print_blue(f"{'=' * 60}")
+        logger.debug(f"\n{'=' * 60}")
+        logger.debug("             📊 DAVIS CUP - FINAL 8")
+        logger.debug(f"{'=' * 60}")
         for fase_chave in ("quartas", "semifinal", "final"):
             confrontos = estado.get("eliminatorias", {}).get(fase_chave, [])
             if not confrontos:
@@ -2299,7 +1828,7 @@ def criar_torneio_davis(torneio_data, jogador, nome_save, semana, interactive=Tr
 
     if interactive:
         nome_competicao = estado.get("tipo", "Davis Cup")
-        print_green(f"\n🏆 {nome_competicao} iniciada!")
+        logger.debug(f"\n🏆 {nome_competicao} iniciada!")
         if estado.get("fase_atual") == "qualifiers":
             confronto = estado.get("confronto_atual") or {}
             print(
@@ -2322,7 +1851,7 @@ def criar_torneio_davis(torneio_data, jogador, nome_save, semana, interactive=Tr
 
         davis.exibir_tabela_grupo()
 
-        safe_input("\nPressione Enter para continuar...")
+        None  # input removed
 
     return davis
 
