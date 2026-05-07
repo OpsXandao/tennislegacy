@@ -192,6 +192,24 @@ export interface Patrocinio {
   semanas_restantes: number
 }
 
+export interface PatrocinioDisponivel {
+  id: string
+  nome: string
+  nivel: string
+  valor_mensal: number
+  valor_semanal: number
+  requisito_ranking: number
+  requisito_seguidores: number
+  elegivel: boolean
+  motivo_bloqueio: string | null
+  descricao: string
+}
+
+export interface AssinarPatrocinioResponse {
+  ok: boolean
+  mensagem: string
+}
+
 export interface SavePreview {
   nome: string
   jogador_nome: string

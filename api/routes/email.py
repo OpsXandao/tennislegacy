@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 
 from api.session import Session, obter_sessao_ativa
-from src.patrocinios import processar_acao_email_carreira
 from src.save import salvar_jogo
+from src.services.communication_service import processar_acao_email
 
 router = APIRouter(prefix="/api/email", tags=["email"])
 
@@ -61,7 +61,7 @@ def processar_email(
 
     if req.acao == "aceitar":
         rk = session.ranking_atp if j.genero == "masculino" else session.ranking_wta
-        sucesso, msg = processar_acao_email_carreira(j, proposta, "aceitar", rk)
+        sucesso, msg = processar_acao_email(j, proposta, "aceitar", rk)
         if sucesso:
             j.caixa_email = [p for p in caixa if p.get("id") != req.email_id]
             salvar_jogo(session.nome_save_ativo, j)

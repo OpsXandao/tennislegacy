@@ -2,13 +2,15 @@ from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from api.routes._carta import carta_jogador
 from api.session import obter_sessao_ativa, Session
+from src.dados import carregar_patrocinadores
 from src.migracoes import migrar_equipe
-from src.patrocinios import PATROCINADORES_DISPONIVEIS, migrar_patrocinios
 from src.player_identity import derive_player_identity
 from src.player_ratings import ajustar_atributo_duplas, calcular_overall_contextual
 from src.staff_constants import EMPRESARIOS_DISPONIVEIS, PROFISSIONAIS_DISPONIVEIS
+from src.services.sponsorship_service import migrar_patrocinios, pode_assinar_patrocinio
 
 router = APIRouter(prefix="/api/jogador")
+PATROCINADORES_DISPONIVEIS = carregar_patrocinadores()
 
 
 class JogadorResponse(BaseModel):
@@ -430,7 +432,8 @@ def get_patrocinios_disponiveis(session: Session = Depends(obter_sessao_ativa)):
 
 
 class AssinarPatrocinioBody(BaseModel):
-    patrocinio_id: str
+    patrocinio_id: str | None = None
+    id: str | None = None
 
 
 @router.post("/assinar-patrocinio")
@@ -446,26 +449,28 @@ def assinar_patrocinio(
         raise HTTPException(status_code=500, detail="Ranking não carregado")
 
     posicao = rk.obter_posicao(j.nome) or 9999
-    
-    from src.patrocinios import pode_assinar_patrocinio, PATROCINADORES_DISPONIVEIS
+    patrocinio_id = body.patrocinio_id or body.id
+    if not patrocinio_id:
+        raise HTTPException(status_code=422, detail="Patrocínio não informado.")
+
     from src.save import salvar_jogo
 
-    pode, motivo = pode_assinar_patrocinio(j, body.patrocinio_id, posicao, j.seguidores)
+    pode, motivo = pode_assinar_patrocinio(j, patrocinio_id, posicao, j.seguidores)
     if not pode:
-        return {"ok": False, "motivo": motivo}
+        return {"ok": False, "mensagem": motivo}
 
-    pat = PATROCINADORES_DISPONIVEIS.get(body.patrocinio_id)
+    pat = PATROCINADORES_DISPONIVEIS.get(patrocinio_id)
     if not pat:
         raise HTTPException(status_code=404, detail="Patrocinador não encontrado")
 
-    j.patrocinios.append(body.patrocinio_id)
+    j.patrocinios.append(patrocinio_id)
     
     # Bônus de assinatura
     bonus = int(pat.get("bonus_assinatura", 0) or 0)
     if bonus > 0:
         j.registrar_transacao(
             bonus,
-            f"Bônus Assinatura: {pat.get('nome', body.patrocinio_id)}",
+            f"Bônus Assinatura: {pat.get('nome', patrocinio_id)}",
             categoria="patrocinio",
         )
 

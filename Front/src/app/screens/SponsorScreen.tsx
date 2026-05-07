@@ -2,21 +2,8 @@ import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { DollarSign, Lock, CheckCircle } from 'lucide-react'
 import { PageHeader } from '../components'
-import { api } from '../../api/client'
-import { useGameStore } from '../../store/gameStore'
-
-type PatrocinioDisponivel = {
-  id: string
-  nome: string
-  nivel: string
-  valor_mensal: number
-  valor_semanal: number
-  requisito_ranking: number
-  requisito_seguidores: number
-  elegivel: boolean
-  motivo_bloqueio: string
-  descricao: string
-}
+import { api, ApiError } from '../../api/client'
+import type { Patrocinio, PatrocinioDisponivel } from '../../types'
 
 const NIVEL_COLOR: Record<string, string> = {
   bronze: '#cd7f32',
@@ -35,18 +22,30 @@ function nivelColor(nivel: string) {
 }
 
 export function SponsorScreen() {
-  const { jogador } = useGameStore()
   const [disponiveis, setDisponiveis] = useState<PatrocinioDisponivel[]>([])
+  const [ativos, setAtivos] = useState<Patrocinio[]>([])
   const [loading, setLoading] = useState(true)
   const [mensagem, setMensagem] = useState<{ texto: string; ok: boolean } | null>(null)
   const [assinando, setAssinando] = useState<string | null>(null)
 
   useEffect(() => {
-    api.jogador
-      .patrociniosDisponiveis()
-      .then((r) => setDisponiveis(r.patrocinadores))
-      .catch(() => setDisponiveis([]))
-      .finally(() => setLoading(false))
+    async function carregarPatrocinios() {
+      try {
+        const [disponiveisResp, ativosResp] = await Promise.all([
+          api.jogador.patrociniosDisponiveis(),
+          api.jogador.patrocinios(),
+        ])
+        setDisponiveis(disponiveisResp.patrocinadores)
+        setAtivos(ativosResp.patrocinios)
+      } catch {
+        setDisponiveis([])
+        setAtivos([])
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    carregarPatrocinios()
   }, [])
 
   async function handleAssinar(id: string) {
@@ -56,17 +55,22 @@ export function SponsorScreen() {
       const res = await api.jogador.assinarPatrocinio(id)
       setMensagem({ texto: res.mensagem, ok: res.ok })
       if (res.ok) {
-        const updated = await api.jogador.patrociniosDisponiveis()
-        setDisponiveis(updated.patrocinadores)
+        const [updatedDisponiveis, updatedAtivos] = await Promise.all([
+          api.jogador.patrociniosDisponiveis(),
+          api.jogador.patrocinios(),
+        ])
+        setDisponiveis(updatedDisponiveis.patrocinadores)
+        setAtivos(updatedAtivos.patrocinios)
       }
-    } catch (e: any) {
-      setMensagem({ texto: e.message ?? 'Erro ao assinar patrocínio.', ok: false })
+    } catch (e) {
+      const texto =
+        e instanceof ApiError ? e.message : 'Erro ao assinar patrocínio.'
+      setMensagem({ texto, ok: false })
     } finally {
       setAssinando(null)
     }
   }
 
-  const ativos = jogador?.patrocinios ?? []
   const elegiveis = disponiveis.filter((p) => p.elegivel)
   const bloqueados = disponiveis.filter((p) => !p.elegivel)
 
@@ -106,7 +110,7 @@ export function SponsorScreen() {
               CONTRATOS ATIVOS ({ativos.length})
             </h2>
             <div className="space-y-2">
-              {ativos.map((p: any) => (
+              {ativos.map((p) => (
                 <div
                   key={p.nome}
                   className="border border-[#ffe600]/40 bg-[#ffe600]/5 p-3 flex items-center justify-between"

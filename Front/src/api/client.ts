@@ -11,6 +11,8 @@ import type {
   ResumoDaSemana,
   MembroEquipe,
   Patrocinio,
+  PatrocinioDisponivel,
+  AssinarPatrocinioResponse,
   PlacarEvent,
   SavePreview,
   MundoTorneio,
@@ -155,23 +157,10 @@ export const api = {
       get<{ patrocinios: Patrocinio[] }>('/jogador/patrocinios'),
 
     patrociniosDisponiveis: () =>
-      get<{
-        patrocinadores: {
-          id: string
-          nome: string
-          nivel: string
-          valor_mensal: number
-          valor_semanal: number
-          requisito_ranking: number
-          requisito_seguidores: number
-          elegivel: boolean
-          motivo_bloqueio: string
-          descricao: string
-        }[]
-      }>('/jogador/patrocinios-disponiveis'),
+      get<{ patrocinadores: PatrocinioDisponivel[] }>('/jogador/patrocinios-disponiveis'),
 
     assinarPatrocinio: (id: string) =>
-      post<{ ok: boolean; mensagem: string }>('/jogador/assinar-patrocinio', { id }),
+      post<AssinarPatrocinioResponse>('/jogador/assinar-patrocinio', { patrocinio_id: id }),
 
     financeiro: () =>
       get<{ saldo: number; transacoes: Transaction[]; resumo_categorias: Record<string, number> }>(

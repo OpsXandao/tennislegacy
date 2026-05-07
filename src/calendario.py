@@ -14,12 +14,7 @@ from src.management import (
     processar_despesas_operacionais,
     obter_profissional_da_equipe,
 )
-from src.patrocinios import (
-    PATROCINADORES_DISPONIVEIS,
-    gerar_convites_midia_email,
-    gerar_propostas_carreira_email,
-    processar_pagamentos_patrocinio,
-)
+from src.dados import carregar_patrocinadores
 from src.ranking import SistemaRanking
 from src.calendario_participacao import (
     ajustar_prob_participacao_por_contexto,
@@ -39,6 +34,13 @@ from src.services.health_service import (
     ENERGIA_RECUPERACAO_SEMANAL_BASE,
     ENERGIA_RECUPERACAO_SEMANAL_POR_FISICO,
 )
+from src.services.communication_service import (
+    gerar_convites_midia_email,
+    gerar_propostas_carreira_email,
+)
+from src.services.sponsorship_service import processar_pagamentos_patrocinio
+
+PATROCINADORES_DISPONIVEIS = carregar_patrocinadores()
 
 
 def _chance_doenca(jogador, info_torneio=None):
