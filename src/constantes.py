@@ -1,4 +1,4 @@
-# --- Atributos Padrão ---
+# --- Atributos Padrao ---
 DEFAULT_ATRIBUTOS = {
     "saque": 60,
     "forehand": 60,
@@ -20,11 +20,10 @@ DEFAULT_ATRIBUTOS_PSICOLOGICOS = {
     "determinacao": 50,
 }
 
-# --- Arquétipos Mentais ---
 MENTAL_ARCHETYPES = {
     "1": {
         "nome": "Gelo nas Veias",
-        "descricao": "Foco imperturbável e calma sob pressão.",
+        "descricao": "Foco imperturbavel e calma sob pressao.",
         "atributos": {
             "concentracao": 75,
             "agressividade": 40,
@@ -34,7 +33,7 @@ MENTAL_ARCHETYPES = {
     },
     "2": {
         "nome": "Guerreiro",
-        "descricao": "Nunca desiste de uma bola e luta até o fim.",
+        "descricao": "Nunca desiste de uma bola e luta ate o fim.",
         "atributos": {
             "concentracao": 55,
             "agressividade": 50,
@@ -54,7 +53,7 @@ MENTAL_ARCHETYPES = {
     },
     "4": {
         "nome": "Estrategista",
-        "descricao": "Lê o adversário perfeitamente e antecipa jogadas.",
+        "descricao": "Le o adversario perfeitamente e antecipa jogadas.",
         "atributos": {
             "concentracao": 60,
             "agressividade": 45,
@@ -64,7 +63,7 @@ MENTAL_ARCHETYPES = {
     },
     "5": {
         "nome": "Equilibrado",
-        "descricao": "Mentalidade sólida em todas as áreas.",
+        "descricao": "Mentalidade solida em todas as areas.",
         "atributos": {
             "concentracao": 60,
             "agressividade": 60,
@@ -74,11 +73,10 @@ MENTAL_ARCHETYPES = {
     },
 }
 
-# --- Arquétipos de Jogador ---
 ARCHETYPES = {
     "1": {
-        "nome": "Técnico",
-        "descricao": "Mais controle e precisão",
+        "nome": "Tecnico",
+        "descricao": "Mais controle e precisao",
         "atributos": {
             "saque": 65,
             "forehand": 75,
@@ -94,8 +92,8 @@ ARCHETYPES = {
         },
     },
     "2": {
-        "nome": "Físico",
-        "descricao": "Mais força e movimentação",
+        "nome": "Fisico",
+        "descricao": "Mais forca e movimentacao",
         "atributos": {
             "saque": 75,
             "forehand": 72,
@@ -129,22 +127,21 @@ ARCHETYPES = {
     },
 }
 
-# --- Fases de Torneio (T17) ---
 FASES_NOMES = {
-    "qualy_1": "1ª Rodada Quali",
-    "qualy_2": "2ª Rodada Quali",
-    "qualy_r1": "1ª Rodada Quali",
-    "qualy_r2": "2ª Rodada Quali",
-    "qualy_r3": "3ª Rodada Quali",
+    "qualy_1": "1a Rodada Quali",
+    "qualy_2": "2a Rodada Quali",
+    "qualy_r1": "1a Rodada Quali",
+    "qualy_r2": "2a Rodada Quali",
+    "qualy_r3": "3a Rodada Quali",
     "pre_oitavas": "32 avos",
     "oitavas": "Oitavas",
     "quartas": "Quartas",
     "semifinal": "Semifinal",
     "final": "Final",
-    "campeao": "Campeão",
-    "r128": "1ª Rodada",
-    "r96": "1ª Rodada",
-    "r64": "2ª Rodada",
-    "r32": "3ª Rodada",
+    "campeao": "Campeao",
+    "r128": "1a Rodada",
+    "r96": "1a Rodada",
+    "r64": "2a Rodada",
+    "r32": "3a Rodada",
     "r16": "Oitavas",
 }

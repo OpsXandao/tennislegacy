@@ -1,21 +1,21 @@
 import json
+
 from src.dados import (
+    carregar_temporada,
     get_caminho_ranking_save,
     get_caminho_torneio_save,
-    carregar_temporada,
 )
+from src.jogador import carregar_jogador, normalizar_nome
 from src.json_utils import salvar_json_seguro
 from src.log_jogo import log_simulacao
 from src.ranking import SistemaRanking
-from src.jogador import normalizar_nome
-from src.jogador import carregar_jogador
+from src.save import salvar_jogo
 from src.wta_constants import (
+    PONTOS_WTA_1000,
     PONTOS_WTA_250,
     PONTOS_WTA_500,
-    PONTOS_WTA_1000,
     PONTOS_WTA_GRAND_SLAM,
 )
-from src.save import salvar_jogo
 
 PONTOS_ATP_250 = {
     "campeao": 250,
@@ -24,9 +24,9 @@ PONTOS_ATP_250 = {
     "quartas": 45,
     "oitavas": 20,
     "r16": 20,
-    "pre_oitavas": 10,  # Rodada de 32
+    "pre_oitavas": 10,
     "r32": 10,
-    "qualy_2": 5,  # Classificado
+    "qualy_2": 5,
     "qualy_1": 0,
 }
 
@@ -35,14 +35,14 @@ PONTOS_GRAND_SLAM = {
     "final": 1200,
     "semifinal": 720,
     "quartas": 360,
-    "r16": 180,  # Round of 16
+    "r16": 180,
     "oitavas": 180,
-    "r32": 90,  # Round of 32
-    "r64": 45,  # Round of 64
-    "r128": 10,  # Round of 128 (first round loss)
-    "qualy_r3": 30,  # Final round of qualifying
-    "qualy_r2": 16,  # Second round of qualifying
-    "qualy_r1": 7,  # First round of qualifying
+    "r32": 90,
+    "r64": 45,
+    "r128": 10,
+    "qualy_r3": 30,
+    "qualy_r2": 16,
+    "qualy_r1": 7,
 }
 
 PONTOS_ATP_500 = {
@@ -50,11 +50,11 @@ PONTOS_ATP_500 = {
     "final": 300,
     "semifinal": 180,
     "quartas": 90,
-    "oitavas": 45,  # Round of 16
+    "oitavas": 45,
     "r16": 45,
-    "pre_oitavas": 20,  # Round of 32
+    "pre_oitavas": 20,
     "r32": 20,
-    "qualy_2": 10,  # Qualificado
+    "qualy_2": 10,
     "qualy_1": 0,
 }
 
@@ -63,12 +63,12 @@ PONTOS_ATP_1000 = {
     "final": 600,
     "semifinal": 360,
     "quartas": 180,
-    "oitavas": 90,  # Round of 16
+    "oitavas": 90,
     "r16": 90,
-    "r32": 45,  # Round of 32
-    "r64": 25,  # Round of 64
-    "r96": 10,  # Round of 96
-    "qualy_2": 16,  # Qualificado
+    "r32": 45,
+    "r64": 25,
+    "r96": 10,
+    "qualy_2": 16,
     "qualy_1": 0,
 }
 
@@ -136,7 +136,7 @@ PONTOS_DUPLAS = {
         "semifinal": 180,
         "quartas": 90,
         "oitavas": 45,
-        "r16": 45,  # alias para "oitavas" (fase usada no draw de duplas)
+        "r16": 45,
     },
     "ATP 1000": {
         "campeao": 1000,
@@ -144,7 +144,7 @@ PONTOS_DUPLAS = {
         "semifinal": 360,
         "quartas": 180,
         "oitavas": 90,
-        "r16": 90,  # alias para "oitavas"
+        "r16": 90,
     },
     "ATP Finals": {
         "campeao": 1000,
@@ -182,7 +182,6 @@ PONTOS_DUPLAS = {
         "semifinal": 300,
         "quartas": 120,
     },
-    # WTA: tabelas reduzidas com apenas as fases geradas em duplas
     "WTA 250": {"campeao": 250, "final": 163, "semifinal": 98, "quartas": 54},
     "WTA 500": {
         "campeao": 500,
@@ -190,7 +189,7 @@ PONTOS_DUPLAS = {
         "semifinal": 195,
         "quartas": 108,
         "oitavas": 60,
-        "r16": 60,  # alias para "oitavas"
+        "r16": 60,
     },
     "WTA 1000": {
         "campeao": 1000,
@@ -198,7 +197,7 @@ PONTOS_DUPLAS = {
         "semifinal": 390,
         "quartas": 215,
         "oitavas": 120,
-        "r16": 120,  # alias para "oitavas"
+        "r16": 120,
     },
     "Grand Slam": {
         "campeao": 2000,
@@ -206,9 +205,9 @@ PONTOS_DUPLAS = {
         "semifinal": 720,
         "quartas": 360,
         "oitavas": 180,
-        "r16": 180,  # alias para "oitavas" (3ª rodada no draw de 64 pares)
-        "r32": 90,  # 2ª rodada do draw de 64 pares
-        "r64": 0,  # 1ª rodada (eliminados na entrada)
+        "r16": 180,
+        "r32": 90,
+        "r64": 0,
     },
 }
 
@@ -233,9 +232,6 @@ FATORES_PRIZE_POR_FASE = {
 
 
 def _calcular_expiracao_pontos(semana_atual, ano_atual):
-    """
-    Pontos expiram na mesma semana do ano seguinte.
-    """
     semana_expiracao = ((semana_atual - 1) % SEMANAS_POR_ANO) + 1
     ano_expiracao = int(ano_atual) + 1 if ano_atual is not None else None
     return semana_expiracao, ano_expiracao
@@ -250,18 +246,11 @@ def _calcular_prize_por_fase(premiacao_total, fase):
         return 0
     fator = FATORES_PRIZE_POR_FASE.get(fase, 0.0)
     valor_bruto = int(float(premiacao_total) * fator)
-
-    # Realismo financeiro: Dedução de impostos (retidos na fonte) e
-    # comissões da equipe técnica (treinador, empresário, etc).
-    # No tênis real, sobe ~60-65% do valor bruto para o jogador.
-    impostos_e_comissoes = 0.35  # 35% de dedução total
-    valor_liquido = int(valor_bruto * (1.0 - impostos_e_comissoes))
-
-    return valor_liquido
+    impostos_e_comissoes = 0.35
+    return int(valor_bruto * (1.0 - impostos_e_comissoes))
 
 
 def obter_pontos_map(tournament_type, genero="masculino"):
-    """Retorna o dicionário de pontos correto para o tipo de torneio e gênero."""
     if genero == "feminino":
         if tournament_type == "Grand Slam":
             return PONTOS_WTA_GRAND_SLAM
@@ -270,22 +259,22 @@ def obter_pontos_map(tournament_type, genero="masculino"):
         if "500" in tournament_type:
             return PONTOS_WTA_500
         return PONTOS_WTA_250
-    else:
-        if tournament_type == "Grand Slam":
-            return PONTOS_GRAND_SLAM
-        if tournament_type == "ATP 1000":
-            return PONTOS_ATP_1000
-        if tournament_type == "ATP 500":
-            return PONTOS_ATP_500
-        if tournament_type == "ATP Finals":
-            return PONTOS_ATP_FINALS
-        if tournament_type == "Challenger 125":
-            return PONTOS_CHALLENGER_125
-        if tournament_type == "ITF 100":
-            return PONTOS_ITF_100
-        if tournament_type == "ITF 25":
-            return PONTOS_ITF_25
-        return PONTOS_ATP_250
+
+    if tournament_type == "Grand Slam":
+        return PONTOS_GRAND_SLAM
+    if tournament_type == "ATP 1000":
+        return PONTOS_ATP_1000
+    if tournament_type == "ATP 500":
+        return PONTOS_ATP_500
+    if tournament_type == "ATP Finals":
+        return PONTOS_ATP_FINALS
+    if tournament_type == "Challenger 125":
+        return PONTOS_CHALLENGER_125
+    if tournament_type == "ITF 100":
+        return PONTOS_ITF_100
+    if tournament_type == "ITF 25":
+        return PONTOS_ITF_25
+    return PONTOS_ATP_250
 
 
 def _ordem_fases_pontuacao(tournament_type, modalidade="simples"):
@@ -340,162 +329,100 @@ def _ordem_fases_pontuacao(tournament_type, modalidade="simples"):
 
 def _fase_pontuacao_desistencia(fase_saida, tournament_type, modalidade="simples"):
     fase_norm = str(fase_saida or "").strip().lower()
-    if not fase_norm:
-        return None
-    if fase_norm.startswith("qualy"):
+    if not fase_norm or fase_norm.startswith("qualy"):
         return None
 
-    fases = _ordem_fases_pontuacao(tournament_type, modalidade=modalidade)
+    fases = _ordem_fases_pontuacao(tournament_type, modalidade)
     fases_principais = [fase for fase in fases if not str(fase).startswith("qualy")]
     try:
         idx = fases.index(fase_norm)
     except ValueError:
         return None
 
-    primeira_fase_main_draw = (
-        fases.index(fases_principais[0]) if fases_principais else 0
-    )
+    primeira_fase_main_draw = fases.index(fases_principais[0]) if fases_principais else 0
     if idx <= primeira_fase_main_draw:
         return None
     return fases[idx - 1]
 
 
 def distribuir_pontos_davis(nome_save, target_save_name=None):
-    """
-    Distribui pontos para a Copa Davis com base no desempenho individual e da equipe.
-    """
     from src.davis_cup import carregar_davis_cup
 
     alvo = target_save_name or nome_save
     jogador_humano = carregar_jogador(alvo)
     ranking = SistemaRanking(
-        get_caminho_ranking_save(
-            alvo, genero=getattr(jogador_humano, "genero", "masculino")
-        )
+        get_caminho_ranking_save(alvo, genero=getattr(jogador_humano, "genero", "masculino"))
     )
     temporada = carregar_temporada(alvo)
     semana_atual = temporada["semana"]
     ano_atual = temporada.get("ano")
-    semana_expiracao, ano_expiracao = _calcular_expiracao_pontos(
-        semana_atual, ano_atual
-    )
+    semana_expiracao, ano_expiracao = _calcular_expiracao_pontos(semana_atual, ano_atual)
 
-    # Carrega a instância da competição por seleções para acessar o estado
     davis = carregar_davis_cup(alvo, jogador_humano)
     if not davis:
         return
 
     estado = davis._carregar_estado()
     resultados_confrontos = estado.get("resultados_confrontos", [])
-
     if not resultados_confrontos:
         return
 
-    # Mapeia vitórias individuais
     vitorias_por_jogador = {}
     for confronto in resultados_confrontos:
         fase = str(confronto.get("fase", "") or "").lower()
         is_final8 = fase in {"quartas", "semifinal", "final"}
-
         for partida in confronto.get("partidas", []):
             vencedor = partida.get("vencedor")
             if not vencedor:
                 continue
-
             tipo = partida.get("tipo", "simples")
-            pts = 0
             if tipo == "simples":
-                pts = PONTOS_DAVIS_CUP[
-                    "vitoria_simples_final8" if is_final8 else "vitoria_simples_grupo"
-                ]
+                pts = PONTOS_DAVIS_CUP["vitoria_simples_final8" if is_final8 else "vitoria_simples_grupo"]
             else:
-                pts = PONTOS_DAVIS_CUP[
-                    "vitoria_duplas_final8" if is_final8 else "vitoria_duplas_grupo"
-                ]
+                pts = PONTOS_DAVIS_CUP["vitoria_duplas_final8" if is_final8 else "vitoria_duplas_grupo"]
 
-            # Se o vencedor for um dict (NPC) ou o nome (Player)
-            nome_v = (
-                vencedor.get("nome") if isinstance(vencedor, dict) else str(vencedor)
-            )
+            nome_v = vencedor.get("nome") if isinstance(vencedor, dict) else str(vencedor)
             nome_v = normalizar_nome(nome_v)
             vitorias_por_jogador[nome_v] = vitorias_por_jogador.get(nome_v, 0) + pts
 
-    # Distribui os pontos de vitórias individuais
     for nome_norm, pontos in vitorias_por_jogador.items():
-        if pontos > 0:
-            ranking.adicionar_pontos(
-                nome_norm,
-                pontos,
-                semana_expiracao,
-                ano_exp=ano_expiracao,
-            )
+        if pontos <= 0:
+            continue
+        ranking.adicionar_pontos(nome_norm, pontos, semana_expiracao, ano_exp=ano_expiracao)
+        jogador_reg = ranking.buscar_jogador_por_nome(nome_norm)
+        if jogador_reg:
+            jogador_reg["pontos_ytd"] = jogador_reg.get("pontos_ytd", 0) + pontos
+            if nome_norm == normalizar_nome(jogador_humano.nome):
+                jogador_humano.pontos_ytd = getattr(jogador_humano, "pontos_ytd", 0) + pontos
 
-            # Atualiza YTD do jogador no ranking
-            jogador_reg = ranking.buscar_jogador_por_nome(nome_norm)
-            if jogador_reg:
-                jogador_reg["pontos_ytd"] = jogador_reg.get("pontos_ytd", 0) + pontos
-                # Se for o jogador humano, atualiza o objeto também
-                if nome_norm == normalizar_nome(jogador_humano.nome):
-                    jogador_humano.pontos_ytd = (
-                        getattr(jogador_humano, "pontos_ytd", 0) + pontos
-                    )
-
-    # Bônus de equipe (Finalistas e Campeão)
     if estado.get("fase_atual") == "finalizado":
         vencedor_final = estado.get("vencedor_torneio")
         finalista = estado.get("finalista_torneio")
-
         if vencedor_final:
-            _distribuir_bonus_equipe(
-                ranking,
-                vencedor_final,
-                PONTOS_DAVIS_CUP["campeao_bonus"],
-                semana_expiracao,
-                ano_expiracao,
-            )
+            _distribuir_bonus_equipe(ranking, vencedor_final, PONTOS_DAVIS_CUP["campeao_bonus"], semana_expiracao, ano_expiracao)
         if finalista:
-            _distribuir_bonus_equipe(
-                ranking,
-                finalista,
-                PONTOS_DAVIS_CUP["finalista_bonus"],
-                semana_expiracao,
-                ano_expiracao,
-            )
+            _distribuir_bonus_equipe(ranking, finalista, PONTOS_DAVIS_CUP["finalista_bonus"], semana_expiracao, ano_expiracao)
 
     ranking.ordenar()
     ranking.salvar_ranking()
     salvar_jogo(alvo, jogador_humano)
-    log_simulacao("Pontos da Copa Davis distribuídos.", nome_save)
+    log_simulacao("Pontos da Copa Davis distribuidos.", nome_save)
 
 
-def _distribuir_bonus_equipe(
-    ranking, pais, pontos, semana_expiracao, ano_expiracao=None
-):
-    """Da bonus para todos os jogadores principais do pais."""
-    # Pega o top 4 do país no ranking para dar o bônus de equipe
+def _distribuir_bonus_equipe(ranking, pais, pontos, semana_expiracao, ano_expiracao=None):
     jogadores_pais = [
-        j
-        for j in ranking.ranking
+        j for j in ranking.ranking
         if normalizar_nome(j.get("nacionalidade", "")) == normalizar_nome(pais)
     ]
     jogadores_pais.sort(key=lambda x: x.get("pontos_ranking", 0), reverse=True)
 
     for j in jogadores_pais[:4]:
         nome_norm = normalizar_nome(j.get("nome", ""))
-        ranking.adicionar_pontos(
-            nome_norm,
-            pontos,
-            semana_expiracao,
-            ano_exp=ano_expiracao,
-        )
+        ranking.adicionar_pontos(nome_norm, pontos, semana_expiracao, ano_exp=ano_expiracao)
         j["pontos_ytd"] = j.get("pontos_ytd", 0) + pontos
 
 
 def distribuir_pontos_torneio(nome_save, target_save_name=None, genero="masculino"):
-    """
-    Lê o resultado de um torneio finalizado em 'nome_save' e distribui os pontos
-    no ranking de 'target_save_name' (ou 'nome_save' se não fornecido).
-    """
     from src.dados import get_caminho_ranking_duplas
 
     caminho_torneio = get_caminho_torneio_save(nome_save, genero=genero)
@@ -503,36 +430,25 @@ def distribuir_pontos_torneio(nome_save, target_save_name=None, genero="masculin
         with open(caminho_torneio, "r", encoding="utf-8") as f:
             estado_torneio = json.load(f)
     except FileNotFoundError:
-        return (
-            f"Arquivo de torneio para o save '{nome_save}' não encontrado. "
-            "Nenhum ponto a distribuir."
-        )
+        return f"Arquivo de torneio para o save '{nome_save}' nao encontrado. Nenhum ponto a distribuir."
 
     if estado_torneio.get("pontos_distribuidos"):
         return "Pontos do torneio ja distribuidos anteriormente."
 
-    # O ranking e temporada alvo (quem recebe os pontos)
     alvo = target_save_name or nome_save
-    ranking_simples = SistemaRanking(
-        get_caminho_ranking_save(alvo, genero=genero), modalidade="simples"
-    )
-    ranking_duplas = SistemaRanking(
-        get_caminho_ranking_duplas(alvo, genero=genero), modalidade="duplas"
-    )
+    ranking_simples = SistemaRanking(get_caminho_ranking_save(alvo, genero=genero), modalidade="simples")
+    ranking_duplas = SistemaRanking(get_caminho_ranking_duplas(alvo, genero=genero), modalidade="duplas")
     temporada = carregar_temporada(alvo)
 
     semana_atual = temporada["semana"]
     ano_atual = temporada.get("ano")
-    semana_expiracao, ano_expiracao = _calcular_expiracao_pontos(
-        semana_atual, ano_atual
-    )
+    semana_expiracao, ano_expiracao = _calcular_expiracao_pontos(semana_atual, ano_atual)
 
     genero_torneio = estado_torneio.get("genero", "masculino")
     tournament_type = estado_torneio.get("tournament_data", {}).get("tipo", "ATP 250")
     nome_torneio = estado_torneio.get("torneio", "Torneio Desconhecido")
     premiacao_total = estado_torneio.get("tournament_data", {}).get("premiacao", 0)
 
-    # --- PARTE 1: SIMPLES ---
     _processar_pontos_modalidade(
         ranking_simples,
         estado_torneio,
@@ -550,7 +466,6 @@ def distribuir_pontos_torneio(nome_save, target_save_name=None, genero="masculin
         alvo,
     )
 
-    # --- PARTE 2: DUPLAS ---
     _processar_pontos_modalidade(
         ranking_duplas,
         estado_torneio,
@@ -561,7 +476,7 @@ def distribuir_pontos_torneio(nome_save, target_save_name=None, genero="masculin
         semana_expiracao,
         ano_expiracao,
         nome_torneio,
-        0,  # Premiação de duplas (pode ser expandido depois)
+        0,
         semana_atual,
         ano_atual,
         nome_save,
@@ -575,7 +490,6 @@ def distribuir_pontos_torneio(nome_save, target_save_name=None, genero="masculin
 
 
 def _extract_names(raw):
-    """Extrai lista de nomes normalizados de uma entrada de partida (jogador, dupla ou string legada)."""
     if not raw:
         return []
     if isinstance(raw, dict):
@@ -675,14 +589,11 @@ def _processar_pontos_modalidade(
                     if n:
                         progresso_jogador[n] = fase
 
-                try:
-                    idx = fases_ordem.index(fase)
-                    if idx + 1 < len(fases_ordem):
-                        for n in nomes_v:
-                            if n:
-                                progresso_jogador[n] = fases_ordem[idx + 1]
-                except ValueError:
-                    pass
+                idx = fases_ordem.index(fase)
+                if idx + 1 < len(fases_ordem):
+                    for n in nomes_v:
+                        if n:
+                            progresso_jogador[n] = fases_ordem[idx + 1]
             except Exception:
                 continue
 
@@ -693,11 +604,10 @@ def _processar_pontos_modalidade(
                 progresso_jogador[n] = "campeao"
 
     log_simulacao(
-        f"Pontuação do Torneio ({modalidade.upper()}): {nome_torneio} ({tournament_type})",
+        f"Pontuacao do Torneio ({modalidade.upper()}): {nome_torneio} ({tournament_type})",
         nome_save,
     )
 
-    # Carrega jogador humano para atualizar dinheiro se necessário
     jogador_humano = carregar_jogador(alvo)
     human_name_norm = normalizar_nome(jogador_humano.nome) if jogador_humano else ""
     jogador_humano_atualizado = False
@@ -724,17 +634,8 @@ def _processar_pontos_modalidade(
                 else progresso_fase
             )
 
-        # Cálculo do Dinheiro
-        prize = 0
-        if modalidade == "simples":
-            prize = _calcular_prize_por_fase(premiacao_total, fase_historico)
-        else:
-            # Em duplas o prêmio costuma ser ~25% do de simples por jogador
-            prize = int(
-                _calcular_prize_por_fase(premiacao_total, fase_historico) * 0.25
-            )
+        prize = _calcular_prize_por_fase(premiacao_total, fase_historico) if modalidade == "simples" else int(_calcular_prize_por_fase(premiacao_total, fase_historico) * 0.25)
 
-        # 1. Adiciona pontos ao ranking
         if pontos_base > 0:
             ranking.adicionar_pontos(
                 jogador_nome_norm,
@@ -753,19 +654,12 @@ def _processar_pontos_modalidade(
             )
             if modalidade == "simples":
                 if jogador_ranking:
-                    jogador_ranking["pontos_ytd"] = (
-                        jogador_ranking.get("pontos_ytd", 0) + pontos_base
-                    )
+                    jogador_ranking["pontos_ytd"] = jogador_ranking.get("pontos_ytd", 0) + pontos_base
                 if jogador_nome_norm == human_name_norm and jogador_humano:
-                    jogador_humano.pontos_ytd = (
-                        getattr(jogador_humano, "pontos_ytd", 0) + pontos_base
-                    )
+                    jogador_humano.pontos_ytd = getattr(jogador_humano, "pontos_ytd", 0) + pontos_base
 
-        # 2. Credita dinheiro no ranking
         if prize > 0:
             ranking.adicionar_dinheiro(jogador_nome_norm, prize)
-
-            # 3. Se for o jogador humano, atualiza o objeto Jogador
             if jogador_nome_norm == human_name_norm and jogador_humano:
                 jogador_humano.dinheiro = getattr(jogador_humano, "dinheiro", 0) + prize
 

@@ -1,4 +1,4 @@
-"""Utilitário de log para operações internas do jogo (não visíveis ao jogador)."""
+"""Utilitario de log para operacoes internas do jogo (nao visiveis ao jogador)."""
 
 import os
 import traceback
@@ -18,7 +18,7 @@ def log_simulacao(mensagem: str, nome_save: str) -> None:
         with open(caminho, "a", encoding="utf-8") as f:
             f.write(f"[{timestamp}] {mensagem}\n")
     except OSError:
-        pass  # log nunca deve travar o jogo
+        pass
 
 
 def log_erro(
@@ -29,7 +29,7 @@ def log_erro(
 ) -> None:
     """
     Grava erro com contexto estruturado em saves/<nome_save>/log.txt.
-    Inclui traceback curto para facilitar diagnóstico de produção.
+    Inclui traceback curto para facilitar diagnostico de producao.
     """
     try:
         from src.dados import SAVES_DIR, validar_nome_save

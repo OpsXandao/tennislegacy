@@ -1,5 +1,5 @@
+from dataclasses import asdict, dataclass
 from enum import Enum
-from dataclasses import dataclass, asdict
 from typing import Any
 
 
@@ -41,7 +41,7 @@ class IntencaoPonto(Enum):
 @dataclass
 class MatchPointStats:
     """
-    Snapshot tipado do resultado estatístico de um ponto.
+    Snapshot tipado do resultado estatistico de um ponto.
     """
 
     sacador: str
@@ -51,10 +51,6 @@ class MatchPointStats:
     winner: bool = False
     erro_nao_forcado: bool = False
     intensidade: str = "medio"
-
-    # Visualização (coordenadas 0-100)
-    # X: 0 (esquerda) a 100 (direita)
-    # Y: 0 (fundo sacador) a 100 (fundo receptor)
     origem: tuple[int, int] = (50, 0)
     destino: tuple[int, int] = (50, 80)
 

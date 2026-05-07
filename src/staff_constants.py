@@ -1,7 +1,6 @@
-# === PROFISSIONAIS DISPONÍVEIS ===
+# === PROFISSIONAIS DISPONIVEIS ===
 # equipe[*] = {"id": str, "semanas_restantes": int, "salario": int}
 PROFISSIONAIS_DISPONIVEIS = {
-    # --- Treinadores ---
     "treinador_fundo_jr": {
         "nome": "Pedro Vargas",
         "nacionalidade": "ARG",
@@ -65,7 +64,7 @@ PROFISSIONAIS_DISPONIVEIS = {
         "foco_atributos": ["saque", "voleio", "slice", "lob"],
         "bonus_recuperacao": 7,
         "bonus_xp": 1.2,
-        "descricao": "Especialista em tática de saque e voleio.",
+        "descricao": "Especialista em tatica de saque e voleio.",
     },
     "treinador_rede_elite": {
         "nome": "Pete Andrews",
@@ -104,7 +103,7 @@ PROFISSIONAIS_DISPONIVEIS = {
         "foco_atributos": ["winner", "fisico", "forehand", "backhand"],
         "bonus_recuperacao": 7,
         "bonus_xp": 1.2,
-        "descricao": "Especialista em variacao tática e pressao.",
+        "descricao": "Especialista em variacao tatica e pressao.",
     },
     "treinador_lendario": {
         "nome": "Andre Champion",
@@ -114,12 +113,11 @@ PROFISSIONAIS_DISPONIVEIS = {
         "estrelas": 5,
         "salario_semanal": 5000,
         "bonus_progressao": 0.30,
-        "foco_atributos": [],  # lista vazia = todos os atributos
+        "foco_atributos": [],
         "bonus_recuperacao": 20,
         "bonus_xp": 2.0,
         "descricao": "Ex-campeao de Grand Slam. Potencializa todo o seu jogo.",
     },
-    # --- Psicologos ---
     "psi_junior": {
         "nome": "Sara Novak",
         "nacionalidade": "CZE",
@@ -153,7 +151,6 @@ PROFISSIONAIS_DISPONIVEIS = {
         "bonus_mental": 2,
         "descricao": "Referencia em psicologia esportiva de alto rendimento.",
     },
-    # --- Preparadores Fisicos ---
     "prep_jr": {
         "nome": "Marco Santos",
         "nacionalidade": "BRA",
@@ -187,7 +184,6 @@ PROFISSIONAIS_DISPONIVEIS = {
         "bonus_fisico_pct": 0.25,
         "descricao": "Metodo de elite para manutencao de pico fisico.",
     },
-    # --- Gestores de Marketing ---
     "mkt_freelancer": {
         "nome": "Sofia Lima",
         "nacionalidade": "BRA",
@@ -223,7 +219,6 @@ PROFISSIONAIS_DISPONIVEIS = {
     },
 }
 
-# === FISIOTERAPEUTAS ===
 FISIOTERAPEUTAS_DISPONIVEIS = {
     "fisio_jr": {
         "nome": "Ana Rodrigues",
@@ -260,7 +255,6 @@ FISIOTERAPEUTAS_DISPONIVEIS = {
     },
 }
 
-# === EMPRESÁRIOS ===
 EMPRESARIOS_DISPONIVEIS = {
     "empresario_jr": {
         "nome": "Roberto Carvalho",
@@ -294,5 +288,4 @@ EMPRESARIOS_DISPONIVEIS = {
     },
 }
 
-# Juncao de todos os profissionais (exceto empresario)
 PROFISSIONAIS_DISPONIVEIS.update(FISIOTERAPEUTAS_DISPONIVEIS)

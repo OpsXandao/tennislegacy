@@ -1,8 +1,7 @@
-import random
 import json
 import os
+import random
 
-# Carrega o arquivo de nomes uma vez para evitar múltiplas leituras
 with open(os.path.join("db", "nomes.json"), "r", encoding="utf-8") as f:
     nomes_data = json.load(f)["countries"]
 
@@ -47,14 +46,9 @@ def _normalizar_codigo_pais(nacionalidade):
 
 
 def gerar_nome_completo(nacionalidade="US", genero="masculino"):
-    """
-    Gera um nome completo (nome e sobrenome) com base na nacionalidade e gênero.
-    Se a nacionalidade não for encontrada ou não tiver nomes/sobrenomes, usa 'US' como fallback.
-    """
     codigo = _normalizar_codigo_pais(nacionalidade)
     country_data = nomes_data.get(codigo)
 
-    # Fallback para US se a nacionalidade não existir ou não tiver nomes/sobrenomes
     if not country_data or (
         not country_data.get("names") and not country_data.get("female_names")
     ):
@@ -76,31 +70,23 @@ def gerar_nome_completo(nacionalidade="US", genero="masculino"):
 
 
 def gerar_nacionalidade_aleatoria(pais_sede=None):
-    """
-    Gera uma nacionalidade aleatória, com maior probabilidade de ser a do país sede.
-    A lista de nacionalidades é extraída do arquivo nomes.json.
-    """
     nacionalidades_disponiveis = list(nomes_data.keys())
 
     if pais_sede:
         if pais_sede.startswith("[") and "]" in pais_sede:
             codigo_pais = pais_sede[1 : pais_sede.find("]")].upper()
-            if codigo_pais in nacionalidades_disponiveis:
-                # 70% de chance de ser da nacionalidade do país sede
-                if random.random() < 0.70:
-                    return codigo_pais
+            if codigo_pais in nacionalidades_disponiveis and random.random() < 0.70:
+                return codigo_pais
 
     return random.choice(nacionalidades_disponiveis)
 
 
 def gerar_jogador_fraco(id_bot, pais_sede=None, genero="masculino"):
     from src.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
+    from src.dados import carregar_nacionalidades
 
     codigo_pais = gerar_nacionalidade_aleatoria(pais_sede)
     nome = gerar_nome_completo(codigo_pais, genero)
-
-    # Busca nome do país para o formato amigável [BR] Brasil
-    from src.dados import carregar_nacionalidades
 
     nac_data = carregar_nacionalidades()
     nome_pais = "Desconhecido"
@@ -115,11 +101,9 @@ def gerar_jogador_fraco(id_bot, pais_sede=None, genero="masculino"):
     if nome_pais == "Desconhecido":
         nome_pais = f"[{codigo_pais}] {codigo_pais}"
 
-    # Arquétipos básicos para diversidade
     arquetipos = ["base", "sacador", "saibrista", "rede"]
     arq = random.choice(arquetipos)
 
-    # Base de atributos baixos (30-50)
     atributos = {k: random.randint(30, 50) for k in DEFAULT_ATRIBUTOS.keys()}
     atributos["fisico"] = random.randint(35, 55)
 
@@ -134,10 +118,10 @@ def gerar_jogador_fraco(id_bot, pais_sede=None, genero="masculino"):
         atributos["voleio"] += 15
         atributos["movimento"] += 5
 
-    # Atributos psicológicos
-    psico = {k: random.randint(30, 55) for k in DEFAULT_ATRIBUTOS_PSICOLOGICOS.keys()}
+    psico = {
+        k: random.randint(30, 55) for k in DEFAULT_ATRIBUTOS_PSICOLOGICOS.keys()
+    }
 
-    # Cálculo de Overall Real (Técnico + Físico + Mental)
     avg_tec = sum(atributos.values()) / len(atributos)
     avg_psi = sum(psico.values()) / len(psico)
     overall = round((avg_tec * 0.8) + (avg_psi * 0.2))
