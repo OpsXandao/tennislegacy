@@ -1,5 +1,6 @@
 import type {
   AdversarioInfo as ApiAdversarioInfo,
+  JogadorState,
   MatchPointRuntime,
   MatchStrategySummary,
   PlacarState,
@@ -88,4 +89,26 @@ export function extrairAtualizacaoRuntime(
     estrategiaJogador: runtime.estrategia_j ?? null,
     estrategiaAdversario: runtime.estrategia_a ?? null,
   }
+}
+
+export function extrairHistoricoJogador(
+  jogador: JogadorState | null | undefined,
+): Array<Record<string, unknown>> {
+  return Array.isArray(jogador?.historico_partidas)
+    ? jogador.historico_partidas
+    : []
+}
+
+export function extrairHistoricoTorneiosJogador(
+  jogador: JogadorState | null | undefined,
+): Array<Record<string, unknown>> {
+  return Array.isArray(jogador?.historico_torneios)
+    ? jogador.historico_torneios
+    : []
+}
+
+export function extrairTrofeusJogador(
+  jogador: JogadorState | null | undefined,
+): Array<Record<string, unknown>> {
+  return Array.isArray(jogador?.trofeus) ? jogador.trofeus : []
 }

@@ -11,6 +11,38 @@ from src.staff_constants import EMPRESARIOS_DISPONIVEIS, PROFISSIONAIS_DISPONIVE
 router = APIRouter(prefix="/api/jogador")
 
 
+class JogadorResponse(BaseModel):
+    nome: str
+    nacionalidade: str
+    idade: int
+    altura: int
+    peso: int
+    mao_dominante: str
+    reves: str
+    estilo_jogo: str
+    pico_carreira: int
+    tour: str
+    ranking: int
+    pontos: int
+    overall: int
+    resumo_fifa: dict[str, int]
+    energia: int
+    fadiga: int
+    status_lesao: str | None
+    dinheiro: int
+    seguidores: int
+    nivel: int
+    xp: int
+    xp_para_proximo_nivel: int
+    atributos: dict[str, int]
+    atributos_psicologicos: dict[str, int]
+    carta: dict | None = None
+    identity: dict | None = None
+    historico_partidas: list[dict] | None = None
+    historico_torneios: list[dict] | None = None
+    trofeus: list[dict] | None = None
+
+
 def _serialize_membro(info: dict | None, contrato: dict | None = None) -> dict | None:
     if not info:
         return None
@@ -62,8 +94,8 @@ def _serialize_patrocinio(item) -> dict | None:
     }
 
 
-@router.get("")
-def get_jogador(session: Session = Depends(obter_sessao_ativa)):
+@router.get("", response_model=JogadorResponse)
+def get_jogador(session: Session = Depends(obter_sessao_ativa)) -> JogadorResponse:
     if not session.jogador:
         raise HTTPException(status_code=400, detail="Sessão não iniciada.")
 
@@ -109,38 +141,41 @@ def get_jogador(session: Session = Depends(obter_sessao_ativa)):
         modalidade="simples",
     )
 
-    return {
-        "nome": j.nome,
-        "nacionalidade": j.nacionalidade,
-        "idade": j.idade,
-        "altura": getattr(j, "altura", 185),
-        "peso": getattr(j, "peso", 80),
-        "mao_dominante": getattr(j, "mao_dominante", "Destro"),
-        "reves": getattr(j, "reves", "Duas mãos"),
-        "estilo_jogo": getattr(j, "estilo_jogo", "All-court"),
-        "pico_carreira": getattr(j, "pico_carreira", 28),
-        "tour": "atp" if j.genero == "masculino" else "wta",
-        "ranking": posicao,
-        "pontos": j.pontos_ytd,
-        "overall": overall,
-        "resumo_fifa": resumo_fifa,
-        "energia": j.energia,
-        "fadiga": j.fadiga,
-        "status_lesao": (
+    return JogadorResponse(
+        nome=j.nome,
+        nacionalidade=j.nacionalidade,
+        idade=j.idade,
+        altura=getattr(j, "altura", 185),
+        peso=getattr(j, "peso", 80),
+        mao_dominante=getattr(j, "mao_dominante", "Destro"),
+        reves=getattr(j, "reves", "Duas mãos"),
+        estilo_jogo=getattr(j, "estilo_jogo", "All-court"),
+        pico_carreira=getattr(j, "pico_carreira", 28),
+        tour="atp" if j.genero == "masculino" else "wta",
+        ranking=posicao,
+        pontos=j.pontos_ytd,
+        overall=overall,
+        resumo_fifa=resumo_fifa,
+        energia=j.energia,
+        fadiga=j.fadiga,
+        status_lesao=(
             j.status_lesao.get("nivel")
             if (j.status_lesao or {}).get("lesionado")
             else None
         ),
-        "dinheiro": j.dinheiro,
-        "seguidores": j.seguidores,
-        "nivel": j.nivel,
-        "xp": j.xp,
-        "xp_para_proximo_nivel": getattr(j, "xp_para_proximo_nivel", 100),
-        "atributos": jogador_payload["atributos"],
-        "atributos_psicologicos": jogador_payload.get("atributos_psicologicos", {}),
-        "carta": carta_jogador(jogador_payload, posicao or 9999),
-        "identity": identity,
-    }
+        dinheiro=j.dinheiro,
+        seguidores=j.seguidores,
+        nivel=j.nivel,
+        xp=j.xp,
+        xp_para_proximo_nivel=getattr(j, "xp_para_proximo_nivel", 100),
+        atributos=jogador_payload["atributos"],
+        atributos_psicologicos=jogador_payload.get("atributos_psicologicos", {}),
+        carta=carta_jogador(jogador_payload, posicao or 9999),
+        identity=identity,
+        historico_partidas=list(getattr(j, "historico_partidas", []) or []),
+        historico_torneios=list(getattr(j, "historico_torneios", []) or []),
+        trofeus=list(getattr(j, "trofeus", []) or []),
+    )
 
 
 @router.get("/financeiro")

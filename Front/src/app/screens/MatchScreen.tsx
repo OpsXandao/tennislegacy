@@ -8,6 +8,7 @@ import { api, ApiError } from '../../api/client'
 import { useGameStore } from '../../store/gameStore'
 import type {
   AdversarioInfo as ApiAdversarioInfo,
+  JogadorState,
   MatchPointRuntime,
   MatchStrategySummary,
   PlacarState,
@@ -68,6 +69,9 @@ import {
 import {
   extrairAtualizacaoRuntime,
   extrairAdversarioInfoPartida,
+  extrairHistoricoJogador,
+  extrairHistoricoTorneiosJogador,
+  extrairTrofeusJogador,
   mapApiAdversarioParaMatch,
   modoAcompanhamentoDaApi,
 } from './match/bootstrap'
@@ -174,7 +178,7 @@ export function MatchScreen() {
     `${mentalidadeAtual.label} com ${abordagemAtual.label.toLowerCase()} e ${instrucaoAtual.label.toLowerCase()}.`
 
   // Post-match
-  const [jogadorPosjogo, setJogadorPosjogo] = useState<any>(null)
+  const [jogadorPosjogo, setJogadorPosjogo] = useState<JogadorState | null>(null)
   const jogadorAntesRef = useRef<{ xp: number; ranking: number; nivel: number } | null>(null)
 
   const lastPlacar = useRef<PlacarState>(PLACAR_INICIAL)
@@ -727,15 +731,15 @@ export function MatchScreen() {
   const historicoRival = resumirHistoricoRival(adversario.historicoPartidas, adversario.historicoTorneios)
   const titulosRival = resumirTitulosRival(adversario.trofeus)
   const historicoJogador = resumirHistoricoRival(
-    Array.isArray((jogador as any)?.historico_partidas) ? (jogador as any).historico_partidas : [],
-    Array.isArray((jogador as any)?.historico_torneios) ? (jogador as any).historico_torneios : [],
+    extrairHistoricoJogador(jogador),
+    extrairHistoricoTorneiosJogador(jogador),
   )
-  const titulosJogador = resumirTitulosRival(Array.isArray((jogador as any)?.trofeus) ? (jogador as any).trofeus : [])
+  const titulosJogador = resumirTitulosRival(extrairTrofeusJogador(jogador))
   const corCardRival = accentFromCarta(adversario.carta, '#ff4466')
   const metricsJogador = getScoutingMetricsFromData(
     jogador?.carta?.atributos_boosted ?? jogador?.atributos ?? {},
     jogador?.atributos_psicologicos ?? {},
-    (jogador as any)?.resumo_fifa,
+    jogador?.resumo_fifa,
   )
   const reportJogador = montarRelatorioJogador({
     nome: nomeJogador,

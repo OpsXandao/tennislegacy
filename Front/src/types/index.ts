@@ -43,6 +43,10 @@ export interface JogadorState {
   xp_para_proximo_nivel: number
   atributos: Record<string, number>
   atributos_psicologicos?: Record<string, number>
+  resumo_fifa?: Record<string, number>
+  historico_partidas?: Array<Record<string, unknown>>
+  historico_torneios?: Array<Record<string, unknown>>
+  trofeus?: Array<Record<string, unknown>>
   carta?: CartaJogador
   identity?: PlayerIdentity
 }
