@@ -4,18 +4,7 @@ import { NeonButton, NeonCard, PageHeader, PixelFlag } from '../components'
 import { api } from '../../api/client'
 import { useNavigate } from 'react-router'
 import { useGameStore } from '../../store/gameStore'
-
-interface DavisState {
-  nome: string
-  tipo: string
-  fase_atual: string
-  jogador_ativo: boolean
-  jogador_convocado: boolean
-  partida_disponivel: boolean
-  info_partida?: any
-  confronto_atual?: any
-  estado: any
-}
+import type { DavisState } from '../../types'
 
 export function DavisScreen() {
   const navigate = useNavigate()
@@ -29,7 +18,7 @@ export function DavisScreen() {
     setLoading(true)
     try {
       const estado = await api.davis.estado()
-      setData(estado as any)
+      setData(estado)
       setStatus('')
     } catch (error) {
       setStatus(error instanceof Error ? error.message : 'Falha ao carregar confronto nacional.')
@@ -139,7 +128,7 @@ export function DavisScreen() {
               NENHUMA PARTIDA DISPUTADA AINDA
             </div>
           )}
-          {partidas.map((p: any, i: number) => (
+          {partidas.map((p, i) => (
             <div key={i} className="bg-[#111] border-2 border-[#333] p-3 flex justify-between items-center">
               <div className="flex-1">
                 <div className="arcade-font text-[9px] text-white truncate">{p.jogador_a}</div>

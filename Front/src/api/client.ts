@@ -16,6 +16,7 @@ import type {
   PlacarEvent,
   SavePreview,
   MundoTorneio,
+  DavisState,
   Transaction,
   MatchHistoryEntry,
   RankingDetalhado,
@@ -419,16 +420,7 @@ export const api = {
 
   davis: {
     estado: () =>
-      get<{
-        nome: string
-        tipo: string
-        fase_atual: string
-        jogador_ativo: boolean
-        jogador_convocado: boolean
-        confronto_atual?: Record<string, unknown> | null
-        proximo?: Record<string, unknown> | null
-        estado: Record<string, unknown>
-      }>('/davis/estado'),
+      get<DavisState>('/davis/estado'),
     proximo: () => get<Record<string, unknown> | null>('/davis/proximo'),
     simular: () => post<{ ok: boolean; placar: string; vencedor: string }>('/davis/simular-atual'),
   },

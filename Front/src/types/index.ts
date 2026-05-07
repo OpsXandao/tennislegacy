@@ -161,6 +161,41 @@ export interface TorneioCalendario {
 
 export interface MundoTorneio extends TorneioCalendario {}
 
+export interface DavisHistoricoPartida {
+  jogador_a: string
+  jogador_b: string
+  placar: string
+  vencedor: string
+}
+
+export interface DavisConfrontoAtual {
+  equipe_a: string
+  equipe_b: string
+  placar_tie: number[]
+  partidas: DavisHistoricoPartida[]
+  vencedor?: string | null
+}
+
+export interface DavisInfoPartida {
+  jogador1: string
+  jogador2: string
+  partida_idx?: number | null
+  tipo?: string | null
+}
+
+export interface DavisState {
+  nome: string
+  tipo: string
+  fase_atual: string
+  jogador_ativo: boolean
+  jogador_convocado: boolean
+  partida_disponivel: boolean
+  info_partida?: DavisInfoPartida | null
+  confronto_atual?: DavisConfrontoAtual | null
+  proximo?: Record<string, unknown> | null
+  estado: Record<string, unknown>
+}
+
 export interface CampeaoSemana {
   tour: string
   torneio: string
