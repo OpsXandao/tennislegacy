@@ -131,6 +131,18 @@ export interface PlacarEvent extends PlacarState {
   estrategia_a?: MatchStrategySummary
 }
 
+export interface MatchPointRuntime extends PlacarEvent {
+  last_point_stats?: Record<string, unknown>
+  energia_j: number
+  energia_a: number
+  fadiga_j: number
+  fadiga_a: number
+  estrategia_j: MatchStrategySummary
+  estrategia_a: MatchStrategySummary
+  ajuste_tatico_j: string
+  ajuste_tatico_a: string
+}
+
 export interface TorneioCalendario {
   nome: string
   tipo: string

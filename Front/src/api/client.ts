@@ -6,6 +6,7 @@ import type {
   RankingEntry,
   TorneioState,
   PlacarState,
+  MatchPointRuntime,
   TorneioCalendario,
   ResumoDaSemana,
   MembroEquipe,
@@ -344,13 +345,13 @@ export const api = {
       post<{ ok: boolean }>('/partida/desistir', { partida_id }),
 
     ponto: (partida_id: string) =>
-      post<PlacarEvent>('/partida/ponto', { partida_id }),
+      post<MatchPointRuntime>('/partida/ponto', { partida_id }),
 
     simularSet: (partida_id: string) =>
-      post<PlacarState>('/partida/simular-set', { partida_id }),
+      post<MatchPointRuntime>('/partida/simular-set', { partida_id }),
 
     simularPartida: (partida_id: string) =>
-      post<PlacarState>('/partida/simular-partida', { partida_id }),
+      post<MatchPointRuntime>('/partida/simular-partida', { partida_id }),
 
     estrategia: (partida_id: string, estrategia: string) =>
       post<{ ok: boolean }>('/partida/estrategia', { partida_id, estrategia }),

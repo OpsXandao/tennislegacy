@@ -8,8 +8,8 @@ import { api, ApiError } from '../../api/client'
 import { useGameStore } from '../../store/gameStore'
 import type {
   AdversarioInfo as ApiAdversarioInfo,
+  MatchPointRuntime,
   MatchStrategySummary,
-  PlacarEvent,
   PlacarState,
 } from '../../types'
 import type {
@@ -66,6 +66,7 @@ import {
   serializarPacoteTatico,
 } from './match/model'
 import {
+  extrairAtualizacaoRuntime,
   extrairAdversarioInfoPartida,
   mapApiAdversarioParaMatch,
   modoAcompanhamentoDaApi,
@@ -411,42 +412,42 @@ export function MatchScreen() {
 
   // ─── Apply placar update ──────────────────────────────────────────────────
 
-  const aplicar = useCallback((estado: PlacarEvent | PlacarState) => {
+  const aplicar = useCallback((estado: MatchPointRuntime | PlacarState) => {
     const desc = ('descricao' in estado ? estado.descricao : '') || ''
     const tipo = ('tipo' in estado ? estado.tipo : '') as string
-
+    const atualizacao = extrairAtualizacaoRuntime(estado)
     const prevGames: [number, number] = [lastPlacar.current.games[0], lastPlacar.current.games[1]]
     const prevServindo = lastPlacar.current.servindo
 
-    setPlacar(estado)
-    lastPlacar.current = estado
-    if ('energia_j' in estado && typeof (estado as any).energia_j === 'number') {
-      setEnergiaJogadorAoVivo(Number((estado as any).energia_j))
+    setPlacar(atualizacao.placar)
+    lastPlacar.current = atualizacao.placar
+    if (atualizacao.energiaJogador !== null) {
+      setEnergiaJogadorAoVivo(atualizacao.energiaJogador)
     }
-    if ('fadiga_j' in estado && typeof (estado as any).fadiga_j === 'number') {
-      setFadigaJogadorAoVivo(Number((estado as any).fadiga_j))
+    if (atualizacao.fadigaJogador !== null) {
+      setFadigaJogadorAoVivo(atualizacao.fadigaJogador)
     }
-    if ('estrategia_j' in estado && (estado as any).estrategia_j) {
-      setEstrategiaJogadorAoVivo((estado as any).estrategia_j as MatchStrategySummary)
+    if (atualizacao.estrategiaJogador) {
+      setEstrategiaJogadorAoVivo(atualizacao.estrategiaJogador as MatchStrategySummary)
     }
-    if ('estrategia_a' in estado && (estado as any).estrategia_a) {
-      setEstrategiaAdversarioAoVivo((estado as any).estrategia_a as MatchStrategySummary)
+    if (atualizacao.estrategiaAdversario) {
+      setEstrategiaAdversarioAoVivo(atualizacao.estrategiaAdversario as MatchStrategySummary)
     }
-    if ('energia_a' in estado || 'fadiga_a' in estado) {
-      if (typeof (estado as any).energia_a === 'number') {
-        setEnergiaAdversarioAoVivo(Number((estado as any).energia_a))
+    if (atualizacao.energiaAdversario !== null || atualizacao.fadigaAdversario !== null) {
+      if (atualizacao.energiaAdversario !== null) {
+        setEnergiaAdversarioAoVivo(atualizacao.energiaAdversario)
       }
-      if (typeof (estado as any).fadiga_a === 'number') {
-        setFadigaAdversarioAoVivo(Number((estado as any).fadiga_a))
+      if (atualizacao.fadigaAdversario !== null) {
+        setFadigaAdversarioAoVivo(atualizacao.fadigaAdversario)
       }
       setAdversario(prev => ({
         ...prev,
-        energia: typeof (estado as any).energia_a === 'number' ? Number((estado as any).energia_a) : prev.energia,
-        fadiga: typeof (estado as any).fadiga_a === 'number' ? Number((estado as any).fadiga_a) : prev.fadiga,
+        energia: atualizacao.energiaAdversario ?? prev.energia,
+        fadiga: atualizacao.fadigaAdversario ?? prev.fadiga,
       }))
     }
     if (desc) setLog(p => [...p, desc].slice(-80))
-    setAlertaBreak(detectBreakPoint(estado))
+    setAlertaBreak(detectBreakPoint(atualizacao.placar))
 
     // Point flash (only for individual pontos)
     if (desc && tipo === 'ponto') {
@@ -455,7 +456,7 @@ export function MatchScreen() {
       setTimeout(() => setFlashPonto(null), 2200)
     }
 
-    if (estado.encerrado) {
+    if (atualizacao.placar.encerrado) {
       setFase('encerrada')
       return
     }
@@ -468,13 +469,13 @@ export function MatchScreen() {
     }
 
     if (tipo === 'game') {
-      const jogadorGanhouGame = estado.games[0] > prevGames[0]
+      const jogadorGanhouGame = atualizacao.placar.games[0] > prevGames[0]
       const quemGanhou: 'jogador' | 'adversario' = jogadorGanhouGame ? 'jogador' : 'adversario'
       const foiBreak = jogadorGanhouGame
         ? prevServindo === 'adversario'
         : prevServindo === 'jogador'
 
-      setGameResult({ quemGanhou, foiBreak, placarGames: estado.games })
+      setGameResult({ quemGanhou, foiBreak, placarGames: atualizacao.placar.games })
       setAjustandoPlanoGame(false)
 
       if (modoRef.current === 'auto' || modoRef.current === 'detalhado') {
@@ -485,7 +486,7 @@ export function MatchScreen() {
       return
     }
 
-    if (!estado.encerrado) setFase('aguardando')
+    if (!atualizacao.placar.encerrado) setFase('aguardando')
   }, [])
 
   // ─── Handlers ────────────────────────────────────────────────────────────
@@ -592,9 +593,9 @@ export function MatchScreen() {
     setFase('jogando')
     setSimulando(true)
     try {
-      let finalEstado: PlacarEvent | null = null
+      let finalEstado: MatchPointRuntime | null = null
       while (true) {
-        const estado = await api.partida.ponto(partidaId) as PlacarEvent
+        const estado = await api.partida.ponto(partidaId)
         const tipo = estado.tipo
         if (tipo === 'game' || tipo === 'set' || tipo === 'fim' || estado.encerrado) {
           finalEstado = estado

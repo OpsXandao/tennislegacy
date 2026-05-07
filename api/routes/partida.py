@@ -116,6 +116,54 @@ class PartidaIniciarResponse(BaseModel):
     placar: dict | None = None
 
 
+class MatchStatsResponse(BaseModel):
+    aces: int
+    duplas_faltas: int
+    primeiro_saque_pct: str
+    winners: int
+    erros_nao_forcados: int
+    pontos_saque_pct: str
+    pontos_devolucao_pct: str
+    break_points: str
+    rallies_curtos: int
+    rallies_medios: int
+    rallies_longos: int
+
+
+class MatchStrategyResponse(BaseModel):
+    estilo: str | None = None
+    saque: str | None = None
+    saque_tipo: str | None = None
+    intencao: str | None = None
+    mentalidade: str | None = None
+    abordagem: str | None = None
+    instrucao: str | None = None
+
+
+class MatchRuntimeResponse(BaseModel):
+    tipo: str
+    descricao: str
+    sets: list[int]
+    games: list[int]
+    pontos: list[str]
+    servindo: str
+    log: list[str]
+    encerrado: bool
+    vencedor: str | None = None
+    placar_final: str | None = None
+    stats_j: MatchStatsResponse
+    stats_a: MatchStatsResponse
+    last_point_stats: dict
+    energia_j: int
+    energia_a: int
+    fadiga_j: int
+    fadiga_a: int
+    estrategia_j: MatchStrategyResponse
+    estrategia_a: MatchStrategyResponse
+    ajuste_tatico_j: str
+    ajuste_tatico_a: str
+
+
 @router.get("/ativa")
 def obter_ativa(
     session: Session = Depends(obter_sessao_ativa),
@@ -244,8 +292,10 @@ def desistir_partida(
     return {"ok": True}
 
 
-@router.post("/ponto")
-def ponto(body: PontoBody, session: Session = Depends(obter_sessao_ativa)) -> dict:
+@router.post("/ponto", response_model=MatchRuntimeResponse)
+def ponto(
+    body: PontoBody, session: Session = Depends(obter_sessao_ativa)
+) -> MatchRuntimeResponse:
     try:
         runtime = obter_match_runtime(body.partida_id, session.nome_save_ativo)
         return runtime.jogar_ponto()
@@ -332,10 +382,10 @@ def ajuste_tatico(
     return {"ok": True, "set_ajustado": body.set_numero}
 
 
-@router.post("/simular-set")
+@router.post("/simular-set", response_model=MatchRuntimeResponse)
 def simular_set(
     body: SimulacaoBody, session: Session = Depends(obter_sessao_ativa)
-) -> dict:
+) -> MatchRuntimeResponse:
     try:
         runtime = obter_match_runtime(body.partida_id, session.nome_save_ativo)
         return runtime.simular_set()
@@ -346,10 +396,10 @@ def simular_set(
         raise HTTPException(status_code=500, detail="Erro ao simular set.") from exc
 
 
-@router.post("/simular-partida")
+@router.post("/simular-partida", response_model=MatchRuntimeResponse)
 def simular_partida(
     body: SimulacaoBody, session: Session = Depends(obter_sessao_ativa)
-) -> dict:
+) -> MatchRuntimeResponse:
     try:
         runtime = obter_match_runtime(body.partida_id, session.nome_save_ativo)
         return runtime.simular_partida()

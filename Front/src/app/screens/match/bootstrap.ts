@@ -1,5 +1,8 @@
 import type {
   AdversarioInfo as ApiAdversarioInfo,
+  MatchPointRuntime,
+  MatchStrategySummary,
+  PlacarState,
   TorneioState,
 } from '../../../types'
 import { inferirEstilo } from './model'
@@ -56,4 +59,33 @@ export function extrairAdversarioInfoPartida(
   const j2 = infoPartida.jogador2
   const nomeAdv = j1.trim().toLowerCase() === meu ? j2 : j1
   return nomeAdv ? { nome: nomeAdv } : null
+}
+
+export interface RuntimeStateUpdate {
+  placar: PlacarState
+  energiaJogador: number | null
+  fadigaJogador: number | null
+  energiaAdversario: number | null
+  fadigaAdversario: number | null
+  estrategiaJogador: MatchStrategySummary | null
+  estrategiaAdversario: MatchStrategySummary | null
+}
+
+export function extrairAtualizacaoRuntime(
+  estado: PlacarState | MatchPointRuntime,
+): RuntimeStateUpdate {
+  const runtime = estado as Partial<MatchPointRuntime>
+  return {
+    placar: estado,
+    energiaJogador:
+      typeof runtime.energia_j === 'number' ? Number(runtime.energia_j) : null,
+    fadigaJogador:
+      typeof runtime.fadiga_j === 'number' ? Number(runtime.fadiga_j) : null,
+    energiaAdversario:
+      typeof runtime.energia_a === 'number' ? Number(runtime.energia_a) : null,
+    fadigaAdversario:
+      typeof runtime.fadiga_a === 'number' ? Number(runtime.fadiga_a) : null,
+    estrategiaJogador: runtime.estrategia_j ?? null,
+    estrategiaAdversario: runtime.estrategia_a ?? null,
+  }
 }
