@@ -2,12 +2,18 @@ import type {
   AdversarioInfo as ApiAdversarioInfo,
   JogadorState,
   MatchPointRuntime,
-  MatchStrategySummary,
   PlacarState,
   TorneioState,
 } from '../../../types'
 import { inferirEstilo } from './model'
 import type { AdversarioInfo, ModoAcomp } from './types'
+
+export interface MatchSyntheticEvent extends PlacarState {
+  tipo: 'setup' | 'set' | 'fim'
+  descricao: string
+}
+
+export type MatchScreenState = PlacarState | MatchPointRuntime | MatchSyntheticEvent
 
 export function modoAcompanhamentoDaApi(modo?: string): ModoAcomp {
   return modo === 'estrategista' || modo === 'auto' || modo === 'game'
@@ -64,30 +70,58 @@ export function extrairAdversarioInfoPartida(
 
 export interface RuntimeStateUpdate {
   placar: PlacarState
+  tipo: MatchPointRuntime['tipo'] | MatchSyntheticEvent['tipo'] | ''
+  descricao: string
   energiaJogador: number | null
   fadigaJogador: number | null
   energiaAdversario: number | null
   fadigaAdversario: number | null
-  estrategiaJogador: MatchStrategySummary | null
-  estrategiaAdversario: MatchStrategySummary | null
+  estrategiaJogador: MatchPointRuntime['estrategia_j'] | null
+  estrategiaAdversario: MatchPointRuntime['estrategia_a'] | null
+}
+
+function isMatchRuntime(estado: MatchScreenState): estado is MatchPointRuntime {
+  return 'energia_j' in estado && 'energia_a' in estado
 }
 
 export function extrairAtualizacaoRuntime(
-  estado: PlacarState | MatchPointRuntime,
+  estado: MatchScreenState,
 ): RuntimeStateUpdate {
-  const runtime = estado as Partial<MatchPointRuntime>
+  const runtime = isMatchRuntime(estado) ? estado : null
   return {
     placar: estado,
+    tipo: 'tipo' in estado ? estado.tipo : '',
+    descricao: 'descricao' in estado ? estado.descricao : '',
     energiaJogador:
-      typeof runtime.energia_j === 'number' ? Number(runtime.energia_j) : null,
+      runtime && typeof runtime.energia_j === 'number'
+        ? Number(runtime.energia_j)
+        : null,
     fadigaJogador:
-      typeof runtime.fadiga_j === 'number' ? Number(runtime.fadiga_j) : null,
+      runtime && typeof runtime.fadiga_j === 'number'
+        ? Number(runtime.fadiga_j)
+        : null,
     energiaAdversario:
-      typeof runtime.energia_a === 'number' ? Number(runtime.energia_a) : null,
+      runtime && typeof runtime.energia_a === 'number'
+        ? Number(runtime.energia_a)
+        : null,
     fadigaAdversario:
-      typeof runtime.fadiga_a === 'number' ? Number(runtime.fadiga_a) : null,
-    estrategiaJogador: runtime.estrategia_j ?? null,
-    estrategiaAdversario: runtime.estrategia_a ?? null,
+      runtime && typeof runtime.fadiga_a === 'number'
+        ? Number(runtime.fadiga_a)
+        : null,
+    estrategiaJogador: runtime?.estrategia_j ?? null,
+    estrategiaAdversario: runtime?.estrategia_a ?? null,
+  }
+}
+
+export function criarEventoLocalDePlacar(
+  placar: PlacarState,
+  tipo: MatchSyntheticEvent['tipo'],
+  descricao = '',
+): MatchSyntheticEvent {
+  return {
+    ...placar,
+    tipo,
+    descricao,
   }
 }
 

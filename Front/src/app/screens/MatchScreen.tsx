@@ -67,6 +67,7 @@ import {
   serializarPacoteTatico,
 } from './match/model'
 import {
+  criarEventoLocalDePlacar,
   extrairAtualizacaoRuntime,
   extrairAdversarioInfoPartida,
   extrairHistoricoJogador,
@@ -417,8 +418,6 @@ export function MatchScreen() {
   // ─── Apply placar update ──────────────────────────────────────────────────
 
   const aplicar = useCallback((estado: MatchPointRuntime | PlacarState) => {
-    const desc = ('descricao' in estado ? estado.descricao : '') || ''
-    const tipo = ('tipo' in estado ? estado.tipo : '') as string
     const atualizacao = extrairAtualizacaoRuntime(estado)
     const prevGames: [number, number] = [lastPlacar.current.games[0], lastPlacar.current.games[1]]
     const prevServindo = lastPlacar.current.servindo
@@ -432,10 +431,10 @@ export function MatchScreen() {
       setFadigaJogadorAoVivo(atualizacao.fadigaJogador)
     }
     if (atualizacao.estrategiaJogador) {
-      setEstrategiaJogadorAoVivo(atualizacao.estrategiaJogador as MatchStrategySummary)
+      setEstrategiaJogadorAoVivo(atualizacao.estrategiaJogador)
     }
     if (atualizacao.estrategiaAdversario) {
-      setEstrategiaAdversarioAoVivo(atualizacao.estrategiaAdversario as MatchStrategySummary)
+      setEstrategiaAdversarioAoVivo(atualizacao.estrategiaAdversario)
     }
     if (atualizacao.energiaAdversario !== null || atualizacao.fadigaAdversario !== null) {
       if (atualizacao.energiaAdversario !== null) {
@@ -450,13 +449,13 @@ export function MatchScreen() {
         fadiga: atualizacao.fadigaAdversario ?? prev.fadiga,
       }))
     }
-    if (desc) setLog(p => [...p, desc].slice(-80))
+    if (atualizacao.descricao) setLog(p => [...p, atualizacao.descricao].slice(-80))
     setAlertaBreak(detectBreakPoint(atualizacao.placar))
 
     // Point flash (only for individual pontos)
-    if (desc && tipo === 'ponto') {
-      const color = flashColor(desc)
-      setFlashPonto({ texto: desc, color })
+    if (atualizacao.descricao && atualizacao.tipo === 'ponto') {
+      const color = flashColor(atualizacao.descricao)
+      setFlashPonto({ texto: atualizacao.descricao, color })
       setTimeout(() => setFlashPonto(null), 2200)
     }
 
@@ -465,14 +464,14 @@ export function MatchScreen() {
       return
     }
 
-    if (tipo === 'set') {
+    if (atualizacao.tipo === 'set') {
       setGameResult(null)
       setAjustandoPlanoSet(false)
       setFase('entre-sets')
       return
     }
 
-    if (tipo === 'game') {
+    if (atualizacao.tipo === 'game') {
       const jogadorGanhouGame = atualizacao.placar.games[0] > prevGames[0]
       const quemGanhou: 'jogador' | 'adversario' = jogadorGanhouGame ? 'jogador' : 'adversario'
       const foiBreak = jogadorGanhouGame
@@ -515,7 +514,7 @@ export function MatchScreen() {
         setPartidaId(r.partida_id)
         if (r.adversario) applyAdversario(r.adversario)
         if (r.placar) {
-          aplicar({ ...r.placar, tipo: 'setup' as any, descricao: '' } as any)
+          aplicar(criarEventoLocalDePlacar(r.placar, 'setup'))
         }
         await api.partida.estrategia(
           r.partida_id,
@@ -532,7 +531,7 @@ export function MatchScreen() {
       setPartidaId(r.partida_id)
       if (r.adversario) applyAdversario(r.adversario)
       if (r.placar) {
-        aplicar({ ...r.placar, tipo: 'setup' as any, descricao: '' } as any)
+        aplicar(criarEventoLocalDePlacar(r.placar, 'setup'))
       }
       await api.partida.estrategia(
         r.partida_id,
@@ -622,7 +621,7 @@ export function MatchScreen() {
     setSimulando(true)
     try {
       const estado = await api.partida.simularSet(partidaId)
-      aplicar({ ...estado, tipo: estado.encerrado ? 'fim' : 'set', descricao: '' } as any)
+      aplicar(criarEventoLocalDePlacar(estado, estado.encerrado ? 'fim' : 'set'))
     } catch {
       setFase('aguardando')
     } finally {
