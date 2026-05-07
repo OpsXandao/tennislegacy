@@ -23,6 +23,7 @@ import type {
   JogadorStatus,
   AdversarioInfo,
   PartidaConfig,
+  PartidaScout,
   MembroMercado,
   EmailItem,
   GoatRecordes,
@@ -325,17 +326,7 @@ export const api = {
       get<{ adversario: AdversarioInfo }>('/partida/preview'),
 
     scout: (nomeAdversario: string) =>
-      get<{
-        nome: string
-        ranking: number
-        overall: number
-        atributos: Record<string, number>
-        atributos_psicologicos: Record<string, number>
-        superficie_favorita: string
-        forma_recente: string[]
-        h2h: { vitorias_jogador: number; vitorias_adversario: number }
-        nacionalidade: string
-      }>(`/partida/scout/${encodeURIComponent(nomeAdversario)}`),
+      get<PartidaScout>(`/partida/scout/${encodeURIComponent(nomeAdversario)}`),
 
     ativa: () =>
       get<{ partida_id: string; config: PartidaConfig; adversario: AdversarioInfo; placar: PlacarState } | null>(

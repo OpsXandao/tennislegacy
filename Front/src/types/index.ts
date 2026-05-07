@@ -365,6 +365,23 @@ export interface PartidaConfig {
   tiebreak_decisivo_pontos?: number
 }
 
+export interface PartidaScoutH2H {
+  vitorias_jogador: number
+  vitorias_adversario: number
+}
+
+export interface PartidaScout {
+  nome: string
+  ranking: number
+  overall: number
+  atributos: Record<string, number>
+  atributos_psicologicos: Record<string, number>
+  superficie_favorita: string
+  forma_recente: string[]
+  h2h: PartidaScoutH2H
+  nacionalidade: string
+}
+
 export interface MembroMercado {
   id: string
   nome: string

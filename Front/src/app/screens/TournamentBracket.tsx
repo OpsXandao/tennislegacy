@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 import { ActionDock, NeonButton, PixelFlag, PageHeader } from '../components'
 import { api } from '../../api/client'
 import { useGameStore } from '../../store/gameStore'
-import type { BracketNode, TorneioState } from '../../types'
+import type { BracketNode, PartidaScout, TorneioState } from '../../types'
 
 const FASE_ORDEM: Record<string, number> = {
   qualy_r1: -3,
@@ -360,7 +360,7 @@ export function TournamentBracket() {
   const [simulandoRestante, setSimulandoRestante] = useState(false)
   const [campeaoFinal, setCampeaoFinal] = useState<string | null>(null)
   const [erroAcao, setErroAcao] = useState('')
-  const [scoutData, setScoutData] = useState<any | null>(null)
+  const [scoutData, setScoutData] = useState<PartidaScout | null>(null)
   const [loadingScout, setLoadingScout] = useState(false)
   const [confirmDesistir, setConfirmDesistir] = useState(false)
 

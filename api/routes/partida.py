@@ -47,6 +47,23 @@ class AjusteTaticoBody(BaseModel):
     set_numero: int = 0
 
 
+class ScoutH2H(BaseModel):
+    vitorias_jogador: int
+    vitorias_adversario: int
+
+
+class ScoutResponse(BaseModel):
+    nome: str
+    ranking: int
+    overall: int
+    atributos: dict[str, int]
+    atributos_psicologicos: dict[str, int]
+    superficie_favorita: str
+    forma_recente: list[str]
+    h2h: ScoutH2H
+    nacionalidade: str
+
+
 @router.get("/ativa")
 def obter_ativa(session: Session = Depends(obter_sessao_ativa)) -> dict | None:
     return get_active_match(session.nome_save_ativo)
@@ -57,8 +74,10 @@ def preview(session: Session = Depends(obter_sessao_ativa)) -> dict:
     return preview_match(session.nome_save_ativo, session.jogador)
 
 
-@router.get("/scout/{nome_adversario}")
-def scout(nome_adversario: str, session: Session = Depends(obter_sessao_ativa)) -> dict:
+@router.get("/scout/{nome_adversario}", response_model=ScoutResponse)
+def scout(
+    nome_adversario: str, session: Session = Depends(obter_sessao_ativa)
+) -> ScoutResponse:
     """Retorna dados de scouting do adversário: atributos, H2H, forma recente."""
     from src.match_history import MatchHistoryManager
     from src.nome_utils import normalizar_nome
@@ -136,17 +155,17 @@ def scout(nome_adversario: str, session: Session = Depends(obter_sessao_ativa)) 
         elif melhor == grass_score:
             superficie_favorita = "Grass"
 
-    return {
-        "nome": adversario.get("nome", nome_adversario),
-        "ranking": adversario.get("ranking_pos") or adversario.get("ranking", 0),
-        "overall": adversario.get("overall", 0),
-        "atributos": atributos,
-        "atributos_psicologicos": adversario.get("atributos_psicologicos") or {},
-        "superficie_favorita": superficie_favorita,
-        "forma_recente": forma_recente,
-        "h2h": h2h,
-        "nacionalidade": adversario.get("nacionalidade", ""),
-    }
+    return ScoutResponse(
+        nome=adversario.get("nome", nome_adversario),
+        ranking=adversario.get("ranking_pos") or adversario.get("ranking", 0),
+        overall=adversario.get("overall", 0),
+        atributos=atributos,
+        atributos_psicologicos=adversario.get("atributos_psicologicos") or {},
+        superficie_favorita=superficie_favorita,
+        forma_recente=forma_recente,
+        h2h=ScoutH2H(**h2h),
+        nacionalidade=adversario.get("nacionalidade", ""),
+    )
 
 
 @router.post("/iniciar")
