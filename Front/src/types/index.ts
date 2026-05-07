@@ -82,6 +82,7 @@ export interface TorneioState {
     jogador1: string
     jogador2: string
     fase: string
+    adversario?: AdversarioInfo
   } | null
   estado?: Record<string, unknown>
 }
@@ -363,6 +364,17 @@ export interface PartidaConfig {
   nome_torneio?: string
   tipo_torneio?: string
   tiebreak_decisivo_pontos?: number
+}
+
+export interface PartidaPreview {
+  adversario: AdversarioInfo
+}
+
+export interface PartidaAtiva {
+  partida_id: string
+  config: PartidaConfig
+  adversario: AdversarioInfo
+  placar: PlacarState
 }
 
 export interface PartidaScoutH2H {

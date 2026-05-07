@@ -22,7 +22,9 @@ import type {
   WeekAdvancePayload,
   JogadorStatus,
   AdversarioInfo,
+  PartidaAtiva,
   PartidaConfig,
+  PartidaPreview,
   PartidaScout,
   MembroMercado,
   EmailItem,
@@ -323,15 +325,13 @@ export const api = {
 
   partida: {
     preview: () =>
-      get<{ adversario: AdversarioInfo }>('/partida/preview'),
+      get<PartidaPreview>('/partida/preview'),
 
     scout: (nomeAdversario: string) =>
       get<PartidaScout>(`/partida/scout/${encodeURIComponent(nomeAdversario)}`),
 
     ativa: () =>
-      get<{ partida_id: string; config: PartidaConfig; adversario: AdversarioInfo; placar: PlacarState } | null>(
-        '/partida/ativa'
-      ),
+      get<PartidaAtiva | null>('/partida/ativa'),
 
     iniciar: (modo: 'detalhado' | 'rapido' | 'estrategista') =>
       post<{

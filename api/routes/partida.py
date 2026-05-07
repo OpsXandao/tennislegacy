@@ -64,13 +64,60 @@ class ScoutResponse(BaseModel):
     nacionalidade: str
 
 
+class PartidaConfigResponse(BaseModel):
+    modo: str
+    superficie: str
+    melhor_de: int
+    nome_torneio: str | None = None
+    tipo_torneio: str | None = None
+    tiebreak_decisivo_pontos: int | None = None
+
+
+class AdversarioPayload(BaseModel):
+    nome: str
+    nacionalidade: str | None = None
+    idade: int | None = None
+    altura: int | None = None
+    peso: int | None = None
+    mao_dominante: str | None = None
+    reves: str | None = None
+    estilo_jogo: str | None = None
+    overall: int | None = None
+    ranking: int | None = None
+    ranking_pos: int | None = None
+    energia: int | None = None
+    fadiga: int | None = None
+    pontos: int | None = None
+    pontos_ytd: int | None = None
+    pico_carreira: int | None = None
+    atributos: dict[str, int] | None = None
+    atributos_psicologicos: dict[str, int] | None = None
+    trofeus: list[dict] | None = None
+    historico_torneios: list[dict] | None = None
+    historico_partidas: list[dict] | None = None
+    resumo_fifa: dict[str, int] | None = None
+
+
+class PartidaPreviewResponse(BaseModel):
+    adversario: AdversarioPayload
+
+
+class PartidaAtivaResponse(BaseModel):
+    partida_id: str
+    config: PartidaConfigResponse
+    adversario: AdversarioPayload
+    placar: dict
+
+
 @router.get("/ativa")
-def obter_ativa(session: Session = Depends(obter_sessao_ativa)) -> dict | None:
+def obter_ativa(
+    session: Session = Depends(obter_sessao_ativa),
+) -> PartidaAtivaResponse | None:
     return get_active_match(session.nome_save_ativo)
 
 
 @router.get("/preview")
-def preview(session: Session = Depends(obter_sessao_ativa)) -> dict:
+def preview(session: Session = Depends(obter_sessao_ativa)) -> PartidaPreviewResponse:
     return preview_match(session.nome_save_ativo, session.jogador)
 
 

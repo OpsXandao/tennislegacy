@@ -6,7 +6,12 @@ import { NeonButton } from '../components/NeonButton'
 import { FutCard } from '../components/FutCard'
 import { api, ApiError } from '../../api/client'
 import { useGameStore } from '../../store/gameStore'
-import type { MatchStrategySummary, PlacarEvent, PlacarState } from '../../types'
+import type {
+  AdversarioInfo as ApiAdversarioInfo,
+  MatchStrategySummary,
+  PlacarEvent,
+  PlacarState,
+} from '../../types'
 import type {
   AdversarioInfo,
   Alvo,
@@ -221,7 +226,7 @@ export function MatchScreen() {
       setPartidaId(res.partida_id)
       const m = (res.config.modo as ModoAcomp) || 'estrategista'
       setModo(m)
-      if ((res as any).adversario) applyAdversario((res as any).adversario)
+      if (res.adversario) applyAdversario(res.adversario)
       if (res.placar) {
         setPlacar(res.placar)
         lastPlacar.current = res.placar
@@ -250,14 +255,14 @@ export function MatchScreen() {
     api.torneio.estado().then((t) => {
       if (!t) return
       setSuperficie(t.superficie ?? '')
-      setFaseTorneio(String((t as any).fase ?? (t as any).fase_atual ?? ''))
+      setFaseTorneio(String(t.fase_atual ?? ''))
       if (t.info_partida) {
         const meu = nomeJogador.trim().toLowerCase()
         const j1 = t.info_partida.jogador1
         const j2 = t.info_partida.jogador2
         const nomeAdv = j1.trim().toLowerCase() === meu ? j2 : j1
-        if ((t.info_partida as any).adversario) {
-          applyAdversario((t.info_partida as any).adversario)
+        if (t.info_partida.adversario) {
+          applyAdversario(t.info_partida.adversario)
         } else {
           setAdversario(prev => ({ ...prev, nome: nomeAdv }))
         }
@@ -385,7 +390,7 @@ export function MatchScreen() {
       setPartidaId(ativa.partida_id)
       const m = (ativa.config.modo as ModoAcomp) || 'estrategista'
       setModo(m)
-      if ((ativa as any).adversario) applyAdversario((ativa as any).adversario)
+      if (ativa.adversario) applyAdversario(ativa.adversario)
       if (ativa.placar) {
         aplicar(ativa.placar)
       } else {
@@ -399,7 +404,7 @@ export function MatchScreen() {
 
   // ─── Helpers ─────────────────────────────────────────────────────────────
 
-  function applyAdversario(adv: any) {
+  function applyAdversario(adv: ApiAdversarioInfo) {
     if (!adv) return
     setAdversario({
       nome: adv.nome || 'ADVERSÁRIO',
