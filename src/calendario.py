@@ -25,167 +25,43 @@ from src.calendario_participacao import (
     ajustar_prob_participacao_por_contexto,
     prob_participacao,
 )
-from src.io_utils import print_green
+import logging
+
 from src.staff_constants import PROFISSIONAIS_DISPONIVEIS
 
-# --- Constantes ---
-FADIGA_RECUPERACAO_SEMANAL = 30
-ENERGIA_RECUPERACAO_SEMANAL_BASE = 18
-ENERGIA_RECUPERACAO_SEMANAL_POR_FISICO = 0.5
+logger = logging.getLogger(__name__)
 
-DOENCAS_DISPONIVEIS = {
-    "gripe": {
-        "duracao": (1, 2),
-        "penalidade_atributos": 0.08,
-        "penalidade_energia": 0.18,
-        "peso": 4,
-    },
-    "virose": {
-        "duracao": (1, 2),
-        "penalidade_atributos": 0.10,
-        "penalidade_energia": 0.22,
-        "peso": 3,
-    },
-    "intoxicacao": {
-        "duracao": (1, 1),
-        "penalidade_atributos": 0.12,
-        "penalidade_energia": 0.25,
-        "peso": 2,
-    },
-    "resfriado": {
-        "duracao": (1, 1),
-        "penalidade_atributos": 0.05,
-        "penalidade_energia": 0.12,
-        "peso": 5,
-    },
-}
-
-
-def _normalizar_status_doenca(status):
-    padrao = {
-        "doente": False,
-        "tipo": None,
-        "nivel": "saudavel",
-        "semanas_restantes": 0,
-        "penalidade_atributos": 0.0,
-        "penalidade_recuperacao_energia": 0.0,
-    }
-    status = status if isinstance(status, dict) else {}
-    normalizado = padrao.copy()
-    normalizado.update(status)
-    if not normalizado.get("doente"):
-        normalizado["tipo"] = None
-        normalizado["nivel"] = "saudavel"
-        normalizado["semanas_restantes"] = 0
-        normalizado["penalidade_atributos"] = 0.0
-        normalizado["penalidade_recuperacao_energia"] = 0.0
-    else:
-        normalizado["semanas_restantes"] = max(
-            1, int(normalizado.get("semanas_restantes", 1))
-        )
-    return normalizado
+from src.services.health_service import (
+    normalizar_status_doenca,
+    processar_recuperacao_semanal,
+    tentar_doenca_semanal,
+    FADIGA_RECUPERACAO_SEMANAL,
+    ENERGIA_RECUPERACAO_SEMANAL_BASE,
+    ENERGIA_RECUPERACAO_SEMANAL_POR_FISICO,
+)
 
 
 def _chance_doenca(jogador, info_torneio=None):
-    base = 0.03
-    fadiga = int(getattr(jogador, "fadiga", 0) or 0)
-    energia = int(getattr(jogador, "energia", 100) or 100)
-    base += max(0.0, (fadiga - 40) / 600.0)
-    base += max(0.0, (55 - energia) / 650.0)
-    if info_torneio:
-        base += 0.02
-    return max(0.01, min(0.20, base))
+    from src.services.health_service import chance_doenca
+
+    return chance_doenca(jogador, info_torneio)
 
 
 def _tentar_disparar_doenca(jogador, info_torneio=None):
     """Retorna (status_doenca, eventos: list[str])."""
-    eventos: list = []
-    status_doenca = _normalizar_status_doenca(getattr(jogador, "status_doenca", {}))
-    if status_doenca.get("doente"):
-        return status_doenca, eventos
-
-    if random.random() > _chance_doenca(jogador, info_torneio=info_torneio):
-        return status_doenca, eventos
-
-    nomes = list(DOENCAS_DISPONIVEIS.keys())
-    pesos = [DOENCAS_DISPONIVEIS[n]["peso"] for n in nomes]
-    tipo = random.choices(nomes, weights=pesos, k=1)[0]
-    cfg = DOENCAS_DISPONIVEIS[tipo]
-    semanas = random.randint(cfg["duracao"][0], cfg["duracao"][1])
-    nivel = (
-        "grave"
-        if cfg["penalidade_atributos"] >= 0.11
-        else ("moderada" if cfg["penalidade_atributos"] >= 0.08 else "leve")
+    from src.services.health_service import (
+        tentar_doenca_semanal,
+        normalizar_status_doenca,
     )
 
-    status_doenca.update(
-        {
-            "doente": True,
-            "tipo": tipo,
-            "nivel": nivel,
-            "semanas_restantes": semanas,
-            "penalidade_atributos": cfg["penalidade_atributos"],
-            "penalidade_recuperacao_energia": cfg["penalidade_energia"],
-        }
-    )
-    impacto_energia = int(round(12 + cfg["penalidade_energia"] * 30))
-    jogador.energia = max(0, jogador.energia - impacto_energia)
-    jogador.fadiga = min(100, jogador.fadiga + 8)
-    eventos.append(f"🤒 Você ficou doente ({tipo}). Impacto temporário no desempenho.")
-    return status_doenca, eventos
+    eventos = tentar_doenca_semanal(jogador, info_torneio)
+    return normalizar_status_doenca(getattr(jogador, "status_doenca", {})), eventos
 
 
 def _recuperar_energia_semana(jogador, eventos=None):
-    fisico = jogador.atributos.get("fisico", 50)
-    recuperacao = int(
-        round(
-            ENERGIA_RECUPERACAO_SEMANAL_BASE
-            + fisico * ENERGIA_RECUPERACAO_SEMANAL_POR_FISICO
-        )
-    )
-    if recuperacao <= 0:
-        return
-    status_doenca = _normalizar_status_doenca(getattr(jogador, "status_doenca", {}))
-    penalidade_rec = float(status_doenca.get("penalidade_recuperacao_energia", 0.0))
-    if penalidade_rec > 0:
-        recuperacao = int(round(recuperacao * max(0.4, 1.0 - penalidade_rec)))
-    fadiga_atual = int(getattr(jogador, "fadiga", 0) or 0)
-    if fadiga_atual <= 20:
-        # Descanso com baixa fadiga acelera reposição energética.
-        recuperacao += int(round((20 - fadiga_atual) * 0.5))
-    elif fadiga_atual >= 70:
-        # Fadiga alta limita recuperação eficiente na semana.
-        recuperacao = int(round(recuperacao * 0.88))
-    energia_antes = jogador.energia
-    jogador.energia = min(100, jogador.energia + recuperacao)
+    from src.services.health_service import processar_recuperacao_semanal
 
-    status_lesao = (
-        jogador.status_lesao
-        if isinstance(getattr(jogador, "status_lesao", {}), dict)
-        else {}
-    )
-    esta_limitado = bool(status_lesao.get("lesionado")) or status_lesao.get(
-        "nivel"
-    ) in (
-        "limitado",
-        "desconforto",
-    )
-    doente = bool(status_doenca.get("doente"))
-    # Quando a fadiga está baixa (< 20) e saudável, garante um piso mínimo de energia.
-    if fadiga_atual <= 20 and not esta_limitado and not doente:
-        piso_fadiga_baixa = 78
-        if jogador.energia < piso_fadiga_baixa:
-            jogador.energia = piso_fadiga_baixa
-    # Com fadiga zerada e sem limitações, garante energia alta para o próximo torneio.
-    if jogador.fadiga <= 0 and not esta_limitado and not doente:
-        piso_descanso_total = 92
-        if jogador.energia < piso_descanso_total:
-            jogador.energia = piso_descanso_total
-
-    if eventos is not None:
-        eventos.append(
-            f"😌 Energia recuperada com o descanso semanal: {energia_antes}% -> {jogador.energia}%."
-        )
+    processar_recuperacao_semanal(jogador, eventos)
 
 
 def _e_torneio_especial(tipo_torneio):
@@ -939,14 +815,14 @@ def processar_seguidores(jogador, ranking, participou=True):
                 # Verificamos se ele foi campeão (jogador_vivo continua True no fim se vencer)
                 if estado_t.get("jogador_vivo"):
                     ganho_base *= 5
-                    print_green("🏆 Bônus de popularidade por título!")
+                    logger.debug("🏆 Bônus de popularidade por título!")
             elif (
                 estado_t.get("jogador_vivo_duplas")
                 and str(estado_t.get("fase_atual_duplas")).lower() == "finalizado"
             ):
                 # Campeão de duplas ganha 3x
                 ganho_base *= 3
-                print_green("🏆 Bônus de popularidade por título de duplas!")
+                logger.debug("🏆 Bônus de popularidade por título de duplas!")
 
     equipe = getattr(jogador, "equipe", [])
     ganho_marketing = 0
@@ -1024,176 +900,32 @@ def processar_avisos_patrocinio(jogador, ranking):
     jogador.avisos_patrocinio = avisos
 
 
-def _processar_recuperacao_npc(j):
-    """Lógica interna de recuperação física para um único NPC (dict)."""
-    j.setdefault("fadiga", 0)
-    j.setdefault("energia", 100)
-    j.setdefault("moral", 70)
+def _simular_torneios_semanais_npc(
+    nome_save, semana_atual, ranking_principal, jogador, player_active_tournament_state
+):
+    """Encapsula a simulação de torneios onde o jogador não participa, em ambos os tours."""
+    from src.services.tournament_npc_service import simular_torneios_semanais_npc
 
-    # 1. Fadiga
-    fadiga = int(j.get("fadiga", 0))
-    j["fadiga"] = max(0, fadiga - FADIGA_RECUPERACAO_SEMANAL)
-
-    # 2. Energia (com penalidade de doença e efeito da fadiga no descanso)
-    fisico = j.get("fisico") or (j.get("atributos") or {}).get("fisico", 50)
-    rec_energia = int(
-        round(
-            ENERGIA_RECUPERACAO_SEMANAL_BASE
-            + fisico * ENERGIA_RECUPERACAO_SEMANAL_POR_FISICO
-        )
+    return simular_torneios_semanais_npc(
+        nome_save, semana_atual, jogador, player_active_tournament_state
     )
-    status_doenca = _normalizar_status_doenca(j.get("status_doenca", {}))
-    penalidade_rec = float(status_doenca.get("penalidade_recuperacao_energia", 0.0))
-    if penalidade_rec > 0:
-        rec_energia = int(round(rec_energia * max(0.4, 1.0 - penalidade_rec)))
-
-    if j["fadiga"] <= 20:
-        rec_energia += int(round((20 - j["fadiga"]) * 0.5))
-    elif j["fadiga"] >= 70:
-        rec_energia = int(round(rec_energia * 0.88))
-
-    rec_energia = max(0, rec_energia)
-    j["energia"] = min(100, int(j.get("energia", 100)) + rec_energia)
-
-    status_lesao = (
-        j.get("status_lesao", {}) if isinstance(j.get("status_lesao", {}), dict) else {}
-    )
-    esta_limitado = bool(status_lesao.get("lesionado")) or status_lesao.get(
-        "nivel"
-    ) in (
-        "limitado",
-        "desconforto",
-    )
-    doente = bool(status_doenca.get("doente"))
-    if j["fadiga"] <= 20 and not esta_limitado and not doente and j["energia"] < 78:
-        j["energia"] = 78
-    if j["fadiga"] <= 0 and not esta_limitado and not doente and j["energia"] < 92:
-        j["energia"] = 92
-
-    # 2.1 Moral (impacto semanal de desgaste/recuperação)
-    moral_atual = int(j.get("moral", 70) or 70)
-    if moral_atual > 70:
-        moral_atual = max(70, moral_atual - 2)
-    elif moral_atual < 70:
-        moral_atual = min(70, moral_atual + 2)
-
-    if j["fadiga"] >= 80:
-        moral_atual -= 3
-    elif j["fadiga"] >= 60:
-        moral_atual -= 1
-    elif j["fadiga"] <= 30:
-        moral_atual += 1
-    if j["energia"] <= 40:
-        moral_atual -= 1
-    elif j["energia"] >= 85:
-        moral_atual += 1
-    j["moral"] = max(0, min(100, moral_atual))
-
-    # 2.2 Doença
-    if status_doenca.get("doente"):
-        status_doenca["semanas_restantes"] -= 1
-        if status_doenca["semanas_restantes"] <= 0:
-            status_doenca = _normalizar_status_doenca({"doente": False})
-        else:
-            status_doenca = _normalizar_status_doenca(status_doenca)
-    else:
-        status_doenca = _normalizar_status_doenca(status_doenca)
-    j["status_doenca"] = status_doenca
-
-    # 3. Lesão
-    status = j.get("status_lesao", {})
-    if status and status.get("semanas_restantes", 0) > 0:
-        status["semanas_restantes"] -= 1
-        if status["semanas_restantes"] <= 0:
-            if status.get("lesionado"):
-                status["lesionado"] = False
-                status["nivel"] = "desconforto"
-                status["semanas_restantes"] = 0
-                status["penalidade_atributos"] = 0.06
-            else:
-                status["nivel"] = "saudavel"
-                status["penalidade_atributos"] = 0.0
-        j["status_lesao"] = status
-
-    # 4. Protected Ranking
-    if j.get("protected_ranking_semanas"):
-        j["protected_ranking_semanas"] = max(0, int(j["protected_ranking_semanas"]) - 1)
-        if j["protected_ranking_semanas"] == 0:
-            j.pop("protected_ranking", None)
 
 
 def _processar_recuperacao_ranking(ranking):
     """Atualiza fadiga, lesão e energia de todos os NPCs no ranking."""
+    from src.services.health_service import processar_recuperacao_semanal
+
     for j in ranking.ranking:
-        if not isinstance(j, dict):
-            continue
-        _processar_recuperacao_npc(j)
+        if isinstance(j, dict):
+            processar_recuperacao_semanal(j)
     ranking.salvar_ranking()
 
 
 def _processar_expiracao_ranking(nome_save, semana_atual, ano_atual):
     """Remove pontos que expiraram nesta semana (há 52 semanas) em todos os rankings."""
-    from src.dados import get_caminho_ranking_save, get_caminho_ranking_duplas
-    from src.ranking import SistemaRanking
+    from src.services.ranking_service import processar_expiracao_ranking
 
-    # Processa ATP e WTA, Simples e Duplas
-    for genero in ["masculino", "feminino"]:
-        # 1. Ranking de Simples
-        path_s = get_caminho_ranking_save(nome_save, genero=genero)
-        rk_s = SistemaRanking(path_s, modalidade="simples")
-        _limpar_ranking_obj(rk_s, semana_atual, ano_atual)
-
-        # 2. Ranking de Duplas
-        path_d = get_caminho_ranking_duplas(nome_save, genero=genero)
-        rk_d = SistemaRanking(path_d, modalidade="duplas")
-        _limpar_ranking_obj(rk_d, semana_atual, ano_atual)
-
-
-def _limpar_ranking_obj(ranking_obj, semana_atual, ano_atual):
-    """Lógica interna de limpeza de pontos expirados para um objeto SistemaRanking."""
-    mudou_global = False
-    is_duplas = ranking_obj.modalidade == "duplas"
-    c_pts = "pontos_detalhados" if not is_duplas else "pontos_detalhados_duplas"
-
-    for j in ranking_obj.ranking:
-        # Se for um shard lean, precisamos carregar para limpar os pontos detalhados
-        if j.get("is_lean"):
-            ranking_obj.buscar_jogador_por_nome(j["nome"])
-
-        detalhes = j.get(c_pts, [])
-        if not detalhes:
-            continue
-
-        novos_detalhes = []
-        mudou_jogador = False
-        for p in detalhes:
-            sem_exp = p.get("semana_expiracao")
-            ano_exp = p.get("ano_expiracao")
-
-            expirou = False
-            if ano_exp is not None and sem_exp is not None:
-                if ano_atual > ano_exp:
-                    expirou = True
-                elif ano_atual == ano_exp and semana_atual >= sem_exp:
-                    expirou = True
-            elif sem_exp is not None:
-                # Fallback para quando ano_exp é None (considera o ano atual se semana_atual >= sem_exp)
-                # Ou assume que expirou se a semana for igual/maior (legado)
-                if semana_atual >= sem_exp:
-                    expirou = True
-
-            if expirou:
-                mudou_jogador = True
-            else:
-                novos_detalhes.append(p)
-
-        if mudou_jogador:
-            j[c_pts] = novos_detalhes
-            mudou_global = True
-
-    if mudou_global:
-        ranking_obj.ordenar(recalculate=True)
-        ranking_obj.salvar_ranking()
+    processar_expiracao_ranking(nome_save, semana_atual, ano_atual)
 
 
 def avancar_semana(nome_save, expected_week=None):
