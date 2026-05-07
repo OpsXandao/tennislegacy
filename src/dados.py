@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import re
 import shutil
@@ -6,6 +7,8 @@ from urllib.parse import unquote
 from src.log_jogo import log_erro
 from src.json_utils import salvar_json_seguro
 from pydantic import ValidationError
+
+logger = logging.getLogger(__name__)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_DIR = os.path.join(BASE_DIR, "db")
@@ -70,8 +73,41 @@ def carregar_nacionalidades():
         with open(caminho_para_arquivo, "r", encoding="utf-8") as f:
             return json.load(f)
     except json.JSONDecodeError as e:
-        print(f"❌ Erro ao ler nacionalidades: {e}")
+        logger.error("Erro ao ler nacionalidades: %s", e)
         log_erro(None, "carregar_nacionalidades", e, {"arquivo": caminho_para_arquivo})
+        return {}
+
+
+def carregar_patrocinadores():
+    """Carrega o dicionário de patrocinadores do arquivo JSON."""
+    caminho_para_arquivo = os.path.join(DB_DIR, "sponsors.json")
+    try:
+        with open(caminho_para_arquivo, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        log_erro(None, "carregar_patrocinadores", e, {"arquivo": caminho_para_arquivo})
+        return {}
+
+
+def carregar_staff():
+    """Carrega o dicionário de profissionais e empresários do arquivo JSON."""
+    caminho_para_arquivo = os.path.join(DB_DIR, "staff.json")
+    try:
+        with open(caminho_para_arquivo, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        log_erro(None, "carregar_staff", e, {"arquivo": caminho_para_arquivo})
+        return {"professionals": {}, "agents": {}}
+
+
+def carregar_doencas():
+    """Carrega o dicionário de doenças do arquivo JSON."""
+    caminho_para_arquivo = os.path.join(DB_DIR, "diseases.json")
+    try:
+        with open(caminho_para_arquivo, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        log_erro(None, "carregar_doencas", e, {"arquivo": caminho_para_arquivo})
         return {}
 
 
@@ -162,7 +198,7 @@ def carregar_json(caminho: str, padrao=None, model=None):
                 return validate_data(data, model)
             return data
     except (json.JSONDecodeError, Exception) as e:
-        print(f"⚠️ Erro ao ler JSON em {caminho}. Tentando backup...")
+        logger.warning("Erro ao ler JSON em %s. Tentando backup...", caminho)
         log_erro(None, "carregar_json", e, {"arquivo": caminho})
 
         # Tentar backup (.bak)
@@ -188,7 +224,7 @@ def validate_data(data, model):
             return [model.model_validate(item).model_dump() for item in data]
         return model.model_validate(data).model_dump()
     except ValidationError as e:
-        print(f"❌ Erro de validação: {e}")
+        logger.error("Erro de validação: %s", e)
         return data
 
 
@@ -202,7 +238,7 @@ def carregar_jogador(nome_save: str):
     dados = carregar_json(caminho, model=PlayerModel)
 
     if not dados:
-        print(f"❌ Erro: Dados do jogador não encontrados no save '{nome_save}'.")
+        logger.error("Dados do jogador não encontrados no save '%s'.", nome_save)
         return None
 
     # Import inline para evitar dependência circular
@@ -264,7 +300,7 @@ def carregar_estado_torneio(nome_save, genero="masculino"):
             data = json.load(f)
             return _sanitizar_nomes_urlencoded(data)
     except json.JSONDecodeError as e:
-        print(f"❌ Erro ao ler estado do torneio {nome_save}: {e}")
+        logger.error("Erro ao ler estado do torneio %s: %s", nome_save, e)
         log_erro(
             nome_save,
             "carregar_estado_torneio",
@@ -281,7 +317,7 @@ def carregar_calendario(genero="masculino"):
         with open(caminho, "r", encoding="utf-8") as f:
             return json.load(f)
     except json.JSONDecodeError as e:
-        print(f"❌ Erro ao ler calendário: {e}")
+        logger.error("Erro ao ler calendário: %s", e)
         log_erro(None, "carregar_calendario", e, {"arquivo": caminho, "genero": genero})
         return {}
 
@@ -330,7 +366,7 @@ def carregar_ranking_nacoes_davis():
             if isinstance(data, list):
                 return {"nations": data}
     except json.JSONDecodeError as e:
-        print(f"❌ Erro ao ler ranking de nações Davis: {e}")
+        logger.error("Erro ao ler ranking de nações Davis: %s", e)
         log_erro(None, "carregar_ranking_nacoes_davis", e, {"arquivo": caminho})
     return {"nations": []}
 
@@ -382,6 +418,6 @@ def excluir_save(nome_save):
             shutil.rmtree(caminho)
             return True
         except Exception as e:
-            print(f"❌ Erro ao excluir o save '{nome_save}': {e}")
+            logger.error("Erro ao excluir o save '%s': %s", nome_save, e)
             return False
     return False

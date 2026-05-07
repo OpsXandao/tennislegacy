@@ -1,5 +1,8 @@
+import logging
 import os
 import random
+
+logger = logging.getLogger(__name__)
 
 from src.dados import (
     carregar_ranking,
@@ -147,20 +150,20 @@ class Jogador:
             return "Declínio avançado"
 
     def mostrar_status(self):
-        print(f"\n🎾 Jogador: {self.nome} | {self.nacionalidade}")
-        print(f"Overall: {self.calcular_overall()}")
-        print(f"Idade: {self.idade} | Nível: {self.nivel}")
-        print(f"XP: {self.xp} / {self.xp_para_proximo_nivel}")
-        print(f"Pontos de Skill: {self.pontos_de_skill}")
-        print(f"Energia: {self.energia} | Ritmo de jogo: {self.ritmo_jogo}")
-        print(f"Moral: {self.moral} | Dinheiro: ${self.dinheiro}")
-        print("Atributos Técnicos:")
+        lines = [
+            f"Jogador: {self.nome} | {self.nacionalidade}",
+            f"Overall: {self.calcular_overall()}",
+            f"Idade: {self.idade} | Nível: {self.nivel}",
+            f"XP: {self.xp} / {self.xp_para_proximo_nivel}",
+            f"Pontos de Skill: {self.pontos_de_skill}",
+            f"Energia: {self.energia} | Ritmo de jogo: {self.ritmo_jogo}",
+            f"Moral: {self.moral} | Dinheiro: ${self.dinheiro}",
+        ]
         for chave, valor in self.atributos.items():
-            print(f"  {chave.capitalize()}: {valor}")
-        print("Atributos Psicológicos:")
+            lines.append(f"  {chave.capitalize()}: {valor}")
         for chave, valor in self.atributos_psicologicos.items():
-            nome_formatado = chave.replace("_", " ").capitalize()
-            print(f"  {nome_formatado}: {valor}")
+            lines.append(f"  {chave.replace('_', ' ').capitalize()}: {valor}")
+        logger.debug("\n".join(lines))
 
     def ajustar_energia(self, valor):
         self.energia = max(0, min(100, self.energia + valor))
