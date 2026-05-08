@@ -16,6 +16,7 @@ from src.services.match_service import (
     resolver_adversario_partida,
     start_match,
 )
+from src.services.scouting_service import montar_relatorio_scouting
 
 router = APIRouter(prefix="/api/partida", tags=["partida"])
 
@@ -62,6 +63,11 @@ class ScoutResponse(BaseModel):
     forma_recente: list[str]
     h2h: ScoutH2H
     nacionalidade: str
+    metricas: dict[str, int]
+    texto: str
+    dicas: list[str]
+    pontos_fortes: list[str]
+    fraquezas: list[str]
 
 
 class PartidaConfigResponse(BaseModel):
@@ -182,7 +188,7 @@ def scout(
 ) -> ScoutResponse:
     """Retorna dados de scouting do adversário: atributos, H2H, forma recente."""
     from src.match_history import MatchHistoryManager
-    from src.nome_utils import normalizar_nome
+    from src.utils.nome_utils import normalizar_nome
     from src.services.player_context_service import carregar_torneio_api
 
     nome_save = session.nome_save_ativo
@@ -244,18 +250,8 @@ def scout(
     except Exception:
         pass
 
-    # Superfície favorita a partir dos atributos
     atributos = adversario.get("atributos") or {}
-    superficie_favorita = "Hard"
-    if atributos:
-        clay_score = atributos.get("topspin", 0) + atributos.get("slice", 0)
-        grass_score = atributos.get("saque", 0) + atributos.get("voleio", 0)
-        hard_score = atributos.get("forehand", 0) + atributos.get("backhand", 0)
-        melhor = max(clay_score, grass_score, hard_score)
-        if melhor == clay_score:
-            superficie_favorita = "Clay"
-        elif melhor == grass_score:
-            superficie_favorita = "Grass"
+    relatorio = montar_relatorio_scouting(adversario, instancia.superficie if instancia else "")
 
     return ScoutResponse(
         nome=adversario.get("nome", nome_adversario),
@@ -263,10 +259,15 @@ def scout(
         overall=adversario.get("overall", 0),
         atributos=atributos,
         atributos_psicologicos=adversario.get("atributos_psicologicos") or {},
-        superficie_favorita=superficie_favorita,
+        superficie_favorita=relatorio["superficie_favorita"],
         forma_recente=forma_recente,
         h2h=ScoutH2H(**h2h),
         nacionalidade=adversario.get("nacionalidade", ""),
+        metricas=relatorio["metricas"],
+        texto=relatorio["texto"],
+        dicas=relatorio["dicas"],
+        pontos_fortes=relatorio["pontos_fortes"],
+        fraquezas=relatorio["fraquezas"],
     )
 
 

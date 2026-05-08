@@ -481,6 +481,15 @@ export interface PartidaScout {
   forma_recente: string[]
   h2h: PartidaScoutH2H
   nacionalidade: string
+  metricas: {
+    saque: number
+    fundo: number
+    mental: number
+  }
+  texto: string
+  dicas: string[]
+  pontos_fortes: string[]
+  fraquezas: string[]
 }
 
 export interface MembroMercado {
