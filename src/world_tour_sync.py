@@ -1,6 +1,6 @@
 import random
 
-from src.log_jogo import log_erro
+from src.utils.log_jogo import log_erro
 from src.tournament_manager import (
     WeekTournamentManager,
     fases_por_tipo_torneio,
@@ -113,7 +113,7 @@ def inicializar_andamento_outros_torneios(
             if len(jogadores) < 2:
                 continue
 
-            from src.gerador_nomes import gerar_jogador_fraco
+            from src.utils.gerador_nomes import gerar_jogador_fraco
 
             while len(jogadores) < draw_size:
                 bot = gerar_jogador_fraco(

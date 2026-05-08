@@ -1,4 +1,4 @@
-from src.math_utils import clamp
+from src.utils.math_utils import clamp
 
 
 def multiplicador_lesao(status_lesao) -> float:

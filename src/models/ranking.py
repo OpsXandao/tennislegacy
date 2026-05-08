@@ -1,5 +1,17 @@
-from pydantic import BaseModel, Field
 from typing import Optional, Dict, List
+
+try:
+    from pydantic import BaseModel, Field
+except Exception:
+    class BaseModel:
+        def __init__(self, **kwargs):
+            for chave, valor in kwargs.items():
+                setattr(self, chave, valor)
+
+    def Field(default=None, default_factory=None, **_kwargs):
+        if default_factory is not None:
+            return default_factory()
+        return default
 
 class RankingEntry(BaseModel):
     nome: str

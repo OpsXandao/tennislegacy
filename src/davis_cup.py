@@ -13,6 +13,7 @@ mas precisa ser convocado pela seleção nacional.
 import random
 import logging
 
+from src.constants.torneio_constants import START_YEAR
 from src.dados import (
     get_caminho_ranking_save,
     get_caminho_ranking_global,
@@ -23,16 +24,16 @@ from src.dados import (
 )
 from src.jogador import normalizar_nome
 from src.ranking import SistemaRanking
-from src.gerador_nomes import gerar_nome_completo
-from src.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
-from src.jogar_partida import criar_config_partida, jogar_partida
+from src.utils.gerador_nomes import gerar_nome_completo
+from src.constants.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
+from src.match_config import criar_config_partida
 from src.progressao import handle_xp_e_level_up
 from src.fadiga import handle_fadiga_e_lesao
 from src.save import salvar_jogo
-from src.json_utils import salvar_json_seguro
-from src.log_jogo import log_erro
+from src.utils.json_utils import salvar_json_seguro
+from src.utils.log_jogo import log_erro
 from src.duplas import fundir_dupla as _fundir_dupla
-from src.davis_cup_constants import (
+from src.constants.davis_cup_constants import (
     PAISES_DAVIS_CUP,
     EQUIPES_QUALIFIERS_R1_2026,
     EQUIPES_QUALIFIERS_R2_2026,
@@ -168,28 +169,23 @@ class DavisCup:
         Processa toda a lógica de convocação do jogador.
         Retorna True se foi convocado E aceitou, False caso contrário.
         """
-        if interactive:
-            None  # clear_screen removed
-            logger.debug("\n" + "=" * 60)
-            logger.debug(
-                f"           🏆 {self._nome_competicao().upper()} - CONVOCAÇÃO"
-            )
-            logger.debug("=" * 60)
-
-            print(f"\n📍 Sua nacionalidade: {self.pais_jogador}")
-            print("📍 Capitão da seleção: ", end="")
-
         self.selecao = SelecaoNacional(
             self.pais_jogador,
             self.ranking,
             genero=getattr(self.jogador, "genero", "masculino"),
         )
+        
         if interactive:
-            print(f"{self.selecao.capitao}")
-
-            print("\n" + "-" * 60)
-            print("📊 JOGADORES DO SEU PAÍS NO RANKING:")
-            print("-" * 60)
+            logger.debug("\n" + "=" * 60)
+            logger.debug(
+                f"           🏆 {self._nome_competicao().upper()} - CONVOCAÇÃO"
+            )
+            logger.debug("=" * 60)
+            logger.debug(f"📍 Sua nacionalidade: {self.pais_jogador}")
+            logger.debug(f"📍 Capitão da seleção: {self.selecao.capitao}")
+            logger.debug("-" * 60)
+            logger.debug("📊 JOGADORES DO SEU PAÍS NO RANKING:")
+            logger.debug("-" * 60)
 
             for i, j in enumerate(self.selecao.jogadores[:10], 1):
                 nome = j.get("nome", "??")
@@ -200,19 +196,15 @@ class DavisCup:
                     if normalizar_nome(nome) == normalizar_nome(self.jogador.nome)
                     else ""
                 )
-                print(
+                logger.debug(
                     f"  {i:2}. {nome:<25} | OVR: {overall:>3} | Pts: {pontos:>5}{destaque}"
                 )
-
-            print("-" * 60)
-
-            None  # input removed
+            logger.debug("-" * 60)
 
         # Verifica convocação
         convocado, posicao, mensagem = self.verificar_convocacao()
 
         if interactive:
-            None  # clear_screen removed
             logger.debug("\n" + "=" * 60)
             logger.debug("           📋 LISTA DE CONVOCADOS")
             logger.debug("=" * 60)
@@ -235,116 +227,79 @@ class DavisCup:
 
             if interactive:
                 self.selecao.exibir_convocacao()
-
-                print(
-                    f"\n🎾 Você jogará as partidas de {('Simples 1' if pos_convocacao == 1 else 'Simples 2')}!"
+                logger.debug(
+                    f"\n🎾 Você jugará as partidas de {('Simples 1' if pos_convocacao == 1 else 'Simples 2')}!"
                 )
-
-                # Pergunta se aceita a convocação
-                print()
-                logger.debug("=" * 60)
                 logger.debug("   O capitão aguarda sua resposta sobre a convocação...")
-                logger.debug("=" * 60)
-                print()
-                print("[1] ✅ Aceitar convocação - Defender as cores do país")
-                print("[2] ❌ Recusar convocação - Priorizar carreira individual")
-                print()
+                logger.debug(f"\n🎉 Você aceitou representar {self.pais_jogador} na {self._nome_competicao()}!")
 
-                while True:
-                    escolha = None  # input removed.strip()
-                    if escolha == "1":
-                        logger.debug(
-                            f"\n🎉 Você aceitou representar {self.pais_jogador} na {self._nome_competicao()}!"
-                        )
-                        None  # input removed
-                        return True
-                    elif escolha == "2":
-                        return self._processar_recusa_convocacao(posicao)
-                    else:
-                        logger.debug("Opção inválida. Digite 1 ou 2.")
-            else:
-                # No backend da API, assumimos aceite instantâneo.
-                return True
-
+            return True
         else:
             if interactive:
                 logger.debug(f"\n❌ {mensagem}")
-
-                # Mostra a convocação sem o jogador
                 self.selecao.completar_convocacao(5)
-                print("\n📋 Convocados para representar o país:")
+                logger.debug("\n📋 Convocados para representar o país:")
                 self.selecao.exibir_convocacao()
-
                 logger.debug(
                     "\n💪 Continue trabalhando duro para ser convocado na próxima!"
                 )
-
-                None  # input removed
             else:
                 self.selecao.completar_convocacao(5)
             return False
 
-    def _processar_recusa_convocacao(self, posicao):
+    def recusar_convocacao(self, posicao, interactive=True):
         """Processa a recusa de convocação pelo jogador."""
-        None  # clear_screen removed
-        logger.debug("\n" + "=" * 60)
-        logger.debug("           ❌ CONVOCAÇÃO RECUSADA")
-        logger.debug("=" * 60)
+        if interactive:
+            logger.debug("\n" + "=" * 60)
+            logger.debug("           ❌ CONVOCAÇÃO RECUSADA")
+            logger.debug("=" * 60)
+            logger.debug(
+                f"\n📰 NOTÍCIA: {self.jogador.nome} recusa convocação para a {self._nome_competicao()}!"
+            )
 
-        logger.debug(
-            f"\n📰 NOTÍCIA: {self.jogador.nome} recusa convocação para a {self._nome_competicao()}!"
-        )
-        print()
+            if posicao == 1:
+                logger.debug(f'   "{self.jogador.nome}, número 1 do país, decidiu não')
+                logger.debug(
+                    f"   defender as cores de {self.pais_jogador} na {self._nome_competicao()}."
+                )
+                logger.debug('   A decisão causou surpresa no mundo do tênis."')
+            elif posicao <= 3:
+                logger.debug(f'   "{self.jogador.nome}, um dos principais jogadores do país,')
+                logger.debug(
+                    f"   optou por não participar da {self._nome_competicao()}, priorizando"
+                )
+                logger.debug('   sua agenda no circuito individual."')
+            else:
+                logger.debug(
+                    f'   "{self.jogador.nome} comunicou ao capitão {self.selecao.capitao}'
+                )
+                logger.debug(
+                    f'   que não poderá atender à convocação para a {self._nome_competicao()}."'
+                )
 
-        # Mensagens diferentes baseadas na posição do jogador
-        if posicao == 1:
-            print(f'   "{self.jogador.nome}, número 1 do país, decidiu não')
-            print(
-                f"   defender as cores de {self.pais_jogador} na {self._nome_competicao()}."
-            )
-            print('   A decisão causou surpresa no mundo do tênis."')
-            impacto_moral = -10
-        elif posicao <= 3:
-            print(f'   "{self.jogador.nome}, um dos principais jogadores do país,')
-            print(
-                f"   optou por não participar da {self._nome_competicao()}, priorizando"
-            )
-            print('   sua agenda no circuito individual."')
-            impacto_moral = -5
-        else:
-            print(
-                f'   "{self.jogador.nome} comunicou ao capitão {self.selecao.capitao}'
-            )
-            print(
-                f'   que não poderá atender à convocação para a {self._nome_competicao()}."'
-            )
-            impacto_moral = -3
+        impacto_moral = -10 if posicao == 1 else (-5 if posicao <= 3 else -3)
 
-        print()
-        logger.debug(f"📊 Impacto: Moral {impacto_moral}")
+        if interactive:
+            logger.debug(f"📊 Impacto: Moral {impacto_moral}")
 
         # Aplica penalidade de moral
         if hasattr(self.jogador, "moral"):
             self.jogador.moral = max(0, self.jogador.moral + impacto_moral)
-
-        # Mostra a convocação substituta
-        print()
-        print("-" * 60)
-        logger.debug("O capitão convocou um substituto:")
-        print("-" * 60)
 
         # Reconstrói a convocação sem o jogador
         self.selecao = SelecaoNacional(
             self.pais_jogador, self.ranking, genero=self.genero
         )
         self.selecao.completar_convocacao(4)
-        self.selecao.exibir_convocacao()
+        
+        if interactive:
+            logger.debug("-" * 60)
+            logger.debug("O capitão convocou um substituto:")
+            logger.debug("-" * 60)
+            self.selecao.exibir_convocacao()
+            logger.debug(f"A {self._nome_competicao()} seguirá sem sua participação.")
+            logger.debug("Você poderá focar em outros torneios do calendário.")
 
-        print()
-        logger.debug(f"A {self._nome_competicao()} seguirá sem sua participação.")
-        logger.debug("Você poderá focar em outros torneios do calendário.")
-
-        None  # input removed
         return False
 
     def _modo_competicao(self):
@@ -382,7 +337,7 @@ class DavisCup:
         try:
             from src.dados import carregar_temporada
 
-            return int(carregar_temporada(self.nome_save).get("ano", 2026))
+            return int(carregar_temporada(self.nome_save).get("ano", START_YEAR))
         except Exception as e:
             log_erro(
                 self.nome_save,
@@ -390,11 +345,11 @@ class DavisCup:
                 e,
                 {"ano_torneio_raw": ano_torneio},
             )
-            return 2026
+            return START_YEAR
 
     def _usar_modo_carreira(self):
         # 2026 usa a chave histórica oficial; anos seguintes usam modo carreira dinâmico.
-        return self._ano_competicao() > 2026
+        return self._ano_competicao() > START_YEAR
 
     def _codigo_pais(self, valor):
         if not valor:
@@ -749,451 +704,6 @@ class DavisCup:
 
         return None
 
-    def jogar_confronto(self, adversario_pais):
-        """
-        Joga um confronto (tie) contra um país adversário.
-        Retorna o resultado do confronto.
-        """
-        estado = self._carregar_estado()
-        pais_jogador = estado["pais_jogador"]
-        fase = estado.get("fase_atual")
-        alvo_vitorias = self._vitorias_para_vencer_tie(estado)
-        total_partidas = 5 if alvo_vitorias == 3 else 3
-        confronto_atual = estado.get("confronto_atual") or {}
-
-        # Mantém ordem real do tie (mandante/visitante) nos qualifiers.
-        equipe_a_tie = confronto_atual.get("equipe_a", pais_jogador)
-        equipe_b_tie = confronto_atual.get("equipe_b", adversario_pais)
-        if not (
-            self._paises_iguais(equipe_a_tie, pais_jogador)
-            or self._paises_iguais(equipe_b_tie, pais_jogador)
-        ):
-            equipe_a_tie = pais_jogador
-            equipe_b_tie = adversario_pais
-        mandante_jogador = fase == "qualifiers" and self._paises_iguais(
-            equipe_a_tie, pais_jogador
-        )
-        bonus_mando = 0.03 if fase == "qualifiers" and mandante_jogador else 0.0
-        if fase == "qualifiers" and not mandante_jogador:
-            bonus_mando = -0.03
-
-        None  # clear_screen removed
-        logger.debug(f"\n{'=' * 60}")
-        titulo_comp = (
-            "COPA DAVIS"
-            if self._nome_competicao() == "Davis Cup"
-            else "BILLIE JEAN KING CUP"
-        )
-        logger.debug(
-            f"     🏆 {titulo_comp} ({fase.upper()}) - {pais_jogador} vs {adversario_pais}"
-        )
-        logger.debug(f"{'=' * 60}")
-        if fase == "qualifiers":
-            label_mando = "MANDANTE" if mandante_jogador else "VISITANTE"
-            logger.debug(f"📍 Condição do tie: {label_mando}")
-
-        equipe_adversaria = [
-            self._garantir_atributos_jogador(j)
-            for j in self._gerar_equipe_adversaria(adversario_pais)
-        ]
-        equipe_adversaria = sorted(
-            equipe_adversaria, key=self._forca_simples, reverse=True
-        )
-
-        selecao_jogador = estado.get("selecoes", {}).get(pais_jogador, {})
-        equipe_jogador = selecao_jogador.get("convocados")
-        if not equipe_jogador:
-            sel = SelecaoNacional(pais_jogador, self.ranking)
-            sel.completar_convocacao(4)
-            equipe_jogador = sel.convocados
-
-        equipe_jogador = [
-            self._garantir_atributos_jogador(dict(a))
-            for a in equipe_jogador
-            if isinstance(a, dict)
-        ]
-        equipe_jogador = sorted(equipe_jogador, key=self._forca_simples, reverse=True)
-
-        companheiro = None
-        for atleta in equipe_jogador:
-            if normalizar_nome(atleta.get("nome", "")) != normalizar_nome(
-                self.jogador.nome
-            ):
-                companheiro = self._garantir_atributos_jogador(atleta)
-                break
-        if companheiro is None:
-            # Gera um companheiro realista se não houver convocado
-            comp_nome = gerar_nome_completo(pais_jogador, self.genero)
-            companheiro = {
-                "nome": comp_nome,
-                "nacionalidade": pais_jogador,
-                "overall": 65,
-                "atributos": DEFAULT_ATRIBUTOS.copy(),
-                "atributos_psicologicos": DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy(),
-            }
-
-        print("\n📋 Adversários:")
-        for i, adv in enumerate(equipe_adversaria[:4], 1):
-            print(f"   {i}. {adv.get('nome', '??')} (OVR: {adv.get('overall', '??')})")
-
-        None  # input removed
-
-        vitorias_jogador = 0
-        vitorias_adversario = 0
-        resultados_partidas = []
-
-        # Configuração para partidas da Davis Cup (melhor de 3)
-        config = criar_config_partida(self.tournament_data)
-
-        def _registrar_placar_parcial():
-            if self._paises_iguais(equipe_a_tie, pais_jogador):
-                placar_a, placar_b = vitorias_jogador, vitorias_adversario
-            else:
-                placar_a, placar_b = vitorias_adversario, vitorias_jogador
-            print(
-                f"\n📊 Placar do confronto: {equipe_a_tie} {placar_a} x {placar_b} {equipe_b_tie}"
-            )
-
-        def _finalizar_confronto():
-            vencedor_confronto = (
-                pais_jogador if vitorias_jogador >= alvo_vitorias else adversario_pais
-            )
-            local_info = (
-                self._info_local_confronto(
-                    estado.get("modo_competicao"), equipe_a_tie, equipe_b_tie
-                )
-                or {}
-            )
-            resultado_confronto = {
-                "equipe_a": equipe_a_tie,
-                "equipe_b": equipe_b_tie,
-                "vencedor": vencedor_confronto,
-                "placar": f"{vitorias_jogador}-{vitorias_adversario}",
-                "partidas": resultados_partidas,
-                "cidade": local_info.get("cidade"),
-                "pais_sede": local_info.get("pais"),
-                "superficie": local_info.get("superficie"),
-            }
-            self._atualizar_estado_apos_confronto(resultado_confronto)
-
-            None  # clear_screen removed
-            logger.debug(f"\n{'=' * 60}")
-            logger.debug("           RESULTADO FINAL")
-            logger.debug(f"{'=' * 60}\n")
-            print(
-                f"   {pais_jogador}  {vitorias_jogador}  x  {vitorias_adversario}  {adversario_pais}\n"
-            )
-            if vencedor_confronto == pais_jogador:
-                logger.debug(f"🎉 {pais_jogador} VENCE O CONFRONTO!")
-            else:
-                logger.debug(f"😔 {adversario_pais} vence o confronto.")
-            None  # input removed
-            return {
-                "vencedor": vencedor_confronto,
-                "placar": f"{vitorias_jogador}-{vitorias_adversario}",
-                "eliminado": vencedor_confronto != pais_jogador,
-            }
-
-        # Ordem oficial:
-        # Final 8 (best-of-3): S2 vs S2, S1 vs S1, D (se necessário)
-        # Qualifiers (best-of-5): S2 vs S2, S1 vs S1, D, S1 vs S2, S2 vs S1
-        # No jogo, o jogador humano joga a partida correspondente à sua posição de convocação.
-
-        pos_conv = int(estado.get("posicao_convocacao") or 1)
-
-        # Titulares de simples do usuário: respeita posição convocada do humano.
-        equipe_jogador_ordenada = sorted(
-            equipe_jogador,
-            key=lambda a: (
-                normalizar_nome(a.get("nome", ""))
-                != normalizar_nome(self.jogador.nome),
-                -self._forca_simples(a),
-            ),
-        )
-        melhor_outro = next(
-            (
-                a
-                for a in equipe_jogador_ordenada
-                if normalizar_nome(a.get("nome", ""))
-                != normalizar_nome(self.jogador.nome)
-            ),
-            companheiro,
-        )
-        j_titular_1 = self.jogador if pos_conv == 1 else melhor_outro
-        j_titular_2 = melhor_outro if pos_conv == 1 else self.jogador
-
-        # Titulares adversários de simples (top 2 por força de simples).
-        adv_1 = (
-            equipe_adversaria[0]
-            if len(equipe_adversaria) > 0
-            else {"nome": "Adversário A", "overall": 60}
-        )
-        adv_2 = (
-            equipe_adversaria[1]
-            if len(equipe_adversaria) > 1
-            else {"nome": "Adversário B", "overall": 58}
-        )
-
-        # Duplas titulares: escolhe os 2 melhores por força específica de duplas.
-        # Pode ser diferente da dupla de simples, como no circuito real.
-        equipe_jogador_para_duplas = []
-        for a in equipe_jogador:
-            if normalizar_nome(a.get("nome", "")) == normalizar_nome(self.jogador.nome):
-                equipe_jogador_para_duplas.append(
-                    {
-                        "nome": self.jogador.nome,
-                        "nacionalidade": self.jogador.nacionalidade,
-                        "overall": getattr(
-                            self.jogador, "overall", a.get("overall", 70)
-                        ),
-                        "pontos_ranking_duplas": a.get(
-                            "pontos_ranking_duplas", a.get("pontos_duplas", 0)
-                        ),
-                        "pontos_duplas": a.get("pontos_duplas", 0),
-                        "atributos": getattr(
-                            self.jogador,
-                            "atributos",
-                            a.get("atributos", DEFAULT_ATRIBUTOS.copy()),
-                        ),
-                    }
-                )
-            else:
-                equipe_jogador_para_duplas.append(a)
-        equipe_jogador_para_duplas = sorted(
-            equipe_jogador_para_duplas, key=self._forca_duplas, reverse=True
-        )
-        dupla_j_a = (
-            equipe_jogador_para_duplas[0]
-            if len(equipe_jogador_para_duplas) > 0
-            else {
-                "nome": self.jogador.nome,
-                "overall": 65,
-                "atributos": DEFAULT_ATRIBUTOS.copy(),
-            }
-        )
-        dupla_j_b = (
-            equipe_jogador_para_duplas[1]
-            if len(equipe_jogador_para_duplas) > 1
-            else {
-                "nome": companheiro.get("nome", "Parceiro"),
-                "overall": companheiro.get("overall", 62),
-                "atributos": companheiro.get("atributos", DEFAULT_ATRIBUTOS.copy()),
-            }
-        )
-        equipe_adversaria_duplas = sorted(
-            equipe_adversaria, key=self._forca_duplas, reverse=True
-        )
-        dupla_a_a = (
-            equipe_adversaria_duplas[0] if len(equipe_adversaria_duplas) > 0 else adv_1
-        )
-        dupla_a_b = (
-            equipe_adversaria_duplas[1] if len(equipe_adversaria_duplas) > 1 else adv_2
-        )
-
-        if total_partidas == 3:
-            # Formato Final 8 (S2 vs S2, S1 vs S1, D)
-            agenda = [
-                ("simples", j_titular_2, adv_2),  # Partida 1: Segundos titulares
-                ("simples", j_titular_1, adv_1),  # Partida 2: Primeiros titulares
-                ("duplas", None, None),  # Partida 3: Duplas (decisiva)
-            ]
-        else:
-            # Formato Qualifiers (S2 vs S2, S1 vs S1, D, S1 vs S2, S2 vs S1)
-            agenda = [
-                ("simples", j_titular_2, adv_2),
-                ("simples", j_titular_1, adv_1),
-                ("duplas", None, None),
-                ("simples", j_titular_1, adv_2),
-                ("simples", j_titular_2, adv_1),
-            ]
-
-        for idx, (tipo_partida, p_a, p_b) in enumerate(agenda, 1):
-            # Verifica se o confronto já foi decidido antes de cada partida
-            if (
-                vitorias_jogador >= alvo_vitorias
-                or vitorias_adversario >= alvo_vitorias
-            ):
-                logger.debug(
-                    f"\n🏁 O confronto já foi decidido ({vitorias_jogador}x{vitorias_adversario})!"
-                )
-                logger.debug("As partidas restantes não serão disputadas.")
-                break
-
-            None  # clear_screen removed
-            _registrar_placar_parcial()
-            print(f"\n🎾 Partida {idx}: {tipo_partida.upper()}")
-
-            # Recuperação parcial entre partidas do mesmo confronto (descanso noturno)
-            if idx > 1:
-                rec = int((100 - self.jogador.energia) * 0.2)
-                self.jogador.energia = min(100, self.jogador.energia + rec)
-                if isinstance(companheiro, dict):
-                    rec_c = int((100 - companheiro.get("energia", 100)) * 0.2)
-                    companheiro["energia"] = min(
-                        100, companheiro.get("energia", 100) + rec_c
-                    )
-
-            if tipo_partida == "duplas":
-                if (
-                    vitorias_jogador >= alvo_vitorias
-                    or vitorias_adversario >= alvo_vitorias
-                ):
-                    # Segurança extra: não simula duplas se o tie já estiver decidido.
-                    break
-                None  # clear_screen removed
-                logger.debug(f"\n{'=' * 60}")
-                logger.debug(f"     DUPLAS: {pais_jogador} vs {adversario_pais}")
-                logger.debug(f"{'=' * 60}\n")
-                logger.debug("🎾 A partida de duplas será simulada...")
-                print(
-                    f"   {dupla_j_a.get('nome', 'Dupla A')} / {dupla_j_b.get('nome', 'Dupla B')}"
-                )
-                print(
-                    f"   vs {dupla_a_a.get('nome', 'Dupla C')} / {dupla_a_b.get('nome', 'Dupla D')}"
-                )
-
-                equipe_j = _fundir_dupla(dupla_j_a, dupla_j_b)
-                equipe_a = _fundir_dupla(dupla_a_a, dupla_a_b)
-                diff = (equipe_j["overall"] - equipe_a["overall"]) * 75
-                bonus_momento = 0.10 * (vitorias_jogador - vitorias_adversario)
-                chance_vitoria = 0.5 + diff / 6000.0 + bonus_momento + bonus_mando
-                chance_vitoria = max(0.15, min(0.85, chance_vitoria))
-                sets_a = 0
-                sets_b = 0
-                for _ in range(3):
-                    if random.random() < chance_vitoria:
-                        sets_a += 1
-                    else:
-                        sets_b += 1
-                    if sets_a == 2 or sets_b == 2:
-                        break
-                if sets_a > sets_b:
-                    vitorias_jogador += 1
-                    placar = f"{sets_a}-{sets_b}"
-                    vencedor = pais_jogador
-                    logger.debug(f"\n✅ {pais_jogador} vence as duplas! ({placar})")
-                else:
-                    vitorias_adversario += 1
-                    placar = f"{sets_b}-{sets_a}"
-                    vencedor = adversario_pais
-                    logger.debug(f"\n❌ {adversario_pais} vence as duplas! ({placar})")
-
-                # Registrar vínculo com o parceiro (se o jogador estava na dupla)
-                nome_j_norm = normalizar_nome(self.jogador.nome)
-                j_em_a = normalizar_nome(dupla_j_a.get("nome", "")) == nome_j_norm
-                j_em_b = normalizar_nome(dupla_j_b.get("nome", "")) == nome_j_norm
-                if j_em_a or j_em_b:
-                    parceiro_dc = dupla_j_b if j_em_a else dupla_j_a
-                    nome_parceiro_dc = parceiro_dc.get("nome", "")
-                    if nome_parceiro_dc and hasattr(
-                        self.jogador, "registrar_resultado_dupla"
-                    ):
-                        self.jogador.registrar_resultado_dupla(
-                            nome_parceiro_dc, sets_a > sets_b
-                        )
-
-                resultados_partidas.append(
-                    {
-                        "tipo": "duplas",
-                        "equipe_a": equipe_a_tie,
-                        "equipe_b": equipe_b_tie,
-                        "dupla_a": f"{dupla_j_a.get('nome', '??')} / {dupla_j_b.get('nome', '??')}",
-                        "dupla_b": f"{dupla_a_a.get('nome', '??')} / {dupla_a_b.get('nome', '??')}",
-                        "vencedor": vencedor,
-                        "placar": placar,
-                    }
-                )
-                _registrar_placar_parcial()
-                continue
-
-            nome_a = (
-                p_a.get("nome", "??")
-                if isinstance(p_a, dict)
-                else getattr(p_a, "nome", "??")
-            )
-            nome_b = (
-                p_b.get("nome", "??")
-                if isinstance(p_b, dict)
-                else getattr(p_b, "nome", "??")
-            )
-            None  # clear_screen removed
-            logger.debug(f"\n{'=' * 60}")
-            logger.debug(f"     SIMPLES {idx}: {nome_a} vs {nome_b}")
-            logger.debug(f"{'=' * 60}\n")
-
-            jogador_humano_no_jogo = normalizar_nome(nome_a) == normalizar_nome(
-                self.jogador.nome
-            )
-            if jogador_humano_no_jogo:
-                energia_antes_davis = getattr(self.jogador, "energia", 100)
-                vencedor_nome, placar, pontos_disputados = jogar_partida(
-                    self.jogador, p_b, self.nome_save, config=config
-                )
-                energia_perdida_davis = max(
-                    0, energia_antes_davis - getattr(self.jogador, "energia", 100)
-                )
-                venceu = normalizar_nome(vencedor_nome) == normalizar_nome(
-                    self.jogador.nome
-                )
-                self.jogador = handle_xp_e_level_up(self.jogador, venceu)
-                self.jogador = handle_fadiga_e_lesao(
-                    self.jogador,
-                    pontos_disputados=pontos_disputados,
-                    energia_perdida=energia_perdida_davis,
-                )
-                salvar_jogo(self.nome_save, self.jogador)
-                vencedor_nome_reg = vencedor_nome
-            else:
-                npc_a = (
-                    p_a
-                    if isinstance(p_a, dict)
-                    else {"nome": nome_a, "atributos": DEFAULT_ATRIBUTOS.copy()}
-                )
-                npc_b = (
-                    p_b
-                    if isinstance(p_b, dict)
-                    else {"nome": nome_b, "atributos": DEFAULT_ATRIBUTOS.copy()}
-                )
-                # Simples NPC com viés de mando (apenas nos qualifiers).
-                forca_a = self._forca_simples(npc_a)
-                forca_b = self._forca_simples(npc_b)
-                chance_a = 0.5 + ((forca_a - forca_b) / 6000.0) + bonus_mando
-                chance_a = max(0.15, min(0.85, chance_a))
-                sets_a = 0
-                sets_b = 0
-                while sets_a < 2 and sets_b < 2:
-                    if random.random() < chance_a:
-                        sets_a += 1
-                    else:
-                        sets_b += 1
-                venceu = sets_a > sets_b
-                vencedor_nome_reg = nome_a if venceu else nome_b
-                placar = f"{sets_a}-{sets_b}" if venceu else f"{sets_b}-{sets_a}"
-
-            if venceu:
-                vitorias_jogador += 1
-                logger.debug(f"\n✅ {pais_jogador} vence! Placar: {placar}")
-            else:
-                vitorias_adversario += 1
-                logger.debug(f"\n❌ {adversario_pais} vence! Placar: {placar}")
-
-            resultados_partidas.append(
-                {
-                    "tipo": "simples",
-                    "jogador_a": nome_a,
-                    "jogador_b": nome_b,
-                    "equipe_a": equipe_a_tie,
-                    "equipe_b": equipe_b_tie,
-                    "vencedor": vencedor_nome_reg,
-                    "placar": placar,
-                }
-            )
-            _registrar_placar_parcial()
-            if vitorias_jogador < alvo_vitorias and vitorias_adversario < alvo_vitorias:
-                None  # input removed
-
-        return _finalizar_confronto()
-
     def _atualizar_estado_apos_confronto(self, resultado):
         """Atualiza o estado do torneio após um confronto."""
         estado = self._carregar_estado()
@@ -1381,78 +891,10 @@ class DavisCup:
         return estado.get("jogador_vivo", True) and estado.get(
             "jogador_convocado", False
         )
-
     def obter_fase_atual(self):
         """Retorna a fase atual do torneio."""
         estado = self._carregar_estado()
         return estado.get("fase_atual", "qualifiers")
-
-    def exibir_tabela_grupo(self):
-        """Exibe status do torneio (qualifiers ou chave final)."""
-        estado = self._carregar_estado()
-        fase = estado.get("fase_atual")
-        pais_jogador = estado.get("pais_jogador", self.pais_jogador)
-
-        if fase == "qualifiers":
-            confronto = estado.get("confronto_atual") or {}
-            local = (
-                self._info_local_confronto(
-                    estado.get("modo_competicao"),
-                    confronto.get("equipe_a"),
-                    confronto.get("equipe_b"),
-                )
-                or {}
-            )
-            logger.debug(f"\n{'=' * 60}")
-            logger.debug("           📊 DAVIS CUP QUALIFIERS")
-            logger.debug(f"{'=' * 60}")
-            modo_davis = estado.get("modo_davis")
-            modo_label = (
-                "Carreira (ranking de nações)"
-                if modo_davis == "carreira"
-                else "Histórico 2026"
-            )
-            print(f"Modo: {modo_label}")
-            print(f"Seleção: {pais_jogador}")
-            print(
-                f"Tie: {confronto.get('equipe_a', '??')} vs {confronto.get('equipe_b', '??')}"
-            )
-            if local:
-                print(
-                    f"Sede: {local.get('cidade', '??')}, {local.get('pais', '??')} | {local.get('superficie', 'Hard')}"
-                )
-            print("Formato: melhor de 5 partidas (2 simples + 1 duplas + 2 simples)")
-            return
-
-        logger.debug(f"\n{'=' * 60}")
-        logger.debug("             📊 DAVIS CUP - FINAL 8")
-        logger.debug(f"{'=' * 60}")
-        for fase_chave in ("quartas", "semifinal", "final"):
-            confrontos = estado.get("eliminatorias", {}).get(fase_chave, [])
-            if not confrontos:
-                continue
-            print(f"\n{fase_chave.capitalize()}:")
-            for c in confrontos:
-                a = c.get("equipe_a", "??")
-                b = c.get("equipe_b", "??")
-                v = c.get("vencedor")
-                marca = f" -> {v}" if v else ""
-                estrela = (
-                    " ⭐"
-                    if self._paises_iguais(a, pais_jogador)
-                    or self._paises_iguais(b, pais_jogador)
-                    else ""
-                )
-                local = (
-                    self._info_local_confronto(estado.get("modo_competicao"), a, b)
-                    or {}
-                )
-                local_txt = ""
-                if local:
-                    local_txt = (
-                        f" [{local.get('cidade', '??')}, {local.get('pais', '??')}]"
-                    )
-                print(f"  {a} vs {b}{marca}{estrela}{local_txt}")
 
     def obter_confronto_jogador(self, nome_jogador=None):
         """Retorna os dados do confronto atual do jogador humano."""
@@ -1782,7 +1224,7 @@ def criar_torneio_davis(torneio_data, jogador, nome_save, semana, interactive=Tr
         from src.dados import carregar_temporada
 
         torneio_data["ano_referencia"] = int(
-            carregar_temporada(nome_save).get("ano", 2026)
+            carregar_temporada(nome_save).get("ano", START_YEAR)
         )
     except Exception as e:
         log_erro(
@@ -1791,7 +1233,7 @@ def criar_torneio_davis(torneio_data, jogador, nome_save, semana, interactive=Tr
             e,
             {"semana": semana, "torneio": torneio_data.get("nome")},
         )
-        torneio_data["ano_referencia"] = 2026
+        torneio_data["ano_referencia"] = START_YEAR
 
     davis = DavisCup(
         tournament_data=torneio_data,
@@ -1831,7 +1273,7 @@ def criar_torneio_davis(torneio_data, jogador, nome_save, semana, interactive=Tr
         logger.debug(f"\n🏆 {nome_competicao} iniciada!")
         if estado.get("fase_atual") == "qualifiers":
             confronto = estado.get("confronto_atual") or {}
-            print(
+            logger.debug(
                 f"📍 Tie classificatório: {confronto.get('equipe_a', '??')} vs {confronto.get('equipe_b', '??')}"
             )
             local = (
@@ -1843,15 +1285,11 @@ def criar_torneio_davis(torneio_data, jogador, nome_save, semana, interactive=Tr
                 or {}
             )
             if local:
-                print(
+                logger.debug(
                     f"📌 Sede: {local.get('cidade', '??')}, {local.get('pais', '??')} | {local.get('superficie', 'Hard')}"
                 )
         else:
-            print("📍 Formato Final 8 em mata-mata.")
-
-        davis.exibir_tabela_grupo()
-
-        None  # input removed
+            logger.debug("📍 Formato Final 8 em mata-mata.")
 
     return davis
 

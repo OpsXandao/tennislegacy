@@ -3,7 +3,7 @@ import random
 import time
 from typing import Optional
 
-from src.match_constants import (
+from src.constants.match_constants import (
     ModoSimulacao,
     TipoSaque,
     EstrategiaSaque,
@@ -16,7 +16,7 @@ from src.simulacao_partida import (
     EstatisticasPartida,
     normalizar_superficie,
 )
-from src.entidade_utils import (
+from src.utils.entidade_utils import (
     obter_atributos,
     obter_atributos_psicologicos,
 )

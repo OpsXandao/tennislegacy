@@ -1,96 +1,47 @@
-from src.staff_constants import PROFISSIONAIS_DISPONIVEIS, EMPRESARIOS_DISPONIVEIS
+from src.services.staff_service import (
+    processar_pagamentos_equipe as _pay_staff,
+    atualizar_contratos_staff as _update_staff,
+    obter_limite_equipe as _get_limit,
+    obter_detalhes_profissional
+)
+from src.constants.staff_constants import PROFISSIONAIS_DISPONIVEIS, EMPRESARIOS_DISPONIVEIS
 
 # === HELPERS ===
-
-
-def estrelas_display(n):
-    """Retorna string de estrelas, ex.: 3 -> '***oo' (usando * e o)."""
-    n = max(1, min(5, int(n)))
-    return "*" * n + "o" * (5 - n)
-
 
 def obter_profissional_da_equipe(equipe, categoria):
     """Retorna o dict do profissional de dada categoria na equipe, ou None."""
     for contrato in equipe:
         prof_id = contrato.get("id") if isinstance(contrato, dict) else contrato
-        prof = PROFISSIONAIS_DISPONIVEIS.get(prof_id)
+        prof = obter_detalhes_profissional(prof_id)
         if prof and prof.get("categoria") == categoria:
             return prof
     return None
 
 
-# === FUNCOES DE GESTAO SEMANAL ===
-
+# === FUNCOES DE GESTAO SEMANAL (DELEGATED) ===
 
 def processar_gastos_equipe(jogador, return_eventos: bool = False):
-    """Deduz salarios semanais de cada membro da equipe."""
-    eventos = []
-    equipe = getattr(jogador, "equipe", [])
-    for contrato in equipe:
-        prof_id = contrato.get("id") if isinstance(contrato, dict) else contrato
-        salario = (
-            contrato.get("salario", 0)
-            if isinstance(contrato, dict)
-            else PROFISSIONAIS_DISPONIVEIS.get(prof_id, {}).get("salario_semanal", 0)
-        )
-        prof = PROFISSIONAIS_DISPONIVEIS.get(prof_id)
-        if prof and salario > 0:
-            jogador.registrar_transacao(
-                -salario, f"Salario: {prof['nome']}", categoria="equipe"
-            )
+    eventos = _pay_staff(jogador)
     if jogador.dinheiro < 0:
-        eventos.append(
-            {
-                "tipo": "saldo_negativo",
-                "mensagem": f"Atencao! Voce esta com saldo negativo: ${jogador.dinheiro:,}",
-                "saldo": jogador.dinheiro,
-            }
-        )
-    if return_eventos:
-        return eventos
+        eventos.append({
+            "tipo": "saldo_negativo",
+            "mensagem": f"Atencao! Voce esta com saldo negativo: ${jogador.dinheiro:,}",
+            "saldo": jogador.dinheiro,
+        })
+    return eventos if return_eventos else None
 
 
 def processar_expiracoes_contratos(jogador, return_eventos: bool = False):
-    """Reduz semanas restantes dos contratos e remove os expirados."""
-    eventos = []
-    equipe = getattr(jogador, "equipe", [])
-    equipe_nova = []
-    for contrato in equipe:
-        if not isinstance(contrato, dict):
-            equipe_nova.append(contrato)
-            continue
-        restantes = max(0, contrato.get("semanas_restantes", 0) - 1)
-        if restantes <= 0:
-            prof = PROFISSIONAIS_DISPONIVEIS.get(contrato.get("id", ""), {})
-            nome = prof.get("nome", "?")
-            nac = prof.get("nacionalidade", "?")
-            eventos.append(
-                {
-                    "tipo": "contrato_expirado",
-                    "mensagem": f"Contrato de {nome} [{nac}] expirou.",
-                    "profissional_id": contrato.get("id", ""),
-                }
-            )
-        else:
-            contrato["semanas_restantes"] = restantes
-            equipe_nova.append(contrato)
-    jogador.equipe = equipe_nova
-    if return_eventos:
-        return eventos
+    eventos = _update_staff(jogador)
+    return eventos if return_eventos else None
 
 
 def obter_max_equipe(jogador):
-    """Retorna o limite maximo de profissionais baseado no empresario contratado."""
-    empresario_id = None
-    if isinstance(getattr(jogador, "empresario", None), dict):
-        empresario_id = jogador.empresario.get("id")
-    if empresario_id:
-        emp = EMPRESARIOS_DISPONIVEIS.get(empresario_id, {})
-        return emp.get("max_equipe", 3)
-    return 2
+    return _get_limit(jogador)
 
 
 def processar_despesas_operacionais(jogador, temporada=None, info_torneio=None):
+
     """Despesas operacionais semanais (viagens, hospedagem, etc.)."""
     from src.dados import carregar_estado_torneio
 

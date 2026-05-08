@@ -113,7 +113,7 @@ def seed_positions(draw_size, num_seeds):
 
 def montar_chave_principal(jogadores, draw_size, ranking, garantir_dados_fn):
     """Monta a chave principal distribuindo sementes e sorteando restantes."""
-    from src.torneio_constants import DRAW_SIZE_GRAND_SLAM, DRAW_SIZE_ATP_1000
+    from src.constants.torneio_constants import DRAW_SIZE_GRAND_SLAM, DRAW_SIZE_ATP_1000
 
     num_seeds = (
         32

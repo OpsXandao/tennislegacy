@@ -6,11 +6,11 @@ from src.dados import (
     get_caminho_torneio_save,
 )
 from src.jogador import carregar_jogador, normalizar_nome
-from src.json_utils import salvar_json_seguro
-from src.log_jogo import log_simulacao
+from src.utils.json_utils import salvar_json_seguro
+from src.utils.log_jogo import log_simulacao
 from src.ranking import SistemaRanking
 from src.save import salvar_jogo
-from src.wta_constants import (
+from src.constants.wta_constants import (
     PONTOS_WTA_1000,
     PONTOS_WTA_250,
     PONTOS_WTA_500,

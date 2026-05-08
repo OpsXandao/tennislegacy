@@ -11,8 +11,8 @@ from src.dados import (
     carregar_ranking_nacoes_davis,
 )
 from src.jogador import normalizar_nome
-from src.gerador_nomes import gerar_nome_completo
-from src.davis_cup_constants import _MAPA_PAIS_3_PARA_2
+from src.utils.gerador_nomes import gerar_nome_completo
+from src.constants.davis_cup_constants import _MAPA_PAIS_3_PARA_2
 
 logger = logging.getLogger(__name__)
 

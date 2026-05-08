@@ -1,7 +1,7 @@
 # Módulo de Migração de Dados Legados - TennisLegacy
 
 from src.patrocinios import PATROCINADORES_DISPONIVEIS
-from src.staff_constants import EMPRESARIOS_DISPONIVEIS, PROFISSIONAIS_DISPONIVEIS
+from src.constants.staff_constants import EMPRESARIOS_DISPONIVEIS, PROFISSIONAIS_DISPONIVEIS
 
 _MAPA_PATROCINIO_LEGADO = {
     "patrocinio_teste": "pat_01_teste",

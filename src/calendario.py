@@ -22,7 +22,7 @@ from src.calendario_participacao import (
 )
 import logging
 
-from src.staff_constants import PROFISSIONAIS_DISPONIVEIS
+from src.constants.staff_constants import PROFISSIONAIS_DISPONIVEIS
 
 logger = logging.getLogger(__name__)
 
@@ -396,9 +396,7 @@ def _calcular_expiracao_pontos(semana_atual, ano_atual):
 
 def _migrar_pontuacao(ranking_obj, semana_atual, ano_atual):
     """Migra a estrutura de pontos antiga para a nova (pontos_detalhados)."""
-    print(
-        "ℹ️ Migrando estrutura de pontuação para o novo sistema de ranking contínuo..."
-    )
+    logger.info("migrando_estrutura_pontuacao_ranking_continuo")
     semana_expiracao, ano_expiracao = _calcular_expiracao_pontos(
         semana_atual, ano_atual
     )
@@ -417,7 +415,7 @@ def _migrar_pontuacao(ranking_obj, semana_atual, ano_atual):
             ]
             jogador["pontos"] = pontos_antigos  # Mantém o campo total
     ranking_obj.salvar_ranking()
-    print("✅ Migração concluída!")
+    logger.info("migracao_pontuacao_concluida")
     return True
 
 
@@ -509,24 +507,7 @@ def _simular_torneios_semanais_npc(
                 )
 
     if campeoes_da_semana:
-        width = 75
-        print("\n" + "=" * width)
-        print(f"{'🏆 CAMPEÕES DA SEMANA':^75}")
-        print("=" * width)
-
-        tours_ordem = ["WTA", "ATP"] if jogador.genero == "feminino" else ["ATP", "WTA"]
-        for tour in tours_ordem:
-            lista_tour = [c for c in campeoes_da_semana if c["tour"] == tour]
-            if lista_tour:
-                print(f"\n📢 TOUR {tour}:")
-                for c in lista_tour:
-                    label = "Campeã" if tour == "WTA" else "Campeão"
-                    print(f"  🎾 {c['torneio']}:")
-                    print(f"     └─ {label}: {c['simples']}")
-                    if c.get("duplas"):
-                        print(f"     └─ Duplas: {c['duplas']}")
-
-        print("\n" + "=" * width)
+        logger.info("campeoes_da_semana", extra={"total": len(campeoes_da_semana)})
 
     return campeoes_da_semana
 
@@ -687,7 +668,7 @@ def _recuperar_npcs_semana(rankings):
             for j in rk.ranking:
                 nome = j.get("nome")
                 if nome not in jogadores_vistos:
-                    _processar_recuperacao_npc(j)
+                    processar_recuperacao_semanal(j)
                     jogadores_vistos[nome] = j
                     continue
                 j_fonte = jogadores_vistos[nome]
@@ -848,8 +829,13 @@ def processar_seguidores(jogador, ranking, participou=True):
 
     jogador.seguidores = max(0, total)
     if total_ganho > 0:
-        print(
-            f"📱 Seguidores: +{total_ganho:,} (Base: {ganho_base}, Mkt: {ganho_marketing})"
+        logger.debug(
+            "seguidores_ganhos",
+            extra={
+                "ganho": total_ganho,
+                "base": ganho_base,
+                "marketing": ganho_marketing,
+            },
         )
 
 
@@ -883,20 +869,19 @@ def processar_avisos_patrocinio(jogador, ranking):
                 if pat_id in jogador.patrocinios:
                     jogador.patrocinios.remove(pat_id)
                 avisos.pop(pat_id, None)
-                print(
-                    f"❌ {pat['nome']} CANCELOU o contrato por falta de resultados/popularidade!"
-                )
+                logger.info("patrocinio_cancelado", extra={"nome": pat["nome"]})
             else:
                 prazo = 3 - semanas
                 msg = "ranking" if posicao > req_ranking * 1.5 else "seguidores"
-                print(
-                    f"⚠️  {pat['nome']} está insatisfeito com seu {msg}. Você tem {prazo} semana(s) para melhorar!"
+                logger.debug(
+                    "patrocinador_insatisfeito",
+                    extra={"nome": pat["nome"], "motivo": msg, "prazo": prazo},
                 )
         else:
             if pat_id in avisos:
                 avisos.pop(pat_id)
-                print(
-                    f"✅ {pat['nome']} voltou a ficar satisfeito com sua performance."
+                logger.debug(
+                    "patrocinador_satisfeito_novamente", extra={"nome": pat["nome"]}
                 )
 
     jogador.avisos_patrocinio = avisos
@@ -980,7 +965,7 @@ def badge_entry_status(ranking_pos, torneio: dict) -> str:
     Retorna uma badge de status de inscrição para o torneio.
     Usa status_entry do torneio se disponível; caso contrário estima pelo ranking.
     """
-    from src.torneio_constants import (
+    from src.constants.torneio_constants import (
         NUM_TOP_DIRETOS_GRAND_SLAM,
         NUM_TOP_DIRETOS_ATP_1000,
         NUM_TOP_DIRETOS_PADRAO,

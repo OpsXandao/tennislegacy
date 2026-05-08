@@ -6,7 +6,7 @@ from src.dados import (
     get_caminho_ranking_global,
     get_caminho_ranking_save,
 )
-from src.json_utils import salvar_json_seguro
+from src.utils.json_utils import salvar_json_seguro
 from src.ranking import SistemaRanking
 from src.jogador import normalizar_nome
 
@@ -219,7 +219,7 @@ class WeekTournamentManager:
 
             # Último recurso: gera NPCs com nomes reais (nunca "Bot Externo").
             if len(jogadores) < max(2, draw_size):
-                from src.gerador_nomes import gerar_jogador_fraco
+                from src.utils.gerador_nomes import gerar_jogador_fraco
 
                 while len(jogadores) < max(2, draw_size):
                     bot = gerar_jogador_fraco(

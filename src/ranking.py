@@ -5,9 +5,9 @@ from src.dados import (
     carregar_ranking,
     get_caminho_ranking_global,
 )
-from src.nome_utils import normalizar_nome
-from src.json_utils import salvar_json_seguro
-from src.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
+from src.utils.nome_utils import normalizar_nome
+from src.utils.json_utils import salvar_json_seguro
+from src.constants.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
 from src.player_ratings import ajustar_atributo_duplas, calcular_overall_contextual
 
 
@@ -66,7 +66,7 @@ class SistemaRanking:
 
             # Se ainda for curto (ex: base global corrompida), gera Newgens reais
             if len(self.ranking) < 300:
-                from src.gerador_nomes import gerar_jogador_fraco
+                from src.utils.gerador_nomes import gerar_jogador_fraco
 
                 while len(self.ranking) < 300:
                     novo = gerar_jogador_fraco(len(self.ranking) + 1, genero=genero)

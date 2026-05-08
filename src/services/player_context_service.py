@@ -7,6 +7,7 @@ from fastapi import HTTPException
 
 from api.logging_utils import log_event
 from api.session import Session
+from src.constants.torneio_constants import START_YEAR
 from src.calendario import carregar_temporada
 from src.dados import carregar_estado_torneio
 from src.jogador import carregar_jogador, normalizar_nome
@@ -175,5 +176,5 @@ def carregar_temporada_atual(nome_save: str) -> dict[str, int]:
     temporada = carregar_temporada(nome_save)
     return {
         "semana": int(temporada.get("semana", 1)),
-        "ano": int(temporada.get("ano", 2026)),
+        "ano": int(temporada.get("ano", START_YEAR)),
     }

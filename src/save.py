@@ -8,9 +8,10 @@ from src.dados import (
     get_caminho_torneio_save,
     validar_nome_save,
 )
-from src.nome_utils import normalizar_nome
-from src.json_utils import salvar_json_seguro
-from src.log_jogo import log_erro
+from src.constants.torneio_constants import START_YEAR
+from src.utils.nome_utils import normalizar_nome
+from src.utils.json_utils import salvar_json_seguro
+from src.utils.log_jogo import log_erro
 
 
 def criar_pasta_save(nome_save):
@@ -100,7 +101,7 @@ def atualizar_jogador_no_ranking(nome_save: str, dados_jogador: dict):
 def tirar_snapshot_carreira(jogador, ano=None):
     """Salva um snapshot dos atributos do jogador para histórico de progressão."""
     snapshot = {
-        "ano": int(ano if ano is not None else getattr(jogador, "ano", 2026)),
+        "ano": int(ano if ano is not None else getattr(jogador, "ano", START_YEAR)),
         "semana": jogador.semana,
         "nivel": jogador.nivel,
         "overall": jogador.calcular_overall(),
@@ -114,60 +115,3 @@ def tirar_snapshot_carreira(jogador, ano=None):
            != (jogador.semana, snapshot["ano"])
     ):
         jogador.snapshots_carreira.append(snapshot)
-
-
-def salvar_estado_atual_torneio(
-    nome_save, fase_atual, confrontos, resultados, jogador_vivo=True
-):
-    try:
-        caminho = get_caminho_torneio_save(nome_save)
-
-        if os.path.exists(caminho):
-            with open(caminho, "r", encoding="utf-8") as f:
-                estado = json.load(f)
-        else:
-            estado = {
-                "rodadas": {},
-                "resultados": {},
-                "fase_atual": fase_atual,
-                "jogador_vivo": jogador_vivo,
-            }
-
-        estado["rodadas"][fase_atual] = [
-            (
-                a["nome"] if isinstance(a, dict) else a,
-                b["nome"] if isinstance(b, dict) else b,
-            )
-            for a, b in confrontos
-        ]
-
-        estado["resultados"][fase_atual] = resultados
-        estado["jogador_vivo"] = jogador_vivo
-        estado["fase_atual"] = fase_atual
-
-        salvar_json_seguro(caminho, estado)
-
-    except Exception as e:
-        log_erro(
-            nome_save,
-            "salvar_estado_atual_torneio",
-            e,
-            {"fase_atual": fase_atual, "jogador_vivo": jogador_vivo},
-        )
-
-
-def atualizar_estado_jogador(caminho, vivo=True, fase_finalizada=False):
-    try:
-        with open(caminho, "r", encoding="utf-8") as f:
-            estado = json.load(f)
-        estado["jogador_vivo"] = vivo
-        if fase_finalizada:
-            estado["fase_atual"] = "finalizado"
-        salvar_json_seguro(caminho, estado)
-    except Exception as e:
-        log_erro(
-            None,
-            "atualizar_estado_jogador",
-            e,
-            {"caminho": caminho, "vivo": vivo, "fase_finalizada": fase_finalizada},
-        )

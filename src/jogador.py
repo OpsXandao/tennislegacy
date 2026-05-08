@@ -12,8 +12,8 @@ from src.dados import (
     get_caminho_ranking_duplas,
     SAVES_DIR,
 )
-from src.json_utils import salvar_json_seguro
-from src.constantes import (
+from src.utils.json_utils import salvar_json_seguro
+from src.constants.constantes import (
     DEFAULT_ATRIBUTOS,
     DEFAULT_ATRIBUTOS_PSICOLOGICOS,
 )
@@ -329,7 +329,7 @@ class Jogador:
         return jogador
 
 
-from src.nome_utils import normalizar_nome
+from src.utils.nome_utils import normalizar_nome
 
 
 def _rivalidades_ref(jogador):
@@ -462,9 +462,9 @@ def adicionar_jogador_ao_ranking(jogador_instancia):
         }
         ranking.append(novo)
         salvar_json_seguro(ranking_path, ranking)
-        print(f"✅ Jogador '{novo['nome']}' adicionado ao ranking local com 0 pontos.")
+        logger.info("jogador_adicionado_ao_ranking", extra={"nome": novo["nome"]})
     else:
-        print(f"ℹ️ Jogador '{jogador_instancia.nome}' já está presente no ranking.")
+        logger.debug("jogador_ja_no_ranking", extra={"nome": jogador_instancia.nome})
 
 
 def carregar_jogador(nome_save: str) -> Jogador:
@@ -503,7 +503,6 @@ def criar_jogador_alexandre_paiva(nome_save: str) -> Jogador:
         "leitura_de_jogo": 60,
         "determinacao": 65,
     }
-    _inicializar_arquivos_save(nome_save, genero="masculino")
     salvar_jogo(nome_save, jogador_instancia)
     adicionar_jogador_ao_ranking(jogador_instancia)
 

@@ -1,4 +1,4 @@
-from src.torneio_constants import (
+from src.constants.torneio_constants import (
     BEST_OF_GRAND_SLAM,
     BEST_OF_PADRAO,
     NUM_ROUNDS_GRAND_SLAM,

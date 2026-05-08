@@ -1,7 +1,7 @@
 import os
 import json
 import uuid
-from src.json_utils import salvar_json_seguro
+from src.utils.json_utils import salvar_json_seguro
 from src.dados import SAVES_DIR
 
 
@@ -53,7 +53,7 @@ class MatchHistoryManager:
         salvar_json_seguro(self.caminho_arquivo, self.historico)
 
     def buscar_por_jogador(self, nome_jogador):
-        from src.nome_utils import normalizar_nome
+        from src.utils.nome_utils import normalizar_nome
 
         nome_norm = normalizar_nome(nome_jogador)
         return [
@@ -63,7 +63,7 @@ class MatchHistoryManager:
         ]
 
     def resumir_confronto(self, nome_jogador: str, nome_adversario: str) -> dict:
-        from src.nome_utils import normalizar_nome
+        from src.utils.nome_utils import normalizar_nome
 
         jogador_norm = normalizar_nome(nome_jogador)
         adversario_norm = normalizar_nome(nome_adversario)

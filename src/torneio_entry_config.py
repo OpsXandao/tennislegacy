@@ -1,4 +1,4 @@
-from src.torneio_constants import (
+from src.constants.torneio_constants import (
     RANKING_TOP_20,
     RANKING_TOP_35,
     RANKING_TOP_50,

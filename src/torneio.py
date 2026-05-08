@@ -11,7 +11,7 @@ from src.dados import (
     get_caminho_ranking_save,
     get_caminho_torneio_save,
 )
-from src.json_utils import salvar_json_seguro
+from src.utils.json_utils import salvar_json_seguro
 from src.ranking import SistemaRanking
 from src.repositories.tournament_repository import load_regular_tournament
 from src.torneio_core import Torneio

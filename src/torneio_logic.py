@@ -1,7 +1,7 @@
 import random
 from src.jogador import normalizar_nome
 from src.torneio_utils import weighted_sample_sem_reposicao, deduplicar_jogadores
-from src.torneio_constants import (
+from src.constants.torneio_constants import (
     RANKING_POSICAO_FALLBACK,
     RANKING_LIMITE_ENTRADA_DIRETA,
     RANKING_TOP_POOL,

@@ -13,8 +13,8 @@ from src.dados import (
 from src.jogador import normalizar_nome
 from src.progressao import evoluir_npc_pos_torneio
 from src.imprensa import disparar_entrevista
-from src.gerador_nomes import gerar_jogador_fraco
-from src.json_utils import salvar_json_seguro
+from src.utils.gerador_nomes import gerar_jogador_fraco
+from src.utils.json_utils import salvar_json_seguro
 from src.torneio_profile import (
     TOURNAMENT_PROFILES,
     ENTRY_DIRECT_SELECTORS,
@@ -22,8 +22,9 @@ from src.torneio_profile import (
     WILDCARD_OVERRIDES,
 )
 from src.torneio_entry_config import ENTRY_DIRECT_CONFIGS
-from src.torneio_constants import (
+from src.constants.torneio_constants import (
     RANKING_POSICAO_FALLBACK,
+    START_YEAR,
     RANKING_LIMITE_CHALLENGER,
     RANKING_LIMITE_ENTRADA_DIRETA,
     RANKING_LIMITE_ITF,
@@ -42,7 +43,7 @@ from src.torneio_logic import (
     selecionar_entrada_direta,
     selecionar_campo_finals,
 )
-from src.log_jogo import log_erro
+from src.utils.log_jogo import log_erro
 
 
 class Torneio:
@@ -1421,7 +1422,7 @@ class Torneio:
         if estado.get("pontos_duplas_distribuidos"):
             return
 
-        temporada = carregar_temporada(nome_save) or {"semana": 1, "ano": 2026}
+        temporada = carregar_temporada(nome_save) or {"semana": 1, "ano": START_YEAR}
         ranking = SistemaRanking(
             get_caminho_ranking_duplas(
                 nome_save, genero=getattr(self, "genero", "masculino")

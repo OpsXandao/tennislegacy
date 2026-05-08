@@ -7,13 +7,13 @@ from enum import Enum
 from dataclasses import dataclass
 from typing import Optional
 
-from src.staff_constants import PROFISSIONAIS_DISPONIVEIS
-from src.entidade_utils import (
+from src.constants.staff_constants import PROFISSIONAIS_DISPONIVEIS
+from src.utils.entidade_utils import (
     obter_atributos,
     obter_atributos_psicologicos,
 )
-from src.superficie_utils import normalizar_superficie
-from src.match_constants import (
+from src.utils.superficie_utils import normalizar_superficie
+from src.constants.match_constants import (
     TipoSaque,
     EstrategiaSaque,
     IntencaoPonto,
