@@ -18,7 +18,7 @@ from src.repositories.player_repository import save_player
 from src.repositories.ranking_repository import load_singles_ranking
 from src.repositories.tournament_repository import load_tournament_state
 from src.davis_cup import criar_torneio_davis
-from src.torneio_constants import RANKING_LIMITE_CHALLENGER, RANKING_LIMITE_ITF
+from src.constants.torneio_constants import RANKING_LIMITE_CHALLENGER, RANKING_LIMITE_ITF
 from src.torneio import avancar_fase, criar_torneio
 
 
@@ -278,7 +278,7 @@ def create_tournament(
                 status_code=403, detail="Você não foi convocado para a Copa Davis."
             )
 
-        criar_torneio_davis(torneio_escolhido, jogador, nome_save, semana_atual)
+        criar_torneio_davis(torneio_escolhido, jogador, nome_save, semana_atual, interactive=False)
         return {
             "ok": True,
             "torneio": {
@@ -410,18 +410,43 @@ def advance_tournament_phase(nome_save: str) -> dict:
         raise HTTPException(status_code=500, detail="Erro ao avançar fase.") from exc
 
 
-def withdraw_from_tournament(nome_save: str) -> dict:
+def withdraw_from_tournament(
+    nome_save: str,
+    genero: str = "masculino",
+    expected_week: int | None = None,
+) -> dict:
+    import json
+    import os
+    from src.dados import get_caminho_torneio_save
+
     instancia = carregar_torneio_api(nome_save)
     if not instancia:
         raise HTTPException(status_code=404, detail="Nenhum torneio ativo encontrado.")
+
     instancia.desistir_do_torneio()
     try:
         instancia.simular_torneio_restante()
     except Exception:
         pass
     try:
-        distribuir_pontos_torneio(nome_save)
+        distribuir_pontos_torneio(nome_save, genero=genero)
     except Exception:
         pass
-    resultado = avancar_semana(nome_save)
-    return {"ok": True, **resultado}
+
+    kwargs: dict = {}
+    if expected_week is not None:
+        kwargs["expected_week"] = expected_week
+    resultado = avancar_semana(nome_save, **kwargs)
+
+    # Limpa arquivo de torneio finalizado do disco (G-2)
+    caminho_torneio = get_caminho_torneio_save(nome_save, genero=genero)
+    if os.path.exists(caminho_torneio):
+        try:
+            with open(caminho_torneio) as f:
+                estado = json.load(f)
+            if estado.get("fase_atual") == "finalizado":
+                os.remove(caminho_torneio)
+        except Exception:
+            pass
+
+    return resultado

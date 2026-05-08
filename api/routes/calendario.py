@@ -5,13 +5,11 @@ import logging
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from api.logging_utils import log_event, log_exception
-from api.session import Session, obter_sessao_ativa, refresh_session
-from src.presenters.tournament_presenter import formatar_torneio_resumido
-from src.services.player_context_service import carregar_temporada_atual, tour_para_genero
-from src.calendario import avancar_semana, obter_torneios_da_semana
-from src.pontuacao import distribuir_pontos_torneio
+from api.session import Session, obter_sessao_ativa
+from api.services import calendario_service
 
 router = APIRouter(prefix="/api/calendario", tags=["calendario"])
+
 
 @router.get("/semana/{numero}")
 def obter_semana(
@@ -19,14 +17,7 @@ def obter_semana(
     tour: str | None = Query(default=None),
     session: Session = Depends(obter_sessao_ativa),
 ) -> dict:
-    jogador = session.jogador
-    genero = tour_para_genero(tour, jogador.genero)
-    torneios = obter_torneios_da_semana(numero, genero=genero)
-    return {
-        "semana": numero,
-        "tour": "atp" if genero == "masculino" else "wta",
-        "torneios": [formatar_torneio_resumido(t) for t in torneios],
-    }
+    return calendario_service.obter_semana_por_numero(numero, tour, session.jogador)
 
 
 @router.get("/atual")
@@ -34,17 +25,7 @@ def obter_atual(
     tour: str | None = Query(default=None),
     session: Session = Depends(obter_sessao_ativa),
 ) -> dict:
-    nome_save = session.nome_save_ativo
-    jogador = session.jogador
-    temporada = carregar_temporada_atual(nome_save)
-    genero = tour_para_genero(tour, jogador.genero)
-    torneios = obter_torneios_da_semana(temporada["semana"], genero=genero)
-    return {
-        "semana": temporada["semana"],
-        "ano": temporada["ano"],
-        "tour": "atp" if genero == "masculino" else "wta",
-        "torneios": [formatar_torneio_resumido(t) for t in torneios],
-    }
+    return calendario_service.obter_semana_atual(session.nome_save_ativo, tour, session.jogador)
 
 
 @router.post("/avancar")
@@ -52,12 +33,7 @@ def avancar(session: Session = Depends(obter_sessao_ativa)) -> dict:
     nome_save = session.nome_save_ativo
     jogador = session.jogador
     try:
-        try:
-            distribuir_pontos_torneio(nome_save, genero=jogador.genero)
-        except Exception:
-            pass
-        resultado = avancar_semana(nome_save, expected_week=session.semana_atual)
-        refresh_session(nome_save)
+        resultado = calendario_service.avancar(session)
         log_event(
             logging.INFO,
             "semana_avancada",

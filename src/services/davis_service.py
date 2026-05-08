@@ -90,3 +90,44 @@ def simular_davis_atual(nome_save: str, jogador: Any) -> dict[str, Any]:
         except Exception:
             pass
     return resultado
+
+
+def checar_convocacao_na_semana(
+    nome_save: str, jogador: Any, semana: int
+) -> dict[str, Any]:
+    from src.calendario import obter_torneios_da_semana
+
+    torneios = obter_torneios_da_semana(semana, genero=jogador.genero)
+    davis_data = next(
+        (t for t in torneios if t.get("tipo") in _TIPOS_DAVIS_VALIDOS), None
+    )
+    if not davis_data:
+        return {"convocado": False, "mensagem": "Não há Copa Davis esta semana."}
+
+    ranking = SistemaRanking(get_caminho_ranking_save(nome_save, genero=jogador.genero))
+    davis = DavisCup(davis_data, jogador, ranking, nome_save)
+    convocado, posicao, msg = davis.verificar_convocacao()
+    return {"convocado": convocado, "posicao": posicao, "mensagem": msg, "torneio": davis_data}
+
+
+def recusar_convocacao_na_semana(
+    nome_save: str, jogador: Any, semana: int
+) -> None:
+    from src.calendario import obter_torneios_da_semana
+    from src.save import salvar_jogo
+
+    torneios = obter_torneios_da_semana(semana, genero=jogador.genero)
+    davis_data = next(
+        (t for t in torneios if t.get("tipo") in _TIPOS_DAVIS_VALIDOS), None
+    )
+    if not davis_data:
+        raise HTTPException(status_code=400, detail="Não há convocação ativa para recusar.")
+
+    ranking = SistemaRanking(get_caminho_ranking_save(nome_save, genero=jogador.genero))
+    davis = DavisCup(davis_data, jogador, ranking, nome_save)
+    convocado, posicao, _ = davis.verificar_convocacao()
+    if not convocado:
+        raise HTTPException(status_code=400, detail="Você não foi convocado.")
+
+    davis.recusar_convocacao(posicao, interactive=False)
+    salvar_jogo(nome_save, jogador)
