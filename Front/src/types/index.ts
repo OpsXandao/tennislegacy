@@ -207,10 +207,19 @@ export interface ResumoDaSemana {
   campeoes: CampeaoSemana[]
 }
 
+export interface WeekAdvanceStep {
+  id: string
+  titulo: string
+  resumo: string
+  tom: 'neutral' | 'positive' | 'warning' | 'info'
+  detalhes: string[]
+}
+
 export interface WeekAdvancePayload {
   semana: number
   ano?: number
   eventos: string[]
+  processamento?: WeekAdvanceStep[]
   resumo_mundial: ResumoDaSemana
 }
 

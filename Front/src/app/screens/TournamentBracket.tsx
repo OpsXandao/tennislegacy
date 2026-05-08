@@ -53,7 +53,9 @@ export function TournamentBracket() {
         setActiveSectionId(isQualyPhase(t.fase_atual) ? 'qualy' : 'main')
         setTemPartidaPendente(!!t.partida_disponivel)
       })
-      .catch(() => {})
+      .catch((err) => {
+        console.error("Erro ao carregar estado do torneio:", err)
+      })
       .finally(() => setLoading(false))
   }, [nomeJogador, setTorneio])
 
@@ -75,8 +77,9 @@ export function TournamentBracket() {
       setSections(parsedSections)
       setActiveSectionId(isQualyPhase(t.fase_atual) ? 'qualy' : 'main')
       setTemPartidaPendente(!!t.partida_disponivel)
-    } catch {
-      // Mantem a UI responsiva sem interromper o fluxo do usuario.
+    } catch (err) {
+      console.error("Erro ao avançar fase:", err)
+      setErroAcao("Falha ao avançar fase. Tente novamente.")
     } finally {
       setAvancar(false)
     }
@@ -92,7 +95,8 @@ export function TournamentBracket() {
     try {
       const data = await api.partida.scout(nomeAdv)
       setScoutData(data)
-    } catch {
+    } catch (err) {
+      console.error("Erro ao carregar scout do adversário:", err)
       handleJogar()
     } finally {
       setLoadingScout(false)
@@ -110,7 +114,8 @@ export function TournamentBracket() {
         setPartidaId(null)
       }
       navigate('/match')
-    } catch {
+    } catch (err) {
+      console.error("Erro ao iniciar partida:", err)
       setPartidaId(null)
       navigate('/match')
     }
@@ -154,8 +159,8 @@ export function TournamentBracket() {
           })
           return
         }
-      } catch {
-        // ignora erro — avança mesmo assim
+      } catch (err) {
+        console.error("Erro ao desistir do torneio:", err)
       }
     }
     setTorneio(null)
@@ -181,7 +186,8 @@ export function TournamentBracket() {
         return
       }
       navigate('/hub')
-    } catch {
+    } catch (err) {
+      console.error("Erro ao concluir torneio:", err)
       navigate('/hub')
     } finally {
       setTorneio(null)
@@ -211,8 +217,8 @@ export function TournamentBracket() {
       if (t?.campeao_simples) {
         setCampeaoFinal(t.campeao_simples)
       }
-    } catch {
-      // mantém a UI responsiva
+    } catch (err) {
+      console.error("Erro ao simular restante do torneio:", err)
     } finally {
       setSimulandoRestante(false)
     }
