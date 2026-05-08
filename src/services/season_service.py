@@ -19,7 +19,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Optional
 
-from src.domain_types import RankingsByTour, SeasonState, TournamentState
+from src.constants.torneio_constants import START_YEAR
 
 if TYPE_CHECKING:
     from src.jogador import Jogador
@@ -49,6 +49,104 @@ class SemanaContext:
     pontos_expirados: int = 0
     nova_posicao_ranking: int | None = None
     rival_info: dict | None = None
+    processamento_etapas: list[dict] = field(default_factory=list)
+
+
+STAGE_META = {
+    "_recuperar_npcs": {
+        "id": "recover_npcs",
+        "titulo": "Recuperação global",
+        "resumo": "Recuperando energia e disponibilidade física do circuito.",
+        "tom": "info",
+    },
+    "_simular_torneios": {
+        "id": "simulate_tournaments",
+        "titulo": "Resultados do circuito",
+        "resumo": "Consolidando torneios da semana e definindo campeões.",
+        "tom": "neutral",
+    },
+    "_avancar_calendario": {
+        "id": "advance_calendar",
+        "titulo": "Calendário",
+        "resumo": "Virando a semana oficial da temporada.",
+        "tom": "info",
+    },
+    "_expirar_pontos": {
+        "id": "expire_points",
+        "titulo": "Ranking",
+        "resumo": "Aplicando expiração e recomposição dos pontos.",
+        "tom": "warning",
+    },
+    "_processar_jogador": {
+        "id": "process_player",
+        "titulo": "Seu jogador",
+        "resumo": "Atualizando recuperação, fadiga e status físico.",
+        "tom": "positive",
+    },
+    "_processar_financas": {
+        "id": "process_finances",
+        "titulo": "Carreira",
+        "resumo": "Processando finanças, equipe, mídia e bastidores.",
+        "tom": "neutral",
+    },
+    "_inicializar_nova_semana": {
+        "id": "init_next_week",
+        "titulo": "Nova semana",
+        "resumo": "Preparando agenda, ranking e torneios disponíveis.",
+        "tom": "positive",
+    },
+}
+
+
+def _resumir_eventos_etapa(eventos: list[str]) -> list[str]:
+    detalhes: list[str] = []
+    for evento in eventos:
+        texto = str(evento or "").strip()
+        if not texto:
+            continue
+        detalhes.append(texto)
+        if len(detalhes) >= 4:
+            break
+    return detalhes
+
+
+def _registrar_etapa(
+    ctx: SemanaContext, nome_etapa: str, eventos_etapa: list[str]
+) -> None:
+    meta = STAGE_META.get(nome_etapa)
+    if not meta:
+        return
+
+    detalhes = _resumir_eventos_etapa(eventos_etapa)
+    if nome_etapa == "_simular_torneios" and ctx.resumo_campeoes:
+        detalhes = detalhes + [
+            f"{item.get('tour', 'TOUR')}: {item.get('torneio', 'Torneio')} — {item.get('simples', 'Campeão')}"
+            for item in ctx.resumo_campeoes[:3]
+        ]
+    elif nome_etapa == "_expirar_pontos" and ctx.pontos_expirados > 0:
+        detalhes = [f"{ctx.pontos_expirados} pontos saíram da conta semanal."] + detalhes
+    elif nome_etapa == "_processar_jogador":
+        fadiga_antes = int(round(ctx.recuperacao.get("fadiga_antes", 0)))
+        fadiga_depois = int(round(ctx.recuperacao.get("fadiga_depois", 0)))
+        detalhes = [
+            f"Fadiga: {fadiga_antes}% → {fadiga_depois}%",
+            f"Status físico: {ctx.recuperacao.get('lesao_status', 'saudavel')}",
+        ] + detalhes
+    elif nome_etapa == "_inicializar_nova_semana":
+        detalhes = [
+            f"Semana {ctx.semana_nova}/{ctx.ano_novo} pronta.",
+            f"Torneios disponíveis: {len(ctx.torneios_disponiveis)}",
+        ] + detalhes
+
+    ctx.processamento_etapas.append(
+        {
+            "id": meta["id"],
+            "titulo": meta["titulo"],
+            "resumo": meta["resumo"],
+            "tom": meta["tom"],
+            "detalhes": detalhes[:5],
+        }
+    )
 
 
 def _somar_pontos_detalhados(
@@ -271,7 +369,7 @@ def _build_context(nome_save: str) -> SemanaContext:
     temporada = load_season(nome_save)
     jogador = load_player(nome_save)
     semana_atual = temporada["semana"]
-    ano_atual = temporada.get("ano", 2026)
+    ano_atual = temporada.get("ano", START_YEAR)
 
     rankings = load_all_rankings(nome_save)
     cal._migrar_rankings_semana_se_preciso(rankings, semana_atual, ano_atual)
@@ -315,7 +413,9 @@ def advance_week(nome_save: str, expected_week: Optional[int] = None) -> dict:
         }
 
     for etapa in PIPELINE:
+        eventos_antes = len(ctx.eventos_api)
         etapa(ctx)
+        _registrar_etapa(ctx, etapa.__name__, ctx.eventos_api[eventos_antes:])
 
     return {
         "semana": ctx.temporada["semana"],
@@ -326,6 +426,7 @@ def advance_week(nome_save: str, expected_week: Optional[int] = None) -> dict:
         "pontos_expirados": ctx.pontos_expirados,
         "nova_posicao_ranking": ctx.nova_posicao_ranking,
         "rival_info": ctx.rival_info,
+        "processamento": ctx.processamento_etapas,
         "resumo_mundial": {
             "campeoes": ctx.resumo_campeoes or [],
         },

@@ -1,5 +1,5 @@
-from src.math_utils import clamp
-from src.superficie_utils import normalizar_superficie
+from src.utils.math_utils import clamp
+from src.utils.superficie_utils import normalizar_superficie
 
 STAMINA_CUSTO_BASE = {
     "curto": 0.35,
@@ -204,3 +204,161 @@ def calcular_stamina_pos_recuperacao(
         base *= 0.92
     rec = base * clamp(0.12 + (fisico / 240.0), 0.2, 0.62)
     return clamp(stamina + rec, 0.0, 100.0)
+
+
+def normalizar_energia_pos_partida(
+    stamina_final: float,
+    fisico: int,
+    pontos_disputados: int,
+    superficie: str = "dura",
+    energia_inicial: float | None = None,
+) -> int:
+    energia = max(0.0, min(100.0, float(stamina_final)))
+    if energia_inicial is not None:
+        energia = min(energia, max(0.0, min(100.0, float(energia_inicial))))
+    if pontos_disputados < 20:
+        return int(round(energia))
+
+    superficie_n = normalizar_superficie(superficie)
+    ajuste_superficie = 0
+    if superficie_n == "saibro":
+        ajuste_superficie = -3
+    elif superficie_n == "grama":
+        ajuste_superficie = 2
+
+    bonus_fisico = max(0, min(7, int(round((int(fisico) - 55) / 6.5))))
+    alvo = 58 + bonus_fisico + ajuste_superficie
+    intensidade = min(1.0, max(0.55, pontos_disputados / 145.0))
+
+    if energia > alvo:
+        excesso = energia - alvo
+        # Puxa energia para faixa realista pós-jogo; partidas longas aproximam mais do alvo.
+        energia = energia - (excesso * (0.72 + (0.28 * intensidade)))
+
+    teto_pos_partida = 60 + ajuste_superficie
+    if int(fisico) >= 85:
+        teto_pos_partida = 65 + ajuste_superficie
+    elif int(fisico) >= 75:
+        teto_pos_partida = 62 + ajuste_superficie
+    if pontos_disputados >= 170:
+        teto_pos_partida -= 2
+    energia = min(energia, teto_pos_partida)
+
+    return max(15, min(100, int(round(energia))))
+
+
+def calcular_impacto_moral_sets(jogador, resultado_sets, venceu_partida: bool) -> int:
+    """Calcula ajuste de moral com base na diferença de games em cada set."""
+    psico = (
+        getattr(jogador, "atributos_psicologicos", {})
+        if not isinstance(jogador, dict)
+        else jogador.get("atributos_psicologicos", {})
+    )
+    determinacao = int(psico.get("determinacao", 50) or 50)
+    concentracao = int(psico.get("concentracao", 50) or 50)
+    agressividade = int(psico.get("agressividade", 50) or 50)
+
+    # Resiliência mental reduz impacto negativo; mental baixo amplia.
+    resiliencia = ((determinacao - 50) * 0.012) + ((concentracao - 50) * 0.008)
+    fator_negativo = max(0.65, min(1.35, 1.0 - resiliencia))
+    # Agressividade alta acelera recuperação de confiança em sets dominantes.
+    fator_positivo = max(0.8, min(1.25, 1.0 + ((agressividade - 50) * 0.005)))
+
+    delta = 0
+    for games_j, games_a in resultado_sets:
+        diff = abs(int(games_j) - int(games_a))
+        if games_j < games_a:
+            # Set perdido: quanto maior a diferença, maior a queda.
+            if diff >= 5:
+                delta -= int(round(4 * fator_negativo))
+            elif diff >= 3:
+                delta -= int(round(3 * fator_negativo))
+            else:
+                delta -= int(round(1 * fator_negativo))
+        elif games_j > games_a and diff >= 4:
+            # Set ganho dominante ajuda confiança, mas bem menos que o impacto da derrota.
+            delta += int(round(1 * fator_positivo))
+
+    if not venceu_partida:
+        delta = int(round(delta * 1.2))
+    
+    return delta
+
+
+def calcular_impacto_moral_ranking(jogador, adversario, venceu_partida: bool) -> int:
+    """Calcula ajuste de moral por resultado relativo ao ranking/força do adversário."""
+    from src.utils.entidade_utils import obter_atributos
+    attrs_j = obter_atributos(jogador)
+    attrs_a = obter_atributos(adversario)
+    
+    overall_j = (
+        int(round(sum(attrs_j.values()) / max(1, len(attrs_j)))) if attrs_j else 50
+    )
+    overall_a = (
+        int(round(sum(attrs_a.values()) / max(1, len(attrs_a)))) if attrs_a else 50
+    )
+
+    pontos_j = int(getattr(jogador, "pontos", 0) or 0)
+    if isinstance(adversario, dict):
+        pontos_a = int(adversario.get("pontos", 0) or 0)
+        pos_j = int(getattr(jogador, "ranking_pos", 0) or 0)
+        pos_a = int(adversario.get("ranking_pos", 0) or 0)
+    else:
+        pontos_a = int(getattr(adversario, "pontos", 0) or 0)
+        pos_j = int(getattr(jogador, "ranking_pos", 0) or 0)
+        pos_a = int(getattr(adversario, "ranking_pos", 0) or 0)
+
+    impacto = 0
+    if pos_j > 0 and pos_a > 0:
+        # positivo: adversário melhor rankeado (número menor)
+        diff_rank = pos_j - pos_a
+        if diff_rank >= 180:
+            impacto += 5
+        elif diff_rank >= 90:
+            impacto += 4
+        elif diff_rank >= 40:
+            impacto += 3
+        elif diff_rank >= 15:
+            impacto += 2
+        elif diff_rank >= 5:
+            impacto += 1
+        elif diff_rank <= -180:
+            impacto -= 5
+        elif diff_rank <= -90:
+            impacto -= 4
+        elif diff_rank <= -40:
+            impacto -= 3
+        elif diff_rank <= -15:
+            impacto -= 2
+        elif diff_rank <= -5:
+            impacto -= 1
+    else:
+        # Fallback quando posição não estiver disponível: usa pontos/overall.
+        if pontos_a - pontos_j >= 1200:
+            impacto += 3
+        elif pontos_a - pontos_j >= 400:
+            impacto += 2
+        elif pontos_j - pontos_a >= 1200:
+            impacto -= 3
+        elif pontos_j - pontos_a >= 400:
+            impacto -= 2
+
+        if overall_a - overall_j >= 6:
+            impacto += 2
+        elif overall_a - overall_j >= 3:
+            impacto += 1
+        elif overall_j - overall_a >= 6:
+            impacto -= 2
+        elif overall_j - overall_a >= 3:
+            impacto -= 1
+
+    delta = impacto if venceu_partida else -impacto
+    # Regra de sanidade:
+    # - Vitória não pode reduzir moral.
+    # - Derrota não pode aumentar moral.
+    if venceu_partida and delta < 0:
+        delta = 0
+    if not venceu_partida and delta > 0:
+        delta = 0
+    
+    return delta
