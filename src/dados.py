@@ -4,9 +4,15 @@ import os
 import re
 import shutil
 from urllib.parse import unquote
-from src.log_jogo import log_erro
-from src.json_utils import salvar_json_seguro
-from pydantic import ValidationError
+from src.utils.log_jogo import log_erro
+from src.utils.json_utils import salvar_json_seguro
+from src.constants.torneio_constants import START_YEAR
+
+try:
+    from pydantic import ValidationError
+except ImportError:
+    class ValidationError(Exception):
+        """Fallback para ambientes de teste que stubam apenas BaseModel."""
 
 logger = logging.getLogger(__name__)
 
@@ -327,7 +333,7 @@ def carregar_temporada(nome_save):
     """Carrega o estado da temporada (ano e semana) do save."""
     caminho = get_caminho_temporada(nome_save)
     if not os.path.exists(caminho):
-        return {"ano": 2026, "semana": 1}
+        return {"ano": START_YEAR, "semana": 1}
     with open(caminho, "r", encoding="utf-8") as f:
         return json.load(f)
 
