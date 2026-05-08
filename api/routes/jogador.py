@@ -2,22 +2,12 @@ from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from api.routes._carta import carta_jogador
 from api.session import obter_sessao_ativa, Session
-from src.dados import carregar_patrocinadores
-from src.migracoes import migrar_equipe
 from src.player_identity import derive_player_identity
 from src.player_ratings import ajustar_atributo_duplas, calcular_overall_contextual
 from src.constants.staff_constants import EMPRESARIOS_DISPONIVEIS, PROFISSIONAIS_DISPONIVEIS
-from src.services.sponsorship_service import (
-    listar_patrocinios_ativos,
-    listar_patrocinios_disponiveis,
-    migrar_patrocinios,
-    pode_assinar_patrocinio,
-    resumir_contexto_patrocinio,
-)
 from src.constants.torneio_constants import RANKING_POSICAO_FALLBACK, START_YEAR
 
 router = APIRouter(prefix="/api/jogador")
-PATROCINADORES_DISPONIVEIS = carregar_patrocinadores()
 
 
 class JogadorResponse(BaseModel):
@@ -51,35 +41,6 @@ class JogadorResponse(BaseModel):
     historico_torneios: list[dict] | None = None
     trofeus: list[dict] | None = None
 
-
-def _serialize_membro(info: dict | None, contrato: dict | None = None) -> dict | None:
-    if not info:
-        return None
-    bonus = {}
-    for chave in (
-        "bonus_progressao",
-        "bonus_recuperacao",
-        "bonus_xp",
-        "chance_mental",
-        "bonus_mental",
-        "bonus_fadiga",
-        "bonus_fisico_pct",
-        "seguidores_min",
-        "seguidores_max",
-        "bonus_patrocinio",
-        "max_equipe",
-    ):
-        if chave in info:
-            bonus[chave] = info[chave]
-
-    return {
-        "nome": info.get("nome", "Desconhecido"),
-        "nivel": int(info.get("estrelas", 1) or 1),
-        "custo_semanal": int(
-            (contrato or {}).get("salario", info.get("salario_semanal", 0)) or 0
-        ),
-        "bonus": bonus,
-    }
 
 @router.get("", response_model=JogadorResponse)
 def get_jogador(session: Session = Depends(obter_sessao_ativa)) -> JogadorResponse:
@@ -302,152 +263,12 @@ def get_atributos(session: Session = Depends(obter_sessao_ativa)):
     }
 
 
-@router.get("/equipe")
-def get_equipe(session: Session = Depends(obter_sessao_ativa)):
-    if not session.jogador:
-        raise HTTPException(status_code=400, detail="Sessão não iniciada.")
-
-    j = session.jogador
-    # Resolve a equipe (lista de contratos)
-    equipe_list = getattr(j, "equipe", [])
-    if not isinstance(equipe_list, list):
-        equipe_list = []
-
-    # Estrutura de retorno exigida
-    res = {
-        "treinador": None,
-        "fisio": None,
-        "psicologo": None,
-        "empresario": None,
-        "marketing": None,
-    }
-
-    # Mapeia profissionais da equipe
-    for item in equipe_list:
-        if not isinstance(item, dict) or "id" not in item:
-            continue
-
-        prof_id = item["id"]
-        info = PROFISSIONAIS_DISPONIVEIS.get(prof_id)
-        if not info:
-            continue
-
-        cat = info.get("categoria")
-        if cat == "treinador":
-            res["treinador"] = _serialize_membro(info, item)
-        elif cat == "fisioterapeuta":
-            res["fisio"] = _serialize_membro(info, item)
-        elif cat == "psicologo":
-            res["psicologo"] = _serialize_membro(info, item)
-        elif cat == "marketing":
-            res["marketing"] = _serialize_membro(info, item)
-
-    # Empresário
-    emp_item = getattr(j, "empresario", None)
-    if emp_item and isinstance(emp_item, dict) and "id" in emp_item:
-        info_emp = EMPRESARIOS_DISPONIVEIS.get(emp_item["id"])
-        if info_emp:
-            res["empresario"] = _serialize_membro(info_emp, emp_item)
-    elif emp_item and isinstance(emp_item, str):
-        info_emp = EMPRESARIOS_DISPONIVEIS.get(emp_item)
-        if info_emp:
-            res["empresario"] = _serialize_membro(info_emp)
-
-    return res
-
-
-@router.get("/patrocinios")
-def get_patrocinios(session: Session = Depends(obter_sessao_ativa)):
-    if not session.jogador:
-        raise HTTPException(status_code=400, detail="Sessão não iniciada.")
-
-    patrocinios_brutos = getattr(session.jogador, "patrocinios", [])
-    if all(not isinstance(item, dict) for item in patrocinios_brutos):
-        session.jogador.patrocinios = migrar_patrocinios(patrocinios_brutos)
-
-    return {
-        "patrocinios": listar_patrocinios_ativos(
-            session.jogador, PATROCINADORES_DISPONIVEIS
-        )
-    }
-
-
 @router.get("/ranking-historico")
 def get_ranking_historico(session: Session = Depends(obter_sessao_ativa)):
     if not session.jogador:
         raise HTTPException(status_code=400, detail="Sessão não iniciada.")
 
     return {"semanas": getattr(session.jogador, "historico_ranking", [])}
-
-
-@router.get("/patrocinios-disponiveis")
-def get_patrocinios_disponiveis(session: Session = Depends(obter_sessao_ativa)):
-    if not session.jogador:
-        raise HTTPException(status_code=400, detail="Sessão não iniciada.")
-
-    j = session.jogador
-    rk = session.ranking_atp if j.genero == "masculino" else session.ranking_wta
-    if rk is None:
-        raise HTTPException(status_code=500, detail="Ranking não carregado")
-
-    posicao = rk.obter_posicao(j.nome) or RANKING_POSICAO_FALLBACK
-    seguidores = getattr(j, "seguidores", 0)
-
-    return {
-        "contexto": resumir_contexto_patrocinio(
-            j, posicao, PATROCINADORES_DISPONIVEIS
-        ),
-        "patrocinadores": listar_patrocinios_disponiveis(
-            j, posicao, seguidores, PATROCINADORES_DISPONIVEIS
-        ),
-    }
-
-
-class AssinarPatrocinioBody(BaseModel):
-    patrocinio_id: str | None = None
-    id: str | None = None
-
-
-@router.post("/assinar-patrocinio")
-def assinar_patrocinio(
-    body: AssinarPatrocinioBody, session: Session = Depends(obter_sessao_ativa)
-):
-    if not session.jogador:
-        raise HTTPException(status_code=400, detail="Sessão não iniciada.")
-
-    j = session.jogador
-    rk = session.ranking_atp if j.genero == "masculino" else session.ranking_wta
-    if rk is None:
-        raise HTTPException(status_code=500, detail="Ranking não carregado")
-
-    posicao = rk.obter_posicao(j.nome) or RANKING_POSICAO_FALLBACK
-    patrocinio_id = body.patrocinio_id or body.id
-    if not patrocinio_id:
-        raise HTTPException(status_code=422, detail="Patrocínio não informado.")
-
-    from src.save import salvar_jogo
-
-    pode, motivo = pode_assinar_patrocinio(j, patrocinio_id, posicao, j.seguidores)
-    if not pode:
-        return {"ok": False, "mensagem": motivo}
-
-    pat = PATROCINADORES_DISPONIVEIS.get(patrocinio_id)
-    if not pat:
-        raise HTTPException(status_code=404, detail="Patrocinador não encontrado")
-
-    j.patrocinios.append(patrocinio_id)
-    
-    # Bônus de assinatura
-    bonus = int(pat.get("bonus_assinatura", 0) or 0)
-    if bonus > 0:
-        j.registrar_transacao(
-            bonus,
-            f"Bônus Assinatura: {pat.get('nome', patrocinio_id)}",
-            categoria="patrocinio",
-        )
-
-    salvar_jogo(session.nome_save_ativo, j)
-    return {"ok": True, "mensagem": f"Contrato assinado com {pat.get('nome')}!"}
 
 
 @router.get("/forma-recente")

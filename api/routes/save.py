@@ -14,6 +14,7 @@ from api.session import (
     Session,
     clear_sessao,
 )
+from src.constants.torneio_constants import START_YEAR
 from src.dados import (
     listar_saves,
     carregar_temporada,
@@ -23,13 +24,12 @@ from src.dados import (
 from src.jogador import (
     Jogador,
     carregar_jogador,
-    _inicializar_arquivos_save,
     criar_jogador_alexandre_paiva,
 )
 from src.save import salvar_jogo
 from src.ranking import SistemaRanking
 from src.dados import get_caminho_ranking_save
-from src.constantes import (
+from src.constants.constantes import (
     ARCHETYPES,
     MENTAL_ARCHETYPES,
 )
@@ -129,7 +129,7 @@ def get_save_preview(nome: str):
     if not jogador:
         raise HTTPException(status_code=404, detail="Dados do jogador não encontrados.")
 
-    temporada = carregar_temporada(nome) or {"semana": 1, "ano": 2026}
+    temporada = carregar_temporada(nome) or {"semana": 1, "ano": START_YEAR}
 
     rk_path = get_caminho_ranking_save(nome, genero=jogador.genero)
     ranking_pos = 0
@@ -142,7 +142,7 @@ def get_save_preview(nome: str):
         "jogador_nome": jogador.nome,
         "tour": "atp" if jogador.genero == "masculino" else "wta",
         "semana": temporada.get("semana", 1),
-        "ano": temporada.get("ano", 2026),
+        "ano": temporada.get("ano", START_YEAR),
         "ranking_estimado": ranking_pos,
     }
 
@@ -178,7 +178,6 @@ def criar_save(req: CreateSaveRequest):
     jogador_inst.atributos = archetype_attrs.copy()
     jogador_inst.atributos_psicologicos = mental_attrs.copy()
 
-    _inicializar_arquivos_save(req.nome, genero=genero)
     salvar_jogo(req.nome, jogador_inst)
 
     ranking_path = get_caminho_ranking_save(req.nome, genero=genero)
@@ -221,7 +220,9 @@ def deletar_save(nome: str):
 def carregar_save(req: LoadSaveRequest):
     saves_disponiveis = listar_saves()
     if req.nome not in saves_disponiveis:
-        raise HTTPException(status_code=404, detail=f"Save '{req.nome}' não encontrado.")
+        raise HTTPException(
+            status_code=404, detail=f"Save '{req.nome}' não encontrado."
+        )
 
     jogador_inst = carregar_jogador(req.nome)
     if not jogador_inst:
@@ -237,7 +238,7 @@ def carregar_save(req: LoadSaveRequest):
         "ok": True,
         "jogador": _serializar_jogador(session, jogador_inst),
         "semana": jogador_inst.semana,
-        "ano": getattr(jogador_inst, "ano", 2026),
+        "ano": getattr(jogador_inst, "ano", START_YEAR),
         "torneio": get_tournament_state(req.nome),
     }
 

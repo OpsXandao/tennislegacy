@@ -8,6 +8,7 @@ from fastapi import Header, HTTPException
 
 from src.dados import carregar_jogador
 from src.jogador import Jogador
+from src.constants.torneio_constants import START_YEAR
 from src.ranking import SistemaRanking
 
 _SESSION_TTL_SECONDS = 3600  # 1 hora sem uso → evict
@@ -30,7 +31,7 @@ class Session:
         self.partida_id: Optional[str] = None
         self.partida_context: Dict[str, Any] = {}
         self.semana_atual: int = 1
-        self.ano_atual: int = 2026
+        self.ano_atual: int = START_YEAR
         self.jogador: Optional[Jogador] = None
 
         # Caches de serialização para performance (Sprint 3)
@@ -47,7 +48,7 @@ class Session:
         self.jogador = carregar_jogador(self.nome_save_ativo)
         temp = carregar_temporada(self.nome_save_ativo)
         self.semana_atual = temp.get("semana", 1)
-        self.ano_atual = temp.get("ano", 2026)
+        self.ano_atual = temp.get("ano", START_YEAR)
         # Limpa caches de serialização
         self._cache_ranking_atp = None
         self._cache_ranking_wta = None

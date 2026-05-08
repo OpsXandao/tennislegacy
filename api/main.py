@@ -23,7 +23,7 @@ from api.routes import (
     partida,
     davis,
     treinamento,
-    mercado,
+    staff,
     email,
     historico,
     duplas,
@@ -31,6 +31,7 @@ from api.routes import (
     mundo,
     progressao,
     notificacoes,
+    patrocinio,
 )
 from api.session import clear_sessao
 from api.ws import partida as ws_partida
@@ -111,7 +112,7 @@ app.include_router(torneio.router)
 app.include_router(partida.router)
 app.include_router(davis.router)
 app.include_router(treinamento.router)
-app.include_router(mercado.router)
+app.include_router(staff.router)
 app.include_router(email.router)
 app.include_router(historico.router)
 app.include_router(duplas.router)
@@ -119,6 +120,7 @@ app.include_router(logs.router)
 app.include_router(mundo.router)
 app.include_router(progressao.router)
 app.include_router(notificacoes.router)
+app.include_router(patrocinio.router)
 app.include_router(ws_partida.router)
 
 
