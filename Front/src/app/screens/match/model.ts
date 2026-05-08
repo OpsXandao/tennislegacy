@@ -54,7 +54,7 @@ export const PLANOS = [
   },
 ] as const
 
-const MODOS_ACOMP = [
+export const MODOS_ACOMP = [
   {
     valor: 'estrategista' as ModoAcomp,
     label: 'MANUAL',
