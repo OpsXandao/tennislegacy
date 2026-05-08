@@ -222,7 +222,10 @@ export interface MembroEquipe {
 }
 
 export interface Patrocinio {
+  id: string
   nome: string
+  categoria: string
+  nivel: string
   valor: number
   semanas_restantes: number
 }
@@ -230,14 +233,24 @@ export interface Patrocinio {
 export interface PatrocinioDisponivel {
   id: string
   nome: string
+  categoria: string
   nivel: string
   valor_mensal: number
   valor_semanal: number
+  bonus_assinatura: number
   requisito_ranking: number
   requisito_seguidores: number
   elegivel: boolean
   motivo_bloqueio: string | null
   descricao: string
+}
+
+export interface PatrocinioContexto {
+  ranking_atual: number
+  seguidores_atuais: number
+  patrocinios_ativos: number
+  slots_menores_restantes: number
+  slot_master_disponivel: boolean
 }
 
 export interface AssinarPatrocinioResponse {

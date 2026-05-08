@@ -6,8 +6,15 @@ from src.dados import carregar_patrocinadores
 from src.migracoes import migrar_equipe
 from src.player_identity import derive_player_identity
 from src.player_ratings import ajustar_atributo_duplas, calcular_overall_contextual
-from src.staff_constants import EMPRESARIOS_DISPONIVEIS, PROFISSIONAIS_DISPONIVEIS
-from src.services.sponsorship_service import migrar_patrocinios, pode_assinar_patrocinio
+from src.constants.staff_constants import EMPRESARIOS_DISPONIVEIS, PROFISSIONAIS_DISPONIVEIS
+from src.services.sponsorship_service import (
+    listar_patrocinios_ativos,
+    listar_patrocinios_disponiveis,
+    migrar_patrocinios,
+    pode_assinar_patrocinio,
+    resumir_contexto_patrocinio,
+)
+from src.constants.torneio_constants import RANKING_POSICAO_FALLBACK, START_YEAR
 
 router = APIRouter(prefix="/api/jogador")
 PATROCINADORES_DISPONIVEIS = carregar_patrocinadores()
@@ -73,28 +80,6 @@ def _serialize_membro(info: dict | None, contrato: dict | None = None) -> dict |
         ),
         "bonus": bonus,
     }
-
-
-def _serialize_patrocinio(item) -> dict | None:
-    if isinstance(item, dict):
-        pat_id = item.get("id") or item.get("ref_id")
-        semanas_restantes = int(
-            item.get("semanas_restantes", item.get("duracao_semanas", 0)) or 0
-        )
-    else:
-        pat_id = item
-        semanas_restantes = 0
-
-    pat = PATROCINADORES_DISPONIVEIS.get(pat_id)
-    if not pat:
-        return None
-
-    return {
-        "nome": pat.get("nome", str(pat_id)),
-        "valor": int(pat.get("pagamento_semanal", 0) or 0),
-        "semanas_restantes": semanas_restantes,
-    }
-
 
 @router.get("", response_model=JogadorResponse)
 def get_jogador(session: Session = Depends(obter_sessao_ativa)) -> JogadorResponse:
@@ -172,7 +157,7 @@ def get_jogador(session: Session = Depends(obter_sessao_ativa)) -> JogadorRespon
         xp_para_proximo_nivel=getattr(j, "xp_para_proximo_nivel", 100),
         atributos=jogador_payload["atributos"],
         atributos_psicologicos=jogador_payload.get("atributos_psicologicos", {}),
-        carta=carta_jogador(jogador_payload, posicao or 9999),
+        carta=carta_jogador(jogador_payload, posicao or RANKING_POSICAO_FALLBACK),
         identity=identity,
         historico_partidas=list(getattr(j, "historico_partidas", []) or []),
         historico_torneios=list(getattr(j, "historico_torneios", []) or []),
@@ -225,7 +210,7 @@ def get_ranking_detalhado(session: Session = Depends(obter_sessao_ativa)):
     rk_d = SistemaRanking(path_d, modalidade="duplas")
 
     temporada = carregar_temporada_atual(nome_save)
-    ano_atual = temporada.get("ano", 2026)
+    ano_atual = temporada.get("ano", START_YEAR)
 
     jogador_rk = rk_s.buscar_jogador_por_nome(j.nome) if rk_s else None
     jogador_rk_d = rk_d.buscar_jogador_por_nome(j.nome)
@@ -378,15 +363,13 @@ def get_patrocinios(session: Session = Depends(obter_sessao_ativa)):
 
     patrocinios_brutos = getattr(session.jogador, "patrocinios", [])
     if all(not isinstance(item, dict) for item in patrocinios_brutos):
-        patrocinios_brutos = migrar_patrocinios(patrocinios_brutos)
+        session.jogador.patrocinios = migrar_patrocinios(patrocinios_brutos)
 
-    serializados = []
-    for item in patrocinios_brutos:
-        payload = _serialize_patrocinio(item)
-        if payload:
-            serializados.append(payload)
-
-    return {"patrocinios": serializados}
+    return {
+        "patrocinios": listar_patrocinios_ativos(
+            session.jogador, PATROCINADORES_DISPONIVEIS
+        )
+    }
 
 
 @router.get("/ranking-historico")
@@ -406,29 +389,18 @@ def get_patrocinios_disponiveis(session: Session = Depends(obter_sessao_ativa)):
     rk = session.ranking_atp if j.genero == "masculino" else session.ranking_wta
     if rk is None:
         raise HTTPException(status_code=500, detail="Ranking não carregado")
-        
-    posicao = rk.obter_posicao(j.nome) or 9999
-    seguidores = j.seguidores
 
-    from src.patrocinios import PATROCINADORES_DISPONIVEIS, pode_assinar_patrocinio
+    posicao = rk.obter_posicao(j.nome) or RANKING_POSICAO_FALLBACK
+    seguidores = getattr(j, "seguidores", 0)
 
-    disponiveis = []
-    for pat_id, pat in PATROCINADORES_DISPONIVEIS.items():
-        pode, motivo = pode_assinar_patrocinio(j, pat_id, posicao, seguidores)
-        disponiveis.append({
-            "id": pat_id,
-            "nome": pat.get("nome"),
-            "nivel": pat.get("tier"),
-            "valor_mensal": pat.get("pagamento_semanal", 0) * 4,
-            "valor_semanal": pat.get("pagamento_semanal", 0),
-            "requisito_ranking": pat.get("requisito_ranking"),
-            "requisito_seguidores": pat.get("req_seguidores", 0),
-            "elegivel": pode,
-            "motivo_bloqueio": motivo if not pode else None,
-            "descricao": pat.get("descricao", "")
-        })
-
-    return {"patrocinadores": disponiveis}
+    return {
+        "contexto": resumir_contexto_patrocinio(
+            j, posicao, PATROCINADORES_DISPONIVEIS
+        ),
+        "patrocinadores": listar_patrocinios_disponiveis(
+            j, posicao, seguidores, PATROCINADORES_DISPONIVEIS
+        ),
+    }
 
 
 class AssinarPatrocinioBody(BaseModel):
@@ -448,7 +420,7 @@ def assinar_patrocinio(
     if rk is None:
         raise HTTPException(status_code=500, detail="Ranking não carregado")
 
-    posicao = rk.obter_posicao(j.nome) or 9999
+    posicao = rk.obter_posicao(j.nome) or RANKING_POSICAO_FALLBACK
     patrocinio_id = body.patrocinio_id or body.id
     if not patrocinio_id:
         raise HTTPException(status_code=422, detail="Patrocínio não informado.")
@@ -484,7 +456,7 @@ def get_forma_recente(session: Session = Depends(obter_sessao_ativa)):
         raise HTTPException(status_code=400, detail="Sessão não iniciada.")
 
     from src.match_history import MatchHistoryManager
-    from src.nome_utils import normalizar_nome
+    from src.utils.nome_utils import normalizar_nome
 
     manager = MatchHistoryManager(session.nome_save_ativo)
     partidas = manager.buscar_por_jogador(session.jogador.nome)
@@ -539,7 +511,7 @@ def get_rivalidades(session: Session = Depends(obter_sessao_ativa)):
         raise HTTPException(status_code=400, detail="Sessão não iniciada.")
 
     from src.match_history import MatchHistoryManager
-    from src.nome_utils import normalizar_nome
+    from src.utils.nome_utils import normalizar_nome
 
     manager = MatchHistoryManager(session.nome_save_ativo)
     partidas = manager.buscar_por_jogador(session.jogador.nome)

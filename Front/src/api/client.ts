@@ -11,6 +11,7 @@ import type {
   ResumoDaSemana,
   MembroEquipe,
   Patrocinio,
+  PatrocinioContexto,
   PatrocinioDisponivel,
   AssinarPatrocinioResponse,
   PlacarEvent,
@@ -158,7 +159,7 @@ export const api = {
       get<{ patrocinios: Patrocinio[] }>('/jogador/patrocinios'),
 
     patrociniosDisponiveis: () =>
-      get<{ patrocinadores: PatrocinioDisponivel[] }>('/jogador/patrocinios-disponiveis'),
+      get<{ contexto: PatrocinioContexto; patrocinadores: PatrocinioDisponivel[] }>('/jogador/patrocinios-disponiveis'),
 
     assinarPatrocinio: (id: string) =>
       post<AssinarPatrocinioResponse>('/jogador/assinar-patrocinio', { patrocinio_id: id }),
@@ -295,6 +296,8 @@ export const api = {
       mensagem: string
       torneio?: TorneioCalendario
     }>('/torneio/checar-convocacao'),
+
+    recusarConvocacao: () => post<{ ok: boolean; mensagem: string }>('/torneio/recusar-convocacao'),
 
     estado: () => get<TorneioState | null>('/torneio/estado'),
 
