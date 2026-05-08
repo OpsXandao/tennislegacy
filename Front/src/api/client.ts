@@ -147,23 +147,6 @@ export const api = {
         '/jogador/atributos'
       ),
 
-    equipe: () =>
-      get<{
-        treinador: MembroEquipe | null
-        fisio: MembroEquipe | null
-        psicologo: MembroEquipe | null
-        empresario: MembroEquipe | null
-      }>('/jogador/equipe'),
-
-    patrocinios: () =>
-      get<{ patrocinios: Patrocinio[] }>('/jogador/patrocinios'),
-
-    patrociniosDisponiveis: () =>
-      get<{ contexto: PatrocinioContexto; patrocinadores: PatrocinioDisponivel[] }>('/jogador/patrocinios-disponiveis'),
-
-    assinarPatrocinio: (id: string) =>
-      post<AssinarPatrocinioResponse>('/jogador/assinar-patrocinio', { patrocinio_id: id }),
-
     financeiro: () =>
       get<{ saldo: number; transacoes: Transaction[]; resumo_categorias: Record<string, number> }>(
         '/jogador/financeiro'
@@ -394,12 +377,30 @@ export const api = {
       }>('/progressao/alocar', { tipo, atributo }),
   },
 
-  // ── Mercado ───────────────────────────────────────────────────────────────
+  // ── Patrocínio ────────────────────────────────────────────────────────────
 
-  mercado: {
-    profissionais: () => get<Record<string, MembroMercado[]>>('/mercado/profissionais'),
-    contratar: (prof_id: string) => post<{ ok: boolean; mensagem: string }>('/mercado/contratar', { prof_id }),
-    demitir: (prof_id: string) => post<{ ok: boolean; mensagem: string }>('/mercado/demitir', { prof_id }),
+  patrocinio: {
+    ativos: () =>
+      get<{ patrocinios: Patrocinio[] }>('/patrocinio/ativos'),
+    disponiveis: () =>
+      get<{ contexto: PatrocinioContexto; patrocinadores: PatrocinioDisponivel[] }>('/patrocinio/disponiveis'),
+    assinar: (id: string) =>
+      post<AssinarPatrocinioResponse>('/patrocinio/assinar', { patrocinio_id: id }),
+  },
+
+  // ── Staff ─────────────────────────────────────────────────────────────────
+
+  staff: {
+    equipe: () =>
+      get<{
+        treinador: MembroEquipe | null
+        fisio: MembroEquipe | null
+        psicologo: MembroEquipe | null
+        empresario: MembroEquipe | null
+      }>('/staff/equipe'),
+    profissionais: () => get<Record<string, MembroMercado[]>>('/staff/profissionais'),
+    contratar: (prof_id: string) => post<{ ok: boolean; mensagem: string }>('/staff/contratar', { prof_id }),
+    demitir: (prof_id: string) => post<{ ok: boolean; mensagem: string }>('/staff/demitir', { prof_id }),
   },
 
   // ── E-mail ────────────────────────────────────────────────────────────────

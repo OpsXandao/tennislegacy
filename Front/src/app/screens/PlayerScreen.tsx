@@ -87,7 +87,7 @@ export function PlayerScreen() {
       const [j, a, e, em, hist, rk, hp, fin, car] = await Promise.all([
         api.jogador.get(),
         api.jogador.atributos(),
-        api.jogador.equipe(),
+        api.staff.equipe(),
         api.email.inbox(),
         api.historico.goat(),
         api.jogador.rankingDetalhado(),

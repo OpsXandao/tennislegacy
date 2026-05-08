@@ -23,7 +23,7 @@ export function MarketScreen() {
 
   useEffect(() => {
     setLoading(true)
-    Promise.all([api.mercado.profissionais(), api.jogador.get()])
+    Promise.all([api.staff.profissionais(), api.jogador.get()])
       .then(([profs, jog]) => {
         setProfissionais(profs)
         setJogador(jog)
@@ -40,7 +40,7 @@ export function MarketScreen() {
 
   async function handleContratar(id: string) {
     try {
-      const res = await api.mercado.contratar(id)
+      const res = await api.staff.contratar(id)
       setMensagem({ texto: res.mensagem, tipo: 'success' })
     } catch (e: any) {
       setMensagem({ texto: e.message, tipo: 'error' })
@@ -50,7 +50,7 @@ export function MarketScreen() {
   async function handleDemitir(id: string) {
     if (!confirm('Deseja realmente demitir este profissional?')) return
     try {
-      const res = await api.mercado.demitir(id)
+      const res = await api.staff.demitir(id)
       setMensagem({ texto: res.mensagem, tipo: 'success' })
     } catch (e: any) {
       setMensagem({ texto: e.message, tipo: 'error' })

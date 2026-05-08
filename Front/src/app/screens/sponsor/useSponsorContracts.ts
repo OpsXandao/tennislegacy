@@ -28,8 +28,8 @@ export function useSponsorContracts() {
   const carregar = useCallback(async () => {
     try {
       const [disponiveisResp, ativosResp] = await Promise.all([
-        api.jogador.patrociniosDisponiveis(),
-        api.jogador.patrocinios(),
+        api.patrocinio.disponiveis(),
+        api.patrocinio.ativos(),
       ])
       setDisponiveis(disponiveisResp.patrocinadores)
       setContexto(disponiveisResp.contexto)
@@ -52,7 +52,7 @@ export function useSponsorContracts() {
       setAssinando(id)
       setMensagem(null)
       try {
-        const res = await api.jogador.assinarPatrocinio(id)
+        const res = await api.patrocinio.assinar(id)
         setMensagem({ texto: res.mensagem, ok: res.ok })
         if (res.ok) {
           await carregar()
