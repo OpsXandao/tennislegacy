@@ -12,7 +12,7 @@ from typing import Any
 
 sys.path.append(os.getcwd())
 
-from src.nome_utils import normalizar_nome
+from src.utils.nome_utils import normalizar_nome
 
 ROOT = Path(__file__).resolve().parents[1]
 DB_MASTER = ROOT / "db" / "master"

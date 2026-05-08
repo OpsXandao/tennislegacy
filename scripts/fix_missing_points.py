@@ -7,7 +7,7 @@ sys.path.append(os.getcwd())
 
 from src.ranking import SistemaRanking
 from src.dados import get_caminho_ranking_save, carregar_temporada
-from src.nome_utils import normalizar_nome
+from src.utils.nome_utils import normalizar_nome
 
 
 def fix_points(nome_save, nome_jogador, pontos, torneio, fase, semana, ano):

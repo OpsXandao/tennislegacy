@@ -1,7 +1,7 @@
 import os
 import json
 from pathlib import Path
-from src.nome_utils import normalizar_nome
+from src.utils.nome_utils import normalizar_nome
 
 
 def fix_tournament(save_name):

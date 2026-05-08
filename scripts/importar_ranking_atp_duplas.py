@@ -36,8 +36,8 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE not in sys.path:
     sys.path.insert(0, BASE)
 
-from src.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
-from src.nome_utils import normalizar_nome
+from src.constants.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
+from src.utils.nome_utils import normalizar_nome
 
 TRI_TO_ISO2 = {
     "ARG": "AR",

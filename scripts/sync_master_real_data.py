@@ -15,7 +15,7 @@ from scripts.fetch_real_data import (
     iter_player_files,
     process_player,
 )
-from src.json_utils import salvar_json_seguro
+from src.utils.json_utils import salvar_json_seguro
 
 ROOT = Path(__file__).resolve().parents[1]
 DB_DIR = ROOT / "db"

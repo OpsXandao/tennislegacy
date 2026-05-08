@@ -3,7 +3,6 @@ mypy
 pydantic
 pytest
 pytest-cov
-colorama
 requests
 beautifulsoup4
 lxml

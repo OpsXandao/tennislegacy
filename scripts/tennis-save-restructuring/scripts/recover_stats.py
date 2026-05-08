@@ -1,7 +1,7 @@
 import os
 import json
 from pathlib import Path
-from src.nome_utils import normalizar_nome
+from src.utils.nome_utils import normalizar_nome
 
 
 def recover_save_stats(save_name):
@@ -67,7 +67,7 @@ def recover_save_stats(save_name):
                     player_data["is_lean"] = False
 
                     # Recalcula overall real
-                    from src.constantes import DEFAULT_ATRIBUTOS_PSICOLOGICOS
+                    from src.constants.constantes import DEFAULT_ATRIBUTOS_PSICOLOGICOS
 
                     tec = player_data.get("atributos", {}).values()
                     psi = player_data.get(

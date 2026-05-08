@@ -1,10 +1,9 @@
 import unittest
 from unittest.mock import patch
 
-from src.jogar_partida import simular_game_rapido
-from src.match_constants import TipoSaque, MatchPointStats, EstrategiaSaque, IntencaoPonto
+from src.match_core import simular_game_rapido, atualizar_estatisticas
+from src.constants.match_constants import TipoSaque, MatchPointStats, EstrategiaSaque, IntencaoPonto
 from src.simulacao_partida import ContextoPartida, ContextoPonto, SimuladorPonto
-from src.jogar_partida import atualizar_estatisticas
 
 
 class SimuladorSequencial:

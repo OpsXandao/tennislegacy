@@ -7,8 +7,8 @@ import sys
 # Adiciona o diretório raiz ao sys.path para importar módulos do src
 sys.path.append(os.getcwd())
 
-from src.nome_utils import normalizar_nome
-from src.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
+from src.utils.nome_utils import normalizar_nome
+from src.constants.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
 
 
 def gerar_json_basico(

@@ -6,7 +6,7 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 from src.match_config import ConfigPartida
-from src.match_constants import EstrategiaSaque, IntencaoPonto, TipoSaque
+from src.constants.match_constants import EstrategiaSaque, IntencaoPonto, TipoSaque
 
 
 class ApiPartidaResumeTests(unittest.TestCase):

@@ -8,7 +8,7 @@ from src.management import (
 )
 from src.migracoes import migrar_empresario, migrar_equipe
 from src.patrocinios import migrar_patrocinios
-from src.staff_constants import EMPRESARIOS_DISPONIVEIS
+from src.constants.staff_constants import EMPRESARIOS_DISPONIVEIS
 
 
 class JogadorDummy(SimpleNamespace):

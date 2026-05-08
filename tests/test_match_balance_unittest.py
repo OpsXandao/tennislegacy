@@ -1,8 +1,8 @@
 import random
 import unittest
 
-from src.jogar_partida import atualizar_estatisticas
-from src.match_constants import EstrategiaSaque, IntencaoPonto, TipoSaque
+from src.match_core import atualizar_estatisticas
+from src.constants.match_constants import EstrategiaSaque, IntencaoPonto, TipoSaque
 from src.simulacao_partida import ContextoPartida, ContextoPonto, EstatisticasPartida, SimuladorPonto
 
 

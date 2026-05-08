@@ -5,7 +5,7 @@ from src.match_dynamics import (
     aplicar_custo_stamina_contextual,
     calcular_stamina_pos_recuperacao,
 )
-from src.superficie_utils import normalizar_superficie
+from src.utils.superficie_utils import normalizar_superficie
 
 
 class MatchDynamicsTests(unittest.TestCase):

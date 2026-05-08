@@ -17,7 +17,7 @@ from src.dados import (
     get_caminho_ranking_global_duplas,
     get_caminho_ranking_save,
 )
-from src.nome_utils import normalizar_nome
+from src.utils.nome_utils import normalizar_nome
 from src.player_ratings import ajustar_atributo_duplas, calcular_overall_contextual
 
 

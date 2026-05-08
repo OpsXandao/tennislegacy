@@ -8,10 +8,10 @@ from src import calendario
 from src.calendario import (
     _marcar_historico_expirado,
     _estado_torneio_ativo,
-    _processar_recuperacao_npc,
     processar_avisos_patrocinio,
     processar_seguidores,
 )
+from src.services.health_service import processar_recuperacao_semanal as _processar_recuperacao_npc
 from src.jogador import normalizar_nome
 from src.ranking import SistemaRanking
 
