@@ -80,7 +80,7 @@ export function construirStats(
         : ranking.find((player) => player.nome === jogador?.nome)?.posicao ?? '-'
 
   return [
-    { label: 'SEU RANKING', value: `#${bestRanking}`, color: '#ffe600' },
+    { label: 'SEU RANKING', value: `#${bestRanking}`, color: 'var(--neon-yellow)' },
     {
       label: 'PONTOS',
       value: String(
@@ -91,13 +91,13 @@ export function construirStats(
             : ranking.find((player) => player.nome === jogador?.nome)?.pontos ?? 0
         )?.toLocaleString('pt-BR') ?? '0'
       ),
-      color: '#00ff88',
+      color: 'var(--neon-green)',
     },
     {
       label: 'TOUR',
       value: String((tour === 'davis' ? 'DAVIS' : jogador?.tour || tour).toUpperCase()),
-      color: '#00e5ff',
+      color: 'var(--neon-cyan)',
     },
-    { label: 'NÍVEL', value: String(jogador?.nivel ?? 1), color: '#ffe600' },
+    { label: 'NÍVEL', value: String(jogador?.nivel ?? 1), color: 'var(--neon-yellow)' },
   ]
 }

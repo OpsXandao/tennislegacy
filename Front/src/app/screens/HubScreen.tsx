@@ -40,14 +40,14 @@ function PixelMeter({ value, color }: { value: number; color: string }) {
 }
 
 const QUICK = [
-  { icon: CalendarDays, label: 'JOGAR',    route: '/calendar',  color: '#00ff88' },
-  { icon: ShoppingBag,  label: 'MERCADO',  route: '/market',    color: '#ff0055' },
-  { icon: Users,        label: 'DUPLAS',   route: '/duplas',    color: '#00e5ff' },
-  { icon: Shield,       label: 'DAVIS',    route: '/davis',     color: '#ffe600' },
-  { icon: History,      label: 'HISTORICO',route: '/history',   color: '#ffe600' },
-  { icon: Globe,        label: 'MUNDO',    route: '/world',     color: '#ffe600' },
-  { icon: Mic,          label: 'IMPRENSA', route: '/imprensa',  color: '#c084fc' },
-  { icon: Crown,        label: 'LIFESTYLE',route: '/lifestyle', color: '#ffb7c6' },
+  { icon: CalendarDays, label: 'JOGAR',    route: '/calendar',  color: 'var(--neon-green)',  rgb: 'var(--neon-green-rgb)' },
+  { icon: ShoppingBag,  label: 'MERCADO',  route: '/market',    color: 'var(--neon-pink)',   rgb: 'var(--neon-pink-rgb)' },
+  { icon: Users,        label: 'DUPLAS',   route: '/duplas',    color: 'var(--neon-cyan)',   rgb: 'var(--neon-cyan-rgb)' },
+  { icon: Shield,       label: 'DAVIS',    route: '/davis',     color: 'var(--neon-yellow)', rgb: 'var(--neon-yellow-rgb)' },
+  { icon: History,      label: 'HISTORICO',route: '/history',   color: 'var(--neon-yellow)', rgb: 'var(--neon-yellow-rgb)' },
+  { icon: Globe,        label: 'MUNDO',    route: '/world',     color: 'var(--neon-yellow)', rgb: 'var(--neon-yellow-rgb)' },
+  { icon: Mic,          label: 'IMPRENSA', route: '/imprensa',  color: 'var(--neon-purple)', rgb: 'var(--neon-purple-rgb)' },
+  { icon: Crown,        label: 'LIFESTYLE',route: '/lifestyle', color: '#ffb7c6',            rgb: '255,183,198' },
 ]
 
 function QuickBtn({ item, onClick }: { item: typeof QUICK[number]; onClick: () => void }) {
@@ -59,9 +59,9 @@ function QuickBtn({ item, onClick }: { item: typeof QUICK[number]; onClick: () =
       onMouseLeave={() => setHovered(false)}
       className="flex items-center gap-2 p-3 border-2 active:scale-95 transition-all text-left"
       style={{
-        borderColor: hovered ? item.color : `${item.color}33`,
-        background: hovered ? `${item.color}0d` : 'var(--card)',
-        boxShadow: hovered ? `0 0 10px ${item.color}44` : 'none',
+        borderColor: hovered ? item.color : `rgba(${item.rgb},0.20)`,
+        background: hovered ? `rgba(${item.rgb},0.05)` : 'var(--card)',
+        boxShadow: hovered ? `0 0 10px rgba(${item.rgb},0.27)` : 'none',
         transition: 'border-color 0.15s, background 0.15s, box-shadow 0.15s',
       }}
     >
@@ -114,7 +114,7 @@ export function HubScreen() {
   const isTop10   = rank > 0 && rank <= 10
   const isTop100  = rank > 0 && rank <= 100
   
-  const accent    = isTop10 ? '#ffe600' : isTop100 ? '#00e5ff' : isAtp ? '#00ff88' : '#ff0055'
+  const accent    = isTop10 ? 'var(--neon-yellow)' : isTop100 ? 'var(--neon-cyan)' : isAtp ? 'var(--neon-green)' : 'var(--neon-pink)'
   const accentVar = isTop10 ? 'var(--neon-yellow)' : isTop100 ? 'var(--neon-cyan)' : isAtp ? 'var(--neon-green)' : 'var(--neon-pink)'
   const glowVar   = isTop10 ? 'var(--glow-gold-sm)' : isTop100 ? 'var(--glow-cyan-sm)' : isAtp ? 'var(--glow-green-sm)' : 'var(--glow-pink-sm)'
   const shadowVar = isTop10 ? '0 2px 12px rgba(255,230,0,0.22)' : isTop100 ? '0 2px 12px rgba(0,229,255,0.22)' : isAtp ? '0 2px 12px rgba(0,255,136,0.12)' : '0 2px 12px rgba(255,0,85,0.12)'
@@ -145,12 +145,12 @@ export function HubScreen() {
   return (
     <div className="app-shell min-h-screen overflow-y-auto pb-28">
       {loadError && (
-        <div className="flex items-center justify-between gap-3 bg-[#1a0008] border-b-2 border-[#ff0055] px-4 py-2">
-          <span className="arcade-font text-[10px] text-[#ff0055] tracking-wider">ERRO AO CARREGAR DADOS — SERVIDOR OFFLINE?</span>
+        <div className="flex items-center justify-between gap-3 bg-[#1a0008] border-b-2 border-neon-pink px-4 py-2">
+          <span className="arcade-font text-[10px] text-neon-pink tracking-wider">ERRO AO CARREGAR DADOS — SERVIDOR OFFLINE?</span>
           <button
             type="button"
             onClick={() => { setLoadError(false); fetchJogador().catch(() => setLoadError(true)) }}
-            className="arcade-font text-[10px] text-[#ff7d9e] border border-[#ff0055] px-2 py-1"
+            className="arcade-font text-[10px] text-[#ff7d9e] border border-neon-pink px-2 py-1"
           >
             TENTAR NOVAMENTE
           </button>
@@ -158,8 +158,8 @@ export function HubScreen() {
       )}
       {mostrarPromptAutoSave && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/82 p-4 backdrop-blur-sm">
-          <div className="w-full max-w-md border-2 border-[#00ff88] bg-[#06110c] p-5 shadow-[0_0_24px_rgba(0,255,136,0.18)]">
-            <div className="arcade-font text-[10px] tracking-[0.2em] text-[#00ff88]">SALVAMENTO AUTOMÁTICO</div>
+          <div className="w-full max-w-md border-2 border-neon-green bg-[#06110c] p-5 shadow-[0_0_24px_rgba(0,255,136,0.18)]">
+            <div className="arcade-font text-[10px] tracking-[0.2em] text-neon-green">SALVAMENTO AUTOMÁTICO</div>
             <div className="pixel-font mt-3 text-lg text-white">Deseja ativar o salvamento automático?</div>
             <div className="arcade-font mt-3 text-[11px] leading-relaxed text-[#9bc7af]">
               Essa configuração é definida no hub e usada quando uma nova partida começar.
@@ -168,14 +168,14 @@ export function HubScreen() {
               <button
                 type="button"
                 onClick={() => definirAutoSave(false)}
-                className="min-h-[44px] border-2 border-[#ff0055] px-4 py-3 arcade-font text-[10px] text-[#ff7d9e]"
+                className="min-h-[44px] border-2 border-neon-pink px-4 py-3 arcade-font text-[10px] text-[#ff7d9e]"
               >
                 NÃO
               </button>
               <button
                 type="button"
                 onClick={() => definirAutoSave(true)}
-                className="min-h-[44px] border-2 border-[#00ff88] px-4 py-3 arcade-font text-[10px] text-[#00ff88]"
+                className="min-h-[44px] border-2 border-neon-green px-4 py-3 arcade-font text-[10px] text-neon-green"
               >
                 SIM
               </button>
@@ -210,8 +210,8 @@ export function HubScreen() {
                 className="text-[9px] mr-2"
                 style={{
                   fontFamily: 'var(--font-pixel)',
-                  color: saveMsg === 'SALVO' ? '#00ff88' : '#ff0055',
-                  textShadow: `0 0 6px ${saveMsg === 'SALVO' ? '#00ff88' : '#ff0055'}`,
+                  color: saveMsg === 'SALVO' ? 'var(--neon-green)' : 'var(--neon-pink)',
+                  textShadow: `0 0 6px ${saveMsg === 'SALVO' ? 'var(--neon-green)' : 'var(--neon-pink)'}`,
                 }}
               >
                 {saveMsg}
@@ -224,7 +224,7 @@ export function HubScreen() {
             onMouseLeave={() => setHoveringConfig(false)}
             className="p-2 transition-colors"
             style={{
-              color: hoveringConfig ? '#00e5ff' : '#333',
+              color: hoveringConfig ? 'var(--neon-cyan)' : '#333',
               textShadow: hoveringConfig ? '0 0 8px rgba(0,229,255,0.8)' : '0 0 6px rgba(0,229,255,0.18)',
               filter: hoveringConfig ? 'drop-shadow(0 0 6px rgba(0,229,255,0.55))' : 'none',
             }}
@@ -239,7 +239,7 @@ export function HubScreen() {
             onMouseLeave={() => setHoveringSave(false)}
             className="p-2 transition-colors"
             style={{
-              color: hoveringSave ? '#00ff88' : '#333',
+              color: hoveringSave ? 'var(--neon-green)' : '#333',
               textShadow: hoveringSave ? '0 0 8px rgba(0,255,136,0.8)' : '0 0 6px rgba(0,255,136,0.18)',
               filter: hoveringSave ? 'drop-shadow(0 0 6px rgba(0,255,136,0.55))' : 'none',
             }}
@@ -253,7 +253,7 @@ export function HubScreen() {
             onMouseLeave={() => setHoveringExit(false)}
             className="p-2 transition-colors"
             style={{
-              color: hoveringExit ? '#ff0055' : '#333',
+              color: hoveringExit ? 'var(--neon-pink)' : '#333',
               textShadow: hoveringExit ? '0 0 8px rgba(255,0,85,0.8)' : '0 0 6px rgba(255,0,85,0.18)',
               filter: hoveringExit ? 'drop-shadow(0 0 6px rgba(255,0,85,0.55))' : 'none',
             }}
@@ -284,7 +284,7 @@ export function HubScreen() {
         {unreadEmails > 0 && (
           <motion.div 
             initial={{ scale: 0 }} animate={{ scale: 1 }}
-            className="absolute top-2 right-2 bg-[#ff0055] text-white pixel-font text-[9px] w-6 h-6 flex items-center justify-center rounded-full border-2 border-white shadow-[0_0_10px_#ff0055] z-10 animate-bounce cursor-pointer"
+            className="absolute top-2 right-2 bg-neon-pink text-white pixel-font text-[9px] w-6 h-6 flex items-center justify-center rounded-full border-2 border-white shadow-[0_0_10px_#ff0055] z-10 animate-bounce cursor-pointer"
             onClick={() => navigate('/player', { state: { tab: 6 } })}
           >
             {unreadEmails}
@@ -328,10 +328,10 @@ export function HubScreen() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="mx-4 mt-2 border-2 border-[#ff0055] bg-black px-3 py-2"
+            className="mx-4 mt-2 border-2 border-neon-pink bg-black px-3 py-2"
             style={{ boxShadow: '0 0 12px rgba(255,0,85,0.25)' }}
           >
-            <div className="text-[10px] text-[#ff0055] animate-pulse" style={{ fontFamily: 'var(--font-pixel)' }}>
+            <div className="text-[10px] text-neon-pink animate-pulse" style={{ fontFamily: 'var(--font-pixel)' }}>
               !! LESIONADO - {jogador?.status_lesao?.toUpperCase()}
             </div>
           </motion.div>
@@ -359,22 +359,22 @@ export function HubScreen() {
             onClick={() => navigate((torneio as any).davis ? '/davis' : '/tournament')}
             onMouseEnter={() => setHoveringActiveTournament(true)}
             onMouseLeave={() => setHoveringActiveTournament(false)}
-            className="mx-4 mt-3 w-[calc(100%-2rem)] flex items-center justify-between p-3 border-2 border-[#ffe600] bg-black text-left active:scale-[0.98] transition-transform"
+            className="mx-4 mt-3 w-[calc(100%-2rem)] flex items-center justify-between p-3 border-2 border-neon-yellow bg-black text-left active:scale-[0.98] transition-transform"
             style={{
               background: hoveringActiveTournament ? 'rgba(255,230,0,0.06)' : '#000',
             }}
           >
             <div>
-              <div className="text-[8px] text-[#ffe600] animate-pulse mb-1" style={{ fontFamily: 'var(--font-pixel)' }}>
+              <div className="text-[8px] text-neon-yellow animate-pulse mb-1" style={{ fontFamily: 'var(--font-pixel)' }}>
                 &gt; {(torneio as any).davis ? 'CONFRONTO NACIONAL' : 'TORNEIO EM CURSO'}
               </div>
               <div className="text-[12px] text-white" style={{ fontFamily: 'var(--font-pixel)' }}>{torneio.nome}</div>
               <div className="text-[9px] text-[#666] mt-0.5" style={{ fontFamily: 'var(--font-arcade)' }}>{torneio.fase_atual?.toUpperCase()}</div>
             </div>
             <div
-              className="flex items-center gap-1 border-2 border-[#ffe600] px-3 py-1.5 text-[9px] shrink-0 ml-2"
+              className="flex items-center gap-1 border-2 border-neon-yellow px-3 py-1.5 text-[9px] shrink-0 ml-2"
               style={{
-                color: '#ffe600',
+                color: 'var(--neon-yellow)',
                 fontFamily: 'var(--font-pixel)',
                 background: hoveringActiveTournament ? 'rgba(255,230,0,0.14)' : 'transparent',
                 boxShadow: hoveringActiveTournament ? '0 0 10px rgba(255,230,0,0.22)' : 'none',
@@ -402,23 +402,23 @@ export function HubScreen() {
             onClick={() => navigate('/calendar')}
             onMouseEnter={() => setHoveringNextStep(true)}
             onMouseLeave={() => setHoveringNextStep(false)}
-            className="app-next-step mb-3 flex w-full items-center justify-between border-2 border-[#00ff88] bg-[#00ff88]/10 p-3 text-left active:scale-[0.98] transition-transform"
+            className="app-next-step mb-3 flex w-full items-center justify-between border-2 border-neon-green bg-neon-green/10 p-3 text-left active:scale-[0.98] transition-transform"
             style={{
               background: hoveringNextStep ? 'rgba(0,255,136,0.16)' : 'rgba(0,255,136,0.1)',
             }}
           >
             <div className="flex items-center gap-3">
               <div
-                className="flex h-9 w-9 items-center justify-center border-2 border-[#00ff88] text-[#00ff88]"
+                className="flex h-9 w-9 items-center justify-center border-2 border-neon-green text-neon-green"
                 style={{
                   boxShadow: hoveringNextStep ? '0 0 12px rgba(0,255,136,0.35)' : 'none',
                   background: hoveringNextStep ? 'rgba(0,255,136,0.08)' : 'transparent',
                 }}
               >
-                <Play size={14} fill="#00ff88" />
+                <Play size={14} fill="var(--neon-green)" />
               </div>
               <div>
-                <div className="text-[9px] text-[#00ff88]" style={{ fontFamily: 'var(--font-pixel)' }}>
+                <div className="text-[9px] text-neon-green" style={{ fontFamily: 'var(--font-pixel)' }}>
                   PRÓXIMO PASSO
                 </div>
                 <div className="app-next-step-title text-[14px] text-white" style={{ fontFamily: 'var(--font-pixel)' }}>
@@ -426,7 +426,7 @@ export function HubScreen() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-1 text-[10px] text-[#00ff88]" style={{ fontFamily: 'var(--font-pixel)' }}>
+            <div className="flex items-center gap-1 text-[10px] text-neon-green" style={{ fontFamily: 'var(--font-pixel)' }}>
               TEMPORADA <ChevronRight size={10} />
             </div>
           </motion.button>

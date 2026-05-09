@@ -24,11 +24,11 @@ export function UpcomingTournamentCard({
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.03 }}
       onClick={() => onSelect(torneio.nome, tour)}
-      className="border-2 border-[#00e5ff]/30 bg-[#1a1a2e] p-3 cursor-pointer active:scale-[0.98] transition-transform"
+      className="border-2 border-neon-cyan/30 bg-[#1a1a2e] p-3 cursor-pointer active:scale-[0.98] transition-transform"
     >
       <div className="flex items-start justify-between gap-2 mb-2">
         <div>
-          <div className="arcade-font text-[10px] text-[#00e5ff]">{torneio.nome}</div>
+          <div className="arcade-font text-[10px] text-neon-cyan">{torneio.nome}</div>
           <div className="flex items-center gap-1.5 mt-0.5">
             {torneio.codigo_pais && <PixelFlag countryCode={torneio.codigo_pais} size="sm" />}
             <div className="pixel-font text-[7px] text-[#888]">
@@ -39,8 +39,8 @@ export function UpcomingTournamentCard({
         <div
           className={`border px-2 py-1 pixel-font text-[7px] shrink-0 ${
             torneio.semana === semanaAtual
-              ? 'border-[#ffe600] text-[#ffe600]'
-              : 'border-[#00ff88] text-[#00ff88]'
+              ? 'border-neon-yellow text-neon-yellow'
+              : 'border-neon-green text-neon-green'
           }`}
         >
           {torneio.semana === semanaAtual ? 'AGORA' : `SEM ${torneio.semana}`}
@@ -50,8 +50,8 @@ export function UpcomingTournamentCard({
       <div className="grid grid-cols-3 gap-2 mb-3">
         {[
           { label: 'TIPO', value: torneio.tipo, color: '#fff' },
-          { label: 'SUPERFÍCIE', value: torneio.superficie, color: '#00ff88' },
-          { label: 'PRÊMIO', value: torneio.premiacao || '-', color: '#ffe600' },
+          { label: 'SUPERFÍCIE', value: torneio.superficie, color: 'var(--neon-green)' },
+          { label: 'PRÊMIO', value: torneio.premiacao || '-', color: 'var(--neon-yellow)' },
         ].map(({ label, value, color }) => (
           <div key={label}>
             <div className="pixel-font text-[7px] text-[#666]">{label}</div>
@@ -64,7 +64,7 @@ export function UpcomingTournamentCard({
 
       <div className="grid gap-2 sm:grid-cols-2">
         <div className="border border-[#1f3d49] bg-black/20 px-2 py-2">
-          <div className="flex items-center gap-1 text-[#00e5ff] mb-1">
+          <div className="flex items-center gap-1 text-neon-cyan mb-1">
             <Clock3 size={10} />
             <span className="pixel-font text-[7px]">HORÁRIO</span>
           </div>
@@ -73,7 +73,7 @@ export function UpcomingTournamentCard({
           </div>
         </div>
         <div className="border border-[#3f3520] bg-black/20 px-2 py-2">
-          <div className="flex items-center gap-1 text-[#ffe600] mb-1">
+          <div className="flex items-center gap-1 text-neon-yellow mb-1">
             <MapPinned size={10} />
             <span className="pixel-font text-[7px]">QUADRA</span>
           </div>

@@ -28,7 +28,7 @@ export const PLANOS = [
     desc: 'Saque forte · atacar à rede',
     estilo: 'SERVE E VOLEIO',
     saque: 'AGRESSIVO',
-    color: '#ff0055',
+    color: 'var(--neon-pink)',
     forca: 'Encurta pontos e força erros sob pressão.',
     risco: 'Gasta mais energia e pune mal posicionamento.',
   },
@@ -38,7 +38,7 @@ export const PLANOS = [
     desc: 'Rally longo · errar pouco',
     estilo: 'BASELINE',
     saque: 'SEGURO',
-    color: '#00e5ff',
+    color: 'var(--neon-cyan)',
     forca: 'Controla o ritmo e reduz erros não forçados.',
     risco: 'Dá menos pontos grátis e depende de paciência.',
   },
@@ -48,7 +48,7 @@ export const PLANOS = [
     desc: 'Mudanças de ritmo · surpresas',
     estilo: 'EQUILIBRADO',
     saque: 'VARIADO',
-    color: '#ffe600',
+    color: 'var(--neon-yellow)',
     forca: 'Quebra padrão do rival e mistura alturas e zonas.',
     risco: 'Se executado mal, entrega iniciativa ao adversário.',
   },
@@ -209,11 +209,11 @@ export function inferirEstilo(atributos?: Record<string, number>): string {
 
 export function flashColor(desc: string): string {
   const d = desc.toLowerCase()
-  if (d.includes('ace')) return '#00ff88'
-  if (d.includes('winner')) return '#ffe600'
+  if (d.includes('ace')) return 'var(--neon-green)'
+  if (d.includes('winner')) return 'var(--neon-yellow)'
   if (d.includes('break')) return '#ff9900'
-  if (d.includes('erro') || d.includes('falta dupla')) return '#ff0055'
-  return '#00e5ff'
+  if (d.includes('erro') || d.includes('falta dupla')) return 'var(--neon-pink)'
+  return 'var(--neon-cyan)'
 }
 
 export function getScoutingMetrics(adv: AdversarioInfo) {
@@ -323,9 +323,9 @@ export function resumoMomentum(momentum: number): string {
 }
 
 export function corMomentum(momentum: number): string {
-  if (momentum >= 66) return '#00ff88'
+  if (momentum >= 66) return 'var(--neon-green)'
   if (momentum <= 34) return '#ff4466'
-  return '#ffe600'
+  return 'var(--neon-yellow)'
 }
 
 export function destaquePartida(placar: PlacarState, nomeJogador: string, nomeAdv: string, log: string[]): string {
@@ -623,12 +623,12 @@ export function detectarPontoCritico(p: PlacarState): { label: string; color: st
   const rivalEmVantagemNoPonto = a === '40' || a === 'AD'
 
   if (setsJ === alvoSets - 1 && gamesJ === 5 && jogadorEmVantagemNoPonto) {
-    return { label: 'MATCH POINT', color: '#ffe600' }
+    return { label: 'MATCH POINT', color: 'var(--neon-yellow)' }
   }
   if (setsA === alvoSets - 1 && gamesA === 5 && rivalEmVantagemNoPonto) {
-    return { label: 'MATCH POINT CONTRA', color: '#ff0055' }
+    return { label: 'MATCH POINT CONTRA', color: 'var(--neon-pink)' }
   }
-  if (gamesJ === 5 && jogadorEmVantagemNoPonto) return { label: 'SET POINT', color: '#ffe600' }
+  if (gamesJ === 5 && jogadorEmVantagemNoPonto) return { label: 'SET POINT', color: 'var(--neon-yellow)' }
   if (gamesA === 5 && rivalEmVantagemNoPonto) return { label: 'SET POINT CONTRA', color: '#ff4466' }
   const breakLabel = detectBreakPoint(p)
   if (breakLabel) return { label: breakLabel, color: '#ff9900' }

@@ -12,14 +12,14 @@ import {
 } from './model'
 
 export const INTENCOES = [
-  { valor: 'ARRISCAR', label: 'PRESSIONAR', sub: 'Winner / Ace', color: '#ff0055', emoji: '⚡' },
-  { valor: 'EQUILIBRADO', label: 'CONSTRUIR', sub: 'Rally consistente', color: '#00e5ff', emoji: '◎' },
-  { valor: 'DEFENSIVO', label: 'DEFENDER', sub: 'Cansar o rival', color: '#00ff88', emoji: '🛡' },
+  { valor: 'ARRISCAR', label: 'PRESSIONAR', sub: 'Winner / Ace', color: 'var(--neon-pink)', emoji: '⚡' },
+  { valor: 'EQUILIBRADO', label: 'CONSTRUIR', sub: 'Rally consistente', color: 'var(--neon-cyan)', emoji: '◎' },
+  { valor: 'DEFENSIVO', label: 'DEFENDER', sub: 'Cansar o rival', color: 'var(--neon-green)', emoji: '🛡' },
 ] as const
 
 export const MENTALIDADES = [
-  { valor: 'DEFENSIVA', label: 'CONSERVADORA', desc: 'Foca na consistência, espera o erro.', color: '#00e5ff', emoji: '🧱' },
-  { valor: 'EQUILIBRADA', label: 'EQUILIBRADA', desc: 'Padrão moderno de trocas.', color: '#00ff88', emoji: '⚖️' },
+  { valor: 'DEFENSIVA', label: 'CONSERVADORA', desc: 'Foca na consistência, espera o erro.', color: 'var(--neon-cyan)', emoji: '🧱' },
+  { valor: 'EQUILIBRADA', label: 'EQUILIBRADA', desc: 'Padrão moderno de trocas.', color: 'var(--neon-green)', emoji: '⚖️' },
   { valor: 'OFENSIVA', label: 'AGRESSIVA', desc: 'Busca winners e encurta pontos.', color: '#ff4466', emoji: '🔥' },
 ] as const
 
@@ -52,10 +52,10 @@ export function CourtMini({
   const bolaX = servindo === 'jogador' ? '38%' : '62%'
   const bolaY = servindo === 'jogador' ? '64%' : '36%'
   const intencaoColor =
-    intencao === 'ARRISCAR' ? '#ffe600' : intencao === 'DEFENSIVO' ? '#00ff88' : '#00e5ff'
+    intencao === 'ARRISCAR' ? 'var(--neon-yellow)' : intencao === 'DEFENSIVO' ? 'var(--neon-green)' : 'var(--neon-cyan)'
 
   return (
-    <div className="border border-[#00e5ff]/25 bg-[#07121c] px-3 py-3">
+    <div className="border border-neon-cyan/25 bg-[#07121c] px-3 py-3">
       <div className="mb-2 flex items-center justify-between">
         <div className="arcade-font text-[7px] tracking-widest text-[#6fa7b5]">QUADRA TÁTICA</div>
         <div className="arcade-font text-[7px] text-[#7b91a7]">
@@ -68,7 +68,7 @@ export function CourtMini({
         <div className="absolute left-[12%] right-[12%] top-1/2 h-px -translate-y-1/2 bg-white/40" />
         <div className="absolute bottom-[16%] left-1/2 top-[16%] w-px -translate-x-1/2 bg-white/30" />
         <div
-          className="absolute h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 border-2 border-[#00ff88] bg-[#04190e] shadow-[0_0_12px_rgba(0,255,136,0.45)]"
+          className="absolute h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 border-2 border-neon-green bg-[#04190e] shadow-[0_0_12px_rgba(0,255,136,0.45)]"
           style={{ left: '18%', top: '72%' }}
         />
         <div
@@ -82,7 +82,7 @@ export function CourtMini({
           transition={{ duration: 0.55, ease: 'easeOut' }}
         />
         <div
-          className="absolute h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ffe600] bg-[#ffe60014] shadow-[0_0_18px_rgba(255,230,0,0.28)]"
+          className="absolute h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neon-yellow bg-[#ffe60014] shadow-[0_0_18px_rgba(255,230,0,0.28)]"
           style={{ left: alvoX, top: alvoY }}
         />
       </div>
@@ -119,8 +119,8 @@ export function EnergyBar({
 }) {
   const safe = Math.max(0, Math.min(100, Math.round(value)))
   const barColor = inverted
-    ? safe > 70 ? '#ff0055' : safe > 40 ? '#ffe600' : '#00ff88'
-    : safe < 30 ? '#ff0055' : safe < 60 ? '#ffe600' : color
+    ? safe > 70 ? 'var(--neon-pink)' : safe > 40 ? 'var(--neon-yellow)' : 'var(--neon-green)'
+    : safe < 30 ? 'var(--neon-pink)' : safe < 60 ? 'var(--neon-yellow)' : color
   return (
     <div>
       <div className="mb-0.5 flex justify-between arcade-font text-[7px] text-[#555]">
@@ -186,7 +186,7 @@ export function CircularGauge({
 export function StatLine({ label, j, a }: { label: string; j: any; a: any }) {
   return (
     <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 arcade-font text-[13px]">
-      <div className="text-[#00ff88]">{j}</div>
+      <div className="text-neon-green">{j}</div>
       <div className="text-center text-[12px] text-[#c6d8e8]">{label}</div>
       <div className="text-right text-[#ff8d6d]">{a}</div>
     </div>
@@ -274,14 +274,14 @@ export function TacticalPackageEditor({
               onClick={() => setAbordagem(a.valor)}
               className={`w-full ${buttonPadding} flex items-center justify-between border-2 text-left transition-all`}
               style={{
-                borderColor: abordagem === a.valor ? '#ffe600' : '#1a1a2e',
+                borderColor: abordagem === a.valor ? 'var(--neon-yellow)' : '#1a1a2e',
                 background: abordagem === a.valor ? '#ffe6000a' : 'transparent',
               }}
             >
               <div className="flex items-center gap-3">
                 <span className={compact ? 'text-base' : 'text-lg'}>{a.icon}</span>
                 <div>
-                  <div className={`arcade-font ${itemLabel}`} style={{ color: abordagem === a.valor ? '#ffe600' : '#d6e0ea' }}>{a.label}</div>
+                  <div className={`arcade-font ${itemLabel}`} style={{ color: abordagem === a.valor ? 'var(--neon-yellow)' : '#d6e0ea' }}>{a.label}</div>
                   <div className={`arcade-font ${itemDesc} text-[#9fb0bf]`}>{a.desc}</div>
                 </div>
               </div>
@@ -299,14 +299,14 @@ export function TacticalPackageEditor({
               onClick={() => setInstrucao(i.valor)}
               className={`w-full ${buttonPadding} border-2 text-left transition-all`}
               style={{
-                borderColor: instrucao === i.valor ? '#00ff88' : '#1a1a2e',
+                borderColor: instrucao === i.valor ? 'var(--neon-green)' : '#1a1a2e',
                 background: instrucao === i.valor ? '#00ff880a' : 'transparent',
               }}
             >
               <div className="flex items-center gap-3">
                 <span className={compact ? 'text-sm' : 'text-base'}>{i.emoji}</span>
                 <div>
-                  <div className={`arcade-font ${itemLabel}`} style={{ color: instrucao === i.valor ? '#00ff88' : '#d6e0ea' }}>{i.label}</div>
+                  <div className={`arcade-font ${itemLabel}`} style={{ color: instrucao === i.valor ? 'var(--neon-green)' : '#d6e0ea' }}>{i.label}</div>
                   <div className={`arcade-font ${itemDesc} mt-1 text-[#9fb0bf]`}>{i.desc}</div>
                 </div>
               </div>
@@ -323,13 +323,13 @@ export function TacticalPackageEditor({
               valor: 'SEGURO' as SegundoSaqueModo,
               label: '🛡️ SEGURO',
               desc: 'Menos dupla falta, menos pressão imediata.',
-              color: '#00ff88',
+              color: 'var(--neon-green)',
             },
             {
               valor: 'FORCAR' as SegundoSaqueModo,
               label: '⚡ FORÇAR',
               desc: 'Mais agressão no 2º saque, com risco maior.',
-              color: '#ffe600',
+              color: 'var(--neon-yellow)',
             },
           ]).map((opcao) => (
             <button

@@ -25,13 +25,13 @@ export function normalizeSurface(surface: string): keyof typeof surfaceColors {
 
 export function tierConfig(tier: TierVisual) {
   if (tier === 'grandslam') {
-    return { color: '#ffe600', glow: '0 0 12px rgba(255,230,0,0.45)', label: 'GRAND SLAM', badge: '👑' }
+    return { color: 'var(--neon-yellow)', glow: '0 0 12px rgba(255,230,0,0.45)', label: 'GRAND SLAM', badge: '👑' }
   }
   if (tier === 'masters') {
-    return { color: '#00ff88', glow: '0 0 12px rgba(0,255,136,0.35)', label: 'MASTERS 1000', badge: '⭐' }
+    return { color: 'var(--neon-green)', glow: '0 0 12px rgba(0,255,136,0.35)', label: 'MASTERS 1000', badge: '⭐' }
   }
   if (tier === 'atp500') {
-    return { color: '#00e5ff', glow: '0 0 12px rgba(0,229,255,0.35)', label: 'ATP / WTA 500', badge: '⚡' }
+    return { color: 'var(--neon-cyan)', glow: '0 0 12px rgba(0,229,255,0.35)', label: 'ATP / WTA 500', badge: '⚡' }
   }
   return { color: '#ff7b00', glow: '0 0 12px rgba(255,123,0,0.35)', label: 'ATP / WTA 250', badge: '🎾' }
 }

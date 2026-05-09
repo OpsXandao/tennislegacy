@@ -9,10 +9,10 @@ interface PixelBarProps {
 }
 
 const COLORS: Record<string, string> = {
-  green:  '#00ff88',
-  pink:   '#ff0055',
-  yellow: '#ffe600',
-  cyan:   '#00e5ff',
+  green:  'var(--neon-green)',
+  pink:   'var(--neon-pink)',
+  yellow: 'var(--neon-yellow)',
+  cyan:   'var(--neon-cyan)',
 };
 
 export function PixelBar({

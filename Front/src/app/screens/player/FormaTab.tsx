@@ -41,8 +41,8 @@ export function FormaTab() {
               key={i}
               className="w-10 h-10 flex items-center justify-center border-2 arcade-font text-[11px]"
               style={{
-                borderColor: r === 'V' ? '#00ff88' : '#ff0055',
-                color: r === 'V' ? '#00ff88' : '#ff0055',
+                borderColor: r === 'V' ? 'var(--neon-green)' : 'var(--neon-pink)',
+                color: r === 'V' ? 'var(--neon-green)' : 'var(--neon-pink)',
                 background: r === 'V' ? '#00ff8815' : '#ff005515',
                 boxShadow: r === 'V' ? '0 0 8px #00ff8844' : '0 0 8px #ff005544',
               }}
@@ -75,7 +75,7 @@ export function FormaTab() {
               </div>
               <div
                 className="pixel-font text-[11px] font-bold shrink-0 ml-2"
-                style={{ color: p.venceu ? '#00ff88' : '#ff0055' }}
+                style={{ color: p.venceu ? 'var(--neon-green)' : 'var(--neon-pink)' }}
               >
                 {p.resultado ?? (p.venceu ? 'V' : 'D')}
               </div>

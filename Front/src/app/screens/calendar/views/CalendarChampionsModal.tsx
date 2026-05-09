@@ -20,14 +20,14 @@ export function CalendarChampionsModal({
             initial={{ scale: 0.9, y: 20, opacity: 0 }}
             animate={{ scale: 1, y: 0, opacity: 1 }}
             exit={{ scale: 0.9, y: 20, opacity: 0 }}
-            className="app-panel relative w-full max-w-md border-2 border-[#ffe600] shadow-[0_0_30px_rgba(255,230,0,0.3)]"
+            className="app-panel relative w-full max-w-md border-2 border-neon-yellow shadow-[0_0_30px_rgba(255,230,0,0.3)]"
           >
-            <div className="flex items-center justify-between border-b border-[#ffe600]/30 px-4 py-3">
+            <div className="flex items-center justify-between border-b border-neon-yellow/30 px-4 py-3">
               <div className="flex items-center gap-2">
-                <Trophy size={16} className="text-[#ffe600]" />
-                <span className="pixel-font text-sm text-[#ffe600]">CAMPEÕES DA SEMANA</span>
+                <Trophy size={16} className="text-neon-yellow" />
+                <span className="pixel-font text-sm text-neon-yellow">CAMPEÕES DA SEMANA</span>
               </div>
-              <button onClick={onClose} className="text-[#ffe600] hover:scale-110 transition-transform">
+              <button onClick={onClose} className="text-neon-yellow hover:scale-110 transition-transform">
                 <X size={20} />
               </button>
             </div>
@@ -46,13 +46,13 @@ export function CalendarChampionsModal({
                           {campeao.torneio.toUpperCase()}
                         </div>
                         <div className="flex items-center gap-1">
-                          <Trophy size={10} className="text-[#ffe600] shrink-0" />
+                          <Trophy size={10} className="text-neon-yellow shrink-0" />
                           <span className="arcade-font text-[11px] text-white font-bold truncate">
                             {campeao.simples.toUpperCase()}
                           </span>
                         </div>
                         {campeao.duplas && (
-                          <div className="mt-1 arcade-font text-[9px] text-[#00e5ff] truncate">
+                          <div className="mt-1 arcade-font text-[9px] text-neon-cyan truncate">
                             DUPLAS: {campeao.duplas.toUpperCase()}
                           </div>
                         )}
@@ -63,7 +63,7 @@ export function CalendarChampionsModal({
               })}
             </div>
 
-            <div className="p-4 border-t border-[#ffe600]/30">
+            <div className="p-4 border-t border-neon-yellow/30">
               <NeonButton variant="yellow" className="w-full" onClick={onClose}>
                 AVANÇAR SEMANA
               </NeonButton>

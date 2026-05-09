@@ -238,7 +238,7 @@ export function TournamentBracket() {
         right={
           torneio ? (
             <div
-              className="border border-[#ffe600] px-2 py-1 text-[7px] text-[#ffe600]"
+              className="border border-neon-yellow px-2 py-1 text-[7px] text-neon-yellow"
               style={{ fontFamily: 'var(--font-arcade)' }}
             >
               {torneio.fase_atual.toUpperCase()}
@@ -251,7 +251,7 @@ export function TournamentBracket() {
         <motion.div
           animate={{ opacity: [1, 0.3, 1] }}
           transition={{ duration: 1, repeat: Infinity }}
-          className="text-center py-20 pixel-font text-sm text-[#00ff88]"
+          className="text-center py-20 pixel-font text-sm text-neon-green"
         >
           CARREGANDO...
         </motion.div>
@@ -307,7 +307,7 @@ export function TournamentBracket() {
       {!loading && (
         <ActionDock>
           {erroAcao && (
-            <div className="mb-3 border border-[#ff0055] bg-[#22040d] px-3 py-2 arcade-font text-[10px] text-[#ff8da9]">
+            <div className="mb-3 border border-neon-pink bg-[#22040d] px-3 py-2 arcade-font text-[10px] text-[#ff8da9]">
               {erroAcao.toUpperCase()}
             </div>
           )}
@@ -315,9 +315,9 @@ export function TournamentBracket() {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-3 border-2 border-[#ffe600] bg-[#ffe600]/10 p-3 text-center shadow-[0_0_15px_rgba(255,230,0,0.3)]"
+              className="mb-3 border-2 border-neon-yellow bg-neon-yellow/10 p-3 text-center shadow-[0_0_15px_rgba(255,230,0,0.3)]"
             >
-              <div className="pixel-font text-[10px] text-[#ffe600] mb-1">CAMPEÃO DO TORNEIO</div>
+              <div className="pixel-font text-[10px] text-neon-yellow mb-1">CAMPEÃO DO TORNEIO</div>
               <div className="arcade-font text-sm text-white font-bold">
                 {campeaoFinal.toUpperCase()}
               </div>
@@ -328,10 +328,10 @@ export function TournamentBracket() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-3 border-2 border-[#00e5ff] bg-[#00e5ff]/5 p-3"
+              className="mb-3 border-2 border-neon-cyan bg-neon-cyan/5 p-3"
             >
               <div className="flex justify-between items-center mb-2">
-                <div className="pixel-font text-[10px] text-[#00e5ff]">ANÁLISE DE ADVERSÁRIO</div>
+                <div className="pixel-font text-[10px] text-neon-cyan">ANÁLISE DE ADVERSÁRIO</div>
                 <button
                   onClick={() => setScoutData(null)}
                   className="arcade-font text-[9px] text-[#888]"
@@ -355,8 +355,8 @@ export function TournamentBracket() {
                       className="w-5 h-5 flex items-center justify-center arcade-font text-[8px] font-bold border"
                       style={{
                         background: r === 'V' ? '#00ff8820' : '#ff005520',
-                        borderColor: r === 'V' ? '#00ff88' : '#ff0055',
-                        color: r === 'V' ? '#00ff88' : '#ff0055',
+                        borderColor: r === 'V' ? 'var(--neon-green)' : 'var(--neon-pink)',
+                        color: r === 'V' ? 'var(--neon-green)' : 'var(--neon-pink)',
                       }}
                     >
                       {r}
@@ -371,12 +371,12 @@ export function TournamentBracket() {
                     .map(([k, v]) => (
                       <div
                         key={k}
-                        className="border border-[#00e5ff]/30 bg-black/30 px-1 py-1 text-center"
+                        className="border border-neon-cyan/30 bg-black/30 px-1 py-1 text-center"
                       >
                         <div className="arcade-font text-[7px] text-[#8eb5c8]">
                           {k.slice(0, 4).toUpperCase()}
                         </div>
-                        <div className="pixel-font text-[10px] text-[#00e5ff]">{v}</div>
+                        <div className="pixel-font text-[10px] text-neon-cyan">{v}</div>
                       </div>
                     ))}
                 </div>
@@ -384,9 +384,9 @@ export function TournamentBracket() {
               <div className="flex justify-between items-center">
                 <div className="arcade-font text-[9px] text-[#888]">
                   H2H:{' '}
-                  <span className="text-[#00ff88]">{scoutData.h2h.vitorias_jogador}V</span>{' '}
+                  <span className="text-neon-green">{scoutData.h2h.vitorias_jogador}V</span>{' '}
                   /{' '}
-                  <span className="text-[#ff0055]">{scoutData.h2h.vitorias_adversario}D</span>
+                  <span className="text-neon-pink">{scoutData.h2h.vitorias_adversario}D</span>
                 </div>
                 <NeonButton
                   variant="yellow"
@@ -468,8 +468,8 @@ export function TournamentBracket() {
 
       {confirmDesistir && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="w-full max-w-sm border-2 border-[#ff0055] bg-[#0d0006] p-5 shadow-[0_0_24px_rgba(255,0,85,0.25)]">
-            <div className="arcade-font text-[10px] tracking-[0.2em] text-[#ff0055] mb-3">
+          <div className="w-full max-w-sm border-2 border-neon-pink bg-[#0d0006] p-5 shadow-[0_0_24px_rgba(255,0,85,0.25)]">
+            <div className="arcade-font text-[10px] tracking-[0.2em] text-neon-pink mb-3">
               CONFIRMAR DESISTÊNCIA
             </div>
             <div className="pixel-font text-sm text-white mb-2">
@@ -492,7 +492,7 @@ export function TournamentBracket() {
                   setConfirmDesistir(false)
                   handleDesistir()
                 }}
-                className="min-h-[44px] border-2 border-[#ff0055] px-4 py-3 arcade-font text-[10px] text-[#ff7d9e]"
+                className="min-h-[44px] border-2 border-neon-pink px-4 py-3 arcade-font text-[10px] text-[#ff7d9e]"
               >
                 DESISTIR
               </button>

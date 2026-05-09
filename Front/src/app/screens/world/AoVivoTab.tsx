@@ -31,7 +31,7 @@ function TourSection({
             onClick={() => onSelect(t.nome, t.tour === 'ATP' ? 'atp' : 'wta')}
             className="w-full border-2 border-white/10 bg-[#1a1a2e] p-3 text-left active:scale-[0.98] transition-transform"
             style={{
-              borderColor: t.finalizado ? '#ffe600' : color + '40',
+              borderColor: t.finalizado ? 'var(--neon-yellow)' : color + '40',
               boxShadow: t.finalizado ? '0 0 10px rgba(255,230,0,0.2)' : undefined,
             }}
           >
@@ -44,11 +44,11 @@ function TourSection({
               </div>
               <div className="flex items-center gap-1 shrink-0">
                 {t.finalizado ? (
-                  <div className="border border-[#ffe600] px-1.5 py-0.5 pixel-font text-[7px] text-[#ffe600]">
+                  <div className="border border-neon-yellow px-1.5 py-0.5 pixel-font text-[7px] text-neon-yellow">
                     FIM
                   </div>
                 ) : (
-                  <div className="border border-[#00ff88] px-1.5 py-0.5 pixel-font text-[7px] text-[#00ff88] animate-pulse">
+                  <div className="border border-neon-green px-1.5 py-0.5 pixel-font text-[7px] text-neon-green animate-pulse">
                     AO VIVO
                   </div>
                 )}
@@ -57,8 +57,8 @@ function TourSection({
             </div>
             {t.campeao_simples ? (
               <div className="mt-2 flex items-center gap-1.5">
-                <Trophy size={10} className="text-[#ffe600]" />
-                <span className="pixel-font text-[8px] text-[#ffe600]">
+                <Trophy size={10} className="text-neon-yellow" />
+                <span className="pixel-font text-[8px] text-neon-yellow">
                   {t.campeao_simples.toUpperCase()}
                 </span>
               </div>
@@ -87,7 +87,7 @@ export function AoVivoTab() {
 
   if (loading) {
     return (
-      <div className="py-16 text-center pixel-font text-xs text-[#00ff88] animate-pulse">
+      <div className="py-16 text-center pixel-font text-xs text-neon-green animate-pulse">
         CARREGANDO...
       </div>
     )
@@ -111,7 +111,7 @@ export function AoVivoTab() {
         </div>
       ) : (
         <div className="space-y-5">
-          <TourSection label="ATP" list={atp} color="#00e5ff" onSelect={setSelected} />
+          <TourSection label="ATP" list={atp} color="var(--neon-cyan)" onSelect={setSelected} />
           <TourSection label="WTA" list={wta} color="#ff6eb4" onSelect={setSelected} />
         </div>
       )}

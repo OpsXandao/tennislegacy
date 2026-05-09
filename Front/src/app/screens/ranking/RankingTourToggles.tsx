@@ -3,8 +3,8 @@ type Modalidade = 'simples' | 'duplas' | 'clay' | 'hard' | 'grass'
 
 const SUPERFICIES: { id: Modalidade; label: string; color: string }[] = [
   { id: 'clay', label: 'ARGILA', color: '#cd7f32' },
-  { id: 'hard', label: 'DURO', color: '#00e5ff' },
-  { id: 'grass', label: 'GRAMA', color: '#00ff88' },
+  { id: 'hard', label: 'DURO', color: 'var(--neon-cyan)' },
+  { id: 'grass', label: 'GRAMA', color: 'var(--neon-green)' },
 ]
 
 interface RankingTourTogglesProps {
@@ -25,21 +25,21 @@ export function RankingTourToggles({
       <div className="flex gap-1.5">
         <button
           onClick={() => onTourChange('atp')}
-          className={`border-2 px-2 py-1.5 text-[7px] transition-all ${tour === 'atp' ? 'border-[#00ff88] bg-[#00ff88] text-black' : 'border-[#00ff88] bg-black text-[#00ff88]'}`}
+          className={`border-2 px-2 py-1.5 text-[7px] transition-all ${tour === 'atp' ? 'border-neon-green bg-neon-green text-black' : 'border-neon-green bg-black text-neon-green'}`}
           style={{ fontFamily: 'var(--font-arcade)', boxShadow: tour === 'atp' ? 'var(--glow-green-sm)' : 'none' }}
         >
           ATP
         </button>
         <button
           onClick={() => onTourChange('wta')}
-          className={`border-2 px-2 py-1.5 text-[7px] transition-all ${tour === 'wta' ? 'border-[#ff0055] bg-[#ff0055] text-black' : 'border-[#ff0055] bg-black text-[#ff0055]'}`}
+          className={`border-2 px-2 py-1.5 text-[7px] transition-all ${tour === 'wta' ? 'border-neon-pink bg-neon-pink text-black' : 'border-neon-pink bg-black text-neon-pink'}`}
           style={{ fontFamily: 'var(--font-arcade)', boxShadow: tour === 'wta' ? 'var(--glow-pink-sm)' : 'none' }}
         >
           WTA
         </button>
         <button
           onClick={() => { onTourChange('davis'); onModalidadeChange('simples') }}
-          className={`border-2 px-2 py-1.5 text-[7px] transition-all ${tour === 'davis' ? 'border-[#ffe600] bg-[#ffe600] text-black' : 'border-[#ffe600] bg-black text-[#ffe600]'}`}
+          className={`border-2 px-2 py-1.5 text-[7px] transition-all ${tour === 'davis' ? 'border-neon-yellow bg-neon-yellow text-black' : 'border-neon-yellow bg-black text-neon-yellow'}`}
           style={{ fontFamily: 'var(--font-arcade)', boxShadow: tour === 'davis' ? 'var(--glow-gold)' : 'none' }}
         >
           DAVIS

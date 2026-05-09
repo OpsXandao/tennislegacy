@@ -126,10 +126,10 @@ export function MatchControls({
         fase !== 'entre-games' &&
         fase !== 'entre-sets' &&
         modo === 'detalhado' && (
-          <div className="border border-[#ffe600]/25 bg-[#110d02] p-3 space-y-3">
+          <div className="border border-neon-yellow/25 bg-[#110d02] p-3 space-y-3">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <div className="arcade-font text-[8px] tracking-widest text-[#ffe600]">SIMULAÇÃO RÁPIDA</div>
+                <div className="arcade-font text-[8px] tracking-widest text-neon-yellow">SIMULAÇÃO RÁPIDA</div>
                 <div className="arcade-font text-[9px] text-[#c8b877] mt-1">
                   Velocidade atual: {velocidadeRapidaAtual.label} · {simulacaoPausada ? 'pausada' : 'rodando'}
                 </div>
@@ -139,8 +139,8 @@ export function MatchControls({
                 disabled={!partidaId || fase === 'jogando'}
                 className="border px-3 py-2 arcade-font text-[8px] transition-all disabled:opacity-40"
                 style={{
-                  borderColor: simulacaoPausada ? '#00ff88' : '#ffe600',
-                  color: simulacaoPausada ? '#00ff88' : '#ffe600',
+                  borderColor: simulacaoPausada ? 'var(--neon-green)' : 'var(--neon-yellow)',
+                  color: simulacaoPausada ? 'var(--neon-green)' : 'var(--neon-yellow)',
                   background: simulacaoPausada ? '#00ff8810' : '#ffe60010',
                 }}
               >
@@ -155,9 +155,9 @@ export function MatchControls({
                   onClick={() => setVelocidadeRapida(item.valor)}
                   className="border px-2 py-2 text-center transition-all"
                   style={{
-                    borderColor: velocidadeRapida === item.valor ? '#ffe600' : '#3a3220',
+                    borderColor: velocidadeRapida === item.valor ? 'var(--neon-yellow)' : '#3a3220',
                     background: velocidadeRapida === item.valor ? '#ffe60012' : 'transparent',
-                    color: velocidadeRapida === item.valor ? '#ffe600' : '#bcae72',
+                    color: velocidadeRapida === item.valor ? 'var(--neon-yellow)' : '#bcae72',
                   }}
                 >
                   <div className="arcade-font text-[9px]">{item.label}</div>
@@ -167,17 +167,17 @@ export function MatchControls({
             </div>
 
             {simulacaoPausada && (
-              <div className="border border-[#00e5ff]/20 bg-[#04101b] p-3 space-y-3">
+              <div className="border border-neon-cyan/20 bg-[#04101b] p-3 space-y-3">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <div className="arcade-font text-[8px] tracking-widest text-[#00e5ff]">PAINEL TÁTICO</div>
+                    <div className="arcade-font text-[8px] tracking-widest text-neon-cyan">PAINEL TÁTICO</div>
                     <div className="arcade-font text-[9px] text-[#90b8c9] mt-1">
                       Pause, ajuste o plano e retome a simulação.
                     </div>
                   </div>
                   <button
                     onClick={() => setAjustandoPlanoRapido((atual: boolean) => !atual)}
-                    className="border px-3 py-2 arcade-font text-[8px] text-[#00e5ff] transition-all"
+                    className="border px-3 py-2 arcade-font text-[8px] text-neon-cyan transition-all"
                     style={{ borderColor: '#00e5ff33', background: ajustandoPlanoRapido ? '#00e5ff10' : 'transparent' }}
                   >
                     {ajustandoPlanoRapido ? 'OCULTAR' : 'AJUSTAR'}
@@ -204,7 +204,7 @@ export function MatchControls({
                           setAjustandoPlanoRapido(false)
                           alternarPausaSimulacao() // Retoma
                         }}
-                        className="py-3 border border-[#00e5ff]/25 arcade-font text-[9px] text-[#9ac9d8] text-center transition-all hover:border-[#00e5ff]/60"
+                        className="py-3 border border-neon-cyan/25 arcade-font text-[9px] text-[#9ac9d8] text-center transition-all hover:border-neon-cyan/60"
                       >
                         SEGUIR SEM MUDAR
                       </button>
@@ -231,13 +231,13 @@ export function MatchControls({
             animate={{ opacity: 1, y: 0 }}
             className={`border-2 p-8 text-center ${
               placar.vencedor === 'jogador'
-                ? 'border-[#00ff88] bg-[#001a10]'
-                : 'border-[#ff0055] bg-[#1a0010]'
+                ? 'border-neon-green bg-[#001a10]'
+                : 'border-neon-pink bg-[#1a0010]'
             }`}
           >
             <div
               className={`pixel-font text-4xl mb-3 ${
-                placar.vencedor === 'jogador' ? 'text-[#00ff88]' : 'text-[#ff0055]'
+                placar.vencedor === 'jogador' ? 'text-neon-green' : 'text-neon-pink'
               }`}
             >
               {placar.vencedor === 'jogador' ? 'VITÓRIA!' : 'DERROTA'}
@@ -260,7 +260,7 @@ export function MatchControls({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="border-2 border-[#00e5ff] bg-[#00040d] p-4"
+            className="border-2 border-neon-cyan bg-[#00040d] p-4"
             style={{ boxShadow: '0 0 16px rgba(0,229,255,0.15)' }}
           >
             <div className="flex items-center justify-between mb-4">
@@ -268,7 +268,7 @@ export function MatchControls({
                 <div
                   className="arcade-font text-[12px]"
                   style={{
-                    color: gameResult.quemGanhou === 'jogador' ? '#00ff88' : '#ff4466',
+                    color: gameResult.quemGanhou === 'jogador' ? 'var(--neon-green)' : '#ff4466',
                   }}
                 >
                   {gameResult.quemGanhou === 'jogador' ? '✓ GAME GANHO' : '✗ GAME PERDIDO'}
@@ -290,11 +290,11 @@ export function MatchControls({
             </div>
 
             <div className="grid grid-cols-2 gap-3 mb-4">
-              <div className="border border-[#00e5ff]/20 bg-[#04101b] px-3 py-2">
+              <div className="border border-neon-cyan/20 bg-[#04101b] px-3 py-2">
                 <div className="arcade-font text-[7px] text-[#5ba6bd] tracking-widest mb-1">MOMENTO</div>
                 <div className="arcade-font text-[9px] text-[#d6f2ff] uppercase">{resumoMomentum(momentum)}</div>
               </div>
-              <div className="border border-[#00e5ff]/20 bg-[#04101b] px-3 py-2">
+              <div className="border border-neon-cyan/20 bg-[#04101b] px-3 py-2">
                 <div className="arcade-font text-[7px] text-[#5ba6bd] tracking-widest mb-1">PLANO ATUAL</div>
                 <div className="arcade-font text-[9px]" style={{ color: planoAtual.color }}>
                   {planoAtual.label}
@@ -304,7 +304,7 @@ export function MatchControls({
 
             {ajustandoPlanoGame ? (
               <div className="space-y-4">
-                <div className="border border-[#00e5ff]/20 bg-[#04101b] p-3">
+                <div className="border border-neon-cyan/20 bg-[#04101b] p-3">
                   <div className="arcade-font text-[8px] text-[#5ba6bd] tracking-widest mb-3">MUDAR ESTRATÉGIA</div>
                   <TacticalPackageEditor
                     mentalidade={mentalidade}
@@ -322,7 +322,7 @@ export function MatchControls({
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     onClick={() => setAjustandoPlanoGame(false)}
-                    className="py-3 border border-[#00e5ff]/25 arcade-font text-[9px] text-[#9ac9d8] text-center transition-all hover:border-[#00e5ff]/60"
+                    className="py-3 border border-neon-cyan/25 arcade-font text-[9px] text-[#9ac9d8] text-center transition-all hover:border-neon-cyan/60"
                   >
                     CANCELAR
                   </button>
@@ -341,7 +341,7 @@ export function MatchControls({
                   <button
                     onClick={handleContinuarGame}
                     disabled={simulando}
-                    className="py-3 border border-[#00e5ff]/30 arcade-font text-[9px] text-[#9ac9d8] text-center transition-all hover:text-[#00e5ff] hover:border-[#00e5ff]/60 disabled:opacity-30"
+                    className="py-3 border border-neon-cyan/30 arcade-font text-[9px] text-[#9ac9d8] text-center transition-all hover:text-neon-cyan hover:border-neon-cyan/60 disabled:opacity-30"
                   >
                     MANTER ESTRATÉGIA
                   </button>
@@ -373,10 +373,10 @@ export function MatchControls({
               initial={{ opacity: 0, y: 18, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 12, scale: 0.98 }}
-              className="w-full max-w-3xl max-h-[88vh] overflow-y-auto border-2 border-[#ffe600] bg-[#0f0c00] p-5"
+              className="w-full max-w-3xl max-h-[88vh] overflow-y-auto border-2 border-neon-yellow bg-[#0f0c00] p-5"
               style={{ boxShadow: '0 0 32px rgba(255,230,0,0.24)' }}
             >
-              <div className="pixel-font text-[24px] text-[#ffe600] text-center mb-2">
+              <div className="pixel-font text-[24px] text-neon-yellow text-center mb-2">
                 SET ENCERRADO
               </div>
               <div className="arcade-font text-[11px] text-[#d6c97f] text-center mb-5 tracking-widest">
@@ -384,12 +384,12 @@ export function MatchControls({
               </div>
 
               <div className="grid grid-cols-2 gap-4 mb-5">
-                <div className="border border-[#ffe600]/24 bg-[#140f02] px-4 py-3">
+                <div className="border border-neon-yellow/24 bg-[#140f02] px-4 py-3">
                   <div className="arcade-font text-[10px] text-[#d8c46c] tracking-widest mb-2">VOCÊ</div>
                   <div className="arcade-font text-[13px] text-[#fff1a8]">Energia {Math.round(energiaJogadorAoVivo)}%</div>
                   <div className="arcade-font text-[13px] text-[#ffd86d] mt-1.5">Fadiga {Math.round(fadigaJogadorAoVivo)}%</div>
                 </div>
-                <div className="border border-[#ffe600]/24 bg-[#140f02] px-4 py-3">
+                <div className="border border-neon-yellow/24 bg-[#140f02] px-4 py-3">
                   <div className="arcade-font text-[10px] text-[#d8c46c] tracking-widest mb-2">ADVERSÁRIO</div>
                   <div className="arcade-font text-[13px] text-[#fff1a8]">Energia {Math.round(energiaAdversarioAoVivo)}%</div>
                   <div className="arcade-font text-[13px] text-[#ffd86d] mt-1.5">Fadiga {Math.round(fadigaAdversarioAoVivo)}%</div>
@@ -400,12 +400,12 @@ export function MatchControls({
               {!ajustandoPlanoSet && (
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="arcade-font text-[8px] text-[#ffe600]/60 tracking-widest">
+                    <span className="arcade-font text-[8px] text-neon-yellow/60 tracking-widest">
                       AUTO-CONTINUA EM
                     </span>
                     <span
                       className="arcade-font text-[11px]"
-                      style={{ color: contadorSet <= 3 ? '#ff0055' : '#ffe600' }}
+                      style={{ color: contadorSet <= 3 ? 'var(--neon-pink)' : 'var(--neon-yellow)' }}
                     >
                       {contadorSet}s
                     </span>
@@ -414,7 +414,7 @@ export function MatchControls({
                     <motion.div
                       className="h-full"
                       style={{
-                        background: contadorSet <= 3 ? '#ff0055' : '#ffe600',
+                        background: contadorSet <= 3 ? 'var(--neon-pink)' : 'var(--neon-yellow)',
                         width: `${(contadorSet / 10) * 100}%`,
                       }}
                       transition={{ duration: 0.3 }}
@@ -425,7 +425,7 @@ export function MatchControls({
 
               {ajustandoPlanoSet ? (
                 <div className="space-y-4 mb-5">
-                  <div className="border border-[#ffe600]/24 bg-[#140f02] p-4">
+                  <div className="border border-neon-yellow/24 bg-[#140f02] p-4">
                     <div className="arcade-font text-[10px] text-[#d8c46c] tracking-widest mb-3">MUDAR ESTRATÉGIA</div>
                     <TacticalPackageEditor
                       mentalidade={mentalidade}
@@ -443,7 +443,7 @@ export function MatchControls({
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => setAjustandoPlanoSet(false)}
-                      className="py-3.5 border border-[#ffe600]/25 arcade-font text-[11px] text-[#d6c97f] text-center transition-all hover:border-[#ffe600]/50"
+                      className="py-3.5 border border-neon-yellow/25 arcade-font text-[11px] text-[#d6c97f] text-center transition-all hover:border-neon-yellow/50"
                     >
                       CANCELAR
                     </button>
@@ -496,7 +496,7 @@ export function MatchControls({
                     <button
                       onClick={handleContinuarSet}
                       disabled={simulando}
-                      className="py-3.5 border border-[#ffe600]/35 arcade-font text-[11px] text-[#e5d57b] text-center transition-all hover:text-[#ffe600] hover:border-[#ffe600]/60 disabled:opacity-30"
+                      className="py-3.5 border border-neon-yellow/35 arcade-font text-[11px] text-[#e5d57b] text-center transition-all hover:text-neon-yellow hover:border-neon-yellow/60 disabled:opacity-30"
                     >
                       MANTER ESTRATÉGIA
                     </button>
@@ -520,7 +520,7 @@ export function MatchControls({
         <motion.div
           animate={{ opacity: [1, 0.4, 1] }}
           transition={{ duration: 0.6, repeat: Infinity }}
-          className="text-center arcade-font text-[10px] text-[#ffe600] py-2"
+          className="text-center arcade-font text-[10px] text-neon-yellow py-2"
         >
           ● SIMULANDO...
         </motion.div>
@@ -528,8 +528,8 @@ export function MatchControls({
 
       {/* AÇÃO — estrategista */}
       {fase !== 'encerrada' && fase !== 'entre-games' && fase !== 'entre-sets' && modo === 'estrategista' && (
-        <div className="border border-[#00e5ff]/30 bg-[#04101b]">
-          <div className="arcade-font text-[8px] text-[#00e5ff] px-3 py-2 border-b border-[#00e5ff]/20 tracking-widest">
+        <div className="border border-neon-cyan/30 bg-[#04101b]">
+          <div className="arcade-font text-[8px] text-neon-cyan px-3 py-2 border-b border-neon-cyan/20 tracking-widest">
             ESCOLHA SUA AÇÃO
           </div>
           <div className="space-y-2 p-3">
@@ -558,7 +558,7 @@ export function MatchControls({
               </button>
             ))}
           </div>
-          <div className="border-t border-[#00e5ff]/15 px-3 py-3">
+          <div className="border-t border-neon-cyan/15 px-3 py-3">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <div className="arcade-font text-[8px] text-[#8aaac0] tracking-widest">AJUSTE FINO</div>
@@ -570,8 +570,8 @@ export function MatchControls({
                 onClick={() => setExpandirPonto((prev: boolean) => !prev)}
                 className="px-3 py-2 border arcade-font text-[8px] transition-all"
                 style={{
-                  borderColor: expandirPonto ? '#00e5ff' : '#1a1a2e',
-                  color: expandirPonto ? '#00e5ff' : '#66748d',
+                  borderColor: expandirPonto ? 'var(--neon-cyan)' : '#1a1a2e',
+                  color: expandirPonto ? 'var(--neon-cyan)' : '#66748d',
                   background: expandirPonto ? '#00e5ff10' : 'transparent',
                 }}
               >
@@ -590,8 +590,8 @@ export function MatchControls({
                         onClick={() => setFaixa(f.valor)}
                         className="w-full py-2 border text-left px-3 text-[8px] arcade-font transition-all"
                         style={{
-                          borderColor: faixa === f.valor ? '#00e5ff' : '#1a1a2e',
-                          color: faixa === f.valor ? '#00e5ff' : '#7a8793',
+                          borderColor: faixa === f.valor ? 'var(--neon-cyan)' : '#1a1a2e',
+                          color: faixa === f.valor ? 'var(--neon-cyan)' : '#7a8793',
                           background: faixa === f.valor ? '#00e5ff10' : 'transparent',
                         }}
                       >
@@ -609,8 +609,8 @@ export function MatchControls({
                         onClick={() => setAlvo(a.valor)}
                         className="w-full py-2 border text-left px-3 text-[8px] arcade-font transition-all"
                         style={{
-                          borderColor: alvo === a.valor ? '#ffe600' : '#1a1a2e',
-                          color: alvo === a.valor ? '#ffe600' : '#8d8a6d',
+                          borderColor: alvo === a.valor ? 'var(--neon-yellow)' : '#1a1a2e',
+                          color: alvo === a.valor ? 'var(--neon-yellow)' : '#8d8a6d',
                           background: alvo === a.valor ? '#ffe60010' : 'transparent',
                         }}
                       >
@@ -635,7 +635,7 @@ export function MatchControls({
               <motion.div
                 animate={{ opacity: [1, 0.4, 1] }}
                 transition={{ duration: 0.5, repeat: Infinity }}
-                className="arcade-font text-[10px] text-[#00e5ff] text-center"
+                className="arcade-font text-[10px] text-neon-cyan text-center"
               >
                 ● SIMULANDO...
               </motion.div>
@@ -646,7 +646,7 @@ export function MatchControls({
                 </div>
                 <button
                   onClick={() => trocarModoAcompanhamento('estrategista')}
-                  className="w-full border border-[#1f3340] px-3 py-2 arcade-font text-[9px] text-[#00e5ff] transition-all hover:bg-[#00e5ff10]"
+                  className="w-full border border-[#1f3340] px-3 py-2 arcade-font text-[9px] text-neon-cyan transition-all hover:bg-[#00e5ff10]"
                 >
                   VOLTAR PARA O CONTROLE MANUAL
                 </button>

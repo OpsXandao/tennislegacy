@@ -12,7 +12,7 @@ export function TronGrid() {
             <path
               d="M 40 0 L 0 0 0 40"
               fill="none"
-              stroke="#00ff88"
+              stroke="var(--neon-green)"
               strokeWidth="0.5"
             />
           </pattern>

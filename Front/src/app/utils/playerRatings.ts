@@ -55,7 +55,7 @@ export function getSpecialCardPalette(isSpecialist: boolean, tour: 'atp' | 'wta'
   }
 
   return {
-    accent: '#00e5ff',
+    accent: 'var(--neon-cyan)',
     glow: '0 0 18px rgba(0, 229, 255, 0.24)',
     soft: 'rgba(0, 229, 255, 0.14)',
     label: 'ATP TOUR',

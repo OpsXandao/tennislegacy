@@ -9,24 +9,24 @@ interface ScreenSectionProps {
 
 const SECTION_COLORS = {
   green: {
-    border: '#00ff88',
+    border: 'var(--neon-green)',
     glow: 'var(--glow-green-sm)',
-    title: '#00ff88',
+    title: 'var(--neon-green)',
   },
   pink: {
-    border: '#ff0055',
+    border: 'var(--neon-pink)',
     glow: 'var(--glow-pink-sm)',
-    title: '#ff0055',
+    title: 'var(--neon-pink)',
   },
   yellow: {
-    border: '#ffe600',
+    border: 'var(--neon-yellow)',
     glow: 'var(--glow-gold-sm)',
-    title: '#ffe600',
+    title: 'var(--neon-yellow)',
   },
   cyan: {
-    border: '#00e5ff',
+    border: 'var(--neon-cyan)',
     glow: 'var(--glow-cyan-sm)',
-    title: '#00e5ff',
+    title: 'var(--neon-cyan)',
   },
 } as const
 

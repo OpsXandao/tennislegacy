@@ -103,58 +103,58 @@ export function SettingsScreen() {
 
       <div className="p-4 space-y-4">
         <NeonCard variant="cyan" hover={false}>
-          <div className="arcade-font text-xs text-[#00e5ff] mb-4">
+          <div className="arcade-font text-xs text-neon-cyan mb-4">
             ÁUDIO
           </div>
           <div className="space-y-3">
             <button
               onClick={() => toggleSetting('sound')}
-              className="w-full flex items-center justify-between p-3 bg-black/50 border border-[#00e5ff]/30 hover:bg-[#00e5ff]/10 transition-colors"
+              className="w-full flex items-center justify-between p-3 bg-black/50 border border-neon-cyan/30 hover:bg-neon-cyan/10 transition-colors"
             >
               <div className="flex items-center gap-3">
                 {settings.sound ? <Volume2 size={20} /> : <VolumeX size={20} />}
                 <span className="arcade-font text-sm">SFX</span>
               </div>
-              <Toggle on={settings.sound} color="#00e5ff" />
+              <Toggle on={settings.sound} color="var(--neon-cyan)" />
             </button>
 
             <button
               onClick={() => toggleSetting('music')}
-              className="w-full flex items-center justify-between p-3 bg-black/50 border border-[#00e5ff]/30 hover:bg-[#00e5ff]/10 transition-colors"
+              className="w-full flex items-center justify-between p-3 bg-black/50 border border-neon-cyan/30 hover:bg-neon-cyan/10 transition-colors"
             >
               <div className="flex items-center gap-3">
                 {settings.music ? <Volume2 size={20} /> : <VolumeX size={20} />}
                 <span className="arcade-font text-sm">MÚSICA</span>
               </div>
-              <Toggle on={settings.music} color="#00e5ff" />
+              <Toggle on={settings.music} color="var(--neon-cyan)" />
             </button>
 
             <button
               onClick={() => toggleSetting('vibration')}
-              className="w-full flex items-center justify-between p-3 bg-black/50 border border-[#00e5ff]/30 hover:bg-[#00e5ff]/10 transition-colors"
+              className="w-full flex items-center justify-between p-3 bg-black/50 border border-neon-cyan/30 hover:bg-neon-cyan/10 transition-colors"
             >
               <div className="flex items-center gap-3">
                 <Vibrate size={20} />
                 <span className="arcade-font text-sm">VIBRAÇÃO</span>
               </div>
-              <Toggle on={settings.vibration} color="#00e5ff" />
+              <Toggle on={settings.vibration} color="var(--neon-cyan)" />
             </button>
           </div>
         </NeonCard>
 
         <NeonCard variant="pink" hover={false}>
-          <div className="arcade-font text-xs text-[#ff0055] mb-4">
+          <div className="arcade-font text-xs text-neon-pink mb-4">
             VISUAL
           </div>
           <div className="space-y-3">
             <button
               onClick={() => toggleSetting('scanlines')}
-              className="w-full flex items-center justify-between p-3 bg-black/50 border border-[#ff0055]/30 hover:bg-[#ff0055]/10 transition-colors"
+              className="w-full flex items-center justify-between p-3 bg-black/50 border border-neon-pink/30 hover:bg-neon-pink/10 transition-colors"
             >
               <span className="arcade-font text-sm">SCANLINES</span>
-              <Toggle on={settings.scanlines} color="#ff0055" />
+              <Toggle on={settings.scanlines} color="var(--neon-pink)" />
             </button>
-            <div className="border border-[#ff0055]/30 bg-black/40 p-3">
+            <div className="border border-neon-pink/30 bg-black/40 p-3">
               <div className="mb-3 flex items-center gap-3">
                 {settings.themeMode === 'system' ? <Monitor size={20} /> : settings.themeMode === 'light' ? <Sun size={20} /> : <Moon size={20} />}
                 <span className="arcade-font text-sm">TEMA</span>
@@ -174,8 +174,8 @@ export function SettingsScreen() {
                     className={`
                       flex min-h-[52px] items-center justify-center gap-2 border px-2 py-3 transition-all
                       ${settings.themeMode === option.value
-                        ? 'bg-[#ff0055] text-black border-[#ff0055] shadow-[var(--glow-pink-sm)]'
-                        : 'bg-transparent text-white border-[#ff0055]/30 hover:bg-[#ff0055]/10'
+                        ? 'bg-neon-pink text-black border-neon-pink shadow-[var(--glow-pink-sm)]'
+                        : 'bg-transparent text-white border-neon-pink/30 hover:bg-neon-pink/10'
                       }
                     `}
                   >
@@ -192,7 +192,7 @@ export function SettingsScreen() {
         </NeonCard>
 
         <NeonCard variant="yellow" hover={false}>
-          <div className="arcade-font text-xs text-[#ffe600] mb-4">
+          <div className="arcade-font text-xs text-neon-yellow mb-4">
             DIFICULDADE
           </div>
           <div className="grid grid-cols-3 gap-2">
@@ -206,8 +206,8 @@ export function SettingsScreen() {
                 className={`
                   p-3 border-2 arcade-font text-xs uppercase transition-all
                   ${settings.difficulty === level
-                    ? 'bg-[#ffe600] text-black border-[#ffe600]'
-                    : 'bg-transparent text-white border-[#ffe600]/30'
+                    ? 'bg-neon-yellow text-black border-neon-yellow'
+                    : 'bg-transparent text-white border-neon-yellow/30'
                   }
                 `}
               >
@@ -218,26 +218,26 @@ export function SettingsScreen() {
         </NeonCard>
 
         <NeonCard variant="green" hover={false}>
-          <div className="arcade-font text-xs text-[#00ff88] mb-4">
+          <div className="arcade-font text-xs text-neon-green mb-4">
             SOBRE
           </div>
           <div className="space-y-2 text-sm arcade-font text-[#888]">
             <div className="flex justify-between">
               <span>VERSÃO:</span>
-              <span className="text-[#00ff88]">1.0.0</span>
+              <span className="text-neon-green">1.0.0</span>
             </div>
             <div className="flex justify-between">
               <span>BUILD:</span>
-              <span className="text-[#00ff88]">2026.03</span>
+              <span className="text-neon-green">2026.03</span>
             </div>
             <div className="flex justify-between">
               <span>CONFIG BACKEND:</span>
-              <span className="text-[#ffe600]">NÃO EXPOSO</span>
+              <span className="text-neon-yellow">NÃO EXPOSO</span>
             </div>
           </div>
         </NeonCard>
 
-        {saved && <div className="arcade-font text-[10px] text-center text-[#00ff88]">{saved}</div>}
+        {saved && <div className="arcade-font text-[10px] text-center text-neon-green">{saved}</div>}
 
         <div className="space-y-3 pt-4">
           <NeonButton variant="green" className="w-full" onClick={handleSaveAndBack}>
@@ -259,7 +259,7 @@ export function SettingsScreen() {
   );
 }
 
-function Toggle({ on, color = '#00ff88' }: { on: boolean; color?: string }) {
+function Toggle({ on, color = 'var(--neon-green)' }: { on: boolean; color?: string }) {
   return (
     <div
       className="relative h-6 w-12 border-2 transition-colors"

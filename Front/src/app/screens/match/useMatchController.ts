@@ -416,7 +416,7 @@ export function useMatchController() {
   const metricsAdversario = getScoutingMetrics(adversario)
   const overallCardAdversario = calcularOverallCardMatch(metricsAdversario)
   const destaqueMomento = alertaBreak || flashPonto?.texto || pontoCritico?.label || resumoMomentum(momentum)
-  const destaqueMomentoCor = alertaBreak ? '#ff4466' : flashPonto?.color || pontoCritico?.color || '#00e5ff'
+  const destaqueMomentoCor = alertaBreak ? '#ff4466' : flashPonto?.color || pontoCritico?.color || 'var(--neon-cyan)'
   const velocidadeRapidaAtual = VELOCIDADES_RAPIDAS.find((v) => v.valor === velocidadeRapida) ?? VELOCIDADES_RAPIDAS[2]
   const resumoEstrategiaJogador = resumirEstrategiaLado(estrategiaJogadorAoVivo)
   const resumoEstrategiaAdversario = resumirEstrategiaLado(estrategiaAdversarioAoVivo)

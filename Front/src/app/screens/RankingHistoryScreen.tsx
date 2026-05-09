@@ -6,7 +6,7 @@ import { useGameStore } from '../../store/gameStore'
 
 type Semana = { semana: number; ano: number; posicao: number; pontos: number }
 
-const ACCENT = '#00ff88'
+const ACCENT = 'var(--neon-green)'
 const W = 600
 const H = 200
 const PAD = { top: 16, right: 16, bottom: 28, left: 48 }
@@ -17,7 +17,7 @@ function Chart({ dados }: { dados: Semana[] }) {
 
   if (dados.length < 2) {
     return (
-      <div className="flex items-center justify-center h-[200px] text-[10px] text-[#00ff88]/40"
+      <div className="flex items-center justify-center h-[200px] text-[10px] text-neon-green/40"
            style={{ fontFamily: 'var(--font-arcade)' }}>
         DADOS INSUFICIENTES
       </div>
@@ -139,7 +139,7 @@ function Chart({ dados }: { dados: Semana[] }) {
       {/* Tooltip */}
       {tooltip && (
         <div
-          className="absolute pointer-events-none border border-[#00ff88] bg-[#060f0a] px-2 py-1 text-[9px] text-[#00ff88]"
+          className="absolute pointer-events-none border border-neon-green bg-[#060f0a] px-2 py-1 text-[9px] text-neon-green"
           style={{
             fontFamily: 'var(--font-arcade)',
             left: `${(tooltip.x / W) * 100}%`,
@@ -176,7 +176,7 @@ export function RankingHistoryScreen() {
     <div className="app-shell min-h-screen font-mono pb-24">
       <PageHeader title="HISTÓRICO DE RANKING" color="green" backTo="/player">
         <p
-          className="text-[9px] text-[#00ff88]/60 mt-1"
+          className="text-[9px] text-neon-green/60 mt-1"
           style={{ fontFamily: 'var(--font-mono)' }}
         >
           PROGRESSÃO DE CARREIRA
@@ -193,16 +193,16 @@ export function RankingHistoryScreen() {
           ].map(({ label, value }) => (
             <div
               key={label}
-              className="border border-[#00ff88]/20 bg-[#060f0a] p-3 text-center"
+              className="border border-neon-green/20 bg-[#060f0a] p-3 text-center"
             >
               <div
-                className="text-[8px] text-[#00ff88]/50 mb-1"
+                className="text-[8px] text-neon-green/50 mb-1"
                 style={{ fontFamily: 'var(--font-arcade)' }}
               >
                 {label}
               </div>
               <div
-                className="text-lg text-[#00ff88]"
+                className="text-lg text-neon-green"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   textShadow: '0 0 8px #00ff8877',
@@ -215,18 +215,18 @@ export function RankingHistoryScreen() {
         </div>
 
         {/* Chart */}
-        <div className="border border-[#00ff88]/20 bg-[#060f0a] p-3">
+        <div className="border border-neon-green/20 bg-[#060f0a] p-3">
           <div
-            className="text-[9px] text-[#00ff88]/60 mb-3 flex items-center gap-2"
+            className="text-[9px] text-neon-green/60 mb-3 flex items-center gap-2"
             style={{ fontFamily: 'var(--font-arcade)' }}
           >
-            <TrendingUp size={11} className="text-[#00ff88]" />
+            <TrendingUp size={11} className="text-neon-green" />
             POSIÇÃO POR SEMANA (eixo Y invertido: 1 = topo)
           </div>
 
           {loading && (
             <div
-              className="text-center py-12 text-[10px] text-[#00ff88]/40"
+              className="text-center py-12 text-[10px] text-neon-green/40"
               style={{ fontFamily: 'var(--font-arcade)' }}
             >
               CARREGANDO...
@@ -235,7 +235,7 @@ export function RankingHistoryScreen() {
 
           {erro && (
             <div
-              className="text-center py-8 text-[10px] text-[#ff0055]"
+              className="text-center py-8 text-[10px] text-neon-pink"
               style={{ fontFamily: 'var(--font-arcade)' }}
             >
               {erro}
@@ -247,8 +247,8 @@ export function RankingHistoryScreen() {
 
         {/* Table */}
         {!loading && !erro && dados.length > 0 && (
-          <div className="border border-[#00ff88]/20 bg-[#060f0a]">
-            <div className="grid grid-cols-4 px-3 py-2 text-[8px] text-[#00ff88]/40 border-b border-[#00ff88]/10"
+          <div className="border border-neon-green/20 bg-[#060f0a]">
+            <div className="grid grid-cols-4 px-3 py-2 text-[8px] text-neon-green/40 border-b border-neon-green/10"
                  style={{ fontFamily: 'var(--font-arcade)' }}>
               <span>ANO</span>
               <span>SEMANA</span>

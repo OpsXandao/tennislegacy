@@ -15,8 +15,8 @@ export function SponsorFeedback({ mensagem }: SponsorFeedbackProps) {
       animate={{ opacity: 1, y: 0 }}
       className={`border-2 p-3 text-center text-[10px] ${
         mensagem.ok
-          ? 'border-[#00ff88] bg-[#00ff88]/10 text-[#00ff88]'
-          : 'border-[#ff0055] bg-[#ff0055]/10 text-[#ff0055]'
+          ? 'border-neon-green bg-neon-green/10 text-neon-green'
+          : 'border-neon-pink bg-neon-pink/10 text-neon-pink'
       }`}
       style={{ fontFamily: 'var(--font-arcade)' }}
     >

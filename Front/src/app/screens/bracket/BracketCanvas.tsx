@@ -15,13 +15,13 @@ export function BracketCanvas({ section }: { section: BracketSection }) {
     )
 
   return (
-    <section className="overflow-hidden rounded border border-[#ff0055]/40 bg-[#090909] shadow-[0_0_20px_#ff005533]">
-      <div className="sticky top-0 z-[1] flex items-center justify-between border-b border-[#00ff88]/20 bg-[#111] px-4 py-3">
+    <section className="overflow-hidden rounded border border-neon-pink/40 bg-[#090909] shadow-[0_0_20px_#ff005533]">
+      <div className="sticky top-0 z-[1] flex items-center justify-between border-b border-neon-green/20 bg-[#111] px-4 py-3">
         <div>
-          <h3 className="pixel-font text-sm text-[#00ff88]">{section.title}</h3>
+          <h3 className="pixel-font text-sm text-neon-green">{section.title}</h3>
           <p className="arcade-font text-[10px] text-[#888]">{section.subtitle}</p>
         </div>
-        <div className="arcade-font text-[10px] text-[#ffe600]">
+        <div className="arcade-font text-[10px] text-neon-yellow">
           {section.rounds.length} fases
         </div>
       </div>
@@ -34,10 +34,10 @@ export function BracketCanvas({ section }: { section: BracketSection }) {
           {layout.map((column, roundIndex) => (
             <div key={column.round.fase}>
               <div
-                className="absolute bg-[#131326] border border-[#00ff88] px-3 py-2 text-center shadow-[0_0_12px_#00ff8844]"
+                className="absolute bg-[#131326] border border-neon-green px-3 py-2 text-center shadow-[0_0_12px_#00ff8844]"
                 style={{ left: `${column.x}px`, top: '0px', width: `${CARD_WIDTH}px` }}
               >
-                <span className="arcade-font text-xs text-[#00ff88]">{column.round.name}</span>
+                <span className="arcade-font text-xs text-neon-green">{column.round.name}</span>
               </div>
 
               {column.round.matches.map((match, matchIndex) => (

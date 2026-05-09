@@ -71,10 +71,10 @@ export function MarketScreen() {
           animate={{ opacity: 1, scale: 1 }}
           className={`mb-4 border-2 p-3 text-center text-[10px] ${
             mensagem.tipo === 'success'
-              ? 'border-[#00ff88] bg-[#00ff88]/10 text-[#00ff88]'
+              ? 'border-neon-green bg-neon-green/10 text-neon-green'
               : mensagem.tipo === 'error'
-              ? 'border-[#ff0055] bg-[#ff0055]/10 text-[#ff0055]'
-              : 'border-[#00e5ff] text-[#00e5ff]'
+              ? 'border-neon-pink bg-neon-pink/10 text-neon-pink'
+              : 'border-neon-cyan text-neon-cyan'
           }`}
           style={{ fontFamily: 'var(--font-arcade)' }}
         >
@@ -83,7 +83,7 @@ export function MarketScreen() {
       )}
 
       {loading ? (
-        <div className="py-20 text-center pixel-font text-[#00ff88] animate-pulse">CARREGANDO...</div>
+        <div className="py-20 text-center pixel-font text-neon-green animate-pulse">CARREGANDO...</div>
       ) : (
         <div className="space-y-3">
           {lista.map((prof, i) => {
@@ -98,7 +98,7 @@ export function MarketScreen() {
                 transition={{ delay: i * 0.06 }}
                 className={`border-2 bg-[#1a1a2e] p-4 ${outroContratado ? 'opacity-40' : ''}`}
                 style={{
-                  borderColor: isContratado ? '#ffe600' : activeTab % 2 === 0 ? '#00ff88' : '#00e5ff',
+                  borderColor: isContratado ? 'var(--neon-yellow)' : activeTab % 2 === 0 ? 'var(--neon-green)' : 'var(--neon-cyan)',
                   boxShadow: isContratado ? 'var(--glow-gold)' : activeTab % 2 === 0 ? 'var(--glow-green)' : 'var(--glow-cyan)',
                 }}
               >
@@ -106,7 +106,7 @@ export function MarketScreen() {
                   <div
                     className="flex h-16 w-16 items-center justify-center border-2 bg-black text-3xl"
                     style={{
-                      borderColor: isContratado ? '#ffe600' : activeTab % 2 === 0 ? '#00ff88' : '#00e5ff',
+                      borderColor: isContratado ? 'var(--neon-yellow)' : activeTab % 2 === 0 ? 'var(--neon-green)' : 'var(--neon-cyan)',
                     }}
                   >
                     {String(prof.nome || '?').charAt(0)}
@@ -116,7 +116,7 @@ export function MarketScreen() {
                     <h3
                       className="mb-1 text-[11px]"
                       style={{
-                        color: isContratado ? '#ffe600' : activeTab % 2 === 0 ? '#00ff88' : '#00e5ff',
+                        color: isContratado ? 'var(--neon-yellow)' : activeTab % 2 === 0 ? 'var(--neon-green)' : 'var(--neon-cyan)',
                         fontFamily: 'var(--font-arcade)',
                       }}
                     >
@@ -129,15 +129,15 @@ export function MarketScreen() {
                         <Star
                           key={starIdx}
                           size={10}
-                          className={starIdx < prof.estrelas ? 'text-[#ffe600]' : 'text-[#555]'}
-                          fill={starIdx < prof.estrelas ? '#ffe600' : 'none'}
+                          className={starIdx < prof.estrelas ? 'text-neon-yellow' : 'text-[#555]'}
+                          fill={starIdx < prof.estrelas ? 'var(--neon-yellow)' : 'none'}
                         />
                       ))}
                     </div>
 
                     <div className="flex items-center justify-between gap-3">
                       <div>
-                        <div className="mb-1 flex items-center gap-1 text-[10px] text-[#ffe600]">
+                        <div className="mb-1 flex items-center gap-1 text-[10px] text-neon-yellow">
                           <TrendingUp size={10} />
                           <span>{prof.bonus || 'BONUS DE EQUIPE'}</span>
                         </div>
@@ -150,7 +150,7 @@ export function MarketScreen() {
                       {isContratado ? (
                         <button
                           onClick={() => handleDemitir(prof.id)}
-                          className="border-2 border-[#ff0055] bg-black px-4 py-2 text-[8px] text-[#ff0055] transition-all hover:bg-[#ff0055] hover:text-black"
+                          className="border-2 border-neon-pink bg-black px-4 py-2 text-[8px] text-neon-pink transition-all hover:bg-neon-pink hover:text-black"
                           style={{ fontFamily: 'var(--font-arcade)' }}
                         >
                           DEMITIR
@@ -159,7 +159,7 @@ export function MarketScreen() {
                         <button
                           onClick={() => handleContratar(prof.id)}
                           disabled={!!outroContratado}
-                          className="border-2 border-[#00e5ff] bg-black px-4 py-2 text-[8px] text-[#00e5ff] transition-all enabled:hover:bg-[#00e5ff] enabled:hover:text-black disabled:cursor-not-allowed disabled:opacity-50"
+                          className="border-2 border-neon-cyan bg-black px-4 py-2 text-[8px] text-neon-cyan transition-all enabled:hover:bg-neon-cyan enabled:hover:text-black disabled:cursor-not-allowed disabled:opacity-50"
                           style={{ fontFamily: 'var(--font-arcade)' }}
                         >
                           CONTRATAR

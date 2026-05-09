@@ -27,25 +27,25 @@ export function ArcadeNotification({
 
   const typeStyles = {
     success: {
-      border: '#00ff88',
+      border: 'var(--neon-green)',
       bg: '#1a1a2e',
       icon: '✓',
       glow: 'shadow-[0_0_20px_#00ff88]'
     },
     error: {
-      border: '#ff0055',
+      border: 'var(--neon-pink)',
       bg: '#1a1a2e',
       icon: '✗',
       glow: 'shadow-[0_0_20px_#ff0055]'
     },
     info: {
-      border: '#00e5ff',
+      border: 'var(--neon-cyan)',
       bg: '#1a1a2e',
       icon: 'i',
       glow: 'shadow-[0_0_20px_#00e5ff]'
     },
     warning: {
-      border: '#ffe600',
+      border: 'var(--neon-yellow)',
       bg: '#1a1a2e',
       icon: '!',
       glow: 'shadow-[0_0_20px_#ffe600]'

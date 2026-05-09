@@ -5,12 +5,12 @@ const NIVEL_COLOR: Record<string, string> = {
   bronze: '#cd7f32',
   silver: '#c0c0c0',
   prata: '#c0c0c0',
-  gold: '#ffe600',
-  ouro: '#ffe600',
-  platinum: '#00e5ff',
-  platina: '#00e5ff',
-  diamond: '#ff0055',
-  diamante: '#ff0055',
+  gold: 'var(--neon-yellow)',
+  ouro: 'var(--neon-yellow)',
+  platinum: 'var(--neon-cyan)',
+  platina: 'var(--neon-cyan)',
+  diamond: 'var(--neon-pink)',
+  diamante: 'var(--neon-pink)',
 }
 
 function nivelColor(nivel: string) {
@@ -37,7 +37,7 @@ export function PatrocinioCard({
       animate={{ opacity: 1, x: 0 }}
       className={`border p-3 ${
         p.elegivel
-          ? 'border-[#ffe600]/50 bg-[#ffe600]/5'
+          ? 'border-neon-yellow/50 bg-neon-yellow/5'
           : 'border-white/10 bg-white/2 opacity-60'
       }`}
     >
@@ -68,7 +68,7 @@ export function PatrocinioCard({
           )}
 
           <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-1.5">
-            <span className="text-[9px] text-[#00ff88]">
+            <span className="text-[9px] text-neon-green">
               R$ {p.valor_semanal?.toLocaleString('pt-BR')}/sem
             </span>
             <span className="text-[9px] text-white/50 uppercase">{p.categoria}</span>
@@ -83,14 +83,14 @@ export function PatrocinioCard({
               </span>
             )}
             {p.bonus_assinatura > 0 && (
-              <span className="text-[9px] text-[#ffe600]/70">
+              <span className="text-[9px] text-neon-yellow/70">
                 Bônus: R$ {p.bonus_assinatura.toLocaleString('pt-BR')}
               </span>
             )}
           </div>
 
           {!p.elegivel && p.motivo_bloqueio && (
-            <p className="text-[9px] text-[#ff0055]/70 mt-1">Bloqueio: {p.motivo_bloqueio}</p>
+            <p className="text-[9px] text-neon-pink/70 mt-1">Bloqueio: {p.motivo_bloqueio}</p>
           )}
         </div>
 
@@ -98,7 +98,7 @@ export function PatrocinioCard({
           <button
             onClick={() => onAssinar(p.id)}
             disabled={!!assinando}
-            className="shrink-0 border border-[#ffe600] px-3 py-1.5 text-[8px] text-[#ffe600] hover:bg-[#ffe600]/20 disabled:opacity-40 transition-colors"
+            className="shrink-0 border border-neon-yellow px-3 py-1.5 text-[8px] text-neon-yellow hover:bg-neon-yellow/20 disabled:opacity-40 transition-colors"
             style={{ fontFamily: 'var(--font-arcade)' }}
           >
             {loading ? '...' : 'ASSINAR'}

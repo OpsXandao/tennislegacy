@@ -26,7 +26,7 @@ export function NotFoundScreen() {
             ]
           }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="pixel-font text-8xl text-[#ff0055] mb-6"
+          className="pixel-font text-8xl text-neon-pink mb-6"
         >
           404
         </motion.div>

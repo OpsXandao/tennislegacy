@@ -7,7 +7,7 @@ import { reportError } from '../utils/reportError';
 function PageFallback() {
   return (
     <div className="app-shell min-h-screen flex items-center justify-center">
-      <div className="pixel-font text-[#00ff88] text-xs animate-pulse">LOADING...</div>
+      <div className="pixel-font text-neon-green text-xs animate-pulse">LOADING...</div>
     </div>
   );
 }

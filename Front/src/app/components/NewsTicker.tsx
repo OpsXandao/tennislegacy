@@ -28,10 +28,10 @@ export function NewsTicker() {
   }, [noticias])
 
   return (
-    <div className="bg-black border-y-2 border-[#00ff88]/30 py-1 overflow-hidden relative flex items-center h-8">
-      <div className="absolute left-0 top-0 bottom-0 bg-black z-10 px-2 flex items-center border-r border-[#00ff88]/30">
-        <Newspaper size={14} className="text-[#00ff88]" />
-        <span className="arcade-font text-[8px] text-[#00ff88] ml-1">NEWS</span>
+    <div className="bg-black border-y-2 border-neon-green/30 py-1 overflow-hidden relative flex items-center h-8">
+      <div className="absolute left-0 top-0 bottom-0 bg-black z-10 px-2 flex items-center border-r border-neon-green/30">
+        <Newspaper size={14} className="text-neon-green" />
+        <span className="arcade-font text-[8px] text-neon-green ml-1">NEWS</span>
       </div>
       
       <div className="flex-1 ml-16">
@@ -42,7 +42,7 @@ export function NewsTicker() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="arcade-font text-[9px] text-[#ffe600] whitespace-nowrap"
+            className="arcade-font text-[9px] text-neon-yellow whitespace-nowrap"
           >
             {noticias[index]}
           </motion.div>

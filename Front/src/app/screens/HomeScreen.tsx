@@ -190,22 +190,22 @@ export function HomeScreen() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.1 }}
-            className="app-panel w-full max-w-sm relative z-10 border-2 border-[#00ff88] p-8 text-center"
+            className="app-panel w-full max-w-sm relative z-10 border-2 border-neon-green p-8 text-center"
           >
             <h2 className="pixel-font text-sm text-neon-yellow mb-8">ESCOLHA SEU CIRCUITO</h2>
             <div className="grid grid-cols-1 gap-6">
               <button 
                 onClick={() => handleSelectTour('atp')}
-                className="group relative app-panel-elevated border-2 border-[#00ff88] p-6 transition-all hover:bg-[#00ff88]/10"
+                className="group relative app-panel-elevated border-2 border-neon-green p-6 transition-all hover:bg-neon-green/10"
               >
-                <div className="pixel-font text-2xl text-[#00ff88] mb-2">ATP</div>
+                <div className="pixel-font text-2xl text-neon-green mb-2">ATP</div>
                 <div className="arcade-font text-[10px] app-muted">MASCULINO</div>
               </button>
               <button 
                 onClick={() => handleSelectTour('wta')}
-                className="group relative app-panel-elevated border-2 border-[#ff0055] p-6 transition-all hover:bg-[#ff0055]/10"
+                className="group relative app-panel-elevated border-2 border-neon-pink p-6 transition-all hover:bg-neon-pink/10"
               >
-                <div className="pixel-font text-2xl text-[#ff0055] mb-2">WTA</div>
+                <div className="pixel-font text-2xl text-neon-pink mb-2">WTA</div>
                 <div className="arcade-font text-[10px] app-muted">FEMININO</div>
               </button>
             </div>
@@ -219,11 +219,11 @@ export function HomeScreen() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
-            className="app-panel w-full max-w-md relative z-10 border-2 border-[#00ff88] p-6 max-h-[85vh] overflow-y-auto"
+            className="app-panel w-full max-w-md relative z-10 border-2 border-neon-green p-6 max-h-[85vh] overflow-y-auto"
           >
             <div className="flex justify-between items-center mb-6">
               <h2 className="pixel-font text-xs text-neon-green">{t.titulo}</h2>
-              <span className={`arcade-font text-[10px] px-2 py-1 border ${isMasc ? 'border-[#00ff88] text-[#00ff88]' : 'border-[#ff0055] text-[#ff0055]'}`}>
+              <span className={`arcade-font text-[10px] px-2 py-1 border ${isMasc ? 'border-neon-green text-neon-green' : 'border-neon-pink text-neon-pink'}`}>
                 {tour.toUpperCase()}
               </span>
             </div>
@@ -234,7 +234,7 @@ export function HomeScreen() {
                 <div>
                   <label className="arcade-font text-[10px] app-muted block mb-1">{t.nomeLabel}</label>
                   <input
-                    className="app-input w-full border-2 border-[#00ff88]/50 text-[#00ff88] arcade-font text-xs px-3 py-2 outline-none focus:border-[#00ff88]"
+                    className="app-input w-full border-2 border-neon-green/50 text-neon-green arcade-font text-xs px-3 py-2 outline-none focus:border-neon-green"
                     placeholder={t.placeholder}
                     value={nomeJogador}
                     onChange={(e) => {
@@ -252,7 +252,7 @@ export function HomeScreen() {
                     <label className="arcade-font text-[10px] app-muted block mb-1">IDADE</label>
                     <input
                       type="number"
-                      className="app-input w-full border-2 border-[#00ff88]/50 text-[#00ff88] arcade-font text-xs px-2 py-2 outline-none focus:border-[#00ff88]"
+                      className="app-input w-full border-2 border-neon-green/50 text-neon-green arcade-font text-xs px-2 py-2 outline-none focus:border-neon-green"
                       value={idade}
                       onChange={(e) => {
                         const val = parseInt(e.target.value) || 18
@@ -264,25 +264,25 @@ export function HomeScreen() {
                     <label className="arcade-font text-[10px] app-muted block mb-1">PAÍS</label>
                     <button
                       type="button"
-                      className="app-input w-full border-2 border-[#00ff88]/50 text-[#00ff88] arcade-font text-[10px] px-2 py-2 outline-none flex items-center justify-between gap-2"
+                      className="app-input w-full border-2 border-neon-green/50 text-neon-green arcade-font text-[10px] px-2 py-2 outline-none flex items-center justify-between gap-2"
                       onClick={() => setShowNacionalidades((v) => !v)}
                     >
                       <span className="flex items-center gap-2 min-w-0">
                         <PixelFlag countryCode={nac} size="md" />
                         <span className="truncate">{getCountryName(nac)}</span>
                       </span>
-                      <span className="text-[#00e5ff]">{showNacionalidades ? '▲' : '▼'}</span>
+                      <span className="text-neon-cyan">{showNacionalidades ? '▲' : '▼'}</span>
                     </button>
                     {showNacionalidades && (
-                      <div className="app-panel absolute z-20 mt-1 w-full max-h-56 overflow-y-auto border-2 border-[#00ff88] shadow-[0_0_12px_#00ff8844]">
+                      <div className="app-panel absolute z-20 mt-1 w-full max-h-56 overflow-y-auto border-2 border-neon-green shadow-[0_0_12px_#00ff8844]">
                         {nacionalidades.map((n) => (
                           <button
                             key={n}
                             type="button"
-                            className={`w-full px-2 py-2 flex items-center gap-2 text-left arcade-font text-[10px] border-b border-[#00ff88]/10 hover:bg-[#00ff88]/10 ${
-                              n === nac ? 'bg-[#00ff88]/10 text-[#00ff88]' : ''
+                            className={`w-full px-2 py-2 flex items-center gap-2 text-left arcade-font text-[10px] border-b border-neon-green/10 hover:bg-neon-green/10 ${
+                              n === nac ? 'bg-neon-green/10 text-neon-green' : ''
                             }`}
-                            style={{ color: n === nac ? '#00ff88' : 'var(--foreground)' }}
+                            style={{ color: n === nac ? 'var(--neon-green)' : 'var(--foreground)' }}
                             onClick={() => {
                               setNac(n)
                               setShowNacionalidades(false)
@@ -300,10 +300,10 @@ export function HomeScreen() {
 
               {/* 2. Estilo e Perfil */}
               <div className="grid grid-cols-1 gap-3">
-                <div className="bg-black/40 p-3 border border-[#00ff88]/20">
+                <div className="bg-black/40 p-3 border border-neon-green/20">
                   <label className="arcade-font text-[10px] text-neon-yellow block mb-2 text-center underline">ESTILO TÉCNICO</label>
                   <select
-                    className="w-full bg-black border border-[#00ff88]/50 text-white arcade-font text-[10px] px-2 py-2 outline-none mb-2"
+                    className="w-full bg-black border border-neon-green/50 text-white arcade-font text-[10px] px-2 py-2 outline-none mb-2"
                     value={archetypeId}
                     onChange={(e) => setArchetypeId(e.target.value)}
                   >
@@ -311,15 +311,15 @@ export function HomeScreen() {
                       <option key={id} value={id}>{data.nome.toUpperCase()}</option>
                     ))}
                   </select>
-                  <p className="text-[9px] arcade-font text-[#00e5ff] italic text-center leading-tight">
+                  <p className="text-[9px] arcade-font text-neon-cyan italic text-center leading-tight">
                     {tecnicos[archetypeId]?.descricao}
                   </p>
                 </div>
 
-                <div className="bg-black/40 p-3 border border-[#00ff88]/20">
+                <div className="bg-black/40 p-3 border border-neon-green/20">
                   <label className="arcade-font text-[10px] text-neon-yellow block mb-2 text-center underline">PERFIL MENTAL</label>
                   <select
-                    className="w-full bg-black border border-[#00ff88]/50 text-white arcade-font text-[10px] px-2 py-2 outline-none mb-2"
+                    className="w-full bg-black border border-neon-green/50 text-white arcade-font text-[10px] px-2 py-2 outline-none mb-2"
                     value={mentalId}
                     onChange={(e) => setMentalId(e.target.value)}
                   >
@@ -327,14 +327,14 @@ export function HomeScreen() {
                       <option key={id} value={id}>{data.nome.toUpperCase()}</option>
                     ))}
                   </select>
-                  <p className="text-[9px] arcade-font text-[#00e5ff] italic text-center leading-tight">
+                  <p className="text-[9px] arcade-font text-neon-cyan italic text-center leading-tight">
                     {mentais[mentalId]?.descricao}
                   </p>
                 </div>
               </div>
 
               {/* 3. Slot da Carreira (ID) */}
-              <div className="pt-2 border-t border-[#00ff88]/20">
+              <div className="pt-2 border-t border-neon-green/20">
                 <label className="arcade-font text-[9px] text-[#555] block mb-1">NOME DA CARREIRA (ID DO SAVE)</label>
                 <input
                   className="w-full bg-transparent border-b border-[#333] text-[#555] arcade-font text-[10px] px-1 py-1 outline-none"
@@ -343,7 +343,7 @@ export function HomeScreen() {
                 />
               </div>
 
-              {erro && <p className="arcade-font text-xs text-[#ff0055] text-center">{erro}</p>}
+              {erro && <p className="arcade-font text-xs text-neon-pink text-center">{erro}</p>}
 
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <NeonButton variant="pink" onClick={() => setStep(0)}>VOLTAR</NeonButton>

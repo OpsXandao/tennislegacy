@@ -60,7 +60,7 @@ export function ScoutingReportCard({
               className="pixel-font text-[15px]"
               style={{
                 color:
-                  stat.val > 80 ? '#00ff88' : stat.val > 65 ? '#ffe600' : '#ff4466',
+                  stat.val > 80 ? 'var(--neon-green)' : stat.val > 65 ? 'var(--neon-yellow)' : '#ff4466',
               }}
             >
               {stat.val}
@@ -74,7 +74,7 @@ export function ScoutingReportCard({
           {report.pontosFortes.map((tag) => (
             <span
               key={tag}
-              className="arcade-font border border-[#00ff88]/20 bg-[#00ff88]/10 px-1.5 py-0.5 text-[7px] text-[#00ff88]"
+              className="arcade-font border border-neon-green/20 bg-neon-green/10 px-1.5 py-0.5 text-[7px] text-neon-green"
             >
               {tag}
             </span>
@@ -94,8 +94,8 @@ export function ScoutingReportCard({
             {report.texto}
           </div>
           {report.dicas.length > 0 && (
-            <div className="space-y-1 border-l-2 border-[#ffe600] bg-[#ffe600]/5 p-2">
-              <div className="arcade-font text-[8px] tracking-widest text-[#ffe600]">
+            <div className="space-y-1 border-l-2 border-neon-yellow bg-neon-yellow/5 p-2">
+              <div className="arcade-font text-[8px] tracking-widest text-neon-yellow">
                 DICA TÁTICA
               </div>
               {report.dicas.map((dica, idx) => (

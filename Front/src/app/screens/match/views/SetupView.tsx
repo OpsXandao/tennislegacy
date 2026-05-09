@@ -129,13 +129,13 @@ export function SetupView({
   return (
     <div className="app-shell min-h-screen flex flex-col bg-[#0a0a0f]">
       {/* Header Vestiário */}
-      <div className="app-panel p-4 border-b-2 border-[#00ff88] flex items-center justify-between shrink-0 bg-black/40">
+      <div className="app-panel p-4 border-b-2 border-neon-green flex items-center justify-between shrink-0 bg-black/40">
         <div className="flex items-center gap-3">
-          <button onClick={() => navigate('/tournament')} className="text-[#00ff88] hover:scale-110 transition-transform">
+          <button onClick={() => navigate('/tournament')} className="text-neon-green hover:scale-110 transition-transform">
             <ArrowLeft size={22} />
           </button>
           <div>
-            <div className="arcade-font text-[10px] text-[#00ff88] tracking-[0.2em]">VESTIÁRIO</div>
+            <div className="arcade-font text-[10px] text-neon-green tracking-[0.2em]">VESTIÁRIO</div>
             <div className="arcade-font text-[12px] text-white mt-0.5">
               {faseTorneio ? faseTorneio.replaceAll('_', ' ').toUpperCase() : 'PARTIDA'}
             </div>
@@ -157,7 +157,7 @@ export function SetupView({
         {/* Cartas FIFA (Pré-Match) */}
         <div className="flex flex-col lg:flex-row gap-6 items-center justify-center py-4 bg-gradient-to-b from-[#0a0a0f] to-transparent">
           <div className="flex flex-col items-center gap-2">
-            <div className="arcade-font text-[10px] text-[#00ff88] tracking-widest uppercase mb-2">SEU JOGADOR</div>
+            <div className="arcade-font text-[10px] text-neon-green tracking-widest uppercase mb-2">SEU JOGADOR</div>
             <FutCard
               nome={jogador?.nome ?? 'VOCÊ'}
               nacionalidade={jogador?.nacionalidade ?? ''}
@@ -252,9 +252,9 @@ export function SetupView({
                         onClick={() => setAbaRival('historia')}
                         className="border px-2 py-1 arcade-font text-[8px]"
                         style={{
-                          borderColor: abaRival === 'historia' ? '#ffe600' : '#6c5f2b',
+                          borderColor: abaRival === 'historia' ? 'var(--neon-yellow)' : '#6c5f2b',
                           color: abaRival === 'historia' ? '#1b1803' : '#ffe27a',
-                          background: abaRival === 'historia' ? '#ffe600' : 'transparent',
+                          background: abaRival === 'historia' ? 'var(--neon-yellow)' : 'transparent',
                         }}
                       >
                         TÍTULOS
@@ -299,7 +299,7 @@ export function SetupView({
               </div>
               <div className="flex items-center justify-end gap-6 mb-4">
                 <CircularGauge label="ENERGIA" value={energiaAdversarioAoVivo} color={corCardRival} />
-                <CircularGauge label="FADIGA" value={fadigaAdversarioAoVivo} color="#ffe600" track="#26131b" />
+                <CircularGauge label="FADIGA" value={fadigaAdversarioAoVivo} color="var(--neon-yellow)" track="#26131b" />
               </div>
               <OpponentScoutingCard
                 adv={adversario}
@@ -312,10 +312,10 @@ export function SetupView({
 
           <div className="space-y-3">
             <div className="flex items-center gap-2 mb-1">
-              <div className="w-1 h-4 bg-[#00ff88]" />
-              <span className="arcade-font text-[12px] text-[#00ff88] tracking-widest">SUA CONDIÇÃO</span>
+              <div className="w-1 h-4 bg-neon-green" />
+              <span className="arcade-font text-[12px] text-neon-green tracking-widest">SUA CONDIÇÃO</span>
             </div>
-            <div className="app-panel border-2 border-[#00ff88]/40 p-4 relative overflow-hidden">
+            <div className="app-panel border-2 border-neon-green/40 p-4 relative overflow-hidden">
               <div className="absolute top-0 right-0 p-2 opacity-5">
                 <div className="text-6xl">🫀</div>
               </div>
@@ -331,11 +331,11 @@ export function SetupView({
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-3 mb-4">
-                <div className="bg-[#00ff88]/5 border border-[#00ff88]/20 p-3">
+                <div className="bg-neon-green/5 border border-neon-green/20 p-3">
                   <div className="arcade-font text-[10px] text-[#73ffbb] tracking-widest mb-1 uppercase">Leitura</div>
                   <div className="arcade-font text-[12px] text-white leading-relaxed">{leituraJogador}</div>
                 </div>
-                <div className="bg-[#00ff88]/5 border border-[#00ff88]/20 p-3">
+                <div className="bg-neon-green/5 border border-neon-green/20 p-3">
                   <div className="mb-2 flex items-center justify-between gap-2">
                     <div className="arcade-font text-[10px] text-[#73ffbb] tracking-widest uppercase">
                       {abaJogador === 'registros' ? 'Últimos Registros' : 'História'}
@@ -345,9 +345,9 @@ export function SetupView({
                         onClick={() => setAbaJogador('registros')}
                         className="border px-2 py-1 arcade-font text-[8px]"
                         style={{
-                          borderColor: abaJogador === 'registros' ? '#00ff88' : '#245843',
+                          borderColor: abaJogador === 'registros' ? 'var(--neon-green)' : '#245843',
                           color: abaJogador === 'registros' ? '#02120b' : '#9cf6ce',
-                          background: abaJogador === 'registros' ? '#00ff88' : 'transparent',
+                          background: abaJogador === 'registros' ? 'var(--neon-green)' : 'transparent',
                         }}
                       >
                         REGISTROS
@@ -356,9 +356,9 @@ export function SetupView({
                         onClick={() => setAbaJogador('historia')}
                         className="border px-2 py-1 arcade-font text-[8px]"
                         style={{
-                          borderColor: abaJogador === 'historia' ? '#ffe600' : '#6c5f2b',
+                          borderColor: abaJogador === 'historia' ? 'var(--neon-yellow)' : '#6c5f2b',
                           color: abaJogador === 'historia' ? '#1b1803' : '#ffe27a',
-                          background: abaJogador === 'historia' ? '#ffe600' : 'transparent',
+                          background: abaJogador === 'historia' ? 'var(--neon-yellow)' : 'transparent',
                         }}
                       >
                         TÍTULOS
@@ -395,15 +395,15 @@ export function SetupView({
                 </div>
               </div>
               <div className="flex items-center justify-end gap-6 mb-4">
-                <CircularGauge label="ENERGIA" value={energiaJogadorAoVivo} color="#00ff88" />
-                <CircularGauge label="FADIGA" value={fadigaJogadorAoVivo} color="#ffe600" track="#102319" />
+                <CircularGauge label="ENERGIA" value={energiaJogadorAoVivo} color="var(--neon-green)" />
+                <CircularGauge label="FADIGA" value={fadigaJogadorAoVivo} color="var(--neon-yellow)" track="#102319" />
               </div>
               <ScoutingReport
                 titulo="Scouting Report"
                 overall={overallCardJogador}
                 metrics={{ saque: metricsJogador.saque, fundo: metricsJogador.fundo, mental: metricsJogador.mental }}
                 report={reportJogador}
-                accent="#00ff88"
+                accent="var(--neon-green)"
               />
             </div>
           </div>
@@ -412,14 +412,14 @@ export function SetupView({
         {/* FM TACTICAL PANEL */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="w-1 h-4 bg-[#ffe600]" />
-            <span className="arcade-font text-[12px] text-[#ffe600] tracking-widest uppercase">Instruções Táticas</span>
+            <div className="w-1 h-4 bg-neon-yellow" />
+            <span className="arcade-font text-[12px] text-neon-yellow tracking-widest uppercase">Instruções Táticas</span>
           </div>
 
           <div className="grid grid-cols-1 gap-4">
             <div className="grid grid-cols-1 md:grid-cols-[1.5fr_0.8fr_0.8fr] gap-4">
-              <div className="app-panel border border-[#ffe600]/20 p-4 bg-[#ffe60008]">
-                <div className="arcade-font text-[11px] text-[#ffe600] mb-2 tracking-widest uppercase">Resumo do Plano</div>
+              <div className="app-panel border border-neon-yellow/20 p-4 bg-[#ffe60008]">
+                <div className="arcade-font text-[11px] text-neon-yellow mb-2 tracking-widest uppercase">Resumo do Plano</div>
                 <div className="arcade-font text-[13px] text-white leading-relaxed">
                   {planoExecutivo}
                 </div>
@@ -432,11 +432,11 @@ export function SetupView({
                 </div>
               </div>
 
-              <div className="app-panel border border-[#00ff88]/20 p-4 bg-[#00ff8808]">
-                <div className="arcade-font text-[11px] text-[#00ff88] mb-2 tracking-widest uppercase">Encaixe Físico</div>
+              <div className="app-panel border border-neon-green/20 p-4 bg-[#00ff8808]">
+                <div className="arcade-font text-[11px] text-neon-green mb-2 tracking-widest uppercase">Encaixe Físico</div>
                 <div
                   className="pixel-font text-xl"
-                  style={{ color: encaixeFisico === 'ALTO' ? '#00ff88' : encaixeFisico === 'MÉDIO' ? '#ffe600' : '#ff4466' }}
+                  style={{ color: encaixeFisico === 'ALTO' ? 'var(--neon-green)' : encaixeFisico === 'MÉDIO' ? 'var(--neon-yellow)' : '#ff4466' }}
                 >
                   {encaixeFisico}
                 </div>
@@ -453,7 +453,7 @@ export function SetupView({
                 <div className="arcade-font text-[11px] text-[#ff4466] mb-2 tracking-widest uppercase">Risco Tático</div>
                 <div
                   className="pixel-font text-xl"
-                  style={{ color: riscoTatico === 'BAIXO' ? '#00ff88' : riscoTatico === 'MÉDIO' ? '#ffe600' : '#ff4466' }}
+                  style={{ color: riscoTatico === 'BAIXO' ? 'var(--neon-green)' : riscoTatico === 'MÉDIO' ? 'var(--neon-yellow)' : '#ff4466' }}
                 >
                   {riscoTatico}
                 </div>
@@ -487,7 +487,7 @@ export function SetupView({
         <div className="app-panel border border-white/5 p-4">
           <div className="flex items-center justify-between mb-3">
             <div className="arcade-font text-[10px] text-[#b7c4d1] tracking-widest uppercase">Velocidade da Experiência</div>
-            <div className="arcade-font text-[10px] text-[#ffe600]">{MODOS_ACOMP.find(m => m.valor === modo)?.label}</div>
+            <div className="arcade-font text-[10px] text-neon-yellow">{MODOS_ACOMP.find(m => m.valor === modo)?.label}</div>
           </div>
           <div className="mb-3 arcade-font text-[10px] text-[#95a7b5] leading-relaxed">
             Escolha só entre manual, rápida ou simular até o fim.
@@ -499,9 +499,9 @@ export function SetupView({
                 onClick={() => trocarModoAcompanhamento(m.valor)}
                 className="py-2.5 border arcade-font text-[9px] transition-all"
                 style={{
-                  borderColor: modo === m.valor ? '#00ff88' : '#1a1a2e',
+                  borderColor: modo === m.valor ? 'var(--neon-green)' : '#1a1a2e',
                   background: modo === m.valor ? '#00ff8812' : 'transparent',
-                  color: modo === m.valor ? '#00ff88' : '#c4d1dc',
+                  color: modo === m.valor ? 'var(--neon-green)' : '#c4d1dc',
                 }}
               >
                 {m.label}

@@ -36,29 +36,29 @@ export function RankingEntryCard({
         onNavigate(player.nome)
       }}
       className={`relative overflow-hidden border-2 p-3 ${
-        isUser ? 'border-[#00ff88] bg-[#00ff88]/20' : 'border-[#00e5ff]/30 bg-[#1a1a2e]'
+        isUser ? 'border-neon-green bg-neon-green/20' : 'border-neon-cyan/30 bg-[#1a1a2e]'
       } ${tour !== 'davis' ? 'cursor-pointer transition-transform hover:-translate-y-0.5' : ''}`}
       style={isUser ? { boxShadow: 'var(--glow-green)' } : undefined}
     >
-      {isUser && <div className="absolute bottom-0 left-0 top-0 w-1 animate-pulse bg-[#00ff88]" />}
+      {isUser && <div className="absolute bottom-0 left-0 top-0 w-1 animate-pulse bg-neon-green" />}
       <div className="flex items-center justify-between gap-3">
-        <div className={`w-10 text-center ${player.posicao <= 3 ? 'text-[#ffe600]' : isUser ? 'text-[#00ff88]' : 'text-[#00e5ff]'}`}>
+        <div className={`w-10 text-center ${player.posicao <= 3 ? 'text-neon-yellow' : isUser ? 'text-neon-green' : 'text-neon-cyan'}`}>
           <span className="text-xl font-bold" style={{ fontFamily: 'var(--font-arcade)' }}>{player.posicao}</span>
-          {player.posicao === 1 && <Trophy size={12} className="ml-1 inline animate-pulse text-[#ffe600]" />}
+          {player.posicao === 1 && <Trophy size={12} className="ml-1 inline animate-pulse text-neon-yellow" />}
         </div>
         <div className="flex flex-1 items-center gap-2 min-w-0">
           <PixelFlag countryCode={player.nacionalidade} size="md" />
           <div className="min-w-0">
-            <div className={`truncate text-[11px] ${isUser ? 'text-[#00ff88]' : 'text-[#00e5ff]'}`} style={{ fontFamily: 'var(--font-arcade)' }}>
+            <div className={`truncate text-[11px] ${isUser ? 'text-neon-green' : 'text-neon-cyan'}`} style={{ fontFamily: 'var(--font-arcade)' }}>
               {player.nome}
             </div>
-            <div className={`text-[7px] ${isUser ? 'text-[#ffe600]' : 'text-[#6e8091]'}`}>
+            <div className={`text-[7px] ${isUser ? 'text-neon-yellow' : 'text-[#6e8091]'}`}>
               {tier}
             </div>
             {tour !== 'davis' && !isUser && (
               <div className="text-[7px] text-[#6e8091]">Clique para abrir o perfil</div>
             )}
-            {isUser && <div className="text-[7px] text-[#ffe600]">★ VOCÊ ★</div>}
+            {isUser && <div className="text-[7px] text-neon-yellow">★ VOCÊ ★</div>}
           </div>
         </div>
         <div className="w-12 text-center">
@@ -66,19 +66,19 @@ export function RankingEntryCard({
           <div className="text-[7px] text-[#66798b]">IDADE</div>
         </div>
         <div className="w-20 text-right">
-          <div className={`text-sm font-bold ${isUser ? 'text-[#00ff88]' : 'text-white'}`}>
+          <div className={`text-sm font-bold ${isUser ? 'text-neon-green' : 'text-white'}`}>
             {player.pontos.toLocaleString('pt-BR')}
           </div>
           <div className="text-[7px] text-[#888]">PTS</div>
         </div>
         <div className="flex w-10 justify-center">
           {change > 0 ? (
-            <div className="flex items-center gap-1 text-[#00ff88]">
+            <div className="flex items-center gap-1 text-neon-green">
               <TrendingUp size={12} />
               <span className="text-[9px]">+{change}</span>
             </div>
           ) : change < 0 ? (
-            <div className="flex items-center gap-1 text-[#ff0055]">
+            <div className="flex items-center gap-1 text-neon-pink">
               <TrendingDown size={12} />
               <span className="text-[9px]">{change}</span>
             </div>
@@ -87,8 +87,8 @@ export function RankingEntryCard({
           )}
         </div>
       </div>
-      {player.posicao === 4 && <div className="absolute bottom-0 left-0 right-0 h-px bg-[#ffe600] opacity-50" />}
-      {player.posicao === 8 && <div className="absolute bottom-0 left-0 right-0 h-px bg-[#00e5ff] opacity-30" />}
+      {player.posicao === 4 && <div className="absolute bottom-0 left-0 right-0 h-px bg-neon-yellow opacity-50" />}
+      {player.posicao === 8 && <div className="absolute bottom-0 left-0 right-0 h-px bg-neon-cyan opacity-30" />}
     </motion.div>
   )
 }

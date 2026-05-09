@@ -6,10 +6,10 @@ interface ArcadeTabProps {
 }
 
 const COLORS = {
-  green:  { active: '#00ff88', glow: '0 0 8px #00ff88, 0 0 16px rgba(0,255,136,0.4)' },
-  pink:   { active: '#ff0055', glow: '0 0 8px #ff0055, 0 0 16px rgba(255,0,85,0.4)'  },
-  yellow: { active: '#ffe600', glow: '0 0 8px #ffe600, 0 0 16px rgba(255,230,0,0.4)' },
-  cyan:   { active: '#00e5ff', glow: '0 0 8px #00e5ff, 0 0 16px rgba(0,229,255,0.4)' },
+  green:  { active: 'var(--neon-green)', glow: '0 0 8px #00ff88, 0 0 16px rgba(0,255,136,0.4)' },
+  pink:   { active: 'var(--neon-pink)', glow: '0 0 8px #ff0055, 0 0 16px rgba(255,0,85,0.4)'  },
+  yellow: { active: 'var(--neon-yellow)', glow: '0 0 8px #ffe600, 0 0 16px rgba(255,230,0,0.4)' },
+  cyan:   { active: 'var(--neon-cyan)', glow: '0 0 8px #00e5ff, 0 0 16px rgba(0,229,255,0.4)' },
 } as const;
 
 export function ArcadeTab({ tabs, activeTab, onChange, color = 'green' }: ArcadeTabProps) {

@@ -314,7 +314,7 @@ export function PixelFlag({ countryCode, size = 'md', className = '' }: PixelFla
   if (!src) {
     return (
       <div
-        className={`inline-flex items-center justify-center border border-[#00e5ff] bg-black text-[#00e5ff] arcade-font text-[8px] ${className}`}
+        className={`inline-flex items-center justify-center border border-neon-cyan bg-black text-neon-cyan arcade-font text-[8px] ${className}`}
         style={{ width: dims.width, height: dims.height }}
       >
         {String(label).slice(0, 3).toUpperCase()}

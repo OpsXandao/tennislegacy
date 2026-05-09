@@ -34,7 +34,7 @@ export function LoadingScreen() {
         </motion.h2>
 
         {/* Loading Bar */}
-        <div className="w-64 h-4 border-2 border-[#00ff88] mx-auto">
+        <div className="w-64 h-4 border-2 border-neon-green mx-auto">
           <motion.div
             initial={{ width: '0%' }}
             animate={{ width: '100%' }}
@@ -43,7 +43,7 @@ export function LoadingScreen() {
               repeat: Infinity,
               ease: "linear"
             }}
-            className="h-full bg-[#00ff88]"
+            className="h-full bg-neon-green"
             style={{
               boxShadow: '0 0 10px #00ff88, inset 0 0 10px #00ff88'
             }}

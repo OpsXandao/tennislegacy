@@ -22,7 +22,7 @@ export function CalendarTournamentGrid({
         <motion.div
           animate={{ opacity: [1, 0.3, 1] }}
           transition={{ duration: 1, repeat: Infinity }}
-          className="col-span-3 py-12 text-center pixel-font text-sm text-[#00ff88]"
+          className="col-span-3 py-12 text-center pixel-font text-sm text-neon-green"
         >
           CARREGANDO...
         </motion.div>
@@ -32,22 +32,22 @@ export function CalendarTournamentGrid({
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="col-span-3 border-2 border-[#ffe600] bg-[#ffe600]/10 p-4 shadow-[0_0_15px_rgba(255,230,0,0.2)]"
+          className="col-span-3 border-2 border-neon-yellow bg-neon-yellow/10 p-4 shadow-[0_0_15px_rgba(255,230,0,0.2)]"
         >
           <div className="mb-3 flex items-start justify-between">
             <div className="flex items-center gap-2">
-              <Trophy size={16} className="text-[#ffe600]" />
+              <Trophy size={16} className="text-neon-yellow" />
               <span className="text-[10px] text-white" style={{ fontFamily: 'var(--font-arcade)' }}>
                 CONVOCAÇÃO - COPA DAVIS
               </span>
             </div>
-            <span className="text-[10px] font-bold text-[#ffe600]">ESPECIAL</span>
+            <span className="text-[10px] font-bold text-neon-yellow">ESPECIAL</span>
           </div>
 
           <div className="mb-1 text-xs text-white" style={{ fontFamily: 'var(--font-arcade)' }}>
             {convocacao.torneio.nome.toUpperCase()}
           </div>
-          <p className="mb-4 text-[9px] text-[#00e5ff] uppercase">{convocacao.mensagem}</p>
+          <p className="mb-4 text-[9px] text-neon-cyan uppercase">{convocacao.mensagem}</p>
 
           <NeonButton
             variant="yellow"
@@ -62,7 +62,7 @@ export function CalendarTournamentGrid({
             <button
               onClick={onDeclineCallup}
               disabled={inscrevendo}
-              className="mt-2 w-full text-center text-[8px] text-[#ffe600]/60 hover:text-[#ffe600] uppercase underline decoration-[#ffe600]/30"
+              className="mt-2 w-full text-center text-[8px] text-neon-yellow/60 hover:text-neon-yellow uppercase underline decoration-[#ffe600]/30"
               style={{ fontFamily: 'var(--font-arcade)' }}
             >
               Recusar Convocação
@@ -72,7 +72,7 @@ export function CalendarTournamentGrid({
       )}
 
       {!loading && torneiosSemana.length === 0 && !convocacao?.torneio && (
-        <div className="col-span-3 border-2 border-[#00ff88] bg-[#1a1a2e] p-6 text-center" style={{ boxShadow: 'var(--glow-green)' }}>
+        <div className="col-span-3 border-2 border-neon-green bg-[#1a1a2e] p-6 text-center" style={{ boxShadow: 'var(--glow-green)' }}>
           <div className="mb-3 text-4xl">💤</div>
           <div className="text-sm text-[#888]">SEMANA DE DESCANSO</div>
           <div className="mt-2 text-xs text-[#666]">Nenhum torneio esta semana</div>
@@ -135,7 +135,7 @@ export function CalendarTournamentGrid({
                   >
                     {tournament.nome.toUpperCase()}
                   </div>
-                  <div className="text-[7px] text-[#00e5ff] uppercase truncate mt-0.5">
+                  <div className="text-[7px] text-neon-cyan uppercase truncate mt-0.5">
                     {tournament.local}
                   </div>
                 </div>
@@ -146,7 +146,7 @@ export function CalendarTournamentGrid({
           )
         })}
 
-      {erroInscricao && <div className="col-span-3 text-center text-xs text-[#ff0055]">{erroInscricao}</div>}
+      {erroInscricao && <div className="col-span-3 text-center text-xs text-neon-pink">{erroInscricao}</div>}
     </div>
   )
 }

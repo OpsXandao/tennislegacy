@@ -27,17 +27,17 @@ export function StatComparison({ player1Stats, player2Stats }: StatComparisonPro
   ];
 
   return (
-    <div className="bg-[#1a1a2e] border-2 border-[#00e5ff] p-4">
-      <div className="arcade-font text-xs text-center text-[#00e5ff] mb-4">
+    <div className="bg-[#1a1a2e] border-2 border-neon-cyan p-4">
+      <div className="arcade-font text-xs text-center text-neon-cyan mb-4">
         STAT COMPARISON
       </div>
 
       {/* Player Names */}
       <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="text-center arcade-font text-sm text-[#ff0055]">
+        <div className="text-center arcade-font text-sm text-neon-pink">
           {player1Stats.name}
         </div>
-        <div className="text-center arcade-font text-sm text-[#00ff88]">
+        <div className="text-center arcade-font text-sm text-neon-green">
           {player2Stats.name}
         </div>
       </div>

@@ -102,7 +102,7 @@ export function HubRadioCard({
           step={1}
           value={volume}
           onChange={(event) => setVolume(Number(event.target.value))}
-          className="w-full accent-[#00ff88]"
+          className="w-full accent-neon-green"
         />
         <span className="w-10 text-right text-[9px] text-white/65" style={{ fontFamily: 'var(--font-pixel)' }}>
           {volume}%

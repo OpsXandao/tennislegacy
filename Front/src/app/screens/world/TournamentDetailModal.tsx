@@ -26,7 +26,7 @@ export function TournamentDetailModal({
   if (loading) {
     return (
       <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-6">
-        <div className="pixel-font text-[#00ff88] text-xs animate-pulse">CARREGANDO...</div>
+        <div className="pixel-font text-neon-green text-xs animate-pulse">CARREGANDO...</div>
       </div>
     )
   }
@@ -40,7 +40,7 @@ export function TournamentDetailModal({
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center gap-3">
           {data.codigo_pais && <PixelFlag countryCode={data.codigo_pais} size="md" />}
-          <div className="arcade-font text-xs text-[#ffe600]">{nome.toUpperCase()}</div>
+          <div className="arcade-font text-xs text-neon-yellow">{nome.toUpperCase()}</div>
         </div>
         <button
           onClick={onClose}
@@ -54,8 +54,8 @@ export function TournamentDetailModal({
         {[
           { label: 'LOCAL', value: `${data.local || '-'}, ${data.pais_sede || '-'}` },
           { label: 'CATEGORIA', value: data.tipo || '-' },
-          { label: 'SUPERFÍCIE', value: data.quadra || '-', color: '#00ff88' },
-          { label: 'PRÊMIO', value: data.premiacao ? `$${Number(data.premiacao).toLocaleString()}` : '-', color: '#ffe600' },
+          { label: 'SUPERFÍCIE', value: data.quadra || '-', color: 'var(--neon-green)' },
+          { label: 'PRÊMIO', value: data.premiacao ? `$${Number(data.premiacao).toLocaleString()}` : '-', color: 'var(--neon-yellow)' },
         ].map(({ label, value, color }) => (
           <div key={label} className="border border-white/10 bg-black/40 p-3">
             <div className="pixel-font text-[7px] text-[#888]">{label}</div>
@@ -68,8 +68,8 @@ export function TournamentDetailModal({
 
       <div className="space-y-2">
         {[
-          { icon: Trophy, label: 'CAMPEÃO SIMPLES', value: estado.campeao_simples || data.ultimo_campeao || '---', color: '#ffe600' },
-          { icon: Users, label: 'CAMPEÃO DUPLAS', value: estado.campeao_duplas || data.ultimo_campeao_duplas || '---', color: '#00e5ff' },
+          { icon: Trophy, label: 'CAMPEÃO SIMPLES', value: estado.campeao_simples || data.ultimo_campeao || '---', color: 'var(--neon-yellow)' },
+          { icon: Users, label: 'CAMPEÃO DUPLAS', value: estado.campeao_duplas || data.ultimo_campeao_duplas || '---', color: 'var(--neon-cyan)' },
         ].map(({ icon: Icon, label, value, color }) => (
           <div key={label} className="flex items-center justify-between border border-white/10 bg-black/40 p-3">
             <div className="flex items-center gap-2">

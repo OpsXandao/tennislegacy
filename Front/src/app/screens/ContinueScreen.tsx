@@ -115,7 +115,7 @@ export function ContinueScreen() {
           <NeonCard variant="pink" hover={false}>
             <div className="flex items-center justify-between gap-3">
               <div>
-                <div className="pixel-font text-sm text-[#ff0055]">MODO APAGAR</div>
+                <div className="pixel-font text-sm text-neon-pink">MODO APAGAR</div>
                 <div className="arcade-font text-xs text-[#888]">
                   Clique nos saves para selecionar e apagar sem carregar
                 </div>
@@ -137,7 +137,7 @@ export function ContinueScreen() {
             <motion.div
               animate={{ opacity: [1, 0.3, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
-              className="pixel-font text-sm text-[#00ff88]"
+              className="pixel-font text-sm text-neon-green"
             >
               CARREGANDO...
             </motion.div>
@@ -175,14 +175,14 @@ export function ContinueScreen() {
                   SLOT {index + 1}
                 </div>
                 {deleteMode ? (
-                  <div className="absolute right-2 top-2 text-[#ff0055]">
+                  <div className="absolute right-2 top-2 text-neon-pink">
                     {selecionados.includes(nome) ? <CheckSquare size={14} /> : <Square size={14} />}
                   </div>
                 ) : (
                   <button
                     type="button"
                     aria-label={`Apagar save ${nome}`}
-                    className="absolute right-2 top-2 border border-[#ff0055] p-1 text-[#ff0055] transition-colors hover:bg-[#ff0055]/10 disabled:opacity-50"
+                    className="absolute right-2 top-2 border border-neon-pink p-1 text-neon-pink transition-colors hover:bg-neon-pink/10 disabled:opacity-50"
                     onClick={(e) => {
                       e.stopPropagation()
                       handleApagar(nome)
@@ -194,7 +194,7 @@ export function ContinueScreen() {
                 )}
 
                 <div className="mb-2">
-                  <div className="pixel-font text-xl text-[#00ff88]">{nome}</div>
+                  <div className="pixel-font text-xl text-neon-green">{nome}</div>
                 </div>
 
                 {previews[nome] ? (
@@ -207,13 +207,13 @@ export function ContinueScreen() {
                     </div>
                     <div>
                       <div className="arcade-font text-xs text-[#888]">TOUR</div>
-                      <div className="arcade-font text-xs text-[#00e5ff] uppercase">
+                      <div className="arcade-font text-xs text-neon-cyan uppercase">
                         {previews[nome].tour}
                       </div>
                     </div>
                     <div>
                       <div className="arcade-font text-xs text-[#888]">SEMANA</div>
-                      <div className="arcade-font text-xs text-[#ffe600]">
+                      <div className="arcade-font text-xs text-neon-yellow">
                         {previews[nome].semana}/52
                       </div>
                     </div>
@@ -224,7 +224,7 @@ export function ContinueScreen() {
                   <motion.div
                     animate={{ opacity: [0.5, 1, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="arcade-font text-xs text-[#00ff88]"
+                    className="arcade-font text-xs text-neon-green"
                   >
                     {apagando === nome
                       ? '✖ APAGANDO...'
@@ -242,7 +242,7 @@ export function ContinueScreen() {
           ))}
 
         {erro && (
-          <div className="text-center arcade-font text-xs text-[#ff0055] py-4">
+          <div className="text-center arcade-font text-xs text-neon-pink py-4">
             {erro}
           </div>
         )}

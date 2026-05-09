@@ -30,11 +30,11 @@ export function CalendarWeekSelector({
               onClick={() => onSelectWeek(week)}
               className={`flex h-14 w-14 shrink-0 flex-col items-center justify-center border-2 transition-all ${
                 week === semanaSelecionada
-                  ? 'border-[#00ff88] bg-[#00ff88] text-black'
+                  ? 'border-neon-green bg-neon-green text-black'
                   : hasTournament
-                    ? 'border-[#00ff88]/50 bg-[#1a1a2e] text-[#00ff88]'
+                    ? 'border-neon-green/50 bg-[#1a1a2e] text-neon-green'
                     : 'border-[#333] bg-transparent text-[#888]'
-              } ${isAtual && week !== semanaSelecionada ? 'ring-1 ring-[#ffe600]' : ''}`}
+              } ${isAtual && week !== semanaSelecionada ? 'ring-1 ring-neon-yellow' : ''}`}
             >
               <div className="pixel-font text-[10px]">{week}</div>
               {hasTournament && <div className="mt-1 text-sm">●</div>}

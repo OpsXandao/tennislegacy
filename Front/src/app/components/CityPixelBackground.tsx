@@ -48,7 +48,7 @@ export function CityPixelBackground({ cityName }: CityPixelBackgroundProps) {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
-          className="text-[#00e5ff]"
+          className="text-neon-cyan"
         >
           {silhouette}
           {/* Adiciona uns "pixels" extras no fundo */}

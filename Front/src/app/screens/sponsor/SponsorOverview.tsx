@@ -10,7 +10,7 @@ const CARDS = [
   {
     key: 'ranking',
     label: 'RANKING',
-    color: '#ffe600',
+    color: 'var(--neon-yellow)',
     icon: Trophy,
     getValue: (contexto: PatrocinioContexto) =>
       contexto.ranking_atual > 0 ? `#${contexto.ranking_atual}` : 'N/A',
@@ -18,7 +18,7 @@ const CARDS = [
   {
     key: 'seguidores',
     label: 'SEGUIDORES',
-    color: '#00e5ff',
+    color: 'var(--neon-cyan)',
     icon: Users,
     getValue: (contexto: PatrocinioContexto) =>
       contexto.seguidores_atuais.toLocaleString('pt-BR'),
@@ -26,7 +26,7 @@ const CARDS = [
   {
     key: 'menores',
     label: 'SLOTS MENORES',
-    color: '#00ff88',
+    color: 'var(--neon-green)',
     icon: BriefcaseBusiness,
     getValue: (contexto: PatrocinioContexto) =>
       String(contexto.slots_menores_restantes),

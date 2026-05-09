@@ -21,7 +21,7 @@ export function BracketMatchCard({
 
   const isPlayer1 = matchNome(match.player1, jogadorNome)
   const isPlayer2 = matchNome(match.player2, jogadorNome)
-  const borderColor = match.isCurrentMatch ? '#ffe600' : '#8a8a8a'
+  const borderColor = match.isCurrentMatch ? 'var(--neon-yellow)' : '#8a8a8a'
   const isPlaceholder1 = cleanName(match.player1) === '---'
   const isPlaceholder2 = cleanName(match.player2) === '---'
   const label1 = showQualifierSlots && isPlaceholder1 ? 'Q' : cleanName(match.player1)

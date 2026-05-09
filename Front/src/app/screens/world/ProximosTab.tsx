@@ -25,7 +25,7 @@ export function ProximosTab() {
 
   if (loading) {
     return (
-      <div className="py-16 text-center pixel-font text-xs text-[#00ff88] animate-pulse">
+      <div className="py-16 text-center pixel-font text-xs text-neon-green animate-pulse">
         CARREGANDO...
       </div>
     )
@@ -42,7 +42,7 @@ export function ProximosTab() {
       )}
 
       <div className="space-y-5">
-        <div className="overflow-hidden border-2 border-[#00e5ff]/40 bg-[#0b1020]">
+        <div className="overflow-hidden border-2 border-neon-cyan/40 bg-[#0b1020]">
           <img
             src={worldMapPixel}
             alt="Mapa mundi"
@@ -80,7 +80,7 @@ export function ProximosTab() {
               {noticias.map((n, i) => (
                 <div
                   key={i}
-                  className="border border-[#00ff88]/20 bg-black/30 p-3 pixel-font text-[8px] text-[#ddd]"
+                  className="border border-neon-green/20 bg-black/30 p-3 pixel-font text-[8px] text-[#ddd]"
                 >
                   {n}
                 </div>

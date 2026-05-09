@@ -24,14 +24,14 @@ export function HistoryScreen() {
 
       <div className="flex-1 p-4 space-y-6 overflow-y-auto pb-24">
         {loading ? (
-          <div className="text-center py-20 pixel-font text-[#ffe600] animate-pulse text-xs">CARREGANDO ARQUIVOS HISTÓRICOS...</div>
+          <div className="text-center py-20 pixel-font text-neon-yellow animate-pulse text-xs">CARREGANDO ARQUIVOS HISTÓRICOS...</div>
         ) : (
           <>
             {/* Recordes Mundiais (GOAT) */}
             <section className="space-y-4">
               <div className="flex items-center gap-2 mb-2">
-                <Crown className="text-[#ffe600]" size={20} />
-                <h3 className="arcade-font text-xs text-[#ffe600] tracking-widest uppercase">Recordes Mundiais</h3>
+                <Crown className="text-neon-yellow" size={20} />
+                <h3 className="arcade-font text-xs text-neon-yellow tracking-widest uppercase">Recordes Mundiais</h3>
               </div>
 
               <div className="grid grid-cols-1 gap-4">
@@ -40,9 +40,9 @@ export function HistoryScreen() {
                   <div className="space-y-2">
                     {data?.recordes.mais_titulos?.length > 0 ? (
                       data.recordes.mais_titulos.map((r: any, i: number) => (
-                        <div key={i} className="flex justify-between items-center border-b border-[#ffe600]/10 pb-1">
+                        <div key={i} className="flex justify-between items-center border-b border-neon-yellow/10 pb-1">
                           <span className="arcade-font text-[10px] text-white">{i + 1}. {r.nome}</span>
-                          <span className="pixel-font text-[10px] text-[#ffe600]">{r.titulos}</span>
+                          <span className="pixel-font text-[10px] text-neon-yellow">{r.titulos}</span>
                         </div>
                       ))
                     ) : (
@@ -56,9 +56,9 @@ export function HistoryScreen() {
                   <div className="space-y-2">
                     {data?.recordes.mais_semanas_no_topo?.length > 0 ? (
                       data.recordes.mais_semanas_no_topo.map((r: any, i: number) => (
-                        <div key={i} className="flex justify-between items-center border-b border-[#ffe600]/10 pb-1">
+                        <div key={i} className="flex justify-between items-center border-b border-neon-yellow/10 pb-1">
                           <span className="arcade-font text-[10px] text-white">{i + 1}. {r.nome}</span>
-                          <span className="pixel-font text-[10px] text-[#ffe600]">{r.semanas}</span>
+                          <span className="pixel-font text-[10px] text-neon-yellow">{r.semanas}</span>
                         </div>
                       ))
                     ) : (
@@ -72,8 +72,8 @@ export function HistoryScreen() {
             {/* Galeria de Troféus do Jogador */}
             <section className="space-y-4">
               <div className="flex items-center gap-2 mb-2">
-                <Trophy className="text-[#00ff88]" size={20} />
-                <h3 className="arcade-font text-xs text-[#00ff88] tracking-widest uppercase">Minha Galeria</h3>
+                <Trophy className="text-neon-green" size={20} />
+                <h3 className="arcade-font text-xs text-neon-green tracking-widest uppercase">Minha Galeria</h3>
               </div>
 
               {data?.meus_titulos?.length === 0 ? (
@@ -99,7 +99,7 @@ export function HistoryScreen() {
                             </div>
                           </div>
                           <div className="text-right">
-                            <div className="pixel-font text-[10px] text-[#ffe600]">VENCEU</div>
+                            <div className="pixel-font text-[10px] text-neon-yellow">VENCEU</div>
                             <div className="arcade-font text-[7px] text-[#888] mt-1">{t.adversario_final}</div>
                           </div>
                         </div>
@@ -112,8 +112,8 @@ export function HistoryScreen() {
 
             <section className="space-y-4">
               <div className="flex items-center gap-2 mb-2">
-                <Calendar className="text-[#00e5ff]" size={20} />
-                <h3 className="arcade-font text-xs text-[#00e5ff] tracking-widest uppercase">Campeões por Ano</h3>
+                <Calendar className="text-neon-cyan" size={20} />
+                <h3 className="arcade-font text-xs text-neon-cyan tracking-widest uppercase">Campeões por Ano</h3>
               </div>
 
               {Object.keys(campeoes).length === 0 ? (
@@ -134,14 +134,14 @@ export function HistoryScreen() {
                       >
                         <NeonCard variant="cyan" hover={false}>
                           <div className="mb-3 flex items-center justify-between">
-                            <div className="arcade-font text-[10px] text-[#00e5ff] uppercase">{ano}</div>
+                            <div className="arcade-font text-[10px] text-neon-cyan uppercase">{ano}</div>
                             <div className="text-[8px] text-[#666]">{Object.keys(torneios as Record<string, unknown>).length} torneios</div>
                           </div>
                           <div className="space-y-2">
                             {Object.entries(torneios as Record<string, any>).slice(0, 6).map(([torneio, campeao]) => (
-                              <div key={torneio} className="flex justify-between items-center border-b border-[#00e5ff]/10 pb-1">
+                              <div key={torneio} className="flex justify-between items-center border-b border-neon-cyan/10 pb-1">
                                 <span className="arcade-font text-[10px] text-white">{torneio}</span>
-                                <span className="arcade-font text-[10px] text-[#00e5ff]">{String(campeao)}</span>
+                                <span className="arcade-font text-[10px] text-neon-cyan">{String(campeao)}</span>
                               </div>
                             ))}
                           </div>

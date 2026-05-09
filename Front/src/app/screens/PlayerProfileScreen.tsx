@@ -60,7 +60,7 @@ function resumoTitulos(trofeus: Array<Record<string, unknown>>) {
 }
 
 function cardColor(tour: string) {
-  return tour === 'wta' ? '#ff4466' : '#00e5ff'
+  return tour === 'wta' ? '#ff4466' : 'var(--neon-cyan)'
 }
 
 function InfoCard({
@@ -118,7 +118,7 @@ function HiddenStatCard({ label, value, color }: { label: string; value: number;
 }
 
 function PlaystyleBadge({ label, tier }: { label: string; tier: 'base' | 'plus' }) {
-  const color = tier === 'plus' ? '#f6c453' : '#00e5ff'
+  const color = tier === 'plus' ? '#f6c453' : 'var(--neon-cyan)'
   return (
     <div
       className="border px-2 py-1 arcade-font text-[8px]"
@@ -271,8 +271,8 @@ export function PlayerProfileScreen() {
                       color={cartaAccent}
                       boostedValue={perfil.overall_boosted && perfil.overall_boosted !== perfil.overall ? perfil.overall_boosted : undefined}
                     />
-                    <InfoCard label="PONTOS" value={fmtNumero(perfil.pontos)} color="#ffe600" />
-                    <InfoCard label="RACE" value={fmtNumero(perfil.pontos_ytd)} color="#00ff88" />
+                    <InfoCard label="PONTOS" value={fmtNumero(perfil.pontos)} color="var(--neon-yellow)" />
+                    <InfoCard label="RACE" value={fmtNumero(perfil.pontos_ytd)} color="var(--neon-green)" />
                     <InfoCard label="IDADE" value={perfil.idade || '—'} color="#ffffff" />
                     <InfoCard label="ALTURA" value={perfil.altura ? `${perfil.altura} cm` : '—'} color="#ffffff" />
                     <InfoCard label="PESO" value={perfil.peso ? `${perfil.peso} kg` : '—'} color="#ffffff" />
@@ -294,8 +294,8 @@ export function PlayerProfileScreen() {
                     <div className="arcade-font text-[8px] tracking-widest text-[#8aa0b2]">VITRINE</div>
                     <div className="mt-3 grid grid-cols-3 gap-2 text-center">
                       <InfoCard label="TÍT." value={sumario.total} color={palette.accent} />
-                      <InfoCard label="GS" value={sumario.gs} color="#ffe600" />
-                      <InfoCard label="1000" value={sumario.mil} color="#00ff88" />
+                      <InfoCard label="GS" value={sumario.gs} color="var(--neon-yellow)" />
+                      <InfoCard label="1000" value={sumario.mil} color="var(--neon-green)" />
                     </div>
                   </div>
                   <div className="col-span-2 border bg-[#0b1118] p-3" style={{ borderColor: `${palette.accent}44` }}>
@@ -358,19 +358,19 @@ export function PlayerProfileScreen() {
                     <div className="mt-3 space-y-3">
                       <div className="grid grid-cols-2 gap-2">
                         <InfoCard label="ROLE" value={identity.role.label} color={cartaAccent} />
-                        <InfoCard label="FIT" value={identity.role.fit} color="#ffe600" />
+                        <InfoCard label="FIT" value={identity.role.fit} color="var(--neon-yellow)" />
                         <InfoCard label="BODY" value={identity.body_type.label} color="#ffffff" />
-                        <InfoCard label="CHEM" value={identity.doubles_profile.rating} color={identity.doubles_profile.specialist ? '#f6c453' : '#00e5ff'} />
+                        <InfoCard label="CHEM" value={identity.doubles_profile.rating} color={identity.doubles_profile.specialist ? '#f6c453' : 'var(--neon-cyan)'} />
                       </div>
                       <div className="arcade-font text-[9px] text-[#8ea0b1]">{identity.role.description}</div>
                       <div className="flex flex-wrap gap-2">
                         <IdentityChip label="DUB ARCH" value={identity.doubles_profile.archetype} color={identity.doubles_profile.specialist ? '#f6c453' : '#8aa0b2'} />
                         <IdentityChip label="PARCERIAS" value={identity.doubles_profile.partnerships} color="#8aa0b2" />
                         {identity.doubles_profile.best_partner && (
-                          <IdentityChip label="BEST LINK" value={identity.doubles_profile.best_partner} color="#00ff88" />
+                          <IdentityChip label="BEST LINK" value={identity.doubles_profile.best_partner} color="var(--neon-green)" />
                         )}
                         {identity.doubles_profile.record && (
-                          <IdentityChip label="REC" value={identity.doubles_profile.record} color="#ffe600" />
+                          <IdentityChip label="REC" value={identity.doubles_profile.record} color="var(--neon-yellow)" />
                         )}
                       </div>
                     </div>
@@ -428,7 +428,7 @@ export function PlayerProfileScreen() {
                         key={key}
                         label={label}
                         value={perfil.atributos_psicologicos[key] ?? '—'}
-                        color="#ffe600"
+                        color="var(--neon-yellow)"
                         boostedValue={
                           atributosPsiBoosted && atributosPsiBoosted[key] !== undefined && atributosPsiBoosted[key] !== perfil.atributos_psicologicos[key]
                             ? atributosPsiBoosted[key]

@@ -18,7 +18,7 @@ export function PlayerRow({
   change
 }: PlayerRowProps) {
   const isTop10 = rank <= 10;
-  const rankColor = rank <= 3 ? '#ffe600' : isTop10 ? '#00ff88' : '#ffffff';
+  const rankColor = rank <= 3 ? 'var(--neon-yellow)' : isTop10 ? 'var(--neon-green)' : '#ffffff';
 
   return (
     <div 
@@ -28,7 +28,7 @@ export function PlayerRow({
         ${isCurrentPlayer ? 'bg-[#1a1a2e]' : 'bg-transparent'}
       `}
       style={{
-        borderColor: isCurrentPlayer ? '#00ff88' : 'transparent',
+        borderColor: isCurrentPlayer ? 'var(--neon-green)' : 'transparent',
         boxShadow: isCurrentPlayer ? '0 0 10px #00ff88' : 'none'
       }}
     >
@@ -45,7 +45,7 @@ export function PlayerRow({
           )}
         </div>
         {change !== undefined && change !== 0 && (
-          <div className={`text-xs arcade-font ${change > 0 ? 'text-[#00ff88]' : 'text-[#ff0055]'}`}>
+          <div className={`text-xs arcade-font ${change > 0 ? 'text-neon-green' : 'text-neon-pink'}`}>
             {change > 0 ? '▲' : '▼'}{Math.abs(change)}
           </div>
         )}
@@ -65,7 +65,7 @@ export function PlayerRow({
       <div className="text-right shrink-0">
         <div 
           className="arcade-font text-lg leading-none"
-          style={{ color: '#00e5ff' }}
+          style={{ color: 'var(--neon-cyan)' }}
         >
           {points.toLocaleString('pt-BR')}
         </div>

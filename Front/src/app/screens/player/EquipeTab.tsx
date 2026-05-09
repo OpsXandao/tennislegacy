@@ -44,12 +44,12 @@ export function EquipeTab({ equipe }: Props) {
               <div className="flex items-start gap-3 flex-1">
                 <span className="text-xl mt-0.5">{icon}</span>
                 <div className="flex-1">
-                  <div className="arcade-font text-[10px] text-[#00ff88]">{cargo}</div>
+                  <div className="arcade-font text-[10px] text-neon-green">{cargo}</div>
                   <div className="arcade-font text-[9px] text-[#888] mt-1">{m ? m.nome : 'VAGO'}</div>
                   {m && lines.length > 0 && (
                     <div className="mt-2 space-y-1">
                       {lines.map((line, i) => (
-                        <div key={i} className="arcade-font text-[8px] text-[#ffe600] flex items-center gap-1">
+                        <div key={i} className="arcade-font text-[8px] text-neon-yellow flex items-center gap-1">
                           <span>▸</span> {line}
                         </div>
                       ))}
@@ -63,7 +63,7 @@ export function EquipeTab({ equipe }: Props) {
               {m && (
                 <div className="flex gap-1 ml-2 mt-1">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <div key={i} className={`w-2 h-2 border ${i < m.nivel ? 'bg-[#ffe600] border-[#ffe600]' : 'border-[#333]'}`} />
+                    <div key={i} className={`w-2 h-2 border ${i < m.nivel ? 'bg-neon-yellow border-neon-yellow' : 'border-[#333]'}`} />
                   ))}
                 </div>
               )}

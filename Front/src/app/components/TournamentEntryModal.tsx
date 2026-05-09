@@ -109,9 +109,9 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
       <motion.div 
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="app-panel relative w-full max-w-md border-2 border-[#00ff88] p-6 shadow-[0_0_30px_rgba(0,255,136,0.3)]"
+        className="app-panel relative w-full max-w-md border-2 border-neon-green p-6 shadow-[0_0_30px_rgba(0,255,136,0.3)]"
       >
-        <button onClick={onClose} className="absolute right-4 top-4 text-[#00ff88] hover:scale-110 transition-transform">
+        <button onClick={onClose} className="absolute right-4 top-4 text-neon-green hover:scale-110 transition-transform">
           <X size={24} />
         </button>
 
@@ -123,7 +123,7 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
             >
-              <div className="mb-2 text-[#00ff88] arcade-font text-[10px] tracking-widest">{torneio.tipo.toUpperCase()}</div>
+              <div className="mb-2 text-neon-green arcade-font text-[10px] tracking-widest">{torneio.tipo.toUpperCase()}</div>
               <h2 className="mb-4 pixel-font text-xl uppercase tracking-tighter leading-tight" style={{ color: 'var(--foreground)' }}>{torneio.nome}</h2>
 
               <div className="grid grid-cols-2 gap-3 mb-4">
@@ -133,15 +133,15 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
                 </div>
                 <div className="app-panel-elevated border-2 border-[#333] p-3">
                   <div className="text-[8px] app-muted arcade-font mb-1">QUADRA</div>
-                  <div className="text-[10px] text-[#ffe600] arcade-font">{torneio.superficie.toUpperCase()}</div>
+                  <div className="text-[10px] text-neon-yellow arcade-font">{torneio.superficie.toUpperCase()}</div>
                 </div>
                 <div className="app-panel-elevated border-2 border-[#333] p-3">
                   <div className="text-[8px] app-muted arcade-font mb-1">PREMIAÇÃO</div>
-                  <div className="text-[10px] text-[#00ff88] arcade-font">{torneio.premiacao || '$ 0'}</div>
+                  <div className="text-[10px] text-neon-green arcade-font">{torneio.premiacao || '$ 0'}</div>
                 </div>
                 <div className="app-panel-elevated border-2 border-[#333] p-3">
                   <div className="text-[8px] app-muted arcade-font mb-1">DEF. CAMPEÃO</div>
-                  <div className="text-[10px] text-[#00e5ff] arcade-font truncate">{defendingChampion.toUpperCase()}</div>
+                  <div className="text-[10px] text-neon-cyan arcade-font truncate">{defendingChampion.toUpperCase()}</div>
                 </div>
                 <div className="app-panel-elevated border-2 border-[#333] p-3">
                   <div className="text-[8px] app-muted arcade-font mb-1">HORÁRIO</div>
@@ -159,10 +159,10 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
 
               {/* Histórico do jogador neste torneio */}
               {historico && (historico.pontos_a_defender > 0 || historico.ultima_colocacao) && (
-                <div className="mb-4 border-2 border-[#ffe600]/40 bg-[#ffe600]/5 p-3 grid grid-cols-2 gap-3">
+                <div className="mb-4 border-2 border-neon-yellow/40 bg-neon-yellow/5 p-3 grid grid-cols-2 gap-3">
                   <div>
                     <div className="text-[8px] app-muted arcade-font mb-1">PONTOS A DEFENDER</div>
-                    <div className="text-[12px] text-[#ffe600] pixel-font font-bold">
+                    <div className="text-[12px] text-neon-yellow pixel-font font-bold">
                       {historico.pontos_a_defender > 0 ? `${historico.pontos_a_defender} PTS` : '—'}
                     </div>
                   </div>
@@ -189,40 +189,40 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
               exit={{ x: 20, opacity: 0 }}
               className="space-y-4"
             >
-              <div className="text-[10px] arcade-font text-[#00e5ff] mb-4">ESCOLHA A MODALIDADE:</div>
+              <div className="text-[10px] arcade-font text-neon-cyan mb-4">ESCOLHA A MODALIDADE:</div>
 
               <button
                 onClick={() => setModalidade('simples')}
-                className={`w-full border-2 p-4 flex items-center justify-between transition-all ${modalidade === 'simples' ? 'border-[#00ff88] bg-[#00ff88]/10' : 'border-[#333] opacity-60'}`}
+                className={`w-full border-2 p-4 flex items-center justify-between transition-all ${modalidade === 'simples' ? 'border-neon-green bg-neon-green/10' : 'border-[#333] opacity-60'}`}
               >
                 <div className="flex items-center gap-3">
-                  <User className={modalidade === 'simples' ? 'text-[#00ff88]' : 'text-[#888]'} />
+                  <User className={modalidade === 'simples' ? 'text-neon-green' : 'text-[#888]'} />
                   <span className={`arcade-font text-xs ${modalidade === 'simples' ? 'text-white' : 'text-[#888]'}`}>SIMPLES</span>
                 </div>
-                {modalidade === 'simples' && <div className="text-[#00ff88]">◀</div>}
+                {modalidade === 'simples' && <div className="text-neon-green">◀</div>}
               </button>
 
               <button
                 onClick={() => setModalidade('duplas')}
-                className={`w-full border-2 p-4 flex items-center justify-between transition-all ${modalidade === 'duplas' ? 'border-[#00ff88] bg-[#00ff88]/10' : 'border-[#333] opacity-60'}`}
+                className={`w-full border-2 p-4 flex items-center justify-between transition-all ${modalidade === 'duplas' ? 'border-neon-green bg-neon-green/10' : 'border-[#333] opacity-60'}`}
               >
                 <div className="flex items-center gap-3">
-                  <Users className={modalidade === 'duplas' ? 'text-[#00ff88]' : 'text-[#888]'} />
+                  <Users className={modalidade === 'duplas' ? 'text-neon-green' : 'text-[#888]'} />
                   <span className={`arcade-font text-xs ${modalidade === 'duplas' ? 'text-white' : 'text-[#888]'}`}>DUPLAS</span>
                 </div>
-                {modalidade === 'duplas' && <div className="text-[#00ff88]">◀</div>}
+                {modalidade === 'duplas' && <div className="text-neon-green">◀</div>}
               </button>
 
               {torneio.permite_mistas && (
                 <button
                   onClick={() => setModalidade('mistas')}
-                  className={`w-full border-2 p-4 flex items-center justify-between transition-all ${modalidade === 'mistas' ? 'border-[#ff0055] bg-[#ff0055]/10' : 'border-[#333] opacity-60'}`}
+                  className={`w-full border-2 p-4 flex items-center justify-between transition-all ${modalidade === 'mistas' ? 'border-neon-pink bg-neon-pink/10' : 'border-[#333] opacity-60'}`}
                 >
                   <div className="flex items-center gap-3">
-                    <Trophy className={modalidade === 'mistas' ? 'text-[#ff0055]' : 'text-[#888]'} />
+                    <Trophy className={modalidade === 'mistas' ? 'text-neon-pink' : 'text-[#888]'} />
                     <span className={`arcade-font text-xs ${modalidade === 'mistas' ? 'text-white' : 'text-[#888]'}`}>DUPLAS MISTAS</span>
                   </div>
-                  {modalidade === 'mistas' && <div className="text-[#ff0055]">◀</div>}
+                  {modalidade === 'mistas' && <div className="text-neon-pink">◀</div>}
                 </button>
               )}
 
@@ -240,7 +240,7 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
               exit={{ x: -20, opacity: 0 }}
               className="flex flex-col h-[400px]"
             >
-              <div className="text-[10px] arcade-font text-[#ffe600] mb-4">ENCONTRAR PARCEIRO DE DUPLAS:</div>
+              <div className="text-[10px] arcade-font text-neon-yellow mb-4">ENCONTRAR PARCEIRO DE DUPLAS:</div>
               
               <div className="flex gap-2 mb-4">
                 <div className="relative flex-1">
@@ -250,37 +250,37 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
                     value={busca}
                     onChange={e => setBusca(e.target.value)}
                     placeholder="BUSCAR JOGADOR..."
-                    className="w-full bg-black border-2 border-[#333] p-2 pl-8 arcade-font text-[10px] text-white focus:border-[#00e5ff] outline-none"
+                    className="w-full bg-black border-2 border-[#333] p-2 pl-8 arcade-font text-[10px] text-white focus:border-neon-cyan outline-none"
                     onKeyDown={e => e.key === 'Enter' && handleBuscar()}
                   />
                 </div>
-                <button onClick={handleBuscar} className="bg-[#00e5ff] text-black px-4 py-1 arcade-font text-[9px]">GO</button>
+                <button onClick={handleBuscar} className="bg-neon-cyan text-black px-4 py-1 arcade-font text-[9px]">GO</button>
               </div>
 
               {feedback && (
-                <div className={`mb-4 p-2 text-center arcade-font text-[9px] border-2 ${feedback.startsWith('✅') ? 'border-[#00ff88] text-[#00ff88]' : 'border-[#ff0055] text-[#ff0055]'}`}>
+                <div className={`mb-4 p-2 text-center arcade-font text-[9px] border-2 ${feedback.startsWith('✅') ? 'border-neon-green text-neon-green' : 'border-neon-pink text-neon-pink'}`}>
                   {feedback.toUpperCase()}
                 </div>
               )}
 
               <div className="flex-1 overflow-y-auto space-y-3 pr-1 [scrollbar-width:thin]">
                 {loading ? (
-                  <div className="py-12 text-center arcade-font text-[9px] text-[#00ff88] animate-pulse">BUSCANDO...</div>
+                  <div className="py-12 text-center arcade-font text-[9px] text-neon-green animate-pulse">BUSCANDO...</div>
                 ) : (
                   (resultadosBusca.length > 0 ? resultadosBusca : sugestoes).map((p, i) => (
-                    <div key={p.nome} className="border-2 border-[#333] bg-[#111] p-3 hover:border-[#00ff88] transition-colors group">
+                    <div key={p.nome} className="border-2 border-[#333] bg-[#111] p-3 hover:border-neon-green transition-colors group">
                       <div className="flex justify-between items-start mb-2">
                         <div className="flex items-center gap-2">
                           <PixelFlag countryCode={p.nacionalidade} size="sm" />
                           <div className="arcade-font text-[10px] truncate max-w-[140px]" style={{ color: 'var(--foreground)' }}>{p.nome.toUpperCase()}</div>
                         </div>
-                        <div className="text-[#ffe600] pixel-font text-sm">{p.overall}</div>
+                        <div className="text-neon-yellow pixel-font text-sm">{p.overall}</div>
                       </div>
                       
                       <div className="flex justify-between items-end">
                         <div className="text-[8px] app-muted arcade-font">
                           {p.vinculo ? (
-                            <span className="text-[#00ff88]">{p.vinculo.partidas} JOGOS • {Math.round((p.vinculo.vitorias/p.vinculo.partidas)*100)}% VITÓRIAS</span>
+                            <span className="text-neon-green">{p.vinculo.partidas} JOGOS • {Math.round((p.vinculo.vitorias/p.vinculo.partidas)*100)}% VITÓRIAS</span>
                           ) : (
                             `RANK #${p.posicao || '?'}`
                           )}
@@ -288,7 +288,7 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
                         <button 
                           onClick={() => handleConvidar(p)}
                           disabled={!!convidando}
-                          className="bg-[#00ff88] text-black px-3 py-1 arcade-font text-[8px] font-bold group-hover:animate-pulse disabled:opacity-50"
+                          className="bg-neon-green text-black px-3 py-1 arcade-font text-[8px] font-bold group-hover:animate-pulse disabled:opacity-50"
                         >
                           {convidando === p.nome ? '...' : 'CONVIDAR'}
                         </button>

@@ -24,7 +24,7 @@ export function EmailTab({ emails, processandoId, onAcao }: Props) {
           className={processandoId === email.id ? 'opacity-50' : ''}
         >
           <div className="flex items-start gap-3">
-            <Mail className="text-[#ff0055] shrink-0 mt-0.5" size={16} />
+            <Mail className="text-neon-pink shrink-0 mt-0.5" size={16} />
             <div className="flex-1 min-w-0">
               <div className="arcade-font text-[10px] text-white font-bold mb-1 uppercase">
                 {email.assunto || 'PROPOSTA DE CARREIRA'}
@@ -35,13 +35,13 @@ export function EmailTab({ emails, processandoId, onAcao }: Props) {
                   <>
                     <button
                       onClick={() => onAcao(email.id, 'aceitar')}
-                      className="bg-[#00ff88]/20 border border-[#00ff88] text-[#00ff88] px-3 py-1 arcade-font text-[8px] flex items-center gap-1"
+                      className="bg-neon-green/20 border border-neon-green text-neon-green px-3 py-1 arcade-font text-[8px] flex items-center gap-1"
                     >
                       <Check size={10} /> ACEITAR
                     </button>
                     <button
                       onClick={() => onAcao(email.id, 'recusar')}
-                      className="bg-[#ff0055]/20 border border-[#ff0055] text-[#ff0055] px-3 py-1 arcade-font text-[8px] flex items-center gap-1"
+                      className="bg-neon-pink/20 border border-neon-pink text-neon-pink px-3 py-1 arcade-font text-[8px] flex items-center gap-1"
                     >
                       <X size={10} /> RECUSAR
                     </button>

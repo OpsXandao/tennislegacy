@@ -15,7 +15,7 @@ export function SponsorScreen() {
   return (
     <div className="app-shell min-h-screen font-mono pb-24">
       <PageHeader title="PATROCÍNIOS" color="gold" backTo="/player">
-        <p className="text-[9px] text-[#ffe600]/60 mt-1" style={{ fontFamily: 'var(--font-mono)' }}>
+        <p className="text-[9px] text-neon-yellow/60 mt-1" style={{ fontFamily: 'var(--font-mono)' }}>
           GERENCIE CONTRATOS E ASSINE NOVOS PATROCINADORES
         </p>
       </PageHeader>
@@ -27,7 +27,7 @@ export function SponsorScreen() {
 
         {loading ? (
           <div
-            className="text-[10px] text-[#ffe600]/60 text-center py-8"
+            className="text-[10px] text-neon-yellow/60 text-center py-8"
             style={{ fontFamily: 'var(--font-arcade)' }}
           >
             CARREGANDO...
@@ -36,7 +36,7 @@ export function SponsorScreen() {
           <>
             <SponsorSection
               titulo="DISPONÍVEIS"
-              colorClass="text-[#00ff88]"
+              colorClass="text-neon-green"
               icon="money"
               itens={elegiveis}
               assinando={assinando}

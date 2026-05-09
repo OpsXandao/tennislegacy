@@ -139,15 +139,15 @@ export function InGameView({
 }: InGameViewProps) {
   return (
     <div className="app-shell min-h-screen flex flex-col bg-[#050505]">
-      <div className="app-panel sticky top-0 z-20 p-3 border-b-2 border-[#00ff88] flex items-center gap-3 shrink-0 bg-black/80 backdrop-blur-md">
-        <button onClick={onBack} className="text-[#00ff88] hover:scale-110 transition-transform">
+      <div className="app-panel sticky top-0 z-20 p-3 border-b-2 border-neon-green flex items-center gap-3 shrink-0 bg-black/80 backdrop-blur-md">
+        <button onClick={onBack} className="text-neon-green hover:scale-110 transition-transform">
           <ArrowLeft size={18} />
         </button>
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between">
             <span className="arcade-font text-[9px] text-white truncate max-w-[100px]">{nomeJogador}</span>
             <div className="flex gap-2 arcade-font text-[10px]">
-              <span className={placar.sets[0] > placar.sets[1] ? 'text-[#00ff88]' : 'text-[#444]'}>{placar.sets[0]}</span>
+              <span className={placar.sets[0] > placar.sets[1] ? 'text-neon-green' : 'text-[#444]'}>{placar.sets[0]}</span>
               <span className="text-[#222]">|</span>
               <span className={placar.sets[1] > placar.sets[0] ? 'text-[#ff4466]' : 'text-[#444]'}>{placar.sets[1]}</span>
             </div>
@@ -157,7 +157,7 @@ export function InGameView({
       </div>
 
       <div className="flex-1 overflow-y-auto p-3 space-y-3 pb-4">
-        <div className="border border-[#00ff88]/30 bg-[#08110b] p-3">
+        <div className="border border-neon-green/30 bg-[#08110b] p-3">
           <div className="mb-2 flex items-center justify-between arcade-font text-[8px] tracking-widest text-[#6f8b77]">
             <span>PLACAR AO VIVO</span>
             <span>{superficie ? superficie.toUpperCase() : 'PARTIDA'}</span>
@@ -169,10 +169,10 @@ export function InGameView({
             <span>PTS</span>
           </div>
           <div className="grid grid-cols-[1fr_auto_auto_auto] items-center gap-2 arcade-font text-[12px]">
-            <span className="truncate text-[#00ff88]">{nomeJogador}</span>
-            <span className="text-[#00ff88]">{placar.sets[0]}</span>
-            <span className="text-[#00ff88]">{placar.games[0]}</span>
-            <span className="text-[#00ff88]">{placar.pontos[0]}</span>
+            <span className="truncate text-neon-green">{nomeJogador}</span>
+            <span className="text-neon-green">{placar.sets[0]}</span>
+            <span className="text-neon-green">{placar.games[0]}</span>
+            <span className="text-neon-green">{placar.pontos[0]}</span>
             <span className="truncate text-[#ff8d6d]">{adversario.nome}</span>
             <span className="text-[#ff8d6d]">{placar.sets[1]}</span>
             <span className="text-[#ff8d6d]">{placar.games[1]}</span>
@@ -193,7 +193,7 @@ export function InGameView({
               {pointInsights.map((insight, idx) => (
                 <div 
                   key={idx} 
-                  className="px-1.5 py-0.5 border border-[#00e5ff]/40 bg-[#00e5ff]/5 arcade-font text-[6px] text-[#00e5ff] tracking-tight animate-in fade-in zoom-in duration-300"
+                  className="px-1.5 py-0.5 border border-neon-cyan/40 bg-neon-cyan/5 arcade-font text-[6px] text-neon-cyan tracking-tight animate-in fade-in zoom-in duration-300"
                 >
                   ⚡ {insight.toUpperCase()}
                 </div>
@@ -208,7 +208,7 @@ export function InGameView({
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <div className="border border-[#00ff88]/20 bg-[#07110a] p-3">
+          <div className="border border-neon-green/20 bg-[#07110a] p-3">
             <div className="arcade-font text-[8px] tracking-widest text-[#77d39e] mb-2">VOCÊ</div>
             <div className="space-y-2 arcade-font text-[10px] text-white">
               <div>
@@ -216,14 +216,14 @@ export function InGameView({
                   <span>Energia</span>
                   <span>{Math.round(energiaJogadorAoVivo)}%</span>
                 </div>
-                <InlineMeter value={Math.round(energiaJogadorAoVivo)} color="#00ff88" />
+                <InlineMeter value={Math.round(energiaJogadorAoVivo)} color="var(--neon-green)" />
               </div>
               <div>
                 <div className="mb-1 flex items-center justify-between text-[#ffe07a]">
                   <span>Fadiga</span>
                   <span>{Math.round(fadigaJogadorAoVivo)}%</span>
                 </div>
-                <InlineMeter value={Math.round(fadigaJogadorAoVivo)} color="#ffe600" />
+                <InlineMeter value={Math.round(fadigaJogadorAoVivo)} color="var(--neon-yellow)" />
               </div>
               <div className="text-[#8fbea1] leading-relaxed">{leituraJogador}</div>
               <div className="border-t border-[#1d3525] pt-2 space-y-1">
@@ -249,7 +249,7 @@ export function InGameView({
                   <span>Fadiga</span>
                   <span>{Math.round(fadigaAdversarioAoVivo)}%</span>
                 </div>
-                <InlineMeter value={Math.round(fadigaAdversarioAoVivo)} color="#ffe600" />
+                <InlineMeter value={Math.round(fadigaAdversarioAoVivo)} color="var(--neon-yellow)" />
               </div>
               <div className="text-[#d7a7b2] leading-relaxed">{leituraRival}</div>
               <div className="border-t border-[#35202a] pt-2 space-y-1">
@@ -365,7 +365,7 @@ export function InGameView({
         ) : (
           <button
             onClick={onSurrender}
-            className="w-full py-2 border border-[#3a1020] text-[8px] arcade-font text-[#3a1020] hover:text-[#ff0055] hover:border-[#ff0055] transition-colors"
+            className="w-full py-2 border border-[#3a1020] text-[8px] arcade-font text-[#3a1020] hover:text-neon-pink hover:border-neon-pink transition-colors"
           >
             DESISTIR DA PARTIDA (W.O.)
           </button>

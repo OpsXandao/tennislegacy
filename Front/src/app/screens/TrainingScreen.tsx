@@ -109,9 +109,9 @@ export function TrainingScreen() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="bg-[#00ff88]/20 border-2 border-[#00ff88] p-3 text-center"
+              className="bg-neon-green/20 border-2 border-neon-green p-3 text-center"
             >
-              <div className="arcade-font text-[10px] text-[#00ff88] mb-2 uppercase font-bold">
+              <div className="arcade-font text-[10px] text-neon-green mb-2 uppercase font-bold">
                 EVOLUÇÃO CONCLUÍDA!
               </div>
               <div className="flex flex-wrap justify-center gap-2">
@@ -133,12 +133,12 @@ export function TrainingScreen() {
             </motion.div>
           )}
           {erro && (
-            <motion.div className="arcade-font text-[10px] text-[#ff0055] text-center border border-[#ff0055] p-2">
+            <motion.div className="arcade-font text-[10px] text-neon-pink text-center border border-neon-pink p-2">
               {erro}
             </motion.div>
           )}
           {aviso && (
-            <motion.div className="arcade-font text-[10px] text-[#00ff88] text-center border border-[#00ff88] p-2">
+            <motion.div className="arcade-font text-[10px] text-neon-green text-center border border-neon-green p-2">
               {aviso}
             </motion.div>
           )}
@@ -154,12 +154,12 @@ export function TrainingScreen() {
             >
               <div className="flex justify-between items-start mb-2">
                 <div className="flex items-center gap-2">
-                  {opcao.id === 'tecnico' && <Target className="text-[#00ff88]" size={20} />}
-                  {opcao.id === 'fisico' && <Dumbbell className="text-[#00e5ff]" size={20} />}
-                  {opcao.id === 'psicologico' && <Brain className="text-[#ffe600]" size={20} />}
+                  {opcao.id === 'tecnico' && <Target className="text-neon-green" size={20} />}
+                  {opcao.id === 'fisico' && <Dumbbell className="text-neon-cyan" size={20} />}
+                  {opcao.id === 'psicologico' && <Brain className="text-neon-yellow" size={20} />}
                   <span className="pixel-font text-sm text-white">{opcao.nome.toUpperCase()}</span>
                 </div>
-                <div className="flex items-center gap-1 text-[#ff0055]">
+                <div className="flex items-center gap-1 text-neon-pink">
                   <Zap size={12} fill="currentColor" />
                   <span className="arcade-font text-[10px]">-{opcao.custo_energia}</span>
                 </div>
@@ -180,7 +180,7 @@ export function TrainingScreen() {
         </div>
 
         <NeonCard variant="pink" hover={false}>
-          <div className="mb-3 arcade-font text-[10px] text-[#ff0055] uppercase">Recuperação</div>
+          <div className="mb-3 arcade-font text-[10px] text-neon-pink uppercase">Recuperação</div>
           <p className="mb-4 arcade-font text-[9px] text-[#888] leading-tight">
             Pule a semana para recuperar energia e reduzir fadiga.
           </p>
@@ -200,14 +200,14 @@ export function TrainingScreen() {
             className="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center"
           >
             <div className="relative">
-              <Dumbbell className="text-[#00ff88] w-24 h-24 animate-bounce" />
+              <Dumbbell className="text-neon-green w-24 h-24 animate-bounce" />
               <motion.div 
                 animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 1, repeat: Infinity }}
-                className="absolute inset-0 bg-[#00ff88]/20 blur-3xl rounded-full"
+                className="absolute inset-0 bg-neon-green/20 blur-3xl rounded-full"
               />
             </div>
-            <div className="pixel-font text-[#00ff88] mt-8 text-xl tracking-widest animate-pulse">
+            <div className="pixel-font text-neon-green mt-8 text-xl tracking-widest animate-pulse">
               {treinando ? 'TREINANDO...' : 'RECUPERANDO...'}
             </div>
           </motion.div>

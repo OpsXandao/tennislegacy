@@ -31,13 +31,13 @@ function subtitleFromReason(reason?: WeekAdvanceLocationState['motivo']) {
 }
 
 function badgeColor(tour: string) {
-  return tour.toLowerCase().includes('wta') ? '#ff5f8f' : '#00ff88'
+  return tour.toLowerCase().includes('wta') ? '#ff5f8f' : 'var(--neon-green)'
 }
 
 function toneColor(tom: WeekAdvanceStep['tom']) {
-  if (tom === 'positive') return '#00ff88'
-  if (tom === 'warning') return '#ffe600'
-  if (tom === 'info') return '#00e5ff'
+  if (tom === 'positive') return 'var(--neon-green)'
+  if (tom === 'warning') return 'var(--neon-yellow)'
+  if (tom === 'info') return 'var(--neon-cyan)'
   return '#c7d4d0'
 }
 
@@ -136,7 +136,7 @@ export function WeekAdvanceScreen() {
         <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} className="text-center">
           <div
             className="mb-2 text-[11px]"
-            style={{ fontFamily: 'var(--font-pixel)', color: '#00ff88', textShadow: '0 0 10px rgba(0,255,136,0.55)' }}
+            style={{ fontFamily: 'var(--font-pixel)', color: 'var(--neon-green)', textShadow: '0 0 10px rgba(0,255,136,0.55)' }}
           >
             {titleFromReason(state.motivo)}
           </div>
@@ -148,9 +148,9 @@ export function WeekAdvanceScreen() {
         <div className="grid gap-5 xl:grid-cols-[1.1fr_1fr]">
           <NeonCard variant="green" hover={false} className="overflow-hidden">
             <div className="mb-4 flex items-center gap-3">
-              <CalendarDays size={18} className="text-[#00ff88]" />
+              <CalendarDays size={18} className="text-neon-green" />
               <div>
-                <div className="pixel-font text-sm text-[#00ff88]">PROGRESSÃO DA SEMANA</div>
+                <div className="pixel-font text-sm text-neon-green">PROGRESSÃO DA SEMANA</div>
                 <div className="arcade-font text-xs text-[#9ae6c3]">Processamento visível do calendário</div>
               </div>
             </div>
@@ -162,14 +162,14 @@ export function WeekAdvanceScreen() {
                 className="text-center"
               >
                 <div className="pixel-font text-[10px] text-[#88bca3]">SEMANA</div>
-                <div className="pixel-font text-3xl text-[#ffe600]">{state.fromSemana}</div>
+                <div className="pixel-font text-3xl text-neon-yellow">{state.fromSemana}</div>
                 <div className="arcade-font text-xs text-[#789186]">{state.fromAno}</div>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0.2, x: -8 }}
                 animate={showIncrement ? { opacity: 1, x: 0 } : { opacity: 0.2, x: -8 }}
-                className="text-[#00e5ff]"
+                className="text-neon-cyan"
               >
                 <ChevronRight size={34} />
               </motion.div>
@@ -179,7 +179,7 @@ export function WeekAdvanceScreen() {
                 <div
                   className="pixel-font text-3xl"
                   style={{
-                    color: showIncrement ? '#00ff88' : '#34544c',
+                    color: showIncrement ? 'var(--neon-green)' : '#34544c',
                     textShadow: showIncrement ? '0 0 12px rgba(0,255,136,0.45)' : 'none',
                   }}
                 >
@@ -231,9 +231,9 @@ export function WeekAdvanceScreen() {
           <div className="space-y-5">
             <NeonCard variant="yellow" hover={false}>
               <div className="mb-4 flex items-center gap-3">
-                <Clock3 size={18} className="text-[#ffe600]" />
+                <Clock3 size={18} className="text-neon-yellow" />
                 <div>
-                  <div className="pixel-font text-sm text-[#ffe600]">AGENDA DA NOVA SEMANA</div>
+                  <div className="pixel-font text-sm text-neon-yellow">AGENDA DA NOVA SEMANA</div>
                   <div className="arcade-font text-xs text-[#f8eb9a]">Horários e quadras do circuito</div>
                 </div>
               </div>
@@ -257,13 +257,13 @@ export function WeekAdvanceScreen() {
                       </div>
                       <div className="grid gap-2 sm:grid-cols-2">
                         <div className="border border-[#1f3d49] bg-black/20 px-2 py-2">
-                          <div className="pixel-font text-[8px] text-[#00e5ff]">HORÁRIO LOCAL</div>
+                          <div className="pixel-font text-[8px] text-neon-cyan">HORÁRIO LOCAL</div>
                           <div className="arcade-font text-[10px] text-white mt-1">
                             {torneio.horario_local ?? '13:00'} • {torneio.sessao_label ?? 'Sessão principal'}
                           </div>
                         </div>
                         <div className="border border-[#3f3520] bg-black/20 px-2 py-2">
-                          <div className="pixel-font text-[8px] text-[#ffe600]">QUADRA PRINCIPAL</div>
+                          <div className="pixel-font text-[8px] text-neon-yellow">QUADRA PRINCIPAL</div>
                           <div className="arcade-font text-[10px] text-white mt-1">
                             {torneio.quadra_nome ?? 'Quadra Central'}
                           </div>
@@ -285,9 +285,9 @@ export function WeekAdvanceScreen() {
 
             <NeonCard variant="yellow" hover={false}>
               <div className="mb-4 flex items-center gap-3">
-                <Trophy size={18} className="text-[#ffe600]" />
+                <Trophy size={18} className="text-neon-yellow" />
                 <div>
-                  <div className="pixel-font text-sm text-[#ffe600]">CAMPEÕES</div>
+                  <div className="pixel-font text-sm text-neon-yellow">CAMPEÕES</div>
                   <div className="arcade-font text-xs text-[#f8eb9a]">Quem venceu no circuito</div>
                 </div>
               </div>

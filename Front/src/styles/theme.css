@@ -44,6 +44,13 @@ body.light-mode {
   --neon-cyan:   #005f9e;  /* quadra dura / info / dados */
   --neon-purple: #7c3aed;  /* imprensa / especial */
 
+  /* Canais RGB correspondentes para rgba() em light mode */
+  --neon-green-rgb:  26,122,50;
+  --neon-pink-rgb:   192,0,48;
+  --neon-yellow-rgb: 138,96,0;
+  --neon-cyan-rgb:   0,95,158;
+  --neon-purple-rgb: 124,58,237;
+
   /* Superfícies de quadra (idênticas ao dark — são cores reais) */
   --court-clay:   #c84b17;
   --court-grass:  #2d7a1f;

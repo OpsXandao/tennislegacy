@@ -66,10 +66,10 @@ export function PlayerScreen() {
       <div className="p-4 space-y-4 pb-24 overflow-y-auto">
         <NeonCard variant="green" hover={false}>
           <div className="flex flex-col items-center gap-3">
-            <div className="w-20 h-20 bg-black border-4 border-[#00ff88] flex items-center justify-center relative">
+            <div className="w-20 h-20 bg-black border-4 border-neon-green flex items-center justify-center relative">
               <div className="text-4xl">🎾</div>
               {emailsPendentes > 0 && (
-                <div className="absolute -top-2 -right-2 bg-[#ff0055] text-white pixel-font text-[10px] w-6 h-6 flex items-center justify-center rounded-full animate-bounce border-2 border-white">
+                <div className="absolute -top-2 -right-2 bg-neon-pink text-white pixel-font text-[10px] w-6 h-6 flex items-center justify-center rounded-full animate-bounce border-2 border-white">
                   {emailsPendentes}
                 </div>
               )}
@@ -77,11 +77,11 @@ export function PlayerScreen() {
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-1">
                 <PixelFlag countryCode={jogador?.nacionalidade} size="md" />
-                <h3 className="pixel-font text-lg text-[#00ff88]">{nome}</h3>
+                <h3 className="pixel-font text-lg text-neon-green">{nome}</h3>
               </div>
               <div className="arcade-font text-[10px] text-[#888]">{titulo} WORLD TOUR</div>
               <div className="mt-2 flex items-center justify-center gap-2 flex-wrap">
-                <span className="border border-[#00ff88] px-2 py-1 text-[8px] arcade-font text-[#00ff88]">{tier}</span>
+                <span className="border border-neon-green px-2 py-1 text-[8px] arcade-font text-neon-green">{tier}</span>
                 {carta && !['gold', 'silver', 'bronze'].includes(carta.tipo) && (
                   <span className="border px-2 py-1 text-[8px] arcade-font" style={{ borderColor: carta.cor_primaria, color: carta.cor_primaria }}>
                     {carta.label}
@@ -94,7 +94,7 @@ export function PlayerScreen() {
                 )}
                 {identity && (
                   <>
-                    <span className="border border-[#00e5ff] px-2 py-1 text-[8px] arcade-font text-[#00e5ff]">{identity.role.label}</span>
+                    <span className="border border-neon-cyan px-2 py-1 text-[8px] arcade-font text-neon-cyan">{identity.role.label}</span>
                     <span className="border border-white/20 px-2 py-1 text-[8px] arcade-font text-white/80">{identity.body_type.label}</span>
                   </>
                 )}
@@ -102,15 +102,15 @@ export function PlayerScreen() {
             </div>
             <div className="grid grid-cols-3 gap-3 w-full text-center">
               <div>
-                <div className="text-xl text-[#ffe600] pixel-font">#{rank}</div>
+                <div className="text-xl text-neon-yellow pixel-font">#{rank}</div>
                 <div className="text-[8px] text-[#888] arcade-font">RANK</div>
               </div>
               <div>
-                <div className="text-xl text-[#00e5ff] pixel-font">{fmt(money)}</div>
+                <div className="text-xl text-neon-cyan pixel-font">{fmt(money)}</div>
                 <div className="text-[8px] text-[#888] arcade-font">CAIXA</div>
               </div>
               <div>
-                <div className="text-xl pixel-font" style={{ color: carta?.cor_primaria ?? '#00ff88' }}>
+                <div className="text-xl pixel-font" style={{ color: carta?.cor_primaria ?? 'var(--neon-green)' }}>
                   {data.overall || '?'}
                 </div>
                 <div className="text-[8px] text-[#888] arcade-font">OVR</div>
@@ -124,7 +124,7 @@ export function PlayerScreen() {
                     <span
                       key={ps.id}
                       className="border px-2 py-1 text-[8px] arcade-font"
-                      style={{ borderColor: ps.tier === 'plus' ? '#f6c453' : '#00e5ff', color: ps.tier === 'plus' ? '#f6c453' : '#00e5ff' }}
+                      style={{ borderColor: ps.tier === 'plus' ? '#f6c453' : 'var(--neon-cyan)', color: ps.tier === 'plus' ? '#f6c453' : 'var(--neon-cyan)' }}
                     >
                       {ps.label}
                     </span>
@@ -136,7 +136,7 @@ export function PlayerScreen() {
         </NeonCard>
 
         {loading && (
-          <div className="text-center py-12 pixel-font text-xs text-[#00ff88] animate-pulse">CARREGANDO...</div>
+          <div className="text-center py-12 pixel-font text-xs text-neon-green animate-pulse">CARREGANDO...</div>
         )}
 
         {!loading && activeTab === 0 && (

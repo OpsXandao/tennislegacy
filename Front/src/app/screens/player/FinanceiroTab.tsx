@@ -17,14 +17,14 @@ interface Props {
 export function FinanceiroTab({ financeiro }: Props) {
   return (
     <div className="space-y-3">
-      <div className="border-2 border-[#00ff88] bg-[#111] p-4 text-center">
+      <div className="border-2 border-neon-green bg-[#111] p-4 text-center">
         <div className="arcade-font text-[8px] text-[#888] mb-1">SALDO ATUAL</div>
-        <div className="pixel-font text-3xl text-[#00ff88]">{fmt(financeiro.saldo)}</div>
+        <div className="pixel-font text-3xl text-neon-green">{fmt(financeiro.saldo)}</div>
       </div>
 
       {Object.keys(financeiro.resumo_categorias).length > 0 && (
         <div className="border border-[#333] bg-[#111]">
-          <div className="border-b border-[#333] px-3 py-2 arcade-font text-[9px] text-[#ffe600]">
+          <div className="border-b border-[#333] px-3 py-2 arcade-font text-[9px] text-neon-yellow">
             TOTAIS POR CATEGORIA
           </div>
           <div className="divide-y divide-[#1a1a1a]">
@@ -33,7 +33,7 @@ export function FinanceiroTab({ financeiro }: Props) {
               .map(([cat, total]) => (
                 <div key={cat} className="flex items-center justify-between px-3 py-2">
                   <span className="arcade-font text-[9px] text-[#888] capitalize">{cat}</span>
-                  <span className={`pixel-font text-[10px] ${total >= 0 ? 'text-[#00ff88]' : 'text-[#ff0055]'}`}>
+                  <span className={`pixel-font text-[10px] ${total >= 0 ? 'text-neon-green' : 'text-neon-pink'}`}>
                     {total >= 0 ? '+' : ''}{fmt(total)}
                   </span>
                 </div>
@@ -43,7 +43,7 @@ export function FinanceiroTab({ financeiro }: Props) {
       )}
 
       <div className="border border-[#333] bg-[#111]">
-        <div className="border-b border-[#333] px-3 py-2 arcade-font text-[9px] text-[#00e5ff]">
+        <div className="border-b border-[#333] px-3 py-2 arcade-font text-[9px] text-neon-cyan">
           ÚLTIMAS TRANSAÇÕES
         </div>
         <div className="divide-y divide-[#1a1a1a]">
@@ -54,7 +54,7 @@ export function FinanceiroTab({ financeiro }: Props) {
               <div key={i} className="px-3 py-2">
                 <div className="flex items-center justify-between mb-0.5">
                   <span className="arcade-font text-[9px] text-white truncate max-w-[180px]">{t.descricao}</span>
-                  <span className={`pixel-font text-[10px] shrink-0 ml-2 ${t.valor >= 0 ? 'text-[#00ff88]' : 'text-[#ff0055]'}`}>
+                  <span className={`pixel-font text-[10px] shrink-0 ml-2 ${t.valor >= 0 ? 'text-neon-green' : 'text-neon-pink'}`}>
                     {t.valor >= 0 ? '+' : ''}{fmt(t.valor)}
                   </span>
                 </div>

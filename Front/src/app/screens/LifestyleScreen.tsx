@@ -59,7 +59,7 @@ export function LifestyleScreen() {
 
       <div className="flex-1 overflow-y-auto p-4 space-y-6 pb-24">
         {mensagem && (
-          <div className={`p-3 border-2 arcade-font text-[10px] ${mensagem.tipo === 'success' ? 'border-[#00ff88] bg-[#00ff881a] text-[#00ff88]' : 'border-[#ff0055] bg-[#ff00551a] text-[#ff0055]'}`}>
+          <div className={`p-3 border-2 arcade-font text-[10px] ${mensagem.tipo === 'success' ? 'border-neon-green bg-[#00ff881a] text-neon-green' : 'border-neon-pink bg-[#ff00551a] text-neon-pink'}`}>
             {mensagem.texto.toUpperCase()}
           </div>
         )}
@@ -83,8 +83,8 @@ export function LifestyleScreen() {
                     <div className="flex justify-between items-start gap-4">
                       <div className="flex-1 space-y-1">
                         <div className="flex items-center gap-2">
-                          <span className={`arcade-font text-[12px] ${item.comprado ? 'text-[#00ff88]' : 'text-white'}`}>{item.nome.toUpperCase()}</span>
-                          {item.comprado && <CheckCircle2 size={12} className="text-[#00ff88]" />}
+                          <span className={`arcade-font text-[12px] ${item.comprado ? 'text-neon-green' : 'text-white'}`}>{item.nome.toUpperCase()}</span>
+                          {item.comprado && <CheckCircle2 size={12} className="text-neon-green" />}
                         </div>
                         <p className="text-[9px] text-[#9fb0bf] leading-relaxed italic">{item.descricao}</p>
                       </div>

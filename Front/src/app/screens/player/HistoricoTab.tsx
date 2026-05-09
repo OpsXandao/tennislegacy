@@ -33,11 +33,11 @@ export function HistoricoTab({ historico }: Props) {
       {[...historico].reverse().map((h, i) => (
         <div
           key={i}
-          className={`border-l-4 bg-[#111] px-3 py-3 ${foiVitoria(h.resultado) ? 'border-[#00ff88]' : 'border-[#ff0055]'}`}
+          className={`border-l-4 bg-[#111] px-3 py-3 ${foiVitoria(h.resultado) ? 'border-neon-green' : 'border-neon-pink'}`}
         >
           <div className="flex items-center justify-between gap-3 mb-1">
             <span className="arcade-font text-[11px] text-white truncate max-w-[220px]">{h.adversario}</span>
-            <span className={`pixel-font text-[11px] font-bold ${foiVitoria(h.resultado) ? 'text-[#00ff88]' : 'text-[#ff0055]'}`}>
+            <span className={`pixel-font text-[11px] font-bold ${foiVitoria(h.resultado) ? 'text-neon-green' : 'text-neon-pink'}`}>
               {foiVitoria(h.resultado) ? 'VIT' : 'DER'}
             </span>
           </div>

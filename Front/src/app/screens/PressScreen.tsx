@@ -21,10 +21,10 @@ interface Resultado {
   reputacao: number
 }
 
-const CONTEXTOS: { id: Contexto; label: string; cor: string }[] = [
-  { id: 'pre',   label: 'PRÉ-JOGO', cor: '#00e5ff' },
-  { id: 'pos',   label: 'PÓS-JOGO', cor: '#ff0055' },
-  { id: 'geral', label: 'GERAL',    cor: '#00ff88' },
+const CONTEXTOS: { id: Contexto; label: string; cor: string; rgb: string }[] = [
+  { id: 'pre',   label: 'PRÉ-JOGO', cor: 'var(--neon-cyan)',   rgb: 'var(--neon-cyan-rgb)' },
+  { id: 'pos',   label: 'PÓS-JOGO', cor: 'var(--neon-pink)',   rgb: 'var(--neon-pink-rgb)' },
+  { id: 'geral', label: 'GERAL',    cor: 'var(--neon-green)',  rgb: 'var(--neon-green-rgb)' },
 ]
 
 function DeltaBadge({ value, label }: { value: number; label: string }) {
@@ -33,7 +33,7 @@ function DeltaBadge({ value, label }: { value: number; label: string }) {
   return (
     <div
       className="flex items-center gap-1 text-[11px]"
-      style={{ fontFamily: 'var(--font-pixel)', color: pos ? '#00ff88' : '#ff0055' }}
+      style={{ fontFamily: 'var(--font-pixel)', color: pos ? 'var(--neon-green)' : 'var(--neon-pink)' }}
     >
       {pos ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
       {pos ? '+' : ''}{value} {label}
@@ -82,14 +82,16 @@ export function PressScreen() {
     carregarPergunta()
   }, [contexto])
 
-  const corContexto = CONTEXTOS.find(c => c.id === contexto)?.cor ?? '#00ff88'
+  const ctxItem = CONTEXTOS.find(c => c.id === contexto)
+  const corContexto = ctxItem?.cor ?? 'var(--neon-green)'
+  const corContextoRgb = ctxItem?.rgb ?? 'var(--neon-green-rgb)'
 
   return (
     <div className="app-shell min-h-screen overflow-y-auto pb-28">
       {/* Header */}
       <div
         className="flex items-center gap-3 px-4 py-3 border-b-2"
-        style={{ borderColor: corContexto, boxShadow: `0 2px 12px ${corContexto}22` }}
+        style={{ borderColor: corContexto, boxShadow: `0 2px 12px rgba(${corContextoRgb},0.13)` }}
       >
         <button
           onClick={() => navigate('/hub')}
@@ -117,10 +119,10 @@ export function PressScreen() {
             className="flex-1 py-2 border-2 text-[9px] transition-all active:scale-95"
             style={{
               fontFamily: 'var(--font-pixel)',
-              borderColor: contexto === c.id ? c.cor : `${c.cor}33`,
+              borderColor: contexto === c.id ? c.cor : `rgba(${c.rgb},0.20)`,
               color: contexto === c.id ? c.cor : '#444',
-              background: contexto === c.id ? `${c.cor}11` : 'var(--card)',
-              boxShadow: contexto === c.id ? `0 0 8px ${c.cor}44` : 'none',
+              background: contexto === c.id ? `rgba(${c.rgb},0.07)` : 'var(--card)',
+              boxShadow: contexto === c.id ? `0 0 8px rgba(${c.rgb},0.27)` : 'none',
             }}
           >
             {c.label}
@@ -151,7 +153,7 @@ export function PressScreen() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-[10px] text-[#ff0055] py-4"
+              className="text-[10px] text-neon-pink py-4"
               style={{ fontFamily: 'var(--font-pixel)' }}
             >
               {erro}
@@ -168,7 +170,7 @@ export function PressScreen() {
               {/* Jornalista */}
               <div
                 className="border-2 p-4 mb-4"
-                style={{ borderColor: `${corContexto}44`, background: 'var(--card)' }}
+                style={{ borderColor: `rgba(${corContextoRgb},0.27)`, background: 'var(--card)' }}
               >
                 <div
                   className="text-[8px] mb-2 tracking-widest"
@@ -225,7 +227,7 @@ export function PressScreen() {
                       }}
                       onMouseEnter={e => {
                         e.currentTarget.style.borderColor = corContexto
-                        e.currentTarget.style.background = `${corContexto}0d`
+                        e.currentTarget.style.background = `rgba(${corContextoRgb},0.05)`
                       }}
                       onMouseLeave={e => {
                         e.currentTarget.style.borderColor = '#333'
@@ -246,7 +248,7 @@ export function PressScreen() {
                                 className="text-[8px]"
                                 style={{
                                   fontFamily: 'var(--font-arcade)',
-                                  color: positivoMoral ? '#00ff88' : '#ff0055',
+                                  color: positivoMoral ? 'var(--neon-green)' : 'var(--neon-pink)',
                                 }}
                               >
                                 {positivoMoral ? '+' : ''}{op.moral} MORAL
@@ -257,7 +259,7 @@ export function PressScreen() {
                                 className="text-[8px]"
                                 style={{
                                   fontFamily: 'var(--font-arcade)',
-                                  color: positivoRep ? '#00ff88' : '#ff0055',
+                                  color: positivoRep ? 'var(--neon-green)' : 'var(--neon-pink)',
                                 }}
                               >
                                 {positivoRep ? '+' : ''}{op.reputacao} REP
@@ -282,10 +284,10 @@ export function PressScreen() {
             >
               <div
                 className="border-2 p-4 mb-4"
-                style={{ borderColor: '#00ff88', background: 'var(--card)', boxShadow: '0 0 12px rgba(0,255,136,0.12)' }}
+                style={{ borderColor: 'var(--neon-green)', background: 'var(--card)', boxShadow: '0 0 12px rgba(0,255,136,0.12)' }}
               >
                 <div
-                  className="text-[8px] mb-2 tracking-widest text-[#00ff88]"
+                  className="text-[8px] mb-2 tracking-widest text-neon-green"
                   style={{ fontFamily: 'var(--font-pixel)' }}
                 >
                   VOCÊ RESPONDEU
@@ -306,23 +308,23 @@ export function PressScreen() {
               <div className="flex gap-3 mb-6">
                 <div
                   className="flex-1 border-2 p-3"
-                  style={{ borderColor: '#00ff88', background: 'var(--card)' }}
+                  style={{ borderColor: 'var(--neon-green)', background: 'var(--card)' }}
                 >
                   <div className="text-[8px] text-[#444] mb-1" style={{ fontFamily: 'var(--font-pixel)' }}>MORAL</div>
-                  <div className="text-[16px] text-[#00ff88]" style={{ fontFamily: 'var(--font-pixel)' }}>{resultado.moral}</div>
+                  <div className="text-[16px] text-neon-green" style={{ fontFamily: 'var(--font-pixel)' }}>{resultado.moral}</div>
                 </div>
                 <div
                   className="flex-1 border-2 p-3"
-                  style={{ borderColor: '#00e5ff', background: 'var(--card)' }}
+                  style={{ borderColor: 'var(--neon-cyan)', background: 'var(--card)' }}
                 >
                   <div className="text-[8px] text-[#444] mb-1" style={{ fontFamily: 'var(--font-pixel)' }}>REPUTAÇÃO</div>
-                  <div className="text-[16px] text-[#00e5ff]" style={{ fontFamily: 'var(--font-pixel)' }}>{resultado.reputacao}</div>
+                  <div className="text-[16px] text-neon-cyan" style={{ fontFamily: 'var(--font-pixel)' }}>{resultado.reputacao}</div>
                 </div>
               </div>
 
               <button
                 onClick={carregarPergunta}
-                className="w-full border-2 border-[#00ff88] py-3 text-[10px] text-[#00ff88] active:scale-[0.98] transition-transform"
+                className="w-full border-2 border-neon-green py-3 text-[10px] text-neon-green active:scale-[0.98] transition-transform"
                 style={{ fontFamily: 'var(--font-pixel)', background: 'rgba(0,255,136,0.06)' }}
               >
                 PRÓXIMA PERGUNTA

@@ -62,8 +62,8 @@ export function RankingsScreen() {
       <div className="p-4">
         <RankingStats stats={stats} />
 
-        <div className="mb-4 border-2 border-[#ffe600] bg-[#1a1a2e] p-3" style={{ boxShadow: 'var(--glow-gold)' }}>
-          <div className="flex justify-between text-[8px] text-[#ffe600]">
+        <div className="mb-4 border-2 border-neon-yellow bg-[#1a1a2e] p-3" style={{ boxShadow: 'var(--glow-gold)' }}>
+          <div className="flex justify-between text-[8px] text-neon-yellow">
             <span className="w-10">RANK</span>
             <span className="flex-1">JOGADOR</span>
             <span className="w-12 text-center">IDADE</span>
@@ -83,14 +83,14 @@ export function RankingsScreen() {
         />
 
         {loading && (
-          <div className="py-16 text-center pixel-font text-sm text-[#00ff88] animate-pulse">
+          <div className="py-16 text-center pixel-font text-sm text-neon-green animate-pulse">
             CARREGANDO...
           </div>
         )}
 
         {!loading && semSessao && (
           <div className="py-16 text-center">
-            <div className="text-sm text-[#ff0055] arcade-font">Carregue um save primeiro</div>
+            <div className="text-sm text-neon-pink arcade-font">Carregue um save primeiro</div>
           </div>
         )}
 

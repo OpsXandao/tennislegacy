@@ -9,7 +9,7 @@ interface PixelBorderProps {
 
 export function PixelBorder({ 
   children, 
-  color = '#00ff88',
+  color = 'var(--neon-green)',
   animated = false,
   className = ''
 }: PixelBorderProps) {

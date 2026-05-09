@@ -28,7 +28,7 @@ export function WorldScreen() {
               onClick={() => setActiveTab(t.id)}
               className={`flex-1 py-2 arcade-font text-[8px] border-2 transition-colors ${
                 activeTab === t.id
-                  ? 'bg-[#ffe600] text-black border-[#ffe600]'
+                  ? 'bg-neon-yellow text-black border-neon-yellow'
                   : 'border-white/20 text-[#888]'
               }`}
             >

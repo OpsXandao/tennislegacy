@@ -7,17 +7,17 @@ export function TierBadge({ tier, size = 'md' }: TierBadgeProps) {
   const configs = {
     'grand-slam': {
       icon: '★',
-      color: '#ffe600',
+      color: 'var(--neon-yellow)',
       label: 'GRAND SLAM'
     },
     'masters-1000': {
       icon: '●',
-      color: '#00ff88',
+      color: 'var(--neon-green)',
       label: 'MASTERS 1000'
     },
     'atp-500': {
       icon: '●',
-      color: '#00e5ff',
+      color: 'var(--neon-cyan)',
       label: 'ATP 500'
     },
     'atp-250': {

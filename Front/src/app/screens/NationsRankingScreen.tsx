@@ -14,7 +14,7 @@ type NacaoEntry = {
 }
 
 const POSICAO_COLOR: Record<number, string> = {
-  1: '#ffe600',
+  1: 'var(--neon-yellow)',
   2: '#c0c0c0',
   3: '#cd7f32',
 }
@@ -38,7 +38,7 @@ export function NationsRankingScreen() {
   return (
     <div className="app-shell min-h-screen font-mono pb-24">
       <PageHeader title="RANKING DE NAÇÕES" color="cyan" backTo="/world">
-        <p className="text-[9px] text-[#00e5ff]/60 mt-1" style={{ fontFamily: 'var(--font-mono)' }}>
+        <p className="text-[9px] text-neon-cyan/60 mt-1" style={{ fontFamily: 'var(--font-mono)' }}>
           COPA DAVIS / BILLIE JEAN KING CUP
         </p>
       </PageHeader>
@@ -46,7 +46,7 @@ export function NationsRankingScreen() {
       <div className="p-4">
         {loading && (
           <div
-            className="text-[10px] text-[#00e5ff]/60 text-center py-12"
+            className="text-[10px] text-neon-cyan/60 text-center py-12"
             style={{ fontFamily: 'var(--font-arcade)' }}
           >
             CARREGANDO...
@@ -55,7 +55,7 @@ export function NationsRankingScreen() {
 
         {erro && (
           <div
-            className="text-[10px] text-[#ff0055] text-center py-12 border border-[#ff0055]/30 bg-[#ff0055]/5 p-4"
+            className="text-[10px] text-neon-pink text-center py-12 border border-neon-pink/30 bg-neon-pink/5 p-4"
             style={{ fontFamily: 'var(--font-arcade)' }}
           >
             {erro}
@@ -89,7 +89,7 @@ export function NationsRankingScreen() {
                 nomeJogadorNacao &&
                 (nacao.pais?.toLowerCase().includes(nomeJogadorNacao.toLowerCase()) ||
                   nacao.codigo?.toLowerCase() === nomeJogadorNacao.toLowerCase())
-              const color = POSICAO_COLOR[nacao.posicao] ?? (isPlayer ? '#00e5ff' : '#ffffff')
+              const color = POSICAO_COLOR[nacao.posicao] ?? (isPlayer ? 'var(--neon-cyan)' : '#ffffff')
 
               return (
                 <motion.div
@@ -99,7 +99,7 @@ export function NationsRankingScreen() {
                   transition={{ delay: Math.min(i * 0.02, 0.3) }}
                   className={`grid grid-cols-[36px_1fr_auto] gap-2 px-3 py-2.5 border-b items-center ${
                     isPlayer
-                      ? 'border-[#00e5ff]/30 bg-[#00e5ff]/8'
+                      ? 'border-neon-cyan/30 bg-neon-cyan/8'
                       : nacao.posicao <= 3
                       ? 'border-white/10 bg-white/3'
                       : 'border-white/5'
@@ -131,7 +131,7 @@ export function NationsRankingScreen() {
                       className="text-[10px] truncate"
                       style={{
                         fontFamily: 'var(--font-arcade)',
-                        color: isPlayer ? '#00e5ff' : nacao.posicao <= 3 ? color : '#ffffff',
+                        color: isPlayer ? 'var(--neon-cyan)' : nacao.posicao <= 3 ? color : '#ffffff',
                       }}
                     >
                       {nacao.pais}
@@ -143,7 +143,7 @@ export function NationsRankingScreen() {
                     )}
                     {isPlayer && (
                       <span
-                        className="text-[7px] text-[#00e5ff] border border-[#00e5ff]/50 px-1 py-0.5 shrink-0"
+                        className="text-[7px] text-neon-cyan border border-neon-cyan/50 px-1 py-0.5 shrink-0"
                         style={{ fontFamily: 'var(--font-arcade)' }}
                       >
                         YOU
@@ -156,7 +156,7 @@ export function NationsRankingScreen() {
                     className="text-[10px] tabular-nums text-right"
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      color: isPlayer ? '#00e5ff' : nacao.posicao <= 3 ? color : '#ffffff99',
+                      color: isPlayer ? 'var(--neon-cyan)' : nacao.posicao <= 3 ? color : '#ffffff99',
                     }}
                   >
                     {nacao.pontos?.toLocaleString('pt-BR')}

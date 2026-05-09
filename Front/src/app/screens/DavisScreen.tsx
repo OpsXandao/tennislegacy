@@ -61,7 +61,7 @@ export function DavisScreen() {
   if (loading) {
     return (
       <div className="app-shell min-h-screen flex items-center justify-center">
-        <div className="pixel-font text-[#ffe600] animate-pulse">SINCRONIZANDO COM A FEDERAÇÃO...</div>
+        <div className="pixel-font text-neon-yellow animate-pulse">SINCRONIZANDO COM A FEDERAÇÃO...</div>
       </div>
     )
   }
@@ -107,7 +107,7 @@ export function DavisScreen() {
             </div>
             
             <div className="text-center">
-              <div className="pixel-font text-3xl text-[#ffe600]">
+              <div className="pixel-font text-3xl text-neon-yellow">
                 {placarTie[0]} - {placarTie[1]}
               </div>
               <div className="arcade-font text-[8px] text-[#666] mt-1">PLACAR TIE</div>
@@ -135,8 +135,8 @@ export function DavisScreen() {
                 <div className="arcade-font text-[9px] text-white truncate mt-1">{p.jogador_b}</div>
               </div>
               <div className="text-right ml-4">
-                <div className="pixel-font text-xs text-[#ffe600]">{p.placar}</div>
-                <div className="arcade-font text-[7px] text-[#00ff88] mt-1">{p.vencedor.toUpperCase()}</div>
+                <div className="pixel-font text-xs text-neon-yellow">{p.placar}</div>
+                <div className="arcade-font text-[7px] text-neon-green mt-1">{p.vencedor.toUpperCase()}</div>
               </div>
             </div>
           ))}
@@ -144,14 +144,14 @@ export function DavisScreen() {
 
         {/* Notificações/Status */}
         {status && (
-          <div className="p-3 bg-[#ff0055]/10 border-2 border-[#ff0055] arcade-font text-[9px] text-[#ff0055]">
+          <div className="p-3 bg-neon-pink/10 border-2 border-neon-pink arcade-font text-[9px] text-neon-pink">
             {status.toUpperCase()}
           </div>
         )}
       </div>
 
       {/* Controles Fixos */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-black/80 backdrop-blur-md border-t-2 border-[#ffe600]/20">
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-black/80 backdrop-blur-md border-t-2 border-neon-yellow/20">
         <div className="max-w-md mx-auto space-y-3">
           {data?.partida_disponivel ? (
             <NeonButton variant="yellow" className="w-full py-4" onClick={handleJogar} blink>

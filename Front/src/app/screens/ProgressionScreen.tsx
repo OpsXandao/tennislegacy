@@ -97,7 +97,7 @@ export function ProgressionScreen() {
       label: 'TOTAL TÍTULOS',
       value: String(titulos.total),
       detail: titulos.total > 0 ? 'TROFÉUS CONQUISTADOS' : 'SEM TÍTULOS AINDA',
-      color: '#ffe600',
+      color: 'var(--neon-yellow)',
       icon: Award,
     },
     {
@@ -105,7 +105,7 @@ export function ProgressionScreen() {
       label: 'GRAND SLAMS',
       value: String(titulos.grandSlams),
       detail: titulos.grandSlams > 0 ? 'GRANDES PALCOS' : 'AGUARDANDO CONQUISTA',
-      color: '#ff0055',
+      color: 'var(--neon-pink)',
       icon: Sparkles,
     },
     {
@@ -113,7 +113,7 @@ export function ProgressionScreen() {
       label: 'MASTERS 1000',
       value: String(titulos.masters),
       detail: titulos.masters > 0 ? 'VITÓRIAS ELITE' : 'EM BUSCA DO TOPO',
-      color: '#00e5ff',
+      color: 'var(--neon-cyan)',
       icon: Target,
     },
     {
@@ -121,7 +121,7 @@ export function ProgressionScreen() {
       label: 'MELHOR TÉC.',
       value: melhorAtributoTecnico[0] === '-' ? '--' : ATRIB_LABELS[melhorAtributoTecnico[0]] ?? melhorAtributoTecnico[0].toUpperCase(),
       detail: `${melhorAtributoTecnico[1]} IMPACTO OVR`,
-      color: '#00ff88',
+      color: 'var(--neon-green)',
       icon: TrendingUp,
     },
     {
@@ -151,14 +151,14 @@ export function ProgressionScreen() {
   const levelBadge = (
     <div className="flex flex-col items-end gap-1.5">
       <div className="flex items-center gap-2">
-        <div className="bg-[#00ff88] px-2 py-1 text-[8px] font-bold text-black" style={{ fontFamily: 'var(--font-arcade)' }}>
+        <div className="bg-neon-green px-2 py-1 text-[8px] font-bold text-black" style={{ fontFamily: 'var(--font-arcade)' }}>
           NÍV {nivel}
         </div>
-        <TrendingUp size={14} className="animate-pulse text-[#00ff88]" />
+        <TrendingUp size={14} className="animate-pulse text-neon-green" />
       </div>
       <button
         onClick={() => setShowLevelUp(true)}
-        className="border border-[#00ff88] bg-black px-2 py-1 text-[7px] text-[#00ff88] transition-all hover:bg-[#00ff88] hover:text-black"
+        className="border border-neon-green bg-black px-2 py-1 text-[7px] text-neon-green transition-all hover:bg-neon-green hover:text-black"
         style={{ fontFamily: 'var(--font-arcade)' }}
       >
         EVOLUIR
@@ -172,10 +172,10 @@ export function ProgressionScreen() {
 
       <div className="p-4">
 
-      <div className="mb-6 border-2 border-[#00ff88] bg-[#1a1a2e] p-4" style={{ boxShadow: 'var(--glow-green)' }}>
+      <div className="mb-6 border-2 border-neon-green bg-[#1a1a2e] p-4" style={{ boxShadow: 'var(--glow-green)' }}>
         <div className="mb-2 flex justify-between text-[8px]">
-          <span className="text-[#00ff88]">EXPERIÊNCIA</span>
-          <span className="text-[#ffe600]">{xp} / {xpToNext} XP</span>
+          <span className="text-neon-green">EXPERIÊNCIA</span>
+          <span className="text-neon-yellow">{xp} / {xpToNext} XP</span>
         </div>
         <div className="flex h-6 gap-[2px] bg-black p-1">
           {Array.from({ length: segments }).map((_, i) => {
@@ -188,7 +188,7 @@ export function ProgressionScreen() {
                 initial={{ scaleY: 0 }}
                 animate={{
                   scaleY: isFilled ? 1 : 0.15,
-                  backgroundColor: isFilled ? '#00ff88' : '#1a1a2e',
+                  backgroundColor: isFilled ? 'var(--neon-green)' : '#1a1a2e',
                 }}
                 transition={{ delay: i * 0.03, duration: 0.2 }}
                 style={{
@@ -200,28 +200,28 @@ export function ProgressionScreen() {
           })}
         </div>
         <div className="mt-3 grid grid-cols-3 gap-3">
-          <div className="border border-[#00ff88]/40 bg-black p-3 text-center">
+          <div className="border border-neon-green/40 bg-black p-3 text-center">
             <div className="text-[8px] text-[#888]">NÍVEL</div>
-            <div className="pixel-font text-2xl text-[#00ff88]">{nivel}</div>
+            <div className="pixel-font text-2xl text-neon-green">{nivel}</div>
           </div>
-          <div className="border border-[#ffe600]/40 bg-black p-3 text-center">
+          <div className="border border-neon-yellow/40 bg-black p-3 text-center">
             <div className="text-[8px] text-[#888]">OVR</div>
-            <div className="pixel-font text-2xl text-[#ffe600]">{overall || '?'}</div>
+            <div className="pixel-font text-2xl text-neon-yellow">{overall || '?'}</div>
           </div>
-          <div className="border border-[#00e5ff]/40 bg-black p-3 text-center">
+          <div className="border border-neon-cyan/40 bg-black p-3 text-center">
             <div className="text-[8px] text-[#888]">RANK</div>
-            <div className="pixel-font text-2xl text-[#00e5ff]">#{jogador?.ranking ?? '?'}</div>
+            <div className="pixel-font text-2xl text-neon-cyan">#{jogador?.ranking ?? '?'}</div>
           </div>
         </div>
-        <div className="mt-3 border border-[#ff0055]/40 bg-black p-3 text-center">
+        <div className="mt-3 border border-neon-pink/40 bg-black p-3 text-center">
           <div className="text-[8px] text-[#888]">PONTOS DE SKILL</div>
-          <div className="pixel-font text-2xl text-[#ff0055]">{pontosSkill}</div>
+          <div className="pixel-font text-2xl text-neon-pink">{pontosSkill}</div>
         </div>
       </div>
 
-      <div className="mb-6 border-2 border-[#00e5ff] bg-[#1a1a2e] p-4" style={{ boxShadow: 'var(--glow-cyan)' }}>
+      <div className="mb-6 border-2 border-neon-cyan bg-[#1a1a2e] p-4" style={{ boxShadow: 'var(--glow-cyan)' }}>
         <div
-          className="mb-4 text-center text-[10px] tracking-widest text-[#00e5ff]"
+          className="mb-4 text-center text-[10px] tracking-widest text-neon-cyan"
           style={{ fontFamily: 'var(--font-arcade)' }}
         >
           RADAR DE HABILIDADES
@@ -230,29 +230,29 @@ export function ProgressionScreen() {
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart data={stats}>
               <PolarGrid stroke="#444466" strokeWidth={1} />
-              <PolarAngleAxis dataKey="attribute" tick={{ fill: '#00e5ff', fontSize: 9, fontFamily: 'Orbitron' }} />
+              <PolarAngleAxis dataKey="attribute" tick={{ fill: 'var(--neon-cyan)', fontSize: 9, fontFamily: 'Orbitron' }} />
               <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fill: '#444466', fontSize: 8 }} />
               <Radar name="Base" dataKey="base" stroke="#444466" fill="#444466" fillOpacity={0.3} />
-              <Radar name="Atual" dataKey="current" stroke="#00e5ff" fill="#00e5ff" fillOpacity={0.6} strokeWidth={2} />
+              <Radar name="Atual" dataKey="current" stroke="var(--neon-cyan)" fill="var(--neon-cyan)" fillOpacity={0.6} strokeWidth={2} />
             </RadarChart>
           </ResponsiveContainer>
         </div>
         <div className="mt-4 grid grid-cols-2 gap-2">
           {stats.map((stat) => (
-            <div key={stat.attribute} className="border border-[#00e5ff] bg-black p-2">
-              <div className="mb-1 text-[8px] text-[#00e5ff]">{stat.attribute}</div>
+            <div key={stat.attribute} className="border border-neon-cyan bg-black p-2">
+              <div className="mb-1 text-[8px] text-neon-cyan">{stat.attribute}</div>
               <div className="flex items-center gap-2 justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-bold text-[#00ff88]" style={{ fontFamily: 'var(--font-arcade)' }}>
+                  <span className="text-sm font-bold text-neon-green" style={{ fontFamily: 'var(--font-arcade)' }}>
                     {stat.current}
                   </span>
-                  <TrendingUp size={10} className="text-[#00ff88]" />
+                  <TrendingUp size={10} className="text-neon-green" />
                   <span className="text-[8px] text-[#888]">+{stat.current - stat.base}</span>
                 </div>
                 <button
                   onClick={() => handleAlocar('tecnico', Object.entries(ATRIB_LABELS).find(([, label]) => label === stat.attribute)?.[0] || 'velocidade')}
                   disabled={pontosSkill <= 0 || !!alocando}
-                  className="border border-[#00ff88] px-2 py-1 text-[8px] text-[#00ff88] disabled:opacity-40"
+                  className="border border-neon-green px-2 py-1 text-[8px] text-neon-green disabled:opacity-40"
                 >
                   {alocando === `tecnico:${Object.entries(ATRIB_LABELS).find(([, label]) => label === stat.attribute)?.[0] || 'velocidade'}` ? '...' : '+1'}
                 </button>
@@ -261,11 +261,11 @@ export function ProgressionScreen() {
           ))}
         </div>
         {Object.keys(atributosPsicologicos).length > 0 && (
-          <div className="mt-4 border border-[#ff0055]/40 bg-black p-3">
-            <div className="mb-3 text-[9px] text-[#ff0055]">HABILIDADES MENTAIS</div>
+          <div className="mt-4 border border-neon-pink/40 bg-black p-3">
+            <div className="mb-3 text-[9px] text-neon-pink">HABILIDADES MENTAIS</div>
             <div className="grid grid-cols-1 gap-2">
               {Object.entries(atributosPsicologicos).slice(0, 4).map(([attr, value]) => (
-                <div key={attr} className="flex items-center justify-between border border-[#ff0055]/20 px-3 py-2">
+                <div key={attr} className="flex items-center justify-between border border-neon-pink/20 px-3 py-2">
                   <div>
                     <div className="text-[8px] text-[#888] uppercase">{attr.replace(/_/g, ' ')}</div>
                     <div className="text-[10px] text-[#ff7aa2]">{value}</div>
@@ -273,7 +273,7 @@ export function ProgressionScreen() {
                   <button
                     onClick={() => handleAlocar('psicologico', attr)}
                     disabled={pontosSkill <= 0 || !!alocando}
-                    className="border border-[#ff0055] px-2 py-1 text-[8px] text-[#ff0055] disabled:opacity-40"
+                    className="border border-neon-pink px-2 py-1 text-[8px] text-neon-pink disabled:opacity-40"
                   >
                     {alocando === `psicologico:${attr}` ? '...' : '+1'}
                   </button>
@@ -284,12 +284,12 @@ export function ProgressionScreen() {
         )}
       </div>
 
-      <div className="border-2 border-[#ffe600] bg-[#1a1a2e] p-4" style={{ boxShadow: 'var(--glow-gold)' }}>
+      <div className="border-2 border-neon-yellow bg-[#1a1a2e] p-4" style={{ boxShadow: 'var(--glow-gold)' }}>
         <div className="mb-4 flex items-center justify-between">
-          <span className="text-[10px] tracking-widest text-[#ffe600]" style={{ fontFamily: 'var(--font-arcade)' }}>
+          <span className="text-[10px] tracking-widest text-neon-yellow" style={{ fontFamily: 'var(--font-arcade)' }}>
             MARCOS DE CARREIRA
           </span>
-          <Award size={16} className="animate-pulse text-[#ffe600]" />
+          <Award size={16} className="animate-pulse text-neon-yellow" />
         </div>
         <div className="space-y-3">
           {checkpoints.map((item, i) => (
@@ -343,29 +343,29 @@ export function ProgressionScreen() {
               initial={{ scale: 0.8, rotate: -8 }}
               animate={{ scale: 1, rotate: 0 }}
               exit={{ scale: 0.8, rotate: 8 }}
-              className="relative w-full max-w-[340px] border-4 border-[#ffe600] bg-[#1a1a2e] p-6"
+              className="relative w-full max-w-[340px] border-4 border-neon-yellow bg-[#1a1a2e] p-6"
               style={{ boxShadow: '0 0 40px rgba(255, 230, 0, 0.8)' }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="absolute -top-2 left-1/4 animate-bounce text-2xl text-[#ffe600]">✦</div>
-              <div className="absolute -top-3 right-1/4 animate-bounce text-xl text-[#ffe600]" style={{ animationDelay: '0.2s' }}>✦</div>
-              <div className="absolute -top-1 left-1/2 animate-bounce text-3xl text-[#ffe600]" style={{ animationDelay: '0.1s' }}>★</div>
+              <div className="absolute -top-2 left-1/4 animate-bounce text-2xl text-neon-yellow">✦</div>
+              <div className="absolute -top-3 right-1/4 animate-bounce text-xl text-neon-yellow" style={{ animationDelay: '0.2s' }}>✦</div>
+              <div className="absolute -top-1 left-1/2 animate-bounce text-3xl text-neon-yellow" style={{ animationDelay: '0.1s' }}>★</div>
               <div className="text-center">
                 <motion.h2
-                  className="mb-4 text-xl tracking-wider text-[#ffe600]"
+                  className="mb-4 text-xl tracking-wider text-neon-yellow"
                   style={{ fontFamily: 'var(--font-arcade)', textShadow: 'var(--glow-gold)' }}
                   animate={{ scale: [1, 1.08, 1] }}
                   transition={{ duration: 1, repeat: Infinity }}
                 >
                   SUBIU DE NÍVEL!
                 </motion.h2>
-                <div className="mb-4 border-2 border-[#ffe600] bg-black p-4">
-                  <div className="mb-2 text-4xl text-[#ffe600]">{nivel}</div>
+                <div className="mb-4 border-2 border-neon-yellow bg-black p-4">
+                  <div className="mb-2 text-4xl text-neon-yellow">{nivel}</div>
                   <div className="text-[10px] text-[#888]">NOVO MARCO DESBLOQUEADO</div>
                 </div>
                 <button
                   onClick={() => setShowLevelUp(false)}
-                  className="w-full border-2 border-[#ffe600] bg-black py-2 text-[10px] text-[#ffe600] transition-all hover:bg-[#ffe600] hover:text-black"
+                  className="w-full border-2 border-neon-yellow bg-black py-2 text-[10px] text-neon-yellow transition-all hover:bg-neon-yellow hover:text-black"
                   style={{ fontFamily: 'var(--font-arcade)' }}
                 >
                   CONTINUAR

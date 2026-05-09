@@ -34,7 +34,7 @@ function calcSinergia(vinculo?: Parceiro['vinculo']): string {
 }
 
 function OvrBadge({ ovr }: { ovr: number }) {
-  const color = ovr >= 80 ? '#ffe600' : ovr >= 65 ? '#00ff88' : '#00e5ff'
+  const color = ovr >= 80 ? 'var(--neon-yellow)' : ovr >= 65 ? 'var(--neon-green)' : 'var(--neon-cyan)'
   return (
     <div
       className="flex items-center justify-center w-10 h-10 border-2 text-sm font-bold shrink-0"
@@ -84,8 +84,8 @@ function ParceiroCarta({
         destaqueDuplas
           ? 'border-[#f6c453]'
           : temHistorico
-          ? 'border-[#ffe600]/80'
-          : 'border-[#00e5ff]/30'
+          ? 'border-neon-yellow/80'
+          : 'border-neon-cyan/30'
       }`}
       style={{
         boxShadow: destaqueDuplas
@@ -110,7 +110,7 @@ function ParceiroCarta({
             >
               {parceiro.nome}
             </span>
-            {temHistorico && <Star size={10} className="text-[#ffe600] shrink-0" fill="#ffe600" />}
+            {temHistorico && <Star size={10} className="text-neon-yellow shrink-0" fill="var(--neon-yellow)" />}
           </div>
 
           <div className="flex items-center gap-2 text-[8px] text-[#888]">
@@ -120,8 +120,8 @@ function ParceiroCarta({
               <span
                 className="px-1.5 py-0.5 border text-[7px]"
                 style={{
-                  borderColor: '#ffe600',
-                  color: '#ffe600',
+                  borderColor: 'var(--neon-yellow)',
+                  color: 'var(--neon-yellow)',
                   fontFamily: 'var(--font-arcade)',
                 }}
               >
@@ -142,7 +142,7 @@ function ParceiroCarta({
         <button
           onClick={() => onConvidar(parceiro.nome)}
           disabled={convidando === parceiro.nome}
-          className="border-2 border-[#00ff88] bg-black px-3 py-1.5 text-[8px] text-[#00ff88] shrink-0 transition-all enabled:hover:bg-[#00ff88] enabled:hover:text-black disabled:opacity-40"
+          className="border-2 border-neon-green bg-black px-3 py-1.5 text-[8px] text-neon-green shrink-0 transition-all enabled:hover:bg-neon-green enabled:hover:text-black disabled:opacity-40"
           style={{ fontFamily: 'var(--font-arcade)' }}
         >
           {convidando === parceiro.nome ? '...' : 'CONVIDAR'}
@@ -236,8 +236,8 @@ export function DuplasScreen() {
             exit={{ opacity: 0 }}
             className={`mx-4 mt-4 border-2 p-3 text-center text-[10px] flex items-center justify-between gap-2 ${
               mensagem.ok
-                ? 'border-[#00ff88] bg-[#00ff88]/10 text-[#00ff88]'
-                : 'border-[#ff0055] bg-[#ff0055]/10 text-[#ff0055]'
+                ? 'border-neon-green bg-neon-green/10 text-neon-green'
+                : 'border-neon-pink bg-neon-pink/10 text-neon-pink'
             }`}
             style={{ fontFamily: 'var(--font-arcade)' }}
           >
@@ -254,7 +254,7 @@ export function DuplasScreen() {
           <ScreenSection title="PARCEIROS DISPONIVEIS" subtitle="Sugestoes do backend e historico de parceria" variant="cyan">
           <div className="space-y-4">
             {loadingSug ? (
-              <div className="py-16 text-center pixel-font text-sm text-[#00e5ff] animate-pulse">
+              <div className="py-16 text-center pixel-font text-sm text-neon-cyan animate-pulse">
                 CARREGANDO...
               </div>
             ) : (
@@ -262,9 +262,9 @@ export function DuplasScreen() {
                 {historico.length > 0 && (
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <Star size={12} className="text-[#ffe600]" fill="#ffe600" />
+                      <Star size={12} className="text-neon-yellow" fill="var(--neon-yellow)" />
                       <span
-                        className="text-[9px] text-[#ffe600]"
+                        className="text-[9px] text-neon-yellow"
                         style={{ fontFamily: 'var(--font-arcade)' }}
                       >
                         PARCEIROS ANTERIORES
@@ -286,9 +286,9 @@ export function DuplasScreen() {
                 {novos.length > 0 && (
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <Users size={12} className="text-[#00e5ff]" />
+                      <Users size={12} className="text-neon-cyan" />
                       <span
-                        className="text-[9px] text-[#00e5ff]"
+                        className="text-[9px] text-neon-cyan"
                         style={{ fontFamily: 'var(--font-arcade)' }}
                       >
                         NOVOS CANDIDATOS
@@ -310,7 +310,7 @@ export function DuplasScreen() {
                 {sugestoes.length === 0 && (
                   <NeonCard variant="cyan" hover={false}>
                     <div className="py-6 text-center">
-                      <UserCheck size={32} className="mx-auto mb-3 text-[#00e5ff] opacity-40" />
+                      <UserCheck size={32} className="mx-auto mb-3 text-neon-cyan opacity-40" />
                       <div
                         className="text-[10px] text-[#888]"
                         style={{ fontFamily: 'var(--font-arcade)' }}
@@ -336,20 +336,20 @@ export function DuplasScreen() {
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleBuscar()}
                 placeholder="Nome do jogador..."
-                className="flex-1 border-2 border-[#00e5ff] bg-black px-3 py-2 text-[11px] text-white outline-none placeholder:text-[#444]"
+                className="flex-1 border-2 border-neon-cyan bg-black px-3 py-2 text-[11px] text-white outline-none placeholder:text-[#444]"
                 style={{ fontFamily: 'var(--font-arcade)' }}
               />
               <button
                 onClick={handleBuscar}
                 disabled={loadingBusca}
-                className="border-2 border-[#00e5ff] bg-black px-4 text-[#00e5ff] transition-all hover:bg-[#00e5ff] hover:text-black disabled:opacity-40"
+                className="border-2 border-neon-cyan bg-black px-4 text-neon-cyan transition-all hover:bg-neon-cyan hover:text-black disabled:opacity-40"
               >
                 <Search size={16} />
               </button>
             </div>
 
             {loadingBusca && (
-              <div className="py-8 text-center pixel-font text-sm text-[#00e5ff] animate-pulse">
+              <div className="py-8 text-center pixel-font text-sm text-neon-cyan animate-pulse">
                 BUSCANDO...
               </div>
             )}
@@ -380,9 +380,9 @@ export function DuplasScreen() {
           <ScreenSection title={`RANKING DUPLAS ${tour.toUpperCase()}`} subtitle="Top 50 sincronizado com a API" variant="yellow">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <TrendingUp size={14} className="text-[#00ff88]" />
+              <TrendingUp size={14} className="text-neon-green" />
               <span
-                className="text-[9px] text-[#00ff88]"
+                className="text-[9px] text-neon-green"
                 style={{ fontFamily: 'var(--font-arcade)' }}
               >
                 RANKING DUPLAS {tour.toUpperCase()} {rankingTotal > 0 ? `• ${rankingTotal} JOGADORES` : ''}
@@ -390,7 +390,7 @@ export function DuplasScreen() {
             </div>
 
             {loadingRk ? (
-              <div className="py-16 text-center pixel-font text-sm text-[#00ff88] animate-pulse">
+              <div className="py-16 text-center pixel-font text-sm text-neon-green animate-pulse">
                 CARREGANDO...
               </div>
             ) : (
@@ -406,13 +406,13 @@ export function DuplasScreen() {
                       transition={{ delay: i * 0.02 }}
                       className={`flex items-center gap-3 border px-3 py-2 ${
                         isMeu
-                          ? 'border-[#ffe600] bg-[#ffe600]/10'
+                          ? 'border-neon-yellow bg-neon-yellow/10'
                           : 'border-[#1a1a2e] bg-[#1a1a2e]'
                       }`}
                     >
                       <span
                         className={`w-6 text-[10px] text-right ${
-                          i < 3 ? 'text-[#ffe600]' : 'text-[#666]'
+                          i < 3 ? 'text-neon-yellow' : 'text-[#666]'
                         }`}
                         style={{ fontFamily: 'var(--font-arcade)' }}
                       >
@@ -421,13 +421,13 @@ export function DuplasScreen() {
                       <PixelFlag countryCode={entry.nacionalidade} size="sm" />
                       <span
                         className={`flex-1 text-[10px] truncate ${
-                          isMeu ? 'text-[#ffe600]' : 'text-white'
+                          isMeu ? 'text-neon-yellow' : 'text-white'
                         }`}
                         style={{ fontFamily: 'var(--font-arcade)' }}
                       >
                         {entry.nome}
                       </span>
-                      <span className="text-[9px] text-[#00ff88]" style={{ fontFamily: 'var(--font-arcade)' }}>
+                      <span className="text-[9px] text-neon-green" style={{ fontFamily: 'var(--font-arcade)' }}>
                         {(entry.pontos ?? 0).toLocaleString()}
                       </span>
                     </motion.div>
