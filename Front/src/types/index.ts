@@ -136,7 +136,18 @@ export interface PlacarEvent extends PlacarState {
 }
 
 export interface MatchPointRuntime extends PlacarEvent {
-  last_point_stats?: Record<string, unknown>
+  last_point_stats?: {
+    sacador: string
+    primeiro_saque_in: boolean
+    ace: boolean
+    dupla_falta: boolean
+    winner: boolean
+    erro_nao_forcado: boolean
+    intensidade: string
+    insights: string[]
+    origem: [number, number]
+    destino: [number, number]
+  }
   energia_j: number
   energia_a: number
   fadiga_j: number

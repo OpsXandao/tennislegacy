@@ -53,6 +53,7 @@ interface InGameViewProps {
   contadorSet: number
   intencaoAtiva: string | null
   expandirPonto: boolean
+  pointInsights: string[]
   faixa: Faixa
   alvo: Alvo
   onBack: () => void
@@ -112,6 +113,7 @@ export function InGameView({
   contadorSet,
   intencaoAtiva,
   expandirPonto,
+  pointInsights,
   faixa,
   alvo,
   onBack,
@@ -184,6 +186,21 @@ export function InGameView({
             <span style={{ color: corMomentum(momentum) }}>{destaqueMomento}</span>
           </div>
           <InlineMeter value={momentum} color={corMomentum(momentum)} />
+          
+          {/* Insights Táticos */}
+          {pointInsights.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {pointInsights.map((insight, idx) => (
+                <div 
+                  key={idx} 
+                  className="px-1.5 py-0.5 border border-[#00e5ff]/40 bg-[#00e5ff]/5 arcade-font text-[6px] text-[#00e5ff] tracking-tight animate-in fade-in zoom-in duration-300"
+                >
+                  ⚡ {insight.toUpperCase()}
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="mt-2 arcade-font text-[10px] leading-relaxed" style={{ color: destaqueMomentoCor }}>
             {destaqueMomento}
           </div>

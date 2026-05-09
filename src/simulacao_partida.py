@@ -295,7 +295,7 @@ SUPERFICIE_MODS = {
 
 def calcular_bonus_psicologico(
     atributos_psicologicos: dict, contexto: ContextoPonto, eh_jogador: bool = True
-) -> float:
+) -> tuple[float, list[str]]:
     """
     Calcula o bônus psicológico baseado no contexto do ponto.
 
@@ -305,42 +305,67 @@ def calcular_bonus_psicologico(
         eh_jogador: True se é o jogador do usuário, False se é adversário
 
     Returns:
-        Bônus a ser aplicado no cálculo do ponto
+        (Bônus final, lista de insights táticos)
     """
     if not atributos_psicologicos:
-        return 0
+        return 0, []
 
     psico = atributos_psicologicos
     bonus = 0
+    insights = []
 
     # Break point - concentração e determinação
     if contexto.is_break_point():
-        bonus += (psico.get("concentracao", 50) - 50) / 10
-        bonus += (psico.get("determinacao", 50) - 50) / 15
+        b_bp = (psico.get("concentracao", 50) - 50) / 10
+        b_bp += (psico.get("determinacao", 50) - 50) / 15
+        bonus += b_bp
+        if b_bp > 1.5:
+            insights.append("Foco em Break Point")
+        elif b_bp < -1.5:
+            insights.append("Pressão de Break Point")
 
     # Set point - concentração e agressividade
     if contexto.is_set_point():
-        bonus += (psico.get("concentracao", 50) - 50) / 10
-        bonus += (psico.get("agressividade", 50) - 50) / 20
+        b_sp = (psico.get("concentracao", 50) - 50) / 10
+        b_sp += (psico.get("agressividade", 50) - 50) / 20
+        bonus += b_sp
+        if b_sp > 1.5:
+            insights.append("Garra em Set Point")
+        elif b_sp < -1.5:
+            insights.append("Nervosismo em Set Point")
 
     # Match point - todos os 4 atributos
     if contexto.is_match_point():
-        bonus += (psico.get("concentracao", 50) - 50) / 8
-        bonus += (psico.get("agressividade", 50) - 50) / 15
-        bonus += (psico.get("leitura_de_jogo", 50) - 50) / 12
-        bonus += (psico.get("determinacao", 50) - 50) / 10
+        b_mp = (psico.get("concentracao", 50) - 50) / 8
+        b_mp += (psico.get("agressividade", 50) - 50) / 15
+        b_mp += (psico.get("leitura_de_jogo", 50) - 50) / 12
+        b_mp += (psico.get("determinacao", 50) - 50) / 10
+        bonus += b_mp
+        if b_mp > 2.0:
+            insights.append("Mentalidade Campeã")
+        elif b_mp < -2.0:
+            insights.append("Mão Pesada (Match Point)")
 
     # Perdendo por 2+ games - determinação
     perdendo = (
         contexto.jogador_perdendo() if eh_jogador else contexto.adversario_perdendo()
     )
     if perdendo:
-        bonus += (psico.get("determinacao", 50) - 50) / 10
+        b_per = (psico.get("determinacao", 50) - 50) / 10
+        bonus += b_per
+        if b_per > 1.5:
+            insights.append("Poder de Reação")
+        elif b_per < -1.5:
+            insights.append("Desânimo")
 
     # Penalidade base sempre ativa — nervosismo afeta até pontos normais
     concentracao = psico.get("concentracao", 50)
     if concentracao < 45:
-        bonus -= (45 - concentracao) * 0.06  # até -2.7 por ponto normal
+        p_con = (45 - concentracao) * 0.06
+        bonus -= p_con
+        if p_con > 1.0:
+            insights.append("Desatenção")
+
     agressividade_val = psico.get("agressividade", 50)
     if (
         agressividade_val > 80
@@ -348,9 +373,12 @@ def calcular_bonus_psicologico(
         and not contexto.is_match_point()
     ):
         # Muito agressivo em momentos normais = mais erros
-        bonus -= (agressividade_val - 80) * 0.04
+        p_agr = (agressividade_val - 80) * 0.04
+        bonus -= p_agr
+        if p_agr > 1.0:
+            insights.append("Excesso de Risco")
 
-    return bonus
+    return bonus, insights
 
 
 class SimuladorSaque:
@@ -382,7 +410,7 @@ class SimuladorSaque:
 
         # Aplica bônus psicológico
         if contexto:
-            bonus = calcular_bonus_psicologico(self.atributos_psicologicos, contexto)
+            bonus, _ = calcular_bonus_psicologico(self.atributos_psicologicos, contexto)
             chance_in += bonus * 2
             chance_ace += bonus
 
@@ -419,7 +447,7 @@ class SimuladorSaque:
 
         # Aplica bônus psicológico
         if contexto:
-            bonus = calcular_bonus_psicologico(self.atributos_psicologicos, contexto)
+            bonus, _ = calcular_bonus_psicologico(self.atributos_psicologicos, contexto)
             chance_in += bonus * 3
 
         roll = random.random() * 100
@@ -798,6 +826,8 @@ class SimuladorPonto:
         superficie: str,
         stamina: float,
         fator_estado: float = 1.0,
+        insights: list[str] = None,
+        eh_jogador: bool = True,
     ) -> tuple:
         """
         Calcula o poder do saque baseado nos atributos.
@@ -825,13 +855,23 @@ class SimuladorPonto:
             chance_ace = 0.06 + (saque / 500)  # 6-16% ace
 
         # Bonus psicológico e stamina
-        bonus = calcular_bonus_psicologico(psico, contexto)
+        bonus, psico_insights = calcular_bonus_psicologico(
+            psico, contexto, eh_jogador=eh_jogador
+        )
         poder += bonus * 5
         chance_falta -= bonus * 0.02
         chance_ace += bonus * 0.01
 
+        if insights is not None:
+            for pi in psico_insights:
+                if pi not in insights:
+                    insights.append(pi)
+
         mod_stamina = self._stamina_mod(
-            stamina, atributos=atributos, superficie=superficie
+            stamina,
+            atributos=atributos,
+            superficie=superficie,
+            insights=insights if eh_jogador else None,
         )
         poder = self._aplicar_modificadores(
             poder, 0.0, mod_stamina, fator_estado=fator_estado
@@ -849,6 +889,8 @@ class SimuladorPonto:
         superficie: str,
         stamina: float,
         fator_estado: float = 1.0,
+        insights: list[str] = None,
+        eh_jogador: bool = True,
     ) -> float:
         """Calcula o poder de devolução do receptor."""
         # Devolução depende de movimento, backhand e slice
@@ -857,12 +899,24 @@ class SimuladorPonto:
         slice_ = atributos.get("slice", 50)
         forehand = atributos.get("forehand", 50)
 
-        bonus = calcular_bonus_psicologico(psico, contexto)
+        bonus, psico_insights = calcular_bonus_psicologico(
+            psico, contexto, eh_jogador=eh_jogador
+        )
+        if insights is not None:
+            for pi in psico_insights:
+                if pi not in insights:
+                    insights.append(pi)
+
         base = backhand * 0.35 + movimento * 0.3 + slice_ * 0.2 + forehand * 0.15
         poder = self._aplicar_modificadores(
             base,
             bonus * 5,
-            self._stamina_mod(stamina, atributos=atributos, superficie=superficie),
+            self._stamina_mod(
+                stamina,
+                atributos=atributos,
+                superficie=superficie,
+                insights=insights if eh_jogador else None,
+            ),
             fator_estado=fator_estado,
         )
 
@@ -877,6 +931,8 @@ class SimuladorPonto:
         superficie: str,
         stamina: float,
         fator_estado: float = 1.0,
+        insights: list[str] = None,
+        eh_jogador: bool = True,
     ) -> float:
         """Calcula o poder no rally baseado na estratégia."""
         forehand = atributos.get("forehand", 50)
@@ -921,12 +977,23 @@ class SimuladorPonto:
                 + lob * 0.02
             )
 
-        bonus = calcular_bonus_psicologico(psico, contexto)
+        bonus, psico_insights = calcular_bonus_psicologico(
+            psico, contexto, eh_jogador=eh_jogador
+        )
+        if insights is not None:
+            for pi in psico_insights:
+                if pi not in insights:
+                    insights.append(pi)
+
         poder = self._aplicar_modificadores(
             base,
             bonus * 8,
             self._stamina_mod(
-                stamina, atributos=atributos, estilo=estilo, superficie=superficie
+                stamina,
+                atributos=atributos,
+                estilo=estilo,
+                superficie=superficie,
+                insights=insights if eh_jogador else None,
             ),
             fator_estado=fator_estado,
         )
@@ -1033,6 +1100,12 @@ class SimuladorPonto:
         )
         tipo = tipo_saque or estrategia_sacador.get("saque_tipo", TipoSaque.VARIADO)
 
+        # Insights da Superfície (apenas para o jogador)
+        if superficie == "saibro":
+            stats_info.insights.append("Bônus Saibro +12% Topspin")
+        elif superficie == "grama":
+            stats_info.insights.append("Bônus Grama +12% Saque/Voleio")
+
         # FASE 1: Saque
         poder_saque, chance_ace, chance_falta = self._calcular_poder_saque(
             attr_sacador,
@@ -1042,6 +1115,8 @@ class SimuladorPonto:
             superficie,
             stamina_sacador,
             fator_estado=fator_sacador,
+            insights=stats_info.insights,
+            eh_jogador=(contexto.sacador == "j"),
         )
         poder_devolucao = self._calcular_poder_devolucao(
             attr_receptor,
@@ -1050,14 +1125,20 @@ class SimuladorPonto:
             superficie,
             stamina_receptor,
             fator_estado=fator_receptor,
+            insights=stats_info.insights,
+            eh_jogador=(contexto.sacador == "a"),
         )
         poder_saque *= mod_ambiente["saque"]
         chance_ace *= mod_ambiente["ace"]
         chance_falta *= mod_ambiente["falta"]
         if contexto.sacador == "j":
+            if contexto_partida.momentum_j > 2:
+                stats_info.insights.append("Momentum Favorável")
             poder_saque *= 1.0 + (contexto_partida.momentum_j * 0.02)
             poder_devolucao *= 1.0 + (contexto_partida.momentum_a * 0.02)
         else:
+            if contexto_partida.momentum_j > 2:
+                stats_info.insights.append("Momentum Favorável")
             poder_saque *= 1.0 + (contexto_partida.momentum_a * 0.02)
             poder_devolucao *= 1.0 + (contexto_partida.momentum_j * 0.02)
 
@@ -1122,6 +1203,8 @@ class SimuladorPonto:
             superficie,
             contexto_partida.stamina_j,
             fator_estado=fator_j,
+            insights=stats_info.insights,
+            eh_jogador=True,
         )
         poder_rally_a = self._calcular_poder_rally(
             atributos_a_mod,
@@ -1131,6 +1214,8 @@ class SimuladorPonto:
             superficie,
             contexto_partida.stamina_a,
             fator_estado=fator_a,
+            insights=stats_info.insights,
+            eh_jogador=False,
         )
         poder_rally_j *= mod_ambiente["rally"]
         poder_rally_a *= mod_ambiente["rally"]
@@ -1142,6 +1227,10 @@ class SimuladorPonto:
         if diferenca > 15:
             quem_domina = "Jogador" if poder_rally_j > poder_rally_a else nome_receptor
             descricoes.append(f"{quem_domina} domina o rally!")
+            if poder_rally_j > poder_rally_a:
+                stats_info.insights.append("Dominando o Rally")
+            else:
+                stats_info.insights.append("Sob Pressão")
 
         # Confronto no rally
         _venceu_rally_j, _vantagem_rally, _n_trocas_rally = self._simular_rally_trocas(
@@ -1372,6 +1461,14 @@ class SimuladorPonto:
             contexto, estrategia, estrategia_adversario
         )
         tipo_saque_efetivo = estrategia_sacador.get("saque_tipo", TipoSaque.VARIADO)
+
+        # Insights da Superfície (apenas para o jogador)
+        if superficie == "saibro":
+            stats_info.insights.append("Bônus Saibro +12% Topspin")
+        elif superficie == "grama":
+            stats_info.insights.append("Bônus Grama +12% Saque/Voleio")
+
+        # FASE 1: Saque
         poder_saque, chance_ace, chance_falta = self._calcular_poder_saque(
             attr_sacador,
             psico_sacador,
@@ -1380,6 +1477,8 @@ class SimuladorPonto:
             superficie,
             stamina_sacador,
             fator_estado=fator_sacador,
+            insights=stats_info.insights,
+            eh_jogador=(contexto.sacador == "j"),
         )
         poder_devolucao = self._calcular_poder_devolucao(
             attr_receptor,
@@ -1388,14 +1487,20 @@ class SimuladorPonto:
             superficie,
             stamina_receptor,
             fator_estado=fator_receptor,
+            insights=stats_info.insights,
+            eh_jogador=(contexto.sacador == "a"),
         )
         poder_saque *= mod_ambiente["saque"]
         chance_ace *= mod_ambiente["ace"]
         chance_falta *= mod_ambiente["falta"]
         if contexto.sacador == "j":
+            if contexto_partida.momentum_j > 2:
+                stats_info.insights.append("Momentum Favorável")
             poder_saque *= 1.0 + (contexto_partida.momentum_j * 0.02)
             poder_devolucao *= 1.0 + (contexto_partida.momentum_a * 0.02)
         else:
+            if contexto_partida.momentum_j > 2:
+                stats_info.insights.append("Momentum Favorável")
             poder_saque *= 1.0 + (contexto_partida.momentum_a * 0.02)
             poder_devolucao *= 1.0 + (contexto_partida.momentum_j * 0.02)
 
@@ -1441,6 +1546,8 @@ class SimuladorPonto:
             superficie,
             contexto_partida.stamina_j,
             fator_estado=fator_j,
+            insights=stats_info.insights,
+            eh_jogador=True,
         )
         poder_rally_a = self._calcular_poder_rally(
             atributos_a_mod,
@@ -1450,11 +1557,20 @@ class SimuladorPonto:
             superficie,
             contexto_partida.stamina_a,
             fator_estado=fator_a,
+            insights=stats_info.insights,
+            eh_jogador=False,
         )
         poder_rally_j *= mod_ambiente["rally"]
         poder_rally_a *= mod_ambiente["rally"]
         poder_rally_j *= 1.0 + (contexto_partida.momentum_j * 0.02)
         poder_rally_a *= 1.0 + (contexto_partida.momentum_a * 0.02)
+
+        # Insights de domínio
+        if abs(poder_rally_j - poder_rally_a) > 15:
+            if poder_rally_j > poder_rally_a:
+                stats_info.insights.append("Dominando o Rally")
+            else:
+                stats_info.insights.append("Sob Pressão")
 
         # Confronto no rally
         _venceu_rally_j, _vantagem_rally, _n_trocas_rally = self._simular_rally_trocas(
@@ -1585,6 +1701,12 @@ class SimuladorPonto:
         )
         tipo = tipo_saque or estrategia_sacador.get("saque_tipo", TipoSaque.VARIADO)
 
+        # Insights da Superfície
+        if superficie == "saibro":
+            stats_info.insights.append("Bônus Saibro +12% Topspin")
+        elif superficie == "grama":
+            stats_info.insights.append("Bônus Grama +12% Saque/Voleio")
+
         # FASE 1: Saque
         poder_saque, chance_ace, chance_falta = self._calcular_poder_saque(
             attr_sacador,
@@ -1594,6 +1716,8 @@ class SimuladorPonto:
             superficie,
             stamina_sacador,
             fator_estado=fator_sacador,
+            insights=stats_info.insights,
+            eh_jogador=(contexto.sacador == "j"),
         )
         poder_devolucao = self._calcular_poder_devolucao(
             attr_receptor,
@@ -1602,14 +1726,20 @@ class SimuladorPonto:
             superficie,
             stamina_receptor,
             fator_estado=fator_receptor,
+            insights=stats_info.insights,
+            eh_jogador=(contexto.sacador == "a"),
         )
         poder_saque *= mod_ambiente["saque"]
         chance_ace *= mod_ambiente["ace"]
         chance_falta *= mod_ambiente["falta"]
         if contexto.sacador == "j":
+            if contexto_partida.momentum_j > 2:
+                stats_info.insights.append("Momentum Favorável")
             poder_saque *= 1.0 + (contexto_partida.momentum_j * 0.02)
             poder_devolucao *= 1.0 + (contexto_partida.momentum_a * 0.02)
         else:
+            if contexto_partida.momentum_j > 2:
+                stats_info.insights.append("Momentum Favorável")
             poder_saque *= 1.0 + (contexto_partida.momentum_a * 0.02)
             poder_devolucao *= 1.0 + (contexto_partida.momentum_j * 0.02)
 
@@ -1693,6 +1823,8 @@ class SimuladorPonto:
             superficie,
             contexto_partida.stamina_j,
             fator_estado=fator_j,
+            insights=stats_info.insights,
+            eh_jogador=True,
         )
         poder_rally_a = self._calcular_poder_rally(
             atributos_a_mod,
@@ -1702,6 +1834,8 @@ class SimuladorPonto:
             superficie,
             contexto_partida.stamina_a,
             fator_estado=fator_a,
+            insights=stats_info.insights,
+            eh_jogador=False,
         )
         poder_rally_j *= mod_ambiente["rally"]
         poder_rally_a *= mod_ambiente["rally"]
@@ -1713,6 +1847,10 @@ class SimuladorPonto:
         if diferenca > 15:
             quem_domina = "Jogador" if poder_rally_j > poder_rally_a else nome_receptor
             descricoes.append(f"{quem_domina} domina o rally!")
+            if poder_rally_j > poder_rally_a:
+                stats_info.insights.append("Dominando o Rally")
+            else:
+                stats_info.insights.append("Sob Pressão")
 
         # Confronto no rally
         _venceu_rally_j, _vantagem_rally, _n_trocas_rally = self._simular_rally_trocas(

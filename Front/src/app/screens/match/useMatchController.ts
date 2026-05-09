@@ -59,14 +59,13 @@ import {
 import {
   criarEventoLocalDePlacar,
   extrairAtualizacaoRuntime,
-  extrairAdversarioInfoPartida,
   extrairHistoricoJogador,
   extrairHistoricoTorneiosJogador,
   extrairTrofeusJogador,
   mapApiAdversarioParaMatch,
-  modoAcompanhamentoDaApi,
 } from './bootstrap'
 import { useOpponentScouting } from './useOpponentScouting'
+import { useMatchBootstrap } from './useMatchBootstrap'
 
 const ADVERSARIO_INICIAL = {
   nome: 'ADVERSÁRIO',
@@ -131,6 +130,7 @@ export function useMatchController() {
   const [superficie, setSuperficie] = useState('')
   const [faseTorneio, setFaseTorneio] = useState('')
   const [log, setLog] = useState<string[]>([])
+  const [pointInsights, setPointInsights] = useState<string[]>([])
   const [erroEntrada, setErroEntrada] = useState('')
   const [autoSaveAtivo] = useState<boolean>(() => carregarPreferenciaAutoSave())
 
@@ -187,6 +187,17 @@ export function useMatchController() {
     }
 
     if (atualizacao.descricao) setLog((p) => [...p, atualizacao.descricao].slice(-80))
+    
+    // Insights táticos do último ponto
+    if ('last_point_stats' in estado && estado.last_point_stats) {
+      const stats = estado.last_point_stats as any
+      if (Array.isArray(stats.insights)) {
+        setPointInsights(stats.insights)
+      }
+    } else if (atualizacao.tipo === 'game' || atualizacao.tipo === 'set') {
+      setPointInsights([]) // Limpa insights ao mudar de game/set
+    }
+
     setAlertaBreak(detectBreakPoint(atualizacao.placar))
 
     if (atualizacao.descricao && atualizacao.tipo === 'ponto') {
@@ -228,27 +239,23 @@ export function useMatchController() {
     setFadigaAdversarioAoVivo(match.fadiga)
   }
 
-  async function tentarRestaurarSessao(): Promise<boolean> {
-    if (!saveAtivo) return false
-    try {
-      const r = await api.saves.carregar(saveAtivo)
-      if (r.ok) { setJogador(r.jogador); return true }
-    } catch { /* ignora */ }
-    return false
-  }
-
-  async function reaproveitarPartidaAtiva(): Promise<boolean> {
-    try {
-      const ativa = await api.partida.ativa()
-      if (!ativa?.partida_id) return false
-      setInternalPartidaId(ativa.partida_id)
-      setPartidaId(ativa.partida_id)
-      setModo(modoAcompanhamentoDaApi(ativa.config.modo))
-      if (ativa.adversario) applyAdversario(ativa.adversario)
-      if (ativa.placar) { aplicar(ativa.placar) } else { setFase('aguardando') }
-      return true
-    } catch { return false }
-  }
+  const { tentarRestaurarSessao, reaproveitarPartidaAtiva } = useMatchBootstrap({
+    saveAtivo,
+    jogador,
+    nomeJogador,
+    fase,
+    setJogador,
+    setPartidaId,
+    setInternalPartidaId,
+    setModo,
+    setPlacar,
+    setFase,
+    setSuperficie,
+    setFaseTorneio,
+    lastPlacar,
+    applyAdversario,
+    aplicar,
+  })
 
   // ─── Handlers ────────────────────────────────────────────────────────────
   async function handleIniciar() {
@@ -429,33 +436,8 @@ export function useMatchController() {
     fetchJogador()
       .then((j) => { if (!ativo) return; jogadorAntesRef.current = { xp: j.xp, ranking: j.ranking, nivel: j.nivel } })
       .catch(() => { if (!ativo || !jogador) return; jogadorAntesRef.current = { xp: jogador.xp, ranking: jogador.ranking, nivel: jogador.nivel } })
-
-    api.partida.ativa().then((res) => {
-      if (!ativo || !res?.partida_id) return
-      setInternalPartidaId(res.partida_id); setPartidaId(res.partida_id)
-      setModo(modoAcompanhamentoDaApi(res.config.modo))
-      if (res.adversario) applyAdversario(res.adversario)
-      if (res.placar) { setPlacar(res.placar); lastPlacar.current = res.placar }
-      setFase('aguardando')
-    }).catch(async (e) => {
-      if (e instanceof ApiError && e.status === 400 && saveAtivo) {
-        try { const r = await api.saves.carregar(saveAtivo); if (r.ok) setJogador(r.jogador) } catch { /* ignorar */ }
-      }
-    })
     return () => { ativo = false }
-  }, [fetchJogador, saveAtivo, setJogador, setPartidaId])
-
-  useEffect(() => {
-    if (fase !== 'setup') return
-    api.torneio.estado().then((t) => {
-      if (!t) return
-      setSuperficie(t.superficie ?? ''); setFaseTorneio(String(t.fase_atual ?? ''))
-      const adv = extrairAdversarioInfoPartida(t, nomeJogador)
-      if (adv) applyAdversario(adv)
-    }).catch((e) => console.error('Erro ao carregar estado do torneio:', e))
-    api.partida.preview().then((res) => { if (res?.adversario) applyAdversario(res.adversario) })
-      .catch((e) => console.error('Erro ao carregar preview da partida:', e))
-  }, [fase, nomeJogador])
+  }, [fetchJogador, jogador])
 
   useEffect(() => {
     if (modo !== 'game') return
@@ -556,6 +538,7 @@ export function useMatchController() {
     placar, simulando, simulacaoPausada, velocidadeRapida, ajustandoPlanoRapido,
     plano, modo, segundoSaque, confirmandoEntrada, abaRival, setAbaRival, abaJogador, setAbaJogador,
     faixa, setFaixa, alvo, setAlvo, intencaoAtiva, expandirPonto, setExpandirPonto,
+    pointInsights,
     adversario, energiaJogadorAoVivo, fadigaJogadorAoVivo,
     energiaAdversarioAoVivo, fadigaAdversarioAoVivo,
     partidaId, superficie, faseTorneio, log, erroEntrada,
@@ -575,7 +558,7 @@ export function useMatchController() {
     metricsJogador, reportJogador, overallCardJogador,
     metricsAdversario, overallCardAdversario,
     destaqueMomento, destaqueMomentoCor,
-    velocidadeRapidaAtual, velocidadeRapida: velocidadeRapida,
+    velocidadeRapidaAtual,
     resumoEstrategiaJogador, resumoEstrategiaAdversario,
     // Handlers
     handleIniciar, handleIntencao, handleProximoPonto, handleSimularGame, handleSimularSet,

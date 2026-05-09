@@ -1,5 +1,5 @@
 from enum import Enum
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from typing import Any
 
 
@@ -51,6 +51,7 @@ class MatchPointStats:
     winner: bool = False
     erro_nao_forcado: bool = False
     intensidade: str = "medio"
+    insights: list[str] = field(default_factory=list)
 
     # Visualização (coordenadas 0-100)
     # X: 0 (esquerda) a 100 (direita)
