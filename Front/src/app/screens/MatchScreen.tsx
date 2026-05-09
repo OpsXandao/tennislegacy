@@ -114,6 +114,7 @@ export function MatchScreen() {
       contadorSet={ctrl.contadorSet}
       intencaoAtiva={ctrl.intencaoAtiva}
       expandirPonto={ctrl.expandirPonto}
+      pointInsights={ctrl.pointInsights}
       faixa={ctrl.faixa}
       alvo={ctrl.alvo}
       onBack={() => navigate('/tournament')}

@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router'
-import { api, ApiError } from '../../../api/client'
+import { api } from '../../../api/client'
 import { useGameStore } from '../../../store/gameStore'
 import type {
   AdversarioInfo as ApiAdversarioInfo,
@@ -40,7 +39,6 @@ import {
   carregarPreferenciaAutoSave,
   detectBreakPoint,
   detectarPontoCritico,
-  estrategiaPonto,
   flashColor,
   getScoutingMetrics,
   getScoutingMetricsFromData,
@@ -57,7 +55,6 @@ import {
   serializarPacoteTatico,
 } from './model'
 import {
-  criarEventoLocalDePlacar,
   extrairAtualizacaoRuntime,
   extrairHistoricoJogador,
   extrairHistoricoTorneiosJogador,
@@ -66,6 +63,7 @@ import {
 } from './bootstrap'
 import { useOpponentScouting } from './useOpponentScouting'
 import { useMatchBootstrap } from './useMatchBootstrap'
+import { useMatchActions } from './useMatchActions'
 
 const ADVERSARIO_INICIAL = {
   nome: 'ADVERSÁRIO',
@@ -81,7 +79,6 @@ const ADVERSARIO_INICIAL = {
 } as const
 
 export function useMatchController() {
-  const navigate = useNavigate()
   const { jogador, saveAtivo, setJogador, setPartidaId, setSemana, setTorneio, fetchJogador, ano } =
     useGameStore()
 
@@ -257,165 +254,58 @@ export function useMatchController() {
     aplicar,
   })
 
-  // ─── Handlers ────────────────────────────────────────────────────────────
-  async function handleIniciar() {
-    if (!confirmandoEntrada) { setConfirmandoEntrada(true); setErroEntrada(''); return }
-    setSimulando(true)
-    setErroEntrada('')
-    try {
-      if (await reaproveitarPartidaAtiva()) return
-
-      if (modo === 'auto') {
-        const r = await api.partida.iniciar('rapido')
-        setInternalPartidaId(r.partida_id)
-        setPartidaId(r.partida_id)
-        if (r.adversario) applyAdversario(r.adversario)
-        if (r.placar) aplicar(criarEventoLocalDePlacar(r.placar, 'setup'))
-        await api.partida.estrategia(r.partida_id, serializarPacoteTatico(mentalidade, abordagem, instrucao, segundoSaque)).catch(() => {})
-        const estado = await api.partida.simularPartida(r.partida_id)
-        aplicar({ ...estado, tipo: 'fim' as any, descricao: '' } as any)
-        return
-      }
-
-      const apiModo = modo === 'estrategista' ? 'estrategista' : 'rapido'
-      const r = await api.partida.iniciar(apiModo)
-      setInternalPartidaId(r.partida_id)
-      setPartidaId(r.partida_id)
-      if (r.adversario) applyAdversario(r.adversario)
-      if (r.placar) aplicar(criarEventoLocalDePlacar(r.placar, 'setup'))
-      await api.partida.estrategia(r.partida_id, serializarPacoteTatico(mentalidade, abordagem, instrucao, segundoSaque)).catch(() => {})
-      setFase('aguardando')
-    } catch (e) {
-      if (e instanceof ApiError && e.status === 400) {
-        const restaurou = await tentarRestaurarSessao()
-        if (restaurou) { setSimulando(false); handleIniciar(); return }
-        navigate('/')
-        return
-      }
-      if (await reaproveitarPartidaAtiva()) return
-      setErroEntrada('Nao foi possivel iniciar a partida.')
-      console.error(e)
-    } finally { setSimulando(false) }
-  }
-
-  async function handleIntencao(intencao: string) {
-    if (!partidaId || fase !== 'aguardando') return
-    setIntencaoAtiva(intencao); setFase('jogando'); setSimulando(true); setAlertaBreak('')
-    try {
-      await api.partida.estrategia(partidaId, estrategiaPonto(intencao, faixa)).catch(() => {})
-      const estado = await api.partida.ponto(partidaId)
-      aplicar(estado)
-    } catch { setFase('aguardando') }
-    finally { setSimulando(false); setIntencaoAtiva(null) }
-  }
-
-  async function handleProximoPonto() {
-    if (!partidaId || fase !== 'aguardando') return
-    setFase('jogando'); setSimulando(true)
-    try { const estado = await api.partida.ponto(partidaId); aplicar(estado) }
-    catch { setFase('aguardando') }
-    finally { setSimulando(false) }
-  }
-
-  async function handleSimularGame() {
-    if (!partidaId) return
-    setFase('jogando'); setSimulando(true)
-    try {
-      let finalEstado: MatchPointRuntime | null = null
-      while (true) {
-        const estado = await api.partida.ponto(partidaId)
-        if (estado.tipo === 'game' || estado.tipo === 'set' || estado.tipo === 'fim' || estado.encerrado) {
-          finalEstado = estado; break
-        }
-        lastPlacar.current = estado
-      }
-      if (finalEstado) aplicar(finalEstado)
-    } catch { setFase('aguardando') }
-    finally { setSimulando(false) }
-  }
-
-  async function handleSimularSet() {
-    if (!partidaId) return
-    setFase('jogando'); setSimulando(true)
-    try {
-      const estado = await api.partida.simularSet(partidaId)
-      aplicar(criarEventoLocalDePlacar(estado, estado.encerrado ? 'fim' : 'set'))
-    } catch { setFase('aguardando') }
-    finally { setSimulando(false) }
-  }
-
-  async function aplicarEstrategiaAtual() {
-    if (!partidaId) return
-    const est = serializarPacoteTatico(mentalidade, abordagem, instrucao, segundoSaque)
-    await api.partida.estrategia(partidaId, est).catch((e) => console.error('Erro ao aplicar estratégia:', e))
-  }
-
-  async function handleContinuarGame() {
-    if (partidaId) await aplicarEstrategiaAtual()
-    setAjustandoPlanoGame(false); setGameResult(null); setFase('aguardando')
-  }
-
-  async function handleContinuarSet() {
-    setGameResult(null); setAjustandoPlanoSet(false)
-    if (partidaId) {
-      const est = serializarPacoteTatico(mentalidade, abordagem, instrucao, segundoSaque)
-      await api.partida.ajusteTatico(partidaId, est, placar.sets[0] + placar.sets[1]).catch((e) => console.error('Ajuste tático falhou:', e))
-    }
-    setFase('aguardando')
-  }
-
-  async function handleEscolherPlanoSet(p: PlanoValor) {
-    const mapa: Record<PlanoValor, { m: MentalidadeValor; a: AbordagemValor; i: InstrucaoValor }> = {
-      pressionar: { m: 'OFENSIVA', a: 'SERVE_VOLLEY', i: 'PADRAO' },
-      consistencia: { m: 'DEFENSIVA', a: 'BASELINE', i: 'TROCAS_LONGAS' },
-      variar: { m: 'EQUILIBRADA', a: 'BASELINE', i: 'PADRAO' },
-    }
-    const { m, a, i } = mapa[p]
-    setMentalidade(m); setAbordagem(a); setInstrucao(i)
-    const est = serializarPacoteTatico(m, a, i, segundoSaque)
-    if (partidaId) await api.partida.ajusteTatico(partidaId, est, placar.sets[0] + placar.sets[1]).catch((e) => console.error('Ajuste tático falhou:', e))
-    setGameResult(null); setAjustandoPlanoSet(false); setFase('aguardando')
-  }
-
-  async function handleAplicarPausaRapida() {
-    await aplicarEstrategiaAtual()
-    setAjustandoPlanoRapido(false); setSimulacaoPausada(false); setFase('aguardando')
-  }
-
-  async function handleDesistir() {
-    if (!partidaId) return
-    if (!window.confirm('Tem certeza? Isso resultará em derrota por W.O.')) return
-    try { await api.partida.desistir(partidaId); navigate('/tournament') }
-    catch (e) { console.error(e) }
-  }
-
-  async function handleContinuarPosJogo() {
-    try {
-      const torneioAtual = await api.torneio.estado().catch(() => null)
-      if (torneioAtual?.fase_atual === 'finalizado') {
-        const resultado = await api.calendario.avancar()
-        setSemana(resultado.semana, resultado.ano ?? ano)
-        await fetchJogador().catch(() => {})
-        setTorneio(null); setPartidaId(null); navigate('/hub')
-        return
-      }
-      if (torneioAtual) setTorneio(torneioAtual)
-    } catch { /* mantém saída padrão */ }
-    setPartidaId(null); navigate('/tournament')
-  }
-
-  function trocarModoAcompanhamento(novoModo: ModoAcomp) {
-    setModo(novoModo)
-    if (novoModo !== 'detalhado') { setSimulacaoPausada(false); setAjustandoPlanoRapido(false) }
-  }
-
-  function alternarPausaSimulacao() {
-    if (modo !== 'detalhado' || !partidaId || fase === 'encerrada' || fase === 'jogando') return
-    setSimulacaoPausada((atual) => {
-      const proximo = !atual; setAjustandoPlanoRapido(proximo); return proximo
-    })
-    if (fase !== 'aguardando') setFase('aguardando')
-  }
+  const {
+    handleIniciar,
+    handleIntencao,
+    handleProximoPonto,
+    handleSimularGame,
+    handleSimularSet,
+    handleContinuarGame,
+    handleContinuarSet,
+    handleEscolherPlanoSet,
+    handleAplicarPausaRapida,
+    handleDesistir,
+    handleContinuarPosJogo,
+    trocarModoAcompanhamento,
+    alternarPausaSimulacao,
+  } = useMatchActions({
+    confirmandoEntrada,
+    modo,
+    fase,
+    partidaId,
+    faixa,
+    placar,
+    ano,
+    fetchJogador,
+    setSemana,
+    setTorneio,
+    setPartidaId,
+    setInternalPartidaId,
+    setSimulando,
+    setErroEntrada,
+    setConfirmandoEntrada,
+    setFase,
+    setIntencaoAtiva,
+    setAlertaBreak,
+    setGameResult,
+    setAjustandoPlanoGame,
+    setAjustandoPlanoSet,
+    setMentalidade,
+    setAbordagem,
+    setInstrucao,
+    setAjustandoPlanoRapido,
+    setSimulacaoPausada,
+    setModo,
+    mentalidade,
+    abordagem,
+    instrucao,
+    segundoSaque,
+    aplicar,
+    applyAdversario,
+    reaproveitarPartidaAtiva,
+    tentarRestaurarSessao,
+    lastPlacar,
+  })
 
   // ─── Effects ─────────────────────────────────────────────────────────────
   useEffect(() => { modoRef.current = modo }, [modo])
