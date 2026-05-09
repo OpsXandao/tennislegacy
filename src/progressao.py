@@ -60,11 +60,18 @@ def handle_xp_e_level_up(jogador: Any, vitoria: bool, return_eventos: bool = Fal
         jogador.nivel += 1
         jogador.pontos_de_skill += 5
 
-        # Aumenta o XP necessário para o próximo nível
+        # Fórmula de progressão equilibrada (Game Designer recommendation)
+        # 100 + (Nivel^1.8) * 10 -> Crescimento sustentável e planejado
+        proximo_alvo = int(100 + (jogador.nivel**1.8) * 10)
+
+        # Garante que sempre aumente pelo menos 5% em relação ao anterior se a fórmula falhar em ser maior
+        if proximo_alvo <= xp_para_prox:
+            proximo_alvo = int(xp_para_prox * 1.05)
+
         xp_excedente = jogador.xp - xp_para_prox
-        xp_para_prox = int(xp_para_prox * 1.25)
-        jogador.xp_para_proximo_nivel = xp_para_prox
         jogador.xp = xp_excedente
+        jogador.xp_para_proximo_nivel = proximo_alvo
+        xp_para_prox = proximo_alvo
 
         eventos.append(
             EventoProgressao(

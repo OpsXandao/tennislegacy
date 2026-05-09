@@ -435,7 +435,12 @@ export function TournamentBracket() {
                   >
                     {loadingScout ? '...' : '🔍 ANALISAR'}
                   </NeonButton>
-                  <NeonButton variant="yellow" className="w-full" onClick={handleJogar} blink>
+                  <NeonButton
+                    variant="yellow"
+                    className="w-full"
+                    onClick={handleJogar}
+                    critical
+                  >
                     ▶ JOGAR
                   </NeonButton>
                 </div>

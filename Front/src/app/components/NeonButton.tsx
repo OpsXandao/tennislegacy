@@ -8,15 +8,16 @@ interface NeonButtonProps {
   variant?: 'green' | 'pink' | 'yellow' | 'cyan';
   className?: string;
   blink?: boolean;
+  critical?: boolean;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
 }
 
 const COLORS = {
-  green:  { border: 'var(--neon-green)', bg: 'var(--neon-green)', text: '#08131a', glow: 'var(--glow-green-sm)', hoverBg: 'color-mix(in srgb, var(--neon-green) 14%, transparent)' },
-  pink:   { border: 'var(--neon-pink)', bg: 'var(--neon-pink)', text: '#08131a', glow: 'var(--glow-pink-sm)', hoverBg: 'color-mix(in srgb, var(--neon-pink) 14%, transparent)' },
-  yellow: { border: 'var(--neon-yellow)', bg: 'var(--neon-yellow)', text: '#08131a', glow: 'var(--glow-gold-sm)', hoverBg: 'color-mix(in srgb, var(--neon-yellow) 14%, transparent)' },
-  cyan:   { border: 'var(--neon-cyan)', bg: 'var(--neon-cyan)', text: '#08131a', glow: 'var(--glow-cyan-sm)', hoverBg: 'color-mix(in srgb, var(--neon-cyan) 14%, transparent)' },
+  green:  { border: 'var(--neon-green)', bg: 'var(--neon-green)', text: '#08131a', glow: 'var(--glow-green-sm)', fullGlow: 'var(--glow-green)', hoverBg: 'color-mix(in srgb, var(--neon-green) 14%, transparent)' },
+  pink:   { border: 'var(--neon-pink)', bg: 'var(--neon-pink)', text: '#08131a', glow: 'var(--glow-pink-sm)', fullGlow: 'var(--glow-pink)', hoverBg: 'color-mix(in srgb, var(--neon-pink) 14%, transparent)' },
+  yellow: { border: 'var(--neon-yellow)', bg: 'var(--neon-yellow)', text: '#08131a', glow: 'var(--glow-gold-sm)', fullGlow: 'var(--glow-gold)', hoverBg: 'color-mix(in srgb, var(--neon-yellow) 14%, transparent)' },
+  cyan:   { border: 'var(--neon-cyan)', bg: 'var(--neon-cyan)', text: '#08131a', glow: 'var(--glow-cyan-sm)', fullGlow: 'var(--glow-cyan)', hoverBg: 'color-mix(in srgb, var(--neon-cyan) 14%, transparent)' },
 } as const;
 
 export function NeonButton({
@@ -25,6 +26,7 @@ export function NeonButton({
   variant = 'green',
   className = '',
   blink = false,
+  critical = false,
   disabled = false,
   type = 'button',
 }: NeonButtonProps) {
@@ -58,20 +60,28 @@ export function NeonButton({
       onMouseLeave={() => { setIsPressed(false); setIsHovered(false); }}
       onMouseEnter={() => { if (!disabled) setIsHovered(true); }}
       whileTap={disabled ? {} : { scale: 0.97 }}
+      animate={critical && !disabled ? {
+        boxShadow: [c.glow, c.fullGlow, c.glow],
+        scale: [1, 1.02, 1]
+      } : {}}
+      transition={critical && !disabled ? {
+        boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+        scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+      } : {}}
       className={`
         relative min-h-[44px] px-4 py-3
         border-2 transition-colors duration-150
         arcade-font text-center uppercase tracking-wider leading-tight whitespace-normal break-words
         select-none
         ${disabled ? 'opacity-35 cursor-not-allowed' : 'cursor-pointer'}
-        ${blink && !disabled ? 'animate-pulse' : ''}
+        ${blink && !disabled && !critical ? 'animate-pulse' : ''}
         ${className}
       `}
       style={{
         borderColor: disabled ? `${c.border}55` : c.border,
         backgroundColor: bgColor,
         color: disabled ? `${c.border}88` : textColor,
-        boxShadow: disabled ? 'none' : isPressed ? `var(--glow-${variant === 'yellow' ? 'gold' : variant})` : c.glow,
+        boxShadow: disabled ? 'none' : isPressed ? c.fullGlow : c.glow,
         transition: 'background-color 0.12s, color 0.12s, box-shadow 0.12s',
       }}
     >

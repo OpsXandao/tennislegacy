@@ -16,6 +16,7 @@ Ordem do pipeline:
 
 from __future__ import annotations
 
+import random
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Optional
 
@@ -82,6 +83,12 @@ STAGE_META = {
         "titulo": "Seu jogador",
         "resumo": "Atualizando recuperação, fadiga e status físico.",
         "tom": "positive",
+    },
+    "_processar_eventos_narrativos": {
+        "id": "narrative_events",
+        "titulo": "Vida de Atleta",
+        "resumo": "Acontecimentos e bastidores da sua rotina.",
+        "tom": "info",
     },
     "_processar_financas": {
         "id": "process_finances",
@@ -307,6 +314,60 @@ def _processar_jogador(ctx: SemanaContext) -> None:
     }
 
 
+def _processar_eventos_narrativos(ctx: SemanaContext) -> None:
+    """Dispara eventos aleatórios para dar variabilidade ao loop semanal."""
+    if random.random() > 0.18:  # 18% de chance de evento por semana
+        return
+
+    eventos = [
+        {
+            "id": "jantar_caridade",
+            "mensagem": "Você participou de um jantar de caridade. (+100 seguidores, -8 energia)",
+            "tipo": "social",
+        },
+        {
+            "id": "treino_inspirado",
+            "mensagem": "Semana de treino excepcionalmente produtiva! (+3 moral)",
+            "tipo": "mental",
+        },
+        {
+            "id": "noite_insonia",
+            "mensagem": "Uma noite de insônia afetou sua recuperação. (-12 energia)",
+            "tipo": "fisico",
+        },
+        {
+            "id": "fofoca_midia",
+            "mensagem": "Boatos sobre sua vida pessoal circulam na mídia. (-5 moral, +250 seguidores)",
+            "tipo": "reputacao",
+        },
+        {
+            "id": "festa_vip",
+            "mensagem": "Você foi convidado para uma festa VIP. (+500 seguidores, -20 energia, -8 moral)",
+            "tipo": "social",
+        },
+    ]
+
+    ev = random.choice(eventos)
+
+    # Aplica efeitos
+    if ev["id"] == "jantar_caridade":
+        ctx.jogador.seguidores = getattr(ctx.jogador, "seguidores", 0) + 100
+        ctx.jogador.ajustar_energia(-8)
+    elif ev["id"] == "treino_inspirado":
+        ctx.jogador.moral = min(100, getattr(ctx.jogador, "moral", 70) + 3)
+    elif ev["id"] == "noite_insonia":
+        ctx.jogador.ajustar_energia(-12)
+    elif ev["id"] == "fofoca_midia":
+        ctx.jogador.moral = max(0, getattr(ctx.jogador, "moral", 70) - 5)
+        ctx.jogador.seguidores = getattr(ctx.jogador, "seguidores", 0) + 250
+    elif ev["id"] == "festa_vip":
+        ctx.jogador.seguidores = getattr(ctx.jogador, "seguidores", 0) + 500
+        ctx.jogador.ajustar_energia(-20)
+        ctx.jogador.moral = max(0, getattr(ctx.jogador, "moral", 70) - 8)
+
+    ctx.eventos_api.append(ev["mensagem"])
+
+
 def _processar_financas(ctx: SemanaContext) -> None:
     from src import calendario as cal
 
@@ -354,6 +415,7 @@ PIPELINE = [
     _avancar_calendario,
     _expirar_pontos,
     _processar_jogador,
+    _processar_eventos_narrativos,
     _processar_financas,
     _inicializar_nova_semana,
 ]
