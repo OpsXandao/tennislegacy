@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import { motion, AnimatePresence } from 'motion/react'
 import {
   Settings, Save, LogOut, ChevronRight,
-  Globe, ShoppingBag, Shield, Users, History, CalendarDays, Play,
+  Globe, ShoppingBag, Shield, Users, History, CalendarDays, Play, Mic,
 } from 'lucide-react'
 import { FutCard, BottomNav } from '../components'
 import { useGameStore } from '../../store/gameStore'
@@ -38,12 +38,13 @@ function PixelMeter({ value, color }: { value: number; color: string }) {
 }
 
 const QUICK = [
-  { icon: CalendarDays, label: 'JOGAR',    route: '/calendar', color: '#00ff88' },
-  { icon: ShoppingBag,  label: 'MERCADO',  route: '/market',   color: '#ff0055' },
-  { icon: Users,        label: 'DUPLAS',   route: '/duplas',   color: '#00e5ff' },
-  { icon: Shield,       label: 'DAVIS',    route: '/davis',    color: '#ffe600' },
-  { icon: History,      label: 'HISTORICO',route: '/history',  color: '#ffe600' },
-  { icon: Globe,        label: 'MUNDO',    route: '/world',    color: '#ffe600' },
+  { icon: CalendarDays, label: 'JOGAR',    route: '/calendar',  color: '#00ff88' },
+  { icon: ShoppingBag,  label: 'MERCADO',  route: '/market',    color: '#ff0055' },
+  { icon: Users,        label: 'DUPLAS',   route: '/duplas',    color: '#00e5ff' },
+  { icon: Shield,       label: 'DAVIS',    route: '/davis',     color: '#ffe600' },
+  { icon: History,      label: 'HISTORICO',route: '/history',   color: '#ffe600' },
+  { icon: Globe,        label: 'MUNDO',    route: '/world',     color: '#ffe600' },
+  { icon: Mic,          label: 'IMPRENSA', route: '/imprensa',  color: '#c084fc' },
 ]
 
 function QuickBtn({ item, onClick }: { item: typeof QUICK[number]; onClick: () => void }) {
@@ -104,9 +105,16 @@ export function HubScreen() {
   const overall   = jogador?.overall   ?? 0
   const tour      = (jogador?.tour     ?? 'atp') as 'atp' | 'wta'
   const isAtp     = tour === 'atp'
-  const accent    = isAtp ? '#00ff88' : '#ff0055'
-  const accentVar = isAtp ? 'var(--neon-green)' : 'var(--neon-pink)'
-  const glowVar   = isAtp ? 'var(--glow-green-sm)' : 'var(--glow-pink-sm)'
+  
+  // Landmarks Visuais (Ranking-based UI levels)
+  const isTop10   = rank > 0 && rank <= 10
+  const isTop100  = rank > 0 && rank <= 100
+  
+  const accent    = isTop10 ? '#ffe600' : isTop100 ? '#00e5ff' : isAtp ? '#00ff88' : '#ff0055'
+  const accentVar = isTop10 ? 'var(--neon-yellow)' : isTop100 ? 'var(--neon-cyan)' : isAtp ? 'var(--neon-green)' : 'var(--neon-pink)'
+  const glowVar   = isTop10 ? 'var(--glow-gold-sm)' : isTop100 ? 'var(--glow-cyan-sm)' : isAtp ? 'var(--glow-green-sm)' : 'var(--glow-pink-sm)'
+  const shadowVar = isTop10 ? '0 2px 12px rgba(255,230,0,0.22)' : isTop100 ? '0 2px 12px rgba(0,229,255,0.22)' : isAtp ? '0 2px 12px rgba(0,255,136,0.12)' : '0 2px 12px rgba(255,0,85,0.12)'
+  
   const lesionado = !!jogador?.status_lesao
 
   async function handleSalvar() {
@@ -174,13 +182,13 @@ export function HubScreen() {
 
       {/* Top bar */}
       <div
-        className="flex items-center justify-between px-4 py-3 border-b-2 border-[#00ff88]"
-        style={{ boxShadow: '0 2px 12px rgba(0,255,136,0.12)' }}
+        className="flex items-center justify-between px-4 py-3 border-b-2"
+        style={{ borderColor: accent, boxShadow: shadowVar }}
       >
         <div>
           <div
-            className="text-[10px] text-[#00ff88]"
-            style={{ fontFamily: 'var(--font-pixel)', textShadow: '0 0 6px #00ff88' }}
+            className="text-[10px]"
+            style={{ fontFamily: 'var(--font-pixel)', color: accent, textShadow: `0 0 6px ${accent}` }}
           >
             TENNIS LEGACY
           </div>
@@ -331,16 +339,24 @@ export function HubScreen() {
         {torneio && (
           <motion.button
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ 
+              opacity: 1,
+              boxShadow: [
+                '0 0 16px rgba(255,230,0,0.2)', 
+                '0 0 32px rgba(255,230,0,0.45)', 
+                '0 0 16px rgba(255,230,0,0.2)'
+              ]
+            }}
+            transition={{ 
+              opacity: { duration: 0.3 },
+              boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+            }}
             exit={{ opacity: 0 }}
             onClick={() => navigate((torneio as any).davis ? '/davis' : '/tournament')}
             onMouseEnter={() => setHoveringActiveTournament(true)}
             onMouseLeave={() => setHoveringActiveTournament(false)}
             className="mx-4 mt-3 w-[calc(100%-2rem)] flex items-center justify-between p-3 border-2 border-[#ffe600] bg-black text-left active:scale-[0.98] transition-transform"
             style={{
-              boxShadow: hoveringActiveTournament
-                ? '0 0 24px rgba(255,230,0,0.35), inset 0 0 28px rgba(255,230,0,0.08)'
-                : '0 0 16px rgba(255,230,0,0.2), inset 0 0 20px rgba(255,230,0,0.04)',
               background: hoveringActiveTournament ? 'rgba(255,230,0,0.06)' : '#000',
             }}
           >
@@ -369,15 +385,21 @@ export function HubScreen() {
       {/* Quick access */}
       <div className="px-4 mt-4">
         {!torneio && (
-          <button
+          <motion.button
+            animate={{ 
+              boxShadow: [
+                '0 0 14px rgba(0,255,136,0.18)', 
+                '0 0 28px rgba(0,255,136,0.4)', 
+                '0 0 14px rgba(0,255,136,0.18)'
+              ],
+              scale: [1, 1.005, 1]
+            }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             onClick={() => navigate('/calendar')}
             onMouseEnter={() => setHoveringNextStep(true)}
             onMouseLeave={() => setHoveringNextStep(false)}
             className="app-next-step mb-3 flex w-full items-center justify-between border-2 border-[#00ff88] bg-[#00ff88]/10 p-3 text-left active:scale-[0.98] transition-transform"
             style={{
-              boxShadow: hoveringNextStep
-                ? '0 0 24px rgba(0,255,136,0.28)'
-                : '0 0 14px rgba(0,255,136,0.18)',
               background: hoveringNextStep ? 'rgba(0,255,136,0.16)' : 'rgba(0,255,136,0.1)',
             }}
           >
@@ -403,7 +425,7 @@ export function HubScreen() {
             <div className="flex items-center gap-1 text-[10px] text-[#00ff88]" style={{ fontFamily: 'var(--font-pixel)' }}>
               TEMPORADA <ChevronRight size={10} />
             </div>
-          </button>
+          </motion.button>
         )}
         <div className="text-[9px] text-[#444] mb-2" style={{ fontFamily: 'var(--font-pixel)' }}>&gt;&gt; MENU</div>
         <div className="grid grid-cols-3 gap-2">

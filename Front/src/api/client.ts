@@ -413,6 +413,29 @@ export const api = {
       post<{ ok: boolean; mensagem: string }>('/email/acao', { email_id, acao }),
   },
 
+  // ── Imprensa ──────────────────────────────────────────────────────────────
+
+  imprensa: {
+    pergunta: (contexto: 'pre' | 'pos' | 'geral' = 'geral') =>
+      get<{
+        pergunta: {
+          texto: string
+          etiquetas: string[]
+          opcoes: { texto: string; moral: number; reputacao: number }[]
+        } | null
+      }>(`/imprensa/pergunta?contexto=${contexto}`),
+
+    responder: (opcao_idx: number, contexto: 'pre' | 'pos' | 'geral' = 'geral') =>
+      post<{
+        ok: boolean
+        texto_opcao: string
+        moral_delta: number
+        rep_delta: number
+        moral: number
+        reputacao: number
+      }>('/imprensa/responder', { opcao_idx, contexto }),
+  },
+
   // ── Histórico ─────────────────────────────────────────────────────────────
 
   historico: {

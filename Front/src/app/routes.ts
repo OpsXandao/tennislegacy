@@ -24,6 +24,7 @@ const WeekAdvanceScreen = lazy(() => import("./screens/WeekAdvanceScreen").then(
 const SponsorScreen     = lazy(() => import("./screens/SponsorScreen").then(m => ({ default: m.SponsorScreen })));
 const NationsRankingScreen = lazy(() => import("./screens/NationsRankingScreen").then(m => ({ default: m.NationsRankingScreen })));
 const RankingHistoryScreen = lazy(() => import("./screens/RankingHistoryScreen").then(m => ({ default: m.RankingHistoryScreen })));
+const PressScreen          = lazy(() => import("./screens/PressScreen").then(m => ({ default: m.PressScreen })));
 
 export const router = createBrowserRouter([
   { path: "/",           Component: HomeScreen },
@@ -47,5 +48,6 @@ export const router = createBrowserRouter([
   { path: "/patrocinios", Component: SponsorScreen },
   { path: "/ranking-nacoes", Component: NationsRankingScreen },
   { path: "/ranking-historico", Component: RankingHistoryScreen },
+  { path: "/imprensa",   Component: PressScreen },
   { path: "*",           Component: NotFoundScreen },
 ]);
