@@ -1,0 +1,203 @@
+"""
+Constantes da Copa Davis e Billie Jean King Cup.
+"""
+
+PAISES_DAVIS_CUP = [
+    "[IT] Itália",
+    "[ES] Espanha",
+    "[AU] Austrália",
+    "[CA] Canadá",
+    "[HR] Croácia",
+    "[NL] Holanda",
+    "[US] USA",
+    "[GB] Grã-Bretanha",
+    "[DE] Alemanha",
+    "[FR] França",
+    "[AR] Argentina",
+    "[CZ] Czechia",
+    "[SE] Suécia",
+    "[BE] Bélgica",
+    "[CH] Suíça",
+    "[RS] Sérvia",
+    "[CL] Chile",
+    "[KR] Coreia do Sul",
+    "[BR] Brasil",
+    "[PT] Portugal",
+    "[JP] Japão",
+    "[PL] Polônia",
+]
+
+EQUIPES_QUALIFIERS_R1_2026 = [
+    "[AU] Austrália",
+    "[HU] Hungria",
+    "[DE] Alemanha",
+    "[US] USA",
+    "[DK] Dinamarca",
+    "[HR] Croácia",
+    "[FR] França",
+    "[ES] Espanha",
+    "[CZ] Czechia",
+    "[JP] Japão",
+    "[AT] Áustria",
+    "[BE] Bélgica",
+    "[AR] Argentina",
+    "[SE] Suécia",
+    "[CA] Canadá",
+    "[IL] Israel",
+    "[TW] Chinese Taipei",
+    "[RS] Sérvia",
+    "[SK] Eslováquia",
+    "[BR] Brasil",
+    "[CH] Suíça",
+    "[KR] Coreia do Sul",
+    "[GB] Grã-Bretanha",
+    "[FI] Finlândia",
+    "[CL] Chile",
+    "[NO] Noruega",
+]
+
+EQUIPES_QUALIFIERS_R2_2026 = [
+    "[AR] Argentina",
+    "[BE] Bélgica",
+    "[AT] Áustria",
+    "[DE] Alemanha",
+    "[CZ] Czechia",
+    "[ES] Espanha",
+    "[FR] França",
+    "[NL] Holanda",
+    "[AU] Austrália",
+    "[HU] Hungria",
+    "[JP] Japão",
+    "[US] USA",
+    "[DK] Dinamarca",
+    "[HR] Croácia",
+]
+
+EQUIPES_FINAL8_2026 = [
+    "[IT] Itália",
+    "[AR] Argentina",
+    "[BE] Bélgica",
+    "[AT] Áustria",
+    "[DE] Alemanha",
+    "[CZ] Czechia",
+    "[ES] Espanha",
+    "[FR] França",
+]
+
+TIES_QUALIFIERS_R1_2026 = [
+    ("[AU] Austrália", "[SE] Suécia"),
+    ("[HU] Hungria", "[CA] Canadá"),
+    ("[DE] Alemanha", "[IL] Israel"),
+    ("[US] USA", "[TW] Chinese Taipei"),
+    ("[DK] Dinamarca", "[RS] Sérvia"),
+    ("[HR] Croácia", "[SK] Eslováquia"),
+    ("[FR] França", "[BR] Brasil"),
+    ("[ES] Espanha", "[CH] Suíça"),
+    ("[CZ] Czechia", "[KR] Coreia do Sul"),
+    ("[JP] Japão", "[GB] Grã-Bretanha"),
+    ("[AT] Áustria", "[FI] Finlândia"),
+    ("[BE] Bélgica", "[CL] Chile"),
+    ("[AR] Argentina", "[NO] Noruega"),
+]
+
+TIES_QUALIFIERS_R2_2026 = [
+    ("[NL] Holanda", "[AR] Argentina"),
+    ("[AU] Austrália", "[BE] Bélgica"),
+    ("[HU] Hungria", "[AT] Áustria"),
+    ("[JP] Japão", "[DE] Alemanha"),
+    ("[US] USA", "[CZ] Czechia"),
+    ("[DK] Dinamarca", "[ES] Espanha"),
+    ("[HR] Croácia", "[FR] França"),
+]
+
+TIES_FINAL8_QUARTAS_2026 = [
+    ("[FR] França", "[BE] Bélgica"),
+    ("[IT] Itália", "[AT] Áustria"),
+    ("[ES] Espanha", "[CZ] Czechia"),
+    ("[AR] Argentina", "[DE] Alemanha"),
+]
+
+TIES_QUALIFIERS_R1_INFO_2026 = {
+    ("AU", "SE"): {"cidade": "Stockholm", "pais": "Suécia", "superficie": "Hard (i)"},
+    ("HU", "CA"): {"cidade": "Montreal", "pais": "Canadá", "superficie": "Hard (i)"},
+    ("DE", "IL"): {"cidade": "Vilnius", "pais": "Lituânia", "superficie": "Hard (i)"},
+    ("US", "TW"): {
+        "cidade": "Taipei",
+        "pais": "Chinese Taipei",
+        "superficie": "Hard (i)",
+    },
+    ("DK", "RS"): {
+        "cidade": "Copenhagen",
+        "pais": "Dinamarca",
+        "superficie": "Hard (i)",
+    },
+    ("HR", "SK"): {"cidade": "Osijek", "pais": "Croácia", "superficie": "Hard (i)"},
+    ("FR", "BR"): {"cidade": "Orléans", "pais": "França", "superficie": "Hard (i)"},
+    ("ES", "CH"): {"cidade": "Biel", "pais": "Suíça", "superficie": "Hard (i)"},
+    ("CZ", "KR"): {
+        "cidade": "Ostrava",
+        "pais": "Czechia",
+        "superficie": "Hard (i)",
+    },
+    ("JP", "GB"): {"cidade": "Miki", "pais": "Japão", "superficie": "Hard (i)"},
+    ("AT", "FI"): {"cidade": "Schwechat", "pais": "Áustria", "superficie": "Clay (i)"},
+    ("BE", "CL"): {"cidade": "Hasselt", "pais": "Bélgica", "superficie": "Hard (i)"},
+    ("AR", "NO"): {"cidade": "Fjellhamar", "pais": "Noruega", "superficie": "Hard (i)"},
+}
+
+TIES_QUALIFIERS_R2_INFO_2026 = {
+    ("NL", "AR"): {"cidade": "Groningen", "pais": "Holanda", "superficie": "Hard (i)"},
+    ("AU", "BE"): {"cidade": "Sydney", "pais": "Austrália", "superficie": "Hard"},
+    ("HU", "AT"): {"cidade": "Debrecen", "pais": "Hungria", "superficie": "Hard (i)"},
+    ("JP", "DE"): {"cidade": "Tokyo", "pais": "Japão", "superficie": "Hard (i)"},
+    ("US", "CZ"): {
+        "cidade": "Delray Beach",
+        "pais": "Estados Unidos",
+        "superficie": "Hard",
+    },
+    ("DK", "ES"): {"cidade": "Marbella", "pais": "Espanha", "superficie": "Clay"},
+    ("HR", "FR"): {"cidade": "Osijek", "pais": "Croácia", "superficie": "Clay (i)"},
+}
+
+FINAL8_INFO_2026 = {"cidade": "Bologna", "pais": "Itália", "superficie": "Hard (i)"}
+
+_MAPA_PAIS_3_PARA_2 = {
+    "ITA": "IT",
+    "ESP": "ES",
+    "AUS": "AU",
+    "CAN": "CA",
+    "CRO": "HR",
+    "NED": "NL",
+    "USA": "US",
+    "GBR": "GB",
+    "GER": "DE",
+    "FRA": "FR",
+    "ARG": "AR",
+    "CZE": "CZ",
+    "SWE": "SE",
+    "BEL": "BE",
+    "SUI": "CH",
+    "SRB": "RS",
+    "CHI": "CL",
+    "KOR": "KR",
+    "BRA": "BR",
+    "POR": "PT",
+    "JPN": "JP",
+    "POL": "PL",
+    "AUT": "AT",
+    "HUN": "HU",
+    "DEN": "DK",
+    "RUS": "RU",
+    "CHN": "CN",
+    "KAZ": "KZ",
+    "SVK": "SK",
+    "FIN": "FI",
+    "NOR": "NO",
+    "ISR": "IL",
+    "IND": "IN",
+    "GRE": "GR",
+    "UKR": "UA",
+    "ROU": "RO",
+    "RSA": "ZA",
+    "MEX": "MX",
+}
