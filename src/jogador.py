@@ -89,6 +89,7 @@ class Jogador:
         )  # {pat_id: True} quando patrocinador insatisfeito
         self.reputacao_imprensa: int = 50
         self.caixa_email: list[dict] = []  # propostas e convites pendentes
+        self.lifestyle: list[str] = []  # IDs de itens de luxo/investimentos adquiridos
 
         # Atributos de Progressão
         self.nivel: int = 1
@@ -240,6 +241,7 @@ class Jogador:
             "avisos_patrocinio": self.avisos_patrocinio,
             "reputacao_imprensa": self.reputacao_imprensa,
             "caixa_email": self.caixa_email,
+            "lifestyle": self.lifestyle,
             "atributos": self.atributos,
             "atributos_psicologicos": self.atributos_psicologicos,
             "protected_ranking": self.protected_ranking,
@@ -310,6 +312,7 @@ class Jogador:
         jogador.avisos_patrocinio = data.get("avisos_patrocinio") or {}
         jogador.reputacao_imprensa = data.get("reputacao_imprensa", 50)
         jogador.caixa_email = data.get("caixa_email", [])
+        jogador.lifestyle = data.get("lifestyle", [])
 
         # Atributos Psicológicos
         jogador.atributos_psicologicos = data.get(

@@ -1,0 +1,37 @@
+{
+  "nome": "Aron Bektashi",
+  "nacionalidade": "[AL] Albânia",
+  "overall": 42,
+  "pontos": 24,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 58,
+    "forehand": 30,
+    "backhand": 34,
+    "topspin": 32,
+    "voleio": 48,
+    "slice": 39,
+    "movimento": 46,
+    "lob": 43,
+    "fisico": 50,
+    "winner": 40,
+    "duplas": 46
+  },
+  "atributos_psicologicos": {
+    "concentracao": 32,
+    "agressividade": 35,
+    "leitura_de_jogo": 41,
+    "determinacao": 53
+  },
+  "moral": 65,
+  "fadiga": 9,
+  "energia": 93,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

@@ -1,0 +1,36 @@
+{
+  "nome": "Amir-Hossein Abdullayev",
+  "nacionalidade": "[IR] Irã",
+  "overall": 39,
+  "pontos": 18,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 47,
+    "forehand": 33,
+    "backhand": 37,
+    "topspin": 31,
+    "voleio": 37,
+    "slice": 47,
+    "movimento": 33,
+    "lob": 33,
+    "fisico": 49,
+    "winner": 42,
+    "duplas": 31
+  },
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 46,
+    "leitura_de_jogo": 31,
+    "determinacao": 45
+  },
+  "moral": 73,
+  "fadiga": 5,
+  "energia": 84,
+  "is_bot": false,
+  "genero": "masculino"
+}

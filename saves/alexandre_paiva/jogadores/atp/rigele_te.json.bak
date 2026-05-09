@@ -1,0 +1,66 @@
+{
+  "nome": "Rigele Te",
+  "nacionalidade": "[CN]",
+  "pontos": 61,
+  "pontos_duplas": 0,
+  "pontos_ranking": 61,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 74,
+  "energia": 100,
+  "fadiga": 6,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "saque": 40,
+    "forehand": 43,
+    "backhand": 43,
+    "topspin": 41,
+    "voleio": 52,
+    "slice": 43,
+    "movimento": 45,
+    "lob": 43,
+    "winner": 40,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 30,
+    "leitura_de_jogo": 46,
+    "determinacao": 32
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 61,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 28,
+  "id": 634,
+  "pico_carreira": 602,
+  "altura": 188,
+  "peso": 67,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

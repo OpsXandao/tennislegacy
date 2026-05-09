@@ -1,0 +1,37 @@
+{
+  "nome": "Elias Weber",
+  "nacionalidade": "[CH] Suíça",
+  "overall": 43,
+  "pontos": 0,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 38,
+    "forehand": 33,
+    "backhand": 47,
+    "topspin": 55,
+    "voleio": 38,
+    "slice": 36,
+    "movimento": 42,
+    "lob": 42,
+    "fisico": 62,
+    "winner": 43,
+    "duplas": 39
+  },
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 31,
+    "leitura_de_jogo": 50,
+    "determinacao": 39
+  },
+  "moral": 60,
+  "fadiga": 17,
+  "energia": 92,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

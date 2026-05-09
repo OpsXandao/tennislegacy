@@ -1,0 +1,37 @@
+{
+  "nome": "Benjamin Jackson",
+  "nacionalidade": "[GT] Guatemala",
+  "overall": 43,
+  "pontos": 6,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 40,
+    "forehand": 33,
+    "backhand": 47,
+    "topspin": 56,
+    "voleio": 33,
+    "slice": 33,
+    "movimento": 59,
+    "lob": 41,
+    "fisico": 50,
+    "winner": 46,
+    "duplas": 33
+  },
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 42,
+    "leitura_de_jogo": 53,
+    "determinacao": 49
+  },
+  "moral": 60,
+  "fadiga": 12,
+  "energia": 91,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

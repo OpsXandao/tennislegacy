@@ -1,0 +1,37 @@
+{
+  "nome": "Jan Zieliński",
+  "nacionalidade": "[PL] Polônia",
+  "overall": 43,
+  "pontos": 23,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 51,
+    "forehand": 49,
+    "backhand": 33,
+    "topspin": 45,
+    "voleio": 30,
+    "slice": 48,
+    "movimento": 41,
+    "lob": 39,
+    "fisico": 36,
+    "winner": 53,
+    "duplas": 44
+  },
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 48,
+    "leitura_de_jogo": 41,
+    "determinacao": 34
+  },
+  "moral": 72,
+  "fadiga": 16,
+  "energia": 96,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

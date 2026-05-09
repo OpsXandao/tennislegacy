@@ -1,0 +1,36 @@
+{
+  "nome": "Markus Thomsen",
+  "nacionalidade": "[FO] FO",
+  "overall": 44,
+  "pontos": 18,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 32,
+    "forehand": 45,
+    "backhand": 37,
+    "topspin": 55,
+    "voleio": 37,
+    "slice": 41,
+    "movimento": 49,
+    "lob": 50,
+    "fisico": 52,
+    "winner": 47,
+    "duplas": 32
+  },
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 55,
+    "leitura_de_jogo": 46,
+    "determinacao": 55
+  },
+  "moral": 76,
+  "fadiga": 2,
+  "energia": 91,
+  "is_bot": false,
+  "genero": "masculino"
+}

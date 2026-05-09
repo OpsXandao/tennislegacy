@@ -1,0 +1,36 @@
+{
+  "nome": "Aleks Petrosyan",
+  "nacionalidade": "[AM] Armênia",
+  "overall": 41,
+  "pontos": 3,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 57,
+    "forehand": 46,
+    "backhand": 35,
+    "topspin": 36,
+    "voleio": 44,
+    "slice": 33,
+    "movimento": 39,
+    "lob": 42,
+    "fisico": 35,
+    "winner": 35,
+    "duplas": 35
+  },
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 47,
+    "leitura_de_jogo": 53,
+    "determinacao": 55
+  },
+  "moral": 72,
+  "fadiga": 20,
+  "energia": 84,
+  "is_bot": false,
+  "genero": "masculino"
+}

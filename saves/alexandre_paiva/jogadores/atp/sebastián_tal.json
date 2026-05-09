@@ -1,0 +1,36 @@
+{
+  "nome": "Sebastián Tal",
+  "nacionalidade": "[VE] Venezuela",
+  "overall": 42,
+  "pontos": 5,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 40,
+    "forehand": 47,
+    "backhand": 32,
+    "topspin": 34,
+    "voleio": 46,
+    "slice": 39,
+    "movimento": 45,
+    "lob": 44,
+    "fisico": 42,
+    "winner": 43,
+    "duplas": 38
+  },
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 51,
+    "leitura_de_jogo": 34,
+    "determinacao": 40
+  },
+  "moral": 73,
+  "fadiga": 6,
+  "energia": 96,
+  "is_bot": false,
+  "genero": "masculino"
+}

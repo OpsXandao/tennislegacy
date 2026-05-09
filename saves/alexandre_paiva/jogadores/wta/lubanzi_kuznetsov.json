@@ -1,0 +1,44 @@
+{
+  "nome": "Lubanzi Kuznetsov",
+  "nacionalidade": "[ZA] ZA",
+  "overall": 42,
+  "pontos": 3,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 49,
+    "forehand": 45,
+    "backhand": 49,
+    "topspin": 38,
+    "voleio": 45,
+    "slice": 48,
+    "movimento": 42,
+    "lob": 37,
+    "fisico": 38,
+    "winner": 34,
+    "duplas": 38
+  },
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 33,
+    "leitura_de_jogo": 48,
+    "determinacao": 54
+  },
+  "moral": 72,
+  "fadiga": 0,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "feminino",
+  "status_doenca": {
+    "doente": false,
+    "tipo": null,
+    "nivel": "saudavel",
+    "semanas_restantes": 0,
+    "penalidade_atributos": 0.0,
+    "penalidade_recuperacao_energia": 0.0
+  }
+}

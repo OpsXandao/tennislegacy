@@ -1,0 +1,37 @@
+{
+  "nome": "Charlie Anderson",
+  "nacionalidade": "[AU] Austrália",
+  "overall": 44,
+  "pontos": 17,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 43,
+    "forehand": 48,
+    "backhand": 30,
+    "topspin": 52,
+    "voleio": 38,
+    "slice": 34,
+    "movimento": 43,
+    "lob": 42,
+    "fisico": 61,
+    "winner": 38,
+    "duplas": 45
+  },
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 53,
+    "leitura_de_jogo": 39,
+    "determinacao": 50
+  },
+  "moral": 79,
+  "fadiga": 10,
+  "energia": 84,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

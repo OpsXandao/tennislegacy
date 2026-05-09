@@ -1,0 +1,36 @@
+{
+  "nome": "Viktor Nikolova",
+  "nacionalidade": "[BG] Bulgária",
+  "overall": 43,
+  "pontos": 21,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 44,
+    "forehand": 30,
+    "backhand": 36,
+    "topspin": 48,
+    "voleio": 46,
+    "slice": 45,
+    "movimento": 31,
+    "lob": 46,
+    "fisico": 54,
+    "winner": 35,
+    "duplas": 50
+  },
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 30,
+    "leitura_de_jogo": 55,
+    "determinacao": 51
+  },
+  "moral": 78,
+  "fadiga": 20,
+  "energia": 87,
+  "is_bot": false,
+  "genero": "masculino"
+}

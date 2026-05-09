@@ -1,0 +1,37 @@
+{
+  "nome": "Ibrahim Yıldız",
+  "nacionalidade": "[TR] Turquia",
+  "overall": 42,
+  "pontos": 15,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 36,
+    "forehand": 31,
+    "backhand": 44,
+    "topspin": 42,
+    "voleio": 35,
+    "slice": 42,
+    "movimento": 30,
+    "lob": 50,
+    "fisico": 49,
+    "winner": 44,
+    "duplas": 48
+  },
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 43,
+    "leitura_de_jogo": 55,
+    "determinacao": 53
+  },
+  "moral": 63,
+  "fadiga": 9,
+  "energia": 97,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

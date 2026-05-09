@@ -1,0 +1,36 @@
+{
+  "nome": "Luis Vargas",
+  "nacionalidade": "[PE] Peru",
+  "overall": 38,
+  "pontos": 29,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 30,
+    "forehand": 34,
+    "backhand": 46,
+    "topspin": 42,
+    "voleio": 31,
+    "slice": 41,
+    "movimento": 35,
+    "lob": 40,
+    "fisico": 49,
+    "winner": 34,
+    "duplas": 49
+  },
+  "atributos_psicologicos": {
+    "concentracao": 33,
+    "agressividade": 32,
+    "leitura_de_jogo": 45,
+    "determinacao": 33
+  },
+  "moral": 65,
+  "fadiga": 13,
+  "energia": 95,
+  "is_bot": false,
+  "genero": "masculino"
+}

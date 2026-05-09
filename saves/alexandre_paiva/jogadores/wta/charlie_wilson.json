@@ -1,0 +1,44 @@
+{
+  "nome": "Charlie Wilson",
+  "nacionalidade": "[AU] Austrália",
+  "overall": 41,
+  "pontos": 3,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 41,
+    "forehand": 48,
+    "backhand": 37,
+    "topspin": 43,
+    "voleio": 47,
+    "slice": 46,
+    "movimento": 32,
+    "lob": 39,
+    "fisico": 49,
+    "winner": 42,
+    "duplas": 32
+  },
+  "atributos_psicologicos": {
+    "concentracao": 35,
+    "agressividade": 34,
+    "leitura_de_jogo": 55,
+    "determinacao": 36
+  },
+  "moral": 72,
+  "fadiga": 0,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "feminino",
+  "status_doenca": {
+    "doente": false,
+    "tipo": null,
+    "nivel": "saudavel",
+    "semanas_restantes": 0,
+    "penalidade_atributos": 0.0,
+    "penalidade_recuperacao_energia": 0.0
+  }
+}

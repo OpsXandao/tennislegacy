@@ -1,0 +1,692 @@
+{
+  "torneio": "Australian Open",
+  "semana": 3,
+  "fase_atual": "r64",
+  "fases": [
+    "r64",
+    "r32",
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "rodadas": {
+    "r64": [
+      [
+        {
+          "nome": "Ben Shelton",
+          "overall": 50
+        },
+        {
+          "nome": "Damir Dzumhur",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Tomas Machac",
+          "overall": 50
+        },
+        {
+          "nome": "Denis Shapovalov",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Raphael Collignon",
+          "overall": 50
+        },
+        {
+          "nome": "Cameron Norrie",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Lorenzo Sonego",
+          "overall": 50
+        },
+        {
+          "nome": "Valentin Vacherot",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Learner Tien",
+          "overall": 50
+        },
+        {
+          "nome": "Camilo Ugo Carabelli",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Carlos Alcaraz",
+          "overall": 50
+        },
+        {
+          "nome": "Frances Tiafoe",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Novak Djokovic",
+          "overall": 50
+        },
+        {
+          "nome": "Daniil Medvedev",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Jakub Mensik",
+          "overall": 50
+        },
+        {
+          "nome": "Zizou Bergs",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Corentin Moutet",
+          "overall": 50
+        },
+        {
+          "nome": "Holger Rune",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Nuno Borges",
+          "overall": 50
+        },
+        {
+          "nome": "Matteo Berrettini",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Valentin Royer",
+          "overall": 50
+        },
+        {
+          "nome": "Alex de Minaur",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Adrian Mannarino",
+          "overall": 50
+        },
+        {
+          "nome": "Alexander Bublik",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Alejandro Tabilo",
+          "overall": 50
+        },
+        {
+          "nome": "Fabian Marozsan",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Tommy Paul",
+          "overall": 50
+        },
+        {
+          "nome": "Quentin Halys",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Jannik Sinner",
+          "overall": 50
+        },
+        {
+          "nome": "Jenson Brooksby",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Gabriel Diallo",
+          "overall": 50
+        },
+        {
+          "nome": "Alexander Zverev",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Joao Fonseca",
+          "overall": 50
+        },
+        {
+          "nome": "Ignacio Buse",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Jaume Munar",
+          "overall": 50
+        },
+        {
+          "nome": "Tomas Martin Etcheverry",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Sebastian Korda",
+          "overall": 50
+        },
+        {
+          "nome": "Stefanos Tsitsipas",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Kamil Majchrzak",
+          "overall": 50
+        },
+        {
+          "nome": "Sebastian Baez",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Marcos Giron",
+          "overall": 50
+        },
+        {
+          "nome": "Ugo Humbert",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Hubert Hurkacz",
+          "overall": 50
+        },
+        {
+          "nome": "Jiri Lehecka",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Brandon Nakashima",
+          "overall": 50
+        },
+        {
+          "nome": "Ethan Quinn",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Alex Michelsen",
+          "overall": 50
+        },
+        {
+          "nome": "Luciano Darderi",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Lorenzo Musetti",
+          "overall": 50
+        },
+        {
+          "nome": "Grigor Dimitrov",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Juan Manuel Cerundolo",
+          "overall": 50
+        },
+        {
+          "nome": "Marin Cilic",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Vit Kopriva",
+          "overall": 50
+        },
+        {
+          "nome": "Arthur Fils",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Flavio Cobolli",
+          "overall": 50
+        },
+        {
+          "nome": "Terence Atmane",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Botic van de Zandschulp",
+          "overall": 50
+        },
+        {
+          "nome": "Reilly Opelka",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Tallon Griekspoor",
+          "overall": 50
+        },
+        {
+          "nome": "Daniel Altmaier",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Marton Fucsovics",
+          "overall": 50
+        },
+        {
+          "nome": "Giovanni Mpetshi Perricard",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Alexei Popyrin",
+          "overall": 50
+        },
+        {
+          "nome": "Arthur Rinderknech",
+          "overall": 50
+        }
+      ]
+    ]
+  },
+  "resultados": {},
+  "jogador": "Alexandre Paiva",
+  "jogador_vivo": false,
+  "tournament_data": {
+    "nome": "Australian Open",
+    "tipo": "Grand Slam",
+    "permite_mistas": true,
+    "local": "Melbourne",
+    "quadra": "dura",
+    "premiacao": 43250000,
+    "dificuldade": 5,
+    "popularidade": 5,
+    "qualificacao": true,
+    "pais_sede": "[AU] Austrália",
+    "ultimo_campeao": "Jannik Sinner",
+    "semana": 3,
+    "ultimo_campeao_duplas": "Harri Heliövaara / Henry Patten"
+  },
+  "genero": "masculino",
+  "campeao_simples": null,
+  "fases_duplas": [
+    "r64",
+    "r32",
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "fase_atual_duplas": "r64",
+  "rodadas_duplas": {
+    "r64": [
+      [
+        {
+          "nome": "Andrey Rublev / Rohan Bopanna",
+          "overall": 50
+        },
+        {
+          "nome": "Lorenzo Musetti / Reese Stalder",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Alex de Minaur / Jack Draper",
+          "overall": 50
+        },
+        {
+          "nome": "Karen Khachanov / Adam Pavlasek",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Arthur Fils / Alejandro Tabilo",
+          "overall": 50
+        },
+        {
+          "nome": "Mark Wallner / Luciano Darderi",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Felix Auger Aliassime / Carlos Alcaraz",
+          "overall": 50
+        },
+        {
+          "nome": "Guido Andreozzi / David Pel",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Henry Patten / Matthew Ebden",
+          "overall": 50
+        },
+        {
+          "nome": "Luca Sanchez / Francisco Cerundolo",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Corentin Moutet / Alexander Erler",
+          "overall": 50
+        },
+        {
+          "nome": "Casper Ruud / Vasil Kirkov",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Luke Johnson / Brandon Nakashima",
+          "overall": 50
+        },
+        {
+          "nome": "Novak Djokovic / Marin Cilic",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Romain Arneodo / Jaume Munar",
+          "overall": 50
+        },
+        {
+          "nome": "Francisco Cabral / Marcelo Melo",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Lucas Miedler / Frances Tiafoe",
+          "overall": 50
+        },
+        {
+          "nome": "Tallon Griekspoor / Valentin Vacherot",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Fabien Reboul / Gabriel Diallo",
+          "overall": 50
+        },
+        {
+          "nome": "Jakub Mensik / Mac Kiger",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Tim Puetz / Tomas Machac",
+          "overall": 50
+        },
+        {
+          "nome": "Andre Goransson / Nikola Mektic",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Marcus Willis / Tommy Paul",
+          "overall": 50
+        },
+        {
+          "nome": "Manuel Guinard / Sebastian Korda",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Flavio Cobolli / Joe Salisbury",
+          "overall": 50
+        },
+        {
+          "nome": "Marcelo Arevalo / Pierre-Hugues Herbert",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Theo Arribage / Cameron Norrie",
+          "overall": 50
+        },
+        {
+          "nome": "Santiago Gonzalez / Edouard Roger-Vasselin",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Hendrik Jebens / Jan Zielinski",
+          "overall": 50
+        },
+        {
+          "nome": "Jakob Schnaitter / Evan King",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Joran Vliegen / Gonzalo Escobar",
+          "overall": 50
+        },
+        {
+          "nome": "Austin Krajicek / Sander Arends",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Ray Ho / Ben Shelton",
+          "overall": 50
+        },
+        {
+          "nome": "Fernando Romboli / Patrik Trhac",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Finn Reynolds / Matej Vocel",
+          "overall": 50
+        },
+        {
+          "nome": "Learner Tien / Petr Nouza",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Grigor Dimitrov / Holger Rune",
+          "overall": 50
+        },
+        {
+          "nome": "Constantin Frantzen / Bart Stevens",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Marcelo Demoliner / Robert Cash",
+          "overall": 50
+        },
+        {
+          "nome": "Mate Pavic / Jiri Lehecka",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Rajeev Ram / Matthew Romios",
+          "overall": 50
+        },
+        {
+          "nome": "Arthur Reymond / N Sriram Balaji",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Alexander Bublik / Denis Shapovalov",
+          "overall": 50
+        },
+        {
+          "nome": "Stefanos Tsitsipas / Sander Gille",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Rafael Matos / Diego Hidalgo",
+          "overall": 50
+        },
+        {
+          "nome": "Yuki Bhambri / Alexander Zverev",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Taylor Fritz / Ugo Humbert",
+          "overall": 50
+        },
+        {
+          "nome": "Christian Harrison / Ariel Behar",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Zizou Bergs / JJ Tracy",
+          "overall": 50
+        },
+        {
+          "nome": "Julian Cash / Hugo Nys",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Albano Olivetti / Joao Fonseca",
+          "overall": 50
+        },
+        {
+          "nome": "Miguel Reyes-Varela / Simone Bolelli",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Michael Venus / Patrik Rikl",
+          "overall": 50
+        },
+        {
+          "nome": "Harri Heliovaara / Sadio Doumbia",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Alex Michelsen / Anirudh Chandrasekar",
+          "overall": 50
+        },
+        {
+          "nome": "John-Patrick Smith / John Peers",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Neal Skupski / Marcel Granollers",
+          "overall": 50
+        },
+        {
+          "nome": "Tomas Martin Etcheverry / Maximo Gonzalez",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Robert Galloway / Horacio Zeballos",
+          "overall": 50
+        },
+        {
+          "nome": "Arthur Rinderknech / Jannik Sinner",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Andres Molteni / Robin Haase",
+          "overall": 50
+        },
+        {
+          "nome": "Daniil Medvedev / Alejandro Davidovich Fokina",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Kevin Krawietz / Lloyd Glasspool",
+          "overall": 50
+        },
+        {
+          "nome": "Jean-Julien Rojer / Sem Verbeek",
+          "overall": 50
+        }
+      ]
+    ]
+  },
+  "resultados_duplas": {},
+  "campeao_duplas": null
+}

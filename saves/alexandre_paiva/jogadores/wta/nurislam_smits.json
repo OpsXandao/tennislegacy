@@ -1,0 +1,44 @@
+{
+  "nome": "Nurislam Smits",
+  "nacionalidade": "[KG] Quirguistão",
+  "overall": 42,
+  "pontos": 4,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 55,
+    "forehand": 44,
+    "backhand": 33,
+    "topspin": 50,
+    "voleio": 36,
+    "slice": 37,
+    "movimento": 47,
+    "lob": 48,
+    "fisico": 45,
+    "winner": 53,
+    "duplas": 35
+  },
+  "atributos_psicologicos": {
+    "concentracao": 35,
+    "agressividade": 41,
+    "leitura_de_jogo": 38,
+    "determinacao": 30
+  },
+  "moral": 68,
+  "fadiga": 0,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "feminino",
+  "status_doenca": {
+    "doente": false,
+    "tipo": null,
+    "nivel": "saudavel",
+    "semanas_restantes": 0,
+    "penalidade_atributos": 0.0,
+    "penalidade_recuperacao_energia": 0.0
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "nome": "Miguel Ángel Bun",
+  "nacionalidade": "[BO] Bolívia",
+  "overall": 41,
+  "pontos": 3,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 32,
+    "forehand": 48,
+    "backhand": 34,
+    "topspin": 31,
+    "voleio": 38,
+    "slice": 39,
+    "movimento": 43,
+    "lob": 33,
+    "fisico": 54,
+    "winner": 43,
+    "duplas": 37
+  },
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 45,
+    "leitura_de_jogo": 52,
+    "determinacao": 42
+  },
+  "moral": 62,
+  "fadiga": 19,
+  "energia": 81,
+  "is_bot": false,
+  "genero": "masculino"
+}

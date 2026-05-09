@@ -1,0 +1,45 @@
+{
+  "transporte": [
+    {
+      "id": "jato_privado",
+      "nome": "Jato Executivo",
+      "preco": 2500000,
+      "descricao": "Reduz drasticamente a fadiga de viagens internacionais (-20% fadiga por torneio).",
+      "bonus": { "reducao_fadiga_viagem": 0.2 }
+    },
+    {
+      "id": "primeira_classe",
+      "nome": "Primeira Classe Permanente",
+      "preco": 500000,
+      "descricao": "Viaje com mais conforto. (-10% fadiga por torneio).",
+      "bonus": { "reducao_fadiga_viagem": 0.1 }
+    }
+  ],
+  "treinamento": [
+    {
+      "id": "academia_propria",
+      "nome": "Centro de Treinamento Elite",
+      "preco": 5000000,
+      "descricao": "Sua própria academia de alta performance. (+15% XP em todos os treinos).",
+      "bonus": { "bonus_xp_treino": 0.15 }
+    }
+  ],
+  "residencia": [
+    {
+      "id": "mansao_monte_carlo",
+      "nome": "Residência em Mônaco",
+      "preco": 10000000,
+      "descricao": "Vantagens fiscais e prestígio. (+10% premiação líquida em todos os torneios).",
+      "bonus": { "bonus_premiacao": 0.1 }
+    }
+  ],
+  "equipe_pessoal": [
+    {
+      "id": "chef_particular",
+      "nome": "Chef de Cozinha Particular",
+      "preco": 150000,
+      "descricao": "Nutrição otimizada para atletas. (+5 recuperação de energia semanal).",
+      "bonus": { "bonus_recuperacao_energia": 5 }
+    }
+  ]
+}

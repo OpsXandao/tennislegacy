@@ -1,0 +1,44 @@
+{
+  "nome": "David Schiltz",
+  "nacionalidade": "[LU] Luxemburgo",
+  "overall": 44,
+  "pontos": 16,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 41,
+    "forehand": 41,
+    "backhand": 36,
+    "topspin": 61,
+    "voleio": 50,
+    "slice": 33,
+    "movimento": 60,
+    "lob": 45,
+    "fisico": 44,
+    "winner": 35,
+    "duplas": 42
+  },
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 55,
+    "leitura_de_jogo": 40,
+    "determinacao": 31
+  },
+  "moral": 65,
+  "fadiga": 0,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "feminino",
+  "status_doenca": {
+    "doente": false,
+    "tipo": null,
+    "nivel": "saudavel",
+    "semanas_restantes": 0,
+    "penalidade_atributos": 0.0,
+    "penalidade_recuperacao_energia": 0.0
+  }
+}

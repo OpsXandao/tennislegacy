@@ -1,0 +1,36 @@
+{
+  "nome": "Ashot Margaryan",
+  "nacionalidade": "[AM] Armênia",
+  "overall": 44,
+  "pontos": 9,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 63,
+    "forehand": 42,
+    "backhand": 39,
+    "topspin": 41,
+    "voleio": 38,
+    "slice": 46,
+    "movimento": 31,
+    "lob": 30,
+    "fisico": 55,
+    "winner": 45,
+    "duplas": 39
+  },
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 47,
+    "leitura_de_jogo": 42,
+    "determinacao": 55
+  },
+  "moral": 79,
+  "fadiga": 10,
+  "energia": 86,
+  "is_bot": false,
+  "genero": "masculino"
+}

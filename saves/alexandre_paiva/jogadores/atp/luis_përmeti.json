@@ -1,0 +1,36 @@
+{
+  "nome": "Luis Përmeti",
+  "nacionalidade": "[EC] Equador",
+  "overall": 42,
+  "pontos": 14,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 39,
+    "forehand": 46,
+    "backhand": 34,
+    "topspin": 31,
+    "voleio": 63,
+    "slice": 38,
+    "movimento": 38,
+    "lob": 42,
+    "fisico": 43,
+    "winner": 38,
+    "duplas": 43
+  },
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 45,
+    "leitura_de_jogo": 34,
+    "determinacao": 53
+  },
+  "moral": 74,
+  "fadiga": 4,
+  "energia": 93,
+  "is_bot": false,
+  "genero": "masculino"
+}

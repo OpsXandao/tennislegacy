@@ -1,0 +1,36 @@
+{
+  "nome": "Tim Bizjak",
+  "nacionalidade": "[SI] Eslovênia",
+  "overall": 44,
+  "pontos": 10,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 34,
+    "forehand": 49,
+    "backhand": 47,
+    "topspin": 50,
+    "voleio": 46,
+    "slice": 40,
+    "movimento": 51,
+    "lob": 50,
+    "fisico": 50,
+    "winner": 31,
+    "duplas": 30
+  },
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 54,
+    "leitura_de_jogo": 50,
+    "determinacao": 46
+  },
+  "moral": 64,
+  "fadiga": 0,
+  "energia": 80,
+  "is_bot": false,
+  "genero": "masculino"
+}

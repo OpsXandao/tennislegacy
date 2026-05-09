@@ -1,0 +1,36 @@
+{
+  "nome": "Gabriel Baumann",
+  "nacionalidade": "[CH] Suíça",
+  "overall": 44,
+  "pontos": 17,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 44,
+    "forehand": 50,
+    "backhand": 47,
+    "topspin": 56,
+    "voleio": 32,
+    "slice": 46,
+    "movimento": 57,
+    "lob": 30,
+    "fisico": 59,
+    "winner": 31,
+    "duplas": 31
+  },
+  "atributos_psicologicos": {
+    "concentracao": 55,
+    "agressividade": 39,
+    "leitura_de_jogo": 40,
+    "determinacao": 39
+  },
+  "moral": 69,
+  "fadiga": 3,
+  "energia": 85,
+  "is_bot": false,
+  "genero": "masculino"
+}

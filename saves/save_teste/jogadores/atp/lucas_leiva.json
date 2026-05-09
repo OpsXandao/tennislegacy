@@ -1,0 +1,37 @@
+{
+  "nome": "Lucas Leiva",
+  "nacionalidade": "[CL] Chile",
+  "overall": 41,
+  "pontos": 14,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 33,
+    "forehand": 49,
+    "backhand": 35,
+    "topspin": 44,
+    "voleio": 51,
+    "slice": 41,
+    "movimento": 37,
+    "lob": 38,
+    "fisico": 45,
+    "winner": 38,
+    "duplas": 44
+  },
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 30,
+    "leitura_de_jogo": 38,
+    "determinacao": 47
+  },
+  "moral": 62,
+  "fadiga": 0,
+  "energia": 93,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

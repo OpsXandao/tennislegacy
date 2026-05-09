@@ -195,6 +195,15 @@ def handle_fadiga_e_lesao(
         fatores_partida=fatores_partida,
         energia_perdida=energia_perdida,
     )
+
+    # Bônus Lifestyle: Transporte de Luxo
+    lifestyle = getattr(jogador, "lifestyle", [])
+    if isinstance(lifestyle, list):
+        if "jato_privado" in lifestyle:
+            aumento = int(aumento * 0.80)
+        elif "primeira_classe" in lifestyle:
+            aumento = int(aumento * 0.90)
+
     jogador.fadiga = min(100, jogador.fadiga + aumento)
     eventos.append(
         EventoProgressao(

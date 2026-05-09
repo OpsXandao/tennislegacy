@@ -1,0 +1,36 @@
+{
+  "nome": "Iker Simonsen",
+  "nacionalidade": "[AD] Andorra",
+  "overall": 39,
+  "pontos": 16,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 46,
+    "forehand": 39,
+    "backhand": 31,
+    "topspin": 33,
+    "voleio": 43,
+    "slice": 33,
+    "movimento": 33,
+    "lob": 35,
+    "fisico": 42,
+    "winner": 48,
+    "duplas": 39
+  },
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 43,
+    "leitura_de_jogo": 46,
+    "determinacao": 50
+  },
+  "moral": 77,
+  "fadiga": 13,
+  "energia": 99,
+  "is_bot": false,
+  "genero": "masculino"
+}

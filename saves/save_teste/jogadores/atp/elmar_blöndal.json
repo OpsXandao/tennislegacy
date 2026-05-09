@@ -1,0 +1,37 @@
+{
+  "nome": "Elmar Blöndal",
+  "nacionalidade": "[IS] Islândia",
+  "overall": 42,
+  "pontos": 6,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 64,
+    "forehand": 30,
+    "backhand": 36,
+    "topspin": 39,
+    "voleio": 34,
+    "slice": 44,
+    "movimento": 34,
+    "lob": 31,
+    "fisico": 53,
+    "winner": 37,
+    "duplas": 41
+  },
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 54,
+    "leitura_de_jogo": 52,
+    "determinacao": 50
+  },
+  "moral": 72,
+  "fadiga": 2,
+  "energia": 88,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

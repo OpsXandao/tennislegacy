@@ -1,0 +1,37 @@
+{
+  "nome": "Narek Sargsyan",
+  "nacionalidade": "[AM] Armênia",
+  "overall": 45,
+  "pontos": 9,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 49,
+    "forehand": 40,
+    "backhand": 38,
+    "topspin": 54,
+    "voleio": 48,
+    "slice": 38,
+    "movimento": 54,
+    "lob": 42,
+    "fisico": 57,
+    "winner": 35,
+    "duplas": 37
+  },
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 55,
+    "leitura_de_jogo": 40,
+    "determinacao": 44
+  },
+  "moral": 74,
+  "fadiga": 17,
+  "energia": 83,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import { motion, AnimatePresence } from 'motion/react'
 import {
   Settings, Save, LogOut, ChevronRight,
-  Globe, ShoppingBag, Shield, Users, History, CalendarDays, Play, Mic,
+  Globe, ShoppingBag, Shield, Users, History, CalendarDays, Play, Mic, Crown,
 } from 'lucide-react'
 import { FutCard, BottomNav } from '../components'
 import { useGameStore } from '../../store/gameStore'
@@ -47,6 +47,7 @@ const QUICK = [
   { icon: History,      label: 'HISTORICO',route: '/history',   color: '#ffe600' },
   { icon: Globe,        label: 'MUNDO',    route: '/world',     color: '#ffe600' },
   { icon: Mic,          label: 'IMPRENSA', route: '/imprensa',  color: '#c084fc' },
+  { icon: Crown,        label: 'LIFESTYLE',route: '/lifestyle', color: '#ffb7c6' },
 ]
 
 function QuickBtn({ item, onClick }: { item: typeof QUICK[number]; onClick: () => void }) {

@@ -1,0 +1,37 @@
+{
+  "nome": "Nathan Corpuz",
+  "nacionalidade": "[PH] Filipinas",
+  "overall": 42,
+  "pontos": 14,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 39,
+    "forehand": 45,
+    "backhand": 38,
+    "topspin": 42,
+    "voleio": 50,
+    "slice": 42,
+    "movimento": 32,
+    "lob": 47,
+    "fisico": 51,
+    "winner": 32,
+    "duplas": 32
+  },
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 53,
+    "leitura_de_jogo": 34,
+    "determinacao": 53
+  },
+  "moral": 78,
+  "fadiga": 10,
+  "energia": 90,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

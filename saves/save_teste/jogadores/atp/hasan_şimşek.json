@@ -1,0 +1,37 @@
+{
+  "nome": "Hasan Şimşek",
+  "nacionalidade": "[TR] Turquia",
+  "overall": 41,
+  "pontos": 28,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 45,
+    "forehand": 40,
+    "backhand": 37,
+    "topspin": 46,
+    "voleio": 42,
+    "slice": 41,
+    "movimento": 38,
+    "lob": 45,
+    "fisico": 38,
+    "winner": 39,
+    "duplas": 35
+  },
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 37,
+    "leitura_de_jogo": 52,
+    "determinacao": 30
+  },
+  "moral": 80,
+  "fadiga": 4,
+  "energia": 88,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

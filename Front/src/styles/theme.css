@@ -249,6 +249,13 @@ body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
   --neon-cyan:   #00e5ff;  /* info / neutro / dados */
   --neon-purple: #c084fc;  /* imprensa / especial */
 
+  /* Canais RGB — permite rgba(var(--neon-green-rgb), 0.15) nos componentes */
+  --neon-green-rgb:  0,255,136;
+  --neon-pink-rgb:   255,0,85;
+  --neon-yellow-rgb: 255,230,0;
+  --neon-cyan-rgb:   0,229,255;
+  --neon-purple-rgb: 192,132,252;
+
   /* Superfícies de quadra de tênis */
   --court-clay:   #c84b17;
   --court-grass:  #2d7a1f;

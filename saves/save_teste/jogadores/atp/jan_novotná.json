@@ -1,0 +1,37 @@
+{
+  "nome": "Jan Novotná",
+  "nacionalidade": "[CZ] CZ",
+  "overall": 39,
+  "pontos": 26,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 44,
+    "forehand": 31,
+    "backhand": 38,
+    "topspin": 36,
+    "voleio": 34,
+    "slice": 32,
+    "movimento": 34,
+    "lob": 44,
+    "fisico": 42,
+    "winner": 31,
+    "duplas": 43
+  },
+  "atributos_psicologicos": {
+    "concentracao": 55,
+    "agressividade": 53,
+    "leitura_de_jogo": 43,
+    "determinacao": 40
+  },
+  "moral": 63,
+  "fadiga": 1,
+  "energia": 83,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

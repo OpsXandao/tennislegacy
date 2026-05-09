@@ -1,0 +1,37 @@
+{
+  "nome": "Tehei Ruiz",
+  "nacionalidade": "[PF] PF",
+  "overall": 42,
+  "pontos": 23,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 40,
+    "forehand": 32,
+    "backhand": 50,
+    "topspin": 34,
+    "voleio": 39,
+    "slice": 34,
+    "movimento": 46,
+    "lob": 38,
+    "fisico": 46,
+    "winner": 37,
+    "duplas": 47
+  },
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 50,
+    "leitura_de_jogo": 43,
+    "determinacao": 45
+  },
+  "moral": 66,
+  "fadiga": 11,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

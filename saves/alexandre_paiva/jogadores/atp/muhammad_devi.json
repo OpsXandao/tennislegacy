@@ -1,0 +1,36 @@
+{
+  "nome": "Muhammad Devi",
+  "nacionalidade": "[IN] Índia",
+  "overall": 41,
+  "pontos": 8,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 33,
+    "forehand": 39,
+    "backhand": 39,
+    "topspin": 45,
+    "voleio": 49,
+    "slice": 48,
+    "movimento": 34,
+    "lob": 47,
+    "fisico": 43,
+    "winner": 37,
+    "duplas": 33
+  },
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 44,
+    "leitura_de_jogo": 42,
+    "determinacao": 46
+  },
+  "moral": 60,
+  "fadiga": 17,
+  "energia": 90,
+  "is_bot": false,
+  "genero": "masculino"
+}

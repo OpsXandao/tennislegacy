@@ -1,0 +1,36 @@
+{
+  "nome": "Joel Nikolla",
+  "nacionalidade": "[AL] Albânia",
+  "overall": 41,
+  "pontos": 3,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 34,
+    "forehand": 50,
+    "backhand": 34,
+    "topspin": 42,
+    "voleio": 31,
+    "slice": 46,
+    "movimento": 38,
+    "lob": 47,
+    "fisico": 54,
+    "winner": 38,
+    "duplas": 34
+  },
+  "atributos_psicologicos": {
+    "concentracao": 40,
+    "agressividade": 31,
+    "leitura_de_jogo": 42,
+    "determinacao": 53
+  },
+  "moral": 76,
+  "fadiga": 5,
+  "energia": 88,
+  "is_bot": false,
+  "genero": "masculino"
+}

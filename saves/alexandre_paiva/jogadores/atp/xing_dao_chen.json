@@ -1,0 +1,81 @@
+{
+  "nome": "Xing Dao Chen",
+  "nacionalidade": "[CN]",
+  "pontos": 10,
+  "pontos_duplas": 0,
+  "pontos_ranking": 10,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 70,
+  "energia": 100,
+  "fadiga": 10,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "saque": 47,
+    "forehand": 48,
+    "backhand": 50,
+    "topspin": 51,
+    "voleio": 60,
+    "slice": 54,
+    "movimento": 52,
+    "lob": 54,
+    "winner": 48,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 50,
+    "agressividade": 40,
+    "leitura_de_jogo": 51,
+    "determinacao": 33
+  },
+  "historico_torneios": [
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 1,
+      "ano": 2026,
+      "fase": "qualy_1",
+      "fase_alcancada": "qualy_1",
+      "pontos": 0,
+      "premio": 398,
+      "modalidade": "simples",
+      "obrigatorio": false,
+      "expirado": false
+    }
+  ],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 10,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 398,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 22,
+  "id": 1176,
+  "pico_carreira": 1174,
+  "altura": 183,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

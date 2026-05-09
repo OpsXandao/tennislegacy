@@ -1,0 +1,37 @@
+{
+  "nome": "Juan Din",
+  "nacionalidade": "[UY] Uruguai",
+  "overall": 43,
+  "pontos": 30,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 39,
+    "forehand": 38,
+    "backhand": 36,
+    "topspin": 34,
+    "voleio": 56,
+    "slice": 46,
+    "movimento": 51,
+    "lob": 42,
+    "fisico": 36,
+    "winner": 46,
+    "duplas": 47
+  },
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 45,
+    "leitura_de_jogo": 43,
+    "determinacao": 40
+  },
+  "moral": 72,
+  "fadiga": 19,
+  "energia": 92,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

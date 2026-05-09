@@ -1,0 +1,36 @@
+{
+  "nome": "Michael Nguyen",
+  "nacionalidade": "[LK] Sri Lanka",
+  "overall": 39,
+  "pontos": 29,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 32,
+    "forehand": 42,
+    "backhand": 39,
+    "topspin": 42,
+    "voleio": 32,
+    "slice": 39,
+    "movimento": 32,
+    "lob": 39,
+    "fisico": 54,
+    "winner": 38,
+    "duplas": 42
+  },
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 42,
+    "leitura_de_jogo": 48,
+    "determinacao": 37
+  },
+  "moral": 75,
+  "fadiga": 5,
+  "energia": 91,
+  "is_bot": false,
+  "genero": "masculino"
+}

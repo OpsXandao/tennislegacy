@@ -1,0 +1,36 @@
+{
+  "nome": "Gael Castillo",
+  "nacionalidade": "[PE] Peru",
+  "overall": 40,
+  "pontos": 24,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 32,
+    "forehand": 45,
+    "backhand": 31,
+    "topspin": 62,
+    "voleio": 39,
+    "slice": 31,
+    "movimento": 45,
+    "lob": 39,
+    "fisico": 50,
+    "winner": 30,
+    "duplas": 40
+  },
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 32,
+    "leitura_de_jogo": 42,
+    "determinacao": 41
+  },
+  "moral": 69,
+  "fadiga": 15,
+  "energia": 96,
+  "is_bot": false,
+  "genero": "masculino"
+}

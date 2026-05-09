@@ -403,6 +403,13 @@ export const api = {
     demitir: (prof_id: string) => post<{ ok: boolean; mensagem: string }>('/staff/demitir', { prof_id }),
   },
 
+  // ── Lifestyle ─────────────────────────────────────────────────────────────
+
+  lifestyle: {
+    itens: () => get<Record<string, any[]>>('/lifestyle/itens'),
+    comprar: (itemId: string) => post<{ ok: boolean; mensagem: string }>('/lifestyle/comprar', { item_id: itemId }),
+  },
+
   // ── E-mail ────────────────────────────────────────────────────────────────
 
   email: {

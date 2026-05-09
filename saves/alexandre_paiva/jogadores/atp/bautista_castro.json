@@ -1,0 +1,36 @@
+{
+  "nome": "Bautista Castro",
+  "nacionalidade": "[AR] Argentina",
+  "overall": 43,
+  "pontos": 23,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 47,
+    "forehand": 45,
+    "backhand": 35,
+    "topspin": 42,
+    "voleio": 49,
+    "slice": 42,
+    "movimento": 39,
+    "lob": 45,
+    "fisico": 50,
+    "winner": 42,
+    "duplas": 36
+  },
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 38,
+    "leitura_de_jogo": 40,
+    "determinacao": 44
+  },
+  "moral": 69,
+  "fadiga": 16,
+  "energia": 83,
+  "is_bot": false,
+  "genero": "masculino"
+}

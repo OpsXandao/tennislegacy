@@ -1,0 +1,37 @@
+{
+  "nome": "William Bailey",
+  "nacionalidade": "[CR] Costa Rica",
+  "overall": 42,
+  "pontos": 23,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 49,
+    "forehand": 46,
+    "backhand": 44,
+    "topspin": 39,
+    "voleio": 41,
+    "slice": 39,
+    "movimento": 30,
+    "lob": 41,
+    "fisico": 48,
+    "winner": 37,
+    "duplas": 37
+  },
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 55,
+    "leitura_de_jogo": 52,
+    "determinacao": 37
+  },
+  "moral": 72,
+  "fadiga": 5,
+  "energia": 92,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

@@ -1,0 +1,36 @@
+{
+  "nome": "Michael Davis",
+  "nacionalidade": "[FJ] Fiji",
+  "overall": 43,
+  "pontos": 17,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 43,
+    "forehand": 43,
+    "backhand": 40,
+    "topspin": 45,
+    "voleio": 37,
+    "slice": 35,
+    "movimento": 35,
+    "lob": 46,
+    "fisico": 52,
+    "winner": 36,
+    "duplas": 42
+  },
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 52,
+    "leitura_de_jogo": 43,
+    "determinacao": 53
+  },
+  "moral": 64,
+  "fadiga": 2,
+  "energia": 93,
+  "is_bot": false,
+  "genero": "masculino"
+}

@@ -85,6 +85,11 @@ def processar_recuperacao_semanal(entidade: Any, eventos: Optional[List[str]] = 
     
     rec_energia = int(round(ENERGIA_RECUPERACAO_SEMANAL_BASE + fisico * ENERGIA_RECUPERACAO_SEMANAL_POR_FISICO))
     
+    # Bônus Lifestyle: Chef Particular
+    lifestyle = _get_val(entidade, "lifestyle", [])
+    if isinstance(lifestyle, list) and "chef_particular" in lifestyle:
+        rec_energia += 5
+    
     status_doenca = normalizar_status_doenca(_get_val(entidade, "status_doenca", {}))
     penalidade_rec = float(status_doenca.get("penalidade_recuperacao_energia", 0.0))
     if penalidade_rec > 0:

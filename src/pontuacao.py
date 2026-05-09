@@ -636,6 +636,12 @@ def _processar_pontos_modalidade(
 
         prize = _calcular_prize_por_fase(premiacao_total, fase_historico) if modalidade == "simples" else int(_calcular_prize_por_fase(premiacao_total, fase_historico) * 0.25)
 
+        # Bônus Lifestyle: Mansão em Monte Carlo (tax haven + prestige)
+        if jogador_nome_norm == human_name_norm and jogador_humano:
+            lifestyle = getattr(jogador_humano, "lifestyle", [])
+            if isinstance(lifestyle, list) and "mansao_monte_carlo" in lifestyle:
+                prize = int(prize * 1.10)
+
         if pontos_base > 0:
             ranking.adicionar_pontos(
                 jogador_nome_norm,

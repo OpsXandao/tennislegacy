@@ -1,0 +1,37 @@
+{
+  "nome": "Biel Vázquez",
+  "nacionalidade": "[ES] Espanha",
+  "overall": 39,
+  "pontos": 1,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 62,
+    "forehand": 30,
+    "backhand": 42,
+    "topspin": 33,
+    "voleio": 46,
+    "slice": 32,
+    "movimento": 44,
+    "lob": 42,
+    "fisico": 35,
+    "winner": 39,
+    "duplas": 30
+  },
+  "atributos_psicologicos": {
+    "concentracao": 36,
+    "agressividade": 35,
+    "leitura_de_jogo": 31,
+    "determinacao": 37
+  },
+  "moral": 73,
+  "fadiga": 6,
+  "energia": 86,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

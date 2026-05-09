@@ -1,0 +1,36 @@
+{
+  "nome": "Somboon Sanz",
+  "nacionalidade": "[TH] Tailândia",
+  "overall": 42,
+  "pontos": 26,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 40,
+    "forehand": 46,
+    "backhand": 37,
+    "topspin": 30,
+    "voleio": 58,
+    "slice": 42,
+    "movimento": 47,
+    "lob": 35,
+    "fisico": 43,
+    "winner": 36,
+    "duplas": 48
+  },
+  "atributos_psicologicos": {
+    "concentracao": 34,
+    "agressividade": 44,
+    "leitura_de_jogo": 48,
+    "determinacao": 47
+  },
+  "moral": 66,
+  "fadiga": 15,
+  "energia": 93,
+  "is_bot": false,
+  "genero": "masculino"
+}

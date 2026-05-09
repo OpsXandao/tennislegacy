@@ -1,0 +1,37 @@
+{
+  "nome": "Carlos Russell",
+  "nacionalidade": "[PA] Panamá",
+  "overall": 41,
+  "pontos": 23,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 51,
+    "forehand": 44,
+    "backhand": 30,
+    "topspin": 38,
+    "voleio": 34,
+    "slice": 39,
+    "movimento": 32,
+    "lob": 42,
+    "fisico": 46,
+    "winner": 35,
+    "duplas": 42
+  },
+  "atributos_psicologicos": {
+    "concentracao": 54,
+    "agressividade": 37,
+    "leitura_de_jogo": 54,
+    "determinacao": 49
+  },
+  "moral": 73,
+  "fadiga": 10,
+  "energia": 93,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

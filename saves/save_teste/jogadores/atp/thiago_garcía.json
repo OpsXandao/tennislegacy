@@ -1,0 +1,37 @@
+{
+  "nome": "Thiago García",
+  "nacionalidade": "[CO] Colômbia",
+  "overall": 44,
+  "pontos": 26,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 38,
+    "forehand": 39,
+    "backhand": 45,
+    "topspin": 33,
+    "voleio": 64,
+    "slice": 49,
+    "movimento": 40,
+    "lob": 42,
+    "fisico": 55,
+    "winner": 32,
+    "duplas": 50
+  },
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 46,
+    "leitura_de_jogo": 39,
+    "determinacao": 47
+  },
+  "moral": 65,
+  "fadiga": 15,
+  "energia": 90,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

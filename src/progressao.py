@@ -45,6 +45,11 @@ def handle_xp_e_level_up(jogador: Any, vitoria: bool, return_eventos: bool = Fal
     if treinador:
         xp_ganho = int(xp_ganho * treinador.get("bonus_xp", 1.0))
 
+    # Bônus Lifestyle: Academia Própria
+    lifestyle = getattr(jogador, "lifestyle", [])
+    if isinstance(lifestyle, list) and "academia_propria" in lifestyle:
+        xp_ganho = int(xp_ganho * 1.15)
+
     jogador.xp += xp_ganho
     eventos.append(
         EventoProgressao(

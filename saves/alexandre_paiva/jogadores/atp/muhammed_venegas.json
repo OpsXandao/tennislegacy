@@ -1,0 +1,36 @@
+{
+  "nome": "Muhammed Venegas",
+  "nacionalidade": "[IQ] Iraque",
+  "overall": 42,
+  "pontos": 7,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 40,
+    "forehand": 47,
+    "backhand": 40,
+    "topspin": 43,
+    "voleio": 62,
+    "slice": 39,
+    "movimento": 47,
+    "lob": 37,
+    "fisico": 36,
+    "winner": 33,
+    "duplas": 43
+  },
+  "atributos_psicologicos": {
+    "concentracao": 39,
+    "agressividade": 48,
+    "leitura_de_jogo": 32,
+    "determinacao": 46
+  },
+  "moral": 74,
+  "fadiga": 12,
+  "energia": 99,
+  "is_bot": false,
+  "genero": "masculino"
+}

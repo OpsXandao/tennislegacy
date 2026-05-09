@@ -1,0 +1,44 @@
+{
+  "nome": "Bilal Ivanov",
+  "nacionalidade": "[KG] Quirguistão",
+  "overall": 42,
+  "pontos": 0,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 49,
+    "forehand": 37,
+    "backhand": 49,
+    "topspin": 50,
+    "voleio": 47,
+    "slice": 35,
+    "movimento": 43,
+    "lob": 49,
+    "fisico": 45,
+    "winner": 30,
+    "duplas": 33
+  },
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 36,
+    "leitura_de_jogo": 44,
+    "determinacao": 39
+  },
+  "moral": 77,
+  "fadiga": 0,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "feminino",
+  "status_doenca": {
+    "doente": false,
+    "tipo": null,
+    "nivel": "saudavel",
+    "semanas_restantes": 0,
+    "penalidade_atributos": 0.0,
+    "penalidade_recuperacao_energia": 0.0
+  }
+}

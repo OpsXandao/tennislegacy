@@ -1,0 +1,37 @@
+{
+  "nome": "Goran Pavlović",
+  "nacionalidade": "[RS] Sérvia",
+  "overall": 41,
+  "pontos": 30,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 62,
+    "forehand": 35,
+    "backhand": 38,
+    "topspin": 47,
+    "voleio": 34,
+    "slice": 41,
+    "movimento": 41,
+    "lob": 33,
+    "fisico": 39,
+    "winner": 48,
+    "duplas": 39
+  },
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 32,
+    "leitura_de_jogo": 40,
+    "determinacao": 40
+  },
+  "moral": 63,
+  "fadiga": 15,
+  "energia": 89,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

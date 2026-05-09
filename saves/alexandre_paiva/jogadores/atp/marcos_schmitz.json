@@ -1,0 +1,36 @@
+{
+  "nome": "Marcos Schmitz",
+  "nacionalidade": "[BR] Brasil",
+  "overall": 43,
+  "pontos": 18,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 49,
+    "forehand": 47,
+    "backhand": 41,
+    "topspin": 50,
+    "voleio": 49,
+    "slice": 30,
+    "movimento": 42,
+    "lob": 36,
+    "fisico": 53,
+    "winner": 31,
+    "duplas": 39
+  },
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 32,
+    "leitura_de_jogo": 54,
+    "determinacao": 41
+  },
+  "moral": 75,
+  "fadiga": 10,
+  "energia": 80,
+  "is_bot": false,
+  "genero": "masculino"
+}

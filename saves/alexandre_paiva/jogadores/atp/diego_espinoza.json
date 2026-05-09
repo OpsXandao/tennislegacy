@@ -1,0 +1,36 @@
+{
+  "nome": "Diego Espinoza",
+  "nacionalidade": "[MX] México",
+  "overall": 43,
+  "pontos": 2,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 51,
+    "forehand": 48,
+    "backhand": 38,
+    "topspin": 46,
+    "voleio": 49,
+    "slice": 39,
+    "movimento": 40,
+    "lob": 39,
+    "fisico": 40,
+    "winner": 43,
+    "duplas": 45
+  },
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 37,
+    "leitura_de_jogo": 43,
+    "determinacao": 35
+  },
+  "moral": 62,
+  "fadiga": 16,
+  "energia": 81,
+  "is_bot": false,
+  "genero": "masculino"
+}

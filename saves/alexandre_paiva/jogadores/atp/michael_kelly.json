@@ -1,0 +1,36 @@
+{
+  "nome": "Michael Kelly",
+  "nacionalidade": "[VN] Vietnã",
+  "overall": 42,
+  "pontos": 11,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 45,
+    "forehand": 36,
+    "backhand": 42,
+    "topspin": 61,
+    "voleio": 41,
+    "slice": 35,
+    "movimento": 52,
+    "lob": 38,
+    "fisico": 48,
+    "winner": 35,
+    "duplas": 30
+  },
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 32,
+    "leitura_de_jogo": 44,
+    "determinacao": 42
+  },
+  "moral": 70,
+  "fadiga": 2,
+  "energia": 85,
+  "is_bot": false,
+  "genero": "masculino"
+}

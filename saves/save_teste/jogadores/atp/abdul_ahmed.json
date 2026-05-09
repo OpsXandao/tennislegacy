@@ -1,0 +1,37 @@
+{
+  "nome": "Abdul Ahmed",
+  "nacionalidade": "[BD] Bangladesh",
+  "overall": 44,
+  "pontos": 27,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 40,
+    "forehand": 46,
+    "backhand": 44,
+    "topspin": 61,
+    "voleio": 42,
+    "slice": 47,
+    "movimento": 58,
+    "lob": 35,
+    "fisico": 51,
+    "winner": 43,
+    "duplas": 32
+  },
+  "atributos_psicologicos": {
+    "concentracao": 36,
+    "agressividade": 40,
+    "leitura_de_jogo": 41,
+    "determinacao": 32
+  },
+  "moral": 79,
+  "fadiga": 12,
+  "energia": 92,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

@@ -1,0 +1,26 @@
+{
+    "gripe": {
+        "duracao": [1, 2],
+        "penalidade_atributos": 0.08,
+        "penalidade_energia": 0.18,
+        "peso": 4
+    },
+    "virose": {
+        "duracao": [1, 2],
+        "penalidade_atributos": 0.10,
+        "penalidade_energia": 0.22,
+        "peso": 3
+    },
+    "intoxicacao": {
+        "duracao": [1, 1],
+        "penalidade_atributos": 0.12,
+        "penalidade_energia": 0.25,
+        "peso": 2
+    },
+    "resfriado": {
+        "duracao": [1, 1],
+        "penalidade_atributos": 0.05,
+        "penalidade_energia": 0.12,
+        "peso": 5
+    }
+}

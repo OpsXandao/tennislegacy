@@ -1,0 +1,37 @@
+{
+  "nome": "Jökull Bergmann",
+  "nacionalidade": "[IS] Islândia",
+  "overall": 40,
+  "pontos": 17,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 33,
+    "forehand": 43,
+    "backhand": 41,
+    "topspin": 33,
+    "voleio": 54,
+    "slice": 38,
+    "movimento": 52,
+    "lob": 32,
+    "fisico": 36,
+    "winner": 36,
+    "duplas": 36
+  },
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 44,
+    "leitura_de_jogo": 35,
+    "determinacao": 40
+  },
+  "moral": 68,
+  "fadiga": 0,
+  "energia": 84,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

@@ -33,6 +33,7 @@ from api.routes import (
     notificacoes,
     patrocinio,
     imprensa,
+    lifestyle,
 )
 from api.session import clear_sessao
 from api.ws import partida as ws_partida
@@ -123,6 +124,7 @@ app.include_router(progressao.router)
 app.include_router(notificacoes.router)
 app.include_router(patrocinio.router)
 app.include_router(imprensa.router)
+app.include_router(lifestyle.router)
 app.include_router(ws_partida.router)
 
 

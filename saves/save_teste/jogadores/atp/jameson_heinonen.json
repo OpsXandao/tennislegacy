@@ -1,0 +1,37 @@
+{
+  "nome": "Jameson Heinonen",
+  "nacionalidade": "[HT] Haiti",
+  "overall": 40,
+  "pontos": 5,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 49,
+    "forehand": 45,
+    "backhand": 32,
+    "topspin": 33,
+    "voleio": 46,
+    "slice": 33,
+    "movimento": 37,
+    "lob": 42,
+    "fisico": 44,
+    "winner": 43,
+    "duplas": 37
+  },
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 35,
+    "leitura_de_jogo": 50,
+    "determinacao": 33
+  },
+  "moral": 67,
+  "fadiga": 13,
+  "energia": 84,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

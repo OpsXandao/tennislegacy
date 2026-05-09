@@ -1,0 +1,692 @@
+{
+  "torneio": "Australian Open",
+  "semana": 3,
+  "fase_atual": "r64",
+  "fases": [
+    "r64",
+    "r32",
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "rodadas": {
+    "r64": [
+      [
+        {
+          "nome": "Anna Kalinskaya",
+          "overall": 50
+        },
+        {
+          "nome": "Marta Kostyuk",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Sára Bejlek",
+          "overall": 50
+        },
+        {
+          "nome": "Daria Kasatkina",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Jessica Pegula",
+          "overall": 50
+        },
+        {
+          "nome": "Leylah Fernandez",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Marie Bouzková",
+          "overall": 50
+        },
+        {
+          "nome": "Kimberly Birrell",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Mirra Andreeva",
+          "overall": 50
+        },
+        {
+          "nome": "Belinda Bencic",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Iva Jovic",
+          "overall": 50
+        },
+        {
+          "nome": "Xinyu Wang",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Emma Raducanu",
+          "overall": 50
+        },
+        {
+          "nome": "Barbora Krejčíková",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Beatriz Haddad Maia",
+          "overall": 50
+        },
+        {
+          "nome": "Varvara Gracheva",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Viktorija Golubic",
+          "overall": 50
+        },
+        {
+          "nome": "Aryna Sabalenka",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Elisabetta Cocciaretto",
+          "overall": 50
+        },
+        {
+          "nome": "Solana Sierra",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Camila Osorio",
+          "overall": 50
+        },
+        {
+          "nome": "Magdalena Fręch",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Ann Li",
+          "overall": 50
+        },
+        {
+          "nome": "Elise Mertens",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Jéssica Bouzas Maneiro",
+          "overall": 50
+        },
+        {
+          "nome": "Katie Boulter",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Petra Marčinko",
+          "overall": 50
+        },
+        {
+          "nome": "Cristina Bucșa",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Tatjana Maria",
+          "overall": 50
+        },
+        {
+          "nome": "Maya Joint",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Loïs Boisson",
+          "overall": 50
+        },
+        {
+          "nome": "Madison Keys",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Markéta Vondroušová",
+          "overall": 50
+        },
+        {
+          "nome": "Dayana Yastremska",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Maria Sakkari",
+          "overall": 50
+        },
+        {
+          "nome": "Oleksandra Oliynykova",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Magda Linette",
+          "overall": 50
+        },
+        {
+          "nome": "Caty McNally",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Peyton Stearns",
+          "overall": 50
+        },
+        {
+          "nome": "Emma Navarro",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Naomi Osaka",
+          "overall": 50
+        },
+        {
+          "nome": "Mccartney Kessler",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Shuai Zhang",
+          "overall": 50
+        },
+        {
+          "nome": "Elina Svitolina",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Elsa Jacquemot",
+          "overall": 50
+        },
+        {
+          "nome": "Hailey Baptiste",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Tereza Valentová",
+          "overall": 50
+        },
+        {
+          "nome": "Laura Siegemund",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Antonia Ružić",
+          "overall": 50
+        },
+        {
+          "nome": "Elena-Gabriela Ruse",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Sofia Kenin",
+          "overall": 50
+        },
+        {
+          "nome": "Oksana Selekhmeteva",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Anna Bondár",
+          "overall": 50
+        },
+        {
+          "nome": "Qinwen Zheng",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Coco Gauff",
+          "overall": 50
+        },
+        {
+          "nome": "Alexandra Eala",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Ekaterina Alexandrova",
+          "overall": 50
+        },
+        {
+          "nome": "Kateřina Siniaková",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Eva Lys",
+          "overall": 50
+        },
+        {
+          "nome": "Amanda Anisimova",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Jeļena Ostapenko",
+          "overall": 50
+        },
+        {
+          "nome": "Jaqueline Cristian",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Sonay Kartal",
+          "overall": 50
+        },
+        {
+          "nome": "Janice Tjen",
+          "overall": 50
+        }
+      ]
+    ]
+  },
+  "resultados": {},
+  "jogador": "Alexandre Paiva",
+  "jogador_vivo": false,
+  "tournament_data": {
+    "nome": "Australian Open",
+    "tipo": "Grand Slam",
+    "permite_mistas": true,
+    "local": "Melbourne",
+    "quadra": "dura",
+    "premiacao": 43250000,
+    "dificuldade": 5,
+    "popularidade": 5,
+    "qualificacao": true,
+    "pais_sede": "[AU] Austrália",
+    "semana": 3,
+    "ultimo_campeao_duplas": "Kateřina Siniaková / Taylor Townsend",
+    "ultimo_campeao": "Madison Keys"
+  },
+  "genero": "feminino",
+  "campeao_simples": null,
+  "fases_duplas": [
+    "r64",
+    "r32",
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "fase_atual_duplas": "r64",
+  "rodadas_duplas": {
+    "r64": [
+      [
+        {
+          "nome": "Qianhui Tang / Madison Keys",
+          "overall": 50
+        },
+        {
+          "nome": "Aldila Sutjiadi / Jaqueline Cristian",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Gamarra Martins / Irina Khromacheva",
+          "overall": 50
+        },
+        {
+          "nome": "Loïs Boisson / Caty McNally",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Varvara Gracheva / Amanda Anisimova",
+          "overall": 50
+        },
+        {
+          "nome": "Alexandra Eala / Erin Routliffe",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Maya Joint / Alexandra Panova",
+          "overall": 50
+        },
+        {
+          "nome": "Jéssica Bouzas Maneiro / Peyton Stearns",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Makoto Ninomiya / Tereza Mihalíková",
+          "overall": 50
+        },
+        {
+          "nome": "Iva Jovic / Jessica Pegula",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Kimberly Birrell / Fang-Hsien Wu",
+          "overall": 50
+        },
+        {
+          "nome": "Quinn Gleason / Katie Boulter",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Cristina Bucșa / Aryna Sabalenka",
+          "overall": 50
+        },
+        {
+          "nome": "Anastasia Dețiuc / Herrero Liñana",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Katarzyna Piter / Zeynep Sönmez",
+          "overall": 50
+        },
+        {
+          "nome": "Diana Shnaider / Jasmine Paolini",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Anna Bondár / Veronika Kudermetova",
+          "overall": 50
+        },
+        {
+          "nome": "Tatjana Maria / Oksana Selekhmeteva",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Karolína Muchová / Barbora Krejčíková",
+          "overall": 50
+        },
+        {
+          "nome": "Miyu Kato / Yulia Putintseva",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Nicole Melichar-Martinez / Ludmilla Samsonova",
+          "overall": 50
+        },
+        {
+          "nome": "Ann Li / Elina Svitolina",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Desirae Krawczyk / Ellen Perez",
+          "overall": 50
+        },
+        {
+          "nome": "Coco Gauff / Clara Tauson",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Victoria Mboko / Eva Lys",
+          "overall": 50
+        },
+        {
+          "nome": "Tímea Babos / Simona Waltert",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Mirra Andreeva / Fanny Stollár",
+          "overall": 50
+        },
+        {
+          "nome": "Danielle Collins / Demi Schuurs",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Kateřina Siniaková / Carmen Corley",
+          "overall": 50
+        },
+        {
+          "nome": "Magda Linette / Hailey Baptiste",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Lyudmyla Kichenok / Linda Nosková",
+          "overall": 50
+        },
+        {
+          "nome": "Emma Raducanu / Petra Marčinko",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Ingrid Gamarra Martins / Olivia Nicholls",
+          "overall": 50
+        },
+        {
+          "nome": "Isabelle Haverlag / Ivana Corley",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Janice Tjen / Viktorija Golubic",
+          "overall": 50
+        },
+        {
+          "nome": "Xinyu Wang / Beatriz Haddad Maia",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Oleksandra Oliynykova / Laura Siegemund",
+          "overall": 50
+        },
+        {
+          "nome": "Naomi Osaka / Maria Sakkari",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Solana Sierra / Belinda Bencic",
+          "overall": 50
+        },
+        {
+          "nome": "Daria Kasatkina / Luisa Stefani",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Leylah Fernandez / Giuliana Olmos",
+          "overall": 50
+        },
+        {
+          "nome": "Magali Kempen / Elena Rybakina",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Qinwen Zheng / Marta Kostyuk",
+          "overall": 50
+        },
+        {
+          "nome": "Tereza Valentová / Ekaterina Alexandrova",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Maia Lumsden / Camila Osorio",
+          "overall": 50
+        },
+        {
+          "nome": "Sabrina Santamaria / Elsa Jacquemot",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Sofia Kenin / Sára Bejlek",
+          "overall": 50
+        },
+        {
+          "nome": "Oksana Kalashnikova / Mccartney Kessler",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Elisabetta Cocciaretto / Iga Świątek",
+          "overall": 50
+        },
+        {
+          "nome": "Miriam Kolodziejová / Marie Bouzková",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Shuai Zhang / Emma Navarro",
+          "overall": 50
+        },
+        {
+          "nome": "Elise Mertens / Anna Kalinskaya",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Hao-ching Chan / Haddad Maia",
+          "overall": 50
+        },
+        {
+          "nome": "Asia Muhammad / Ella Seidel",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Anna Danilina / Nadiia Kichenok",
+          "overall": 50
+        },
+        {
+          "nome": "Saisai Zheng / Shuko Aoyama",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Dayana Yastremska / Ulrikke Eikeri",
+          "overall": 50
+        },
+        {
+          "nome": "Antonia Ružić / Sonay Kartal",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Jeļena Ostapenko / Julia Grabher",
+          "overall": 50
+        },
+        {
+          "nome": "Xinyu Jiang / Magdalena Fręch",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Zhaoxuan Yang / Elena-Gabriela Ruse",
+          "overall": 50
+        },
+        {
+          "nome": "Yifan Xu / Markéta Vondroušová",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Shuo Feng / Su-wei Hsieh",
+          "overall": 50
+        },
+        {
+          "nome": "Gabriela Dabrowski / Sorana Cîrstea",
+          "overall": 50
+        }
+      ]
+    ]
+  },
+  "resultados_duplas": {},
+  "campeao_duplas": null
+}

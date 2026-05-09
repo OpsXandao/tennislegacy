@@ -1,0 +1,36 @@
+{
+  "nome": "Berrdo Cavalcanti",
+  "nacionalidade": "[BR] Brasil",
+  "overall": 43,
+  "pontos": 10,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 30,
+    "forehand": 45,
+    "backhand": 34,
+    "topspin": 45,
+    "voleio": 32,
+    "slice": 45,
+    "movimento": 59,
+    "lob": 32,
+    "fisico": 52,
+    "winner": 46,
+    "duplas": 50
+  },
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 46,
+    "leitura_de_jogo": 31,
+    "determinacao": 55
+  },
+  "moral": 75,
+  "fadiga": 14,
+  "energia": 95,
+  "is_bot": false,
+  "genero": "masculino"
+}

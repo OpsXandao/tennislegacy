@@ -1,0 +1,44 @@
+{
+  "nome": "Harper Richardson",
+  "nacionalidade": "[LK] Sri Lanka",
+  "overall": 44,
+  "pontos": 11,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 46,
+    "forehand": 43,
+    "backhand": 41,
+    "topspin": 35,
+    "voleio": 64,
+    "slice": 49,
+    "movimento": 48,
+    "lob": 40,
+    "fisico": 44,
+    "winner": 30,
+    "duplas": 36
+  },
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 38,
+    "leitura_de_jogo": 54,
+    "determinacao": 52
+  },
+  "moral": 72,
+  "fadiga": 0,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "feminino",
+  "status_doenca": {
+    "doente": false,
+    "tipo": null,
+    "nivel": "saudavel",
+    "semanas_restantes": 0,
+    "penalidade_atributos": 0.0,
+    "penalidade_recuperacao_energia": 0.0
+  }
+}

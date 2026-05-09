@@ -1,0 +1,36 @@
+{
+  "nome": "Alikhan Kim",
+  "nacionalidade": "[KZ] Cazaquistão",
+  "overall": 45,
+  "pontos": 5,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 38,
+    "forehand": 48,
+    "backhand": 38,
+    "topspin": 46,
+    "voleio": 45,
+    "slice": 45,
+    "movimento": 50,
+    "lob": 40,
+    "fisico": 54,
+    "winner": 44,
+    "duplas": 40
+  },
+  "atributos_psicologicos": {
+    "concentracao": 37,
+    "agressividade": 54,
+    "leitura_de_jogo": 54,
+    "determinacao": 40
+  },
+  "moral": 78,
+  "fadiga": 8,
+  "energia": 86,
+  "is_bot": false,
+  "genero": "masculino"
+}

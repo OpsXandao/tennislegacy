@@ -1,0 +1,36 @@
+{
+  "nome": "Georgi Angelova",
+  "nacionalidade": "[BG] Bulgária",
+  "overall": 46,
+  "pontos": 1,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 61,
+    "forehand": 41,
+    "backhand": 44,
+    "topspin": 48,
+    "voleio": 33,
+    "slice": 47,
+    "movimento": 50,
+    "lob": 50,
+    "fisico": 35,
+    "winner": 55,
+    "duplas": 34
+  },
+  "atributos_psicologicos": {
+    "concentracao": 47,
+    "agressividade": 55,
+    "leitura_de_jogo": 39,
+    "determinacao": 46
+  },
+  "moral": 76,
+  "fadiga": 6,
+  "energia": 81,
+  "is_bot": false,
+  "genero": "masculino"
+}

@@ -1,0 +1,36 @@
+{
+  "nome": "Oscar Peeters",
+  "nacionalidade": "[BE] Bélgica",
+  "overall": 41,
+  "pontos": 24,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 54,
+    "forehand": 34,
+    "backhand": 34,
+    "topspin": 30,
+    "voleio": 35,
+    "slice": 45,
+    "movimento": 50,
+    "lob": 42,
+    "fisico": 43,
+    "winner": 37,
+    "duplas": 41
+  },
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 46,
+    "leitura_de_jogo": 49,
+    "determinacao": 34
+  },
+  "moral": 68,
+  "fadiga": 5,
+  "energia": 98,
+  "is_bot": false,
+  "genero": "masculino"
+}

@@ -1,0 +1,33 @@
+{
+    "paises": [
+        "[IT] Itália", "[ES] Espanha", "[AU] Austrália", "[CA] Canadá", 
+        "[HR] Croácia", "[NL] Holanda", "[US] USA", "[GB] Grã-Bretanha", 
+        "[DE] Alemanha", "[FR] França", "[AR] Argentina", "[CZ] Czechia", 
+        "[SE] Suécia", "[BE] Bélgica", "[CH] Suíça", "[RS] Sérvia", 
+        "[CL] Chile", "[KR] Coreia do Sul", "[BR] Brasil", "[PT] Portugal", 
+        "[JP] Japão", "[PL] Polônia"
+    ],
+    "qualifiers_r1_2026": [
+        ["[AU] Austrália", "[SE] Suécia"],
+        ["[HU] Hungria", "[CA] Canadá"],
+        ["[DE] Alemanha", "[IL] Israel"],
+        ["[US] USA", "[TW] Chinese Taipei"],
+        ["[DK] Dinamarca", "[RS] Sérvia"],
+        ["[HR] Croácia", "[SK] Eslováquia"],
+        ["[FR] França", "[BR] Brasil"],
+        ["[ES] Espanha", "[CH] Suíça"],
+        ["[CZ] Czechia", "[KR] Coreia do Sul"],
+        ["[JP] Japão", "[GB] Grã-Bretanha"],
+        ["[AT] Áustria", "[FI] Finlândia"],
+        ["[BE] Bélgica", "[CL] Chile"],
+        ["[AR] Argentina", "[NO] Noruega"]
+    ],
+    "superficies_padrao": {
+        "AU": "Hard",
+        "FR": "Hard (i)",
+        "ES": "Clay",
+        "BR": "Clay",
+        "US": "Hard",
+        "GB": "Grass"
+    }
+}

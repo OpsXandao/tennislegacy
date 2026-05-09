@@ -1,0 +1,36 @@
+{
+  "nome": "Benjamin Robinson",
+  "nacionalidade": "[US] Estados Unidos",
+  "overall": 42,
+  "pontos": 9,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 30,
+    "forehand": 48,
+    "backhand": 48,
+    "topspin": 35,
+    "voleio": 59,
+    "slice": 38,
+    "movimento": 46,
+    "lob": 37,
+    "fisico": 37,
+    "winner": 41,
+    "duplas": 37
+  },
+  "atributos_psicologicos": {
+    "concentracao": 32,
+    "agressividade": 37,
+    "leitura_de_jogo": 53,
+    "determinacao": 52
+  },
+  "moral": 60,
+  "fadiga": 20,
+  "energia": 81,
+  "is_bot": false,
+  "genero": "masculino"
+}

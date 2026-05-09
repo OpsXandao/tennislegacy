@@ -1,0 +1,103 @@
+{
+  "nome": "Pengyu Lu",
+  "nacionalidade": "[CN]",
+  "pontos": 19,
+  "pontos_duplas": 0,
+  "pontos_ranking": 19,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 5,
+  "overall": 70,
+  "energia": 68,
+  "fadiga": 4,
+  "moral": 75,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "saque": 50,
+    "forehand": 44,
+    "backhand": 51,
+    "topspin": 53,
+    "voleio": 57,
+    "slice": 60,
+    "movimento": 46,
+    "lob": 42,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 55,
+    "agressividade": 43,
+    "leitura_de_jogo": 46,
+    "determinacao": 45
+  },
+  "historico_torneios": [
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 1,
+      "ano": 2026,
+      "fase": "qualy_2",
+      "fase_alcancada": "qualy_2",
+      "pontos": 5,
+      "premio": 746,
+      "modalidade": "simples",
+      "obrigatorio": false,
+      "expirado": false
+    }
+  ],
+  "historico_partidas": [
+    {
+      "ano": 2026,
+      "semana": 1,
+      "torneio": "Hong Kong Open",
+      "fase": "pre_oitavas",
+      "adversario": "Alexandre Paiva",
+      "placar": "Alexandre Paiva 2 x 0 Pengyu Lu",
+      "resultado": "D"
+    }
+  ],
+  "pontos_detalhados": [
+    {
+      "pontos": 14,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    },
+    {
+      "pontos": 5,
+      "semana_expiracao": 1,
+      "ano_expiracao": 2027,
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana_origem": 1,
+      "ano_origem": 2026,
+      "fase": "qualy_2",
+      "modalidade": "simples"
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 746,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 24,
+  "id": 1084,
+  "pico_carreira": 1062,
+  "altura": 178,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "ranking_pos": 1051
+}

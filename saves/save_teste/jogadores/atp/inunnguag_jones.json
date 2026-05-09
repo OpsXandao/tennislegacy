@@ -1,0 +1,37 @@
+{
+  "nome": "Inunnguag Jones",
+  "nacionalidade": "[GL] GL",
+  "overall": 41,
+  "pontos": 11,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 51,
+    "forehand": 41,
+    "backhand": 30,
+    "topspin": 50,
+    "voleio": 49,
+    "slice": 32,
+    "movimento": 50,
+    "lob": 35,
+    "fisico": 44,
+    "winner": 36,
+    "duplas": 34
+  },
+  "atributos_psicologicos": {
+    "concentracao": 55,
+    "agressividade": 49,
+    "leitura_de_jogo": 35,
+    "determinacao": 32
+  },
+  "moral": 70,
+  "fadiga": 5,
+  "energia": 82,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

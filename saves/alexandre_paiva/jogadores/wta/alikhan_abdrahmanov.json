@@ -1,0 +1,44 @@
+{
+  "nome": "Alikhan Abdrahmanov",
+  "nacionalidade": "[KZ] Cazaquistão",
+  "overall": 46,
+  "pontos": 18,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 55,
+    "forehand": 33,
+    "backhand": 47,
+    "topspin": 35,
+    "voleio": 43,
+    "slice": 44,
+    "movimento": 49,
+    "lob": 36,
+    "fisico": 46,
+    "winner": 54,
+    "duplas": 47
+  },
+  "atributos_psicologicos": {
+    "concentracao": 49,
+    "agressividade": 49,
+    "leitura_de_jogo": 55,
+    "determinacao": 54
+  },
+  "moral": 72,
+  "fadiga": 0,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "feminino",
+  "status_doenca": {
+    "doente": false,
+    "tipo": null,
+    "nivel": "saudavel",
+    "semanas_restantes": 0,
+    "penalidade_atributos": 0.0,
+    "penalidade_recuperacao_energia": 0.0
+  }
+}

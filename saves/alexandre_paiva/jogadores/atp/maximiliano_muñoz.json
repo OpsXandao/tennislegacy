@@ -1,0 +1,36 @@
+{
+  "nome": "Maximiliano Muñoz",
+  "nacionalidade": "[CO] Colômbia",
+  "overall": 43,
+  "pontos": 11,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 44,
+    "forehand": 31,
+    "backhand": 37,
+    "topspin": 39,
+    "voleio": 64,
+    "slice": 40,
+    "movimento": 43,
+    "lob": 45,
+    "fisico": 48,
+    "winner": 31,
+    "duplas": 37
+  },
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 54,
+    "leitura_de_jogo": 42,
+    "determinacao": 50
+  },
+  "moral": 76,
+  "fadiga": 20,
+  "energia": 85,
+  "is_bot": false,
+  "genero": "masculino"
+}

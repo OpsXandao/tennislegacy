@@ -1,0 +1,848 @@
+{
+  "torneio": "Brisbane International",
+  "semana": 1,
+  "fase_atual": "finalizado",
+  "fases": [
+    "r32",
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "rodadas": {
+    "r32": [
+      [
+        {
+          "nome": "Karen Khachanov",
+          "overall": 50
+        },
+        {
+          "nome": "Alexei Popyrin",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Jenson Brooksby",
+          "overall": 50
+        },
+        {
+          "nome": "Lorenzo Sonego",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Vit Kopriva",
+          "overall": 50
+        },
+        {
+          "nome": "Arthur Cazaux",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Marton Fucsovics",
+          "overall": 50
+        },
+        {
+          "nome": "Adrian Mannarino",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Sebastian Baez",
+          "overall": 50
+        },
+        {
+          "nome": "Grigor Dimitrov",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Daniil Medvedev",
+          "overall": 50
+        },
+        {
+          "nome": "Learner Tien",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Juan Manuel Cerundolo",
+          "overall": 50
+        },
+        {
+          "nome": "Tommy Paul",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Damir Dzumhur",
+          "overall": 50
+        },
+        {
+          "nome": "Denis Shapovalov",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Brandon Nakashima",
+          "overall": 50
+        },
+        {
+          "nome": "Camilo Ugo Carabelli",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Raphael Collignon",
+          "overall": 50
+        },
+        {
+          "nome": "Andrey Rublev",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Valentin Royer",
+          "overall": 50
+        },
+        {
+          "nome": "Quentin Halys",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Zizou Bergs",
+          "overall": 50
+        },
+        {
+          "nome": "Marcos Giron",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Hubert Hurkacz",
+          "overall": 50
+        },
+        {
+          "nome": "Marin Cilic",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Alex de Minaur",
+          "overall": 50
+        },
+        {
+          "nome": "Giovanni Mpetshi Perricard",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Ignacio Buse",
+          "overall": 50
+        },
+        {
+          "nome": "Tomas Machac",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Matteo Berrettini",
+          "overall": 50
+        },
+        {
+          "nome": "Ethan Quinn",
+          "overall": 50
+        }
+      ]
+    ],
+    "r16": [
+      [
+        {
+          "nome": "Ignacio Buse",
+          "overall": 50,
+          "_partidas": 1
+        },
+        {
+          "nome": "Lorenzo Sonego",
+          "overall": 50,
+          "_partidas": 1
+        }
+      ],
+      [
+        {
+          "nome": "Ethan Quinn",
+          "overall": 50,
+          "_partidas": 1
+        },
+        {
+          "nome": "Hubert Hurkacz",
+          "overall": 50,
+          "_partidas": 1
+        }
+      ],
+      [
+        {
+          "nome": "Tommy Paul",
+          "overall": 50,
+          "_partidas": 1
+        },
+        {
+          "nome": "Sebastian Baez",
+          "overall": 50,
+          "_partidas": 1
+        }
+      ],
+      [
+        {
+          "nome": "Quentin Halys",
+          "overall": 50,
+          "_partidas": 1
+        },
+        {
+          "nome": "Denis Shapovalov",
+          "overall": 50,
+          "_partidas": 1
+        }
+      ],
+      [
+        {
+          "nome": "Learner Tien",
+          "overall": 50,
+          "_partidas": 1
+        },
+        {
+          "nome": "Vit Kopriva",
+          "overall": 50,
+          "_partidas": 1
+        }
+      ],
+      [
+        {
+          "nome": "Marton Fucsovics",
+          "overall": 50,
+          "_partidas": 1
+        },
+        {
+          "nome": "Camilo Ugo Carabelli",
+          "overall": 50,
+          "_partidas": 1
+        }
+      ],
+      [
+        {
+          "nome": "Raphael Collignon",
+          "overall": 50,
+          "_partidas": 1
+        },
+        {
+          "nome": "Giovanni Mpetshi Perricard",
+          "overall": 50,
+          "_partidas": 1
+        }
+      ],
+      [
+        {
+          "nome": "Alexei Popyrin",
+          "overall": 50,
+          "_partidas": 1
+        },
+        {
+          "nome": "Marcos Giron",
+          "overall": 50,
+          "_partidas": 1
+        }
+      ]
+    ],
+    "quartas": [
+      [
+        {
+          "nome": "Tommy Paul",
+          "overall": 50,
+          "_partidas": 2
+        },
+        {
+          "nome": "Giovanni Mpetshi Perricard",
+          "overall": 50,
+          "_partidas": 2
+        }
+      ],
+      [
+        {
+          "nome": "Marcos Giron",
+          "overall": 50,
+          "_partidas": 2
+        },
+        {
+          "nome": "Quentin Halys",
+          "overall": 50,
+          "_partidas": 2
+        }
+      ],
+      [
+        {
+          "nome": "Ethan Quinn",
+          "overall": 50,
+          "_partidas": 2
+        },
+        {
+          "nome": "Vit Kopriva",
+          "overall": 50,
+          "_partidas": 2
+        }
+      ],
+      [
+        {
+          "nome": "Lorenzo Sonego",
+          "overall": 50,
+          "_partidas": 2
+        },
+        {
+          "nome": "Camilo Ugo Carabelli",
+          "overall": 50,
+          "_partidas": 2
+        }
+      ]
+    ],
+    "semifinal": [
+      [
+        {
+          "nome": "Camilo Ugo Carabelli",
+          "overall": 50,
+          "_partidas": 3
+        },
+        {
+          "nome": "Quentin Halys",
+          "overall": 50,
+          "_partidas": 3
+        }
+      ],
+      [
+        {
+          "nome": "Tommy Paul",
+          "overall": 50,
+          "_partidas": 3
+        },
+        {
+          "nome": "Ethan Quinn",
+          "overall": 50,
+          "_partidas": 3
+        }
+      ]
+    ],
+    "final": [
+      [
+        {
+          "nome": "Ethan Quinn",
+          "overall": 50,
+          "_partidas": 4
+        },
+        {
+          "nome": "Camilo Ugo Carabelli",
+          "overall": 50,
+          "_partidas": 4
+        }
+      ]
+    ]
+  },
+  "resultados": {
+    "r32": [
+      {
+        "jogador_a": "Karen Khachanov",
+        "jogador_b": "Alexei Popyrin",
+        "vencedor": "Alexei Popyrin",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Jenson Brooksby",
+        "jogador_b": "Lorenzo Sonego",
+        "vencedor": "Lorenzo Sonego",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Vit Kopriva",
+        "jogador_b": "Arthur Cazaux",
+        "vencedor": "Vit Kopriva",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "jogador_a": "Marton Fucsovics",
+        "jogador_b": "Adrian Mannarino",
+        "vencedor": "Marton Fucsovics",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "jogador_a": "Sebastian Baez",
+        "jogador_b": "Grigor Dimitrov",
+        "vencedor": "Sebastian Baez",
+        "placar": "6-3 6-4"
+      },
+      {
+        "jogador_a": "Daniil Medvedev",
+        "jogador_b": "Learner Tien",
+        "vencedor": "Learner Tien",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Juan Manuel Cerundolo",
+        "jogador_b": "Tommy Paul",
+        "vencedor": "Tommy Paul",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Damir Dzumhur",
+        "jogador_b": "Denis Shapovalov",
+        "vencedor": "Denis Shapovalov",
+        "placar": "7-6 6-4"
+      },
+      {
+        "jogador_a": "Brandon Nakashima",
+        "jogador_b": "Camilo Ugo Carabelli",
+        "vencedor": "Camilo Ugo Carabelli",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Raphael Collignon",
+        "jogador_b": "Andrey Rublev",
+        "vencedor": "Raphael Collignon",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "jogador_a": "Valentin Royer",
+        "jogador_b": "Quentin Halys",
+        "vencedor": "Quentin Halys",
+        "placar": "7-5 6-4"
+      },
+      {
+        "jogador_a": "Zizou Bergs",
+        "jogador_b": "Marcos Giron",
+        "vencedor": "Marcos Giron",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "jogador_a": "Hubert Hurkacz",
+        "jogador_b": "Marin Cilic",
+        "vencedor": "Hubert Hurkacz",
+        "placar": "7-6 6-4"
+      },
+      {
+        "jogador_a": "Alex de Minaur",
+        "jogador_b": "Giovanni Mpetshi Perricard",
+        "vencedor": "Giovanni Mpetshi Perricard",
+        "placar": "6-3 6-4"
+      },
+      {
+        "jogador_a": "Ignacio Buse",
+        "jogador_b": "Tomas Machac",
+        "vencedor": "Ignacio Buse",
+        "placar": "6-3 6-4"
+      },
+      {
+        "jogador_a": "Matteo Berrettini",
+        "jogador_b": "Ethan Quinn",
+        "vencedor": "Ethan Quinn",
+        "placar": "7-5 6-4"
+      }
+    ],
+    "r16": [
+      {
+        "jogador_a": "Ignacio Buse",
+        "jogador_b": "Lorenzo Sonego",
+        "vencedor": "Lorenzo Sonego",
+        "placar": "7-6 6-4"
+      },
+      {
+        "jogador_a": "Ethan Quinn",
+        "jogador_b": "Hubert Hurkacz",
+        "vencedor": "Ethan Quinn",
+        "placar": "7-5 6-4"
+      },
+      {
+        "jogador_a": "Tommy Paul",
+        "jogador_b": "Sebastian Baez",
+        "vencedor": "Tommy Paul",
+        "placar": "7-6 6-4"
+      },
+      {
+        "jogador_a": "Quentin Halys",
+        "jogador_b": "Denis Shapovalov",
+        "vencedor": "Quentin Halys",
+        "placar": "7-5 6-4"
+      },
+      {
+        "jogador_a": "Learner Tien",
+        "jogador_b": "Vit Kopriva",
+        "vencedor": "Vit Kopriva",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "jogador_a": "Marton Fucsovics",
+        "jogador_b": "Camilo Ugo Carabelli",
+        "vencedor": "Camilo Ugo Carabelli",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "jogador_a": "Raphael Collignon",
+        "jogador_b": "Giovanni Mpetshi Perricard",
+        "vencedor": "Giovanni Mpetshi Perricard",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Alexei Popyrin",
+        "jogador_b": "Marcos Giron",
+        "vencedor": "Marcos Giron",
+        "placar": "7-6 6-4"
+      }
+    ],
+    "quartas": [
+      {
+        "jogador_a": "Tommy Paul",
+        "jogador_b": "Giovanni Mpetshi Perricard",
+        "vencedor": "Tommy Paul",
+        "placar": "6-3 6-4"
+      },
+      {
+        "jogador_a": "Marcos Giron",
+        "jogador_b": "Quentin Halys",
+        "vencedor": "Quentin Halys",
+        "placar": "6-3 6-4"
+      },
+      {
+        "jogador_a": "Ethan Quinn",
+        "jogador_b": "Vit Kopriva",
+        "vencedor": "Ethan Quinn",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Lorenzo Sonego",
+        "jogador_b": "Camilo Ugo Carabelli",
+        "vencedor": "Camilo Ugo Carabelli",
+        "placar": "6-3 6-4"
+      }
+    ],
+    "semifinal": [
+      {
+        "jogador_a": "Camilo Ugo Carabelli",
+        "jogador_b": "Quentin Halys",
+        "vencedor": "Camilo Ugo Carabelli",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Tommy Paul",
+        "jogador_b": "Ethan Quinn",
+        "vencedor": "Ethan Quinn",
+        "placar": "6-3 6-4"
+      }
+    ],
+    "final": [
+      {
+        "jogador_a": "Ethan Quinn",
+        "jogador_b": "Camilo Ugo Carabelli",
+        "vencedor": "Camilo Ugo Carabelli",
+        "placar": "6-2 6-2"
+      }
+    ]
+  },
+  "jogador": "Alexandre Paiva",
+  "jogador_vivo": false,
+  "tournament_data": {
+    "nome": "Brisbane International",
+    "tipo": "ATP 250",
+    "local": "Brisbane",
+    "quadra": "dura",
+    "premiacao": 680140,
+    "dificuldade": 2,
+    "popularidade": 2,
+    "qualificacao": true,
+    "pais_sede": "[AU] Austrália",
+    "ultimo_campeao": "Jiří Lehečka",
+    "semana": 1,
+    "ultimo_campeao_duplas": "Julian Cash / Lloyd Glasspool"
+  },
+  "genero": "masculino",
+  "campeao_simples": "Camilo Ugo Carabelli",
+  "fases_duplas": [
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "fase_atual_duplas": "finalizado",
+  "rodadas_duplas": {
+    "r16": [
+      [
+        {
+          "nome": "Henry Patten / Fabien Reboul",
+          "overall": 50
+        },
+        {
+          "nome": "Francisco Cabral / Theo Arribage",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Luke Johnson / Julian Cash",
+          "overall": 50
+        },
+        {
+          "nome": "Joe Salisbury / Mate Pavic",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Marcelo Arevalo / Hugo Nys",
+          "overall": 50
+        },
+        {
+          "nome": "Horacio Zeballos / Evan King",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Andres Molteni / JJ Tracy",
+          "overall": 50
+        },
+        {
+          "nome": "Lucas Miedler / Kevin Krawietz",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Manuel Guinard / David Pel",
+          "overall": 50
+        },
+        {
+          "nome": "Albano Olivetti / Harri Heliovaara",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Andre Goransson / Edouard Roger-Vasselin",
+          "overall": 50
+        },
+        {
+          "nome": "Yuki Bhambri / Lloyd Glasspool",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Marcel Granollers / Tim Puetz",
+          "overall": 50
+        },
+        {
+          "nome": "Christian Harrison / Sadio Doumbia",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Simone Bolelli / Nikola Mektic",
+          "overall": 50
+        },
+        {
+          "nome": "Neal Skupski / Jan Zielinski",
+          "overall": 50
+        }
+      ]
+    ],
+    "quartas": [
+      [
+        {
+          "nome": "Marcel Granollers / Tim Puetz",
+          "overall": 50
+        },
+        {
+          "nome": "Marcelo Arevalo / Hugo Nys",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Albano Olivetti / Harri Heliovaara",
+          "overall": 50
+        },
+        {
+          "nome": "Andre Goransson / Edouard Roger-Vasselin",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Simone Bolelli / Nikola Mektic",
+          "overall": 50
+        },
+        {
+          "nome": "Henry Patten / Fabien Reboul",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Joe Salisbury / Mate Pavic",
+          "overall": 50
+        },
+        {
+          "nome": "Lucas Miedler / Kevin Krawietz",
+          "overall": 50
+        }
+      ]
+    ],
+    "semifinal": [
+      [
+        {
+          "nome": "Henry Patten / Fabien Reboul",
+          "overall": 50
+        },
+        {
+          "nome": "Andre Goransson / Edouard Roger-Vasselin",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Marcelo Arevalo / Hugo Nys",
+          "overall": 50
+        },
+        {
+          "nome": "Joe Salisbury / Mate Pavic",
+          "overall": 50
+        }
+      ]
+    ],
+    "final": [
+      [
+        {
+          "nome": "Henry Patten / Fabien Reboul",
+          "overall": 50
+        },
+        {
+          "nome": "Marcelo Arevalo / Hugo Nys",
+          "overall": 50
+        }
+      ]
+    ]
+  },
+  "resultados_duplas": {
+    "r16": [
+      {
+        "dupla_a": "Henry Patten / Fabien Reboul",
+        "dupla_b": "Francisco Cabral / Theo Arribage",
+        "vencedor": "Henry Patten / Fabien Reboul",
+        "placar": "6-3 6-4"
+      },
+      {
+        "dupla_a": "Luke Johnson / Julian Cash",
+        "dupla_b": "Joe Salisbury / Mate Pavic",
+        "vencedor": "Joe Salisbury / Mate Pavic",
+        "placar": "7-5 6-4"
+      },
+      {
+        "dupla_a": "Marcelo Arevalo / Hugo Nys",
+        "dupla_b": "Horacio Zeballos / Evan King",
+        "vencedor": "Marcelo Arevalo / Hugo Nys",
+        "placar": "6-2 6-2"
+      },
+      {
+        "dupla_a": "Andres Molteni / JJ Tracy",
+        "dupla_b": "Lucas Miedler / Kevin Krawietz",
+        "vencedor": "Lucas Miedler / Kevin Krawietz",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "dupla_a": "Manuel Guinard / David Pel",
+        "dupla_b": "Albano Olivetti / Harri Heliovaara",
+        "vencedor": "Albano Olivetti / Harri Heliovaara",
+        "placar": "6-3 6-4"
+      },
+      {
+        "dupla_a": "Andre Goransson / Edouard Roger-Vasselin",
+        "dupla_b": "Yuki Bhambri / Lloyd Glasspool",
+        "vencedor": "Andre Goransson / Edouard Roger-Vasselin",
+        "placar": "6-2 6-2"
+      },
+      {
+        "dupla_a": "Marcel Granollers / Tim Puetz",
+        "dupla_b": "Christian Harrison / Sadio Doumbia",
+        "vencedor": "Marcel Granollers / Tim Puetz",
+        "placar": "6-3 6-4"
+      },
+      {
+        "dupla_a": "Simone Bolelli / Nikola Mektic",
+        "dupla_b": "Neal Skupski / Jan Zielinski",
+        "vencedor": "Simone Bolelli / Nikola Mektic",
+        "placar": "6-3 6-4"
+      }
+    ],
+    "quartas": [
+      {
+        "dupla_a": "Marcel Granollers / Tim Puetz",
+        "dupla_b": "Marcelo Arevalo / Hugo Nys",
+        "vencedor": "Marcelo Arevalo / Hugo Nys",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "dupla_a": "Albano Olivetti / Harri Heliovaara",
+        "dupla_b": "Andre Goransson / Edouard Roger-Vasselin",
+        "vencedor": "Andre Goransson / Edouard Roger-Vasselin",
+        "placar": "7-6 6-4"
+      },
+      {
+        "dupla_a": "Simone Bolelli / Nikola Mektic",
+        "dupla_b": "Henry Patten / Fabien Reboul",
+        "vencedor": "Henry Patten / Fabien Reboul",
+        "placar": "6-2 6-2"
+      },
+      {
+        "dupla_a": "Joe Salisbury / Mate Pavic",
+        "dupla_b": "Lucas Miedler / Kevin Krawietz",
+        "vencedor": "Joe Salisbury / Mate Pavic",
+        "placar": "7-5 6-4"
+      }
+    ],
+    "semifinal": [
+      {
+        "dupla_a": "Henry Patten / Fabien Reboul",
+        "dupla_b": "Andre Goransson / Edouard Roger-Vasselin",
+        "vencedor": "Henry Patten / Fabien Reboul",
+        "placar": "6-3 6-4"
+      },
+      {
+        "dupla_a": "Marcelo Arevalo / Hugo Nys",
+        "dupla_b": "Joe Salisbury / Mate Pavic",
+        "vencedor": "Marcelo Arevalo / Hugo Nys",
+        "placar": "7-5 6-4"
+      }
+    ],
+    "final": [
+      {
+        "dupla_a": "Henry Patten / Fabien Reboul",
+        "dupla_b": "Marcelo Arevalo / Hugo Nys",
+        "vencedor": "Marcelo Arevalo / Hugo Nys",
+        "placar": "7-5 6-4"
+      }
+    ]
+  },
+  "campeao_duplas": "Marcelo Arevalo / Hugo Nys"
+}

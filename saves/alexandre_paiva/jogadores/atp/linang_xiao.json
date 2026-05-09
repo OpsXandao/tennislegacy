@@ -1,0 +1,92 @@
+{
+  "nome": "Linang Xiao",
+  "nacionalidade": "[CN]",
+  "pontos": 44,
+  "pontos_duplas": 0,
+  "pontos_ranking": 44,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 10,
+  "overall": 72,
+  "energia": 100,
+  "fadiga": 6,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "saque": 45,
+    "forehand": 43,
+    "backhand": 56,
+    "topspin": 43,
+    "voleio": 59,
+    "slice": 54,
+    "movimento": 47,
+    "lob": 40,
+    "winner": 46,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 38,
+    "agressividade": 40,
+    "leitura_de_jogo": 41,
+    "determinacao": 41
+  },
+  "historico_torneios": [
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 1,
+      "ano": 2026,
+      "fase": "pre_oitavas",
+      "fase_alcancada": "pre_oitavas",
+      "pontos": 10,
+      "premio": 4482,
+      "modalidade": "simples",
+      "obrigatorio": false,
+      "expirado": false
+    }
+  ],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 34,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    },
+    {
+      "pontos": 10,
+      "semana_expiracao": 1,
+      "ano_expiracao": 2027,
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana_origem": 1,
+      "ano_origem": 2026,
+      "fase": "pre_oitavas",
+      "modalidade": "simples"
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 4482,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 25,
+  "id": 835,
+  "pico_carreira": 803,
+  "altura": 173,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

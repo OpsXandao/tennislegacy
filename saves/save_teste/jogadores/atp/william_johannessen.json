@@ -1,0 +1,37 @@
+{
+  "nome": "William Johannessen",
+  "nacionalidade": "[NO] Noruega",
+  "overall": 40,
+  "pontos": 14,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 49,
+    "forehand": 42,
+    "backhand": 32,
+    "topspin": 49,
+    "voleio": 37,
+    "slice": 41,
+    "movimento": 31,
+    "lob": 35,
+    "fisico": 51,
+    "winner": 41,
+    "duplas": 30
+  },
+  "atributos_psicologicos": {
+    "concentracao": 42,
+    "agressividade": 43,
+    "leitura_de_jogo": 40,
+    "determinacao": 42
+  },
+  "moral": 79,
+  "fadiga": 1,
+  "energia": 92,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

@@ -1,0 +1,37 @@
+{
+  "nome": "Aariz Valverde",
+  "nacionalidade": "[MY] Malásia",
+  "overall": 42,
+  "pontos": 5,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 48,
+    "forehand": 35,
+    "backhand": 31,
+    "topspin": 34,
+    "voleio": 46,
+    "slice": 32,
+    "movimento": 48,
+    "lob": 49,
+    "fisico": 44,
+    "winner": 43,
+    "duplas": 30
+  },
+  "atributos_psicologicos": {
+    "concentracao": 53,
+    "agressividade": 46,
+    "leitura_de_jogo": 55,
+    "determinacao": 55
+  },
+  "moral": 77,
+  "fadiga": 13,
+  "energia": 95,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

@@ -1,0 +1,37 @@
+{
+  "nome": "Theo Sørensen",
+  "nacionalidade": "[DK] Dinamarca",
+  "overall": 42,
+  "pontos": 6,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 39,
+    "forehand": 40,
+    "backhand": 49,
+    "topspin": 38,
+    "voleio": 43,
+    "slice": 45,
+    "movimento": 49,
+    "lob": 46,
+    "fisico": 46,
+    "winner": 37,
+    "duplas": 32
+  },
+  "atributos_psicologicos": {
+    "concentracao": 48,
+    "agressividade": 42,
+    "leitura_de_jogo": 35,
+    "determinacao": 43
+  },
+  "moral": 80,
+  "fadiga": 8,
+  "energia": 80,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

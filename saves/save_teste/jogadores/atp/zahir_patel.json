@@ -1,0 +1,37 @@
+{
+  "nome": "Zahir Patel",
+  "nacionalidade": "[JM] Jamaica",
+  "overall": 43,
+  "pontos": 7,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 48,
+    "forehand": 45,
+    "backhand": 32,
+    "topspin": 44,
+    "voleio": 38,
+    "slice": 48,
+    "movimento": 48,
+    "lob": 44,
+    "fisico": 49,
+    "winner": 50,
+    "duplas": 42
+  },
+  "atributos_psicologicos": {
+    "concentracao": 31,
+    "agressividade": 43,
+    "leitura_de_jogo": 31,
+    "determinacao": 42
+  },
+  "moral": 79,
+  "fadiga": 17,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

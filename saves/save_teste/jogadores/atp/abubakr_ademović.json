@@ -1,0 +1,37 @@
+{
+  "nome": "Abubakr Ademović",
+  "nacionalidade": "[TJ] Tajiquistão",
+  "overall": 44,
+  "pontos": 19,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 41,
+    "forehand": 43,
+    "backhand": 48,
+    "topspin": 35,
+    "voleio": 53,
+    "slice": 36,
+    "movimento": 46,
+    "lob": 37,
+    "fisico": 55,
+    "winner": 50,
+    "duplas": 41
+  },
+  "atributos_psicologicos": {
+    "concentracao": 30,
+    "agressividade": 33,
+    "leitura_de_jogo": 54,
+    "determinacao": 51
+  },
+  "moral": 75,
+  "fadiga": 0,
+  "energia": 99,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

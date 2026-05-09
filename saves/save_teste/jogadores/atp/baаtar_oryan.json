@@ -1,0 +1,37 @@
+{
+  "nome": "Baаtar O'Ryan",
+  "nacionalidade": "[MN] Mongólia",
+  "overall": 43,
+  "pontos": 4,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 36,
+    "forehand": 34,
+    "backhand": 44,
+    "topspin": 61,
+    "voleio": 34,
+    "slice": 35,
+    "movimento": 48,
+    "lob": 45,
+    "fisico": 49,
+    "winner": 34,
+    "duplas": 45
+  },
+  "atributos_psicologicos": {
+    "concentracao": 51,
+    "agressividade": 41,
+    "leitura_de_jogo": 45,
+    "determinacao": 45
+  },
+  "moral": 60,
+  "fadiga": 15,
+  "energia": 97,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

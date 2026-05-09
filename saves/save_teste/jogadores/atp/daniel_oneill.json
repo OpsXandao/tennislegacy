@@ -1,0 +1,37 @@
+{
+  "nome": "Daniel O'Neill",
+  "nacionalidade": "[IE] Irlanda",
+  "overall": 42,
+  "pontos": 17,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 37,
+    "forehand": 36,
+    "backhand": 31,
+    "topspin": 47,
+    "voleio": 48,
+    "slice": 33,
+    "movimento": 34,
+    "lob": 47,
+    "fisico": 54,
+    "winner": 45,
+    "duplas": 35
+  },
+  "atributos_psicologicos": {
+    "concentracao": 52,
+    "agressividade": 38,
+    "leitura_de_jogo": 42,
+    "determinacao": 55
+  },
+  "moral": 77,
+  "fadiga": 11,
+  "energia": 100,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}

@@ -1,0 +1,36 @@
+{
+  "nome": "Juan Fernández",
+  "nacionalidade": "[EC] Equador",
+  "overall": 43,
+  "pontos": 5,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 46,
+    "forehand": 38,
+    "backhand": 42,
+    "topspin": 39,
+    "voleio": 61,
+    "slice": 37,
+    "movimento": 41,
+    "lob": 49,
+    "fisico": 50,
+    "winner": 34,
+    "duplas": 47
+  },
+  "atributos_psicologicos": {
+    "concentracao": 38,
+    "agressividade": 33,
+    "leitura_de_jogo": 44,
+    "determinacao": 37
+  },
+  "moral": 63,
+  "fadiga": 19,
+  "energia": 88,
+  "is_bot": false,
+  "genero": "masculino"
+}

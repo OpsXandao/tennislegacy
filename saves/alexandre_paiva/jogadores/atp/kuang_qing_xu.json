@@ -1,0 +1,81 @@
+{
+  "nome": "Kuang Qing Xu",
+  "nacionalidade": "[CN]",
+  "pontos": 17,
+  "pontos_duplas": 0,
+  "pontos_ranking": 17,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 70,
+  "energia": 100,
+  "fadiga": 6,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "saque": 40,
+    "forehand": 49,
+    "backhand": 52,
+    "topspin": 50,
+    "voleio": 54,
+    "slice": 42,
+    "movimento": 42,
+    "lob": 40,
+    "winner": 43,
+    "fisico": 60,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "concentracao": 46,
+    "agressividade": 30,
+    "leitura_de_jogo": 30,
+    "determinacao": 30
+  },
+  "historico_torneios": [
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 1,
+      "ano": 2026,
+      "fase": "qualy_1",
+      "fase_alcancada": "qualy_1",
+      "pontos": 0,
+      "premio": 398,
+      "modalidade": "simples",
+      "obrigatorio": false,
+      "expirado": false
+    }
+  ],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 17,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 398,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 19,
+  "id": 1019,
+  "pico_carreira": 991,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court"
+}

@@ -1,0 +1,37 @@
+{
+  "nome": "Thomas James",
+  "nacionalidade": "[GB] Reino Unido",
+  "overall": 42,
+  "pontos": 23,
+  "pontos_ranking": 0,
+  "pontos_ytd": 0,
+  "pontos_detalhados": [],
+  "trofeus": [],
+  "historico_torneios": [],
+  "dinheiro": 500,
+  "atributos": {
+    "saque": 38,
+    "forehand": 33,
+    "backhand": 48,
+    "topspin": 47,
+    "voleio": 39,
+    "slice": 44,
+    "movimento": 49,
+    "lob": 38,
+    "fisico": 53,
+    "winner": 37,
+    "duplas": 30
+  },
+  "atributos_psicologicos": {
+    "concentracao": 44,
+    "agressividade": 39,
+    "leitura_de_jogo": 33,
+    "determinacao": 55
+  },
+  "moral": 79,
+  "fadiga": 1,
+  "energia": 82,
+  "is_bot": false,
+  "genero": "masculino",
+  "pontos_ranking_duplas": 0
+}
