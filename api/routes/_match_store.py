@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Dict, Tuple
 
 from src.dados import SAVES_DIR, carregar_json
-from src.json_utils import salvar_json_seguro
+from src.utils.json_utils import salvar_json_seguro
 
 # Cache global de runtimes de partida ativos (independente de sessão)
 # Estrutura: partida_id → (runtime, last_access_ts)

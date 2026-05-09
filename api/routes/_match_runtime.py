@@ -22,9 +22,9 @@ from src.fadiga import (
     handle_fadiga_e_lesao_npc,
     _aumento_fadiga_nao_linear,
 )
-from src.jogar_partida import atualizar_estatisticas, _definir_estrategia_auto
+from src.match_core import atualizar_estatisticas, _definir_estrategia_auto
 from src.match_config import ConfigPartida, criar_config_partida
-from src.match_constants import EstrategiaSaque, IntencaoPonto, TipoSaque
+from src.constants.match_constants import EstrategiaSaque, IntencaoPonto, TipoSaque
 from src.match_history import MatchHistoryManager
 from src.match_dynamics import (
     aplicar_custo_stamina_contextual,
@@ -33,7 +33,8 @@ from src.match_dynamics import (
 )
 from src.progressao import handle_xp_e_level_up
 from src.save import salvar_jogo
-from src.log_jogo import log_erro
+from src.utils.log_jogo import log_erro
+from src.constants.torneio_constants import START_YEAR
 from src.jogador import (
     atualizar_rivalidade,
     normalizar_nome,
@@ -828,7 +829,7 @@ class MatchRuntime:
             MatchHistoryManager(self.save_name).adicionar_partida(
                 torneio=self.torneio_info.get("nome", "Torneio Desconhecido"),
                 semana=temporada.get("semana", 1),
-                ano=temporada.get("ano", 2026),
+                ano=temporada.get("ano", START_YEAR),
                 modalidade="simples",
                 jogadores=[getattr(self.jogador, "nome", "Jogador"), adversario_nome],
                 resultado=placar_final,
@@ -873,7 +874,28 @@ class MatchRuntime:
 
         self._registrar_historicos(instancia)
 
-        self.jogador.energia = int(round(self.contexto_partida.stamina_j))
+        # Lógica de moral e energia movida de jogar_partida.py para match_dynamics.py
+        from src.match_dynamics import (
+            normalizar_energia_pos_partida,
+            calcular_impacto_moral_sets,
+            calcular_impacto_moral_ranking,
+        )
+
+        fisico_j = self.jogador.atributos.get("fisico", 50)
+        self.jogador.energia = normalizar_energia_pos_partida(
+            self.contexto_partida.stamina_j,
+            fisico_j,
+            self.total_pontos,
+            superficie=self.config.superficie,
+            energia_inicial=self.energia_inicial,
+        )
+
+        delta_moral = calcular_impacto_moral_sets(self.jogador, self.set_scores, vitoria)
+        delta_moral += calcular_impacto_moral_ranking(self.jogador, self.adversario, vitoria)
+        
+        if delta_moral != 0:
+            self.jogador.moral = max(0, min(100, int(self.jogador.moral + delta_moral)))
+
         self.jogador = handle_xp_e_level_up(self.jogador, vitoria)
 
         # Progressão natural baseada no desempenho da partida
