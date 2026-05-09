@@ -7,6 +7,7 @@ import {
   TacticalPackageEditor,
 } from '../components'
 import { OpponentScoutingCard } from '../scouting/OpponentScoutingCard'
+import { ScoutingReportCard } from '../scouting/ScoutingReportCard'
 import {
   COURT_COLORS,
   MODOS_VISIVEIS,
@@ -398,7 +399,7 @@ export function SetupView({
                 <CircularGauge label="ENERGIA" value={energiaJogadorAoVivo} color="var(--neon-green)" />
                 <CircularGauge label="FADIGA" value={fadigaJogadorAoVivo} color="var(--neon-yellow)" track="#102319" />
               </div>
-              <ScoutingReport
+              <ScoutingReportCard
                 titulo="Scouting Report"
                 overall={overallCardJogador}
                 metrics={{ saque: metricsJogador.saque, fundo: metricsJogador.fundo, mental: metricsJogador.mental }}
