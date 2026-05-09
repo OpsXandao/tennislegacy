@@ -9,6 +9,8 @@ import { FutCard, BottomNav } from '../components'
 import { useGameStore } from '../../store/gameStore'
 import { api } from '../../api/client'
 import { useTheme } from '../hooks/useTheme'
+import { HubRadioCard } from './hub/HubRadioCard'
+import { useHubRadio } from './hub/radio/useHubRadio'
 
 const MATCH_AUTOSAVE_KEY = 'tennislegacy.match.autosave'
 
@@ -87,6 +89,7 @@ export function HubScreen() {
   const [hoveringExit, setHoveringExit] = useState(false)
   const [hoveringActiveTournament, setHoveringActiveTournament] = useState(false)
   const [hoveringNextStep, setHoveringNextStep] = useState(false)
+  const radio = useHubRadio()
 
   useEffect(() => {
     fetchJogador().catch(() => { setLoadError(true) })
@@ -434,6 +437,18 @@ export function HubScreen() {
           ))}
         </div>
       </div>
+
+      <HubRadioCard
+        erro={radio.erro}
+        playing={radio.playing}
+        station={radio.station}
+        stations={radio.stations}
+        volume={radio.volume}
+        setVolume={radio.setVolume}
+        togglePlay={radio.togglePlay}
+        trocarEstacao={radio.trocarEstacao}
+        avancarEstacao={radio.avancarEstacao}
+      />
 
       {/* Pixel deco bottom */}
       <div className="mx-4 mt-5 flex gap-[3px]">

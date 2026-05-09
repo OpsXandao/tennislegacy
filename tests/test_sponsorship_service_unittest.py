@@ -35,16 +35,28 @@ class SponsorshipServiceTests(unittest.TestCase):
             patrocinios=[
                 {"id": "minor_local", "semanas_restantes": 12},
                 "master_elite",
-            ]
+            ],
+            seguidores=22000,
+            historico_partidas=[
+                {"resultado": "V"},
+                {"resultado": "D"},
+                {"resultado": "V"},
+            ],
+            historico_torneios=[],
+            trofeus=[],
+            historico_ranking=[{"posicao": 18}],
         )
 
         ativos = sponsorship_service.listar_patrocinios_ativos(
-            jogador, SPONSORS_FIXTURE
+            jogador, 18, SPONSORS_FIXTURE
         )
 
         self.assertEqual(len(ativos), 2)
         self.assertEqual(ativos[0]["id"], "minor_local")
         self.assertEqual(ativos[0]["semanas_restantes"], 12)
+        self.assertIn("status", ativos[0])
+        self.assertIn("confianca", ativos[0])
+        self.assertGreaterEqual(len(ativos[0]["metas"]), 2)
         self.assertEqual(ativos[1]["nivel"], "master")
 
     def test_listar_patrocinios_disponiveis_informa_requisitos_e_bloqueios(self):
@@ -79,6 +91,10 @@ class SponsorshipServiceTests(unittest.TestCase):
                 {"id": "master_elite", "semanas_restantes": 20},
             ],
             seguidores=15000,
+            historico_partidas=[],
+            historico_torneios=[],
+            trofeus=[],
+            historico_ranking=[{"posicao": 18}],
         )
 
         contexto = sponsorship_service.resumir_contexto_patrocinio(
@@ -92,6 +108,38 @@ class SponsorshipServiceTests(unittest.TestCase):
         self.assertEqual(contexto["patrocinios_ativos"], 2)
         self.assertEqual(contexto["slots_menores_restantes"], 2)
         self.assertFalse(contexto["slot_master_disponivel"])
+
+    def test_assinar_patrocinio_salva_vigencia_e_baseline(self):
+        jogador = SimpleNamespace(
+            patrocinios=[],
+            seguidores=12000,
+            historico_partidas=[{"resultado": "V"}, {"resultado": "V"}],
+            historico_torneios=[],
+            trofeus=[],
+            historico_ranking=[],
+            registrar_transacao=lambda *args, **kwargs: None,
+        )
+
+        with patch.object(
+            sponsorship_service,
+            "carregar_patrocinadores",
+            return_value=SPONSORS_FIXTURE,
+        ), patch("src.save.salvar_jogo", return_value=None):
+            resultado = sponsorship_service.assinar_patrocinio(
+                "save_teste",
+                jogador,
+                "minor_local",
+                150,
+            )
+
+        self.assertTrue(resultado["ok"])
+        self.assertEqual(len(jogador.patrocinios), 1)
+        contrato = jogador.patrocinios[0]
+        self.assertEqual(contrato["id"], "minor_local")
+        self.assertEqual(contrato["duracao_semanas"], 12)
+        self.assertEqual(contrato["ranking_assinatura"], 150)
+        self.assertEqual(contrato["seguidores_assinatura"], 12000)
+        self.assertEqual(contrato["vitorias_assinatura"], 2)
 
 
 if __name__ == "__main__":

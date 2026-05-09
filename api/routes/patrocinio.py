@@ -20,10 +20,12 @@ def get_patrocinios_ativos(session: Session = Depends(obter_sessao_ativa)):
     if not session.jogador:
         raise HTTPException(status_code=400, detail="Sessão não iniciada.")
     j = session.jogador
+    rk = session.ranking_atp if j.genero == "masculino" else session.ranking_wta
+    posicao = rk.obter_posicao(j.nome) if rk else None
     patrocinios_brutos = getattr(j, "patrocinios", [])
     if all(not isinstance(item, dict) for item in patrocinios_brutos):
         j.patrocinios = migrar_patrocinios(patrocinios_brutos)
-    return {"patrocinios": listar_patrocinios_ativos(j, _PATROCINADORES)}
+    return {"patrocinios": listar_patrocinios_ativos(j, posicao, _PATROCINADORES)}
 
 
 @router.get("/disponiveis")

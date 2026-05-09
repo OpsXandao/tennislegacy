@@ -253,6 +253,24 @@ export interface Patrocinio {
   nivel: string
   valor: number
   semanas_restantes: number
+  duracao_semanas: number
+  perfil: string
+  status: 'em_dia' | 'sob_pressao' | 'em_risco'
+  confianca: number
+  metas: PatrocinioMeta[]
+}
+
+export interface PatrocinioMeta {
+  id: string
+  titulo: string
+  descricao: string
+  atual: number
+  alvo: number
+  unidade: string
+  direcao: 'min' | 'max'
+  status: 'ok' | 'atencao' | 'risco'
+  progresso: number
+  tom: 'positive' | 'warning' | 'info'
 }
 
 export interface PatrocinioDisponivel {
