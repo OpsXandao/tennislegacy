@@ -37,11 +37,18 @@ body.light-mode {
   --input-background: #eef2f6;
   --switch-background: #d8e0ea;
 
-  /* Acentos claros */
-  --neon-green:    #bfe800;
-  --neon-pink:     #002752;
-  --neon-yellow:   #003e93;
-  --neon-cyan:     #003e93;
+  /* Acentos claros — semanticamente distintos e legíveis em fundo claro */
+  --neon-green:  #1a7a32;  /* grama / vitória / ATP */
+  --neon-pink:   #c00030;  /* saibro / perigo / derrota */
+  --neon-yellow: #8a6000;  /* ouro / ranking / prêmio */
+  --neon-cyan:   #005f9e;  /* quadra dura / info / dados */
+  --neon-purple: #7c3aed;  /* imprensa / especial */
+
+  /* Superfícies de quadra (idênticas ao dark — são cores reais) */
+  --court-clay:   #c84b17;
+  --court-grass:  #2d7a1f;
+  --court-hard:   #1e5fa8;
+  --tennis-ball:  #8fad00;  /* versão legível em fundo claro */
 
   /* Sem glow neon no modo claro */
   --glow-green:    0 0 0 transparent;
@@ -98,14 +105,18 @@ body.light-mode [class*="text-[#777]"] { color: var(--text-secondary) !important
 body.light-mode [class*="text-[#333]"],
 body.light-mode [class*="text-[#444]"] { color: var(--text-faint) !important; }
 
-/* Textos neon → versão diurna do mesmo acento */
+/* Textos neon → versão diurna do mesmo acento (semanticamente distinta) */
 body.light-mode [class*="text-[#00ff88]"] { color: var(--neon-green) !important; }
 body.light-mode [class*="text-[#ff0055]"] { color: var(--neon-pink) !important; }
 body.light-mode [class*="text-[#ffe600]"] { color: var(--neon-yellow) !important; }
 body.light-mode [class*="text-[#00e5ff]"] { color: var(--neon-cyan) !important; }
 body.light-mode [class*="text-[#ff4466]"] { color: var(--neon-pink) !important; }
+body.light-mode [class*="text-[#c084fc]"] { color: var(--neon-purple) !important; }
 body.light-mode [class*="text-pink-600"],
 body.light-mode [class*="text-pink-400"] { color: var(--neon-pink) !important; }
+
+/* Bordas neon em light mode */
+body.light-mode [class*="border-[#c084fc]"] { border-color: var(--neon-purple) !important; }
 
 /* Fundos escuros sólidos */
 body.light-mode [class*="bg-[#0a0a0a]"],
@@ -223,7 +234,7 @@ body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
   --surface-card: #101f28;
   --surface-elevated: #162934;
   --surface-overlay: rgba(8, 19, 26, 0.94);
-  --surface-grid: rgba(0, 224, 168, 0.06);
+  --surface-grid: rgba(0, 255, 136, 0.05);
   --text-primary: #eafbf6;
   --text-secondary: #90a6af;
   --text-faint: #61757e;
@@ -231,27 +242,35 @@ body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
   --line-strong: rgba(186, 255, 234, 0.18);
   --panel-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
 
-  /* Role accents */
-  --neon-green: #2ff7a1;
-  --neon-pink: #ff4f7d;
-  --neon-yellow: #ffd447;
-  --neon-cyan: #39d8ff;
+  /* Role accents — alinhados com o uso nas telas */
+  --neon-green:  #00ff88;  /* vitória / ATP / grama */
+  --neon-pink:   #ff0055;  /* derrota / lesão / perigo */
+  --neon-yellow: #ffe600;  /* ranking / ouro / prêmio */
+  --neon-cyan:   #00e5ff;  /* info / neutro / dados */
+  --neon-purple: #c084fc;  /* imprensa / especial */
+
+  /* Superfícies de quadra de tênis */
+  --court-clay:   #c84b17;
+  --court-grass:  #2d7a1f;
+  --court-hard:   #1e5fa8;
+  --court-indoor: #4a4a6a;
+  --tennis-ball:  #c8ff00;
 
   /* Glow box-shadows */
-  --glow-green:  0 0 6px var(--neon-green), 0 0 16px var(--neon-green), 0 0 30px rgba(47,247,161,0.28);
-  --glow-pink:   0 0 6px var(--neon-pink), 0 0 16px var(--neon-pink), 0 0 30px rgba(255,79,125,0.26);
-  --glow-gold:   0 0 6px var(--neon-yellow), 0 0 16px var(--neon-yellow), 0 0 30px rgba(255,212,71,0.24);
-  --glow-cyan:   0 0 6px var(--neon-cyan), 0 0 16px var(--neon-cyan), 0 0 30px rgba(57,216,255,0.26);
-  --glow-green-sm:  0 0 4px var(--neon-green), 0 0 10px rgba(47,247,161,0.26);
-  --glow-pink-sm:   0 0 4px var(--neon-pink), 0 0 10px rgba(255,79,125,0.24);
-  --glow-gold-sm:   0 0 4px var(--neon-yellow), 0 0 10px rgba(255,212,71,0.22);
-  --glow-cyan-sm:   0 0 4px var(--neon-cyan), 0 0 10px rgba(57,216,255,0.24);
+  --glow-green:  0 0 6px var(--neon-green), 0 0 16px var(--neon-green), 0 0 30px rgba(0,255,136,0.28);
+  --glow-pink:   0 0 6px var(--neon-pink), 0 0 16px var(--neon-pink), 0 0 30px rgba(255,0,85,0.26);
+  --glow-gold:   0 0 6px var(--neon-yellow), 0 0 16px var(--neon-yellow), 0 0 30px rgba(255,230,0,0.24);
+  --glow-cyan:   0 0 6px var(--neon-cyan), 0 0 16px var(--neon-cyan), 0 0 30px rgba(0,229,255,0.26);
+  --glow-green-sm:  0 0 4px var(--neon-green), 0 0 10px rgba(0,255,136,0.26);
+  --glow-pink-sm:   0 0 4px var(--neon-pink), 0 0 10px rgba(255,0,85,0.24);
+  --glow-gold-sm:   0 0 4px var(--neon-yellow), 0 0 10px rgba(255,230,0,0.22);
+  --glow-cyan-sm:   0 0 4px var(--neon-cyan), 0 0 10px rgba(0,229,255,0.24);
 
   /* Text glows */
-  --text-glow-green: 0 0 6px var(--neon-green), 0 0 12px rgba(47,247,161,0.42);
-  --text-glow-pink:  0 0 6px var(--neon-pink), 0 0 12px rgba(255,79,125,0.38);
-  --text-glow-gold:  0 0 6px var(--neon-yellow), 0 0 12px rgba(255,212,71,0.34);
-  --text-glow-cyan:  0 0 6px var(--neon-cyan), 0 0 12px rgba(57,216,255,0.38);
+  --text-glow-green: 0 0 6px var(--neon-green), 0 0 12px rgba(0,255,136,0.42);
+  --text-glow-pink:  0 0 6px var(--neon-pink), 0 0 12px rgba(255,0,85,0.38);
+  --text-glow-gold:  0 0 6px var(--neon-yellow), 0 0 12px rgba(255,230,0,0.34);
+  --text-glow-cyan:  0 0 6px var(--neon-cyan), 0 0 12px rgba(0,229,255,0.38);
   
   /* Legacy theme variables for compatibility */
   --font-size: 16px;
@@ -305,11 +324,18 @@ body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
   --color-ring: var(--ring);
   
   /* TennisLegacy custom colors */
-  --color-neon-green: var(--neon-green);
-  --color-neon-pink: var(--neon-pink);
+  --color-neon-green:  var(--neon-green);
+  --color-neon-pink:   var(--neon-pink);
   --color-neon-yellow: var(--neon-yellow);
-  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-cyan:   var(--neon-cyan);
+  --color-neon-purple: var(--neon-purple);
   --color-surface-card: var(--surface-card);
+
+  /* Quadra de tênis */
+  --color-court-clay:   var(--court-clay);
+  --color-court-grass:  var(--court-grass);
+  --color-court-hard:   var(--court-hard);
+  --color-tennis-ball:  var(--tennis-ball);
   
   --radius-sm: 0;
   --radius-md: 0;
@@ -326,8 +352,8 @@ body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
     @apply bg-background text-foreground;
     font-family: var(--font-arcade);
     background:
-      radial-gradient(circle at top, rgba(57, 216, 255, 0.08), transparent 34%),
-      radial-gradient(circle at bottom right, rgba(47, 247, 161, 0.08), transparent 28%),
+      radial-gradient(circle at top, rgba(0, 229, 255, 0.08), transparent 34%),
+      radial-gradient(circle at bottom right, rgba(0, 255, 136, 0.08), transparent 28%),
       linear-gradient(180deg, var(--bg-canvas) 0%, var(--bg-dark) 100%);
     color-scheme: dark;
     position: relative;
@@ -544,5 +570,52 @@ body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
 
   .app-divider {
     border-color: var(--line-subtle);
+  }
+
+  /* ── Utilitários semânticos — respeitam dark/light via CSS var ────────── */
+
+  /* Texto semântico */
+  .text-accent  { color: var(--neon-green); }
+  .text-danger  { color: var(--neon-pink); }
+  .text-gold    { color: var(--neon-yellow); }
+  .text-info    { color: var(--neon-cyan); }
+  .text-special { color: var(--neon-purple); }
+
+  /* Borda semântica */
+  .border-accent  { border-color: var(--neon-green); }
+  .border-danger  { border-color: var(--neon-pink); }
+  .border-gold    { border-color: var(--neon-yellow); }
+  .border-info    { border-color: var(--neon-cyan); }
+  .border-special { border-color: var(--neon-purple); }
+
+  /* Quadras de tênis */
+  .text-court-clay    { color: var(--court-clay); }
+  .text-court-grass   { color: var(--court-grass); }
+  .text-court-hard    { color: var(--court-hard); }
+  .bg-court-clay      { background-color: var(--court-clay); }
+  .bg-court-grass     { background-color: var(--court-grass); }
+  .bg-court-hard      { background-color: var(--court-hard); }
+  .border-court-clay  { border-color: var(--court-clay); }
+  .border-court-grass { border-color: var(--court-grass); }
+  .border-court-hard  { border-color: var(--court-hard); }
+
+  /* Tipografia de função */
+  .text-label {
+    font-family: var(--font-arcade);
+    font-size: 0.625rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .text-score {
+    font-family: var(--font-pixel);
+    letter-spacing: 0.05em;
+  }
+
+  .text-stat {
+    font-family: var(--font-pixel);
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
   }
 }
