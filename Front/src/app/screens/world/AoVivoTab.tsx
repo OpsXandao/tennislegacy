@@ -9,11 +9,13 @@ function TourSection({
   label,
   list,
   color,
+  rgb,
   onSelect,
 }: {
   label: string
   list: TorneioAoVivo[]
   color: string
+  rgb: string
   onSelect: (nome: string, tour: 'atp' | 'wta') => void
 }) {
   if (list.length === 0) return null
@@ -31,7 +33,7 @@ function TourSection({
             onClick={() => onSelect(t.nome, t.tour === 'ATP' ? 'atp' : 'wta')}
             className="w-full border-2 border-white/10 bg-[#1a1a2e] p-3 text-left active:scale-[0.98] transition-transform"
             style={{
-              borderColor: t.finalizado ? 'var(--neon-yellow)' : color + '40',
+              borderColor: t.finalizado ? 'var(--neon-yellow)' : `rgba(${rgb},0.25)`,
               boxShadow: t.finalizado ? '0 0 10px rgba(255,230,0,0.2)' : undefined,
             }}
           >
@@ -111,8 +113,8 @@ export function AoVivoTab() {
         </div>
       ) : (
         <div className="space-y-5">
-          <TourSection label="ATP" list={atp} color="var(--neon-cyan)" onSelect={setSelected} />
-          <TourSection label="WTA" list={wta} color="#ff6eb4" onSelect={setSelected} />
+          <TourSection label="ATP" list={atp} color="var(--neon-cyan)" rgb="var(--neon-cyan-rgb)" onSelect={setSelected} />
+          <TourSection label="WTA" list={wta} color="#ff6eb4" rgb="255,110,180" onSelect={setSelected} />
         </div>
       )}
     </>
