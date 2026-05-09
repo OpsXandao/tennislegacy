@@ -28,3 +28,40 @@ def serializar_status_jogador(j) -> dict:
         "atributos": j.atributos,
         "atributos_psicologicos": j.atributos_psicologicos,
     }
+
+
+def alocar_skill(session: Session, tipo: str, atributo: str) -> dict:
+    j = session.jogador
+    pontos = getattr(j, "pontos_de_skill", 0)
+    if pontos <= 0:
+        return {"ok": False, "erro": "Sem pontos de skill disponíveis.", "status": 400}
+
+    if tipo == "tecnico":
+        if atributo not in j.atributos:
+            return {"ok": False, "erro": f"Atributo '{atributo}' nao encontrado.", "status": 404}
+        if j.atributos[atributo] >= 100:
+            return {"ok": False, "erro": "Atributo já no máximo.", "status": 400}
+        j.atributos[atributo] = min(100, j.atributos[atributo] + 1)
+    elif tipo == "psicologico":
+        psico = getattr(j, "atributos_psicologicos", {})
+        if atributo not in psico:
+            return {"ok": False, "erro": f"Atributo '{atributo}' nao encontrado.", "status": 404}
+        if psico[atributo] >= 100:
+            return {"ok": False, "erro": "Atributo já no máximo.", "status": 400}
+        psico[atributo] = min(100, psico[atributo] + 1)
+    else:
+        return {"ok": False, "erro": "Tipo deve ser 'tecnico' ou 'psicologico'.", "status": 422}
+
+    j.pontos_de_skill = pontos - 1
+    if hasattr(j, "_sanitizar_atributos"):
+        j._sanitizar_atributos()
+    if hasattr(j, "calcular_overall"):
+        j.calcular_overall()
+
+    salvar_jogo(session.nome_save_ativo, j)
+    return {
+        "ok": True,
+        "pontos_de_skill": j.pontos_de_skill,
+        "atributos": j.atributos,
+        "atributos_psicologicos": getattr(j, "atributos_psicologicos", {}),
+    }

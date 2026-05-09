@@ -284,3 +284,34 @@ def processar_pagamentos_patrocinio(jogador: Any):
                 desc += f" (-{int(comissao_pct*100)}% comissão {emp_nome})"
 
             jogador.registrar_transacao(valor_liquido, desc, categoria="patrocinio")
+
+
+def assinar_patrocinio(
+    nome_save: str,
+    jogador: Any,
+    patrocinio_id: str,
+    posicao: int,
+) -> dict:
+    """Valida e registra a assinatura de um patrocínio, salvando o jogador."""
+    from src.save import salvar_jogo
+
+    sponsors = carregar_patrocinadores()
+    pode, motivo = pode_assinar_patrocinio(jogador, patrocinio_id, posicao, getattr(jogador, "seguidores", 0))
+    if not pode:
+        return {"ok": False, "mensagem": motivo}
+
+    pat = sponsors.get(patrocinio_id)
+    if not pat:
+        return {"ok": False, "mensagem": "Patrocinador não encontrado.", "status": 404}
+
+    jogador.patrocinios.append(patrocinio_id)
+    bonus = int(pat.get("bonus_assinatura", 0) or 0)
+    if bonus > 0:
+        jogador.registrar_transacao(
+            bonus,
+            f"Bônus Assinatura: {pat.get('nome', patrocinio_id)}",
+            categoria="patrocinio",
+        )
+
+    salvar_jogo(nome_save, jogador)
+    return {"ok": True, "mensagem": f"Contrato assinado com {pat.get('nome')}!"}

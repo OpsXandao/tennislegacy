@@ -214,3 +214,47 @@ def processar_acao_email(jogador: Any, proposta: dict, acao: str, ranking: Any) 
         return True, "Novo empresário contratado."
 
     return False, "Tipo de proposta desconhecido."
+
+
+def marcar_emails_lidos(nome_save: str, jogador: Any) -> bool:
+    """Marca todos os emails como lidos e salva se houve mudança."""
+    from src.save import salvar_jogo
+
+    caixa = getattr(jogador, "caixa_email", [])
+    houve_mudanca = False
+    for email in caixa:
+        if not email.get("lido"):
+            email["lido"] = True
+            houve_mudanca = True
+    if houve_mudanca:
+        salvar_jogo(nome_save, jogador)
+    return houve_mudanca
+
+
+def remover_email(nome_save: str, jogador: Any, email_id: str) -> dict:
+    """Remove um email da caixa de entrada e salva."""
+    from src.save import salvar_jogo
+
+    caixa = getattr(jogador, "caixa_email", [])
+    proposta = next((p for p in caixa if p.get("id") == email_id), None)
+    if not proposta:
+        return {"ok": False, "status": 404, "mensagem": "E-mail não encontrado."}
+    jogador.caixa_email = [p for p in caixa if p.get("id") != email_id]
+    salvar_jogo(nome_save, jogador)
+    return {"ok": True, "mensagem": "E-mail removido."}
+
+
+def aceitar_email(nome_save: str, jogador: Any, email_id: str, ranking: Any) -> dict:
+    """Aceita um email, processa sua ação e salva."""
+    from src.save import salvar_jogo
+
+    caixa = getattr(jogador, "caixa_email", [])
+    proposta = next((p for p in caixa if p.get("id") == email_id), None)
+    if not proposta:
+        return {"ok": False, "status": 404, "mensagem": "E-mail não encontrado."}
+    sucesso, msg = processar_acao_email(jogador, proposta, "aceitar", ranking)
+    if sucesso:
+        jogador.caixa_email = [p for p in caixa if p.get("id") != email_id]
+        salvar_jogo(nome_save, jogador)
+        return {"ok": True, "mensagem": msg}
+    return {"ok": False, "status": 400, "mensagem": msg}
