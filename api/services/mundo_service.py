@@ -239,3 +239,22 @@ def obter_ranking_nacoes() -> list:
         raise HTTPException(
             status_code=500, detail=f"Erro ao carregar ranking de nações: {exc}"
         )
+
+
+def obter_goat(nome_save: str, trofeus: list) -> dict:
+    from src.dados import carregar_historico
+
+    hist = carregar_historico(nome_save)
+    return {
+        "recordes": hist.get("recordes", {}),
+        "meus_titulos": trofeus,
+        "goat_points": 0,
+        "GoatPoints": 0,
+    }
+
+
+def obter_campeoes(nome_save: str) -> dict:
+    from src.dados import carregar_historico
+
+    hist = carregar_historico(nome_save)
+    return {"campeoes": hist.get("campeoes", {})}
