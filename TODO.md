@@ -24,6 +24,7 @@
 - [x] Recuperação gradual de lesões (não binária)
 - [x] Sistema de técnico/equipe de apoio
 - [x] Penalidades para atributos psicológicos baixos
+- [ ] Atributos psicológicos dinâmicos e Traços de Personalidade (unlocked via achievements)
 - [ ] Equipamentos que afetam atributos
 
 ---
@@ -35,6 +36,7 @@
 - [x] Estratégia de saque adaptativa baseada na pressão
 - [x] Degradação de stamina / Platô de fadiga
 - [x] Efeito da superfície (hard, clay, grass)
+- [x] Insights táticos visíveis para o jogador (transparência de cálculo)
 - [ ] Ajustes táticos entre sets
 - [ ] Efeito de altitude
 
@@ -45,6 +47,7 @@
 - [x] Calendário ATP/WTA completo (52 semanas)
 - [x] Circuito WTA (Feminino) 100% integrado
 - [x] Geração de NPCs reais em vez de "Bots Externos"
+- [x] Curva de progressão de XP sustentável e balanceada
 - [ ] Circuito ITF/Challenger
 - [ ] Integração real da United Cup
 
@@ -65,8 +68,10 @@
 - [x] Conferências de imprensa (entrevistas pós-jogo)
 - [x] Vínculo de Duplas (sinergia e parcerias)
 - [x] **Hub de Duplas:** Sistema avançado de convites e parcerias (UI + API)
+- [x] **Lifestyle & Investimentos:** Sinks de dinheiro para late-game com bônus mecânicos
+- [x] Eventos narrativos semanais (aleatórios)
 - [ ] Rivalidades dinâmicas entre jogadores
-- [ ] Eventos narrativos (ex: polêmicas, propostas inesperadas)
+- [ ] Sistema de Traços de Personalidade (Mentalidade)
 
 ---
 
