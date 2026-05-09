@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion } from 'motion/react'
 import { useLocation, useNavigate } from 'react-router'
-import { CalendarDays, Trophy, ChevronRight } from 'lucide-react'
-import { NeonCard, NeonButton } from '../components'
+import { CalendarDays, ChevronRight, Clock3, MapPinned, Trophy } from 'lucide-react'
+import { NeonCard, NeonButton, PixelFlag } from '../components'
 import { useGameStore } from '../../store/gameStore'
-import type { CampeaoSemana } from '../../types'
+import type { CampeaoSemana, TorneioCalendario, WeekAdvanceStep } from '../../types'
 
 interface WeekAdvanceLocationState {
   fromSemana: number
@@ -13,21 +13,59 @@ interface WeekAdvanceLocationState {
   toAno: number
   campeoes: CampeaoSemana[]
   eventos?: string[]
-  motivo?: 'withdraw' | 'tournament_end'
+  processamento?: WeekAdvanceStep[]
+  torneiosDisponiveis?: TorneioCalendario[]
+  motivo?: 'withdraw' | 'tournament_end' | 'rest'
 }
 
 function titleFromReason(reason?: WeekAdvanceLocationState['motivo']) {
   if (reason === 'withdraw') return 'SEMANA AVANÇADA'
+  if (reason === 'rest') return 'CONTINUE'
   return 'FIM DE SEMANA'
 }
 
 function subtitleFromReason(reason?: WeekAdvanceLocationState['motivo']) {
   if (reason === 'withdraw') return 'TORNEIO ENCERRADO APÓS DESISTÊNCIA'
+  if (reason === 'rest') return 'A SEMANA ESTÁ SENDO PROCESSADA'
   return 'RESULTADOS CONSOLIDADOS DO CIRCUITO'
 }
 
 function badgeColor(tour: string) {
   return tour.toLowerCase().includes('wta') ? '#ff5f8f' : '#00ff88'
+}
+
+function toneColor(tom: WeekAdvanceStep['tom']) {
+  if (tom === 'positive') return '#00ff88'
+  if (tom === 'warning') return '#ffe600'
+  if (tom === 'info') return '#00e5ff'
+  return '#c7d4d0'
+}
+
+function defaultSteps(state: WeekAdvanceLocationState | null): WeekAdvanceStep[] {
+  if (!state) return []
+  return [
+    {
+      id: 'advance_calendar',
+      titulo: 'Calendário',
+      resumo: `Semana ${state.fromSemana} encerrada. Preparando a semana ${state.toSemana}.`,
+      tom: 'info',
+      detalhes: state.eventos?.slice(0, 3) ?? [],
+    },
+    {
+      id: 'simulate_tournaments',
+      titulo: 'Circuito',
+      resumo: 'Consolidando o que aconteceu nos torneios do mundo.',
+      tom: 'neutral',
+      detalhes: state.campeoes.slice(0, 3).map((campeao) => `${campeao.tour}: ${campeao.torneio}`),
+    },
+    {
+      id: 'init_next_week',
+      titulo: 'Nova agenda',
+      resumo: 'Montando seus próximos compromissos de calendário.',
+      tom: 'positive',
+      detalhes: state.torneiosDisponiveis?.slice(0, 3).map((torneio) => `${torneio.nome} • ${torneio.horario_local ?? '13:00'}`) ?? [],
+    },
+  ]
 }
 
 export function WeekAdvanceScreen() {
@@ -36,10 +74,20 @@ export function WeekAdvanceScreen() {
   const { setSemana, setTorneio, setPartidaId, fetchJogador } = useGameStore()
   const state = location.state as WeekAdvanceLocationState | null
 
-  const [showIncrement, setShowIncrement] = useState(false)
-  const [allowSkip, setAllowSkip] = useState(false)
+  const [currentStep, setCurrentStep] = useState(-1)
+  const [allowContinue, setAllowContinue] = useState(false)
 
   const campeoes = useMemo(() => state?.campeoes ?? [], [state])
+  const etapas = useMemo(
+    () => (state?.processamento && state.processamento.length > 0 ? state.processamento : defaultSteps(state)),
+    [state]
+  )
+  const torneiosDisponiveis = useMemo(() => state?.torneiosDisponiveis ?? [], [state])
+  const calendarStepIndex = useMemo(() => {
+    const found = etapas.findIndex((etapa) => etapa.id === 'advance_calendar')
+    return found >= 0 ? found : 0
+  }, [etapas])
+  const showIncrement = currentStep >= calendarStepIndex
 
   useEffect(() => {
     if (!state) {
@@ -50,26 +98,29 @@ export function WeekAdvanceScreen() {
     setTorneio(null)
     setPartidaId(null)
 
-    const showTimer = window.setTimeout(() => {
-      setShowIncrement(true)
-      setSemana(state.toSemana, state.toAno)
-    }, 1700)
+    const timers: number[] = []
+    etapas.forEach((_, index) => {
+      timers.push(
+        window.setTimeout(() => {
+          setCurrentStep(index)
+          if (index === calendarStepIndex) {
+            setSemana(state.toSemana, state.toAno)
+          }
+        }, 700 + index * 800)
+      )
+    })
 
-    const skipTimer = window.setTimeout(() => {
-      setAllowSkip(true)
-    }, 2200)
-
-    const endTimer = window.setTimeout(() => {
-      fetchJogador().catch(() => {})
-      navigate('/hub', { replace: true })
-    }, 3600)
+    timers.push(
+      window.setTimeout(() => {
+        setAllowContinue(true)
+        fetchJogador().catch(() => {})
+      }, 1200 + etapas.length * 800)
+    )
 
     return () => {
-      window.clearTimeout(showTimer)
-      window.clearTimeout(skipTimer)
-      window.clearTimeout(endTimer)
+      timers.forEach((timer) => window.clearTimeout(timer))
     }
-  }, [fetchJogador, navigate, setPartidaId, setSemana, setTorneio, state])
+  }, [calendarStepIndex, etapas, fetchJogador, navigate, setPartidaId, setSemana, setTorneio, state])
 
   if (!state) return null
 
@@ -81,33 +132,26 @@ export function WeekAdvanceScreen() {
           'radial-gradient(circle at top, rgba(0,255,136,0.18), transparent 28%), linear-gradient(180deg, #061312 0%, #030909 100%)',
       }}
     >
-      <div className="mx-auto flex min-h-[calc(100vh-3rem)] max-w-4xl flex-col justify-center gap-6">
-        <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center"
-        >
+      <div className="mx-auto flex min-h-[calc(100vh-3rem)] max-w-5xl flex-col justify-center gap-6">
+        <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} className="text-center">
           <div
             className="mb-2 text-[11px]"
             style={{ fontFamily: 'var(--font-pixel)', color: '#00ff88', textShadow: '0 0 10px rgba(0,255,136,0.55)' }}
           >
             {titleFromReason(state.motivo)}
           </div>
-          <div
-            className="text-[20px] sm:text-[26px]"
-            style={{ fontFamily: 'var(--font-arcade)' }}
-          >
+          <div className="text-[20px] sm:text-[26px]" style={{ fontFamily: 'var(--font-arcade)' }}>
             {subtitleFromReason(state.motivo)}
           </div>
         </motion.div>
 
-        <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid gap-5 xl:grid-cols-[1.1fr_1fr]">
           <NeonCard variant="green" hover={false} className="overflow-hidden">
             <div className="mb-4 flex items-center gap-3">
               <CalendarDays size={18} className="text-[#00ff88]" />
               <div>
-                <div className="pixel-font text-sm text-[#00ff88]">CALENDÁRIO</div>
-                <div className="arcade-font text-xs text-[#9ae6c3]">Fechamento da semana atual</div>
+                <div className="pixel-font text-sm text-[#00ff88]">PROGRESSÃO DA SEMANA</div>
+                <div className="arcade-font text-xs text-[#9ae6c3]">Processamento visível do calendário</div>
               </div>
             </div>
 
@@ -130,97 +174,160 @@ export function WeekAdvanceScreen() {
                 <ChevronRight size={34} />
               </motion.div>
 
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={showIncrement ? 'next' : 'locked'}
-                  initial={{ opacity: 0, scale: 0.9, y: 8 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9, y: -8 }}
-                  className="text-center"
+              <div className="text-center">
+                <div className="pixel-font text-[10px] text-[#88bca3]">PRÓXIMA</div>
+                <div
+                  className="pixel-font text-3xl"
+                  style={{
+                    color: showIncrement ? '#00ff88' : '#34544c',
+                    textShadow: showIncrement ? '0 0 12px rgba(0,255,136,0.45)' : 'none',
+                  }}
                 >
-                  <div className="pixel-font text-[10px] text-[#88bca3]">PRÓXIMA</div>
+                  {state.toSemana}
+                </div>
+                <div className="arcade-font text-xs text-[#789186]">{state.toAno}</div>
+              </div>
+            </div>
+
+            <div className="mt-4 space-y-2">
+              {etapas.map((etapa, index) => {
+                const ativo = index === currentStep
+                const concluido = index < currentStep || (allowContinue && index <= currentStep)
+                const color = toneColor(etapa.tom)
+                return (
                   <div
-                    className="pixel-font text-3xl"
+                    key={etapa.id}
+                    className="border px-3 py-3"
                     style={{
-                      color: showIncrement ? '#00ff88' : '#34544c',
-                      textShadow: showIncrement ? '0 0 12px rgba(0,255,136,0.45)' : 'none',
+                      borderColor: ativo || concluido ? `${color}88` : '#28402f',
+                      background: ativo ? '#071d18' : '#091311',
+                      boxShadow: ativo ? `0 0 18px ${color}22` : 'none',
                     }}
                   >
-                    {state.toSemana}
-                  </div>
-                  <div className="arcade-font text-xs text-[#789186]">{state.toAno}</div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {state.eventos && state.eventos.length > 0 ? (
-              <div className="mt-4 space-y-2">
-                <div className="pixel-font text-[10px] text-[#00e5ff]">EVENTOS DA VIRADA</div>
-                {state.eventos.slice(0, 4).map((evento, index) => (
-                  <motion.div
-                    key={`${evento}-${index}`}
-                    initial={{ opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.15 * index }}
-                    className="border border-[#00e5ff33] bg-[#041318] px-3 py-2 text-[11px] text-[#b4f6ff]"
-                    style={{ fontFamily: 'var(--font-arcade)' }}
-                  >
-                    {evento}
-                  </motion.div>
-                ))}
-              </div>
-            ) : null}
-          </NeonCard>
-
-          <NeonCard variant="yellow" hover={false}>
-            <div className="mb-4 flex items-center gap-3">
-              <Trophy size={18} className="text-[#ffe600]" />
-              <div>
-                <div className="pixel-font text-sm text-[#ffe600]">CAMPEÕES</div>
-                <div className="arcade-font text-xs text-[#f8eb9a]">Quem venceu no circuito</div>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              {campeoes.length > 0 ? campeoes.map((campeao, index) => (
-                <motion.div
-                  key={`${campeao.torneio}-${campeao.tour}`}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index }}
-                  className="border p-3"
-                  style={{ borderColor: `${badgeColor(campeao.tour)}66`, background: '#0a0f0e' }}
-                >
-                  <div className="mb-1 flex items-center justify-between gap-3">
-                    <div className="arcade-font text-sm text-white">{campeao.torneio}</div>
-                    <div
-                      className="pixel-font text-[9px]"
-                      style={{ color: badgeColor(campeao.tour) }}
-                    >
-                      {campeao.tour.toUpperCase()}
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <div className="pixel-font text-[10px]" style={{ color }}>{etapa.titulo.toUpperCase()}</div>
+                        <div className="arcade-font text-[10px] text-[#c7d4d0] mt-1">{etapa.resumo}</div>
+                      </div>
+                      <div className="pixel-font text-[9px]" style={{ color }}>
+                        {concluido ? 'OK' : ativo ? '...' : 'PEND'}
+                      </div>
                     </div>
+                    {etapa.detalhes.length > 0 && (ativo || concluido) ? (
+                      <div className="mt-2 space-y-1">
+                        {etapa.detalhes.slice(0, 3).map((detalhe) => (
+                          <div key={detalhe} className="arcade-font text-[10px] text-[#9db2ab]">
+                            {detalhe}
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
-                  <div className="arcade-font text-xs text-[#c7d4d0]">Simples: {campeao.simples}</div>
-                  {campeao.duplas ? (
-                    <div className="arcade-font mt-1 text-xs text-[#8db8ff]">Duplas: {campeao.duplas}</div>
-                  ) : null}
-                </motion.div>
-              )) : (
-                <div className="border border-dashed border-[#ffe60044] px-3 py-6 text-center">
-                  <div className="arcade-font text-xs text-[#d7d7b0]">Sem campeões consolidados nesta virada.</div>
-                </div>
-              )}
+                )
+              })}
             </div>
           </NeonCard>
+
+          <div className="space-y-5">
+            <NeonCard variant="yellow" hover={false}>
+              <div className="mb-4 flex items-center gap-3">
+                <Clock3 size={18} className="text-[#ffe600]" />
+                <div>
+                  <div className="pixel-font text-sm text-[#ffe600]">AGENDA DA NOVA SEMANA</div>
+                  <div className="arcade-font text-xs text-[#f8eb9a]">Horários e quadras do circuito</div>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {torneiosDisponiveis.length > 0 ? (
+                  torneiosDisponiveis.slice(0, 4).map((torneio) => (
+                    <div
+                      key={`${torneio.nome}-${torneio.semana}`}
+                      className="border p-3"
+                      style={{ borderColor: '#00e5ff44', background: '#071015' }}
+                    >
+                      <div className="mb-2 flex items-start justify-between gap-3">
+                        <div>
+                          <div className="arcade-font text-sm text-white">{torneio.nome}</div>
+                          <div className="arcade-font text-[10px] text-[#8fc0cf] mt-1">
+                            {torneio.janela_semana ?? 'SEG-DOM'} • {torneio.tipo}
+                          </div>
+                        </div>
+                        {torneio.codigo_pais ? <PixelFlag countryCode={torneio.codigo_pais} size="lg" /> : null}
+                      </div>
+                      <div className="grid gap-2 sm:grid-cols-2">
+                        <div className="border border-[#1f3d49] bg-black/20 px-2 py-2">
+                          <div className="pixel-font text-[8px] text-[#00e5ff]">HORÁRIO LOCAL</div>
+                          <div className="arcade-font text-[10px] text-white mt-1">
+                            {torneio.horario_local ?? '13:00'} • {torneio.sessao_label ?? 'Sessão principal'}
+                          </div>
+                        </div>
+                        <div className="border border-[#3f3520] bg-black/20 px-2 py-2">
+                          <div className="pixel-font text-[8px] text-[#ffe600]">QUADRA PRINCIPAL</div>
+                          <div className="arcade-font text-[10px] text-white mt-1">
+                            {torneio.quadra_nome ?? 'Quadra Central'}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-2 flex items-center gap-2 arcade-font text-[10px] text-[#c7d4d0]">
+                        <MapPinned size={12} className="text-[#ff9a5f]" />
+                        <span>{torneio.local} • {torneio.superficie}</span>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="border border-dashed border-[#ffe60044] px-3 py-6 text-center">
+                    <div className="arcade-font text-xs text-[#d7d7b0]">Sem agenda nova consolidada nesta virada.</div>
+                  </div>
+                )}
+              </div>
+            </NeonCard>
+
+            <NeonCard variant="yellow" hover={false}>
+              <div className="mb-4 flex items-center gap-3">
+                <Trophy size={18} className="text-[#ffe600]" />
+                <div>
+                  <div className="pixel-font text-sm text-[#ffe600]">CAMPEÕES</div>
+                  <div className="arcade-font text-xs text-[#f8eb9a]">Quem venceu no circuito</div>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {campeoes.length > 0 ? campeoes.map((campeao, index) => (
+                  <motion.div
+                    key={`${campeao.torneio}-${campeao.tour}`}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * index }}
+                    className="border p-3"
+                    style={{ borderColor: `${badgeColor(campeao.tour)}66`, background: '#0a0f0e' }}
+                  >
+                    <div className="mb-1 flex items-center justify-between gap-3">
+                      <div className="arcade-font text-sm text-white">{campeao.torneio}</div>
+                      <div className="pixel-font text-[9px]" style={{ color: badgeColor(campeao.tour) }}>
+                        {campeao.tour.toUpperCase()}
+                      </div>
+                    </div>
+                    <div className="arcade-font text-xs text-[#c7d4d0]">Simples: {campeao.simples}</div>
+                    {campeao.duplas ? <div className="arcade-font mt-1 text-xs text-[#8db8ff]">Duplas: {campeao.duplas}</div> : null}
+                  </motion.div>
+                )) : (
+                  <div className="border border-dashed border-[#ffe60044] px-3 py-6 text-center">
+                    <div className="arcade-font text-xs text-[#d7d7b0]">Sem campeões consolidados nesta virada.</div>
+                  </div>
+                )}
+              </div>
+            </NeonCard>
+          </div>
         </div>
 
         <div className="flex justify-center">
           <NeonButton
             variant="cyan"
             onClick={() => navigate('/hub', { replace: true })}
-            disabled={!allowSkip}
+            disabled={!allowContinue}
           >
-            {allowSkip ? 'IR PARA O HUB' : 'PROCESSANDO...'}
+            {allowContinue ? 'CONTINUAR PARA O HUB' : 'PROCESSANDO A SEMANA...'}
           </NeonButton>
         </div>
       </div>

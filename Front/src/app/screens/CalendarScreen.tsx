@@ -1,7 +1,6 @@
 import { ActionDock, NeonButton, PageHeader } from '../components'
 import { TournamentEntryModal } from '../components/TournamentEntryModal'
 import { useCalendarScreen } from './calendar/useCalendarScreen'
-import { CalendarChampionsModal } from './calendar/views/CalendarChampionsModal'
 import { CalendarWeekSelector } from './calendar/views/CalendarWeekSelector'
 import { CalendarTournamentGrid } from './calendar/views/CalendarTournamentGrid'
 
@@ -19,18 +18,14 @@ export function CalendarScreen() {
     inscrevendo,
     erroInscricao,
     convocacao,
-    campeoesSemana,
     scrollRef,
     handleConfirmarInscricao,
     handleRecusarConvocacao,
     handleDescansar,
-    handleFecharCampeoes,
   } = useCalendarScreen()
 
   return (
     <div className="app-shell min-h-screen font-mono pb-24">
-      <CalendarChampionsModal campeoesSemana={campeoesSemana} onClose={handleFecharCampeoes} />
-
       {torneioParaInscrever && (
         <TournamentEntryModal
           torneio={torneioParaInscrever}

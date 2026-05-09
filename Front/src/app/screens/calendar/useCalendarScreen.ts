@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { api } from '../../../api/client'
 import { useGameStore } from '../../../store/gameStore'
-import type { CampeaoSemana, TorneioCalendario } from '../../../types'
+import type { TorneioCalendario } from '../../../types'
 import type { CalendarCallup } from './types'
 
 export function useCalendarScreen() {
@@ -20,7 +20,6 @@ export function useCalendarScreen() {
   const [inscrevendo, setInscrevendo] = useState(false)
   const [erroInscricao, setErroInscricao] = useState('')
   const [convocacao, setConvocacao] = useState<CalendarCallup | null>(null)
-  const [campeoesSemana, setCampeoesSemana] = useState<CampeaoSemana[]>([])
 
   async function checarConvocacao() {
     try {
@@ -124,12 +123,20 @@ export function useCalendarScreen() {
   async function handleDescansar() {
     try {
       const response = await api.calendario.avancar()
-      setSemana(response.semana, response.ano ?? ano)
-      setSelectedWeek(response.semana)
-      const campeoes = response.resumo_mundial?.campeoes ?? []
-      if (campeoes.length > 0) {
-        setCampeoesSemana(campeoes)
-      }
+      navigate('/week-advance', {
+        replace: true,
+        state: {
+          fromSemana: semanaAtual,
+          fromAno: ano,
+          toSemana: response.semana,
+          toAno: response.ano ?? ano,
+          campeoes: response.resumo_mundial?.campeoes ?? [],
+          eventos: response.eventos ?? [],
+          processamento: response.processamento ?? [],
+          torneiosDisponiveis: response.torneios_disponiveis ?? [],
+          motivo: 'rest',
+        },
+      })
     } catch {
       // silencioso
     }
@@ -148,11 +155,9 @@ export function useCalendarScreen() {
     inscrevendo,
     erroInscricao,
     convocacao,
-    campeoesSemana,
     scrollRef,
     handleConfirmarInscricao,
     handleRecusarConvocacao,
     handleDescansar,
-    handleFecharCampeoes: () => setCampeoesSemana([]),
   }
 }

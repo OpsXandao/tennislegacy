@@ -917,8 +917,15 @@ def _processar_expiracao_ranking(nome_save, semana_atual, ano_atual):
 
 def avancar_semana(nome_save, expected_week=None):
     from src.services.season_service import advance_week
+    from src.presenters.tournament_presenter import formatar_torneio_resumido
 
-    return advance_week(nome_save, expected_week=expected_week)
+    resultado = advance_week(nome_save, expected_week=expected_week)
+    torneios = resultado.get("torneios_disponiveis", [])
+    if isinstance(torneios, list):
+        resultado["torneios_disponiveis"] = [
+            formatar_torneio_resumido(t) if isinstance(t, dict) else t for t in torneios
+        ]
+    return resultado
 
 
 # ---------------------------------------------------------------------------

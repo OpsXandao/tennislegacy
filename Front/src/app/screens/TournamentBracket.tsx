@@ -154,6 +154,8 @@ export function TournamentBracket() {
               toAno: r.ano ?? ano,
               campeoes: r.resumo_mundial?.campeoes ?? [],
               eventos: r.eventos ?? [],
+              processamento: r.processamento ?? [],
+              torneiosDisponiveis: r.torneios_disponiveis ?? [],
               motivo: 'withdraw',
             },
           })
@@ -180,6 +182,8 @@ export function TournamentBracket() {
             toAno: r.ano ?? ano,
             campeoes: r.resumo_mundial?.campeoes ?? [],
             eventos: r.eventos ?? [],
+            processamento: r.processamento ?? [],
+            torneiosDisponiveis: r.torneios_disponiveis ?? [],
             motivo: 'tournament_end',
           },
         })

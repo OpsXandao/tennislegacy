@@ -143,6 +143,18 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
                   <div className="text-[8px] app-muted arcade-font mb-1">DEF. CAMPEÃO</div>
                   <div className="text-[10px] text-[#00e5ff] arcade-font truncate">{defendingChampion.toUpperCase()}</div>
                 </div>
+                <div className="app-panel-elevated border-2 border-[#333] p-3">
+                  <div className="text-[8px] app-muted arcade-font mb-1">HORÁRIO</div>
+                  <div className="text-[10px] text-[#ff9a5f] arcade-font">
+                    {torneio.horario_local ?? '13:00'}
+                  </div>
+                </div>
+                <div className="app-panel-elevated border-2 border-[#333] p-3">
+                  <div className="text-[8px] app-muted arcade-font mb-1">QUADRA</div>
+                  <div className="text-[10px] text-[#f5d28f] arcade-font truncate">
+                    {(torneio.quadra_nome ?? 'Quadra Central').toUpperCase()}
+                  </div>
+                </div>
               </div>
 
               {/* Histórico do jogador neste torneio */}

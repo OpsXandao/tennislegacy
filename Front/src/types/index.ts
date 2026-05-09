@@ -157,6 +157,10 @@ export interface TorneioCalendario {
   semana: number
   premiacao?: string
   permite_mistas?: boolean
+  quadra_nome?: string
+  horario_local?: string
+  sessao_label?: string
+  janela_semana?: string
 }
 
 export interface MundoTorneio extends TorneioCalendario {}
@@ -220,6 +224,7 @@ export interface WeekAdvancePayload {
   ano?: number
   eventos: string[]
   processamento?: WeekAdvanceStep[]
+  torneios_disponiveis?: TorneioCalendario[]
   resumo_mundial: ResumoDaSemana
 }
 
