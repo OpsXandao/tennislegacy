@@ -1,3 +1,10 @@
+export interface HubRadioTrack {
+  id: string
+  titulo: string
+  artista: string
+  src: string
+}
+
 export interface HubRadioStation {
   id: string
   nome: string
@@ -5,6 +12,7 @@ export interface HubRadioStation {
   bpm: number
   rootHz: number
   color: string
+  tracks: HubRadioTrack[]
   bassPattern: Array<number | null>
   leadPattern: Array<number | null>
   kickPattern: boolean[]
@@ -19,6 +27,7 @@ export const HUB_RADIO_STATIONS: HubRadioStation[] = [
     bpm: 106,
     rootHz: 220,
     color: 'var(--neon-green)',
+    tracks: [],
     bassPattern: [0, null, 0, null, 3, null, 5, null, 7, null, 5, null, 3, null, 2, null],
     leadPattern: [12, 14, null, 12, 15, null, 14, null, 12, 14, null, 17, 15, null, 14, null],
     kickPattern: [true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false],
@@ -31,6 +40,7 @@ export const HUB_RADIO_STATIONS: HubRadioStation[] = [
     bpm: 94,
     rootHz: 196,
     color: '#ff8c42',
+    tracks: [],
     bassPattern: [0, null, 0, null, 5, null, 3, null, 0, null, 7, null, 5, null, 3, null],
     leadPattern: [7, null, 10, null, 12, null, 10, null, 7, null, 5, null, 3, null, 2, null],
     kickPattern: [true, false, false, false, false, false, true, false, true, false, false, false, false, false, true, false],
@@ -43,6 +53,7 @@ export const HUB_RADIO_STATIONS: HubRadioStation[] = [
     bpm: 126,
     rootHz: 246.94,
     color: 'var(--neon-cyan)',
+    tracks: [],
     bassPattern: [0, null, 7, null, 5, null, 3, null, 0, null, 7, null, 10, null, 5, null],
     leadPattern: [12, null, 15, 14, 17, null, 19, 17, 15, null, 14, 12, 10, null, 12, 14],
     kickPattern: [true, false, false, false, true, false, true, false, true, false, false, false, true, false, true, false],

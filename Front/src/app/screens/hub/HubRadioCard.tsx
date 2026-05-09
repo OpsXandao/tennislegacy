@@ -3,27 +3,34 @@ import { Pause, Play, Radio, SkipForward, Volume2 } from 'lucide-react'
 import type { HubRadioStation } from './radio/stations'
 
 interface HubRadioCardProps {
+  currentTrack: {
+    titulo: string
+    artista: string
+  } | null
   erro: string
   playing: boolean
+  sourceType: 'playlist' | 'procedural'
   station: HubRadioStation
   stations: HubRadioStation[]
   volume: number
   setVolume: (value: number) => void
   togglePlay: () => void
   trocarEstacao: (id: string) => void
-  avancarEstacao: () => void
+  avancarFaixaOuEstacao: () => void
 }
 
 export function HubRadioCard({
+  currentTrack,
   erro,
   playing,
+  sourceType,
   station,
   stations,
   volume,
   setVolume,
   togglePlay,
   trocarEstacao,
-  avancarEstacao,
+  avancarFaixaOuEstacao,
 }: HubRadioCardProps) {
   return (
     <section
@@ -62,9 +69,9 @@ export function HubRadioCard({
           </button>
           <button
             type="button"
-            onClick={avancarEstacao}
+            onClick={avancarFaixaOuEstacao}
             className="flex h-10 w-10 items-center justify-center border-2 border-white/25 text-white/75"
-            aria-label="Próxima estação"
+            aria-label={sourceType === 'playlist' ? 'Próxima faixa' : 'Próxima estação'}
           >
             <SkipForward size={16} />
           </button>
@@ -114,9 +121,22 @@ export function HubRadioCard({
           {erro}
         </div>
       ) : (
-        <div className="mt-3 text-[9px] text-white/45" style={{ fontFamily: 'var(--font-arcade)' }}>
-          {playing ? 'TRANSMISSÃO AO VIVO NO HUB' : 'APERTE PLAY PARA LIGAR A ESTAÇÃO'}
-        </div>
+        <>
+          <div className="mt-3 text-[9px] text-white/45" style={{ fontFamily: 'var(--font-arcade)' }}>
+            {playing ? 'TRANSMISSÃO AO VIVO NO HUB' : 'APERTE PLAY PARA LIGAR A ESTAÇÃO'}
+          </div>
+          <div className="mt-2 border border-white/10 bg-black/30 px-2 py-2">
+            <div className="text-[8px] text-white/35" style={{ fontFamily: 'var(--font-arcade)' }}>
+              {sourceType === 'playlist' ? 'TOCANDO AGORA' : 'MODO'}
+            </div>
+            <div className="mt-1 text-[10px] text-white" style={{ fontFamily: 'var(--font-pixel)' }}>
+              {sourceType === 'playlist' && currentTrack ? currentTrack.titulo : 'SINTETIZADOR ARCADE'}
+            </div>
+            <div className="mt-1 text-[8px] text-white/45" style={{ fontFamily: 'var(--font-arcade)' }}>
+              {sourceType === 'playlist' && currentTrack ? currentTrack.artista : 'fallback procedural até suas faixas entrarem'}
+            </div>
+          </div>
+        </>
       )}
     </section>
   )

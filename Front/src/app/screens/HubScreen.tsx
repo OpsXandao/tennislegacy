@@ -440,15 +440,17 @@ export function HubScreen() {
       </div>
 
       <HubRadioCard
+        currentTrack={radio.currentTrack}
         erro={radio.erro}
         playing={radio.playing}
+        sourceType={radio.sourceType}
         station={radio.station}
         stations={radio.stations}
         volume={radio.volume}
         setVolume={radio.setVolume}
         togglePlay={radio.togglePlay}
         trocarEstacao={radio.trocarEstacao}
-        avancarEstacao={radio.avancarEstacao}
+        avancarFaixaOuEstacao={radio.avancarFaixaOuEstacao}
       />
 
       {/* Pixel deco bottom */}
