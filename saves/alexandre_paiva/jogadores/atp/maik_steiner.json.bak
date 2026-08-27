@@ -1,0 +1,80 @@
+{
+  "nome": "Maik Steiner",
+  "nacionalidade": "[DE]",
+  "pontos": 43,
+  "pontos_duplas": 0,
+  "pontos_ranking": 43,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 50,
+  "energia": 100,
+  "fadiga": 9,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 46,
+    "pre_saque": 44,
+    "segundo_saque": 49,
+    "retorno": 45,
+    "forehand": 53,
+    "backhand": 50,
+    "voleio": 53,
+    "smash": 54,
+    "lob": 40,
+    "topspin": 48,
+    "slice": 40,
+    "winner": 53,
+    "velocidade": 48,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 45,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 32,
+    "consistencia": 60,
+    "compostura": 35,
+    "agressividade": 45,
+    "leitura_de_jogo": 42,
+    "determinacao": 42
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 43,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 31,
+  "id": 756,
+  "pico_carreira": 724,
+  "altura": 185,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
+}

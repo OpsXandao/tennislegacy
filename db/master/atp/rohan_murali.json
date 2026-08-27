@@ -2,24 +2,33 @@
   "nome": "Rohan Murali",
   "nacionalidade": "[US]",
   "idade": 21,
-  "overall": 70,
+  "overall": 48,
   "pontos": 10,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 44,
+    "retorno": 43,
     "forehand": 50,
     "backhand": 43,
-    "topspin": 40,
     "voleio": 48,
-    "slice": 41,
-    "movimento": 47,
+    "smash": 51,
     "lob": 45,
+    "topspin": 40,
+    "slice": 41,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 1159,
   "atributos_psicologicos": {
-    "concentracao": 48,
+    "clutch": 48,
+    "consistencia": 56,
+    "compostura": 42,
     "agressividade": 49,
     "leitura_de_jogo": 39,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

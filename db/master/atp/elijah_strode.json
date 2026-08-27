@@ -2,24 +2,33 @@
   "nome": "Elijah Strode",
   "nacionalidade": "[US]",
   "idade": 24,
-  "overall": 69,
+  "overall": 52,
   "pontos": 7,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 50,
+    "retorno": 49,
     "forehand": 56,
     "backhand": 52,
-    "topspin": 52,
     "voleio": 57,
-    "slice": 41,
-    "movimento": 51,
+    "smash": 56,
     "lob": 43,
+    "topspin": 52,
+    "slice": 41,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 54,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 1250,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 59,
+    "compostura": 41,
     "agressividade": 46,
     "leitura_de_jogo": 51,
     "determinacao": 50
@@ -45,5 +54,10 @@
   "peso": 69,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

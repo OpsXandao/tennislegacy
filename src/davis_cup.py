@@ -16,23 +16,17 @@ import logging
 from src.constants.torneio_constants import START_YEAR
 from src.dados import (
     get_caminho_ranking_save,
-    get_caminho_ranking_global,
     get_caminho_torneio_save,
     carregar_estado_torneio,
-    carregar_ranking,
     carregar_ranking_nacoes_davis,
 )
 from src.jogador import normalizar_nome
 from src.ranking import SistemaRanking
 from src.utils.gerador_nomes import gerar_nome_completo
 from src.constants.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
-from src.match_config import criar_config_partida
-from src.progressao import handle_xp_e_level_up
-from src.fadiga import handle_fadiga_e_lesao
 from src.save import salvar_jogo
 from src.utils.json_utils import salvar_json_seguro
 from src.utils.log_jogo import log_erro
-from src.duplas import fundir_dupla as _fundir_dupla
 from src.constants.davis_cup_constants import (
     PAISES_DAVIS_CUP,
     EQUIPES_QUALIFIERS_R1_2026,
@@ -47,6 +41,17 @@ from src.constants.davis_cup_constants import (
     _MAPA_PAIS_3_PARA_2,
 )
 from src.davis_selecao import SelecaoNacional, _codigo_pais_canonico
+from src.davis_simulacao import (
+    ties_por_seeding as _ties_por_seeding_fn,
+    vitorias_para_vencer_tie as _vitorias_para_vencer_tie_fn,
+    criar_agenda_tie as _criar_agenda_tie_fn,
+    forca_simples as _forca_simples_fn,
+    forca_duplas as _forca_duplas_fn,
+    simular_confronto_npc as _simular_confronto_npc_fn,
+    simular_restante_fase as _simular_restante_fase_fn,
+    avancar_fase as _avancar_fase_fn,
+)
+from src.services.tournament_state_service import carregar_estado, salvar_estado
 
 logger = logging.getLogger(__name__)
 
@@ -72,21 +77,20 @@ class DavisCup:
 
     def _carregar_estado(self):
         """Carrega o estado atual do torneio."""
-        estado = carregar_estado_torneio(self.nome_save, genero=self.genero)
+        estado = carregar_estado(self.nome_save, self.genero)
         # Verifica se o estado é do tipo correto (Davis Cup)
         tipos_validos = {"Davis Cup", "Billie Jean King Cup"}
         if estado is None or estado.get("tipo") not in tipos_validos:
             estado = self._criar_estado_inicial()
             self._salvar_estado(estado)
         elif "modo_competicao" not in estado:
-            # Migração de formato legado (fase de grupos antiga) para o regulamento atual.
             estado = self._criar_estado_inicial()
             self._salvar_estado(estado)
         return estado
 
     def _salvar_estado(self, estado):
         """Salva o estado do torneio."""
-        salvar_json_seguro(self.caminho_json, estado)
+        salvar_estado(self.nome_save, self.genero, estado)
 
     def _persistir_convocacao_no_estado(self, estado=None):
         estado = estado or self._carregar_estado()
@@ -174,7 +178,7 @@ class DavisCup:
             self.ranking,
             genero=getattr(self.jogador, "genero", "masculino"),
         )
-        
+
         if interactive:
             logger.debug("\n" + "=" * 60)
             logger.debug(
@@ -231,7 +235,9 @@ class DavisCup:
                     f"\n🎾 Você jugará as partidas de {('Simples 1' if pos_convocacao == 1 else 'Simples 2')}!"
                 )
                 logger.debug("   O capitão aguarda sua resposta sobre a convocação...")
-                logger.debug(f"\n🎉 Você aceitou representar {self.pais_jogador} na {self._nome_competicao()}!")
+                logger.debug(
+                    f"\n🎉 Você aceitou representar {self.pais_jogador} na {self._nome_competicao()}!"
+                )
 
             return True
         else:
@@ -264,7 +270,9 @@ class DavisCup:
                 )
                 logger.debug('   A decisão causou surpresa no mundo do tênis."')
             elif posicao <= 3:
-                logger.debug(f'   "{self.jogador.nome}, um dos principais jogadores do país,')
+                logger.debug(
+                    f'   "{self.jogador.nome}, um dos principais jogadores do país,'
+                )
                 logger.debug(
                     f"   optou por não participar da {self._nome_competicao()}, priorizando"
                 )
@@ -291,7 +299,7 @@ class DavisCup:
             self.pais_jogador, self.ranking, genero=self.genero
         )
         self.selecao.completar_convocacao(4)
-        
+
         if interactive:
             logger.debug("-" * 60)
             logger.debug("O capitão convocou um substituto:")
@@ -426,14 +434,7 @@ class DavisCup:
         return equipes
 
     def _ties_por_seeding(self, equipes_ordenadas):
-        ties = []
-        i = 0
-        j = len(equipes_ordenadas) - 1
-        while i < j:
-            ties.append((equipes_ordenadas[i], equipes_ordenadas[j]))
-            i += 1
-            j -= 1
-        return ties
+        return _ties_por_seeding_fn(equipes_ordenadas)
 
     def _equipes_modo_competicao(self, modo):
         if self._usar_modo_carreira():
@@ -452,10 +453,7 @@ class DavisCup:
         return list(PAISES_DAVIS_CUP)
 
     def _vitorias_para_vencer_tie(self, estado):
-        fase = estado.get("fase_atual")
-        if fase in ("quartas", "semifinal", "final"):
-            return 2
-        return 3
+        return _vitorias_para_vencer_tie_fn(estado)
 
     def _criar_estado_inicial(self):
         """Cria o estado inicial da Copa Davis conforme o formato real de 2026."""
@@ -563,6 +561,16 @@ class DavisCup:
 
         return None
 
+    def _criar_selecoes_par(self, equipe_a, equipe_b, tamanho=5):
+        sel_a = SelecaoNacional(equipe_a, self.ranking, genero=self.genero)
+        sel_a.completar_convocacao(tamanho)
+        sel_b = SelecaoNacional(equipe_b, self.ranking, genero=self.genero)
+        sel_b.completar_convocacao(tamanho)
+        return sel_a, sel_b
+
+    def _criar_agenda_tie(self, total, s1_j, s2_j, s1_a, s2_a):
+        return _criar_agenda_tie_fn(total, s1_j, s2_j, s1_a, s2_a)
+
     def _paises_iguais(self, pais1, pais2):
         """Verifica se dois países são o mesmo (comparação flexível)."""
         if not pais1 or not pais2:
@@ -614,28 +622,11 @@ class DavisCup:
 
     def _forca_simples(self, atleta):
         """Score para escalar simples (ranking atual + overall)."""
-        if not isinstance(atleta, dict):
-            return 0
-        pontos = int(atleta.get("pontos_ranking", atleta.get("pontos", 0)) or 0)
-        overall = int(atleta.get("overall", 50) or 50)
-        return pontos * 2 + overall * 25
+        return _forca_simples_fn(atleta)
 
     def _forca_duplas(self, atleta):
         """Score para escalar duplas (ranking de duplas + voleio + atributo duplas)."""
-        if not isinstance(atleta, dict):
-            return 0
-        pontos_duplas = int(
-            atleta.get("pontos_ranking_duplas", atleta.get("pontos_duplas", 0)) or 0
-        )
-        atributos = (
-            atleta.get("atributos", {})
-            if isinstance(atleta.get("atributos"), dict)
-            else {}
-        )
-        voleio = int(atributos.get("voleio", 50) or 50)
-        saque = int(atributos.get("saque", 50) or 50)
-        duplas_attr = int(atributos.get("duplas", 60) or 60)
-        return pontos_duplas * 3 + voleio * 20 + saque * 12 + duplas_attr * 15
+        return _forca_duplas_fn(atleta)
 
     def _info_local_confronto(self, modo_competicao, equipe_a, equipe_b):
         """Retorna dados de sede do tie conforme formato/ano."""
@@ -759,131 +750,41 @@ class DavisCup:
 
         self._salvar_estado(estado)
 
+        # Fix 2: distribuir pontos quando o torneio termina (inclusive pela
+        # partida do jogador humano — o serviço cobre apenas a rota NPC).
+        if estado.get("fase_atual") == "finalizado":
+            try:
+                from src.pontuacao import distribuir_pontos_davis
+
+                distribuir_pontos_davis(self.nome_save)
+            except Exception as exc:
+                log_erro(
+                    self.nome_save,
+                    "distribuir_pontos_davis_pos_confronto",
+                    exc,
+                    {},
+                )
+
     def _simular_confronto_npc(self, equipe_a, equipe_b, alvo_vitorias=2):
         """Simula confronto NPC baseado no overall das equipes e vantagem de casa."""
-        total_partidas = 5 if alvo_vitorias == 3 else 3
-        v_a = 0
-        v_b = 0
-
         estado = self._carregar_estado()
-        local_info = (
-            self._info_local_confronto(
-                estado.get("modo_competicao"), equipe_a, equipe_b
-            )
-            or {}
+        return _simular_confronto_npc_fn(
+            equipe_a,
+            equipe_b,
+            alvo_vitorias,
+            estado,
+            self.ranking,
+            self.genero,
+            self._paises_iguais,
+            self._info_local_confronto,
         )
 
-        # Simula força base (média dos convocados ou 65 default)
-        ovr_a = 65
-        ovr_b = 65
-
-        # Tenta pegar dados reais do ranking para calibrar a força
-        try:
-            sel_a = SelecaoNacional(equipe_a, self.ranking, genero=self.genero)
-            sel_a.completar_convocacao(2)
-            ovr_a = sum(j.get("overall", 65) for j in sel_a.convocados[:2]) / 2
-
-            sel_b = SelecaoNacional(equipe_b, self.ranking, genero=self.genero)
-            sel_b.completar_convocacao(2)
-            ovr_b = sum(j.get("overall", 65) for j in sel_b.convocados[:2]) / 2
-        except Exception:
-            pass
-
-        # Bônus de casa apenas nos qualifiers (equipe_a é mandante no tie oficial).
-        if estado.get("fase_atual") == "qualifiers":
-            ovr_a += 3
-
-        prob_a = 0.5 + (ovr_a - ovr_b) * 0.04
-        prob_a = max(0.1, min(0.9, prob_a))
-
-        for _ in range(total_partidas):
-            if v_a >= alvo_vitorias or v_b >= alvo_vitorias:
-                break
-            if random.random() < prob_a:
-                v_a += 1
-            else:
-                v_b += 1
-        vencedor = equipe_a if v_a >= alvo_vitorias else equipe_b
-        return {
-            "equipe_a": equipe_a,
-            "equipe_b": equipe_b,
-            "vencedor": vencedor,
-            "placar": f"{v_a}-{v_b}",
-            "partidas": [],
-            "cidade": local_info.get("cidade"),
-            "pais_sede": local_info.get("pais"),
-            "superficie": local_info.get("superficie"),
-        }
-
     def _simular_restante_fase_eliminatoria(self, estado, fase):
-        chave = estado.get("eliminatorias", {}).get(fase, [])
-        alvo_vitorias = 2 if fase in ("quartas", "semifinal", "final") else 3
-        for confronto in chave:
-            if confronto.get("vencedor"):
-                continue
-            resultado = self._simular_confronto_npc(
-                confronto["equipe_a"],
-                confronto["equipe_b"],
-                alvo_vitorias=alvo_vitorias,
-            )
-            confronto["vencedor"] = resultado["vencedor"]
-            estado.setdefault("resultados_confrontos", []).append(resultado)
+        _simular_restante_fase_fn(estado, fase, self._simular_confronto_npc)
 
     def _avancar_fase_eliminatoria(self, estado, fase):
         pais_jogador = estado.get("pais_jogador")
-        chave_atual = estado.get("eliminatorias", {}).get(fase, [])
-        vencedores = [c.get("vencedor") for c in chave_atual if c.get("vencedor")]
-
-        if fase == "quartas":
-            if len(vencedores) < 4:
-                return
-            estado["eliminatorias"]["semifinal"] = [
-                {
-                    "equipe_a": vencedores[0],
-                    "equipe_b": vencedores[1],
-                    "vencedor": None,
-                },
-                {
-                    "equipe_a": vencedores[2],
-                    "equipe_b": vencedores[3],
-                    "vencedor": None,
-                },
-            ]
-            estado["fase_atual"] = "semifinal"
-            estado["confronto_atual"] = next(
-                (
-                    c
-                    for c in estado["eliminatorias"]["semifinal"]
-                    if self._paises_iguais(pais_jogador, c["equipe_a"])
-                    or self._paises_iguais(pais_jogador, c["equipe_b"])
-                ),
-                None,
-            )
-            return
-
-        if fase == "semifinal":
-            if len(vencedores) < 2:
-                return
-            estado["eliminatorias"]["final"] = [
-                {"equipe_a": vencedores[0], "equipe_b": vencedores[1], "vencedor": None}
-            ]
-            estado["fase_atual"] = "final"
-            confronto_final = estado["eliminatorias"]["final"][0]
-            if self._paises_iguais(
-                pais_jogador, confronto_final["equipe_a"]
-            ) or self._paises_iguais(pais_jogador, confronto_final["equipe_b"]):
-                estado["confronto_atual"] = confronto_final
-            else:
-                estado["confronto_atual"] = None
-            return
-
-        if fase == "final":
-            if not vencedores:
-                return
-            estado["fase_atual"] = "finalizado"
-            estado["campeao"] = vencedores[0]
-            estado["confronto_atual"] = None
-            estado["jogador_vivo"] = self._paises_iguais(vencedores[0], pais_jogador)
+        _avancar_fase_fn(estado, fase, pais_jogador, self._paises_iguais)
 
     def jogador_ainda_ativo(self):
         """Verifica se o jogador ainda está no torneio."""
@@ -891,6 +792,7 @@ class DavisCup:
         return estado.get("jogador_vivo", True) and estado.get(
             "jogador_convocado", False
         )
+
     def obter_fase_atual(self):
         """Retorna a fase atual do torneio."""
         estado = self._carregar_estado()
@@ -919,11 +821,7 @@ class DavisCup:
         equipe_a = confronto.get("equipe_a")
         equipe_b = confronto.get("equipe_b")
 
-        # Gera a agenda (mesma lógica de jogar_confronto)
-        selecao_a = SelecaoNacional(equipe_a, self.ranking, genero=self.genero)
-        selecao_a.completar_convocacao(5)
-        selecao_b = SelecaoNacional(equipe_b, self.ranking, genero=self.genero)
-        selecao_b.completar_convocacao(5)
+        selecao_a, selecao_b = self._criar_selecoes_par(equipe_a, equipe_b)
 
         # Identifica quem é a seleção do jogador
         minha_sel = (
@@ -931,34 +829,16 @@ class DavisCup:
         )
         adv_sel = selecao_b if minha_sel == selecao_a else selecao_a
 
-        # Agenda 5 partidas (Qualifiers) ou 3 (Final 8)
+        # Desde 2019 todos os ties são melhor-de-3: agenda sempre com 3 partidas.
         fase = estado.get("fase_atual")
-        total = 3 if fase in ("quartas", "semifinal", "final") else 5
+        total = 3
 
         if idx_partida >= total:
             return None
 
-        # Titulares
-        s1_j = minha_sel.convocados[0]
-        s2_j = minha_sel.convocados[1]
-        s1_a = adv_sel.convocados[0]
-        s2_a = adv_sel.convocados[1]
-
-        agenda = []
-        if total == 3:
-            agenda = [
-                ("simples", s2_j, s2_a),
-                ("simples", s1_j, s1_a),
-                ("duplas", None, None),
-            ]
-        else:
-            agenda = [
-                ("simples", s2_j, s2_a),
-                ("simples", s1_j, s1_a),
-                ("duplas", None, None),
-                ("simples", s1_j, s2_a),
-                ("simples", s2_j, s1_a),
-            ]
+        s1_j, s2_j = minha_sel.convocados[0], minha_sel.convocados[1]
+        s1_a, s2_a = adv_sel.convocados[0], adv_sel.convocados[1]
+        agenda = self._criar_agenda_tie(total, s1_j, s2_j, s1_a, s2_a)
 
         tipo, p_j, p_a = agenda[idx_partida]
 
@@ -1035,6 +915,61 @@ class DavisCup:
         confronto["placar_tie"][idx_venc] += 1
         estado["partida_atual"] = idx + 1
 
+        # Fix 3: substituição por lesão após a partida do jogador humano.
+        # Se o jogador ficou lesionado, troca-o pelo próximo convocado que
+        # ainda não jogou. Apenas registra o evento no log — sem reprocessar
+        # a partida já disputada.
+        jogador_lesionado = isinstance(
+            getattr(jogador, "status_lesao", None), dict
+        ) and jogador.status_lesao.get("lesionado")
+        if jogador_lesionado and self.selecao:
+            nome_jogador_norm = normalizar_nome(
+                jogador.nome if hasattr(jogador, "nome") else jogador.get("nome", "")
+            )
+            jogadores_que_jogaram = {
+                normalizar_nome(p.get("jogador_a", ""))
+                for p in confronto.get("partidas", [])
+            } | {
+                normalizar_nome(p.get("jogador_b", ""))
+                for p in confronto.get("partidas", [])
+            }
+            substituto = None
+            for conv in self.selecao.convocados:
+                nome_conv = normalizar_nome(conv.get("nome", ""))
+                if (
+                    nome_conv != nome_jogador_norm
+                    and nome_conv not in jogadores_que_jogaram
+                ):
+                    substituto = conv
+                    break
+            if substituto:
+                log_erro(
+                    self.nome_save,
+                    "davis_substituicao_lesao",
+                    Exception(
+                        f"{jogador.nome} lesionado — substituído por "
+                        f"{substituto.get('nome')} no tie."
+                    ),
+                    {
+                        "jogador": jogador.nome,
+                        "substituto": substituto.get("nome"),
+                        "fase": estado.get("fase_atual"),
+                    },
+                )
+                # Atualiza a convocação no estado para as próximas partidas.
+                for i, conv in enumerate(self.selecao.convocados):
+                    if normalizar_nome(conv.get("nome", "")) == nome_jogador_norm:
+                        self.selecao.convocados[i] = substituto
+                        break
+                selecoes = estado.setdefault("selecoes", {})
+                pais_j_key = estado.get("pais_jogador", self.pais_jogador)
+                if pais_j_key in selecoes:
+                    convs = selecoes[pais_j_key].get("convocados", [])
+                    for i, conv in enumerate(convs):
+                        if normalizar_nome(conv.get("nome", "")) == nome_jogador_norm:
+                            convs[i] = substituto
+                            break
+
         # Verifica se o tie acabou
         alvo = self._vitorias_para_vencer_tie(estado)
         if max(confronto["placar_tie"]) >= alvo:
@@ -1060,39 +995,19 @@ class DavisCup:
         equipe_a = confronto.get("equipe_a")
         equipe_b = confronto.get("equipe_b")
 
-        selecao_a = SelecaoNacional(equipe_a, self.ranking, genero=self.genero)
-        selecao_a.completar_convocacao(5)
-        selecao_b = SelecaoNacional(equipe_b, self.ranking, genero=self.genero)
-        selecao_b.completar_convocacao(5)
+        selecao_a, selecao_b = self._criar_selecoes_par(equipe_a, equipe_b)
 
         minha_sel = selecao_a if self._paises_iguais(equipe_a, pais_j) else selecao_b
         adv_sel = selecao_b if minha_sel == selecao_a else selecao_a
 
         fase = estado.get("fase_atual")
-        total = 3 if fase in ("quartas", "semifinal", "final") else 5
+        # Desde 2019 todos os ties são melhor-de-3: agenda sempre com 3 partidas.
+        total = 3
         alvo = self._vitorias_para_vencer_tie(estado)
 
-        # Titulares
-        s1_j = minha_sel.convocados[0]
-        s2_j = minha_sel.convocados[1]
-        s1_a = adv_sel.convocados[0]
-        s2_a = adv_sel.convocados[1]
-
-        agenda = []
-        if total == 3:
-            agenda = [
-                ("simples", s2_j, s2_a),
-                ("simples", s1_j, s1_a),
-                ("duplas", None, None),
-            ]
-        else:
-            agenda = [
-                ("simples", s2_j, s2_a),
-                ("simples", s1_j, s1_a),
-                ("duplas", None, None),
-                ("simples", s1_j, s2_a),
-                ("simples", s2_j, s1_a),
-            ]
+        s1_j, s2_j = minha_sel.convocados[0], minha_sel.convocados[1]
+        s1_a, s2_a = adv_sel.convocados[0], adv_sel.convocados[1]
+        agenda = self._criar_agenda_tie(total, s1_j, s2_j, s1_a, s2_a)
 
         while estado["partida_atual"] < total and not confronto.get("vencedor"):
             idx = estado["partida_atual"]

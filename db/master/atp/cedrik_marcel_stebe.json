@@ -2,24 +2,33 @@
   "nome": "Cedrik Marcel Stebe",
   "nacionalidade": "[DE] Alemanha",
   "idade": 20,
-  "overall": 77,
+  "overall": 60,
   "pontos": 154,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 55,
+    "segundo_saque": 54,
+    "retorno": 59,
     "forehand": 65,
     "backhand": 57,
-    "topspin": 55,
     "voleio": 65,
-    "slice": 62,
-    "movimento": 61,
+    "smash": 63,
     "lob": 67,
+    "topspin": 55,
+    "slice": 62,
     "winner": 61,
-    "fisico": 60,
+    "velocidade": 60,
+    "aceleracao": 57,
+    "resistencia": 60,
+    "forca": 60,
+    "agilidade": 60,
     "duplas": 60
   },
   "id": 2278,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 59,
+    "compostura": 42,
     "agressividade": 46,
     "leitura_de_jogo": 42,
     "determinacao": 45
@@ -39,5 +48,10 @@
   "peso": 84,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

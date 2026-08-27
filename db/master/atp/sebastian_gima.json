@@ -2,24 +2,33 @@
   "nome": "Sebastian Gima",
   "nacionalidade": "[RO]",
   "idade": 23,
-  "overall": 74,
+  "overall": 51,
   "pontos": 68,
   "atributos": {
-    "saque": 54,
+    "vel_saque": 54,
+    "pre_saque": 51,
+    "segundo_saque": 54,
+    "retorno": 44,
     "forehand": 50,
     "backhand": 40,
-    "topspin": 51,
     "voleio": 55,
-    "slice": 53,
-    "movimento": 45,
+    "smash": 55,
     "lob": 47,
+    "topspin": 51,
+    "slice": 53,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 601,
   "atributos_psicologicos": {
-    "concentracao": 36,
+    "clutch": 36,
+    "consistencia": 71,
+    "compostura": 38,
     "agressividade": 34,
     "leitura_de_jogo": 42,
     "determinacao": 44
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

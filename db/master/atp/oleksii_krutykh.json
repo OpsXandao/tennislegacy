@@ -2,24 +2,33 @@
   "nome": "Oleksii Krutykh",
   "nacionalidade": "[UA]",
   "idade": 25,
-  "overall": 74,
+  "overall": 50,
   "pontos": 67,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 47,
+    "segundo_saque": 47,
+    "retorno": 50,
     "forehand": 44,
     "backhand": 54,
-    "topspin": 49,
     "voleio": 41,
-    "slice": 41,
-    "movimento": 51,
+    "smash": 47,
     "lob": 40,
+    "topspin": 49,
+    "slice": 41,
     "winner": 44,
-    "fisico": 60,
+    "velocidade": 54,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 609,
   "atributos_psicologicos": {
-    "concentracao": 32,
+    "clutch": 32,
+    "consistencia": 61,
+    "compostura": 31,
     "agressividade": 44,
     "leitura_de_jogo": 46,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -1,20 +1,29 @@
 {
-  "overall": 78,
+  "overall": 70,
   "atributos": {
-    "saque": 70,
+    "vel_saque": 70,
+    "pre_saque": 70,
+    "segundo_saque": 71,
+    "retorno": 70,
     "forehand": 70,
     "backhand": 70,
-    "topspin": 70,
     "voleio": 70,
-    "slice": 70,
-    "movimento": 70,
+    "smash": 70,
     "lob": 70,
-    "fisico": 70,
+    "topspin": 70,
+    "slice": 70,
     "winner": 70,
+    "velocidade": 70,
+    "aceleracao": 65,
+    "resistencia": 70,
+    "forca": 70,
+    "agilidade": 70,
     "duplas": 60
   },
   "atributos_psicologicos": {
-    "concentracao": 70,
+    "clutch": 70,
+    "consistencia": 35,
+    "compostura": 70,
     "agressividade": 70,
     "leitura_de_jogo": 70,
     "determinacao": 70
@@ -47,5 +56,10 @@
   "peso": 62,
   "mao_dominante": "Destra",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

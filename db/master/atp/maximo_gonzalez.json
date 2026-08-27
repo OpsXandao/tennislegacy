@@ -2,24 +2,33 @@
   "nome": "Maximo Gonzalez",
   "nacionalidade": "[RU] Rússia",
   "idade": 25,
-  "overall": 89,
+  "overall": 88,
   "pontos": 2160,
   "id": 65320,
   "atributos": {
-    "saque": 90,
+    "vel_saque": 90,
+    "pre_saque": 89,
+    "segundo_saque": 78,
+    "retorno": 87,
     "forehand": 82,
     "backhand": 82,
-    "topspin": 82,
     "voleio": 91,
-    "slice": 94,
-    "movimento": 93,
+    "smash": 91,
     "lob": 93,
-    "fisico": 91,
+    "topspin": 82,
+    "slice": 94,
     "winner": 87,
+    "velocidade": 92,
+    "aceleracao": 84,
+    "resistencia": 91,
+    "forca": 86,
+    "agilidade": 92,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 62,
+    "compostura": 45,
     "agressividade": 43,
     "leitura_de_jogo": 63,
     "determinacao": 53
@@ -42,5 +51,10 @@
   "reves": "Uma mão",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2160,
-  "rank_duplas": 36
+  "rank_duplas": 36,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

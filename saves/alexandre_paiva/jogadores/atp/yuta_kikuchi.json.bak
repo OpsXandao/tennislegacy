@@ -1,0 +1,86 @@
+{
+  "nome": "Yuta Kikuchi",
+  "nacionalidade": "[JP]",
+  "pontos": 46,
+  "pontos_duplas": 0,
+  "pontos_ranking": 46,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 53,
+  "energia": 75,
+  "fadiga": 3,
+  "moral": 70,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 49,
+    "pre_saque": 49,
+    "segundo_saque": 52,
+    "retorno": 51,
+    "forehand": 55,
+    "backhand": 53,
+    "voleio": 51,
+    "smash": 53,
+    "lob": 43,
+    "topspin": 43,
+    "slice": 49,
+    "winner": 48,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 53,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 41,
+    "consistencia": 67,
+    "compostura": 42,
+    "agressividade": 38,
+    "leitura_de_jogo": 37,
+    "determinacao": 46
+  },
+  "historico_torneios": [],
+  "historico_partidas": [
+    {
+      "ano": 2026,
+      "semana": 1,
+      "torneio": "Hong Kong Open",
+      "fase": "oitavas",
+      "adversario": "Alexandre Paiva",
+      "placar": "Alexandre Paiva 2 x 0 Yuta Kikuchi",
+      "resultado": "D"
+    }
+  ],
+  "pontos_detalhados": [
+    {
+      "pontos": 46,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {},
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 26,
+  "id": 731,
+  "pico_carreira": 699,
+  "altura": 173,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  },
+  "ranking_pos": 707
+}

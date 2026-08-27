@@ -3,6 +3,7 @@ import unittest
 from unittest.mock import patch
 
 from src.duplas import buscar_parceiros_disponiveis, fundir_dupla
+from src.services.doubles_realism_service import availability_status, combined_rank, doubles_match_format, partnership_profile
 from src.torneio_core import Torneio
 
 
@@ -50,6 +51,30 @@ class DuplasTests(unittest.TestCase):
         self.assertEqual(parceiros[0]["nome"], "Caio Lima")
         self.assertEqual(parceiros[1]["nome"], "Bruno Costa")
         self.assertEqual(parceiros[0]["_vinculo"]["partidas"], 8)
+
+    def test_regras_realistas_duplas_calculam_ranking_disponibilidade_e_formato(self):
+        jogador = {"nome": "Alexandre", "overall": 70, "atributos": {"duplas": 72, "voleio": 68, "saque": 70}}
+        parceiro = {"nome": "Bruno", "overall": 74, "energia": 80, "fadiga": 20, "atributos": {"duplas": 82, "voleio": 84, "saque": 76}}
+        vinculo = {"partidas": 12, "vitorias": 8}
+
+        self.assertEqual(combined_rank(140, 62), 202)
+        perfil = partnership_profile(jogador, parceiro, vinculo)
+        disponibilidade = availability_status(jogador, parceiro, "ATP 250", parceiro_rank_simples=80, vinculo=vinculo)
+        formato = doubles_match_format("ATP 250")
+
+        self.assertEqual(perfil["status"], "recorrente")
+        self.assertEqual(disponibilidade["status"], "alta")
+        self.assertTrue(formato["no_ad"])
+        self.assertTrue(formato["match_tiebreak"])
+
+    def test_top_simples_sem_vinculo_tem_baixa_disponibilidade_para_atp_250(self):
+        jogador = {"nome": "Alexandre", "overall": 70, "atributos": {"duplas": 70}}
+        parceiro = {"nome": "Top", "overall": 90, "energia": 90, "fadiga": 10, "atributos": {"duplas": 65}}
+
+        disponibilidade = availability_status(jogador, parceiro, "ATP 250", parceiro_rank_simples=8)
+
+        self.assertEqual(disponibilidade["status"], "baixa")
+        self.assertEqual(disponibilidade["motivo"], "prioriza_simples")
 
     def test_distribuicao_pontos_duplas_nao_duplica_vinculos_humanos(self):
         class RankingFake:

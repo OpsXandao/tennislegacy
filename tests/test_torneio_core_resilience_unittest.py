@@ -36,6 +36,12 @@ class TorneioCoreResilienceTests(unittest.TestCase):
         self.assertEqual(estado["agenda_dia"], {})
         self.assertEqual(estado["entry_status"], {})
 
+    def test_superficie_expoe_quadra_do_tournament_data(self):
+        torneio = Torneio.__new__(Torneio)
+        torneio.tournament_data = {"quadra": "saibro"}
+
+        self.assertEqual(torneio.superficie, "saibro")
+
     def test_atualizar_fase_ignora_chave_vazia(self):
         torneio = Torneio.__new__(Torneio)
         estado = {

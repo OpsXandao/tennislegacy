@@ -15,8 +15,38 @@ def obter_proximos(session: Session = Depends(obter_sessao_ativa)):
 
 
 @router.get("/noticias")
+def _estruturar_noticia(texto: str, idx: int, semana: int) -> dict:
+    titulo = texto.split(":", 1)[0] if ":" in texto else texto.split("!", 1)[0]
+    tipo = "mundo"
+    upper = texto.upper()
+    if "CAMPE" in upper or "TÍTULO" in upper or "TITULO" in upper:
+        tipo = "titulo"
+    elif "SURPRESA" in upper:
+        tipo = "zebra"
+    elif "RANKING" in upper or "TOP" in upper or "MELHORES" in upper:
+        tipo = "ranking"
+    elif "MERCADO" in upper or "INVESTIDORES" in upper:
+        tipo = "mercado"
+    return {
+        "id": f"news-{semana}-{idx}",
+        "tipo": tipo,
+        "titulo": titulo.strip().upper()[:80],
+        "subtitulo": texto,
+        "impacto": "alto" if tipo in {"titulo", "zebra"} else "medio",
+        "semana": semana,
+        "prioridade": idx,
+        "texto": texto,
+    }
+
+
+@router.get("/noticias")
 def obter_noticias(session: Session = Depends(obter_sessao_ativa)):
-    return {"noticias": mundo_service.obter_noticias(session)}
+    temporada = carregar_temporada_atual(session.nome_save_ativo)
+    noticias = mundo_service.obter_noticias(session)
+    return {
+        "noticias": noticias,
+        "feed": [_estruturar_noticia(texto, idx, temporada["semana"]) for idx, texto in enumerate(noticias)],
+    }
 
 
 @router.get("/torneio/{nome}")

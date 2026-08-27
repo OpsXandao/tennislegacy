@@ -2,24 +2,33 @@
   "nome": "Maxim Mrva",
   "nacionalidade": "[CZ]",
   "idade": 18,
-  "overall": 77,
+  "overall": 52,
   "pontos": 154,
   "atributos": {
-    "saque": 49,
+    "vel_saque": 50,
+    "pre_saque": 50,
+    "segundo_saque": 50,
+    "retorno": 52,
     "forehand": 47,
     "backhand": 56,
-    "topspin": 51,
     "voleio": 45,
-    "slice": 51,
-    "movimento": 49,
+    "smash": 50,
     "lob": 50,
+    "topspin": 51,
+    "slice": 51,
     "winner": 57,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 355,
   "atributos_psicologicos": {
-    "concentracao": 48,
+    "clutch": 48,
+    "consistencia": 72,
+    "compostura": 45,
     "agressividade": 33,
     "leitura_de_jogo": 38,
     "determinacao": 39
@@ -45,5 +54,10 @@
   "peso": 66,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

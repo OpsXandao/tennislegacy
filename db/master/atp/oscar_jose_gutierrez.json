@@ -2,24 +2,33 @@
   "nome": "Oscar Jose Gutierrez",
   "nacionalidade": "[ES]",
   "idade": 32,
-  "overall": 72,
+  "overall": 49,
   "pontos": 35,
   "atributos": {
-    "saque": 49,
+    "vel_saque": 50,
+    "pre_saque": 49,
+    "segundo_saque": 50,
+    "retorno": 47,
     "forehand": 48,
     "backhand": 54,
-    "topspin": 43,
     "voleio": 45,
-    "slice": 44,
-    "movimento": 40,
+    "smash": 49,
     "lob": 40,
+    "topspin": 43,
+    "slice": 44,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 831,
   "atributos_psicologicos": {
-    "concentracao": 37,
+    "clutch": 37,
+    "consistencia": 63,
+    "compostura": 37,
     "agressividade": 42,
     "leitura_de_jogo": 44,
     "determinacao": 39
@@ -45,5 +54,10 @@
   "peso": 72,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

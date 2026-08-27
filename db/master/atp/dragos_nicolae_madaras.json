@@ -2,24 +2,33 @@
   "nome": "Dragos Nicolae Madaras",
   "nacionalidade": "[SE]",
   "idade": 28,
-  "overall": 74,
+  "overall": 53,
   "pontos": 65,
   "atributos": {
-    "saque": 49,
+    "vel_saque": 50,
+    "pre_saque": 49,
+    "segundo_saque": 55,
+    "retorno": 50,
     "forehand": 60,
     "backhand": 54,
-    "topspin": 57,
     "voleio": 45,
-    "slice": 47,
-    "movimento": 46,
+    "smash": 51,
     "lob": 59,
+    "topspin": 57,
+    "slice": 47,
     "winner": 48,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 617,
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 61,
+    "compostura": 46,
     "agressividade": 44,
     "leitura_de_jogo": 37,
     "determinacao": 54
@@ -45,5 +54,10 @@
   "peso": 70,
   "mao_dominante": "Canhoto",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

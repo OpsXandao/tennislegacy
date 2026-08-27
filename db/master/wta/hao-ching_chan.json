@@ -2,24 +2,33 @@
   "nome": "Hao-ching Chan",
   "nacionalidade": "[TW] TWN",
   "idade": 29,
-  "overall": 89,
+  "overall": 88,
   "pontos": 2032,
   "id": 47301,
   "atributos": {
-    "saque": 89,
+    "vel_saque": 90,
+    "pre_saque": 87,
+    "segundo_saque": 75,
+    "retorno": 85,
     "forehand": 82,
     "backhand": 90,
-    "topspin": 91,
     "voleio": 96,
-    "slice": 81,
-    "movimento": 82,
+    "smash": 94,
     "lob": 81,
-    "fisico": 97,
+    "topspin": 91,
+    "slice": 81,
     "winner": 85,
+    "velocidade": 87,
+    "aceleracao": 80,
+    "resistencia": 97,
+    "forca": 91,
+    "agilidade": 85,
     "duplas": 97
   },
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 39,
+    "compostura": 43,
     "agressividade": 66,
     "leitura_de_jogo": 64,
     "determinacao": 44
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2032,
-  "rank_duplas": 36
+  "rank_duplas": 36,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

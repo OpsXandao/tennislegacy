@@ -2,24 +2,33 @@
   "nome": "Lachlan James Mcfadzean",
   "nacionalidade": "[AU]",
   "idade": 19,
-  "overall": 69,
+  "overall": 51,
   "pontos": 8,
   "atributos": {
-    "saque": 45,
+    "vel_saque": 47,
+    "pre_saque": 47,
+    "segundo_saque": 52,
+    "retorno": 52,
     "forehand": 40,
     "backhand": 51,
-    "topspin": 42,
     "voleio": 40,
-    "slice": 53,
-    "movimento": 54,
+    "smash": 48,
     "lob": 51,
+    "topspin": 42,
+    "slice": 53,
     "winner": 55,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 1216,
   "atributos_psicologicos": {
-    "concentracao": 44,
+    "clutch": 44,
+    "consistencia": 71,
+    "compostura": 45,
     "agressividade": 34,
     "leitura_de_jogo": 49,
     "determinacao": 50
@@ -45,5 +54,10 @@
   "peso": 79,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

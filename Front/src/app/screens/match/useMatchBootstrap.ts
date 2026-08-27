@@ -65,9 +65,10 @@ export function useMatchBootstrap({
       if (ativa.adversario) applyAdversario(ativa.adversario)
       if (ativa.placar) {
         aplicar(ativa.placar)
-      } else {
+      } else if (!ativa.encerrado) {
         setFase('aguardando')
       }
+      // se encerrado sem placar, deixa o fluxo normal de boot decidir
       return true
     } catch {
       return false
@@ -79,7 +80,11 @@ export function useMatchBootstrap({
 
     api.partida.ativa()
       .then((response) => {
-        if (!ativo || !response?.partida_id) return
+        if (!ativo) return
+        if (!response?.partida_id) {
+          setFase('setup')
+          return
+        }
         setInternalPartidaId(response.partida_id)
         setPartidaId(response.partida_id)
         setModo(modoAcompanhamentoDaApi(response.config.modo))

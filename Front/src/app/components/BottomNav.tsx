@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router'
-import { CalendarDays, TrendingUp, Home, User, Dumbbell } from 'lucide-react'
+import { CalendarDays, TrendingUp, Home, Trophy, LayoutGrid } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 
 function NavBtn({
@@ -51,14 +51,14 @@ function NavBtn({
 }
 
 const NAV = [
-  { icon: CalendarDays, label: 'TEMPORADA', route: '/calendar'  },
+  { icon: CalendarDays, label: 'CIRCUITO',  route: '/calendar'  },
   { icon: TrendingUp,   label: 'RANKING',   route: '/rankings'  },
   { icon: Home,         label: 'HUB',       route: '/hub', main: true },
-  { icon: User,         label: 'JOGADOR',   route: '/player'   },
-  { icon: Dumbbell,     label: 'TREINAR',   route: '/training'  },
+  { icon: Trophy,       label: 'CARREIRA',  route: '/player'    },
+  { icon: LayoutGrid,   label: 'GESTÃO',    route: '/gestao'    },
 ]
 
-export function BottomNav() {
+export function BottomNav({ unreadEmails = 0 }: { unreadEmails?: number }) {
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const [hoverMain, setHoverMain] = useState(false)
@@ -83,7 +83,7 @@ export function BottomNav() {
       )}
       <div className="relative flex items-end justify-around px-2 pt-2 pb-4">
         {NAV.map((item) => {
-          const active = pathname === item.route
+          const isActive = pathname === item.route || pathname.startsWith(item.route + '/')
 
           if (item.main) {
             return (
@@ -96,15 +96,15 @@ export function BottomNav() {
                 aria-label="HUB"
               >
                 <div
-                  className="w-14 h-14 flex items-center justify-center border-2 transition-all"
+                  className="relative w-14 h-14 flex items-center justify-center border-2 transition-all"
                   style={{
                     borderColor: 'var(--neon-green)',
-                    background: active
+                    background: isActive
                       ? 'var(--neon-green)'
                       : hoverMain
                         ? 'color-mix(in srgb, var(--neon-green) 14%, var(--surface-card))'
                         : 'var(--surface-card)',
-                    boxShadow: active
+                    boxShadow: isActive
                       ? `0 0 0 2px var(--bg-dark), var(--glow-green)`
                       : hoverMain
                         ? `0 0 0 2px var(--bg-dark), var(--glow-green-sm)`
@@ -113,10 +113,15 @@ export function BottomNav() {
                 >
                   <item.icon
                     size={22}
-                    style={{ color: active ? 'var(--bg-dark)' : 'var(--neon-green)' }}
+                    style={{ color: isActive ? 'var(--bg-dark)' : 'var(--neon-green)' }}
                   />
+                  {unreadEmails > 0 && (
+                    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-neon-pink arcade-font text-[8px] text-white">
+                      {unreadEmails > 9 ? '9+' : unreadEmails}
+                    </span>
+                  )}
                 </div>
-                {active && (
+                {isActive && (
                   <div
                     className="mt-1 w-2 h-2"
                     style={{ background: 'var(--neon-green)', boxShadow: 'var(--glow-green-sm)' }}
@@ -127,7 +132,7 @@ export function BottomNav() {
           }
 
           return (
-            <NavBtn key={item.route} item={item} active={active} onClick={() => navigate(item.route)} />
+            <NavBtn key={item.route} item={item} active={isActive} onClick={() => navigate(item.route)} />
           )
         })}
       </div>

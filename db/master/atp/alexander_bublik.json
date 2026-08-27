@@ -2,24 +2,33 @@
   "nome": "Alexander Bublik",
   "nacionalidade": "[KZ]",
   "idade": 28,
-  "overall": 90,
+  "overall": 72,
   "pontos": 3405,
   "atributos": {
-    "saque": 78,
+    "vel_saque": 75,
+    "pre_saque": 77,
+    "segundo_saque": 74,
+    "retorno": 75,
     "forehand": 81,
     "backhand": 75,
-    "topspin": 78,
     "voleio": 77,
-    "slice": 79,
-    "movimento": 74,
+    "smash": 71,
     "lob": 77,
+    "topspin": 78,
+    "slice": 79,
     "winner": 81,
-    "fisico": 60,
+    "velocidade": 68,
+    "aceleracao": 64,
+    "resistencia": 60,
+    "forca": 68,
+    "agilidade": 71,
     "duplas": 60
   },
   "id": 51,
   "atributos_psicologicos": {
-    "concentracao": 79,
+    "clutch": 79,
+    "consistencia": 42,
+    "compostura": 77,
     "agressividade": 63,
     "leitura_de_jogo": 79,
     "determinacao": 75
@@ -66,5 +75,10 @@
   "peso": 92,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Hady Habib",
   "nacionalidade": "[LB]",
   "idade": 27,
-  "overall": 77,
+  "overall": 56,
   "pontos": 143,
   "atributos": {
-    "saque": 54,
+    "vel_saque": 54,
+    "pre_saque": 53,
+    "segundo_saque": 56,
+    "retorno": 54,
     "forehand": 61,
     "backhand": 54,
-    "topspin": 47,
     "voleio": 51,
-    "slice": 53,
-    "movimento": 58,
+    "smash": 55,
     "lob": 61,
+    "topspin": 47,
+    "slice": 53,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 56,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 57,
     "duplas": 60
   },
   "id": 367,
   "atributos_psicologicos": {
-    "concentracao": 54,
+    "clutch": 54,
+    "consistencia": 50,
+    "compostura": 53,
     "agressividade": 55,
     "leitura_de_jogo": 42,
     "determinacao": 52
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

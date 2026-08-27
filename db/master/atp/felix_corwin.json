@@ -2,24 +2,33 @@
   "nome": "Felix Corwin",
   "nacionalidade": "[US]",
   "idade": 29,
-  "overall": 73,
+  "overall": 55,
   "pontos": 56,
   "atributos": {
-    "saque": 54,
+    "vel_saque": 54,
+    "pre_saque": 52,
+    "segundo_saque": 50,
+    "retorno": 52,
     "forehand": 57,
     "backhand": 53,
-    "topspin": 58,
     "voleio": 61,
-    "slice": 44,
-    "movimento": 57,
+    "smash": 60,
     "lob": 56,
+    "topspin": 58,
+    "slice": 44,
     "winner": 48,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 668,
   "atributos_psicologicos": {
-    "concentracao": 34,
+    "clutch": 34,
+    "consistencia": 56,
+    "compostura": 33,
     "agressividade": 49,
     "leitura_de_jogo": 56,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

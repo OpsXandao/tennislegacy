@@ -2,24 +2,33 @@
   "nome": "Marcelo Demoliner",
   "nacionalidade": "[RU] Rússia",
   "idade": 33,
-  "overall": 86,
+  "overall": 84,
   "pontos": 1001,
   "id": 19027,
   "atributos": {
-    "saque": 82,
+    "vel_saque": 82,
+    "pre_saque": 82,
+    "segundo_saque": 69,
+    "retorno": 83,
     "forehand": 78,
     "backhand": 78,
-    "topspin": 90,
     "voleio": 90,
-    "slice": 88,
-    "movimento": 91,
+    "smash": 88,
     "lob": 87,
-    "fisico": 87,
+    "topspin": 90,
+    "slice": 88,
     "winner": 87,
+    "velocidade": 89,
+    "aceleracao": 81,
+    "resistencia": 87,
+    "forca": 82,
+    "agilidade": 89,
     "duplas": 93
   },
   "atributos_psicologicos": {
-    "concentracao": 57,
+    "clutch": 57,
+    "consistencia": 54,
+    "compostura": 51,
     "agressividade": 51,
     "leitura_de_jogo": 60,
     "determinacao": 40
@@ -42,5 +51,10 @@
   "reves": "Uma mão",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1001,
-  "rank_duplas": 90
+  "rank_duplas": 90,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

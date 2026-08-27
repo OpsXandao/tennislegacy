@@ -2,24 +2,33 @@
   "nome": "Frances Tiafoe",
   "nacionalidade": "[US]",
   "idade": 28,
-  "overall": 86,
+  "overall": 76,
   "pontos": 1590,
   "atributos": {
-    "saque": 82,
+    "vel_saque": 78,
+    "pre_saque": 81,
+    "segundo_saque": 73,
+    "retorno": 82,
     "forehand": 84,
     "backhand": 82,
-    "topspin": 85,
     "voleio": 82,
-    "slice": 77,
-    "movimento": 86,
+    "smash": 73,
     "lob": 77,
+    "topspin": 85,
+    "slice": 77,
     "winner": 86,
-    "fisico": 60,
+    "velocidade": 76,
+    "aceleracao": 70,
+    "resistencia": 60,
+    "forca": 71,
+    "agilidade": 79,
     "duplas": 60
   },
   "id": 15,
   "atributos_psicologicos": {
-    "concentracao": 85,
+    "clutch": 85,
+    "consistencia": 36,
+    "compostura": 78,
     "agressividade": 69,
     "leitura_de_jogo": 77,
     "determinacao": 66
@@ -66,5 +75,10 @@
   "peso": 86,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

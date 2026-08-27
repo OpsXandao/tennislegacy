@@ -2,24 +2,33 @@
   "nome": "Alessandro Battiston",
   "nacionalidade": "[IT]",
   "idade": 19,
-  "overall": 69,
+  "overall": 51,
   "pontos": 5,
   "atributos": {
-    "saque": 42,
+    "vel_saque": 44,
+    "pre_saque": 43,
+    "segundo_saque": 48,
+    "retorno": 47,
     "forehand": 61,
     "backhand": 48,
-    "topspin": 58,
     "voleio": 40,
-    "slice": 42,
-    "movimento": 50,
+    "smash": 47,
     "lob": 48,
+    "topspin": 58,
+    "slice": 42,
     "winner": 45,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 1324,
   "atributos_psicologicos": {
-    "concentracao": 36,
+    "clutch": 36,
+    "consistencia": 57,
+    "compostura": 37,
     "agressividade": 48,
     "leitura_de_jogo": 42,
     "determinacao": 42
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -1,20 +1,10 @@
 import { useNavigate } from 'react-router'
-import { ArrowLeft } from 'lucide-react'
-import { NeonButton } from '../../../components/NeonButton'
-import { FutCard } from '../../../components/FutCard'
-import {
-  CircularGauge,
-  TacticalPackageEditor,
-} from '../components'
+import { TacticalPackageEditor } from '../components'
 import { OpponentScoutingCard } from '../scouting/OpponentScoutingCard'
 import { ScoutingReportCard } from '../scouting/ScoutingReportCard'
-import {
-  COURT_COLORS,
-  MODOS_VISIVEIS,
-  MODOS_ACOMP,
-  alpha,
-  formatarNacionalidade,
-} from '../model'
+import { ExperienceModePanel, MatchBriefingPanel, MatchupCards, SetupHeader, StickyStartBar } from './SetupViewSections'
+import { MatchAnalysisCard } from './MatchAnalysisCard'
+import { gerarBriefingNarrativo, gerarContextoPartida } from '../matchNarrative'
 import type {
   PartidaScout,
 } from '../../../../types'
@@ -29,7 +19,9 @@ import type {
 } from '../types'
 
 interface SetupViewProps {
+  themeClass: string
   faseTorneio: string
+  nomeTorneio?: string
   superficie: string
   surface: string
   jogador: JogadorState | null
@@ -78,7 +70,9 @@ interface SetupViewProps {
 }
 
 export function SetupView({
+  themeClass,
   faseTorneio,
+  nomeTorneio,
   superficie,
   surface,
   jogador,
@@ -127,287 +121,87 @@ export function SetupView({
 }: SetupViewProps) {
   const navigate = useNavigate()
 
+  const vitorias = scoutRival?.h2h?.vitorias_jogador ?? 0
+  const derrotas = scoutRival?.h2h?.vitorias_adversario ?? 0
+  const contexto = gerarContextoPartida(
+    adversario.nome,
+    rankingAdversario ?? 999,
+    faseTorneio,
+    nomeTorneio ?? '',
+    { vitorias, derrotas, confrontos: vitorias + derrotas },
+  )
+  const briefing = gerarBriefingNarrativo({
+    nomeJogador,
+    nomeAdversario: adversario.nome,
+    superficie,
+    planoExecutivo,
+    reportJogador,
+    scoutRival,
+  })
+
   return (
-    <div className="app-shell min-h-screen flex flex-col bg-[#0a0a0f]">
-      {/* Header Vestiário */}
-      <div className="app-panel p-4 border-b-2 border-neon-green flex items-center justify-between shrink-0 bg-black/40">
-        <div className="flex items-center gap-3">
-          <button onClick={() => navigate('/tournament')} className="text-neon-green hover:scale-110 transition-transform">
-            <ArrowLeft size={22} />
-          </button>
-          <div>
-            <div className="arcade-font text-[10px] text-neon-green tracking-[0.2em]">VESTIÁRIO</div>
-            <div className="arcade-font text-[12px] text-white mt-0.5">
-              {faseTorneio ? faseTorneio.replaceAll('_', ' ').toUpperCase() : 'PARTIDA'}
-            </div>
-          </div>
-        </div>
-        {superficie && (
-          <div className="flex flex-col items-end">
-            <div className="arcade-font text-[8px] text-[#555] mb-1">QUADRA</div>
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-6 border border-white/20" style={{ background: COURT_COLORS[surface as keyof typeof COURT_COLORS] }} />
-              <span className="arcade-font text-[10px] text-white">{superficie.toUpperCase()}</span>
-            </div>
-          </div>
-        )}
-      </div>
+    <div className={`app-shell match-theme-screen ${themeClass} min-h-screen flex flex-col`}>
+      <SetupHeader faseTorneio={faseTorneio} superficie={superficie} surface={surface} onBack={() => navigate('/tournament')} />
 
       <div className="flex-1 overflow-y-auto p-4 space-y-6 pb-32">
-        
-        {/* Cartas FIFA (Pré-Match) */}
-        <div className="flex flex-col lg:flex-row gap-6 items-center justify-center py-4 bg-gradient-to-b from-[#0a0a0f] to-transparent">
-          <div className="flex flex-col items-center gap-2">
-            <div className="arcade-font text-[10px] text-neon-green tracking-widest uppercase mb-2">SEU JOGADOR</div>
-            <FutCard
-              nome={jogador?.nome ?? 'VOCÊ'}
-              nacionalidade={jogador?.nacionalidade ?? ''}
-              overall={overallCardJogador}
-              tour={(jogador?.tour ?? 'atp').toLowerCase() as 'atp' | 'wta'}
-              ranking={rankingJogador ?? 0}
-              nivel={jogador?.nivel ?? 1}
-              atributos={jogador?.atributos ?? {}}
-              atributosPsicologicos={jogador?.atributos_psicologicos ?? {}}
-              cartaTipo={jogador?.carta?.tipo}
-              cartaRaridade={jogador?.carta?.raridade}
-              cartaCor={jogador?.carta?.cor_primaria}
-              overallBoosted={jogador?.carta?.overall_boosted}
-              atributosBoosted={jogador?.carta?.atributos_boosted}
-            />
-          </div>
+        <MatchBriefingPanel contexto={contexto} briefing={briefing} nomeTorneio={nomeTorneio} />
 
-          <div className="flex items-center justify-center">
-            <div className="arcade-font text-[24px] text-white/20 italic select-none">VS</div>
-          </div>
+        <MatchupCards
+          jogador={jogador}
+          adversario={adversario}
+          overallCardJogador={overallCardJogador}
+          rankingJogador={rankingJogador}
+          overallCardAdversario={overallCardAdversario}
+          rankingAdversario={rankingAdversario}
+        />
 
-          <div className="flex flex-col items-center gap-2">
-            <div className="arcade-font text-[10px] text-[#ff4466] tracking-widest uppercase mb-2">ADVERSÁRIO</div>
-            <FutCard
-              nome={adversario.nome}
-              nacionalidade={adversario.nacionalidade ?? ''}
-              overall={overallCardAdversario}
-              tour={(jogador?.tour ?? 'atp').toLowerCase() as 'atp' | 'wta'}
-              ranking={rankingAdversario ?? 0}
-              nivel={1} // Adversário NPC costuma ser nível 1 ou não mostrado
-              atributos={adversario.atributos ?? {}}
-              atributosPsicologicos={adversario.atributosPsicologicos ?? {}}
-              cartaTipo={adversario.carta?.tipo}
-              cartaRaridade={adversario.carta?.raridade}
-              cartaCor={adversario.carta?.cor_primaria}
-              overallBoosted={adversario.overallBoosted}
-              atributosBoosted={adversario.atributosBoosted}
-            />
-          </div>
-        </div>
-        
         {/* Match Analysis (FM Style) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-1 h-4" style={{ background: corCardRival }} />
-              <span className="arcade-font text-[12px] tracking-widest" style={{ color: corCardRival }}>ANÁLISE DO RIVAL</span>
-            </div>
-            <div className="app-panel border-2 p-4 relative overflow-hidden" style={{ borderColor: alpha(corCardRival, '66') }}>
-              <div className="absolute top-0 right-0 p-2 opacity-5">
-                <div className="text-6xl">🎾</div>
-              </div>
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <div className="arcade-font text-xl text-white mb-1">{adversario.nome}</div>
-                  <div className="arcade-font text-[10px] text-[#d49aac] mb-1">
-                    {formatarNacionalidade(adversario.nacionalidade)}
-                  </div>
-                  <div className="arcade-font text-[11px] text-[#888]">
-                    {rankingAdversario ? `#${rankingAdversario} MUNDIAL` : 'SEM RANKING'}
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="arcade-font text-[10px] mb-1" style={{ color: corCardRival }}>
-                    OVR {overallCardAdversario}
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-3 mb-4">
-                <div className="p-3 border" style={{ background: alpha(corCardRival, '0d'), borderColor: alpha(corCardRival, '33') }}>
-                  <div className="arcade-font text-[10px] tracking-widest mb-1 uppercase" style={{ color: alpha(corCardRival, 'cc') }}>Leitura</div>
-                  <div className="arcade-font text-[12px] text-white leading-relaxed">{leituraRival}</div>
-                </div>
-                <div className="p-3 border" style={{ background: alpha(corCardRival, '0d'), borderColor: alpha(corCardRival, '33') }}>
-                  <div className="mb-2 flex items-center justify-between gap-2">
-                    <div className="arcade-font text-[10px] tracking-widest uppercase" style={{ color: alpha(corCardRival, 'cc') }}>
-                      {abaRival === 'registros' ? 'Últimos Registros' : 'História'}
-                    </div>
-                    <div className="flex gap-1">
-                      <button
-                        onClick={() => setAbaRival('registros')}
-                        className="border px-2 py-1 arcade-font text-[8px]"
-                        style={{
-                          borderColor: abaRival === 'registros' ? corCardRival : alpha(corCardRival, '55'),
-                          color: abaRival === 'registros' ? '#12060b' : '#ff9bb4',
-                          background: abaRival === 'registros' ? corCardRival : 'transparent',
-                        }}
-                      >
-                        REGISTROS
-                      </button>
-                      <button
-                        onClick={() => setAbaRival('historia')}
-                        className="border px-2 py-1 arcade-font text-[8px]"
-                        style={{
-                          borderColor: abaRival === 'historia' ? 'var(--neon-yellow)' : '#6c5f2b',
-                          color: abaRival === 'historia' ? '#1b1803' : '#ffe27a',
-                          background: abaRival === 'historia' ? 'var(--neon-yellow)' : 'transparent',
-                        }}
-                      >
-                        TÍTULOS
-                      </button>
-                    </div>
-                  </div>
-                  {abaRival === 'registros' ? (
-                    historicoRival.length > 0 ? (
-                      <div className="space-y-1.5">
-                        {historicoRival.map(item => (
-                          <div key={item} className="arcade-font text-[10px] text-[#ffd7e2] leading-relaxed">
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <div className="arcade-font text-[10px] text-[#c18a9d] leading-relaxed">
-                        Sem histórico recente salvo para este adversário.
-                      </div>
-                    )
-                  ) : titulosRival.length > 0 ? (
-                    <div className="space-y-1.5">
-                      {titulosRival.map(item => (
-                        <div key={item} className="arcade-font text-[10px] text-[#fff0a6] leading-relaxed">
-                          {item}
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="arcade-font text-[10px] text-[#c9bc7c] leading-relaxed">
-                      Nenhum título registrado para este adversário.
-                    </div>
-                  )}
-                  <button
-                    onClick={() => navigate(`/player/${(jogador?.tour ?? 'atp').toLowerCase()}/${encodeURIComponent(adversario.nome)}`)}
-                    className="mt-3 arcade-font text-[9px] uppercase underline underline-offset-4"
-                    style={{ color: corCardRival }}
-                  >
-                    Ver dossiê completo
-                  </button>
-                </div>
-              </div>
-              <div className="flex items-center justify-end gap-6 mb-4">
-                <CircularGauge label="ENERGIA" value={energiaAdversarioAoVivo} color={corCardRival} />
-                <CircularGauge label="FADIGA" value={fadigaAdversarioAoVivo} color="var(--neon-yellow)" track="#26131b" />
-              </div>
-              <OpponentScoutingCard
-                adv={adversario}
-                scout={scoutRival}
-                accent={corCardRival}
-                superficie={superficie}
-              />
-            </div>
-          </div>
+          <MatchAnalysisCard
+            title="ANÁLISE DO RIVAL"
+            accentColor={corCardRival}
+            nome={adversario.nome}
+            nacionalidade={adversario.nacionalidade}
+            ranking={rankingAdversario}
+            overall={overallCardAdversario}
+            leitura={leituraRival}
+            aba={abaRival}
+            setAba={setAbaRival}
+            historico={historicoRival}
+            titulos={titulosRival}
+            historicoTextColor="#ffd7e2"
+            energia={energiaAdversarioAoVivo}
+            fadiga={fadigaAdversarioAoVivo}
+            dossieRoute={`/player/${(jogador?.tour ?? 'atp').toLowerCase()}/${encodeURIComponent(adversario.nome)}`}
+          >
+            <OpponentScoutingCard adv={adversario} scout={scoutRival} accent={corCardRival} superficie={superficie} />
+          </MatchAnalysisCard>
 
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-1 h-4 bg-neon-green" />
-              <span className="arcade-font text-[12px] text-neon-green tracking-widest">SUA CONDIÇÃO</span>
-            </div>
-            <div className="app-panel border-2 border-neon-green/40 p-4 relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-2 opacity-5">
-                <div className="text-6xl">🫀</div>
-              </div>
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <div className="arcade-font text-xl text-white mb-1">{nomeJogador}</div>
-                  <div className="arcade-font text-[10px] text-[#92ffd1] mb-1">
-                    {formatarNacionalidade(jogador?.nacionalidade)}
-                  </div>
-                  <div className="arcade-font text-[11px] text-[#888]">
-                    #{rankingJogador || '---'} · OVR {overallCardJogador} · {inferirEstilo(jogador?.atributos)}
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-3 mb-4">
-                <div className="bg-neon-green/5 border border-neon-green/20 p-3">
-                  <div className="arcade-font text-[10px] text-[#73ffbb] tracking-widest mb-1 uppercase">Leitura</div>
-                  <div className="arcade-font text-[12px] text-white leading-relaxed">{leituraJogador}</div>
-                </div>
-                <div className="bg-neon-green/5 border border-neon-green/20 p-3">
-                  <div className="mb-2 flex items-center justify-between gap-2">
-                    <div className="arcade-font text-[10px] text-[#73ffbb] tracking-widest uppercase">
-                      {abaJogador === 'registros' ? 'Últimos Registros' : 'História'}
-                    </div>
-                    <div className="flex gap-1">
-                      <button
-                        onClick={() => setAbaJogador('registros')}
-                        className="border px-2 py-1 arcade-font text-[8px]"
-                        style={{
-                          borderColor: abaJogador === 'registros' ? 'var(--neon-green)' : '#245843',
-                          color: abaJogador === 'registros' ? '#02120b' : '#9cf6ce',
-                          background: abaJogador === 'registros' ? 'var(--neon-green)' : 'transparent',
-                        }}
-                      >
-                        REGISTROS
-                      </button>
-                      <button
-                        onClick={() => setAbaJogador('historia')}
-                        className="border px-2 py-1 arcade-font text-[8px]"
-                        style={{
-                          borderColor: abaJogador === 'historia' ? 'var(--neon-yellow)' : '#6c5f2b',
-                          color: abaJogador === 'historia' ? '#1b1803' : '#ffe27a',
-                          background: abaJogador === 'historia' ? 'var(--neon-yellow)' : 'transparent',
-                        }}
-                      >
-                        TÍTULOS
-                      </button>
-                    </div>
-                  </div>
-                  {abaJogador === 'registros' ? (
-                    historicoJogador.length > 0 ? (
-                      <div className="space-y-1.5">
-                        {historicoJogador.map(item => (
-                          <div key={item} className="arcade-font text-[10px] text-[#d7fff0] leading-relaxed">
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <div className="arcade-font text-[10px] text-[#8dbda8] leading-relaxed">
-                        Sem histórico recente salvo para o seu jogador.
-                      </div>
-                    )
-                  ) : titulosJogador.length > 0 ? (
-                    <div className="space-y-1.5">
-                      {titulosJogador.map(item => (
-                        <div key={item} className="arcade-font text-[10px] text-[#fff0a6] leading-relaxed">
-                          {item}
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="arcade-font text-[10px] text-[#c9bc7c] leading-relaxed">
-                      Nenhum título registrado para o seu jogador.
-                    </div>
-                  )}
-                </div>
-              </div>
-              <div className="flex items-center justify-end gap-6 mb-4">
-                <CircularGauge label="ENERGIA" value={energiaJogadorAoVivo} color="var(--neon-green)" />
-                <CircularGauge label="FADIGA" value={fadigaJogadorAoVivo} color="var(--neon-yellow)" track="#102319" />
-              </div>
-              <ScoutingReportCard
-                titulo="Scouting Report"
-                overall={overallCardJogador}
-                metrics={{ saque: metricsJogador.saque, fundo: metricsJogador.fundo, mental: metricsJogador.mental }}
-                report={reportJogador}
-                accent="var(--neon-green)"
-              />
-            </div>
-          </div>
+          <MatchAnalysisCard
+            title="SUA CONDIÇÃO"
+            accentColor="var(--neon-green)"
+            nome={nomeJogador}
+            nacionalidade={jogador?.nacionalidade}
+            ranking={rankingJogador}
+            overall={overallCardJogador}
+            infoExtra={`#${rankingJogador || '---'} · OVR ${overallCardJogador} · ${inferirEstilo(jogador?.atributos)}`}
+            leitura={leituraJogador}
+            aba={abaJogador}
+            setAba={setAbaJogador}
+            historico={historicoJogador}
+            titulos={titulosJogador}
+            historicoTextColor="#d7fff0"
+            energia={energiaJogadorAoVivo}
+            fadiga={fadigaJogadorAoVivo}
+          >
+            <ScoutingReportCard
+              titulo="Scouting Report"
+              overall={overallCardJogador}
+              metrics={{ saque: metricsJogador.saque, fundo: metricsJogador.fundo, mental: metricsJogador.mental }}
+              report={reportJogador}
+              accent="var(--neon-green)"
+            />
+          </MatchAnalysisCard>
         </div>
 
         {/* FM TACTICAL PANEL */}
@@ -483,52 +277,16 @@ export function SetupView({
             </div>
           </div>
         </div>
-
-        {/* Modo de Acompanhamento (Compacto) */}
-        <div className="app-panel border border-white/5 p-4">
-          <div className="flex items-center justify-between mb-3">
-            <div className="arcade-font text-[10px] text-[#b7c4d1] tracking-widest uppercase">Velocidade da Experiência</div>
-            <div className="arcade-font text-[10px] text-neon-yellow">{MODOS_ACOMP.find(m => m.valor === modo)?.label}</div>
-          </div>
-          <div className="mb-3 arcade-font text-[10px] text-[#95a7b5] leading-relaxed">
-            Escolha só entre manual, rápida ou simular até o fim.
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            {MODOS_VISIVEIS.map(m => (
-              <button
-                key={m.valor}
-                onClick={() => trocarModoAcompanhamento(m.valor)}
-                className="py-2.5 border arcade-font text-[9px] transition-all"
-                style={{
-                  borderColor: modo === m.valor ? 'var(--neon-green)' : '#1a1a2e',
-                  background: modo === m.valor ? '#00ff8812' : 'transparent',
-                  color: modo === m.valor ? 'var(--neon-green)' : '#c4d1dc',
-                }}
-              >
-                {m.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <ExperienceModePanel modo={modo} trocarModoAcompanhamento={trocarModoAcompanhamento} />
 
       </div>
 
-      {/* Botão de Ação Sticky */}
-      <div className="sticky bottom-0 z-30 p-4 border-t border-white/10 bg-black/80 backdrop-blur-md">
-        {erroEntrada && (
-          <div className="mb-3 border border-[#ff4466] bg-[#22040d] px-3 py-2 arcade-font text-[10px] text-[#ff9bb4]">
-            {erroEntrada.toUpperCase()}
-          </div>
-        )}
-        <NeonButton 
-          variant="green" 
-          className="w-full py-5 text-sm" 
-          onClick={handleIniciar} 
-          blink={simulando}
-        >
-          {simulando ? 'CALCULANDO ESTRATÉGIAS...' : confirmandoEntrada ? 'CONFIRMAR E ENTRAR EM QUADRA' : 'DEFINIR PLANO E JOGAR'}
-        </NeonButton>
-      </div>
+      <StickyStartBar
+        erroEntrada={erroEntrada}
+        handleIniciar={handleIniciar}
+        simulando={simulando}
+        confirmandoEntrada={confirmandoEntrada}
+      />
     </div>
   )
 }

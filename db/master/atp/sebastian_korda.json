@@ -2,24 +2,33 @@
   "nome": "Sebastian Korda",
   "nacionalidade": "[US]",
   "idade": 25,
-  "overall": 85,
+  "overall": 77,
   "pontos": 1220,
   "atributos": {
-    "saque": 86,
+    "vel_saque": 82,
+    "pre_saque": 85,
+    "segundo_saque": 77,
+    "retorno": 84,
     "forehand": 83,
     "backhand": 85,
-    "topspin": 84,
     "voleio": 75,
-    "slice": 85,
-    "movimento": 82,
+    "smash": 70,
     "lob": 82,
+    "topspin": 84,
+    "slice": 85,
     "winner": 86,
-    "fisico": 60,
+    "velocidade": 73,
+    "aceleracao": 68,
+    "resistencia": 60,
+    "forca": 71,
+    "agilidade": 77,
     "duplas": 60
   },
   "id": 23,
   "atributos_psicologicos": {
-    "concentracao": 66,
+    "clutch": 66,
+    "consistencia": 35,
+    "compostura": 67,
     "agressividade": 86,
     "leitura_de_jogo": 62,
     "determinacao": 71
@@ -56,5 +65,10 @@
   "peso": 84,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

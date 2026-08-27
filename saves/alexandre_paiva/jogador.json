@@ -3,31 +3,33 @@
   "idade": 18,
   "nacionalidade": "[BR] Brasil",
   "genero": "masculino",
-  "altura": 195,
-  "peso": 90,
-  "mao_dominante": "Canhoto",
-  "reves": "Duas mãos",
+  "altura": 178,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
   "estilo_jogo": "All-court",
-  "semana": 3,
+  "semana": 4,
   "energia": 100,
-  "ritmo_jogo": 50,
-  "moral": 70,
-  "dinheiro": 90075,
+  "ritmo_jogo": 90,
+  "moral": 92,
+  "continente_atual": "Europa",
+  "dinheiro": 78335,
+  "agenda_inscricoes": {},
   "modalidade_atual": "simples",
   "parceiro_duplas": null,
-  "nivel": 3,
-  "xp": 75,
-  "xp_para_proximo_nivel": 156,
-  "pontos_de_skill": 10,
-  "pico_carreira": 29,
+  "nivel": 5,
+  "xp": 223,
+  "xp_para_proximo_nivel": 281,
+  "pontos_de_skill": 20,
+  "pico_carreira": 28,
   "historico_partidas": [
     {
       "ano": 2026,
       "semana": 1,
       "torneio": "Hong Kong Open",
       "fase": "qualy_2",
-      "adversario": "Toby Martin",
-      "placar": "Alexandre Paiva 2 x 0 Toby Martin",
+      "adversario": "Cezar Gabriel Papoe",
+      "placar": "Alexandre Paiva 2 x 0 Cezar Gabriel Papoe",
       "resultado": "V"
     },
     {
@@ -35,24 +37,6 @@
       "semana": 1,
       "torneio": "Hong Kong Open",
       "fase": "pre_oitavas",
-      "adversario": "Pengyu Lu",
-      "placar": "Alexandre Paiva 2 x 0 Pengyu Lu",
-      "resultado": "V"
-    },
-    {
-      "ano": 2026,
-      "semana": 1,
-      "torneio": "Hong Kong Open",
-      "fase": "oitavas",
-      "adversario": "Yaojie Zeng",
-      "placar": "Alexandre Paiva 2 x 0 Yaojie Zeng",
-      "resultado": "V"
-    },
-    {
-      "ano": 2026,
-      "semana": 1,
-      "torneio": "Hong Kong Open",
-      "fase": "quartas",
       "adversario": "Ye Hongyu",
       "placar": "Alexandre Paiva 2 x 0 Ye Hongyu",
       "resultado": "V"
@@ -61,9 +45,27 @@
       "ano": 2026,
       "semana": 1,
       "torneio": "Hong Kong Open",
+      "fase": "oitavas",
+      "adversario": "Yuta Kikuchi",
+      "placar": "Alexandre Paiva 2 x 0 Yuta Kikuchi",
+      "resultado": "V"
+    },
+    {
+      "ano": 2026,
+      "semana": 1,
+      "torneio": "Hong Kong Open",
+      "fase": "quartas",
+      "adversario": "Titouan Droguet",
+      "placar": "Alexandre Paiva 2 x 0 Titouan Droguet",
+      "resultado": "V"
+    },
+    {
+      "ano": 2026,
+      "semana": 1,
+      "torneio": "Hong Kong Open",
       "fase": "semifinal",
-      "adversario": "Maximo Zeitune",
-      "placar": "Alexandre Paiva 2 x 0 Maximo Zeitune",
+      "adversario": "Tianhui Zhang",
+      "placar": "Alexandre Paiva 2 x 0 Tianhui Zhang",
       "resultado": "V"
     },
     {
@@ -71,8 +73,62 @@
       "semana": 1,
       "torneio": "Hong Kong Open",
       "fase": "final",
-      "adversario": "Akira Santillan",
-      "placar": "Alexandre Paiva 2 x 0 Akira Santillan",
+      "adversario": "Kirill Kivattsev",
+      "placar": "Alexandre Paiva 2 x 0 Kirill Kivattsev",
+      "resultado": "V"
+    },
+    {
+      "ano": 2026,
+      "semana": 1,
+      "torneio": "Hong Kong Open",
+      "fase": "finalizado",
+      "adversario": "Zhe Li",
+      "placar": "Alexandre Paiva 2 x 0 Zhe Li",
+      "resultado": "V"
+    },
+    {
+      "ano": 2026,
+      "semana": 2,
+      "torneio": "Hong Kong Open",
+      "fase": "oitavas",
+      "adversario": "Jack Pinnington Jones",
+      "placar": "Alexandre Paiva 2 x 0 Jack Pinnington Jones",
+      "resultado": "V"
+    },
+    {
+      "ano": 2026,
+      "semana": 2,
+      "torneio": "Hong Kong Open",
+      "fase": "quartas",
+      "adversario": "Fabien Reboul",
+      "placar": "Alexandre Paiva 2 x 1 Fabien Reboul",
+      "resultado": "V"
+    },
+    {
+      "ano": 2026,
+      "semana": 2,
+      "torneio": "Hong Kong Open",
+      "fase": "semifinal",
+      "adversario": "Charles Broom",
+      "placar": "Alexandre Paiva 2 x 0 Charles Broom",
+      "resultado": "V"
+    },
+    {
+      "ano": 2026,
+      "semana": 2,
+      "torneio": "Hong Kong Open",
+      "fase": "final",
+      "adversario": "Sumit Nagal",
+      "placar": "Alexandre Paiva 2 x 0 Sumit Nagal",
+      "resultado": "V"
+    },
+    {
+      "ano": 2026,
+      "semana": 2,
+      "torneio": "Hong Kong Open",
+      "fase": "finalizado",
+      "adversario": "Mattia Bellucci",
+      "placar": "Alexandre Paiva 2 x 0 Mattia Bellucci",
       "resultado": "V"
     }
   ],
@@ -90,6 +146,19 @@
       "modalidade": "simples",
       "expirado": false,
       "obrigatorio": false
+    },
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 2,
+      "ano": 2026,
+      "fase": "finalizado",
+      "fase_alcancada": "finalizado",
+      "pontos": 0,
+      "premio": 0,
+      "modalidade": "simples",
+      "expirado": false
     }
   ],
   "historico_ranking": [
@@ -102,25 +171,19 @@
     {
       "semana": 3,
       "ano": 2026,
-      "posicao": 232,
+      "posicao": 233,
       "pontos": 250
+    },
+    {
+      "semana": 4,
+      "ano": 2026,
+      "posicao": 1336,
+      "pontos": 0
     }
   ],
   "rivalidades": {
-    "toby martin": {
-      "nome": "Toby Martin",
-      "confrontos": 1,
-      "vitorias": 1,
-      "ultima_semana": 1
-    },
-    "pengyu lu": {
-      "nome": "Pengyu Lu",
-      "confrontos": 1,
-      "vitorias": 1,
-      "ultima_semana": 1
-    },
-    "yaojie zeng": {
-      "nome": "Yaojie Zeng",
+    "cezar gabriel papoe": {
+      "nome": "Cezar Gabriel Papoe",
       "confrontos": 1,
       "vitorias": 1,
       "ultima_semana": 1
@@ -131,38 +194,150 @@
       "vitorias": 1,
       "ultima_semana": 1
     },
-    "maximo zeitune": {
-      "nome": "Maximo Zeitune",
+    "yuta kikuchi": {
+      "nome": "Yuta Kikuchi",
       "confrontos": 1,
       "vitorias": 1,
       "ultima_semana": 1
     },
-    "akira santillan": {
-      "nome": "Akira Santillan",
+    "titouan droguet": {
+      "nome": "Titouan Droguet",
       "confrontos": 1,
       "vitorias": 1,
       "ultima_semana": 1
+    },
+    "tianhui zhang": {
+      "nome": "Tianhui Zhang",
+      "confrontos": 1,
+      "vitorias": 1,
+      "ultima_semana": 1
+    },
+    "kirill kivattsev": {
+      "nome": "Kirill Kivattsev",
+      "confrontos": 1,
+      "vitorias": 1,
+      "ultima_semana": 1
+    },
+    "zhe li": {
+      "nome": "Zhe Li",
+      "confrontos": 1,
+      "vitorias": 1,
+      "ultima_semana": 1
+    },
+    "jack pinnington jones": {
+      "nome": "Jack Pinnington Jones",
+      "confrontos": 1,
+      "vitorias": 1,
+      "ultima_semana": 2
+    },
+    "fabien reboul": {
+      "nome": "Fabien Reboul",
+      "confrontos": 1,
+      "vitorias": 1,
+      "ultima_semana": 2
+    },
+    "charles broom": {
+      "nome": "Charles Broom",
+      "confrontos": 1,
+      "vitorias": 1,
+      "ultima_semana": 2
+    },
+    "sumit nagal": {
+      "nome": "Sumit Nagal",
+      "confrontos": 1,
+      "vitorias": 1,
+      "ultima_semana": 2
+    },
+    "mattia bellucci": {
+      "nome": "Mattia Bellucci",
+      "confrontos": 1,
+      "vitorias": 1,
+      "ultima_semana": 2
     }
   },
   "pontos_ytd": 250,
   "transacoes": [
     {
+      "semana": 1,
+      "valor": -800,
+      "descricao": "Wildcard: Hong Kong Open",
+      "categoria": "torneio",
+      "saldo_pos": 7200
+    },
+    {
       "semana": 2,
       "valor": -40,
       "descricao": "Despesas: manutenção básica (folga)",
       "categoria": "operacional",
-      "saldo_pos": 90115
+      "saldo_pos": 96815
+    },
+    {
+      "semana": 2,
+      "valor": -800,
+      "descricao": "Wildcard: ASB Classic",
+      "categoria": "torneio",
+      "saldo_pos": 96015
     },
     {
       "semana": 3,
       "valor": -40,
       "descricao": "Despesas: manutenção básica (folga)",
       "categoria": "operacional",
-      "saldo_pos": 90075
+      "saldo_pos": 95975
+    },
+    {
+      "semana": 3,
+      "valor": -2000,
+      "descricao": "Salario: David Thornton (empresário)",
+      "categoria": "equipe",
+      "saldo_pos": 93975
+    },
+    {
+      "semana": 3,
+      "valor": -5000,
+      "descricao": "Salário: Andre Champion (treinador)",
+      "categoria": "equipe",
+      "saldo_pos": 88975
+    },
+    {
+      "semana": 3,
+      "valor": -1800,
+      "descricao": "Salário: Victoria Walsh (fisioterapeuta)",
+      "categoria": "equipe",
+      "saldo_pos": 87175
+    },
+    {
+      "semana": 4,
+      "valor": -40,
+      "descricao": "Despesas: manutenção básica (folga)",
+      "categoria": "operacional",
+      "saldo_pos": 87135
+    },
+    {
+      "semana": 4,
+      "valor": -2000,
+      "descricao": "Salario: David Thornton (empresário)",
+      "categoria": "equipe",
+      "saldo_pos": 85135
+    },
+    {
+      "semana": 4,
+      "valor": -5000,
+      "descricao": "Salário: Andre Champion (treinador)",
+      "categoria": "equipe",
+      "saldo_pos": 80135
+    },
+    {
+      "semana": 4,
+      "valor": -1800,
+      "descricao": "Salário: Victoria Walsh (fisioterapeuta)",
+      "categoria": "equipe",
+      "saldo_pos": 78335
     }
   ],
   "snapshots_carreira": [],
   "fadiga": 0,
+  "condicao": 87,
   "status_lesao": {
     "lesionado": false,
     "semanas_restantes": 0,
@@ -177,51 +352,75 @@
     "penalidade_atributos": 0.0,
     "penalidade_recuperacao_energia": 0.0
   },
-  "empresario": null,
-  "equipe": [],
-  "patrocinios": [],
-  "seguidores": 219,
-  "avisos_patrocinio": {},
-  "reputacao_imprensa": 50,
-  "caixa_email": [
+  "empresario": {
+    "id": "empresario_elite",
+    "semanas_restantes": 24,
+    "salario": 2000
+  },
+  "equipe": [
     {
-      "tipo": "patrocinio",
-      "status": "pendente",
-      "ref_id": "racket_local",
-      "titulo": "Proposta de Patrocinio: AceGear",
-      "mensagem": "AceGear quer te patrocinar. Oferta: $50/sem + bonus assinatura $500.",
-      "oferta": {
-        "pagamento_semanal": 50,
-        "bonus_assinatura": 500,
-        "bonus_titulo": 300,
-        "categoria": "raquete",
-        "tier": "menor",
-        "requisito_ranking": 2000,
-        "req_seguidores": 0
-      },
-      "lido": true
+      "id": "treinador_lendario",
+      "semanas_restantes": 24,
+      "salario": 5000,
+      "satisfacao": 80
+    },
+    {
+      "id": "fisio_elite",
+      "semanas_restantes": 24,
+      "salario": 1800,
+      "satisfacao": 78
     }
   ],
+  "patrocinios": [],
+  "seguidores": 0,
+  "avisos_patrocinio": {},
+  "reputacao_imprensa": 50,
+  "persona": {
+    "pontos": {
+      "iceman": 0,
+      "badboy": 0,
+      "champ": 0
+    },
+    "ativa": "Neutro",
+    "titulo": "Promessa"
+  },
+  "caixa_email": [],
+  "lifestyle": [],
   "atributos": {
-    "saque": 81,
-    "forehand": 73,
-    "backhand": 81,
-    "topspin": 68,
-    "voleio": 61,
-    "slice": 62,
-    "movimento": 79,
-    "lob": 65,
-    "fisico": 80,
-    "winner": 76,
+    "vel_saque": 71,
+    "pre_saque": 73,
+    "segundo_saque": 69,
+    "retorno": 71,
+    "forehand": 72,
+    "backhand": 70,
+    "voleio": 72,
+    "smash": 72,
+    "lob": 70,
+    "topspin": 72,
+    "slice": 72,
+    "winner": 70,
+    "velocidade": 73,
+    "aceleracao": 70,
+    "resistencia": 71,
+    "forca": 70,
+    "agilidade": 72,
     "duplas": 60
   },
   "atributos_psicologicos": {
-    "concentracao": 75,
+    "clutch": 60,
+    "compostura": 55,
     "agressividade": 50,
-    "leitura_de_jogo": 60,
-    "determinacao": 65
+    "leitura_de_jogo": 50,
+    "determinacao": 85,
+    "consistencia": 65
+  },
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
   },
   "protected_ranking": null,
   "protected_ranking_semanas": 0,
+  "protected_ranking_usos": 8,
   "vinculos_dupla": {}
 }

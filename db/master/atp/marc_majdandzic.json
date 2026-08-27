@@ -2,24 +2,33 @@
   "nome": "Marc Majdandzic",
   "nacionalidade": "[DE]",
   "idade": 21,
-  "overall": 71,
+  "overall": 49,
   "pontos": 23,
   "atributos": {
-    "saque": 46,
+    "vel_saque": 48,
+    "pre_saque": 46,
+    "segundo_saque": 50,
+    "retorno": 45,
     "forehand": 42,
     "backhand": 42,
-    "topspin": 51,
     "voleio": 56,
-    "slice": 56,
-    "movimento": 45,
+    "smash": 55,
     "lob": 40,
+    "topspin": 51,
+    "slice": 56,
     "winner": 41,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 942,
   "atributos_psicologicos": {
-    "concentracao": 31,
+    "clutch": 31,
+    "consistencia": 63,
+    "compostura": 34,
     "agressividade": 42,
     "leitura_de_jogo": 36,
     "determinacao": 43
@@ -45,5 +54,10 @@
   "peso": 69,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

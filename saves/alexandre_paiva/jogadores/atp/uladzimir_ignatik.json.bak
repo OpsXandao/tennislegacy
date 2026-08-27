@@ -1,0 +1,80 @@
+{
+  "nome": "Uladzimir Ignatik",
+  "nacionalidade": "[BY]",
+  "pontos": 5,
+  "pontos_duplas": 0,
+  "pontos_ranking": 5,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 60,
+  "energia": 100,
+  "fadiga": 10,
+  "moral": 75,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 55,
+    "pre_saque": 57,
+    "segundo_saque": 55,
+    "retorno": 61,
+    "forehand": 64,
+    "backhand": 63,
+    "voleio": 57,
+    "smash": 57,
+    "lob": 55,
+    "topspin": 63,
+    "slice": 64,
+    "winner": 75,
+    "velocidade": 58,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 61,
+    "agilidade": 58,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 65,
+    "consistencia": 36,
+    "compostura": 59,
+    "agressividade": 69,
+    "leitura_de_jogo": 58,
+    "determinacao": 47
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 5,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 35,
+  "id": 1317,
+  "pico_carreira": 1390,
+  "altura": 183,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

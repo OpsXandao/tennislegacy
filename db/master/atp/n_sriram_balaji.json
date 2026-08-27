@@ -6,20 +6,29 @@
   "pontos": 1116,
   "id": 52377,
   "atributos": {
-    "saque": 79,
+    "vel_saque": 80,
+    "pre_saque": 82,
+    "segundo_saque": 75,
+    "retorno": 88,
     "forehand": 89,
     "backhand": 85,
-    "topspin": 82,
     "voleio": 92,
-    "slice": 93,
-    "movimento": 90,
+    "smash": 91,
     "lob": 94,
-    "fisico": 90,
+    "topspin": 82,
+    "slice": 93,
     "winner": 79,
+    "velocidade": 90,
+    "aceleracao": 82,
+    "resistencia": 90,
+    "forca": 88,
+    "agilidade": 90,
     "duplas": 92
   },
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 50,
+    "compostura": 54,
     "agressividade": 55,
     "leitura_de_jogo": 43,
     "determinacao": 61
@@ -42,5 +51,10 @@
   "reves": "Uma mão",
   "estilo_jogo": "Counter-puncher",
   "pontos_ranking_duplas": 1116,
-  "rank_duplas": 81
+  "rank_duplas": 81,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Joao Graca",
   "nacionalidade": "[PT]",
   "idade": 25,
-  "overall": 69,
+  "overall": 50,
   "pontos": 7,
   "atributos": {
-    "saque": 43,
+    "vel_saque": 45,
+    "pre_saque": 45,
+    "segundo_saque": 47,
+    "retorno": 50,
     "forehand": 48,
     "backhand": 55,
-    "topspin": 43,
     "voleio": 44,
-    "slice": 44,
-    "movimento": 47,
+    "smash": 50,
     "lob": 49,
+    "topspin": 43,
+    "slice": 44,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 1274,
   "atributos_psicologicos": {
-    "concentracao": 31,
+    "clutch": 31,
+    "consistencia": 60,
+    "compostura": 33,
     "agressividade": 45,
     "leitura_de_jogo": 33,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

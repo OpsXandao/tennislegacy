@@ -1,0 +1,321 @@
+{
+  "torneio": "Canberra Challenger",
+  "semana": 4,
+  "fase_atual": "r32",
+  "fases": [
+    "r32",
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "rodadas": {
+    "r32": [
+      [
+        {
+          "nome": "Jannik Sinner",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Miomir Kecmanovic",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Luca Van Assche",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Ignacio Buse",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Sebastian Korda",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Rohan Bopanna",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Jenson Brooksby",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Flavio Cobolli",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Tommy Paul",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Adrian Mannarino",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Ethan Quinn",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Marton Fucsovics",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Grigor Dimitrov",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Zachary Svajda",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Terence Atmane",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Alejandro Davidovich Fokina",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Francisco Cerundolo",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Jaume Munar",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Alex Michelsen",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Stan Wawrinka",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Nuno Borges",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Hubert Hurkacz",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Alexander Shevchenko",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Tallon Griekspoor",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Luciano Darderi",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Mariano Navone",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Francisco Comesana",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Zizou Bergs",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Botic van de Zandschulp",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Marin Cilic",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Gabriel Diallo",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Felix Auger Aliassime",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ]
+    ]
+  },
+  "resultados": {},
+  "jogador": "Alexandre Paiva",
+  "jogador_vivo": false,
+  "tournament_data": {
+    "nome": "Canberra Challenger",
+    "tipo": "Challenger 125",
+    "local": "Canberra",
+    "quadra": "dura",
+    "premiacao": 160000,
+    "dificuldade": 1,
+    "popularidade": 1,
+    "qualificacao": true,
+    "pais_sede": "[AU] Austrália",
+    "semana": 4,
+    "ultimo_campeao_duplas": null,
+    "ultimo_campeao": null
+  },
+  "genero": "masculino",
+  "campeao_simples": null,
+  "fases_duplas": [
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "fase_atual_duplas": "r16",
+  "rodadas_duplas": {
+    "r16": [
+      [
+        {
+          "nome": "Marcelo Arevalo / Francisco Cabral",
+          "overall": 50
+        },
+        {
+          "nome": "Evan King / Manuel Guinard",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Harri Heliovaara / Edouard Roger-Vasselin",
+          "overall": 50
+        },
+        {
+          "nome": "Jan Zielinski / Nikola Mektic",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "David Pel / Andres Molteni",
+          "overall": 50
+        },
+        {
+          "nome": "Luke Johnson / Simone Bolelli",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Kevin Krawietz / Julian Cash",
+          "overall": 50
+        },
+        {
+          "nome": "JJ Tracy / Horacio Zeballos",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Albano Olivetti / Andre Goransson",
+          "overall": 50
+        },
+        {
+          "nome": "Christian Harrison / Marcel Granollers",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Henry Patten / Neal Skupski",
+          "overall": 50
+        },
+        {
+          "nome": "Joe Salisbury / Lloyd Glasspool",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Yuki Bhambri / Lucas Miedler",
+          "overall": 50
+        },
+        {
+          "nome": "Fabien Reboul / Theo Arribage",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Hugo Nys / Sadio Doumbia",
+          "overall": 50
+        },
+        {
+          "nome": "Tim Puetz / Mate Pavic",
+          "overall": 50
+        }
+      ]
+    ]
+  },
+  "resultados_duplas": {},
+  "campeao_duplas": null,
+  "lucky_losers_pool": []
+}

@@ -2,24 +2,33 @@
   "nome": "Ewen Lumsden",
   "nacionalidade": "[GB]",
   "idade": 26,
-  "overall": 71,
+  "overall": 52,
   "pontos": 19,
   "atributos": {
-    "saque": 49,
+    "vel_saque": 50,
+    "pre_saque": 47,
+    "segundo_saque": 50,
+    "retorno": 49,
     "forehand": 44,
     "backhand": 47,
-    "topspin": 43,
     "voleio": 56,
-    "slice": 41,
-    "movimento": 59,
+    "smash": 57,
     "lob": 57,
+    "topspin": 43,
+    "slice": 41,
     "winner": 45,
-    "fisico": 60,
+    "velocidade": 59,
+    "aceleracao": 56,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 56,
     "duplas": 60
   },
   "id": 994,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 62,
+    "compostura": 38,
     "agressividade": 43,
     "leitura_de_jogo": 35,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

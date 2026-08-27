@@ -6,6 +6,7 @@ from typing import Any
 from fastapi import HTTPException
 
 from api.logging_utils import extract_exception_details, log_event
+from src.utils.log_jogo import log_erro
 from src.services.player_context_service import (
     carregar_torneio_api,
     carregar_temporada_atual,
@@ -20,6 +21,7 @@ from src.repositories.tournament_repository import load_tournament_state
 from src.davis_cup import criar_torneio_davis
 from src.constants.torneio_constants import RANKING_LIMITE_CHALLENGER, RANKING_LIMITE_ITF
 from src.torneio import avancar_fase, criar_torneio
+from src.services.world_clock_service import proximo_evento_jogavel, sincronizar_agenda_torneio
 
 
 def _destino_click_hub_por_tipo(tipo: str, davis: bool = False) -> str:
@@ -219,8 +221,11 @@ def _anexar_estado_davis(instancia: Any, state: dict[str, Any]) -> dict[str, Any
 
 def _anexar_estado_regular(instancia: Any, state: dict[str, Any]) -> dict[str, Any]:
     partida_pendente = _montar_partida_pendente_regular(instancia, state)
-    state["partida_disponivel"] = partida_pendente is not None
+    partida_disponivel = partida_pendente is not None
+    state["partida_disponivel"] = partida_disponivel
     state["info_partida"] = partida_pendente
+    if partida_disponivel:
+        state["jogador_ativo"] = True
     return state
 
 
@@ -326,6 +331,9 @@ def create_tournament(
     state["destino_click_hub"] = _destino_click_hub_por_tipo(
         str(state.get("tipo", "") or ""), davis=bool(state.get("davis"))
     )
+    agenda = sincronizar_agenda_torneio(nome_save, state, temporada=temporada)
+    state["agenda"] = agenda.get("events", [])
+    state["proximo_evento_jogavel"] = proximo_evento_jogavel(agenda)
     return {"ok": True, "torneio": state}
 
 
@@ -361,6 +369,11 @@ def get_tournament_state(nome_save: str) -> dict | None:
         str(state.get("tipo", "") or ""), davis=bool(is_davis)
     )
 
+    temporada = carregar_temporada_atual(nome_save)
+    agenda = sincronizar_agenda_torneio(nome_save, state, temporada=temporada)
+    state["agenda"] = agenda.get("events", [])
+    state["proximo_evento_jogavel"] = proximo_evento_jogavel(agenda)
+
     if is_davis:
         return _anexar_estado_davis(instancia, state)
     return _anexar_estado_regular(instancia, state)
@@ -391,10 +404,14 @@ def advance_tournament_phase(nome_save: str) -> dict:
             fase_atual=estado_atual.get("fase_atual"),
             num_resultados=len(resultados),
         )
+        temporada = carregar_temporada_atual(nome_save)
+        agenda = sincronizar_agenda_torneio(nome_save, estado_atual, temporada=temporada)
         return {
             "fase": estado_atual.get("fase_atual"),
             "resultados": resultados,
             "proximo": resumir_proxima_partida(instancia, instancia.jogador_nome),
+            "agenda": agenda.get("events", []),
+            "proximo_evento_jogavel": proximo_evento_jogavel(agenda),
         }
     except HTTPException:
         raise
@@ -426,12 +443,12 @@ def withdraw_from_tournament(
     instancia.desistir_do_torneio()
     try:
         instancia.simular_torneio_restante()
-    except Exception:
-        pass
+    except Exception as exc:
+        log_erro(nome_save, "withdraw_simular_torneio_restante", exc)
     try:
         distribuir_pontos_torneio(nome_save, genero=genero)
-    except Exception:
-        pass
+    except Exception as exc:
+        log_erro(nome_save, "withdraw_distribuir_pontos_torneio", exc)
 
     kwargs: dict = {}
     if expected_week is not None:

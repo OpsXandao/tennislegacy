@@ -2,24 +2,33 @@
   "nome": "Federico Bondioli",
   "nacionalidade": "[IT]",
   "idade": 20,
-  "overall": 76,
+  "overall": 48,
   "pontos": 106,
   "atributos": {
-    "saque": 42,
+    "vel_saque": 44,
+    "pre_saque": 43,
+    "segundo_saque": 50,
+    "retorno": 45,
     "forehand": 46,
     "backhand": 45,
-    "topspin": 43,
     "voleio": 40,
-    "slice": 46,
-    "movimento": 45,
+    "smash": 48,
     "lob": 54,
+    "topspin": 43,
+    "slice": 46,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 477,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 62,
+    "compostura": 42,
     "agressividade": 43,
     "leitura_de_jogo": 32,
     "determinacao": 48
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

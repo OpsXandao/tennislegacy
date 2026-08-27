@@ -2,24 +2,33 @@
   "nome": "Rafael Matos",
   "nacionalidade": "[RU] Rússia",
   "idade": 33,
-  "overall": 90,
+  "overall": 87,
   "pontos": 2100,
   "id": 52248,
   "atributos": {
-    "saque": 97,
+    "vel_saque": 94,
+    "pre_saque": 93,
+    "segundo_saque": 82,
+    "retorno": 85,
     "forehand": 94,
     "backhand": 83,
-    "topspin": 86,
     "voleio": 96,
-    "slice": 93,
-    "movimento": 85,
+    "smash": 91,
     "lob": 92,
-    "fisico": 83,
+    "topspin": 86,
+    "slice": 93,
     "winner": 94,
+    "velocidade": 84,
+    "aceleracao": 77,
+    "resistencia": 83,
+    "forca": 85,
+    "agilidade": 85,
     "duplas": 97
   },
   "atributos_psicologicos": {
-    "concentracao": 54,
+    "clutch": 54,
+    "consistencia": 35,
+    "compostura": 56,
     "agressividade": 74,
     "leitura_de_jogo": 40,
     "determinacao": 61
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 2100,
-  "rank_duplas": 40
+  "rank_duplas": 40,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

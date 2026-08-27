@@ -78,12 +78,13 @@ export function AoVivoTab() {
   const [loading, setLoading] = useState(true)
   const [torneios, setTorneios] = useState<TorneioAoVivo[]>([])
   const [selected, setSelected] = useState<{ nome: string; tour: 'atp' | 'wta' } | null>(null)
+  const [erro, setErro] = useState(false)
 
   useEffect(() => {
     api.mundo
       .aoVivo()
       .then((r) => setTorneios(r.torneios))
-      .catch(() => {})
+      .catch(() => setErro(true))
       .finally(() => setLoading(false))
   }, [])
 
@@ -91,6 +92,14 @@ export function AoVivoTab() {
     return (
       <div className="py-16 text-center pixel-font text-xs text-neon-green animate-pulse">
         CARREGANDO...
+      </div>
+    )
+  }
+
+  if (erro) {
+    return (
+      <div className="py-16 text-center pixel-font text-[10px] text-neon-pink">
+        Erro ao carregar feed
       </div>
     )
   }

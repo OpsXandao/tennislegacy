@@ -1,0 +1,80 @@
+{
+  "nome": "Ajeet Rai",
+  "nacionalidade": "[NZ]",
+  "pontos": 29,
+  "pontos_duplas": 0,
+  "pontos_ranking": 29,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 51,
+  "energia": 100,
+  "fadiga": 6,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 51,
+    "pre_saque": 49,
+    "segundo_saque": 49,
+    "retorno": 46,
+    "forehand": 46,
+    "backhand": 45,
+    "voleio": 57,
+    "smash": 56,
+    "lob": 42,
+    "topspin": 48,
+    "slice": 53,
+    "winner": 55,
+    "velocidade": 49,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 48,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 50,
+    "consistencia": 52,
+    "compostura": 44,
+    "agressividade": 53,
+    "leitura_de_jogo": 45,
+    "determinacao": 32
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 29,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 27,
+  "id": 884,
+  "pico_carreira": 852,
+  "altura": 188,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

@@ -2,24 +2,33 @@
   "nome": "Adam Walton",
   "nacionalidade": "[AU]",
   "idade": 26,
-  "overall": 83,
+  "overall": 65,
   "pontos": 669,
   "atributos": {
-    "saque": 68,
+    "vel_saque": 66,
+    "pre_saque": 66,
+    "segundo_saque": 63,
+    "retorno": 67,
     "forehand": 70,
     "backhand": 69,
-    "topspin": 69,
     "voleio": 68,
-    "slice": 60,
-    "movimento": 69,
+    "smash": 65,
     "lob": 71,
+    "topspin": 69,
+    "slice": 60,
     "winner": 67,
-    "fisico": 60,
+    "velocidade": 65,
+    "aceleracao": 61,
+    "resistencia": 60,
+    "forca": 64,
+    "agilidade": 65,
     "duplas": 60
   },
   "id": 91,
   "atributos_psicologicos": {
-    "concentracao": 73,
+    "clutch": 73,
+    "consistencia": 56,
+    "compostura": 66,
     "agressividade": 49,
     "leitura_de_jogo": 53,
     "determinacao": 52
@@ -45,5 +54,10 @@
   "peso": 81,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

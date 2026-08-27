@@ -2,24 +2,33 @@
   "nome": "Luis Felipe Miguel",
   "nacionalidade": "[BR]",
   "idade": 21,
-  "overall": 69,
+  "overall": 49,
   "pontos": 8,
   "atributos": {
-    "saque": 50,
+    "vel_saque": 51,
+    "pre_saque": 48,
+    "segundo_saque": 51,
+    "retorno": 45,
     "forehand": 52,
     "backhand": 50,
-    "topspin": 40,
     "voleio": 40,
-    "slice": 40,
-    "movimento": 40,
+    "smash": 47,
     "lob": 49,
+    "topspin": 40,
+    "slice": 40,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 1209,
   "atributos_psicologicos": {
-    "concentracao": 37,
+    "clutch": 37,
+    "consistencia": 56,
+    "compostura": 37,
     "agressividade": 49,
     "leitura_de_jogo": 36,
     "determinacao": 39
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

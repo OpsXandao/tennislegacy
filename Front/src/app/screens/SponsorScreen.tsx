@@ -22,7 +22,7 @@ export function SponsorScreen() {
 
       <div className="p-4 space-y-6">
         <SponsorFeedback mensagem={mensagem} />
-        <SponsorOverview contexto={contexto} />
+        <SponsorOverview contexto={contexto} ativos={ativos} />
         <ActiveSponsorList ativos={ativos} />
 
         {loading ? (

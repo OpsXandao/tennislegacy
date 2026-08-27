@@ -2,24 +2,33 @@
   "nome": "Lautaro Midon",
   "nacionalidade": "[AR]",
   "idade": 21,
-  "overall": 79,
+  "overall": 47,
   "pontos": 271,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 46,
+    "segundo_saque": 52,
+    "retorno": 42,
     "forehand": 44,
     "backhand": 42,
-    "topspin": 47,
     "voleio": 40,
-    "slice": 49,
-    "movimento": 40,
+    "smash": 47,
     "lob": 40,
+    "topspin": 47,
+    "slice": 49,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 248,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 66,
+    "compostura": 36,
     "agressividade": 39,
     "leitura_de_jogo": 30,
     "determinacao": 49
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

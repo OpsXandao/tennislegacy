@@ -1,0 +1,40 @@
+{
+  "partida": {
+    "titulos": {
+      "vitoria": [
+        "{p1} BRILHA EM QUADRA!",
+        "VITÓRIA ÉPICA DE {p1}!",
+        "DOMÍNIO TOTAL: {p1} VENCE!",
+        "{p1} SUPERA DESAFIO!",
+        "SHOW DE TÊNIS: {p1} NO TOPO!"
+      ],
+      "derrota": [
+        "DERROTA AMARGA PARA {p1}",
+        "{p2} SUPERA {p1} EM BATALHA",
+        "FIM DA LINHA PARA {p1} NO TORNEIO",
+        "{p1} CAI DIANTE DE {p2}",
+        "DIA DIFÍCIL PARA {p1}"
+      ]
+    },
+    "narrativa": {
+      "vitoria": [
+        "Em uma partida impecável, {p1} mostrou por que é uma das promessas do circuito.",
+        "Com golpes precisos e muita frieza, {p1} não deu chances para {p2}.",
+        "A torcida foi ao delírio com a resiliência de {p1} nesta vitória contra {p2}.",
+        "{p1} dominou le fundo de quadra e fechou o jogo com autoridade.",
+        "Uma aula de estratégia: {p1} soube explorar cada fraqueza de {p2}."
+      ],
+      "derrota": [
+        "Apesar do esforço, {p1} não conseguiu encontrar respostas para le jogo de {p2}.",
+        "{p2} foi mais sólido nos momentos decisivos e garantiu a vitória.",
+        "{p1} lutou até le fim, mas a noite era de {p2}.",
+        "Erros não forçados custaram caro para {p1} nesta partida contra {p2}.",
+        "{p2} impôs seu ritmo desde le início e {p1} não conseguiu reagir."
+      ]
+    }
+  },
+  "feedback": {
+    "vitoria": "Cada vitória escreve um parágrafo da sua história. Continue.",
+    "derrota": "As derrotas que doem são as que ensinam mais. Próximo round."
+  }
+}

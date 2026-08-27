@@ -2,24 +2,33 @@
   "nome": "Alejandro Turriziani Alvarez",
   "nacionalidade": "[ES]",
   "idade": 23,
-  "overall": 72,
+  "overall": 48,
   "pontos": 31,
   "atributos": {
-    "saque": 46,
+    "vel_saque": 48,
+    "pre_saque": 44,
+    "segundo_saque": 47,
+    "retorno": 43,
     "forehand": 53,
     "backhand": 42,
-    "topspin": 40,
     "voleio": 40,
-    "slice": 43,
-    "movimento": 45,
+    "smash": 47,
     "lob": 40,
+    "topspin": 40,
+    "slice": 43,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 861,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 75,
+    "compostura": 38,
     "agressividade": 30,
     "leitura_de_jogo": 46,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Canhoto",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

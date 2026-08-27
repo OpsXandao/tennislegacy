@@ -2,24 +2,33 @@
   "nome": "Masamichi Imamura",
   "nacionalidade": "[JP]",
   "idade": 27,
-  "overall": 74,
+  "overall": 59,
   "pontos": 68,
   "atributos": {
-    "saque": 65,
+    "vel_saque": 64,
+    "pre_saque": 63,
+    "segundo_saque": 58,
+    "retorno": 59,
     "forehand": 54,
     "backhand": 53,
-    "topspin": 60,
     "voleio": 58,
-    "slice": 66,
-    "movimento": 65,
+    "smash": 59,
     "lob": 66,
+    "topspin": 60,
+    "slice": 66,
     "winner": 56,
-    "fisico": 60,
+    "velocidade": 63,
+    "aceleracao": 59,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 64,
     "duplas": 60
   },
   "id": 600,
   "atributos_psicologicos": {
-    "concentracao": 62,
+    "clutch": 62,
+    "consistencia": 59,
+    "compostura": 55,
     "agressividade": 46,
     "leitura_de_jogo": 59,
     "determinacao": 41
@@ -45,5 +54,10 @@
   "peso": 81,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

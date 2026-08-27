@@ -1,0 +1,80 @@
+{
+  "nome": "Tom Gentzsch",
+  "nacionalidade": "[DE]",
+  "pontos": 227,
+  "pontos_duplas": 0,
+  "pontos_ranking": 227,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 54,
+  "energia": 100,
+  "fadiga": 11,
+  "moral": 70,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 45,
+    "pre_saque": 48,
+    "segundo_saque": 49,
+    "retorno": 53,
+    "forehand": 57,
+    "backhand": 58,
+    "voleio": 55,
+    "smash": 56,
+    "lob": 53,
+    "topspin": 59,
+    "slice": 58,
+    "winner": 56,
+    "velocidade": 49,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 48,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 33,
+    "consistencia": 53,
+    "compostura": 36,
+    "agressividade": 52,
+    "leitura_de_jogo": 44,
+    "determinacao": 43
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 227,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 22,
+  "id": 279,
+  "pico_carreira": 247,
+  "altura": 191,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "nome": "Stefanos Sakellaridis",
+  "nacionalidade": "[GR]",
+  "pontos": 267,
+  "pontos_duplas": 0,
+  "pontos_ranking": 267,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 49,
+  "energia": 100,
+  "fadiga": 9,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 45,
+    "pre_saque": 45,
+    "segundo_saque": 49,
+    "retorno": 48,
+    "forehand": 42,
+    "backhand": 56,
+    "voleio": 40,
+    "smash": 47,
+    "lob": 40,
+    "topspin": 52,
+    "slice": 42,
+    "winner": 54,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 44,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 36,
+    "consistencia": 63,
+    "compostura": 38,
+    "agressividade": 42,
+    "leitura_de_jogo": 43,
+    "determinacao": 44
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 267,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 21,
+  "id": 252,
+  "pico_carreira": 220,
+  "altura": 196,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

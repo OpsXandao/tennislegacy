@@ -1,0 +1,80 @@
+{
+  "nome": "Andres Martin",
+  "nacionalidade": "[US]",
+  "pontos": 200,
+  "pontos_duplas": 0,
+  "pontos_ranking": 200,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 49,
+  "energia": 100,
+  "fadiga": 12,
+  "moral": 80,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 48,
+    "retorno": 46,
+    "forehand": 40,
+    "backhand": 49,
+    "voleio": 49,
+    "smash": 53,
+    "lob": 55,
+    "topspin": 55,
+    "slice": 44,
+    "winner": 48,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 48,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 30,
+    "consistencia": 75,
+    "compostura": 34,
+    "agressividade": 30,
+    "leitura_de_jogo": 38,
+    "determinacao": 44
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 200,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 24,
+  "id": 301,
+  "pico_carreira": 269,
+  "altura": 183,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
+}

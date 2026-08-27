@@ -2,24 +2,33 @@
   "nome": "Mitchell Krueger",
   "nacionalidade": "[US]",
   "idade": 32,
-  "overall": 78,
+  "overall": 50,
   "pontos": 221,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 46,
+    "retorno": 49,
     "forehand": 46,
     "backhand": 45,
-    "topspin": 54,
     "voleio": 46,
-    "slice": 53,
-    "movimento": 53,
+    "smash": 50,
     "lob": 44,
+    "topspin": 54,
+    "slice": 53,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 282,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 57,
+    "compostura": 47,
     "agressividade": 48,
     "leitura_de_jogo": 34,
     "determinacao": 37
@@ -45,5 +54,10 @@
   "peso": 69,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -1,0 +1,80 @@
+{
+  "nome": "Henrique Rocha",
+  "nacionalidade": "[PT]",
+  "pontos": 357,
+  "pontos_duplas": 0,
+  "pontos_ranking": 357,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 50,
+  "energia": 100,
+  "fadiga": 10,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 50,
+    "retorno": 47,
+    "forehand": 53,
+    "backhand": 43,
+    "voleio": 42,
+    "smash": 49,
+    "lob": 54,
+    "topspin": 41,
+    "slice": 50,
+    "winner": 44,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 54,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 51,
+    "consistencia": 61,
+    "compostura": 51,
+    "agressividade": 44,
+    "leitura_de_jogo": 49,
+    "determinacao": 51
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 357,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 21,
+  "id": 204,
+  "pico_carreira": 172,
+  "altura": 180,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

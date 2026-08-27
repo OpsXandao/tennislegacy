@@ -2,24 +2,33 @@
   "nome": "Taylor Fritz",
   "nacionalidade": "[US]",
   "idade": 28,
-  "overall": 90,
+  "overall": 81,
   "pontos": 4220,
   "atributos": {
-    "saque": 95,
+    "vel_saque": 89,
+    "pre_saque": 92,
+    "segundo_saque": 84,
+    "retorno": 88,
     "forehand": 94,
     "backhand": 90,
-    "topspin": 89,
     "voleio": 85,
-    "slice": 87,
-    "movimento": 86,
+    "smash": 76,
     "lob": 88,
+    "topspin": 89,
+    "slice": 87,
     "winner": 93,
-    "fisico": 60,
+    "velocidade": 76,
+    "aceleracao": 70,
+    "resistencia": 60,
+    "forca": 75,
+    "agilidade": 80,
     "duplas": 60
   },
   "id": 4,
   "atributos_psicologicos": {
-    "concentracao": 94,
+    "clutch": 94,
+    "consistencia": 35,
+    "compostura": 90,
     "agressividade": 83,
     "leitura_de_jogo": 68,
     "determinacao": 84
@@ -91,5 +100,10 @@
   "peso": 86,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "Baselines Aggressive"
+  "estilo_jogo": "Baselines Aggressive",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

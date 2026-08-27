@@ -2,24 +2,33 @@
   "nome": "Alessio Vasquez",
   "nacionalidade": "[DE]",
   "idade": 22,
-  "overall": 69,
+  "overall": 51,
   "pontos": 5,
   "atributos": {
-    "saque": 43,
+    "vel_saque": 45,
+    "pre_saque": 45,
+    "segundo_saque": 47,
+    "retorno": 52,
     "forehand": 51,
     "backhand": 54,
-    "topspin": 53,
     "voleio": 40,
-    "slice": 46,
-    "movimento": 54,
+    "smash": 47,
     "lob": 40,
+    "topspin": 53,
+    "slice": 46,
     "winner": 48,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 1313,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 73,
+    "compostura": 47,
     "agressividade": 32,
     "leitura_de_jogo": 47,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 66,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

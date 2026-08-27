@@ -2,24 +2,33 @@
   "nome": "Michel Hopp",
   "nacionalidade": "[DE]",
   "idade": 27,
-  "overall": 72,
+  "overall": 54,
   "pontos": 31,
   "atributos": {
-    "saque": 44,
+    "vel_saque": 46,
+    "pre_saque": 48,
+    "segundo_saque": 50,
+    "retorno": 54,
     "forehand": 54,
     "backhand": 53,
-    "topspin": 54,
     "voleio": 53,
-    "slice": 58,
-    "movimento": 54,
+    "smash": 54,
     "lob": 43,
+    "topspin": 54,
+    "slice": 58,
     "winner": 54,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 865,
   "atributos_psicologicos": {
-    "concentracao": 31,
+    "clutch": 31,
+    "consistencia": 50,
+    "compostura": 35,
     "agressividade": 55,
     "leitura_de_jogo": 43,
     "determinacao": 44
@@ -45,5 +54,10 @@
   "peso": 72,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

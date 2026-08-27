@@ -2,24 +2,33 @@
   "nome": "Vincent Marysko",
   "nacionalidade": "[DE]",
   "idade": 20,
-  "overall": 72,
+  "overall": 51,
   "pontos": 29,
   "atributos": {
-    "saque": 58,
+    "vel_saque": 58,
+    "pre_saque": 54,
+    "segundo_saque": 57,
+    "retorno": 45,
     "forehand": 45,
     "backhand": 43,
-    "topspin": 57,
     "voleio": 55,
-    "slice": 55,
-    "movimento": 42,
+    "smash": 55,
     "lob": 43,
+    "topspin": 57,
+    "slice": 55,
     "winner": 54,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 882,
   "atributos_psicologicos": {
-    "concentracao": 33,
+    "clutch": 33,
+    "consistencia": 65,
+    "compostura": 37,
     "agressividade": 40,
     "leitura_de_jogo": 52,
     "determinacao": 48
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

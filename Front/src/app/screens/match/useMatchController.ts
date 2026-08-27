@@ -32,28 +32,38 @@ import {
   PLANOS,
   PLACAR_INICIAL,
   VELOCIDADES_RAPIDAS,
-  accentFromCarta,
-  calcMomentum,
-  calcularOverallCardMatch,
+} from './constants'
+import {
   carregarPacoteTaticoInicial,
   carregarPreferenciaAutoSave,
-  detectBreakPoint,
-  detectarPontoCritico,
-  flashColor,
-  getScoutingMetrics,
-  getScoutingMetricsFromData,
   inferirEstilo,
   inferirPlanoDoPacote,
-  leituraFisica,
+} from './tactics'
+import {
+  calcMomentum,
+  detectBreakPoint,
+  detectarPontoCritico,
+} from './scoreUtils'
+import {
+  calcularOverallCardMatch,
+  getScoutingMetrics,
+  getScoutingMetricsFromData,
   montarRelatorioJogador,
+} from './scouting'
+import {
+  accentFromCarta,
+  flashColor,
+  leituraFisica,
   normSurface,
   rankingValido,
-  resumirEstrategiaLado,
+} from './uiUtils'
+import {
+  resumoMomentum,
   resumirHistoricoRival,
   resumirTitulosRival,
-  resumoMomentum,
-  serializarPacoteTatico,
-} from './model'
+} from './scouting'
+import { resumirPulsoNarrativo } from './scoreUtils'
+import { serializarPacoteTatico, resumirEstrategiaLado } from './tactics'
 import {
   extrairAtualizacaoRuntime,
   extrairHistoricoJogador,
@@ -90,7 +100,7 @@ export function useMatchController() {
   const [instrucao, setInstrucao] = useState<InstrucaoValor>(pacoteInicial.instrucao)
 
   // ─── Core match state ────────────────────────────────────────────────────
-  const [fase, setFase] = useState<Fase>('setup')
+  const [fase, setFase] = useState<Fase>('hype')
   const [placar, setPlacar] = useState<PlacarState>(PLACAR_INICIAL)
   const [simulando, setSimulando] = useState(false)
   const [simulacaoPausada, setSimulacaoPausada] = useState(false)
@@ -128,12 +138,16 @@ export function useMatchController() {
   const [faseTorneio, setFaseTorneio] = useState('')
   const [log, setLog] = useState<string[]>([])
   const [pointInsights, setPointInsights] = useState<string[]>([])
+  const [quimicaJogador, setQuimicaJogador] = useState<any>(null)
+  const [quimicaAdversario, setQuimicaAdversario] = useState<any>(null)
+  const [comentarioParceiro, setComentarioParceiro] = useState<string | null>(null)
   const [erroEntrada, setErroEntrada] = useState('')
   const [autoSaveAtivo] = useState<boolean>(() => carregarPreferenciaAutoSave())
 
   // ─── Feedback state ───────────────────────────────────────────────────────
   const [flashPonto, setFlashPonto] = useState<{ texto: string; color: string } | null>(null)
   const [alertaBreak, setAlertaBreak] = useState('')
+  const [pulsoNarrativo, setPulsoNarrativo] = useState<ReturnType<typeof resumirPulsoNarrativo> | null>(null)
 
   // ─── Between game/set state ───────────────────────────────────────────────
   const [gameResult, setGameResult] = useState<GameResult | null>(null)
@@ -151,6 +165,29 @@ export function useMatchController() {
   const partidaAutoSavePerguntadaRef = useRef<string | null>(null)
   const isMounted = useRef(true)
   const continuarSetRef = useRef<() => void>(() => {})
+  const jogadorRef = useRef(jogador)
+  useEffect(() => { jogadorRef.current = jogador }, [jogador])
+
+  // ─── Drama state ──────────────────────────────────────────────────────────
+  const [isComeback, setIsComeback] = useState(false)
+  const [crowdRoar, setCrowdRoar] = useState(false)
+  const prevSetsRef = useRef<[number, number]>([0, 0])
+  const comebackTimerRef = useRef<number | null>(null)
+  const crowdTimerRef = useRef<number | null>(null)
+  const ultimaPausaNarrativaRef = useRef<string | null>(null)
+
+  useEffect(() => {
+    const [currJ, currA] = placar.sets
+    const [prevJ, prevA] = prevSetsRef.current
+    if (prevJ < prevA && currJ === currA && currJ > 0) {
+      setIsComeback(true)
+      if (comebackTimerRef.current) window.clearTimeout(comebackTimerRef.current)
+      comebackTimerRef.current = window.setTimeout(() => setIsComeback(false), 3000)
+    }
+    prevSetsRef.current = [currJ, currA]
+  }, [placar.sets])
+
+  useEffect(() => () => { if (comebackTimerRef.current) window.clearTimeout(comebackTimerRef.current) }, [])
 
   // ─── Derived tactical labels ──────────────────────────────────────────────
   const mentalidadeAtual = MENTALIDADES.find((m) => m.valor === mentalidade) ?? MENTALIDADES[1]
@@ -173,6 +210,10 @@ export function useMatchController() {
     if (atualizacao.estrategiaJogador) setEstrategiaJogadorAoVivo(atualizacao.estrategiaJogador)
     if (atualizacao.estrategiaAdversario) setEstrategiaAdversarioAoVivo(atualizacao.estrategiaAdversario)
 
+    if ('quimica_j' in estado) setQuimicaJogador(estado.quimica_j)
+    if ('quimica_a' in estado) setQuimicaAdversario(estado.quimica_a)
+    if ('comentario_parceiro' in estado && estado.comentario_parceiro) setComentarioParceiro(estado.comentario_parceiro)
+
     if (atualizacao.energiaAdversario !== null || atualizacao.fadigaAdversario !== null) {
       if (atualizacao.energiaAdversario !== null) setEnergiaAdversarioAoVivo(atualizacao.energiaAdversario)
       if (atualizacao.fadigaAdversario !== null) setFadigaAdversarioAoVivo(atualizacao.fadigaAdversario)
@@ -191,8 +232,22 @@ export function useMatchController() {
       if (Array.isArray(stats.insights)) {
         setPointInsights(stats.insights)
       }
+      const pulso = resumirPulsoNarrativo(stats, atualizacao.placar)
+      setPulsoNarrativo(pulso)
+      if (
+        pulso?.shouldPause
+        && modoRef.current === 'detalhado'
+        && !atualizacao.placar.encerrado
+        && atualizacao.tipo === 'ponto'
+        && ultimaPausaNarrativaRef.current !== pulso.pauseKey
+      ) {
+        ultimaPausaNarrativaRef.current = pulso.pauseKey
+        setSimulacaoPausada(true)
+        setAjustandoPlanoRapido(true)
+      }
     } else if (atualizacao.tipo === 'game' || atualizacao.tipo === 'set') {
       setPointInsights([]) // Limpa insights ao mudar de game/set
+      setPulsoNarrativo(null)
     }
 
     setAlertaBreak(detectBreakPoint(atualizacao.placar))
@@ -206,6 +261,10 @@ export function useMatchController() {
     if (atualizacao.placar.encerrado) { setFase('encerrada'); return }
 
     if (atualizacao.tipo === 'set') {
+      if (atualizacao.placar.sets[0] > prevSetsRef.current[0]) {
+        setCrowdRoar(true)
+        setTimeout(() => setCrowdRoar(false), 2500)
+      }
       setGameResult(null)
       setAjustandoPlanoSet(false)
       setFase('entre-sets')
@@ -214,6 +273,10 @@ export function useMatchController() {
 
     if (atualizacao.tipo === 'game') {
       const jogadorGanhouGame = atualizacao.placar.games[0] > prevGames[0]
+      if (jogadorGanhouGame) {
+        setCrowdRoar(true)
+        setTimeout(() => setCrowdRoar(false), 1800)
+      }
       const quemGanhou: 'jogador' | 'adversario' = jogadorGanhouGame ? 'jogador' : 'adversario'
       const foiBreak = jogadorGanhouGame ? prevServindo === 'adversario' : prevServindo === 'jogador'
       setGameResult({ quemGanhou, foiBreak, placarGames: atualizacao.placar.games })
@@ -226,15 +289,15 @@ export function useMatchController() {
   }, [])
 
   // ─── Helpers ─────────────────────────────────────────────────────────────
-  function applyAdversario(adv: ApiAdversarioInfo) {
+  const applyAdversario = useCallback((adv: ApiAdversarioInfo) => {
     if (!adv) return
     const match = mapApiAdversarioParaMatch(adv)
     setAdversario(match)
-    setEnergiaJogadorAoVivo(Number(jogador?.energia ?? 100))
-    setFadigaJogadorAoVivo(Number(jogador?.fadiga ?? 0))
+    setEnergiaJogadorAoVivo(Number(jogadorRef.current?.energia ?? 100))
+    setFadigaJogadorAoVivo(Number(jogadorRef.current?.fadiga ?? 0))
     setEnergiaAdversarioAoVivo(match.energia)
     setFadigaAdversarioAoVivo(match.fadiga)
-  }
+  }, [])
 
   const { tentarRestaurarSessao, reaproveitarPartidaAtiva } = useMatchBootstrap({
     saveAtivo,
@@ -327,7 +390,7 @@ export function useMatchController() {
       .then((j) => { if (!ativo) return; jogadorAntesRef.current = { xp: j.xp, ranking: j.ranking, nivel: j.nivel } })
       .catch(() => { if (!ativo || !jogador) return; jogadorAntesRef.current = { xp: jogador.xp, ranking: jogador.ranking, nivel: jogador.nivel } })
     return () => { ativo = false }
-  }, [fetchJogador, jogador])
+  }, [fetchJogador, saveAtivo])
 
   useEffect(() => {
     if (modo !== 'game') return
@@ -352,6 +415,12 @@ export function useMatchController() {
   }, [autoSaveAtivo, fase, partidaId, placar.encerrado])
 
   useEffect(() => {
+    if (fase === 'setup' || placar.encerrado) {
+      ultimaPausaNarrativaRef.current = null
+    }
+  }, [fase, placar.encerrado])
+
+  useEffect(() => {
     if (fase !== 'encerrada') return
     api.jogador.get().then((res) => { if (isMounted.current) setJogadorPosjogo(res) })
       .catch((e) => console.error('Erro ao buscar jogador pós-jogo:', e))
@@ -365,12 +434,10 @@ export function useMatchController() {
 
   useEffect(() => {
     continuarSetRef.current = () => {
-      if (!isMounted.current) return
+      if (!isMounted.current || !partidaId) return
       setGameResult(null); setAjustandoPlanoSet(false)
-      if (partidaId) {
-        const est = serializarPacoteTatico(mentalidade, abordagem, instrucao, segundoSaque)
-        api.partida.ajusteTatico(partidaId, est, placar.sets[0] + placar.sets[1]).catch((e) => console.error('Erro ao aplicar ajuste tático:', e))
-      }
+      const est = serializarPacoteTatico(mentalidade, abordagem, instrucao, segundoSaque)
+      api.partida.ajusteTatico(partidaId, est, placar.sets[0] + placar.sets[1]).catch((e) => console.error('Erro ao aplicar ajuste tático:', e))
       setFase('aguardando')
     }
   })
@@ -415,8 +482,9 @@ export function useMatchController() {
   const overallCardJogador = calcularOverallCardMatch(metricsJogador)
   const metricsAdversario = getScoutingMetrics(adversario)
   const overallCardAdversario = calcularOverallCardMatch(metricsAdversario)
-  const destaqueMomento = alertaBreak || flashPonto?.texto || pontoCritico?.label || resumoMomentum(momentum)
-  const destaqueMomentoCor = alertaBreak ? '#ff4466' : flashPonto?.color || pontoCritico?.color || 'var(--neon-cyan)'
+  const isTiebreak = placar.games[0] === 6 && placar.games[1] === 6
+  const destaqueMomento = alertaBreak || pulsoNarrativo?.headline || flashPonto?.texto || pontoCritico?.label || resumoMomentum(momentum)
+  const destaqueMomentoCor = alertaBreak ? '#ff4466' : pulsoNarrativo?.color || flashPonto?.color || pontoCritico?.color || 'var(--neon-cyan)'
   const velocidadeRapidaAtual = VELOCIDADES_RAPIDAS.find((v) => v.valor === velocidadeRapida) ?? VELOCIDADES_RAPIDAS[2]
   const resumoEstrategiaJogador = resumirEstrategiaLado(estrategiaJogadorAoVivo)
   const resumoEstrategiaAdversario = resumirEstrategiaLado(estrategiaAdversarioAoVivo)
@@ -429,6 +497,7 @@ export function useMatchController() {
     plano, modo, segundoSaque, confirmandoEntrada, abaRival, setAbaRival, abaJogador, setAbaJogador,
     faixa, setFaixa, alvo, setAlvo, intencaoAtiva, expandirPonto, setExpandirPonto,
     pointInsights,
+    quimicaJogador, quimicaAdversario, comentarioParceiro,
     adversario, energiaJogadorAoVivo, fadigaJogadorAoVivo,
     energiaAdversarioAoVivo, fadigaAdversarioAoVivo,
     partidaId, superficie, faseTorneio, log, erroEntrada,
@@ -440,14 +509,14 @@ export function useMatchController() {
     setSegundoSaque, setVelocidadeRapida, setAjustandoPlanoRapido,
     // Derived
     nomeJogador, planoAtual, encaixeFisico, riscoTatico, planoExecutivo,
-    surface, momentum, pontoCritico, podeControlarRitmo,
+    surface, momentum, pontoCritico, isTiebreak, isComeback, crowdRoar, podeControlarRitmo,
     leituraJogador, leituraRival,
     rankingJogador, rankingAdversario,
     historicoRival, titulosRival, historicoJogador, titulosJogador,
     corCardRival, scoutRival,
     metricsJogador, reportJogador, overallCardJogador,
     metricsAdversario, overallCardAdversario,
-    destaqueMomento, destaqueMomentoCor,
+    destaqueMomento, destaqueMomentoCor, pulsoNarrativo,
     velocidadeRapidaAtual,
     resumoEstrategiaJogador, resumoEstrategiaAdversario,
     // Handlers

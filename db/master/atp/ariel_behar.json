@@ -2,24 +2,33 @@
   "nome": "Ariel Behar",
   "nacionalidade": "[RU] Rússia",
   "idade": 24,
-  "overall": 87,
+  "overall": 86,
   "pontos": 1070,
   "id": 13815,
   "atributos": {
-    "saque": 78,
+    "vel_saque": 79,
+    "pre_saque": 79,
+    "segundo_saque": 73,
+    "retorno": 86,
     "forehand": 83,
     "backhand": 85,
-    "topspin": 89,
     "voleio": 94,
-    "slice": 82,
-    "movimento": 94,
+    "smash": 91,
     "lob": 89,
-    "fisico": 87,
+    "topspin": 89,
+    "slice": 82,
     "winner": 84,
+    "velocidade": 91,
+    "aceleracao": 83,
+    "resistencia": 87,
+    "forca": 85,
+    "agilidade": 90,
     "duplas": 92
   },
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 36,
+    "compostura": 47,
     "agressividade": 69,
     "leitura_de_jogo": 50,
     "determinacao": 57
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Counter-puncher",
   "pontos_ranking_duplas": 1070,
-  "rank_duplas": 83
+  "rank_duplas": 83,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "William Grant",
   "nacionalidade": "[US]",
   "idade": 25,
-  "overall": 73,
+  "overall": 49,
   "pontos": 56,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 47,
+    "segundo_saque": 52,
+    "retorno": 47,
     "forehand": 40,
     "backhand": 45,
-    "topspin": 40,
     "voleio": 42,
-    "slice": 53,
-    "movimento": 49,
+    "smash": 49,
     "lob": 53,
+    "topspin": 40,
+    "slice": 53,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 670,
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 75,
+    "compostura": 45,
     "agressividade": 30,
     "leitura_de_jogo": 37,
     "determinacao": 47
@@ -45,5 +54,10 @@
   "peso": 71,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

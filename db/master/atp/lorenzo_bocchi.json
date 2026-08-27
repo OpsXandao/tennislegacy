@@ -2,24 +2,33 @@
   "nome": "Lorenzo Bocchi",
   "nacionalidade": "[IT]",
   "idade": 28,
-  "overall": 71,
+  "overall": 51,
   "pontos": 26,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 47,
+    "segundo_saque": 47,
+    "retorno": 47,
     "forehand": 53,
     "backhand": 43,
-    "topspin": 40,
     "voleio": 56,
-    "slice": 55,
-    "movimento": 48,
+    "smash": 56,
     "lob": 42,
+    "topspin": 40,
+    "slice": 55,
     "winner": 54,
-    "fisico": 60,
+    "velocidade": 52,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 910,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 56,
+    "compostura": 37,
     "agressividade": 49,
     "leitura_de_jogo": 41,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

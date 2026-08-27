@@ -2,24 +2,33 @@
   "nome": "Xing Dao Chen",
   "nacionalidade": "[CN]",
   "idade": 22,
-  "overall": 70,
+  "overall": 53,
   "pontos": 10,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 48,
+    "segundo_saque": 48,
+    "retorno": 51,
     "forehand": 48,
     "backhand": 50,
-    "topspin": 51,
     "voleio": 60,
-    "slice": 54,
-    "movimento": 52,
+    "smash": 59,
     "lob": 54,
+    "topspin": 51,
+    "slice": 54,
     "winner": 48,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 1176,
   "atributos_psicologicos": {
-    "concentracao": 50,
+    "clutch": 50,
+    "consistencia": 65,
+    "compostura": 44,
     "agressividade": 40,
     "leitura_de_jogo": 51,
     "determinacao": 33
@@ -45,5 +54,10 @@
   "peso": 71,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

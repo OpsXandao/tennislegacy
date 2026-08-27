@@ -2,24 +2,33 @@
   "nome": "Nerman Fatic",
   "nacionalidade": "[BA]",
   "idade": 31,
-  "overall": 79,
+  "overall": 66,
   "pontos": 254,
   "atributos": {
-    "saque": 70,
+    "vel_saque": 68,
+    "pre_saque": 70,
+    "segundo_saque": 70,
+    "retorno": 71,
     "forehand": 70,
     "backhand": 79,
-    "topspin": 65,
     "voleio": 64,
-    "slice": 62,
-    "movimento": 65,
+    "smash": 62,
     "lob": 67,
+    "topspin": 65,
+    "slice": 62,
     "winner": 65,
-    "fisico": 60,
+    "velocidade": 63,
+    "aceleracao": 59,
+    "resistencia": 60,
+    "forca": 66,
+    "agilidade": 63,
     "duplas": 60
   },
   "id": 260,
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 38,
+    "compostura": 59,
     "agressividade": 67,
     "leitura_de_jogo": 52,
     "determinacao": 72
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

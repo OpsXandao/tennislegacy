@@ -2,24 +2,33 @@
   "nome": "Nicolas Tepmahc",
   "nacionalidade": "[FR]",
   "idade": 24,
-  "overall": 73,
+  "overall": 51,
   "pontos": 51,
   "atributos": {
-    "saque": 51,
+    "vel_saque": 52,
+    "pre_saque": 49,
+    "segundo_saque": 53,
+    "retorno": 50,
     "forehand": 44,
     "backhand": 54,
-    "topspin": 47,
     "voleio": 49,
-    "slice": 41,
-    "movimento": 50,
+    "smash": 52,
     "lob": 41,
+    "topspin": 47,
+    "slice": 41,
     "winner": 52,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 703,
   "atributos_psicologicos": {
-    "concentracao": 33,
+    "clutch": 33,
+    "consistencia": 59,
+    "compostura": 36,
     "agressividade": 46,
     "leitura_de_jogo": 34,
     "determinacao": 45
@@ -45,5 +54,10 @@
   "peso": 65,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

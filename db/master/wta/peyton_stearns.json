@@ -5,22 +5,31 @@
   "idade": 24,
   "pontos": 1041,
   "pontos_ranking": 1041,
-  "overall": 85,
+  "overall": 77,
   "atributos": {
-    "saque": 73,
+    "vel_saque": 73,
+    "pre_saque": 74,
+    "segundo_saque": 75,
+    "retorno": 76,
     "forehand": 82,
     "backhand": 75,
-    "topspin": 79,
     "voleio": 81,
-    "slice": 77,
-    "movimento": 80,
+    "smash": 79,
     "lob": 77,
-    "fisico": 77,
+    "topspin": 79,
+    "slice": 77,
     "winner": 72,
+    "velocidade": 78,
+    "aceleracao": 72,
+    "resistencia": 77,
+    "forca": 77,
+    "agilidade": 78,
     "duplas": 93
   },
   "atributos_psicologicos": {
-    "concentracao": 79,
+    "clutch": 79,
+    "consistencia": 35,
+    "compostura": 78,
     "agressividade": 73,
     "leitura_de_jogo": 73,
     "determinacao": 77
@@ -54,5 +63,10 @@
   "mao_dominante": "Destra",
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
-  "rank_duplas": 52
+  "rank_duplas": 52,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -158,6 +158,48 @@ TOURNAMENT_PROFILES = {
         "merge_transitions": set(),
         "usa_entrada_direta_ranqueados": False,
     },
+    # Paris Masters (Bercy): draw real de 48 jogadores (não 96 como ATP 1000 genérico)
+    "atp_1000_48": {
+        "best_of_sets_masculino": BEST_OF_PADRAO,
+        "best_of_sets_feminino": BEST_OF_PADRAO,
+        "num_rounds": 6,
+        "draw_size_main": 48,
+        "draw_size_first_main_phase": 48,
+        "draw_size_atualizar_fase_merge": 48,
+        "main_draw_first_phase": "r48",
+        "qualy_phases": ["qualy_1", "qualy_2"],
+        "main_draw_phases": ["r48", "r32", "r16", "quartas", "semifinal", "final"],
+        "vagas_qualy": QUALY_VAGAS_ATP_1000,
+        "num_jogadores_qualy": QUALY_JOGADORES_ATP_1000,
+        "num_top_diretos": 32,
+        "wildcards": WILDCARDS_ATP_1000,
+        "merge_transitions": {("qualy_2", "r48"), ("r48", "r32")},
+        "usa_entrada_direta_ranqueados": False,
+    },
+    # Monte-Carlo Masters: draw real de 56 jogadores (não obrigatório, sem byes automáticos top)
+    "atp_1000_56": {
+        "best_of_sets_masculino": BEST_OF_PADRAO,
+        "best_of_sets_feminino": BEST_OF_PADRAO,
+        "num_rounds": 6,
+        "draw_size_main": 56,
+        "draw_size_first_main_phase": 56,
+        "draw_size_atualizar_fase_merge": 56,
+        "main_draw_first_phase": "r56",
+        "qualy_phases": ["qualy_1", "qualy_2"],
+        "main_draw_phases": ["r56", "r32", "r16", "quartas", "semifinal", "final"],
+        "vagas_qualy": QUALY_VAGAS_ATP_1000,
+        "num_jogadores_qualy": QUALY_JOGADORES_ATP_1000,
+        "num_top_diretos": 40,
+        "wildcards": WILDCARDS_ATP_1000,
+        "merge_transitions": {("qualy_2", "r56"), ("r56", "r32")},
+        "usa_entrada_direta_ranqueados": False,
+    },
+}
+
+# Perfis específicos por nome de torneio (sobrescreve perfil genérico do tipo)
+TOURNAMENT_NAME_PROFILE_OVERRIDES = {
+    "Paris Masters": "atp_1000_48",
+    "Monte-Carlo Masters": "atp_1000_56",
 }
 
 ENTRY_DIRECT_SELECTORS = {

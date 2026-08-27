@@ -2,24 +2,33 @@
   "nome": "Sebastian Fanselow",
   "nacionalidade": "[DE]",
   "idade": 34,
-  "overall": 71,
+  "overall": 67,
   "pontos": 10,
   "atributos": {
-    "saque": 66,
+    "vel_saque": 65,
+    "pre_saque": 66,
+    "segundo_saque": 64,
+    "retorno": 72,
     "forehand": 68,
     "backhand": 75,
-    "topspin": 65,
     "voleio": 59,
-    "slice": 62,
-    "movimento": 76,
+    "smash": 61,
     "lob": 77,
+    "topspin": 65,
+    "slice": 62,
     "winner": 76,
-    "fisico": 60,
+    "velocidade": 69,
+    "aceleracao": 65,
+    "resistencia": 60,
+    "forca": 65,
+    "agilidade": 70,
     "duplas": 60
   },
   "id": 1172,
   "atributos_psicologicos": {
-    "concentracao": 62,
+    "clutch": 62,
+    "consistencia": 53,
+    "compostura": 60,
     "agressividade": 52,
     "leitura_de_jogo": 63,
     "determinacao": 58
@@ -45,5 +54,10 @@
   "peso": 87,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

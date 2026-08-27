@@ -6,20 +6,29 @@
   "pontos": 2625,
   "id": 87510,
   "atributos": {
-    "saque": 98,
+    "vel_saque": 97,
+    "pre_saque": 98,
+    "segundo_saque": 85,
+    "retorno": 93,
     "forehand": 83,
     "backhand": 98,
-    "topspin": 88,
     "voleio": 98,
-    "slice": 98,
-    "movimento": 83,
+    "smash": 96,
     "lob": 88,
-    "fisico": 97,
+    "topspin": 88,
+    "slice": 98,
     "winner": 84,
+    "velocidade": 88,
+    "aceleracao": 81,
+    "resistencia": 97,
+    "forca": 93,
+    "agilidade": 88,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 41,
+    "clutch": 41,
+    "consistencia": 54,
+    "compostura": 48,
     "agressividade": 51,
     "leitura_de_jogo": 63,
     "determinacao": 64
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2625,
-  "rank_duplas": 25
+  "rank_duplas": 25,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

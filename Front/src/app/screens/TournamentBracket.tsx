@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 import { ActionDock, NeonButton, PageHeader } from '../components'
 import { api } from '../../api/client'
 import { useGameStore } from '../../store/gameStore'
-import type { PartidaScout, TorneioState } from '../../types'
+import type { PartidaScout, TorneioState, WorldScheduleEvent } from '../../types'
 import { FASE_ORDEM, type BracketSection, type Round } from './bracket/types'
 import { nodesToRounds, splitRounds, isQualyPhase, faseLabelDisplay } from './bracket/utils'
 import { BracketCanvas } from './bracket/BracketCanvas'
@@ -27,6 +27,11 @@ export function TournamentBracket() {
   const [scoutData, setScoutData] = useState<PartidaScout | null>(null)
   const [loadingScout, setLoadingScout] = useState(false)
   const [confirmDesistir, setConfirmDesistir] = useState(false)
+  const [avancando, setAvancando] = useState(false)
+  const proximoEvento: WorldScheduleEvent | null = torneio?.proximo_evento_jogavel ?? null
+  const jogadorPodeContinuar = Boolean(
+    torneio?.jogador_ativo || torneio?.partida_disponivel || proximoEvento,
+  )
 
   function limparEstadoTorneio() {
     setLocal(null)
@@ -59,24 +64,55 @@ export function TournamentBracket() {
       .finally(() => setLoading(false))
   }, [nomeJogador, setTorneio])
 
+  async function recarregarTorneio() {
+    const t = await api.torneio.estado()
+    if (!t) {
+      limparEstadoTorneio()
+      return null
+    }
+    setLocal(t)
+    setTorneio(t)
+    const parsed = nodesToRounds(t.bracket, t.fase_atual, t.jogador_ativo, nomeJogador)
+    const parsedSections = splitRounds(parsed, t.tipo)
+    setRounds(parsed)
+    setSections(parsedSections)
+    setActiveSectionId(isQualyPhase(t.fase_atual) ? 'qualy' : 'main')
+    setTemPartidaPendente(!!t.partida_disponivel)
+    return t
+  }
+
+  async function handleAvancarMomento() {
+    setAvancar(true)
+    setErroAcao('')
+    try {
+      const r = await api.torneio.avancarProximoMomento()
+      if (r.ok) {
+        await recarregarTorneio()
+        if (r.evento?.tipo === 'player_match') {
+          setTemPartidaPendente(true)
+        }
+        return
+      }
+      await handleAvancarFase()
+    } catch (err) {
+      console.error("Erro ao avançar momento:", err)
+      setErroAcao("Falha ao avançar o calendário do torneio.")
+    } finally {
+      setAvancar(false)
+    }
+  }
+
   async function handleAvancarFase() {
     setAvancar(true)
     try {
       await api.torneio.avancarFase()
-      const t = await api.torneio.estado()
+      const t = await recarregarTorneio()
       if (!t) {
-        limparEstadoTorneio()
+        setTorneio(null)
+        setPartidaId(null)
         navigate('/hub')
         return
       }
-      setLocal(t)
-      setTorneio(t)
-      const parsed = nodesToRounds(t.bracket, t.fase_atual, t.jogador_ativo, nomeJogador)
-      const parsedSections = splitRounds(parsed, t.tipo)
-      setRounds(parsed)
-      setSections(parsedSections)
-      setActiveSectionId(isQualyPhase(t.fase_atual) ? 'qualy' : 'main')
-      setTemPartidaPendente(!!t.partida_disponivel)
     } catch (err) {
       console.error("Erro ao avançar fase:", err)
       setErroAcao("Falha ao avançar fase. Tente novamente.")
@@ -139,7 +175,7 @@ export function TournamentBracket() {
   }
 
   async function handleDesistir() {
-    if (torneio?.jogador_ativo) {
+    if (jogadorPodeContinuar) {
       try {
         const r = await api.torneio.desistir()
         if (typeof r.semana === 'number') {
@@ -170,9 +206,12 @@ export function TournamentBracket() {
   }
 
   async function handleConcluirTorneio() {
+    setAvancando(true)
     try {
       if (torneio?.fase_atual === 'finalizado' || campeaoFinal) {
         const r = await api.calendario.avancar()
+        setTorneio(null)
+        setPartidaId(null)
         navigate('/week-advance', {
           replace: true,
           state: {
@@ -184,18 +223,22 @@ export function TournamentBracket() {
             eventos: r.eventos ?? [],
             processamento: r.processamento ?? [],
             torneiosDisponiveis: r.torneios_disponiveis ?? [],
+            rival_info: r.rival_info ?? null,
             motivo: 'tournament_end',
           },
         })
         return
       }
+      setTorneio(null)
+      setPartidaId(null)
       navigate('/hub')
     } catch (err) {
       console.error("Erro ao concluir torneio:", err)
-      navigate('/hub')
-    } finally {
       setTorneio(null)
       setPartidaId(null)
+      navigate('/hub')
+    } finally {
+      setAvancando(false)
     }
   }
 
@@ -324,6 +367,53 @@ export function TournamentBracket() {
             </motion.div>
           )}
 
+
+          {proximoEvento && (
+            <div className="mb-3 border-2 border-neon-green/60 bg-neon-green/5 p-3">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <div className="pixel-font text-[10px] text-neon-green">PRÓXIMO MATCHDAY</div>
+                  <div className="arcade-font text-[10px] text-white mt-1">
+                    DIA {proximoEvento.dia} • {proximoEvento.hora} • {proximoEvento.fase.toUpperCase()}
+                  </div>
+                  <div className="arcade-font text-[9px] text-[#8aa] mt-1">
+                    {proximoEvento.jogador1} vs {proximoEvento.jogador2}
+                  </div>
+                  <div className="arcade-font text-[8px] text-[#6f8790] mt-1">
+                    {proximoEvento.quadra ?? 'Quadra'} • melhor de {proximoEvento.melhor_de ?? 3} • risco clima {Math.round((proximoEvento.risco_atraso_clima ?? 0) * 100)}%
+                  </div>
+                </div>
+                <div className="arcade-font text-[8px] text-neon-yellow text-right">
+                  {proximoEvento.presentation === 'ea_matchday' ? 'MATCHDAY' : 'WORLD SIM'}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {torneio?.entry_list_summary && (
+            <div className="mb-3 border border-neon-cyan/40 bg-neon-cyan/5 p-3">
+              <div className="pixel-font text-[9px] text-neon-cyan mb-2">ENTRY LIST</div>
+              <div className="grid grid-cols-4 gap-2 text-center">
+                <div>
+                  <div className="pixel-font text-[10px] text-white">{torneio.entry_list_summary.main_draw ?? 0}</div>
+                  <div className="arcade-font text-[7px] text-[#8aa]">MAIN</div>
+                </div>
+                <div>
+                  <div className="pixel-font text-[10px] text-white">{torneio.entry_list_summary.qualifying ?? 0}</div>
+                  <div className="arcade-font text-[7px] text-[#8aa]">QUALY</div>
+                </div>
+                <div>
+                  <div className="pixel-font text-[10px] text-white">{torneio.entry_list_summary.wildcards ?? 0}</div>
+                  <div className="arcade-font text-[7px] text-[#8aa]">WILD</div>
+                </div>
+                <div>
+                  <div className="pixel-font text-[10px] text-white">#{torneio.entry_list_summary.cutoff_rank ?? '-'}</div>
+                  <div className="arcade-font text-[7px] text-[#8aa]">CUT</div>
+                </div>
+              </div>
+            </div>
+          )}
+
           {scoutData && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -399,10 +489,10 @@ export function TournamentBracket() {
             </motion.div>
           )}
 
-          {!torneio || !torneio.jogador_ativo ? (
+          {!torneio || !jogadorPodeContinuar ? (
             campeaoFinal || torneio?.fase_atual === 'finalizado' ? (
-              <NeonButton variant="green" className="w-full" onClick={handleConcluirTorneio}>
-                AVANÇAR SEMANA
+              <NeonButton variant="green" className="w-full" onClick={handleConcluirTorneio} disabled={avancando}>
+                {avancando ? 'AVANÇANDO...' : 'AVANÇAR SEMANA'}
               </NeonButton>
             ) : (
               <div className="grid gap-3 grid-cols-2">
@@ -448,10 +538,10 @@ export function TournamentBracket() {
                 <NeonButton
                   variant="green"
                   className="w-full"
-                  onClick={handleAvancarFase}
+                  onClick={proximoEvento ? handleAvancarMomento : handleAvancarFase}
                   blink={avancar}
                 >
-                  {avancar ? 'AVANÇANDO...' : getProximaFaseLabel()}
+                  {avancar ? 'AVANÇANDO...' : proximoEvento ? 'AVANÇAR ATÉ MATCHDAY' : getProximaFaseLabel()}
                 </NeonButton>
               )}
               <NeonButton

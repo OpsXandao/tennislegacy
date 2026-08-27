@@ -2,24 +2,33 @@
   "nome": "Alaa Trifi",
   "nacionalidade": "[TN]",
   "idade": 19,
-  "overall": 70,
+  "overall": 50,
   "pontos": 13,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 49,
+    "segundo_saque": 54,
+    "retorno": 43,
     "forehand": 42,
     "backhand": 41,
-    "topspin": 50,
     "voleio": 56,
-    "slice": 43,
-    "movimento": 47,
+    "smash": 55,
     "lob": 41,
+    "topspin": 50,
+    "slice": 43,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 1103,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 64,
+    "compostura": 40,
     "agressividade": 41,
     "leitura_de_jogo": 34,
     "determinacao": 45
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

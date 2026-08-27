@@ -117,7 +117,7 @@ class ApiPartidaResumeTests(unittest.TestCase):
             rivalidades={},
         )
 
-        with patch.object(runtime_module, "carregar_jogador", return_value=jogador):
+        with patch("src.dados.carregar_jogador", return_value=jogador):
             runtime = runtime_module.MatchRuntime.from_snapshot(payload)
 
         self.assertEqual(runtime.estrategia_j["estilo"], "atacar_na_rede")

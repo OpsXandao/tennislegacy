@@ -2,24 +2,33 @@
   "nome": "Mark Wallner",
   "nacionalidade": "[RU] Rússia",
   "idade": 20,
-  "overall": 88,
+  "overall": 86,
   "pontos": 1955,
   "id": 48404,
   "atributos": {
-    "saque": 96,
+    "vel_saque": 94,
+    "pre_saque": 92,
+    "segundo_saque": 79,
+    "retorno": 86,
     "forehand": 81,
     "backhand": 89,
-    "topspin": 82,
     "voleio": 89,
-    "slice": 83,
-    "movimento": 86,
+    "smash": 88,
     "lob": 83,
-    "fisico": 88,
+    "topspin": 82,
+    "slice": 83,
     "winner": 94,
+    "velocidade": 86,
+    "aceleracao": 79,
+    "resistencia": 88,
+    "forca": 86,
+    "agilidade": 86,
     "duplas": 101
   },
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 53,
+    "compostura": 53,
     "agressividade": 52,
     "leitura_de_jogo": 55,
     "determinacao": 49
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1955,
-  "rank_duplas": 49
+  "rank_duplas": 49,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

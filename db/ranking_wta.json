@@ -1,0 +1,7331 @@
+[
+  {
+    "nome": "Aryna Sabalenka",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 10675,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Iga Świątek",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 7588,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elena Rybakina",
+    "nacionalidade": "[KZ]",
+    "pontos_ranking": 7253,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gabriela Dabrowski",
+    "nacionalidade": "[CA] Canadá",
+    "pontos_ranking": 6926,
+    "pontos_ranking_duplas": 6926,
+    "atributos": {}
+  },
+  {
+    "nome": "Coco Gauff",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 6803,
+    "pontos_ranking_duplas": 1440,
+    "atributos": {}
+  },
+  {
+    "nome": "Jessica Pegula",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 6583,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Danilina",
+    "nacionalidade": "[KZ] Cazaquistão",
+    "pontos_ranking": 6440,
+    "pontos_ranking_duplas": 6440,
+    "atributos": {}
+  },
+  {
+    "nome": "Amanda Anisimova",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 6070,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Luisa Stefani",
+    "nacionalidade": "[BR] Brasil",
+    "pontos_ranking": 5860,
+    "pontos_ranking_duplas": 5860,
+    "atributos": {}
+  },
+  {
+    "nome": "Erin Routliffe",
+    "nacionalidade": "[NZ] Nova Zelândia",
+    "pontos_ranking": 5790,
+    "pontos_ranking_duplas": 5790,
+    "atributos": {}
+  },
+  {
+    "nome": "Su-wei Hsieh",
+    "nacionalidade": "[TW] TWN",
+    "pontos_ranking": 5258,
+    "pontos_ranking_duplas": 5258,
+    "atributos": {}
+  },
+  {
+    "nome": "Tímea Babos",
+    "nacionalidade": "[HU] Hungria",
+    "pontos_ranking": 4200,
+    "pontos_ranking_duplas": 4200,
+    "atributos": {}
+  },
+  {
+    "nome": "Jasmine Paolini",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 4145,
+    "pontos_ranking_duplas": 6585,
+    "atributos": {}
+  },
+  {
+    "nome": "Mirra Andreeva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 4001,
+    "pontos_ranking_duplas": 3099,
+    "atributos": {}
+  },
+  {
+    "nome": "Elina Svitolina",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 3845,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nicole Melichar-Martinez",
+    "nacionalidade": "[US] Estados Unidos",
+    "pontos_ranking": 3463,
+    "pontos_ranking_duplas": 3463,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Mboko",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 3211,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterina Alexandrova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 2918,
+    "pontos_ranking_duplas": 2007,
+    "atributos": {}
+  },
+  {
+    "nome": "Belinda Bencic",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 2898,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ellen Perez",
+    "nacionalidade": "[AU] Austrália",
+    "pontos_ranking": 2855,
+    "pontos_ranking_duplas": 2855,
+    "atributos": {}
+  },
+  {
+    "nome": "Karolína Muchová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 2668,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alexandra Panova",
+    "nacionalidade": "[RU] Rússia",
+    "pontos_ranking": 2634,
+    "pontos_ranking_duplas": 2634,
+    "atributos": {}
+  },
+  {
+    "nome": "Demi Schuurs",
+    "nacionalidade": "[NL] Países Baixos",
+    "pontos_ranking": 2625,
+    "pontos_ranking_duplas": 2625,
+    "atributos": {}
+  },
+  {
+    "nome": "Asia Muhammad",
+    "nacionalidade": "[US] Estados Unidos",
+    "pontos_ranking": 2601,
+    "pontos_ranking_duplas": 2601,
+    "atributos": {}
+  },
+  {
+    "nome": "Lyudmyla Kichenok",
+    "nacionalidade": "[UA] Ucrânia",
+    "pontos_ranking": 2580,
+    "pontos_ranking_duplas": 2580,
+    "atributos": {}
+  },
+  {
+    "nome": "Xinyu Jiang",
+    "nacionalidade": "[CN] China",
+    "pontos_ranking": 2524,
+    "pontos_ranking_duplas": 2524,
+    "atributos": {}
+  },
+  {
+    "nome": "Desirae Krawczyk",
+    "nacionalidade": "[US] Estados Unidos",
+    "pontos_ranking": 2469,
+    "pontos_ranking_duplas": 2469,
+    "atributos": {}
+  },
+  {
+    "nome": "Fanny Stollár",
+    "nacionalidade": "[HU] Hungria",
+    "pontos_ranking": 2469,
+    "pontos_ranking_duplas": 2469,
+    "atributos": {}
+  },
+  {
+    "nome": "Olivia Nicholls",
+    "nacionalidade": "[GB] Reino Unido",
+    "pontos_ranking": 2442,
+    "pontos_ranking_duplas": 2442,
+    "atributos": {}
+  },
+  {
+    "nome": "Tereza Mihalíková",
+    "nacionalidade": "[SK] Eslováquia",
+    "pontos_ranking": 2442,
+    "pontos_ranking_duplas": 2442,
+    "atributos": {}
+  },
+  {
+    "nome": "Linda Nosková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 2421,
+    "pontos_ranking_duplas": 1073,
+    "atributos": {}
+  },
+  {
+    "nome": "Madison Keys",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 2351,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Naomi Osaka",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 2324,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Clara Tauson",
+    "nacionalidade": "[DK]",
+    "pontos_ranking": 2095,
+    "pontos_ranking_duplas": 1368,
+    "atributos": {}
+  },
+  {
+    "nome": "Iva Jovic",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 2095,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ludmilla Samsonova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 2050,
+    "pontos_ranking_duplas": 1833,
+    "atributos": {}
+  },
+  {
+    "nome": "Hao-ching Chan",
+    "nacionalidade": "[TW] TWN",
+    "pontos_ranking": 2032,
+    "pontos_ranking_duplas": 2032,
+    "atributos": {}
+  },
+  {
+    "nome": "Ulrikke Eikeri",
+    "nacionalidade": "[NO] Noruega",
+    "pontos_ranking": 2025,
+    "pontos_ranking_duplas": 2025,
+    "atributos": {}
+  },
+  {
+    "nome": "Irina Khromacheva",
+    "nacionalidade": "[RU] Rússia",
+    "pontos_ranking": 1962,
+    "pontos_ranking_duplas": 1962,
+    "atributos": {}
+  },
+  {
+    "nome": "Diana Shnaider",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 1953,
+    "pontos_ranking_duplas": 3740,
+    "atributos": {}
+  },
+  {
+    "nome": "Elise Mertens",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 1936,
+    "pontos_ranking_duplas": 8483,
+    "atributos": {}
+  },
+  {
+    "nome": "Fang-Hsien Wu",
+    "nacionalidade": "[TW] TWN",
+    "pontos_ranking": 1871,
+    "pontos_ranking_duplas": 1871,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Kalinskaya",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 1813,
+    "pontos_ranking_duplas": 1590,
+    "atributos": {}
+  },
+  {
+    "nome": "Yifan Xu",
+    "nacionalidade": "[CN] China",
+    "pontos_ranking": 1802,
+    "pontos_ranking_duplas": 1802,
+    "atributos": {}
+  },
+  {
+    "nome": "Giuliana Olmos",
+    "nacionalidade": "[MX] México",
+    "pontos_ranking": 1765,
+    "pontos_ranking_duplas": 1765,
+    "atributos": {}
+  },
+  {
+    "nome": "Qinwen Zheng",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 1758,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Miyu Kato",
+    "nacionalidade": "[JP] Japão",
+    "pontos_ranking": 1741,
+    "pontos_ranking_duplas": 1741,
+    "atributos": {}
+  },
+  {
+    "nome": "Emma Raducanu",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 1645,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aldila Sutjiadi",
+    "nacionalidade": "[ID] Indonésia",
+    "pontos_ranking": 1619,
+    "pontos_ranking_duplas": 1619,
+    "atributos": {}
+  },
+  {
+    "nome": "Emma Navarro",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 1605,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jeļena Ostapenko",
+    "nacionalidade": "[LV]",
+    "pontos_ranking": 1600,
+    "pontos_ranking_duplas": 5440,
+    "atributos": {}
+  },
+  {
+    "nome": "Leylah Fernandez",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 1598,
+    "pontos_ranking_duplas": 1159,
+    "atributos": {}
+  },
+  {
+    "nome": "Marta Kostyuk",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 1583,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shuko Aoyama",
+    "nacionalidade": "[JP] Japão",
+    "pontos_ranking": 1579,
+    "pontos_ranking_duplas": 1579,
+    "atributos": {}
+  },
+  {
+    "nome": "Quinn Gleason",
+    "nacionalidade": "[US] Estados Unidos",
+    "pontos_ranking": 1519,
+    "pontos_ranking_duplas": 1519,
+    "atributos": {}
+  },
+  {
+    "nome": "Sabrina Santamaria",
+    "nacionalidade": "[US] Estados Unidos",
+    "pontos_ranking": 1480,
+    "pontos_ranking_duplas": 1480,
+    "atributos": {}
+  },
+  {
+    "nome": "Maya Joint",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 1465,
+    "pontos_ranking_duplas": 2295,
+    "atributos": {}
+  },
+  {
+    "nome": "Zhaoxuan Yang",
+    "nacionalidade": "[CN] China",
+    "pontos_ranking": 1443,
+    "pontos_ranking_duplas": 1443,
+    "atributos": {}
+  },
+  {
+    "nome": "Xinyu Wang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 1438,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alexandra Eala",
+    "nacionalidade": "[PH]",
+    "pontos_ranking": 1432,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marie Bouzková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 1425,
+    "pontos_ranking_duplas": 1084,
+    "atributos": {}
+  },
+  {
+    "nome": "Makoto Ninomiya",
+    "nacionalidade": "[JP] Japão",
+    "pontos_ranking": 1410,
+    "pontos_ranking_duplas": 1410,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Sakkari",
+    "nacionalidade": "[GR]",
+    "pontos_ranking": 1410,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nadiia Kichenok",
+    "nacionalidade": "[UA] Ucrânia",
+    "pontos_ranking": 1377,
+    "pontos_ranking_duplas": 1377,
+    "atributos": {}
+  },
+  {
+    "nome": "Jaqueline Cristian",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 1367,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Miriam Kolodziejová",
+    "nacionalidade": "[CZ] CZE",
+    "pontos_ranking": 1363,
+    "pontos_ranking_duplas": 1363,
+    "atributos": {}
+  },
+  {
+    "nome": "Sorana Cîrstea",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 1344,
+    "pontos_ranking_duplas": 1470,
+    "atributos": {}
+  },
+  {
+    "nome": "Janice Tjen",
+    "nacionalidade": "[ID]",
+    "pontos_ranking": 1341,
+    "pontos_ranking_duplas": 1705,
+    "atributos": {}
+  },
+  {
+    "nome": "Sára Bejlek",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 1341,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Loïs Boisson",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 1337,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maia Lumsden",
+    "nacionalidade": "[GB] Reino Unido",
+    "pontos_ranking": 1337,
+    "pontos_ranking_duplas": 1337,
+    "atributos": {}
+  },
+  {
+    "nome": "Ann Li",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 1333,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katarzyna Piter",
+    "nacionalidade": "[PL] Polônia",
+    "pontos_ranking": 1305,
+    "pontos_ranking_duplas": 1305,
+    "atributos": {}
+  },
+  {
+    "nome": "Elisabetta Cocciaretto",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 1290,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hailey Baptiste",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 1274,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kateřina Siniaková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 1269,
+    "pontos_ranking_duplas": 6460,
+    "atributos": {}
+  },
+  {
+    "nome": "Sofia Kenin",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 1267,
+    "pontos_ranking_duplas": 2369,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Dețiuc",
+    "nacionalidade": "[CZ] CZE",
+    "pontos_ranking": 1263,
+    "pontos_ranking_duplas": 1263,
+    "atributos": {}
+  },
+  {
+    "nome": "Markéta Vondroušová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 1263,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tereza Valentová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 1256,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Magda Linette",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 1234,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Isabelle Haverlag",
+    "nacionalidade": "[NL] Países Baixos",
+    "pontos_ranking": 1231,
+    "pontos_ranking_duplas": 1231,
+    "atributos": {}
+  },
+  {
+    "nome": "Jéssica Bouzas Maneiro",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 1202,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Qianhui Tang",
+    "nacionalidade": "[CN] China",
+    "pontos_ranking": 1197,
+    "pontos_ranking_duplas": 1197,
+    "atributos": {}
+  },
+  {
+    "nome": "Mccartney Kessler",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 1193,
+    "pontos_ranking_duplas": 1302,
+    "atributos": {}
+  },
+  {
+    "nome": "Magali Kempen",
+    "nacionalidade": "[BE] Bélgica",
+    "pontos_ranking": 1179,
+    "pontos_ranking_duplas": 1179,
+    "atributos": {}
+  },
+  {
+    "nome": "Dayana Yastremska",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 1170,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Barbora Krejčíková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 1156,
+    "pontos_ranking_duplas": 1464,
+    "atributos": {}
+  },
+  {
+    "nome": "Magdalena Fręch",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 1131,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sonay Kartal",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 1127,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Laura Siegemund",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 1110,
+    "pontos_ranking_duplas": 2701,
+    "atributos": {}
+  },
+  {
+    "nome": "Veronika Kudermetova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 1089,
+    "pontos_ranking_duplas": 6386,
+    "atributos": {}
+  },
+  {
+    "nome": "Haddad Maia",
+    "nacionalidade": "[BR] Brasil",
+    "pontos_ranking": 1087,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Antonia Ružić",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 1075,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Varvara Gracheva",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 1072,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tatjana Maria",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 1069,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daria Kasatkina",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 1052,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gamarra Martins",
+    "nacionalidade": "[BR] Brasil",
+    "pontos_ranking": 1052,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ingrid Gamarra Martins",
+    "nacionalidade": "[BR] Brasil",
+    "pontos_ranking": 1052,
+    "pontos_ranking_duplas": 1052,
+    "atributos": {}
+  },
+  {
+    "nome": "Cristina Bucșa",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 1044,
+    "pontos_ranking_duplas": 3580,
+    "atributos": {}
+  },
+  {
+    "nome": "Peyton Stearns",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 1041,
+    "pontos_ranking_duplas": 1497,
+    "atributos": {}
+  },
+  {
+    "nome": "Camila Osorio",
+    "nacionalidade": "[CO]",
+    "pontos_ranking": 1038,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elsa Jacquemot",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 1026,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katie Boulter",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 982,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Solana Sierra",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 980,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Bondár",
+    "nacionalidade": "[HU]",
+    "pontos_ranking": 978,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shuai Zhang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 952,
+    "pontos_ranking_duplas": 5206,
+    "atributos": {}
+  },
+  {
+    "nome": "Beatriz Haddad Maia",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 942,
+    "pontos_ranking_duplas": 1087,
+    "atributos": {}
+  },
+  {
+    "nome": "Caty McNally",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 928,
+    "pontos_ranking_duplas": 1334,
+    "atributos": {}
+  },
+  {
+    "nome": "Eva Lys",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 923,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Oksana Selekhmeteva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 917,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Petra Marčinko",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 902,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carmen Corley",
+    "nacionalidade": "[US] Estados Unidos",
+    "pontos_ranking": 901,
+    "pontos_ranking_duplas": 901,
+    "atributos": {}
+  },
+  {
+    "nome": "Oleksandra Oliynykova",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 894,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elena-Gabriela Ruse",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 892,
+    "pontos_ranking_duplas": 1150,
+    "atributos": {}
+  },
+  {
+    "nome": "Oksana Kalashnikova",
+    "nacionalidade": "[GE] Geórgia",
+    "pontos_ranking": 885,
+    "pontos_ranking_duplas": 885,
+    "atributos": {}
+  },
+  {
+    "nome": "Kimberly Birrell",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 881,
+    "pontos_ranking_duplas": 827,
+    "atributos": {}
+  },
+  {
+    "nome": "Viktorija Golubic",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 881,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ivana Corley",
+    "nacionalidade": "[US] Estados Unidos",
+    "pontos_ranking": 875,
+    "pontos_ranking_duplas": 875,
+    "atributos": {}
+  },
+  {
+    "nome": "Yulia Putintseva",
+    "nacionalidade": "[KZ]",
+    "pontos_ranking": 871,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Danielle Collins",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 865,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julia Grabher",
+    "nacionalidade": "[AT]",
+    "pontos_ranking": 859,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Zeynep Sönmez",
+    "nacionalidade": "[TR]",
+    "pontos_ranking": 851,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Simona Waltert",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 850,
+    "pontos_ranking_duplas": 892,
+    "atributos": {}
+  },
+  {
+    "nome": "Ella Seidel",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 847,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dalma Gálfi",
+    "nacionalidade": "[HU]",
+    "pontos_ranking": 838,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ajla Tomljanović",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 837,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Zakharova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 831,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Saisai Zheng",
+    "nacionalidade": "[CN] China",
+    "pontos_ranking": 828,
+    "pontos_ranking_duplas": 828,
+    "atributos": {}
+  },
+  {
+    "nome": "Shuo Feng",
+    "nacionalidade": "[CN] China",
+    "pontos_ranking": 815,
+    "pontos_ranking_duplas": 815,
+    "atributos": {}
+  },
+  {
+    "nome": "Kamilla Rakhimova",
+    "nacionalidade": "[UZ]",
+    "pontos_ranking": 814,
+    "pontos_ranking_duplas": 1475,
+    "atributos": {}
+  },
+  {
+    "nome": "Renata Zarazúa",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 814,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Olga Danilović",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 811,
+    "pontos_ranking_duplas": 1025,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Potapova",
+    "nacionalidade": "[AT]",
+    "pontos_ranking": 810,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kaja Juvan",
+    "nacionalidade": "[SI]",
+    "pontos_ranking": 808,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Francesca Jones",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 806,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ashlyn Krueger",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 805,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Blinkova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 795,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Moyuka Uchijima",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 793,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Herrero Liñana",
+    "nacionalidade": "[ES] Espanha",
+    "pontos_ranking": 792,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Panna Udvardy",
+    "nacionalidade": "[HU]",
+    "pontos_ranking": 792,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alycia Parks",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 789,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Jimenez Kasintseva",
+    "nacionalidade": "[AD]",
+    "pontos_ranking": 788,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katie Volynets",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 786,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Darja Semenistaja",
+    "nacionalidade": "[LV]",
+    "pontos_ranking": 781,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lulu Sun",
+    "nacionalidade": "[NZ]",
+    "pontos_ranking": 780,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nikola Bartůňková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 775,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Veronika Erjavec",
+    "nacionalidade": "[SI]",
+    "pontos_ranking": 774,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Donna Vekić",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 768,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mayar Sherif",
+    "nacionalidade": "[EG]",
+    "pontos_ranking": 754,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yulia Starodubtseva",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 751,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Paula Badosa",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 738,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sinja Kraus",
+    "nacionalidade": "[AT]",
+    "pontos_ranking": 738,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Emiliana Arango",
+    "nacionalidade": "[CO]",
+    "pontos_ranking": 737,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tamara Korpatsch",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 734,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rebeka Masarova",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 730,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Diane Parry",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 724,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Talia Gibson",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 721,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Taylor Townsend",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 720,
+    "pontos_ranking_duplas": 5785,
+    "atributos": {}
+  },
+  {
+    "nome": "Suzan Lamens",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 719,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Pavlyuchenkova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 716,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hanne Vandewinkel",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 702,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aliaksandra Sasnovich",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 701,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daria Snigur",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 690,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rebecca Šramková",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 680,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lilli Tagger",
+    "nacionalidade": "[AT]",
+    "pontos_ranking": 673,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yue Yuan",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 672,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Linda Fruhvirtová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 668,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Darja Viďmanová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 667,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Léolia Jeanjean",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 665,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lanlana Tararudee",
+    "nacionalidade": "[TH]",
+    "pontos_ranking": 632,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alina Korneeva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 628,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Priscilla Hon",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 627,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Caroline Dolehide",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 621,
+    "pontos_ranking_duplas": 1942,
+    "atributos": {}
+  },
+  {
+    "nome": "Tiantsoa Rakotomanga Rajaonah",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 602,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marina Stakusic",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 601,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dominika Šálková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 599,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kaitlin Quevedo",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 597,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maddison Inglis",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 597,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maja Chwalińska",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 593,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Arantxa Rus",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 560,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Himeno Sakatsume",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 556,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alina Charaeva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 555,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucrezia Stefanini",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 550,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lin Zhu",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 549,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sofia Costoulas",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 545,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lola Radivojevic",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 540,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucia Bronzetti",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 540,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Linda Klimovičová",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 537,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Leyre Romero Gormaz",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 526,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Emerson Jones",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 517,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katarzyna Kawa",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 516,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Polina Kudermetova",
+    "nacionalidade": "[UZ]",
+    "pontos_ranking": 514,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tamara Zidanšek",
+    "nacionalidade": "[SI]",
+    "pontos_ranking": 507,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Taylah Preston",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 497,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Varvara Lepchenko",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 493,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Viktoriya Tomova",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 490,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Whitney Osuigwe",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 490,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Greet Minnen",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 487,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Polina Iatcenko",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 477,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Timofeeva",
+    "nacionalidade": "[UZ]",
+    "pontos_ranking": 476,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elvina Kalieva",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 470,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nuria Brancaccio",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 468,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Despina Papamichail",
+    "nacionalidade": "[GR]",
+    "pontos_ranking": 464,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Iryna Shymanovich",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 460,
+    "pontos_ranking_duplas": 1292,
+    "atributos": {}
+  },
+  {
+    "nome": "María Carlé",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 457,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Irina-Camelia Begu",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 455,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Teodora Kostović",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 452,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Bianca Andreescu",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 444,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anouk Koevermans",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 440,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carol Lee",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 440,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterine Gorgodze",
+    "nacionalidade": "[GE]",
+    "pontos_ranking": 439,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hanyu Guo",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 439,
+    "pontos_ranking_duplas": 2995,
+    "atributos": {}
+  },
+  {
+    "nome": "Jessika Ponchet",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 438,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Harriet Dart",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 437,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elizabeth Mandlik",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 425,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Guiomar Maristany",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 423,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Azarenka",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 410,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Louisa Chirico",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 409,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nao Hibino",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 408,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Andrea Lazáro García",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 403,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tatiana Prozorova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 403,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mary Stoiana",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 399,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jil Teichmann",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 396,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Olivia Gadecki",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 394,
+    "pontos_ranking_duplas": 1243,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Gasanova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 393,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Fiona Crawley",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 390,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carole Monnet",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 388,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lina Gjorcheska",
+    "nacionalidade": "[MK]",
+    "pontos_ranking": 387,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anca Todoni",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 386,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kayla Day",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 386,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ye-Xin Ma",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 386,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasija Sevastova",
+    "nacionalidade": "[LV]",
+    "pontos_ranking": 385,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Cadence Brace",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 383,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Francisca Jorge",
+    "nacionalidade": "[PT]",
+    "pontos_ranking": 383,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julia Riera",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 382,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mona Barthel",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 382,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kayla Cross",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 381,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yeon Woo Ku",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 380,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Astra Sharma",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 378,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Bernarda Pera",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 378,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lisa Pigato",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 374,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ana Sofía Sánchez",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 373,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alice Ramé",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 368,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Laura Samson",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 366,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aoi Ito",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 361,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mananchaya Sawangkaew",
+    "nacionalidade": "[TH]",
+    "pontos_ranking": 359,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Veronika Podrez",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 359,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna-Lena Friedsam",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 356,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Claire Liu",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 355,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anhelina Kalinina",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 353,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Camilla Rosatello",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 346,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elena Pridankina",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 346,
+    "pontos_ranking_duplas": 1086,
+    "atributos": {}
+  },
+  {
+    "nome": "Miriam Bulgaru",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 346,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Silvia Ambrosio",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 346,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marina Bassols Ribera",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 344,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jana Fett",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 340,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Laura Pigossi",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 338,
+    "pontos_ranking_duplas": 968,
+    "atributos": {}
+  },
+  {
+    "nome": "Noma Noha Akugue",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 337,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Chloé Paquet",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 334,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mai Hontama",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 334,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Fiona Ferro",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 331,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Viktória Hrunčáková",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 331,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jazmin Ortenzi",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 330,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sada Nahimana",
+    "nacionalidade": "[BI]",
+    "pontos_ranking": 328,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aliona Bolsova",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 321,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julia Avdeeva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 318,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Barbora Palicová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 316,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Xiyu Wang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 315,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gabriela Knutson",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 313,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tara Würth",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 311,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Arina Rodionova",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 308,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Luisina Giovannini",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 308,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Celine Naef",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 307,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kathinka von Deichmann",
+    "nacionalidade": "[LI]",
+    "pontos_ranking": 306,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Susan Bandecchi",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 306,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Sisková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 305,
+    "pontos_ranking_duplas": 1444,
+    "atributos": {}
+  },
+  {
+    "nome": "Harmony Tan",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 303,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carolina Alves",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 302,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Storm Hunter",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 301,
+    "pontos_ranking_duplas": 3209,
+    "atributos": {}
+  },
+  {
+    "nome": "Amarissa Tóth",
+    "nacionalidade": "[HU]",
+    "pontos_ranking": 298,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ayana Akli",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 298,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katherine Sebov",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 297,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Caroline Werner",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 295,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Matilde Jorge",
+    "nacionalidade": "[PT]",
+    "pontos_ranking": 295,
+    "pontos_ranking_duplas": 809,
+    "atributos": {}
+  },
+  {
+    "nome": "Ena Shibahara",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 294,
+    "pontos_ranking_duplas": 1464,
+    "atributos": {}
+  },
+  {
+    "nome": "Julie Belgraver",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 294,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sara Saito",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 291,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mingge Xu",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 289,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carson Branstine",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 287,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Justina Mikulskytė",
+    "nacionalidade": "[LT]",
+    "pontos_ranking": 286,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Xiaodi You",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 286,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jessica Pieri",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 285,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Raluca Șerban",
+    "nacionalidade": "[CY]",
+    "pontos_ranking": 285,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Séléna Janicijevic",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 285,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eva Guerrero Álvarez",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 279,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hina Inoue",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 279,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Irene Burillo",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 279,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kajsa Rinaldo Persson",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 278,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Tikhonova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 276,
+    "pontos_ranking_duplas": 868,
+    "atributos": {}
+  },
+  {
+    "nome": "Arianne Hartono",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 276,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucie Havlíčková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 275,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elizara Yaneva",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 274,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eva Vedder",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 274,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Clervie Ngounoue",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 271,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rebecca Marino",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 270,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Karolína Plíšková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 267,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tyra Grant",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 266,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Heather Watson",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 265,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Fangran Tian",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 263,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Xinyu Gao",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 263,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nuria Párrizas Díaz",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 262,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ons Jabeur",
+    "nacionalidade": "[TN]",
+    "pontos_ranking": 262,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Angela Fita Boluda",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 260,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katie Swan",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 260,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasiya Soboleva",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 255,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dalila Spiteri",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 254,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mia Ristić",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 254,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lizette Cabrera",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 252,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yuriko Miyazaki",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 252,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ayla Aksu",
+    "nacionalidade": "[TR]",
+    "pontos_ranking": 251,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Manon Léonard",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 247,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Martyna Kubka",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 247,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Vendula Valdmannová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 244,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Zolotareva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 243,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jeline Vandromme",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 242,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mei Yamaguchi",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 242,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sohyun Park",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 240,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tessa Johanna Brockmann",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 240,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katrina Scott",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 239,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mika Stojsavljevic",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 239,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hiromi Abe",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 237,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katharina Hobgarski",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 235,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Rogers",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 234,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Wakana Sonobe",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 232,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tereza Martincová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 231,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lia Karatancheva",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 230,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Samira de Stefano",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 230,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carolyn Ansari",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 228,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katarina Zavatska",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 227,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Robin Montgomery",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 224,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Zarina Diyas",
+    "nacionalidade": "[KZ]",
+    "pontos_ranking": 224,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jule Niemeier",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 219,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Polona Hercog",
+    "nacionalidade": "[SI]",
+    "pontos_ranking": 219,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katarina Jokić",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 218,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aliona Falei",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 217,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anouck Vrancken Peeters",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 217,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kyōka Okamura",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 216,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rina Saigo",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 216,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elena Ruxandra Bertea",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 215,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eunhye Lee",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 215,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elena Malygina",
+    "nacionalidade": "[EE]",
+    "pontos_ranking": 214,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valentina Ryser",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 213,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sakura Hosogi",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 212,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gabriela Cé",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 210,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dayeon Back",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 209,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Haruka Kaji",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 209,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jennifer Ruggeri",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 209,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julie Štruplová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 209,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Laura Hietaranta",
+    "nacionalidade": "[FI]",
+    "pontos_ranking": 208,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Akasha Urhobo",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 207,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alicia Herrero Liñana",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 207,
+    "pontos_ranking_duplas": 792,
+    "atributos": {}
+  },
+  {
+    "nome": "Lea Bošković",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 206,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterina Reyngold",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 205,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Renata Jamrichová",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 205,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alevtina Ibragimova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 204,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aurora Zantedeschi",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 204,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Vivian Wolff",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 204,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Margaux Rouvroy",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 201,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lea Ma",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 200,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alisa Oktiabreva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 199,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daria Khomutsianskaya",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 198,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elina Avanesyan",
+    "nacionalidade": "[AM]",
+    "pontos_ranking": 196,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gabriela Lee",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 196,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julieta Pareja",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 196,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tessah Andrianjafitrimo",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 196,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Viktória Morvayová",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 195,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tiphanie Lemaître",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 194,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alexandra Shubladze",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 193,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yidi Yang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 192,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Francesca Curmi",
+    "nacionalidade": "[MT]",
+    "pontos_ranking": 190,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Han Shi",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 190,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Miho Kuramochi",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 190,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katarína Kuzmová",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 189,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amarni Banks",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 188,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tina Smith",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 188,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Bosio",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 188,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amandine Monnot",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 186,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Erika Andreeva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 186,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Natalija Senić",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 185,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nina Stojanović",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 185,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ariana Geerlings",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 184,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mia Pohánková",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 184,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Francesca Pace",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 183,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hibah Shaikh",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 183,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Giorgia Pedone",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 182,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Monika Ekstrand",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 182,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Madison Brengle",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 181,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alina Granwehr",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 180,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Vera Zvonareva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 180,
+    "pontos_ranking_duplas": 1697,
+    "atributos": {}
+  },
+  {
+    "nome": "Yafan Wang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 180,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carlota Martinez Cirez",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 177,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yasmine Kabbaj",
+    "nacionalidade": "[MA]",
+    "pontos_ranking": 177,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eva Bennemann",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 176,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Haley Giavara",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 176,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Miriana Tona",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 176,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kira Pavlova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 175,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eryn Cayetano",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 174,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Han-na Chang",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 174,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kristina Dmitruk",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 174,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nastasja Schunk",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 174,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ane Mintegi Del Olmo",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 173,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Isabella Shinikova",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 173,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Martina Capurro Taborda",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 173,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carol Zhao",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 171,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Emina Bektas",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 171,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Martha Matoula",
+    "nacionalidade": "[GR]",
+    "pontos_ranking": 171,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Angelina Voloshchuk",
+    "nacionalidade": "[PT]",
+    "pontos_ranking": 170,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Wushuang Zheng",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 169,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Caijsa Hennemann",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 167,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dalila Jakupović",
+    "nacionalidade": "[SI]",
+    "pontos_ranking": 167,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Darya Astakhova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 167,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elena Micic",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 167,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eri Shimizu",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 167,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sandra Samir",
+    "nacionalidade": "[EG]",
+    "pontos_ranking": 167,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Çağla Büyükakçay",
+    "nacionalidade": "[TR]",
+    "pontos_ranking": 167,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucciana Perez Alarcon",
+    "nacionalidade": "[PE]",
+    "pontos_ranking": 165,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Zhuoxuan Bai",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 165,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tatiana Pieri",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 163,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterina Kazionova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 162,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Diletta Cherubini",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 161,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Naiktha Bains",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 161,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Saki Imamura",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 161,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sapfo Sakellaridi",
+    "nacionalidade": "[GR]",
+    "pontos_ranking": 161,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sijia Wei",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 161,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Zhibek Kulambayeva",
+    "nacionalidade": "[KZ]",
+    "pontos_ranking": 161,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Denislava Glushkova",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 160,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ikumi Yamazaki",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 159,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jenny Duerst",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 159,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sahaja Yamalapalli",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 159,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Weronika Ewald",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 159,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Cristina Diaz Adrover",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 158,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sofya Lansere",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 157,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yasmine Mansouri",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 157,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Astrid Lew Yan Foon",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 155,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ayano Shimizu",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 155,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gergana Topalova",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 155,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Martina Colmegna",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 153,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alexis Blokhina",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 152,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Hu",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 152,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Vittoria Paganetti",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 152,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kristiana Sidorova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 151,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sofia Shapatava",
+    "nacionalidade": "[GE]",
+    "pontos_ranking": 151,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valeriya Strakhova",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 151,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mariam Bolkvadze",
+    "nacionalidade": "[GE]",
+    "pontos_ranking": 150,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Zuzanna Pawlikowska",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 149,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hayu Kinoshita",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 148,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Irina Bara",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 148,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Patricia Maria Țig",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 148,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lamis Alhussein Abdel Aziz",
+    "nacionalidade": "[EG]",
+    "pontos_ranking": 147,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Rodríguez",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 147,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alicia Dudeney",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 146,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Antonia Schmidt",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 146,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Zongyu Li",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 146,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amandine Hesse",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 145,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Martina Okáľová",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 144,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Antonia Vergara Rivera",
+    "nacionalidade": "[CL]",
+    "pontos_ranking": 143,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Misaki Matsuda",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 143,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Momoko Kobori",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 142,
+    "pontos_ranking_duplas": 884,
+    "atributos": {}
+  },
+  {
+    "nome": "Alana Smith",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 141,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aneta Kučmová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 141,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jasmijn Gimbrère",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 141,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nicole Fossa Huergo",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 141,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Xinxin Yao",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 141,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yufei Ren",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 141,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Priska Nugroho",
+    "nacionalidade": "[ID]",
+    "pontos_ranking": 140,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alice Tubello",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 137,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tena Lukas",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 137,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ylena In-Albon",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 137,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amelia Rajecki",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 136,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Emily Appleton",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 136,
+    "pontos_ranking_duplas": 873,
+    "atributos": {}
+  },
+  {
+    "nome": "Thaisa Grana Pedretti",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 136,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Andreea Prisăcariu",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 135,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Federica Urgesi",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 135,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Allen",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 134,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aunchisa Chanta",
+    "nacionalidade": "[TH]",
+    "pontos_ranking": 132,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Patcharin Cheapchandej",
+    "nacionalidade": "[TH]",
+    "pontos_ranking": 132,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Abbagnato",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 130,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mina Hodzic",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 130,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Britt Du Pree",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 129,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jiajing Lu",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 129,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Mateas",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 128,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jodie Burrage",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 127,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mell Reasco González",
+    "nacionalidade": "[EC]",
+    "pontos_ranking": 127,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sara Sorribes Tormo",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 127,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julia Adams",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 126,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Caroline Garcia",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 125,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Diana Martynov",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 125,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterina Makarova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 125,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucija Ćirić Bagarić",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 125,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Stephanie Visscher",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 125,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Angella Okutoyi",
+    "nacionalidade": "[KE]",
+    "pontos_ranking": 124,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Destanee Aiava",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 124,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Natsumi Kawaguchi",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 124,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rada Zolotareva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 124,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Weronika Falkowska",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 124,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Fernanda Labrana",
+    "nacionalidade": "[CL]",
+    "pontos_ranking": 123,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ranah Stoiber",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 123,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Emily Seibold",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 121,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nahia Berecoechea",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 121,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ella Mcdonald",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 120,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lauren Davis",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 120,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lisa Zaar",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 120,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Vaishnavi Adkar",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 120,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ariana Arseneault",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 117,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valentini Grammatikopoulou",
+    "nacionalidade": "[GR]",
+    "pontos_ranking": 117,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Isis Louise van Den Broek",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 116,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Madison Sieg",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 116,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Martinez Vaquero",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 116,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yelyzaveta Kotliar",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 116,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jenny Lim",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 115,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Teixido Garcia",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 115,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Meiqi Guo",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 115,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carla Markus",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 114,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kristina Liutova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 114,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Luca Udvardy",
+    "nacionalidade": "[HU]",
+    "pontos_ranking": 114,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Berfu Cengiz",
+    "nacionalidade": "[TR]",
+    "pontos_ranking": 113,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Fangzhou Liu",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 113,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ilinca Amariei",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 113,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Robin Anderson",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 113,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ruth Roura Llaverias",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 113,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mathilde Lollia",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 112,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rasheeda Mcadoo",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 112,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Varvara Panshina",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 112,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yuki Naito",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 112,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ema Burgić Bucko",
+    "nacionalidade": "[BA]",
+    "pontos_ranking": 111,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mayu Crossley",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 111,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sara Dols",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 111,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tahlia Kokkinis",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 111,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterina Khayrutdinova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 110,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jiaqi Wang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 110,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Urrutia",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 109,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marie Vogt",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 109,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Pia Lovrič",
+    "nacionalidade": "[SI]",
+    "pontos_ranking": 109,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Radka Zelníčková",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 109,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ena Koike",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 108,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Josy Daems",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 108,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mariia Tkacheva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 108,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anja Stanković",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 107,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jana Kovačková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 107,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Joelle Steur",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 107,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Laura Mair",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 107,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Oana Georgeta Simion",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 107,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sofia Cabezas Dominguez",
+    "nacionalidade": "[VE]",
+    "pontos_ranking": 107,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alessandra Mazzola",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 106,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gina Dittmann",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 106,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Noemi Basiletti",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 106,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sarah van Emst",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 106,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alice Gillan",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 105,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ying Zhang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 105,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daria Lodikova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 104,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katerina Tsygourova",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 103,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Kulikova",
+    "nacionalidade": "[FI]",
+    "pontos_ranking": 102,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ayumi Koshiishi",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 102,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julie Paštiková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 102,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lidia Encheva",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 102,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Kozyreva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 102,
+    "pontos_ranking_duplas": 1458,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Sara Popa",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 102,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shrivalli Bhamidipaty",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 102,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterina Maklakova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 101,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterina Ovcharenko",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 101,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Georgia Crăciun",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 101,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jessica Bertoldo",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 101,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mio Mushika",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 101,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Vaidehi Chaudhari",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 101,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yaroslava Bartashevich",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 101,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ana Candiotto",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 100,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Hertel",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 100,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Arianna Zucchini",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 100,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eva Voracek",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 100,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Isabella Serban",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 100,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daria Saville",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 99,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Deborah Chiesa",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 99,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hannah Klugman",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 99,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alana Subasic",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 98,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Boyoung Jeong",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 98,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jaeda Daniel",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 98,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Petra Martić",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 98,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sayaka Ishii",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 98,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Arina Bulatova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 96,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Petra Kvitová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 96,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sara Daavettila",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 96,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shilin Xu",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 96,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Haruna Arakawa",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 95,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Luiza Fullana",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 95,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Vitalia Diatchenko",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 95,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lian Tran",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 94,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marie Weckerle",
+    "nacionalidade": "[LU]",
+    "pontos_ranking": 94,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ashley Lahey",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 93,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Camilla Zanolini",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 93,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ksenia Zaytseva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 93,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sara Cakarevic",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 93,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Venus Williams",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 93,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Draginja Vuković",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 92,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kristina Kroitor",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 92,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucía Cortez Llorca",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 92,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Malaika Rapolu",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 92,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daria Egorova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 91,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "İpek Öz",
+    "nacionalidade": "[TR]",
+    "pontos_ranking": 91,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valentina Steiner",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 91,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carmen Andreea Herea",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 90,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Erika Sema",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 90,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shiho Akita",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 90,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Émeline Dartron",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 90,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterina Perelygina",
+    "nacionalidade": "[AT]",
+    "pontos_ranking": 89,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julia Stusek",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 89,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Verena Meliss",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 89,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yuno Kitahara",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 88,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mayuka Aikawa",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 87,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rinko Matsuda",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 87,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rositsa Dencheva",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 87,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tamila Gadamauri",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 87,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Urszula Radwańska",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 87,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aleksandra Krunić",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 86,
+    "pontos_ranking_duplas": 6310,
+    "atributos": {}
+  },
+  {
+    "nome": "Riya Bhatia",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 85,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dana Guzman",
+    "nacionalidade": "[PE]",
+    "pontos_ranking": 84,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elena Milovanović",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 84,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kayo Nishimura",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 84,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Océane Dodin",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 84,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Adelina Lachinova",
+    "nacionalidade": "[LV]",
+    "pontos_ranking": 83,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Esther Adeshina",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 83,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Iva Primorac",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 83,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jamie Loeb",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 83,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Katy Dunne",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 83,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Reina Goto",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 83,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Leonie Küng",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 82,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Fernanda Navarro",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 82,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Noelia Zeballos",
+    "nacionalidade": "[BO]",
+    "pontos_ranking": 82,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jana Kolodynska",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 81,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jenna Defalco",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 81,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lina Glushko",
+    "nacionalidade": "[IL]",
+    "pontos_ranking": 81,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mara Guth",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 81,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marine Szostak",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 81,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Natsuki Yoshimoto",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 81,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Beatrise Zeltiņa",
+    "nacionalidade": "[LV]",
+    "pontos_ranking": 80,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alba Rey Garcia",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 79,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carolina Kuhl",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 79,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Chenting Zhu",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 79,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eva Maria Ionescu",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 79,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gabriella Da Silva Fick",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 79,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aneta Laboutková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 78,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Bianca Barbulescu",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 78,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eleejah Inisan",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 78,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Emma Léné",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 78,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jana Otzipka",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 78,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Johanne Svendsen",
+    "nacionalidade": "[DK]",
+    "pontos_ranking": 78,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Justina Gonzalez Daniele",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 78,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mariella Thamm",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 78,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valeriya Yushchenko",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 78,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Andre Lukosiute",
+    "nacionalidade": "[LT]",
+    "pontos_ranking": 77,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dalayna Hewitt",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 77,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Enola Chiesa",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 77,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amy Zhu",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 76,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dasha Ivanova",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 76,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dasha Plekhanova",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 76,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Fiona Ganz",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 76,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Golovina",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 76,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Astrid Cirotte",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 75,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marcelina Podlińska",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 75,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Merna Refaat",
+    "nacionalidade": "[EG]",
+    "pontos_ranking": 75,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amélie Van Impe",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 74,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jada Robinson",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 74,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Noelia Bouzo Zanotti",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 74,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sarah Iliev",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 74,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Zeel Desai",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 74,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alexis Nguyen",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 73,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Angelica Raggi",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 73,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ellie Schoppe",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 73,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Martina Trevisan",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 73,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Meiling Wang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 73,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tian Jialin",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 73,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alizé Lim",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 72,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amelia Honer",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 72,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Berta Bonardi",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 72,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Chihiro Muramatsu",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 72,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ksenia Efremova",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 72,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Melisa Ercan",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 72,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Clara Vlasselaer",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 71,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Kalyakina",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 71,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nellie Taraba Wallberg",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 71,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Thasaporn Naklo",
+    "nacionalidade": "[TH]",
+    "pontos_ranking": 71,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elena Korokozidi",
+    "nacionalidade": "[GR]",
+    "pontos_ranking": 70,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lan Mi",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 70,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Loes Ebeling Koning",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 70,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valeria Bhunu",
+    "nacionalidade": "[ZW]",
+    "pontos_ranking": 70,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Adrienn Nagy",
+    "nacionalidade": "[HU]",
+    "pontos_ranking": 69,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gina Feistel",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 69,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hikaru Sato",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 69,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alena Kovačková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 68,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alice Robbe",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 68,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ana Bogdan",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 68,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lea Nilsson",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 68,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Milana Zhabrailova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 68,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kylie Collins",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 67,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mary Lewis",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 67,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Michika Ozeki",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 67,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rebecca Munk Mortensen",
+    "nacionalidade": "[DK]",
+    "pontos_ranking": 67,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Stefani Webb",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 67,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Stefania Bojica",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 67,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Petkovic",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 66,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nauhany Vitoria Leme Da Silva",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 66,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rachel Gailis",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 66,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alexandra Vagramov",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 65,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Raphaëlle Lacasse",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 65,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Salma Ewing",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 65,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Christasha McNeil",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 64,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Hiroko Kuwata",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 64,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Malene Helgø",
+    "nacionalidade": "[NO]",
+    "pontos_ranking": 63,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Punnin Kovapitukted",
+    "nacionalidade": "[TH]",
+    "pontos_ranking": 63,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ruien Zhang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 63,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Usue Maitane Arconada",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 63,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ekaterina Yashina",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 62,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kamilla Bartone",
+    "nacionalidade": "[LV]",
+    "pontos_ranking": 62,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anamaria Oana",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 61,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ankita Raina",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 61,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eudice Chong",
+    "nacionalidade": "[HK]",
+    "pontos_ranking": 61,
+    "pontos_ranking_duplas": 1087,
+    "atributos": {}
+  },
+  {
+    "nome": "Marie Mettraux",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 61,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nina Vargová",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 61,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sarah Rokusek",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 61,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alyssa Réguer",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 60,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lavinia Tanasie",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 60,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sofia Rocchetti",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 60,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Su-jeong Jang",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 60,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Demi Tran",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 59,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gaia Maduzzi",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 59,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Junhan Zhang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 59,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Olivia Lincer",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 59,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasia Bertacchi",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 58,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anita Sahdiieva",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 58,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jessica Hinojosa Gomez",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 58,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jiangxue Han",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 58,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Rose Marie Nijkamp",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 58,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ava Markham",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 57,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Briana Szabó",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 57,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elina Nepliy",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 57,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kristina Novak",
+    "nacionalidade": "[SI]",
+    "pontos_ranking": 57,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sachia Vickery",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 57,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sarah Melany Fajmonová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 57,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ana Grubor",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 56,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ann Akasha Ceuca",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 56,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Federica Di Sarra",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 56,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Iva Ivanova",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 56,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kateryna Lazarenko",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 56,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Osuigwe",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 56,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carmen Lopez Martinez",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 55,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ivana Šebestová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 55,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Luciana Moyano",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 55,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mia Horvit",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 55,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Milovanova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 55,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Cheuk Ying Shek",
+    "nacionalidade": "[HK]",
+    "pontos_ranking": 54,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Edda Mamedova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 54,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Franziska Sziedat",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 54,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Monique Barry",
+    "nacionalidade": "[NZ]",
+    "pontos_ranking": 54,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Kubareva",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 53,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Beatrice Ricci",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 53,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Camila Romero",
+    "nacionalidade": "[EC]",
+    "pontos_ranking": 53,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Evialina Laskevich",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 53,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Laia Petretic",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 53,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Peangtarn Plipuech",
+    "nacionalidade": "[TH]",
+    "pontos_ranking": 53,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sophia Biolay",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 53,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yujia Huang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 53,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amina Anshba",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 52,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Arina Vasilescu",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 52,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Cody Wong",
+    "nacionalidade": "[HK]",
+    "pontos_ranking": 52,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ida Wobker",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 52,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Irina Balus",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 52,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Luisa Meyer Auf Der Heide",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 52,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "María Portillo Ramírez",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 52,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alyssa Ahn",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 51,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daria Yesypchuk",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 51,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daria Zelinskaya",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 51,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dune Vaissaud",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 51,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jiayi Wang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 51,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julia Konishi Camargo Silva",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 51,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nadiya Kolb",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 51,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yuliana Lizarazo",
+    "nacionalidade": "[CO]",
+    "pontos_ranking": 51,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Bella Payne",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 50,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Sholokhova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 50,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yuhan Wang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 50,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Zoziya Kardava",
+    "nacionalidade": "[GE]",
+    "pontos_ranking": 50,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Clara Burel",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 49,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Laquisa Khan",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 49,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Petra Konjikušić",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 49,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sara Errani",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 49,
+    "pontos_ranking_duplas": 6585,
+    "atributos": {}
+  },
+  {
+    "nome": "Adithya Karunaratne",
+    "nacionalidade": "[HK]",
+    "pontos_ranking": 48,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Federica Sacco",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 48,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jesika Malečková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 48,
+    "pontos_ranking_duplas": 1259,
+    "atributos": {}
+  },
+  {
+    "nome": "Laura Svatíková",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 48,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Océane Babel",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 48,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valentina Mediorreal Arias",
+    "nacionalidade": "[CO]",
+    "pontos_ranking": 48,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Vlada Mincheva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 48,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Meng Yi Chen",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 47,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Naho Sato",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 47,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Brooke Black",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 46,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Chelsea Fontenel",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 46,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jimar Gerald Gonzalez",
+    "nacionalidade": "[CL]",
+    "pontos_ranking": 46,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Neus Torner Sensano",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 46,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Noemi Maines",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 46,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anne Christine Lutkemeyer Obregon",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 45,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ayumi Miyamoto",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 45,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Madelief Hageman",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 45,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Patricija Paukstyte",
+    "nacionalidade": "[LT]",
+    "pontos_ranking": 45,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yanina Wickmayer",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 45,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Adriana Reami",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ani Amiraghyan",
+    "nacionalidade": "[AM]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aruzhan Sagandikova",
+    "nacionalidade": "[KZ]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Giulia Safina Popa",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Makenna Jones",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nagi Hanatani",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Stephanie Wagner",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yasmin Ezzat",
+    "nacionalidade": "[EG]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yiming Dang",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yuliya Hatouka",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 44,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasiia Firman",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 43,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Chloé Noël",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 43,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Monika Stankiewicz",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 43,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sloane Stephens",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 43,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gaeul Jang",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 42,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Iveta Dapkutė",
+    "nacionalidade": "[LT]",
+    "pontos_ranking": 42,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jacqueline Cabaj Awad",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 42,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Laima Vladson",
+    "nacionalidade": "[UZ]",
+    "pontos_ranking": 42,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Linda Ševčíková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 42,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Toma",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 42,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Merel Hoedt",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 42,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Polina Kuharenko",
+    "nacionalidade": "[BY]",
+    "pontos_ranking": 42,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Belle Thompson",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 41,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eliška Ticháčková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 41,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Honoka Kobayashi",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 41,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kailey Evans",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 41,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mana Kawamura",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 41,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tilwith Di Girolami",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 41,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Gomez",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 41,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ana Konjuh",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 40,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jennifer Brady",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 40,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Petra Hule",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 40,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Romina Ccuno",
+    "nacionalidade": "[PE]",
+    "pontos_ranking": 40,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carolina Bohrer Martins",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 39,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Chengyiyi Yuan",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 39,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "İlay Yörük",
+    "nacionalidade": "[TR]",
+    "pontos_ranking": 39,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maia Ilinca Burcescu",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 39,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Michaela Bayerlová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 39,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasiia Gureva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 38,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Astrid Brune Olsen",
+    "nacionalidade": "[NO]",
+    "pontos_ranking": 38,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daphnée Mpetshi Perricard",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 38,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ella Haavisto",
+    "nacionalidade": "[FI]",
+    "pontos_ranking": 38,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jamilah Snells",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 38,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jessica Failla",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 38,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lilian Poling",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 38,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nika Radišić",
+    "nacionalidade": "[SI]",
+    "pontos_ranking": 38,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yujin Kim",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 38,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Arlinda Rushiti",
+    "nacionalidade": "[XK]",
+    "pontos_ranking": 37,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Diāna Marcinkēviča",
+    "nacionalidade": "[LV]",
+    "pontos_ranking": 37,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kristina Penickova",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 37,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Luna Vujović",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 37,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marianna Argyrokastriti",
+    "nacionalidade": "[GR]",
+    "pontos_ranking": 37,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marie Villet",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 37,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Viola Turini",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 37,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Diana-Ioana Simionescu",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 36,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eugénie Bouchard",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 36,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucie Nguyen Tan",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 36,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucie Petruželová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 36,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maddalena Giordano",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 36,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shannon Lam",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 36,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amy Sucha",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Frey",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Arabella Koller",
+    "nacionalidade": "[AT]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Celia Cerviño Ruiz",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Joy de Zeeuw",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kate Mansfield",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Klara Veldman",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Linea Bajraliu",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Torres Murcia",
+    "nacionalidade": "[CO]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Raquel Gonzalez Vilar",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sonja Zhenikhova",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Suana Tućaković",
+    "nacionalidade": "[BA]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Kan",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 35,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anastasija Cvetković",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 34,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anja Wildgruber",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 34,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ava Hrastar",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 34,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carolin Raschdorf",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 34,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Chukwumelije Clarke",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 34,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Karine Sarkisova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 34,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mao Mushika",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 34,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "María Fernanda Herazo",
+    "nacionalidade": "[CO]",
+    "pontos_ranking": 34,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Xinran Sun",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 34,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dj Bennett",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 33,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dunja Marić",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 33,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Johanna Silva",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 33,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mara Gae",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 33,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Onyu Choi",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 33,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valentina Ivanov",
+    "nacionalidade": "[NZ]",
+    "pontos_ranking": 33,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Vicky Van De Peer",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 33,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Agustina Chlpac",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Claudia Ferrer Perez",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Coco Bosman",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Inês Murta",
+    "nacionalidade": "[PT]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Irem Kurt",
+    "nacionalidade": "[TR]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jizelle Sibai",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julia Stamatova",
+    "nacionalidade": "[BG]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lavinia Luciano",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Louna Zoppas",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ophélie Boullay",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Polina Leykina",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shiyu Ye",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sofia Rojas",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 32,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alicia Smith",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 31,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Angelica Blake",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 31,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Angelina Wirges",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 31,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ava Rodriguez",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 31,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Camilla Gennaro",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 31,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lorena Solar Donoso",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 31,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nada Fouad",
+    "nacionalidade": "[EG]",
+    "pontos_ranking": 31,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Natalia Sousa Salazar",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 31,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Živa Falkner",
+    "nacionalidade": "[SI]",
+    "pontos_ranking": 31,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aspen Schuman",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Darja Suvirdjonkova",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Isabella Barrera Aguirre",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jingjing Lu",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julia Garcia",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kristina Mladenovic",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 938,
+    "atributos": {}
+  },
+  {
+    "nome": "Sae Noguchi",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Savannah Broadus",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shiho Tsujioka",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ya-Hsuan Lee",
+    "nacionalidade": "[TW]",
+    "pontos_ranking": 30,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Akiko Omae",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Pircher",
+    "nacionalidade": "[AT]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anna Snigireva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Daria Kudashova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Defne Cirpanli",
+    "nacionalidade": "[TR]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Diana Demidova",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Karina Miller",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Garcia Cid",
+    "nacionalidade": "[ES]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Paula Cembranos",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Wozuko Mdlulwa",
+    "nacionalidade": "[ZA]",
+    "pontos_ranking": 29,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Abigail Rencheli",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 28,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amy Stevens",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 28,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Gaia Squarcialupi",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 28,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Julieta Estable",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 28,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maria Lazarenko",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 28,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Polina Bakhmutkina",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 28,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sabastiani Leon",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 28,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Salma Drugdová",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 28,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shruti Ahlawat",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 28,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Akanksha Nitture",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 27,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alexandra Vasilyeva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 27,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Arina Varaksina",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 27,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elena-Teodora Cadar",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 27,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Indianna Spink",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 27,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tianmei Wang",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 27,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Beatrice Stagno",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 26,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Candela Vazquez",
+    "nacionalidade": "[AR]",
+    "pontos_ranking": 26,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Dimitra Pavlou",
+    "nacionalidade": "[GR]",
+    "pontos_ranking": 26,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lauryn John-Baptiste",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 26,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucie Urbanová",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 26,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maya Iyengar",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 26,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mila Masić",
+    "nacionalidade": "[RS]",
+    "pontos_ranking": 26,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Petra Sedláčková",
+    "nacionalidade": "[CZ]",
+    "pontos_ranking": 26,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Victoria Pohle",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 26,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ana Filipa Santos",
+    "nacionalidade": "[PT]",
+    "pontos_ranking": 25,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Da-bin Kim",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 25,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "En-shuo Liang",
+    "nacionalidade": "[TW]",
+    "pontos_ranking": 25,
+    "pontos_ranking_duplas": 1209,
+    "atributos": {}
+  },
+  {
+    "nome": "Qiuyu Ye",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 25,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sofia Johnson",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 25,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Teah Chavez",
+    "nacionalidade": "[CA]",
+    "pontos_ranking": 25,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alexandra Osborne",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Cherry Kim",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Clarissa Blomqvist",
+    "nacionalidade": "[FI]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elyse Tse",
+    "nacionalidade": "[NZ]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elza Tomase",
+    "nacionalidade": "[LV]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jaimee Fourlis",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Joanna Garland",
+    "nacionalidade": "[TW]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jordyn Mcbride",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Margaux Maquet",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mirjam Björklund",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Romane Longueville",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Simona Ogescu",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Tiana Tian Deng",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valeriia Artemeva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yingqun Sun",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yu Jin Ahn",
+    "nacionalidade": "[KR]",
+    "pontos_ranking": 24,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Adriana Tkachenko",
+    "nacionalidade": "[UA]",
+    "pontos_ranking": 23,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Chantal Sauvant",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 23,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lisa-Marie Rioux",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 23,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Marta Lombardini",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 23,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Maëlle Leclercq",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 23,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Mihaela Buzărnescu",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 23,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Olga Helmi",
+    "nacionalidade": "[DK]",
+    "pontos_ranking": 23,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Stefania Rogozińska-Dzik",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 23,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Stefaniya Pushkar",
+    "nacionalidade": "[CH]",
+    "pontos_ranking": 23,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Alesia Breaz",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Carson Tanguilig",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eszter Méri",
+    "nacionalidade": "[SK]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Evgeniya Burdina",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Francesca Mattioli",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Jo-Yee Chan",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Krisha Mahendran",
+    "nacionalidade": "[IN]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sara Svetac",
+    "nacionalidade": "[HR]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Shihomi Li Xuan Leong",
+    "nacionalidade": "[MY]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Valentina Losciale",
+    "nacionalidade": "[IT]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Xi Luo",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 22,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Allegra Korpanec Davies",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Allura Zamarripa",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Amelia Paszun",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Antonia Stoyanov",
+    "nacionalidade": "[NL]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Arina Arifullina",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Aysegul Mert",
+    "nacionalidade": "[TR]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Didi Bredberg Canizares",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Elizabeth Ionescu",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Eri Hozumi",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 2283,
+    "atributos": {}
+  },
+  {
+    "nome": "Fanny Norin",
+    "nacionalidade": "[SE]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Felitsata Dorofeeva-Rybas",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Freya Christie",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Inka Wawrzkiewicz",
+    "nacionalidade": "[PL]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Nanari Katsumi",
+    "nacionalidade": "[JP]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Solymar Colling",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sylvie Zund",
+    "nacionalidade": "[LI]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ustiniya Lekomtseva",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ya Yi Yang",
+    "nacionalidade": "[TW]",
+    "pontos_ranking": 21,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Anne Schäfer",
+    "nacionalidade": "[DE]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Annika Penickova",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Fang An Lin",
+    "nacionalidade": "[TW]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Giselle Isabella Guillen",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ingrid Millan",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kamonwan Yodpetch",
+    "nacionalidade": "[TH]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Karine Job",
+    "nacionalidade": "[CM]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Lucie Pawlak",
+    "nacionalidade": "[FR]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ruby Cooling",
+    "nacionalidade": "[GB]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sara Victoria Balan",
+    "nacionalidade": "[RO]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Veronica Miroshnichenko",
+    "nacionalidade": "[RU]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Ysaline Bonaventure",
+    "nacionalidade": "[BE]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Yushan Shao",
+    "nacionalidade": "[CN]",
+    "pontos_ranking": 20,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Claudia Sofia Martinez Solis",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 19,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kallista Liu",
+    "nacionalidade": "[HK]",
+    "pontos_ranking": 19,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Kylie McKenzie",
+    "nacionalidade": "[US]",
+    "pontos_ranking": 19,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Midori Castillo Meza",
+    "nacionalidade": "[MX]",
+    "pontos_ranking": 19,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sarah Mildren",
+    "nacionalidade": "[AU]",
+    "pontos_ranking": 19,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  },
+  {
+    "nome": "Sofia Da Cruz Mendonça",
+    "nacionalidade": "[BR]",
+    "pontos_ranking": 19,
+    "pontos_ranking_duplas": 0,
+    "atributos": {}
+  }
+]

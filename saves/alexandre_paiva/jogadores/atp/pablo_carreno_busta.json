@@ -1,0 +1,116 @@
+{
+  "nome": "Pablo Carreno Busta",
+  "nacionalidade": "[ES]",
+  "pontos": 516,
+  "pontos_duplas": 0,
+  "pontos_ranking": 516,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 67,
+  "energia": 100,
+  "fadiga": 10,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 61,
+    "pre_saque": 65,
+    "segundo_saque": 67,
+    "retorno": 72,
+    "forehand": 71,
+    "backhand": 73,
+    "voleio": 68,
+    "smash": 65,
+    "lob": 72,
+    "topspin": 66,
+    "slice": 72,
+    "winner": 71,
+    "velocidade": 66,
+    "aceleracao": 62,
+    "resistencia": 60,
+    "forca": 65,
+    "agilidade": 68,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 54,
+    "consistencia": 35,
+    "compostura": 61,
+    "agressividade": 75,
+    "leitura_de_jogo": 60,
+    "determinacao": 76
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 516,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [
+    {
+      "nome": "Moscow",
+      "ano": 2016,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Winston-Salem",
+      "ano": 2016,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Estoril",
+      "ano": 2017,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Chengdu",
+      "ano": 2019,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Hamburg",
+      "ano": 2021,
+      "categoria": "ATP 500"
+    },
+    {
+      "nome": "Marbella",
+      "ano": 2021,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Canada Masters",
+      "ano": 2022,
+      "categoria": "ATP 1000"
+    }
+  ],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 34,
+  "id": 100,
+  "pico_carreira": 29,
+  "altura": 188,
+  "peso": 79,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
+}

@@ -42,6 +42,7 @@ class SelecaoNacional:
         self.jogadores = self._buscar_jogadores_do_pais()
         self.convocados = []
         self.capitao = self._gerar_capitao(genero)
+        self.superficie_tie = None
         self.nome_copa = (
             "Copa Davis" if genero == "masculino" else "Billie Jean King Cup"
         )
@@ -117,12 +118,12 @@ class SelecaoNacional:
             "[CA]": "Heidi El Tabakh",
             "[US]": "Lindsay Davenport",
             "[GB]": "Anne Keothavong",
-            "[DE]": "Rainer Schüttler",
-            "[FR]": "Julien Benneteau",
-            "[CZ]": "Petr Pála",
-            "[BR]": "Luiz Peniza",
-            "[PL]": "Dawid Celt",
-            "[CH]": "Heinz Günthardt",
+            "[DE]": "Barbara Rittner",
+            "[FR]": "Amelie Mauresmo",
+            "[CZ]": "Petra Kvitova",
+            "[BR]": "Patricia Medrado",
+            "[PL]": "Agnieszka Radwanska",
+            "[CH]": "Martina Hingis",
         }
         codigo = self.pais.split("]")[0] + "]" if self.pais.startswith("[") else ""
         if genero == "feminino":
@@ -176,19 +177,40 @@ class SelecaoNacional:
         ]
         self.convocados.insert(posicao_convocacao - 1, jogador_dict)
 
+    def _calcular_score_convocacao(self, jogador):
+        """Calcula score composto para ordenação de candidatos."""
+        pontos = int(jogador.get("pontos_ranking", 0) or 0)
+        overall = int(jogador.get("overall", 0) or 0)
+        score = pontos * 1.0 + overall * 20
+
+        if self.superficie_tie is not None:
+            sup_key = str(self.superficie_tie).lower()
+            especialidade = jogador.get("especialidade_superficie", {})
+            if isinstance(especialidade, dict):
+                bonus_sup = especialidade.get(sup_key, 70)
+                score += (int(bonus_sup) - 70) * 30
+
+        return score
+
     def completar_convocacao(self, num_jogadores=5):
         """Completa a convocação com outros jogadores do país."""
         nomes_convocados = {normalizar_nome(c.get("nome", "")) for c in self.convocados}
 
-        for j in self.jogadores:
+        candidatos = [
+            j
+            for j in self.jogadores
+            if normalizar_nome(j.get("nome", "")) not in nomes_convocados
+        ]
+        candidatos.sort(key=self._calcular_score_convocacao, reverse=True)
+
+        for j in candidatos:
             if len(self.convocados) >= num_jogadores:
                 break
-            if normalizar_nome(j.get("nome", "")) not in nomes_convocados:
-                j_copia = dict(j)
-                j_copia["posicao_convocacao"] = len(self.convocados) + 1
-                j_copia["e_jogador_principal"] = False
-                self.convocados.append(j_copia)
-                nomes_convocados.add(normalizar_nome(j.get("nome", "")))
+            j_copia = dict(j)
+            j_copia["posicao_convocacao"] = len(self.convocados) + 1
+            j_copia["e_jogador_principal"] = False
+            self.convocados.append(j_copia)
+            nomes_convocados.add(normalizar_nome(j.get("nome", "")))
 
         if len(self.convocados) < num_jogadores:
             nacoes_dados = carregar_ranking_nacoes_davis()
@@ -228,17 +250,31 @@ class SelecaoNacional:
     def _gerar_atributos_ficticios(self, overall=60):
         """Gera atributos para jogadores fictícios baseados em um overall alvo."""
         variacao = 10
+
+        def _attr():
+            return max(
+                45, min(95, random.randint(overall - variacao, overall + variacao))
+            )
+
         return {
-            "saque": random.randint(overall - variacao, overall + variacao),
-            "forehand": random.randint(overall - variacao, overall + variacao),
-            "backhand": random.randint(overall - variacao, overall + variacao),
-            "topspin": random.randint(overall - variacao, overall + variacao),
-            "voleio": random.randint(overall - variacao, overall + variacao),
-            "slice": random.randint(overall - variacao, overall + variacao),
-            "movimento": random.randint(overall - variacao, overall + variacao),
-            "lob": random.randint(overall - variacao, overall + variacao),
-            "winner": random.randint(overall - variacao, overall + variacao),
-            "fisico": random.randint(overall - variacao, overall + variacao),
+            "vel_saque": _attr(),
+            "pre_saque": _attr(),
+            "segundo_saque": _attr(),
+            "retorno": _attr(),
+            "forehand": _attr(),
+            "backhand": _attr(),
+            "voleio": _attr(),
+            "smash": _attr(),
+            "lob": _attr(),
+            "topspin": _attr(),
+            "slice": _attr(),
+            "winner": _attr(),
+            "velocidade": _attr(),
+            "aceleracao": _attr(),
+            "resistencia": _attr(),
+            "forca": _attr(),
+            "agilidade": _attr(),
+            "duplas": _attr(),
         }
 
     def obter_titulares_simples(self):

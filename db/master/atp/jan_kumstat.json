@@ -2,24 +2,33 @@
   "nome": "Jan Kumstat",
   "nacionalidade": "[CZ]",
   "idade": 19,
-  "overall": 73,
+  "overall": 46,
   "pontos": 51,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 45,
+    "retorno": 40,
     "forehand": 42,
     "backhand": 40,
-    "topspin": 40,
     "voleio": 47,
-    "slice": 40,
-    "movimento": 40,
+    "smash": 50,
     "lob": 40,
+    "topspin": 40,
+    "slice": 40,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 50,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 698,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 64,
+    "compostura": 46,
     "agressividade": 41,
     "leitura_de_jogo": 30,
     "determinacao": 34
@@ -45,5 +54,10 @@
   "peso": 67,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

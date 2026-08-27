@@ -2,24 +2,33 @@
   "nome": "Pierre-Hugues Herbert",
   "nacionalidade": "[RU] Rússia",
   "idade": 30,
-  "overall": 87,
+  "overall": 83,
   "pontos": 1307,
   "id": 20125,
   "atributos": {
-    "saque": 86,
+    "vel_saque": 84,
+    "pre_saque": 85,
+    "segundo_saque": 78,
+    "retorno": 84,
     "forehand": 80,
     "backhand": 84,
-    "topspin": 87,
     "voleio": 91,
-    "slice": 83,
-    "movimento": 88,
+    "smash": 86,
     "lob": 92,
-    "fisico": 79,
+    "topspin": 87,
+    "slice": 83,
     "winner": 82,
+    "velocidade": 84,
+    "aceleracao": 77,
+    "resistencia": 79,
+    "forca": 80,
+    "agilidade": 85,
     "duplas": 95
   },
   "atributos_psicologicos": {
-    "concentracao": 51,
+    "clutch": 51,
+    "consistencia": 36,
+    "compostura": 55,
     "agressividade": 69,
     "leitura_de_jogo": 56,
     "determinacao": 65
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1307,
-  "rank_duplas": 72
+  "rank_duplas": 72,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

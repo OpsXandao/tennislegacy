@@ -2,24 +2,33 @@
   "nome": "Tristan Lamasine",
   "nacionalidade": "[FR]",
   "idade": 32,
-  "overall": 74,
+  "overall": 50,
   "pontos": 70,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 47,
+    "retorno": 46,
     "forehand": 47,
     "backhand": 40,
-    "topspin": 53,
     "voleio": 40,
-    "slice": 52,
-    "movimento": 53,
+    "smash": 48,
     "lob": 56,
+    "topspin": 53,
+    "slice": 52,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 586,
   "atributos_psicologicos": {
-    "concentracao": 33,
+    "clutch": 33,
+    "consistencia": 65,
+    "compostura": 36,
     "agressividade": 40,
     "leitura_de_jogo": 43,
     "determinacao": 43
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

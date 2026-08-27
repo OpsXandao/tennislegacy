@@ -2,24 +2,33 @@
   "nome": "Filippo Moroni",
   "nacionalidade": "[IT]",
   "idade": 25,
-  "overall": 75,
+  "overall": 50,
   "pontos": 92,
   "atributos": {
-    "saque": 49,
+    "vel_saque": 50,
+    "pre_saque": 47,
+    "segundo_saque": 48,
+    "retorno": 44,
     "forehand": 55,
     "backhand": 40,
-    "topspin": 43,
     "voleio": 53,
-    "slice": 52,
-    "movimento": 46,
+    "smash": 54,
     "lob": 41,
+    "topspin": 43,
+    "slice": 52,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 508,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 58,
+    "compostura": 38,
     "agressividade": 47,
     "leitura_de_jogo": 46,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

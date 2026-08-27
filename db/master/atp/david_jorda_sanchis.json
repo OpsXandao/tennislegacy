@@ -2,24 +2,33 @@
   "nome": "David Jorda Sanchis",
   "nacionalidade": "[ES]",
   "idade": 31,
-  "overall": 76,
+  "overall": 63,
   "pontos": 124,
   "atributos": {
-    "saque": 64,
+    "vel_saque": 63,
+    "pre_saque": 64,
+    "segundo_saque": 65,
+    "retorno": 66,
     "forehand": 63,
     "backhand": 64,
-    "topspin": 60,
     "voleio": 57,
-    "slice": 67,
-    "movimento": 71,
+    "smash": 59,
     "lob": 74,
+    "topspin": 60,
+    "slice": 67,
     "winner": 64,
-    "fisico": 60,
+    "velocidade": 66,
+    "aceleracao": 62,
+    "resistencia": 60,
+    "forca": 61,
+    "agilidade": 68,
     "duplas": 60
   },
   "id": 416,
   "atributos_psicologicos": {
-    "concentracao": 49,
+    "clutch": 49,
+    "consistencia": 39,
+    "compostura": 54,
     "agressividade": 66,
     "leitura_de_jogo": 61,
     "determinacao": 66
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

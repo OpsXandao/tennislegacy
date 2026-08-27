@@ -2,24 +2,33 @@
   "nome": "Giulio Perego",
   "nacionalidade": "[IT]",
   "idade": 22,
-  "overall": 69,
+  "overall": 51,
   "pontos": 8,
   "atributos": {
-    "saque": 46,
+    "vel_saque": 48,
+    "pre_saque": 48,
+    "segundo_saque": 47,
+    "retorno": 50,
     "forehand": 47,
     "backhand": 51,
-    "topspin": 55,
     "voleio": 51,
-    "slice": 55,
-    "movimento": 47,
+    "smash": 53,
     "lob": 41,
+    "topspin": 55,
+    "slice": 55,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 1219,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 65,
+    "compostura": 39,
     "agressividade": 40,
     "leitura_de_jogo": 50,
     "determinacao": 33
@@ -45,5 +54,10 @@
   "peso": 76,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

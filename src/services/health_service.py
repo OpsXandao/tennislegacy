@@ -89,6 +89,14 @@ def processar_recuperacao_semanal(entidade: Any, eventos: Optional[List[str]] = 
     lifestyle = _get_val(entidade, "lifestyle", [])
     if isinstance(lifestyle, list) and "chef_particular" in lifestyle:
         rec_energia += 5
+
+    from src.services.staff_realism_service import weekly_recovery_bonus
+
+    bonus_staff = weekly_recovery_bonus(entidade)
+    rec_energia += int(bonus_staff.get("trainer_bonus", 0) or 0)
+    rec_energia += int(bonus_staff.get("physio_bonus", 0) or 0)
+    if bonus_staff.get("surface_fit", 0) >= 12:
+        rec_energia += 2
     
     status_doenca = normalizar_status_doenca(_get_val(entidade, "status_doenca", {}))
     penalidade_rec = float(status_doenca.get("penalidade_recuperacao_energia", 0.0))
@@ -135,19 +143,34 @@ def processar_recuperacao_semanal(entidade: Any, eventos: Optional[List[str]] = 
                 if eventos is not None: eventos.append("🩹 Sua lesão melhorou, mas você ainda sente desconforto.")
             else:
                 status_lesao.update({"nivel": "saudavel", "penalidade_atributos": 0.0})
-                if eventos is not None: eventos.append("💪 Você está totalmente recuperado da lesão!")
+                if eventos is not None: eventos.append("💪 Você está totalmente recuperado da lenção!")
     _set_val(entidade, "status_lesao", status_lesao)
 
     # 5. Moral (NPCs apenas)
     if isinstance(entidade, dict):
         moral_atual = int(entidade.get("moral", 70) or 70)
-        # Tende ao equilíbrio (70)
         if moral_atual > 70: moral_atual -= 2
         elif moral_atual < 70: moral_atual += 2
         
         if nova_fadiga >= 80: moral_atual -= 3
         elif nova_fadiga <= 30: moral_atual += 1
         entidade["moral"] = max(0, min(100, moral_atual))
+
+def recuperar_npcs_semana(rankings: dict):
+    """Aplica recuperação física para todos os NPCs em todos os rankings."""
+    grupos = (
+        [rankings.get("simples_atp"), rankings.get("duplas_atp")],
+        [rankings.get("simples_wta"), rankings.get("duplas_wta")],
+    )
+    for lista_rk in grupos:
+        jogadores_vistos = set()
+        for rk in lista_rk:
+            if not rk: continue
+            for j in getattr(rk, "ranking", []) or []:
+                nome = j.get("nome")
+                if nome and nome not in jogadores_vistos:
+                    processar_recuperacao_semanal(j)
+                    jogadores_vistos.add(nome)
 
 def tentar_doenca_semanal(entidade: Any, info_torneio: Optional[Dict[str, Any]] = None) -> List[str]:
     """Tenta aplicar doença à entidade e retorna eventos se houver."""

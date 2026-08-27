@@ -2,24 +2,33 @@
   "nome": "Max Wiskandt",
   "nacionalidade": "[DE]",
   "idade": 24,
-  "overall": 75,
+  "overall": 55,
   "pontos": 97,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 47,
+    "segundo_saque": 49,
+    "retorno": 56,
     "forehand": 59,
     "backhand": 59,
-    "topspin": 55,
     "voleio": 63,
-    "slice": 59,
-    "movimento": 49,
+    "smash": 59,
     "lob": 42,
+    "topspin": 55,
+    "slice": 59,
     "winner": 58,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 59,
+    "agilidade": 52,
     "duplas": 60
   },
   "id": 498,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 56,
+    "compostura": 42,
     "agressividade": 49,
     "leitura_de_jogo": 49,
     "determinacao": 47
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

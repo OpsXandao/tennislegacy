@@ -1,0 +1,80 @@
+{
+  "nome": "Tristan Lamasine",
+  "nacionalidade": "[FR]",
+  "pontos": 70,
+  "pontos_duplas": 0,
+  "pontos_ranking": 70,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 50,
+  "energia": 100,
+  "fadiga": 6,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 47,
+    "retorno": 46,
+    "forehand": 47,
+    "backhand": 40,
+    "voleio": 40,
+    "smash": 48,
+    "lob": 56,
+    "topspin": 53,
+    "slice": 52,
+    "winner": 47,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 54,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 33,
+    "consistencia": 65,
+    "compostura": 36,
+    "agressividade": 40,
+    "leitura_de_jogo": 43,
+    "determinacao": 43
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 70,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 32,
+  "id": 586,
+  "pico_carreira": 554,
+  "altura": 183,
+  "peso": 80,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

@@ -2,24 +2,33 @@
   "nome": "Edouard Roger-Vasselin",
   "nacionalidade": "[RU] Rússia",
   "idade": 18,
-  "overall": 91,
+  "overall": 89,
   "pontos": 2990,
   "id": 63648,
   "atributos": {
-    "saque": 87,
+    "vel_saque": 86,
+    "pre_saque": 90,
+    "segundo_saque": 81,
+    "retorno": 94,
     "forehand": 89,
     "backhand": 98,
-    "topspin": 91,
     "voleio": 97,
-    "slice": 93,
-    "movimento": 91,
+    "smash": 91,
     "lob": 87,
-    "fisico": 84,
+    "topspin": 91,
+    "slice": 93,
     "winner": 89,
+    "velocidade": 88,
+    "aceleracao": 80,
+    "resistencia": 84,
+    "forca": 88,
+    "agilidade": 89,
     "duplas": 98
   },
   "atributos_psicologicos": {
-    "concentracao": 75,
+    "clutch": 75,
+    "consistencia": 41,
+    "compostura": 74,
     "agressividade": 64,
     "leitura_de_jogo": 58,
     "determinacao": 74
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 2990,
-  "rank_duplas": 18
+  "rank_duplas": 18,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

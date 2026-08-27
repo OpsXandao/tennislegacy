@@ -1,0 +1,97 @@
+{
+  "nome": "Richard Zusman",
+  "nacionalidade": "[US]",
+  "pontos": 4,
+  "pontos_duplas": 0,
+  "pontos_ranking": 4,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 51,
+  "energia": 100,
+  "fadiga": 9,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 54,
+    "pre_saque": 49,
+    "segundo_saque": 56,
+    "retorno": 43,
+    "forehand": 46,
+    "backhand": 40,
+    "voleio": 48,
+    "smash": 52,
+    "lob": 53,
+    "topspin": 50,
+    "slice": 41,
+    "winner": 54,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 52,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 48,
+    "consistencia": 69,
+    "compostura": 49,
+    "agressividade": 36,
+    "leitura_de_jogo": 42,
+    "determinacao": 52
+  },
+  "historico_torneios": [
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 1,
+      "ano": 2026,
+      "fase": "qualy_1",
+      "fase_alcancada": "qualy_1",
+      "pontos": 0,
+      "premio": 398,
+      "modalidade": "simples",
+      "obrigatorio": false,
+      "expirado": false
+    }
+  ],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 4,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 398,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 25,
+  "titulos_total": 0,
+  "ultimo_titulo_ano": null,
+  "id": 1338,
+  "pico_carreira": 1486,
+  "altura": 173,
+  "peso": 70,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
+}

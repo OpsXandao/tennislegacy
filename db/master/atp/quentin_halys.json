@@ -2,24 +2,33 @@
   "nome": "Quentin Halys",
   "nacionalidade": "[FR]",
   "idade": 29,
-  "overall": 84,
+  "overall": 71,
   "pontos": 800,
   "atributos": {
-    "saque": 79,
+    "vel_saque": 76,
+    "pre_saque": 77,
+    "segundo_saque": 73,
+    "retorno": 74,
     "forehand": 80,
     "backhand": 76,
-    "topspin": 78,
     "voleio": 77,
-    "slice": 76,
-    "movimento": 70,
+    "smash": 70,
     "lob": 69,
+    "topspin": 78,
+    "slice": 76,
     "winner": 80,
-    "fisico": 60,
+    "velocidade": 66,
+    "aceleracao": 62,
+    "resistencia": 60,
+    "forca": 68,
+    "agilidade": 68,
     "duplas": 91
   },
   "id": 50,
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 35,
+    "compostura": 60,
     "agressividade": 74,
     "leitura_de_jogo": 81,
     "determinacao": 70
@@ -47,5 +56,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1002,
-  "rank_duplas": 89
+  "rank_duplas": 89,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

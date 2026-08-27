@@ -2,24 +2,33 @@
   "nome": "Brandon Nakashima",
   "nacionalidade": "[US]",
   "idade": 24,
-  "overall": 86,
+  "overall": 76,
   "pontos": 1535,
   "atributos": {
-    "saque": 78,
+    "vel_saque": 75,
+    "pre_saque": 79,
+    "segundo_saque": 73,
+    "retorno": 83,
     "forehand": 84,
     "backhand": 85,
-    "topspin": 82,
     "voleio": 81,
-    "slice": 81,
-    "movimento": 84,
+    "smash": 73,
     "lob": 77,
+    "topspin": 82,
+    "slice": 81,
     "winner": 82,
-    "fisico": 60,
+    "velocidade": 74,
+    "aceleracao": 69,
+    "resistencia": 60,
+    "forca": 71,
+    "agilidade": 78,
     "duplas": 60
   },
   "id": 29,
   "atributos_psicologicos": {
-    "concentracao": 81,
+    "clutch": 81,
+    "consistencia": 40,
+    "compostura": 78,
     "agressividade": 65,
     "leitura_de_jogo": 63,
     "determinacao": 72
@@ -56,5 +65,10 @@
   "peso": 94,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

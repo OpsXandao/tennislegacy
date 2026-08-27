@@ -1,0 +1,80 @@
+{
+  "nome": "Leo Vithoontien",
+  "nacionalidade": "[JP]",
+  "pontos": 46,
+  "pontos_duplas": 0,
+  "pontos_ranking": 46,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 51,
+  "energia": 100,
+  "fadiga": 10,
+  "moral": 75,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 54,
+    "pre_saque": 49,
+    "segundo_saque": 51,
+    "retorno": 44,
+    "forehand": 54,
+    "backhand": 42,
+    "voleio": 59,
+    "smash": 58,
+    "lob": 47,
+    "topspin": 48,
+    "slice": 45,
+    "winner": 48,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 49,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 54,
+    "consistencia": 59,
+    "compostura": 47,
+    "agressividade": 46,
+    "leitura_de_jogo": 43,
+    "determinacao": 35
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 46,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 26,
+  "id": 738,
+  "pico_carreira": 706,
+  "altura": 185,
+  "peso": 72,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

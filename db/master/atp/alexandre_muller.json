@@ -2,24 +2,33 @@
   "nome": "Alexandre Muller",
   "nacionalidade": "[FR]",
   "idade": 29,
-  "overall": 83,
+  "overall": 73,
   "pontos": 715,
   "atributos": {
-    "saque": 74,
+    "vel_saque": 71,
+    "pre_saque": 75,
+    "segundo_saque": 69,
+    "retorno": 80,
     "forehand": 78,
     "backhand": 81,
-    "topspin": 80,
     "voleio": 78,
-    "slice": 78,
-    "movimento": 81,
+    "smash": 71,
     "lob": 78,
+    "topspin": 80,
+    "slice": 78,
     "winner": 76,
-    "fisico": 60,
+    "velocidade": 73,
+    "aceleracao": 67,
+    "resistencia": 60,
+    "forca": 69,
+    "agilidade": 75,
     "duplas": 60
   },
   "id": 40,
   "atributos_psicologicos": {
-    "concentracao": 78,
+    "clutch": 78,
+    "consistencia": 35,
+    "compostura": 73,
     "agressividade": 72,
     "leitura_de_jogo": 72,
     "determinacao": 63
@@ -45,5 +54,10 @@
   "peso": 95,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

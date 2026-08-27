@@ -2,24 +2,33 @@
   "nome": "Giannicola Misasi",
   "nacionalidade": "[IT]",
   "idade": 25,
-  "overall": 70,
+  "overall": 53,
   "pontos": 17,
   "atributos": {
-    "saque": 43,
+    "vel_saque": 45,
+    "pre_saque": 45,
+    "segundo_saque": 45,
+    "retorno": 50,
     "forehand": 58,
     "backhand": 48,
-    "topspin": 48,
     "voleio": 55,
-    "slice": 55,
-    "movimento": 52,
+    "smash": 55,
     "lob": 43,
+    "topspin": 48,
+    "slice": 55,
     "winner": 58,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 1034,
   "atributos_psicologicos": {
-    "concentracao": 48,
+    "clutch": 48,
+    "consistencia": 56,
+    "compostura": 42,
     "agressividade": 49,
     "leitura_de_jogo": 40,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

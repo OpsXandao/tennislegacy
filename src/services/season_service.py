@@ -18,9 +18,11 @@ from __future__ import annotations
 
 import random
 from dataclasses import dataclass, field
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING, Optional, Any
 
 from src.constants.torneio_constants import START_YEAR
+from src.domain_types import SeasonState, RankingsByTour, TournamentState
+from src.utils.log_jogo import log_erro
 
 if TYPE_CHECKING:
     from src.jogador import Jogador
@@ -44,6 +46,7 @@ class SemanaContext:
     ano_novo: int = 0
     torneio_info_semana: Optional[dict] = None
     resumo_campeoes: list = field(default_factory=list)
+    torneios_semana_atual: list = field(default_factory=list)
     eventos_api: list = field(default_factory=list)
     recuperacao: dict = field(default_factory=dict)
     torneios_disponiveis: list = field(default_factory=list)
@@ -90,11 +93,29 @@ STAGE_META = {
         "resumo": "Acontecimentos e bastidores da sua rotina.",
         "tom": "info",
     },
+    "_processar_logistica": {
+        "id": "process_logistics",
+        "titulo": "Logística e Viagens",
+        "resumo": "Organizando deslocamentos entre torneios e continentes.",
+        "tom": "neutral",
+    },
     "_processar_financas": {
         "id": "process_finances",
         "titulo": "Carreira",
         "resumo": "Processando finanças, equipe, mídia e bastidores.",
         "tom": "neutral",
+    },
+    "_processar_convites_duplas": {
+        "id": "doubles_invites",
+        "titulo": "Convites de Duplas",
+        "resumo": "Jogadores do tour interessados em formar parceria.",
+        "tom": "positive",
+    },
+    "_processar_dinamica_staff": {
+        "id": "staff_dynamics",
+        "titulo": "Equipe e Bastidores",
+        "resumo": "Processando clima interno e conselhos da sua equipe tecnica.",
+        "tom": "info",
     },
     "_inicializar_nova_semana": {
         "id": "init_next_week",
@@ -105,13 +126,13 @@ STAGE_META = {
 }
 
 
-def _resumir_eventos_etapa(eventos: list[str]) -> list[str]:
-    detalhes: list[str] = []
+def _resumir_eventos_etapa(eventos: list[str], categoria: str = "info") -> list[dict]:
+    detalhes: list[dict] = []
     for evento in eventos:
         texto = str(evento or "").strip()
         if not texto:
             continue
-        detalhes.append(texto)
+        detalhes.append({"texto": texto, "categoria": categoria})
         if len(detalhes) >= 4:
             break
     return detalhes
@@ -124,26 +145,68 @@ def _registrar_etapa(
     if not meta:
         return
 
-    detalhes = _resumir_eventos_etapa(eventos_etapa)
+    # Mapeamento de categoria padrão por etapa
+    cat_padrao = "info"
+    if nome_etapa == "_simular_torneios":
+        cat_padrao = "success"
+    if nome_etapa == "_expirar_pontos":
+        cat_padrao = "warning"
+    if nome_etapa == "_processar_financas":
+        cat_padrao = "finance"
+    if nome_etapa == "_processar_eventos_narrativos":
+        cat_padrao = "narrative"
+
+    detalhes = _resumir_eventos_etapa(eventos_etapa, categoria=cat_padrao)
+
     if nome_etapa == "_simular_torneios" and ctx.resumo_campeoes:
-        detalhes = detalhes + [
-            f"{item.get('tour', 'TOUR')}: {item.get('torneio', 'Torneio')} — {item.get('simples', 'Campeão')}"
-            for item in ctx.resumo_campeoes[:3]
-        ]
+        for item in ctx.resumo_campeoes[:3]:
+            detalhes.append(
+                {
+                    "texto": f"{item.get('tour', 'TOUR')}: {item.get('torneio', 'Torneio')} — {item.get('simples', 'Campeão')}",
+                    "categoria": "success",
+                }
+            )
     elif nome_etapa == "_expirar_pontos" and ctx.pontos_expirados > 0:
-        detalhes = [f"{ctx.pontos_expirados} pontos saíram da conta semanal."] + detalhes
+        detalhes.insert(
+            0,
+            {
+                "texto": f"{ctx.pontos_expirados} pontos saíram da conta semanal.",
+                "categoria": "warning",
+            },
+        )
     elif nome_etapa == "_processar_jogador":
         fadiga_antes = int(round(ctx.recuperacao.get("fadiga_antes", 0)))
         fadiga_depois = int(round(ctx.recuperacao.get("fadiga_depois", 0)))
-        detalhes = [
-            f"Fadiga: {fadiga_antes}% → {fadiga_depois}%",
-            f"Status físico: {ctx.recuperacao.get('lesao_status', 'saudavel')}",
-        ] + detalhes
+        status_fis = ctx.recuperacao.get("lesao_status", "saudavel")
+        detalhes.insert(
+            0,
+            {
+                "texto": f"Fadiga: {fadiga_antes}% → {fadiga_depois}%",
+                "categoria": "info",
+            },
+        )
+        detalhes.insert(
+            1,
+            {
+                "texto": f"Status físico: {status_fis}",
+                "categoria": "warning" if status_fis != "saudavel" else "success",
+            },
+        )
     elif nome_etapa == "_inicializar_nova_semana":
-        detalhes = [
-            f"Semana {ctx.semana_nova}/{ctx.ano_novo} pronta.",
-            f"Torneios disponíveis: {len(ctx.torneios_disponiveis)}",
-        ] + detalhes
+        detalhes.insert(
+            0,
+            {
+                "texto": f"Semana {ctx.semana_nova}/{ctx.ano_novo} pronta.",
+                "categoria": "success",
+            },
+        )
+        detalhes.insert(
+            1,
+            {
+                "texto": f"Torneios disponíveis: {len(ctx.torneios_disponiveis)}",
+                "categoria": "info",
+            },
+        )
 
     ctx.processamento_etapas.append(
         {
@@ -151,7 +214,7 @@ def _registrar_etapa(
             "titulo": meta["titulo"],
             "resumo": meta["resumo"],
             "tom": meta["tom"],
-            "detalhes": detalhes[:5],
+            "detalhes": detalhes[:6],
         }
     )
 
@@ -239,13 +302,15 @@ def _atualizar_contexto_ranking_pos_semana(ctx: SemanaContext) -> None:
 
 
 def _recuperar_npcs(ctx: SemanaContext) -> None:
-    from src import calendario as cal
+    from src.services.health_service import recuperar_npcs_semana
 
-    cal._recuperar_npcs_semana(ctx.rankings)
+    recuperar_npcs_semana(ctx.rankings)
 
 
 def _simular_torneios(ctx: SemanaContext) -> None:
     from src import calendario as cal
+    from src.dados import obter_torneios_da_semana
+    from src.pontuacao import aplicar_penalidade_ausencia
 
     ctx.resumo_campeoes = cal._simular_torneios_semanais_npc(
         ctx.nome_save,
@@ -255,12 +320,58 @@ def _simular_torneios(ctx: SemanaContext) -> None:
         ctx.player_active_tournament_state,
     )
 
+    genero = getattr(ctx.jogador, "genero", "masculino")
+    ctx.torneios_semana_atual = obter_torneios_da_semana(
+        ctx.semana_atual, genero=genero
+    )
+
+    if not ctx.jogador_em_torneio_ativo:
+        for t in ctx.torneios_semana_atual:
+            tipo = t.get("tipo", "")
+            nome = t.get("nome", "")
+            if nome and tipo:
+                aplicar_penalidade_ausencia(
+                    ctx.nome_save,
+                    nome,
+                    tipo,
+                    ctx.semana_atual,
+                    ctx.ano_atual,
+                    genero,
+                )
+
+
+def _processar_virada_ano(
+    temporada: dict, jogador: Any, rankings: dict, eventos_api: list
+):
+    if temporada["semana"] <= 52:
+        return
+
+    from src.progressao import processar_envelhecimento_anual
+    from src.jogador import normalizar_nome
+
+    temporada["semana"] = 1
+    temporada["ano"] += 1
+    eventos_api.append(f"Feliz Ano Novo! Bem-vindo a {temporada['ano']}!")
+
+    processar_envelhecimento_anual(jogador)
+    jogador.pontos_ytd = 0
+
+    nome_humano_norm = normalizar_nome(jogador.nome)
+    for rk_obj in (rankings.get("simples_atp"), rankings.get("simples_wta")):
+        if not rk_obj:
+            continue
+        for j in getattr(rk_obj, "ranking", []) or []:
+            if normalizar_nome(j.get("nome", "")) == nome_humano_norm:
+                j["pontos_ytd"] = 0
+                continue
+            processar_envelhecimento_anual(j)
+            j["pontos_ytd"] = 0
+        rk_obj.salvar_ranking()
+
 
 def _avancar_calendario(ctx: SemanaContext) -> None:
-    from src import calendario as cal
-
     ctx.temporada["semana"] += 1
-    cal._processar_virada_ano(ctx.temporada, ctx.jogador, ctx.rankings, ctx.eventos_api)
+    _processar_virada_ano(ctx.temporada, ctx.jogador, ctx.rankings, ctx.eventos_api)
     ctx.semana_nova = ctx.temporada["semana"]
     ctx.ano_novo = ctx.temporada["ano"]
     ctx.eventos_api.append(
@@ -269,10 +380,10 @@ def _avancar_calendario(ctx: SemanaContext) -> None:
 
 
 def _expirar_pontos(ctx: SemanaContext) -> None:
-    from src import calendario as cal
+    from src.services.ranking_service import processar_expiracao_ranking
 
     pontos_antes = _somar_pontos_detalhados(_buscar_registro_jogador_ranking(ctx))
-    cal._processar_expiracao_ranking(ctx.nome_save, ctx.semana_nova, ctx.ano_novo)
+    processar_expiracao_ranking(ctx.nome_save, ctx.semana_nova, ctx.ano_novo)
     _recarregar_ranking_principal(ctx)
     pontos_depois = _somar_pontos_detalhados(_buscar_registro_jogador_ranking(ctx))
     ctx.pontos_expirados = max(0, pontos_antes - pontos_depois)
@@ -281,6 +392,10 @@ def _expirar_pontos(ctx: SemanaContext) -> None:
 
 def _processar_jogador(ctx: SemanaContext) -> None:
     from src import calendario as cal
+    from src.fadiga import (
+        aplicar_fadiga_extra_energia_final,
+        calcular_condicao_pre_partida,
+    )
 
     if ctx.jogador_em_torneio_ativo:
         sem_ref = ctx.player_active_tournament_state.get("semana", ctx.semana_atual)
@@ -291,6 +406,12 @@ def _processar_jogador(ctx: SemanaContext) -> None:
         )
 
     fadiga_antes = float(getattr(ctx.jogador, "fadiga", 0) or 0)
+
+    # Ajuste de fadiga pós-partida pelo nível de energia final
+    if ctx.jogador_participou:
+        energia_final = int(getattr(ctx.jogador, "energia", 100) or 100)
+        aplicar_fadiga_extra_energia_final(ctx.jogador, energia_final)
+
     eventos = cal._atualizar_recuperacao_jogador(
         ctx.jogador, info_torneio=ctx.torneio_info_semana
     )
@@ -301,6 +422,38 @@ def _processar_jogador(ctx: SemanaContext) -> None:
         if ctx.jogador.energia < 95:
             ctx.jogador.energia = min(100, ctx.jogador.energia + 15)
         ctx.eventos_api.append("Semana de descanso com bonus de recuperacao fisica.")
+
+    # Calcula condição pré-partida para a próxima semana
+    dias_descanso = 2  # default seguro (jogador sem torneio imediato)
+    if ctx.jogador_participou and ctx.semana_nova:
+        dias_descanso = 1  # jogou esta semana, menos descanso
+    ctx.jogador.condicao = calcular_condicao_pre_partida(
+        getattr(ctx.jogador, "fadiga", 0), dias_descanso
+    )
+
+    # Processamento de Ritmo de Jogo
+    processar_ritmo = getattr(ctx.jogador, "processar_ritmo_semanal", None)
+    if callable(processar_ritmo):
+        processar_ritmo(participou=ctx.jogador_participou)
+    if not ctx.jogador_participou:
+        ctx.eventos_api.append(
+            "Sua inatividade esta deixando seu ritmo de jogo 'enferrujado'."
+        )
+    else:
+        try:
+            ritmo_jogo = int(getattr(ctx.jogador, "ritmo_jogo", 0) or 0)
+        except (TypeError, ValueError):
+            ritmo_jogo = 0
+        if ritmo_jogo >= 85:
+            ctx.eventos_api.append(
+                "Voce esta com o ritmo de jogo em dia. Suas pancadas estao saindo com precisao."
+            )
+
+    # Erosão de Atributos (Realismo de Manutenção)
+    from src.progressao import processar_erosao_semanal
+
+    erosaos = processar_erosao_semanal(ctx.jogador, participou=ctx.jogador_participou)
+    ctx.eventos_api.extend(erosaos)
 
     status_lesao = (
         getattr(ctx.jogador, "status_lesao", {})
@@ -315,63 +468,151 @@ def _processar_jogador(ctx: SemanaContext) -> None:
 
 
 def _processar_eventos_narrativos(ctx: SemanaContext) -> None:
-    """Dispara eventos aleatórios para dar variabilidade ao loop semanal."""
-    if random.random() > 0.18:  # 18% de chance de evento por semana
+    """Dispara eventos narrativos aleatórios semanais carregados do JSON."""
+    try:
+        from pathlib import Path
+        import json
+
+        caminho = Path(__file__).parent.parent.parent / "db" / "narrativa_eventos.json"
+        with open(caminho, "r", encoding="utf-8") as f:
+            pool = json.load(f).get("semanais", [])
+    except Exception:
+        pool = []
+
+    if not pool or random.random() > 0.18:
         return
 
-    eventos = [
-        {
-            "id": "jantar_caridade",
-            "mensagem": "Você participou de um jantar de caridade. (+100 seguidores, -8 energia)",
-            "tipo": "social",
-        },
-        {
-            "id": "treino_inspirado",
-            "mensagem": "Semana de treino excepcionalmente produtiva! (+3 moral)",
-            "tipo": "mental",
-        },
-        {
-            "id": "noite_insonia",
-            "mensagem": "Uma noite de insônia afetou sua recuperação. (-12 energia)",
-            "tipo": "fisico",
-        },
-        {
-            "id": "fofoca_midia",
-            "mensagem": "Boatos sobre sua vida pessoal circulam na mídia. (-5 moral, +250 seguidores)",
-            "tipo": "reputacao",
-        },
-        {
-            "id": "festa_vip",
-            "mensagem": "Você foi convidado para uma festa VIP. (+500 seguidores, -20 energia, -8 moral)",
-            "tipo": "social",
-        },
-    ]
-
-    ev = random.choice(eventos)
+    evento = random.choice(pool)
+    ev_texto = evento.get("texto", "Algo aconteceu nos bastidores.")
+    efeitos = evento.get("efeitos", {})
 
     # Aplica efeitos
-    if ev["id"] == "jantar_caridade":
-        ctx.jogador.seguidores = getattr(ctx.jogador, "seguidores", 0) + 100
-        ctx.jogador.ajustar_energia(-8)
-    elif ev["id"] == "treino_inspirado":
-        ctx.jogador.moral = min(100, getattr(ctx.jogador, "moral", 70) + 3)
-    elif ev["id"] == "noite_insonia":
-        ctx.jogador.ajustar_energia(-12)
-    elif ev["id"] == "fofoca_midia":
-        ctx.jogador.moral = max(0, getattr(ctx.jogador, "moral", 70) - 5)
-        ctx.jogador.seguidores = getattr(ctx.jogador, "seguidores", 0) + 250
-    elif ev["id"] == "festa_vip":
-        ctx.jogador.seguidores = getattr(ctx.jogador, "seguidores", 0) + 500
-        ctx.jogador.ajustar_energia(-20)
-        ctx.jogador.moral = max(0, getattr(ctx.jogador, "moral", 70) - 8)
+    for key, val in efeitos.items():
+        if key == "seguidores":
+            ctx.jogador.seguidores = max(0, ctx.jogador.seguidores + val)
+        elif key == "energia":
+            if hasattr(ctx.jogador, "ajustar_energia"):
+                ctx.jogador.ajustar_energia(val)
+            else:
+                ctx.jogador.energia = max(
+                    0, min(100, (ctx.jogador.energia or 100) + val)
+                )
+        elif key == "moral":
+            ctx.jogador.moral = max(
+                0, min(100, (getattr(ctx.jogador, "moral", 70) or 70) + val)
+            )
 
-    ctx.eventos_api.append(ev["mensagem"])
+    ctx.eventos_api.append(ev_texto)
+
+
+def _processar_dinamica_staff(ctx: SemanaContext) -> None:
+    """Processa satisfacao da equipe e gera emails de conselhos (FM-style)."""
+    from src.services.staff_advice_service import (
+        processar_satisfacao_staff,
+        StaffAdviceService,
+    )
+
+    # 1. Atualiza satisfação e processa pedidos de demissão
+    eventos_clima = processar_satisfacao_staff(ctx.jogador)
+    ctx.eventos_api.extend(eventos_clima)
+
+    # 2. Gera e-mails de conselhos técnicos/físicos/mkt
+    conselhos = StaffAdviceService.generate_weekly_advice(ctx.jogador)
+    if conselhos:
+        if not hasattr(ctx.jogador, "caixa_email"):
+            ctx.jogador.caixa_email = []
+        ctx.jogador.caixa_email.extend(conselhos)
+        ctx.eventos_api.append(
+            f"SUGESTÃO: Voce recebeu {len(conselhos)} novo(s) conselho(s) da sua equipe no e-mail."
+        )
+
+
+def _processar_convites_duplas(ctx: SemanaContext) -> None:
+    """Gera convites de duplas vindo de NPCs para a caixa de entrada do jogador."""
+    from src.services.communication_service import gerar_convite_duplas_inbound
+
+    # Chama a lógica de geração de convites
+    gerar_convite_duplas_inbound(ctx.jogador, ctx.ranking)
+
+
+def _processar_rotinas_semanais_jogador(
+    jogador: Any,
+    temporada: dict,
+    ranking: Any,
+    torneio_info_semana: Optional[dict],
+    jogador_participou: bool,
+    eventos_api: list,
+):
+    from src.management import (
+        processar_despesas_operacionais,
+        processar_expiracoes_empresario,
+        processar_gastos_equipe,
+        processar_expiracoes_contratos,
+    )
+    from src.services.sponsorship_service import processar_pagamentos_patrocinio
+    from src.services.communication_service import (
+        gerar_propostas_carreira_email,
+        gerar_convites_midia_email,
+    )
+    from src import calendario as cal
+
+    processar_despesas_operacionais(
+        jogador, temporada=temporada, info_torneio=torneio_info_semana
+    )
+    processar_expiracoes_empresario(jogador)
+    processar_gastos_equipe(jogador)
+    processar_expiracoes_contratos(jogador)
+    processar_pagamentos_patrocinio(jogador)
+    eventos_api.extend(cal.processar_progressao_semanal(jogador))
+    cal.processar_seguidores(jogador, ranking, participou=jogador_participou)
+    cal.processar_avisos_patrocinio(jogador, ranking)
+
+    caixa_antes = len(getattr(jogador, "caixa_email", []) or [])
+    gerar_propostas_carreira_email(jogador, ranking)
+    gerar_convites_midia_email(jogador, ranking)
+    caixa_depois = len(getattr(jogador, "caixa_email", []) or [])
+    novos_emails = max(0, caixa_depois - caixa_antes)
+    if novos_emails > 0:
+        eventos_api.append(f"{novos_emails} novo(s) email(s) de carreira recebido(s).")
+
+
+def _processar_logistica(ctx: SemanaContext) -> None:
+    """Calcula custos de viagem e impacto de jet lag se o jogador mudar de continente."""
+    from src.utils.geo_utils import (
+        obter_continente,
+        calcular_custo_viagem,
+        calcular_fadiga_viagem,
+    )
+
+    if not ctx.jogador_em_torneio_ativo or not ctx.torneio_info_semana:
+        return
+
+    pais_torneio = ctx.torneio_info_semana.get("pais_sede", "Internacional")
+    continente_torneio = obter_continente(pais_torneio)
+
+    if continente_torneio != ctx.jogador.continente_atual:
+        custo = calcular_custo_viagem(ctx.jogador.continente_atual, continente_torneio)
+        fadiga_extra = calcular_fadiga_viagem(
+            ctx.jogador.continente_atual, continente_torneio
+        )
+
+        ctx.jogador.registrar_transacao(
+            -custo, f"Viagem para {continente_torneio}", categoria="logistica"
+        )
+        ctx.jogador.ajustar_energia(-fadiga_extra)
+
+        ctx.eventos_api.append(
+            f"LOGÍSTICA: Viagem transcontinental para a {continente_torneio}. Custo: ${custo}. Jet lag: -{fadiga_extra}% energia."
+        )
+        ctx.jogador.continente_atual = continente_torneio
+    else:
+        ctx.jogador.registrar_transacao(
+            -200, "Deslocamento local", categoria="logistica"
+        )
 
 
 def _processar_financas(ctx: SemanaContext) -> None:
-    from src import calendario as cal
-
-    cal._processar_rotinas_semanais_jogador(
+    _processar_rotinas_semanais_jogador(
         ctx.jogador,
         ctx.temporada,
         ctx.ranking,
@@ -379,6 +620,11 @@ def _processar_financas(ctx: SemanaContext) -> None:
         ctx.jogador_participou,
         ctx.eventos_api,
     )
+
+
+from src.services.milestone_service import MilestoneService
+
+...
 
 
 def _inicializar_nova_semana(ctx: SemanaContext) -> None:
@@ -390,7 +636,20 @@ def _inicializar_nova_semana(ctx: SemanaContext) -> None:
     if ctx.jogador.semana in [1, 26]:
         tirar_snapshot_carreira(ctx.jogador, ano=ctx.ano_novo)
 
+    # Detecção de Ranking Milestones
+    rk_milestones = MilestoneService.detect_ranking_milestones(
+        ctx.jogador, ctx.nova_posicao_ranking or 9999
+    )
+    if rk_milestones:
+        ctx.eventos_api.extend(rk_milestones)
+
     _resetar_estado_semanal_jogador(ctx)
+
+    # Limpa marcos da semana após processar
+    if hasattr(ctx.jogador, "milestones_semana"):
+        ctx.eventos_api.extend(ctx.jogador.milestones_semana)
+        delattr(ctx.jogador, "milestones_semana")
+
     save_player(ctx.nome_save, ctx.jogador)
 
     cal._inicializar_torneios_nova_semana(
@@ -415,8 +674,11 @@ PIPELINE = [
     _avancar_calendario,
     _expirar_pontos,
     _processar_jogador,
+    _processar_logistica,
     _processar_eventos_narrativos,
     _processar_financas,
+    _processar_dinamica_staff,
+    _processar_convites_duplas,
     _inicializar_nova_semana,
 ]
 
@@ -427,6 +689,7 @@ def _build_context(nome_save: str) -> SemanaContext:
     from src.repositories.ranking_repository import load_all_rankings
     from src.repositories.season_repository import load_season
     from src.repositories.tournament_repository import load_tournament_state
+    from src.services.ranking_service import migrar_rankings_semana_se_preciso
 
     temporada = load_season(nome_save)
     jogador = load_player(nome_save)
@@ -434,7 +697,7 @@ def _build_context(nome_save: str) -> SemanaContext:
     ano_atual = temporada.get("ano", START_YEAR)
 
     rankings = load_all_rankings(nome_save)
-    cal._migrar_rankings_semana_se_preciso(rankings, semana_atual, ano_atual)
+    migrar_rankings_semana_se_preciso(rankings, semana_atual, ano_atual)
 
     ranking = (
         rankings["simples_atp"]
@@ -476,7 +739,11 @@ def advance_week(nome_save: str, expected_week: Optional[int] = None) -> dict:
 
     for etapa in PIPELINE:
         eventos_antes = len(ctx.eventos_api)
-        etapa(ctx)
+        try:
+            etapa(ctx)
+        except Exception as exc:
+            log_erro(ctx.nome_save, etapa.__name__, exc)
+            ctx.eventos_api.append(f"[aviso] etapa {etapa.__name__} falhou: {exc}")
         _registrar_etapa(ctx, etapa.__name__, ctx.eventos_api[eventos_antes:])
 
     return {

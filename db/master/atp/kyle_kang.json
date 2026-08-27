@@ -2,24 +2,33 @@
   "nome": "Kyle Kang",
   "nacionalidade": "[US]",
   "idade": 21,
-  "overall": 73,
+  "overall": 50,
   "pontos": 52,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 48,
+    "segundo_saque": 53,
+    "retorno": 43,
     "forehand": 47,
     "backhand": 40,
-    "topspin": 51,
     "voleio": 40,
-    "slice": 40,
-    "movimento": 52,
+    "smash": 48,
     "lob": 57,
+    "topspin": 51,
+    "slice": 40,
     "winner": 45,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 52,
     "duplas": 60
   },
   "id": 688,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 71,
+    "compostura": 42,
     "agressividade": 34,
     "leitura_de_jogo": 46,
     "determinacao": 43
@@ -45,5 +54,10 @@
   "peso": 70,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

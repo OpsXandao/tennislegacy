@@ -2,24 +2,33 @@
   "nome": "Gianluca Brunkow",
   "nacionalidade": "[US]",
   "idade": 23,
-  "overall": 70,
+  "overall": 52,
   "pontos": 10,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 53,
+    "segundo_saque": 56,
+    "retorno": 50,
     "forehand": 40,
     "backhand": 49,
-    "topspin": 51,
     "voleio": 47,
-    "slice": 50,
-    "movimento": 55,
+    "smash": 51,
     "lob": 43,
+    "topspin": 51,
+    "slice": 50,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 1161,
   "atributos_psicologicos": {
-    "concentracao": 54,
+    "clutch": 54,
+    "consistencia": 59,
+    "compostura": 52,
     "agressividade": 46,
     "leitura_de_jogo": 37,
     "determinacao": 48
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

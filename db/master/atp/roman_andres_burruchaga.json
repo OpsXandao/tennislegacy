@@ -2,24 +2,33 @@
   "nome": "Roman Andres Burruchaga",
   "nacionalidade": "[AR]",
   "idade": 24,
-  "overall": 83,
+  "overall": 63,
   "pontos": 617,
   "atributos": {
-    "saque": 63,
+    "vel_saque": 62,
+    "pre_saque": 64,
+    "segundo_saque": 63,
+    "retorno": 65,
     "forehand": 67,
     "backhand": 65,
-    "topspin": 68,
     "voleio": 59,
-    "slice": 67,
-    "movimento": 65,
+    "smash": 60,
     "lob": 68,
+    "topspin": 68,
+    "slice": 67,
     "winner": 66,
-    "fisico": 60,
+    "velocidade": 63,
+    "aceleracao": 59,
+    "resistencia": 60,
+    "forca": 62,
+    "agilidade": 64,
     "duplas": 60
   },
   "id": 117,
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 41,
+    "compostura": 57,
     "agressividade": 64,
     "leitura_de_jogo": 61,
     "determinacao": 61
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

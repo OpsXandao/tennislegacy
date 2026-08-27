@@ -87,6 +87,37 @@ class TournamentServiceTests(unittest.TestCase):
         self.assertEqual(partida["fase"], "r32")
         self.assertEqual(partida["adversario"]["nome"], "Bruno Costa")
 
+    def test_anexar_estado_regular_mantem_jogador_ativo_com_partida_pendente(self):
+        instancia = SimpleNamespace(
+            ranking=SimpleNamespace(obter_posicao=lambda nome: 25),
+            garantir_dados_completos=lambda adv: adv,
+        )
+        state = {
+            "fase_atual": "qualy_2",
+            "jogador_ativo": False,
+            "estado": {
+                "jogador": "Alexandre Paiva",
+                "rodadas": {
+                    "qualy_2": [
+                        (
+                            {"nome": "Alexandre Paiva"},
+                            {
+                                "nome": "Alp Horoz",
+                                "atributos": {},
+                                "atributos_psicologicos": {},
+                            },
+                        )
+                    ]
+                },
+            },
+        }
+
+        resultado = tournament_service._anexar_estado_regular(instancia, state)
+
+        self.assertTrue(resultado["partida_disponivel"])
+        self.assertTrue(resultado["jogador_ativo"])
+        self.assertEqual(resultado["info_partida"]["adversario"]["nome"], "Alp Horoz")
+
 
 if __name__ == "__main__":
     unittest.main()

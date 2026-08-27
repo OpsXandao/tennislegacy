@@ -1,0 +1,106 @@
+{
+  "nome": "Sheng Tang",
+  "nacionalidade": "[CN]",
+  "pontos": 22,
+  "pontos_duplas": 0,
+  "pontos_ranking": 22,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 20,
+  "overall": 54,
+  "energia": 100,
+  "fadiga": 12,
+  "moral": 70,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 55,
+    "pre_saque": 53,
+    "segundo_saque": 56,
+    "retorno": 51,
+    "forehand": 57,
+    "backhand": 48,
+    "voleio": 51,
+    "smash": 54,
+    "lob": 50,
+    "topspin": 49,
+    "slice": 54,
+    "winner": 56,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 55,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 52,
+    "consistencia": 58,
+    "compostura": 51,
+    "agressividade": 47,
+    "leitura_de_jogo": 51,
+    "determinacao": 49
+  },
+  "historico_torneios": [
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 1,
+      "ano": 2026,
+      "fase": "oitavas",
+      "fase_alcancada": "oitavas",
+      "pontos": 20,
+      "premio": 7471,
+      "modalidade": "simples",
+      "obrigatorio": false,
+      "expirado": false
+    }
+  ],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 2,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    },
+    {
+      "pontos": 20,
+      "semana_expiracao": 1,
+      "ano_expiracao": 2027,
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana_origem": 1,
+      "ano_origem": 2026,
+      "fase": "oitavas",
+      "modalidade": "simples"
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 7471,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 26,
+  "id": 1365,
+  "pico_carreira": 1851,
+  "altura": 183,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

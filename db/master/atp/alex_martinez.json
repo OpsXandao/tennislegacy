@@ -2,24 +2,33 @@
   "nome": "Alex Martinez",
   "nacionalidade": "[ES]",
   "idade": 24,
-  "overall": 76,
+  "overall": 52,
   "pontos": 115,
   "atributos": {
-    "saque": 46,
+    "vel_saque": 48,
+    "pre_saque": 45,
+    "segundo_saque": 51,
+    "retorno": 47,
     "forehand": 56,
     "backhand": 43,
-    "topspin": 54,
     "voleio": 54,
-    "slice": 49,
-    "movimento": 55,
+    "smash": 54,
     "lob": 41,
+    "topspin": 54,
+    "slice": 49,
     "winner": 44,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 447,
   "atributos_psicologicos": {
-    "concentracao": 36,
+    "clutch": 36,
+    "consistencia": 67,
+    "compostura": 38,
     "agressividade": 38,
     "leitura_de_jogo": 42,
     "determinacao": 45
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

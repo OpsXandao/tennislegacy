@@ -2,24 +2,33 @@
   "nome": "Alexander Ritschard",
   "nacionalidade": "[CH]",
   "idade": 31,
-  "overall": 74,
+  "overall": 49,
   "pontos": 67,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 52,
+    "segundo_saque": 51,
+    "retorno": 45,
     "forehand": 42,
     "backhand": 45,
-    "topspin": 46,
     "voleio": 40,
-    "slice": 45,
-    "movimento": 47,
+    "smash": 48,
     "lob": 52,
+    "topspin": 46,
+    "slice": 45,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 604,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 53,
+    "compostura": 35,
     "agressividade": 52,
     "leitura_de_jogo": 30,
     "determinacao": 31
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

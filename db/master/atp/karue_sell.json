@@ -2,24 +2,33 @@
   "nome": "Karue Sell",
   "nacionalidade": "[BR]",
   "idade": 32,
-  "overall": 73,
+  "overall": 52,
   "pontos": 51,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 54,
+    "segundo_saque": 53,
+    "retorno": 49,
     "forehand": 49,
     "backhand": 51,
-    "topspin": 57,
     "voleio": 51,
-    "slice": 50,
-    "movimento": 47,
+    "smash": 53,
     "lob": 43,
+    "topspin": 57,
+    "slice": 50,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 695,
   "atributos_psicologicos": {
-    "concentracao": 36,
+    "clutch": 36,
+    "consistencia": 57,
+    "compostura": 36,
     "agressividade": 48,
     "leitura_de_jogo": 39,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

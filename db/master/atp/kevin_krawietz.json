@@ -2,24 +2,33 @@
   "nome": "Kevin Krawietz",
   "nacionalidade": "[RU] Rússia",
   "idade": 22,
-  "overall": 92,
+  "overall": 93,
   "pontos": 4175,
   "id": 32937,
   "atributos": {
-    "saque": 96,
+    "vel_saque": 94,
+    "pre_saque": 96,
+    "segundo_saque": 76,
+    "retorno": 97,
     "forehand": 92,
     "backhand": 98,
-    "topspin": 93,
     "voleio": 99,
-    "slice": 98,
-    "movimento": 96,
+    "smash": 95,
     "lob": 98,
-    "fisico": 89,
+    "topspin": 93,
+    "slice": 98,
     "winner": 92,
+    "velocidade": 93,
+    "aceleracao": 85,
+    "resistencia": 89,
+    "forca": 91,
+    "agilidade": 94,
     "duplas": 104
   },
   "atributos_psicologicos": {
-    "concentracao": 49,
+    "clutch": 49,
+    "consistencia": 39,
+    "compostura": 46,
     "agressividade": 66,
     "leitura_de_jogo": 43,
     "determinacao": 41
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 4175,
-  "rank_duplas": 12
+  "rank_duplas": 12,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

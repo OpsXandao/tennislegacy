@@ -2,24 +2,33 @@
   "nome": "Jagger Leach",
   "nacionalidade": "[US]",
   "idade": 18,
-  "overall": 69,
+  "overall": 51,
   "pontos": 5,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 46,
+    "retorno": 52,
     "forehand": 48,
     "backhand": 53,
-    "topspin": 49,
     "voleio": 40,
-    "slice": 45,
-    "movimento": 56,
+    "smash": 48,
     "lob": 53,
+    "topspin": 49,
+    "slice": 45,
     "winner": 44,
-    "fisico": 60,
+    "velocidade": 57,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 1309,
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 60,
+    "compostura": 41,
     "agressividade": 45,
     "leitura_de_jogo": 30,
     "determinacao": 39
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

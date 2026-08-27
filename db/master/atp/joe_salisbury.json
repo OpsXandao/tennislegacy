@@ -2,24 +2,33 @@
   "nome": "Joe Salisbury",
   "nacionalidade": "[RU] Rússia",
   "idade": 34,
-  "overall": 93,
+  "overall": 90,
   "pontos": 6190,
   "id": 46540,
   "atributos": {
-    "saque": 87,
+    "vel_saque": 87,
+    "pre_saque": 87,
+    "segundo_saque": 77,
+    "retorno": 89,
     "forehand": 92,
     "backhand": 90,
-    "topspin": 96,
     "voleio": 98,
-    "slice": 88,
-    "movimento": 88,
+    "smash": 95,
     "lob": 91,
-    "fisico": 92,
+    "topspin": 96,
+    "slice": 88,
     "winner": 98,
+    "velocidade": 89,
+    "aceleracao": 82,
+    "resistencia": 92,
+    "forca": 91,
+    "agilidade": 88,
     "duplas": 106
   },
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 44,
+    "compostura": 53,
     "agressividade": 61,
     "leitura_de_jogo": 60,
     "determinacao": 54
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 6190,
-  "rank_duplas": 10
+  "rank_duplas": 10,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

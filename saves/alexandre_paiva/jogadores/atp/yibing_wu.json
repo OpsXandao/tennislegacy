@@ -1,33 +1,42 @@
 {
   "nome": "Yibing Wu",
   "nacionalidade": "[CN]",
-  "pontos": 444,
+  "pontos": 454,
   "pontos_duplas": 0,
-  "pontos_ranking": 444,
+  "pontos_ranking": 454,
   "pontos_ranking_duplas": 0,
-  "pontos_ytd": 10,
-  "overall": 81,
+  "pontos_ytd": 20,
+  "overall": 49,
   "energia": 100,
-  "fadiga": 9,
-  "moral": 65,
+  "fadiga": 15,
+  "moral": 70,
   "is_lean": false,
   "is_bot": false,
   "e_ficticio": false,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 49,
+    "segundo_saque": 51,
+    "retorno": 41,
     "forehand": 57,
     "backhand": 40,
-    "topspin": 45,
     "voleio": 40,
-    "slice": 44,
-    "movimento": 43,
+    "smash": 48,
     "lob": 51,
+    "topspin": 45,
+    "slice": 44,
     "winner": 58,
-    "fisico": 60,
+    "velocidade": 49,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 46,
     "duplas": 60
   },
   "atributos_psicologicos": {
-    "concentracao": 49,
+    "clutch": 49,
+    "consistencia": 69,
+    "compostura": 44,
     "agressividade": 36,
     "leitura_de_jogo": 45,
     "determinacao": 36
@@ -39,10 +48,10 @@
       "tipo": "ATP 250",
       "semana": 1,
       "ano": 2026,
-      "fase": "pre_oitavas",
-      "fase_alcancada": "pre_oitavas",
-      "pontos": 10,
-      "premio": 4482,
+      "fase": "oitavas",
+      "fase_alcancada": "oitavas",
+      "pontos": 20,
+      "premio": 7471,
       "modalidade": "simples",
       "obrigatorio": false,
       "expirado": false
@@ -56,14 +65,14 @@
       "ano_expiracao": 2027
     },
     {
-      "pontos": 10,
+      "pontos": 20,
       "semana_expiracao": 1,
       "ano_expiracao": 2027,
       "torneio": "Hong Kong Open",
       "tipo": "ATP 250",
       "semana_origem": 1,
       "ano_origem": 2026,
-      "fase": "pre_oitavas",
+      "fase": "oitavas",
       "modalidade": "simples"
     }
   ],
@@ -84,7 +93,7 @@
       "categoria": "ATP 500"
     }
   ],
-  "dinheiro": 4482,
+  "dinheiro": 7471,
   "superficie_preferida": "dura",
   "e_jogador_principal": false,
   "idade": 26,
@@ -94,5 +103,10 @@
   "peso": 72,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

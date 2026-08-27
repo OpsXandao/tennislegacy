@@ -1,33 +1,42 @@
 {
   "nome": "Zhe Li",
   "nacionalidade": "[CN]",
-  "pontos": 17,
+  "pontos": 162,
   "pontos_duplas": 0,
-  "pontos_ranking": 17,
+  "pontos_ranking": 162,
   "pontos_ranking_duplas": 0,
-  "pontos_ytd": 5,
-  "overall": 73,
-  "energia": 100,
-  "fadiga": 12,
-  "moral": 70,
+  "pontos_ytd": 150,
+  "overall": 70,
+  "energia": 20,
+  "fadiga": 15,
+  "moral": 100,
   "is_lean": false,
   "is_bot": false,
   "e_ficticio": false,
   "atributos": {
-    "saque": 62,
+    "vel_saque": 61,
+    "pre_saque": 68,
+    "segundo_saque": 65,
+    "retorno": 79,
     "forehand": 79,
     "backhand": 81,
-    "topspin": 68,
     "voleio": 63,
-    "slice": 80,
-    "movimento": 76,
+    "smash": 62,
     "lob": 68,
+    "topspin": 68,
+    "slice": 80,
     "winner": 81,
-    "fisico": 60,
+    "velocidade": 69,
+    "aceleracao": 65,
+    "resistencia": 60,
+    "forca": 69,
+    "agilidade": 73,
     "duplas": 60
   },
   "atributos_psicologicos": {
-    "concentracao": 60,
+    "clutch": 60,
+    "consistencia": 44,
+    "compostura": 62,
     "agressividade": 61,
     "leitura_de_jogo": 64,
     "determinacao": 67
@@ -39,16 +48,26 @@
       "tipo": "ATP 250",
       "semana": 1,
       "ano": 2026,
-      "fase": "qualy_2",
-      "fase_alcancada": "qualy_2",
-      "pontos": 5,
-      "premio": 746,
+      "fase": "final",
+      "fase_alcancada": "final",
+      "pontos": 150,
+      "premio": 49808,
       "modalidade": "simples",
       "obrigatorio": false,
       "expirado": false
     }
   ],
-  "historico_partidas": [],
+  "historico_partidas": [
+    {
+      "ano": 2026,
+      "semana": 1,
+      "torneio": "Hong Kong Open",
+      "fase": "finalizado",
+      "adversario": "Alexandre Paiva",
+      "placar": "Alexandre Paiva 2 x 0 Zhe Li",
+      "resultado": "D"
+    }
+  ],
   "pontos_detalhados": [
     {
       "pontos": 12,
@@ -56,14 +75,14 @@
       "ano_expiracao": 2027
     },
     {
-      "pontos": 5,
+      "pontos": 150,
       "semana_expiracao": 1,
       "ano_expiracao": 2027,
       "torneio": "Hong Kong Open",
       "tipo": "ATP 250",
       "semana_origem": 1,
       "ano_origem": 2026,
-      "fase": "qualy_2",
+      "fase": "final",
       "modalidade": "simples"
     }
   ],
@@ -78,15 +97,23 @@
   "protected_ranking": null,
   "protected_ranking_semanas": 0,
   "trofeus": [],
-  "dinheiro": 746,
+  "dinheiro": 49808,
   "superficie_preferida": "dura",
   "e_jogador_principal": false,
   "idade": 39,
+  "titulos_total": 0,
+  "ultimo_titulo_ano": null,
   "id": 1106,
   "pico_carreira": 1086,
   "altura": 183,
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  },
+  "ranking_pos": 1107
 }

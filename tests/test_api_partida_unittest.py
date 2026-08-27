@@ -58,12 +58,13 @@ class ApiPartidaTests(unittest.TestCase):
         cls.partida_route = importlib.import_module("api.routes.partida")
 
     def test_dupla_contem_jogador_pelo_elenco(self):
+        from src.services.match_service import dupla_contem_jogador
         dupla = {
             "nome": "Silva / Costa",
             "jogadores": [{"nome": "Alexandre Silva"}, {"nome": "Bruno Costa"}],
         }
-        self.assertTrue(self.partida_route._dupla_contem_jogador(dupla, "Alexandre Silva"))
-        self.assertFalse(self.partida_route._dupla_contem_jogador(dupla, "Caio Lima"))
+        self.assertTrue(dupla_contem_jogador(dupla, "Alexandre Silva"))
+        self.assertFalse(dupla_contem_jogador(dupla, "Caio Lima"))
 
     @patch("api.routes.partida.start_match")
     def test_iniciar_partida_delega_para_servico(self, mock_start_match):
@@ -94,6 +95,47 @@ class ApiPartidaTests(unittest.TestCase):
 
         self.assertEqual(data, {"ok": True})
         mock_obter_runtime.assert_called_once_with("p1", "save_teste")
+
+    def test_scout_usa_tournament_data_quando_instancia_nao_tem_superficie(self):
+        adversario = {
+            "nome": "Pengyu Lu",
+            "ranking_pos": 123,
+            "overall": 67,
+            "atributos": {
+                "vel_saque": 80,
+                "voleio": 76,
+                "forehand": 84,
+                "backhand": 82,
+                "velocidade": 83,
+                "winner": 81,
+            },
+            "atributos_psicologicos": {},
+        }
+        instancia = SimpleNamespace(
+            tournament_data={"quadra": "saibro"},
+            to_api_state=lambda: {"info_partida": {"adversario": adversario}},
+        )
+        session = SimpleNamespace(
+            nome_save_ativo="save_teste",
+            jogador=SimpleNamespace(
+                nome="Alexandre Silva", genero="masculino", rivalidades={}
+            ),
+            ranking_atp=None,
+            ranking_wta=None,
+        )
+
+        with (
+            patch(
+                "src.services.player_context_service.carregar_torneio_api",
+                return_value=instancia,
+            ),
+            patch("src.match_history.MatchHistoryManager") as mock_history,
+        ):
+            mock_history.return_value.buscar_por_jogador.return_value = []
+            resposta = self.partida_route.scout("Pengyu Lu", session)
+
+        self.assertEqual(resposta.nome, "Pengyu Lu")
+        self.assertIn("saibro", " ".join(resposta.dicas).lower())
 
 
 if __name__ == "__main__":

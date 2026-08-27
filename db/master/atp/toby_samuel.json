@@ -2,24 +2,33 @@
   "nome": "Toby Samuel",
   "nacionalidade": "[GB]",
   "idade": 23,
-  "overall": 78,
+  "overall": 49,
   "pontos": 228,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 44,
+    "retorno": 47,
     "forehand": 45,
     "backhand": 49,
-    "topspin": 40,
     "voleio": 53,
-    "slice": 47,
-    "movimento": 45,
+    "smash": 55,
     "lob": 54,
+    "topspin": 40,
+    "slice": 47,
     "winner": 49,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 278,
   "atributos_psicologicos": {
-    "concentracao": 33,
+    "clutch": 33,
+    "consistencia": 56,
+    "compostura": 32,
     "agressividade": 49,
     "leitura_de_jogo": 49,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

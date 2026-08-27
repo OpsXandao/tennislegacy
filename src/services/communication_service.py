@@ -8,17 +8,93 @@ from src.services.sponsorship_service import pode_assinar_patrocinio
 def gerar_propostas_carreira_email(jogador: Any, ranking: Any):
     gerar_proposta_patrocinio(jogador, ranking)
     gerar_proposta_empresario(jogador, ranking)
+    gerar_convite_duplas_inbound(jogador, ranking)
+
+
+def gerar_convite_duplas_inbound(jogador: Any, ranking: Any):
+    """Gera convite de parceria de duplas vindo de um NPC."""
+    from src.duplas import buscar_parceiros_disponiveis
+
+    # Chance base de 10% por semana
+    if random.random() > 0.12:
+        return
+
+    vinculos = getattr(jogador, "vinculos_dupla", {})
+    parceiros = buscar_parceiros_disponiveis(jogador, ranking.ranking, n=5, vinculos=vinculos)
+    
+    if not parceiros:
+        return
+
+    # Escolhe um parceiro da lista (mais chance para quem tem vínculo)
+    parceiro = random.choice(parceiros)
+    
+    # Evita duplicatas na caixa de entrada
+    pendentes_nomes = {
+        p.get("ref_id")
+        for p in getattr(jogador, "caixa_email", [])
+        if isinstance(p, dict) and p.get("tipo") == "convite_duplas" and p.get("status") == "pendente"
+    }
+    if parceiro["nome"] in pendentes_nomes:
+        return
+
+    # Carrega mensagens do JSON
+    try:
+        from pathlib import Path
+        import json
+        caminho = Path(__file__).parent.parent.parent / "db" / "narrativa_duplas.json"
+        with open(caminho, "r", encoding="utf-8") as f:
+            narrativa = json.load(f)
+        mensagens = narrativa.get("convites", [
+            f"Vi seu desempenho recente e acho que formaríamos uma ótima dupla. O que acha?",
+            f"Estou procurando um parceiro para os próximos torneios e seu estilo combina com o meu.",
+            f"Bora dominar o circuito de duplas juntos? Aceita o convite?",
+        ])
+    except Exception:
+        mensagens = [f"Bora formar uma dupla para o próximo torneio?"]
+
+    proposta = {
+        "tipo": "convite_duplas",
+        "status": "pendente",
+        "ref_id": parceiro["nome"],
+        "titulo": f"Convite de Parceria: {parceiro['nome']}",
+        "mensagem": random.choice(mensagens),
+        "oferta": {
+            "nome": parceiro["nome"],
+            "nacionalidade": parceiro["nacionalidade"],
+            "overall": parceiro["overall"],
+            "estilo_jogo": parceiro.get("estilo_jogo", "All-court")
+        },
+    }
+    
+    if not hasattr(jogador, "caixa_email") or not isinstance(jogador.caixa_email, list):
+        jogador.caixa_email = []
+    jogador.caixa_email.append(proposta)
 
 
 def gerar_convites_midia_email(jogador: Any, ranking: Any):
     """Fluxo aposentado no frontend+backend atual; mantido como no-op explícito."""
     return None
 
+def _carregar_narrativa_patrocinio() -> dict:
+    try:
+        from pathlib import Path
+        import json
+        caminho = Path(__file__).parent.parent.parent / "db" / "narrativa_patrocinio.json"
+        if caminho.exists():
+            with open(caminho, "r", encoding="utf-8") as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return {}
+
+
 def gerar_proposta_patrocinio(jogador: Any, ranking: Any):
     """Gera proposta de patrocínio e entrega na caixa de e-mail do jogador."""
     sponsors = carregar_patrocinadores()
     staff_data = carregar_staff()
     agents = staff_data.get("agents", {})
+    narrativa = _carregar_narrativa_patrocinio()
+    templates = narrativa.get("email_templates", {}).get("patrocinio", {})
     
     posicao = ranking.obter_posicao(jogador.nome) or 9999
     seguidores = getattr(jogador, "seguidores", 0)
@@ -72,16 +148,20 @@ def gerar_proposta_patrocinio(jogador: Any, ranking: Any):
     escolhido = random.choices(candidatos, weights=pesos, k=1)[0]
     pat_id, pat, _ = escolhido
 
+    brand_name = pat.get('nome', pat_id)
+    titulo = templates.get("titulo", "Proposta: {brand}").format(brand=brand_name)
+    mensagem = templates.get("corpo", "{brand} proposta.").format(
+        brand=brand_name,
+        weekly=pat.get('pagamento_semanal', 0),
+        signing=pat.get('bonus_assinatura', 0)
+    )
+
     proposta = {
         "tipo": "patrocinio",
         "status": "pendente",
         "ref_id": pat_id,
-        "titulo": f"Proposta de Patrocínio: {pat.get('nome', pat_id)}",
-        "mensagem": (
-            f"{pat.get('nome', pat_id)} quer te patrocinar. "
-            f"Oferta: ${pat.get('pagamento_semanal', 0)}/sem + "
-            f"bônus assinatura ${pat.get('bonus_assinatura', 0):,}."
-        ),
+        "titulo": titulo,
+        "mensagem": mensagem,
         "oferta": {
             "pagamento_semanal": int(pat.get("pagamento_semanal", 0) or 0),
             "bonus_assinatura": int(pat.get("bonus_assinatura", 0) or 0),
@@ -98,10 +178,11 @@ def gerar_proposta_empresario(jogador: Any, ranking: Any):
     """Gera proposta inbound de empresário para a caixa de e-mail."""
     staff_data = carregar_staff()
     agents = staff_data.get("agents", {})
+    narrativa = _carregar_narrativa_patrocinio()
+    templates = narrativa.get("email_templates", {}).get("empresario", {})
     
     posicao = ranking.obter_posicao(jogador.nome) or 9999
     seguidores = int(getattr(jogador, "seguidores", 0) or 0)
-    reputacao = int(getattr(jogador, "reputacao_imprensa", 50) or 50)
 
     chance = 0.05
     if posicao <= 250: chance += 0.05
@@ -139,15 +220,20 @@ def gerar_proposta_empresario(jogador: Any, ranking: Any):
     escolhido = random.choices(candidatos, weights=[c[2] for c in candidatos], k=1)[0]
     emp_id, emp, _, salario_oferta = escolhido
     
+    agent_name = emp.get('nome', emp_id)
+    titulo = templates.get("titulo", "Proposta Agente").format(name=agent_name)
+    mensagem = templates.get("corpo", "{name} oferta").format(
+        name=agent_name,
+        salary=salario_oferta,
+        weeks=26
+    )
+
     proposta = {
         "tipo": "empresario",
         "status": "pendente",
         "ref_id": emp_id,
-        "titulo": f"Proposta de Empresário: {emp.get('nome', emp_id)}",
-        "mensagem": (
-            f"{emp.get('nome', emp_id)} quer representar sua carreira. "
-            f"Oferta inicial: ${salario_oferta}/sem por 26 semanas."
-        ),
+        "titulo": titulo,
+        "mensagem": mensagem,
         "oferta": {
             "salario_semanal": int(max(50, salario_oferta)),
             "duracao_semanas": 26,
@@ -213,7 +299,20 @@ def processar_acao_email(jogador: Any, proposta: dict, acao: str, ranking: Any) 
         proposta["status"] = "aceita"
         return True, "Novo empresário contratado."
 
+    if tipo == "convite_duplas":
+        oferta = proposta.get("oferta", {})
+        jogador.parceiro_duplas = {
+            "nome": oferta.get("nome"),
+            "nacionalidade": oferta.get("nacionalidade")
+        }
+        proposta["status"] = "aceita"
+        return True, f"Parceria com {oferta.get('nome')} iniciada!"
+
     return False, "Tipo de proposta desconhecido."
+
+
+def _email_id_matches(email: dict, email_id: str) -> bool:
+    return email.get("id") == email_id or email.get("ref_id") == email_id
 
 
 def marcar_emails_lidos(nome_save: str, jogador: Any) -> bool:
@@ -231,15 +330,30 @@ def marcar_emails_lidos(nome_save: str, jogador: Any) -> bool:
     return houve_mudanca
 
 
+def marcar_email_especifico_lido(nome_save: str, jogador: Any, email_id: str) -> bool:
+    """Marca um email específico como lido."""
+    from src.save import salvar_jogo
+
+    caixa = getattr(jogador, "caixa_email", [])
+    for email in caixa:
+        if _email_id_matches(email, email_id):
+            if not email.get("lido"):
+                email["lido"] = True
+                salvar_jogo(nome_save, jogador)
+                return True
+            break
+    return False
+
+
 def remover_email(nome_save: str, jogador: Any, email_id: str) -> dict:
     """Remove um email da caixa de entrada e salva."""
     from src.save import salvar_jogo
 
     caixa = getattr(jogador, "caixa_email", [])
-    proposta = next((p for p in caixa if p.get("id") == email_id), None)
+    proposta = next((p for p in caixa if _email_id_matches(p, email_id)), None)
     if not proposta:
         return {"ok": False, "status": 404, "mensagem": "E-mail não encontrado."}
-    jogador.caixa_email = [p for p in caixa if p.get("id") != email_id]
+    jogador.caixa_email = [p for p in caixa if not _email_id_matches(p, email_id)]
     salvar_jogo(nome_save, jogador)
     return {"ok": True, "mensagem": "E-mail removido."}
 
@@ -249,12 +363,12 @@ def aceitar_email(nome_save: str, jogador: Any, email_id: str, ranking: Any) -> 
     from src.save import salvar_jogo
 
     caixa = getattr(jogador, "caixa_email", [])
-    proposta = next((p for p in caixa if p.get("id") == email_id), None)
+    proposta = next((p for p in caixa if _email_id_matches(p, email_id)), None)
     if not proposta:
         return {"ok": False, "status": 404, "mensagem": "E-mail não encontrado."}
     sucesso, msg = processar_acao_email(jogador, proposta, "aceitar", ranking)
     if sucesso:
-        jogador.caixa_email = [p for p in caixa if p.get("id") != email_id]
+        jogador.caixa_email = [p for p in caixa if not _email_id_matches(p, email_id)]
         salvar_jogo(nome_save, jogador)
         return {"ok": True, "mensagem": msg}
     return {"ok": False, "status": 400, "mensagem": msg}

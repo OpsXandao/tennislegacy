@@ -2,24 +2,33 @@
   "nome": "Finn Bass",
   "nacionalidade": "[GB]",
   "idade": 26,
-  "overall": 70,
+  "overall": 54,
   "pontos": 16,
   "atributos": {
-    "saque": 46,
+    "vel_saque": 48,
+    "pre_saque": 47,
+    "segundo_saque": 53,
+    "retorno": 50,
     "forehand": 54,
     "backhand": 49,
-    "topspin": 62,
     "voleio": 57,
-    "slice": 50,
-    "movimento": 52,
+    "smash": 58,
     "lob": 62,
+    "topspin": 62,
+    "slice": 50,
     "winner": 59,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 53,
     "duplas": 60
   },
   "id": 1050,
   "atributos_psicologicos": {
-    "concentracao": 51,
+    "clutch": 51,
+    "consistencia": 59,
+    "compostura": 51,
     "agressividade": 46,
     "leitura_de_jogo": 46,
     "determinacao": 54
@@ -45,5 +54,10 @@
   "peso": 79,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Jonathan Mridha",
   "nacionalidade": "[SE]",
   "idade": 30,
-  "overall": 69,
+  "overall": 50,
   "pontos": 4,
   "atributos": {
-    "saque": 54,
+    "vel_saque": 54,
+    "pre_saque": 50,
+    "segundo_saque": 58,
+    "retorno": 45,
     "forehand": 51,
     "backhand": 48,
-    "topspin": 47,
     "voleio": 46,
-    "slice": 42,
-    "movimento": 44,
+    "smash": 50,
     "lob": 42,
+    "topspin": 47,
+    "slice": 42,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 1345,
   "atributos_psicologicos": {
-    "concentracao": 36,
+    "clutch": 36,
+    "consistencia": 66,
+    "compostura": 42,
     "agressividade": 39,
     "leitura_de_jogo": 38,
     "determinacao": 57
@@ -45,5 +54,10 @@
   "peso": 70,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Robert Cash",
   "nacionalidade": "[RU] Rússia",
   "idade": 28,
-  "overall": 88,
+  "overall": 86,
   "pontos": 2022,
   "id": 20794,
   "atributos": {
-    "saque": 93,
+    "vel_saque": 92,
+    "pre_saque": 89,
+    "segundo_saque": 79,
+    "retorno": 85,
     "forehand": 83,
     "backhand": 82,
-    "topspin": 81,
     "voleio": 92,
-    "slice": 83,
-    "movimento": 95,
+    "smash": 89,
     "lob": 84,
-    "fisico": 87,
+    "topspin": 81,
+    "slice": 83,
     "winner": 88,
+    "velocidade": 91,
+    "aceleracao": 83,
+    "resistencia": 87,
+    "forca": 84,
+    "agilidade": 91,
     "duplas": 104
   },
   "atributos_psicologicos": {
-    "concentracao": 72,
+    "clutch": 72,
+    "consistencia": 52,
+    "compostura": 66,
     "agressividade": 53,
     "leitura_de_jogo": 43,
     "determinacao": 55
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2022,
-  "rank_duplas": 43
+  "rank_duplas": 43,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

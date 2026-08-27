@@ -4,17 +4,21 @@ import { PageHeader } from '../components'
 import { AoVivoTab } from './world/AoVivoTab'
 import { RaceTab } from './world/RaceTab'
 import { ProximosTab } from './world/ProximosTab'
+import { FeedTab } from './world/FeedTab'
+import { CampeoesTab } from './world/CampeoesTab'
 
 const TABS = [
+  { id: 'feed', label: 'FEED' },
   { id: 'proximos', label: 'PRÓXIMOS' },
   { id: 'ao-vivo', label: 'AO VIVO' },
   { id: 'race', label: 'RACE' },
+  { id: 'campeoes', label: 'TÍTULOS' },
 ] as const
 
 type TabId = (typeof TABS)[number]['id']
 
 export function WorldScreen() {
-  const [activeTab, setActiveTab] = useState<TabId>('ao-vivo')
+  const [activeTab, setActiveTab] = useState<TabId>('feed')
 
   return (
     <div className="app-shell min-h-screen font-mono pb-24">
@@ -45,9 +49,11 @@ export function WorldScreen() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.15 }}
           >
+            {activeTab === 'feed' && <FeedTab />}
             {activeTab === 'proximos' && <ProximosTab />}
             {activeTab === 'ao-vivo' && <AoVivoTab />}
             {activeTab === 'race' && <RaceTab />}
+            {activeTab === 'campeoes' && <CampeoesTab />}
           </motion.div>
         </AnimatePresence>
       </div>

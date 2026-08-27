@@ -2,24 +2,33 @@
   "nome": "Duje Ajdukovic",
   "nacionalidade": "[HR]",
   "idade": 25,
-  "overall": 77,
+  "overall": 49,
   "pontos": 139,
   "atributos": {
-    "saque": 48,
+    "vel_saque": 49,
+    "pre_saque": 47,
+    "segundo_saque": 49,
+    "retorno": 44,
     "forehand": 54,
     "backhand": 45,
-    "topspin": 40,
     "voleio": 49,
-    "slice": 46,
-    "movimento": 42,
+    "smash": 52,
     "lob": 47,
+    "topspin": 40,
+    "slice": 46,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 46,
     "duplas": 60
   },
   "id": 378,
   "atributos_psicologicos": {
-    "concentracao": 41,
+    "clutch": 41,
+    "consistencia": 71,
+    "compostura": 39,
     "agressividade": 34,
     "leitura_de_jogo": 36,
     "determinacao": 35
@@ -45,5 +54,10 @@
   "peso": 67,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

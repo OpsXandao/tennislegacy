@@ -1,0 +1,80 @@
+{
+  "nome": "Rodrigo Pacheco Mendez",
+  "nacionalidade": "[MX]",
+  "pontos": 270,
+  "pontos_duplas": 0,
+  "pontos_ranking": 270,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 50,
+  "energia": 100,
+  "fadiga": 7,
+  "moral": 75,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 43,
+    "pre_saque": 44,
+    "segundo_saque": 50,
+    "retorno": 50,
+    "forehand": 55,
+    "backhand": 53,
+    "voleio": 40,
+    "smash": 47,
+    "lob": 40,
+    "topspin": 45,
+    "slice": 52,
+    "winner": 48,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 49,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 46,
+    "consistencia": 65,
+    "compostura": 48,
+    "agressividade": 40,
+    "leitura_de_jogo": 32,
+    "determinacao": 53
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 270,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 20,
+  "id": 250,
+  "pico_carreira": 218,
+  "altura": 188,
+  "peso": 79,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

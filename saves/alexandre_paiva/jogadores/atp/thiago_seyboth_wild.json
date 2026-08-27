@@ -1,0 +1,86 @@
+{
+  "nome": "Thiago Seyboth Wild",
+  "nacionalidade": "[BR]",
+  "pontos": 262,
+  "pontos_duplas": 0,
+  "pontos_ranking": 262,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 53,
+  "energia": 100,
+  "fadiga": 5,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 53,
+    "pre_saque": 50,
+    "segundo_saque": 55,
+    "retorno": 46,
+    "forehand": 45,
+    "backhand": 42,
+    "voleio": 63,
+    "smash": 60,
+    "lob": 46,
+    "topspin": 59,
+    "slice": 55,
+    "winner": 54,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 52,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 50,
+    "consistencia": 50,
+    "compostura": 49,
+    "agressividade": 55,
+    "leitura_de_jogo": 40,
+    "determinacao": 49
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 262,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [
+    {
+      "nome": "Santiago",
+      "ano": 2020,
+      "categoria": "ATP 250"
+    }
+  ],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 25,
+  "id": 256,
+  "pico_carreira": 224,
+  "altura": 185,
+  "peso": 72,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

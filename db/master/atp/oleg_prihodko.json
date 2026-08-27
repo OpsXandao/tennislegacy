@@ -2,24 +2,33 @@
   "nome": "Oleg Prihodko",
   "nacionalidade": "[UA]",
   "idade": 28,
-  "overall": 77,
+  "overall": 52,
   "pontos": 136,
   "atributos": {
-    "saque": 50,
+    "vel_saque": 51,
+    "pre_saque": 49,
+    "segundo_saque": 50,
+    "retorno": 49,
     "forehand": 55,
     "backhand": 45,
-    "topspin": 48,
     "voleio": 44,
-    "slice": 53,
-    "movimento": 56,
+    "smash": 50,
     "lob": 52,
+    "topspin": 48,
+    "slice": 53,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 57,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 56,
     "duplas": 60
   },
   "id": 383,
   "atributos_psicologicos": {
-    "concentracao": 46,
+    "clutch": 46,
+    "consistencia": 47,
+    "compostura": 43,
     "agressividade": 58,
     "leitura_de_jogo": 58,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Parth Aggarwal",
   "nacionalidade": "[IN]",
   "idade": 28,
-  "overall": 69,
+  "overall": 59,
   "pontos": 2,
   "atributos": {
-    "saque": 60,
+    "vel_saque": 60,
+    "pre_saque": 61,
+    "segundo_saque": 60,
+    "retorno": 63,
     "forehand": 57,
     "backhand": 64,
-    "topspin": 51,
     "voleio": 49,
-    "slice": 63,
-    "movimento": 62,
+    "smash": 53,
     "lob": 53,
+    "topspin": 51,
+    "slice": 63,
     "winner": 59,
-    "fisico": 60,
+    "velocidade": 61,
+    "aceleracao": 58,
+    "resistencia": 60,
+    "forca": 60,
+    "agilidade": 61,
     "duplas": 60
   },
   "id": 1363,
   "atributos_psicologicos": {
-    "concentracao": 59,
+    "clutch": 59,
+    "consistencia": 68,
+    "compostura": 57,
     "agressividade": 37,
     "leitura_de_jogo": 48,
     "determinacao": 54
@@ -45,5 +54,10 @@
   "peso": 86,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

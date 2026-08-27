@@ -2,24 +2,33 @@
   "nome": "Valentin Basel",
   "nacionalidade": "[AR]",
   "idade": 21,
-  "overall": 70,
+  "overall": 49,
   "pontos": 12,
   "atributos": {
-    "saque": 51,
+    "vel_saque": 52,
+    "pre_saque": 50,
+    "segundo_saque": 51,
+    "retorno": 44,
     "forehand": 45,
     "backhand": 40,
-    "topspin": 42,
     "voleio": 51,
-    "slice": 57,
-    "movimento": 44,
+    "smash": 54,
     "lob": 52,
+    "topspin": 42,
+    "slice": 57,
     "winner": 41,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 1137,
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 58,
+    "compostura": 42,
     "agressividade": 47,
     "leitura_de_jogo": 39,
     "determinacao": 40
@@ -45,5 +54,10 @@
   "peso": 67,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

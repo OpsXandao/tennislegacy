@@ -10,8 +10,9 @@ export function NewsTicker() {
   useEffect(() => {
     api.mundo.noticias()
       .then(res => {
-        if (res.noticias.length > 0) {
-          setNoticias(res.noticias)
+        const textos = res.feed?.length ? res.feed.map(item => item.texto || item.titulo) : res.noticias
+        if (textos.length > 0) {
+          setNoticias(textos)
         } else {
           setNoticias(["BEM-VINDO AO TENNIS LEGACY - O CIRCUITO MUNDIAL ESTÁ COMEÇANDO!"])
         }

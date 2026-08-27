@@ -2,24 +2,33 @@
   "nome": "Alec Deckers",
   "nacionalidade": "[NL]",
   "idade": 25,
-  "overall": 74,
+  "overall": 52,
   "pontos": 59,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 44,
+    "segundo_saque": 51,
+    "retorno": 50,
     "forehand": 55,
     "backhand": 54,
-    "topspin": 56,
     "voleio": 50,
-    "slice": 51,
-    "movimento": 43,
+    "smash": 54,
     "lob": 56,
+    "topspin": 56,
+    "slice": 51,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 49,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 647,
   "atributos_psicologicos": {
-    "concentracao": 31,
+    "clutch": 31,
+    "consistencia": 62,
+    "compostura": 38,
     "agressividade": 43,
     "leitura_de_jogo": 53,
     "determinacao": 55
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

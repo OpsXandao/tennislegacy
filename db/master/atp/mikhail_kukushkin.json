@@ -2,24 +2,33 @@
   "nome": "Mikhail Kukushkin",
   "nacionalidade": "[KZ]",
   "idade": 38,
-  "overall": 78,
+  "overall": 64,
   "pontos": 203,
   "atributos": {
-    "saque": 70,
+    "vel_saque": 68,
+    "pre_saque": 69,
+    "segundo_saque": 63,
+    "retorno": 67,
     "forehand": 69,
     "backhand": 71,
-    "topspin": 72,
     "voleio": 60,
-    "slice": 66,
-    "movimento": 62,
+    "smash": 60,
     "lob": 66,
+    "topspin": 72,
+    "slice": 66,
     "winner": 66,
-    "fisico": 60,
+    "velocidade": 61,
+    "aceleracao": 58,
+    "resistencia": 60,
+    "forca": 64,
+    "agilidade": 62,
     "duplas": 60
   },
   "id": 298,
   "atributos_psicologicos": {
-    "concentracao": 69,
+    "clutch": 69,
+    "consistencia": 48,
+    "compostura": 62,
     "agressividade": 57,
     "leitura_de_jogo": 58,
     "determinacao": 50
@@ -51,5 +60,10 @@
   "peso": 81,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

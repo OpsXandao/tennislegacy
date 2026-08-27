@@ -2,24 +2,33 @@
   "nome": "Lorenzo Sonego",
   "nacionalidade": "[IT]",
   "idade": 30,
-  "overall": 84,
+  "overall": 74,
   "pontos": 850,
   "atributos": {
-    "saque": 80,
+    "vel_saque": 77,
+    "pre_saque": 78,
+    "segundo_saque": 71,
+    "retorno": 78,
     "forehand": 84,
     "backhand": 77,
-    "topspin": 78,
     "voleio": 82,
-    "slice": 77,
-    "movimento": 81,
+    "smash": 74,
     "lob": 79,
+    "topspin": 78,
+    "slice": 77,
     "winner": 83,
-    "fisico": 60,
+    "velocidade": 73,
+    "aceleracao": 67,
+    "resistencia": 60,
+    "forca": 69,
+    "agilidade": 75,
     "duplas": 92
   },
   "id": 44,
   "atributos_psicologicos": {
-    "concentracao": 81,
+    "clutch": 81,
+    "consistencia": 47,
+    "compostura": 74,
     "agressividade": 58,
     "leitura_de_jogo": 84,
     "determinacao": 60
@@ -68,5 +77,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1145,
-  "rank_duplas": 78
+  "rank_duplas": 78,
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

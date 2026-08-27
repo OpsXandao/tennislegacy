@@ -2,24 +2,33 @@
   "nome": "Diego Augusto Barreto Sanchez",
   "nacionalidade": "[ES]",
   "idade": 23,
-  "overall": 72,
+  "overall": 49,
   "pontos": 42,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 46,
+    "retorno": 48,
     "forehand": 49,
     "backhand": 48,
-    "topspin": 40,
     "voleio": 40,
-    "slice": 50,
-    "movimento": 47,
+    "smash": 47,
     "lob": 44,
+    "topspin": 40,
+    "slice": 50,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 773,
   "atributos_psicologicos": {
-    "concentracao": 32,
+    "clutch": 32,
+    "consistencia": 75,
+    "compostura": 33,
     "agressividade": 30,
     "leitura_de_jogo": 35,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 66,
   "mao_dominante": "Canhoto",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

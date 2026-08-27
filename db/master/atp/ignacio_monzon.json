@@ -2,24 +2,33 @@
   "nome": "Ignacio Monzon",
   "nacionalidade": "[AR]",
   "idade": 28,
-  "overall": 73,
+  "overall": 52,
   "pontos": 43,
   "atributos": {
-    "saque": 57,
+    "vel_saque": 57,
+    "pre_saque": 53,
+    "segundo_saque": 55,
+    "retorno": 48,
     "forehand": 54,
     "backhand": 47,
-    "topspin": 51,
     "voleio": 47,
-    "slice": 45,
-    "movimento": 53,
+    "smash": 51,
     "lob": 48,
+    "topspin": 51,
+    "slice": 45,
     "winner": 45,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 53,
     "duplas": 60
   },
   "id": 761,
   "atributos_psicologicos": {
-    "concentracao": 58,
+    "clutch": 58,
+    "consistencia": 63,
+    "compostura": 52,
     "agressividade": 42,
     "leitura_de_jogo": 36,
     "determinacao": 42
@@ -45,5 +54,10 @@
   "peso": 72,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

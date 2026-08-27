@@ -2,24 +2,33 @@
   "nome": "Hugo Grenier",
   "nacionalidade": "[FR]",
   "idade": 29,
-  "overall": 80,
+  "overall": 53,
   "pontos": 310,
   "atributos": {
-    "saque": 46,
+    "vel_saque": 48,
+    "pre_saque": 48,
+    "segundo_saque": 53,
+    "retorno": 53,
     "forehand": 49,
     "backhand": 58,
-    "topspin": 57,
     "voleio": 58,
-    "slice": 47,
-    "movimento": 49,
+    "smash": 57,
     "lob": 47,
+    "topspin": 57,
+    "slice": 47,
     "winner": 44,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 229,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 60,
+    "compostura": 52,
     "agressividade": 45,
     "leitura_de_jogo": 52,
     "determinacao": 54
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Keegan Rice",
   "nacionalidade": "[CA]",
   "idade": 19,
-  "overall": 70,
+  "overall": 49,
   "pontos": 16,
   "atributos": {
-    "saque": 46,
+    "vel_saque": 48,
+    "pre_saque": 44,
+    "segundo_saque": 46,
+    "retorno": 43,
     "forehand": 49,
     "backhand": 40,
-    "topspin": 43,
     "voleio": 49,
-    "slice": 42,
-    "movimento": 50,
+    "smash": 53,
     "lob": 53,
+    "topspin": 43,
+    "slice": 42,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 1039,
   "atributos_psicologicos": {
-    "concentracao": 39,
+    "clutch": 39,
+    "consistencia": 75,
+    "compostura": 36,
     "agressividade": 30,
     "leitura_de_jogo": 46,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

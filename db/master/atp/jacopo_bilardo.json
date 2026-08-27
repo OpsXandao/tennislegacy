@@ -2,24 +2,33 @@
   "nome": "Jacopo Bilardo",
   "nacionalidade": "[IT]",
   "idade": 21,
-  "overall": 70,
+  "overall": 55,
   "pontos": 14,
   "atributos": {
-    "saque": 57,
+    "vel_saque": 57,
+    "pre_saque": 55,
+    "segundo_saque": 59,
+    "retorno": 55,
     "forehand": 59,
     "backhand": 57,
-    "topspin": 56,
     "voleio": 48,
-    "slice": 51,
-    "movimento": 55,
+    "smash": 52,
     "lob": 51,
+    "topspin": 56,
+    "slice": 51,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 59,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 1087,
   "atributos_psicologicos": {
-    "concentracao": 36,
+    "clutch": 36,
+    "consistencia": 72,
+    "compostura": 42,
     "agressividade": 33,
     "leitura_de_jogo": 55,
     "determinacao": 55
@@ -45,5 +54,10 @@
   "peso": 72,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

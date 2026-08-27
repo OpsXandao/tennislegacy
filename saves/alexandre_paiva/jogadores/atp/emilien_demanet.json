@@ -1,0 +1,80 @@
+{
+  "nome": "Emilien Demanet",
+  "nacionalidade": "[BE]",
+  "pontos": 59,
+  "pontos_duplas": 0,
+  "pontos_ranking": 59,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 55,
+  "energia": 100,
+  "fadiga": 32,
+  "moral": 80,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 58,
+    "pre_saque": 55,
+    "segundo_saque": 57,
+    "retorno": 51,
+    "forehand": 57,
+    "backhand": 51,
+    "voleio": 59,
+    "smash": 57,
+    "lob": 41,
+    "topspin": 52,
+    "slice": 49,
+    "winner": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 54,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 52,
+    "consistencia": 71,
+    "compostura": 51,
+    "agressividade": 34,
+    "leitura_de_jogo": 43,
+    "determinacao": 49
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 59,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 20,
+  "id": 648,
+  "pico_carreira": 616,
+  "altura": 178,
+  "peso": 71,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

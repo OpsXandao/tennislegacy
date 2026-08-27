@@ -62,13 +62,9 @@ class ApiDuplasTests(unittest.TestCase):
             def __init__(self, **kwargs):
                 for chave, valor in kwargs.items():
                     setattr(self, chave, valor)
-                if not hasattr(self, "torneio_tipo"):
-                    self.torneio_tipo = "ATP 250"
 
         pydantic.BaseModel = BaseModel
         sys.modules["pydantic"] = pydantic
-        cls._orig_fastapi = sys.modules.get("fastapi")
-        cls._orig_pydantic = sys.modules.get("pydantic")
 
         cls.duplas_route = importlib.import_module("api.routes.duplas")
 
@@ -84,9 +80,8 @@ class ApiDuplasTests(unittest.TestCase):
         ])
         session = SimpleNamespace(nome_save_ativo="save", jogador=jogador)
 
-        with patch.object(
-            self.duplas_route,
-            "_carregar_ranking_duplas_ou_simples",
+        with patch(
+            "api.services.duplas_service._carregar_ranking_duplas_ou_simples",
             return_value=ranking_duplas,
         ):
             resposta = self.duplas_route.buscar_parceiros(nome="bruno", session=session)
@@ -108,20 +103,18 @@ class ApiDuplasTests(unittest.TestCase):
         ranking_simples = RankingFake([], posicoes={})
         session = SimpleNamespace(nome_save_ativo="save", jogador=jogador)
 
-        with patch.object(
-            self.duplas_route, "get_caminho_ranking_duplas", return_value="duplas.json"
-        ), patch.object(
-            self.duplas_route, "get_caminho_ranking_save", return_value="simples.json"
-        ), patch.object(
-            self.duplas_route,
-            "SistemaRanking",
+        with patch(
+            "api.services.duplas_service.get_caminho_ranking_duplas", return_value="duplas.json"
+        ), patch(
+            "api.services.duplas_service.get_caminho_ranking_save", return_value="simples.json"
+        ), patch(
+            "api.services.duplas_service.SistemaRanking",
             side_effect=[ranking_duplas, ranking_simples],
-        ), patch.object(
-            self.duplas_route,
-            "tentar_convidar_parceiro",
+        ), patch(
+            "api.services.duplas_service.tentar_convidar_parceiro",
             return_value=(True, "aceitou"),
-        ) as mock_convite, patch.object(
-            self.duplas_route, "salvar_jogo"
+        ) as mock_convite, patch(
+            "api.services.duplas_service.salvar_jogo"
         ) as mock_salvar:
             resposta = self.duplas_route.convidar(
                 self.duplas_route.InviteRequest(npc_nome="Bruno Costa"),
@@ -148,19 +141,19 @@ class ApiDuplasTests(unittest.TestCase):
         ranking_simples = RankingFake([], posicoes={"Bruno Costa": 18})
         session = SimpleNamespace(nome_save_ativo="save", jogador=jogador)
 
-        with patch.object(
-            self.duplas_route, "get_caminho_ranking_duplas", return_value="duplas.json"
-        ), patch.object(
-            self.duplas_route, "get_caminho_ranking_save", return_value="simples.json"
-        ), patch.object(
-            self.duplas_route,
-            "SistemaRanking",
+        with patch(
+            "api.services.duplas_service.get_caminho_ranking_duplas", return_value="duplas.json"
+        ), patch(
+            "api.services.duplas_service.get_caminho_ranking_save", return_value="simples.json"
+        ), patch(
+            "api.services.duplas_service.SistemaRanking",
             side_effect=[ranking_duplas, ranking_simples],
-        ), patch.object(
-            self.duplas_route,
-            "tentar_convidar_parceiro",
-            return_value=(False, "recusou"),
-        ) as mock_convite:
+        ), patch(
+            "api.services.duplas_service.tentar_convidar_parceiro",
+            return_value=(True, "aceitou"),
+        ) as mock_convite, patch(
+            "api.services.duplas_service.salvar_jogo"
+        ):
             resposta = self.duplas_route.convidar(
                 self.duplas_route.InviteRequest(npc_nome="Bruno Costa"),
                 session=session,

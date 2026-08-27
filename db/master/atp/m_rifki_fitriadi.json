@@ -2,24 +2,33 @@
   "nome": "M Rifki Fitriadi",
   "nacionalidade": "[ID]",
   "idade": 27,
-  "overall": 72,
+  "overall": 54,
   "pontos": 35,
   "atributos": {
-    "saque": 52,
+    "vel_saque": 53,
+    "pre_saque": 52,
+    "segundo_saque": 51,
+    "retorno": 52,
     "forehand": 51,
     "backhand": 60,
-    "topspin": 56,
     "voleio": 59,
-    "slice": 48,
-    "movimento": 44,
+    "smash": 59,
     "lob": 60,
+    "topspin": 56,
+    "slice": 48,
     "winner": 59,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 827,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 56,
+    "compostura": 37,
     "agressividade": 49,
     "leitura_de_jogo": 41,
     "determinacao": 36
@@ -45,5 +54,10 @@
   "peso": 82,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

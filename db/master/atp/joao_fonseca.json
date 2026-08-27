@@ -2,24 +2,33 @@
   "nome": "Joao Fonseca",
   "nacionalidade": "[BR]",
   "idade": 19,
-  "overall": 85,
+  "overall": 70,
   "pontos": 1240,
   "atributos": {
-    "saque": 74,
+    "vel_saque": 71,
+    "pre_saque": 72,
+    "segundo_saque": 66,
+    "retorno": 73,
     "forehand": 77,
     "backhand": 73,
-    "topspin": 74,
     "voleio": 72,
-    "slice": 68,
-    "movimento": 77,
+    "smash": 68,
     "lob": 76,
+    "topspin": 74,
+    "slice": 68,
     "winner": 72,
-    "fisico": 60,
+    "velocidade": 70,
+    "aceleracao": 65,
+    "resistencia": 60,
+    "forca": 67,
+    "agilidade": 72,
     "duplas": 60
   },
   "id": 65,
   "atributos_psicologicos": {
-    "concentracao": 69,
+    "clutch": 69,
+    "consistencia": 35,
+    "compostura": 63,
     "agressividade": 81,
     "leitura_de_jogo": 53,
     "determinacao": 53
@@ -51,5 +60,10 @@
   "peso": 87,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

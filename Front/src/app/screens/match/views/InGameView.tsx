@@ -1,6 +1,10 @@
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Users, TrendingUp } from 'lucide-react'
+import { BroadcastStatsCard } from './BroadcastStatsCard'
 import { InlineMeter } from '../components'
-import { corMomentum, resumoModo } from '../model'
+import { corMomentum } from '../scoreUtils'
+import { resumoModo } from '../scouting'
+import { getContextoArena } from '../uiUtils'
+import { MatchDramaOverlay } from '../MatchDramaOverlay'
 import { MatchControls } from './MatchControls'
 import type {
   AdversarioInfo,
@@ -19,13 +23,16 @@ import type {
 } from '../types'
 
 interface InGameViewProps {
+  themeClass: string
   nomeJogador: string
   adversario: AdversarioInfo
   placar: PlacarState
   superficie: string
+  tipoTorneio?: string
   momentum: number
   destaqueMomento: string
   destaqueMomentoCor: string
+  pulsoNarrativo: any
   leituraJogador: string
   leituraRival: string
   energiaJogadorAoVivo: number
@@ -56,6 +63,12 @@ interface InGameViewProps {
   pointInsights: string[]
   faixa: Faixa
   alvo: Alvo
+  pontoCritico: { label: string; color: string } | null
+  isTiebreak: boolean
+  isComeback: boolean
+  crowdRoar?: boolean
+  quimicaJogador?: { label: string; bonus_total: number; detalhes: string }
+  quimicaAdversario?: { label: string; bonus_total: number; detalhes: string }
   onBack: () => void
   onSurrender: () => void
   alternarPausaSimulacao: () => void
@@ -79,13 +92,16 @@ interface InGameViewProps {
 }
 
 export function InGameView({
+  themeClass,
   nomeJogador,
   adversario,
   placar,
   superficie,
+  tipoTorneio,
   momentum,
   destaqueMomento,
   destaqueMomentoCor,
+  pulsoNarrativo,
   leituraJogador,
   leituraRival,
   energiaJogadorAoVivo,
@@ -116,6 +132,12 @@ export function InGameView({
   pointInsights,
   faixa,
   alvo,
+  pontoCritico,
+  isTiebreak,
+  isComeback,
+  crowdRoar,
+  quimicaJogador,
+  quimicaAdversario,
   onBack,
   onSurrender,
   alternarPausaSimulacao,
@@ -137,9 +159,62 @@ export function InGameView({
   setAlvo,
   trocarModoAcompanhamento,
 }: InGameViewProps) {
+  const dramaColor = pontoCritico?.color ?? null
+  const isFatigued = fadigaJogadorAoVivo > 75
+  const hasHighMomentum = momentum > 80
+  const arena = getContextoArena(tipoTorneio)
+  const isGrandSlam = tipoTorneio?.toLowerCase().includes('grand') || tipoTorneio?.toLowerCase() === 'grand slam'
+
   return (
-    <div className="app-shell min-h-screen flex flex-col bg-[#050505]">
-      <div className="app-panel sticky top-0 z-20 p-3 border-b-2 border-neon-green flex items-center gap-3 shrink-0 bg-black/80 backdrop-blur-md">
+    <div className={[
+      'app-shell match-theme-screen min-h-screen flex flex-col',
+      themeClass,
+      isFatigued ? 'fatigue-glitch' : '',
+      crowdRoar ? 'crowd-roar-active' : '',
+      isGrandSlam ? 'match-grandslam-final' : '',
+    ].filter(Boolean).join(' ')}>
+      <MatchDramaOverlay pontoCritico={pontoCritico} isTiebreak={isTiebreak} isComeback={isComeback} crowdRoar={crowdRoar} />
+
+      {/* Arena Context Bar */}
+      <div className="bg-black/40 px-3 py-1 flex items-center justify-between border-b border-white/5 relative z-30">
+        <div className="flex items-center gap-1.5 arcade-font text-[7px] text-[#666]">
+          <span>{arena.icon}</span>
+          <span>{arena.estadio}</span>
+        </div>
+        
+        {/* Química de Duplas (Link visual FIFA/FM style) */}
+        <div className="flex-1 flex justify-center">
+          {quimicaJogador?.label && (
+             <div className="flex items-center gap-2 px-3 py-0.5 bg-black/60 border-x border-neon-cyan/20">
+               <TrendingUp size={10} className="text-neon-cyan" />
+               <span className="text-[7px] arcade-font text-white tracking-widest">
+                LINK: <span className="text-neon-cyan">{quimicaJogador.label}</span>
+               </span>
+               <div className="flex gap-0.5 ml-1">
+                 {[1, 2, 3].map(i => (
+                   <div 
+                    key={i} 
+                    className={`w-1 h-1 rounded-full ${i <= (quimicaJogador.bonus_total / 3) ? 'bg-neon-cyan animate-pulse' : 'bg-white/10'}`} 
+                   />
+                 ))}
+               </div>
+             </div>
+          )}
+        </div>
+
+        <div className="flex items-center gap-1.5 arcade-font text-[7px] text-[#666]">
+          <Users size={8} />
+          <span>ENERGIA: {arena.energia}</span>
+        </div>
+      </div>
+
+      <div
+        className="app-panel match-topbar sticky top-0 z-20 p-3 border-b-2 flex items-center gap-3 shrink-0 backdrop-blur-md transition-colors duration-300"
+        style={{ 
+          borderColor: dramaColor ?? (hasHighMomentum ? 'var(--neon-gold)' : 'var(--neon-green)'),
+          boxShadow: hasHighMomentum ? '0 0 15px rgba(255, 230, 0, 0.4)' : 'none'
+        }}
+      >
         <button onClick={onBack} className="text-neon-green hover:scale-110 transition-transform">
           <ArrowLeft size={18} />
         </button>
@@ -157,10 +232,16 @@ export function InGameView({
       </div>
 
       <div className="flex-1 overflow-y-auto p-3 space-y-3 pb-4">
-        <div className="border border-neon-green/30 bg-[#08110b] p-3">
+        <div
+          className={`match-card match-card-player border p-3 transition-all duration-300 ${hasHighMomentum ? 'momentum-glow' : ''}`}
+          style={{
+            borderColor: dramaColor ? dramaColor : (hasHighMomentum ? 'var(--neon-gold)' : 'rgba(0,255,136,0.30)'),
+            boxShadow: dramaColor ? `0 0 10px ${dramaColor}33, 0 0 20px ${dramaColor}18` : 'none',
+          }}
+        >
           <div className="mb-2 flex items-center justify-between arcade-font text-[8px] tracking-widest text-[#6f8b77]">
             <span>PLACAR AO VIVO</span>
-            <span>{superficie ? superficie.toUpperCase() : 'PARTIDA'}</span>
+            <span style={{ color: dramaColor ?? undefined }}>{superficie ? superficie.toUpperCase() : 'PARTIDA'}</span>
           </div>
           <div className="mb-2 grid grid-cols-[1fr_auto_auto_auto] gap-2 border-b border-white/5 pb-2 arcade-font text-[7px] text-[#4b5d52]">
             <span />
@@ -180,7 +261,7 @@ export function InGameView({
           </div>
         </div>
 
-        <div className="border border-[#2a3440] bg-[#071019] p-3">
+        <div className="match-card match-card-soft border border-[#2a3440] p-3">
           <div className="flex items-center justify-between mb-2 arcade-font text-[8px] tracking-widest text-[#8292a1]">
             <span>MOMENTUM / EMOCIONAL</span>
             <span style={{ color: corMomentum(momentum) }}>{destaqueMomento}</span>
@@ -204,11 +285,24 @@ export function InGameView({
           <div className="mt-2 arcade-font text-[10px] leading-relaxed" style={{ color: destaqueMomentoCor }}>
             {destaqueMomento}
           </div>
+          {pulsoNarrativo && (
+            <div className="mt-3 border px-2.5 py-2" style={{ borderColor: `${pulsoNarrativo.color}55`, background: `${pulsoNarrativo.color}12` }}>
+              <div className="arcade-font text-[8px] tracking-widest uppercase" style={{ color: pulsoNarrativo.color }}>
+                {pulsoNarrativo.headline}
+              </div>
+              <div className="mt-1 arcade-font text-[9px] text-white/80 leading-relaxed">
+                {pulsoNarrativo.subline}
+              </div>
+              <div className="mt-2 arcade-font text-[8px] leading-relaxed text-white/72">
+                {pulsoNarrativo.recommendation}
+              </div>
+            </div>
+          )}
           <div className="mt-2 arcade-font text-[9px] text-[#b8c6d1]">{resumoModo(modo)}</div>
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <div className="border border-neon-green/20 bg-[#07110a] p-3">
+          <div className="match-card match-card-player border border-neon-green/20 p-3">
             <div className="arcade-font text-[8px] tracking-widest text-[#77d39e] mb-2">VOCÊ</div>
             <div className="space-y-2 arcade-font text-[10px] text-white">
               <div>
@@ -234,7 +328,7 @@ export function InGameView({
             </div>
           </div>
 
-          <div className="border border-[#ff4466]/20 bg-[#14090d] p-3">
+          <div className="match-card match-card-rival border border-[#ff4466]/20 p-3">
             <div className="arcade-font text-[8px] tracking-widest text-[#ff8ca3] mb-2">RIVAL</div>
             <div className="space-y-2 arcade-font text-[10px] text-white">
               <div>
@@ -262,37 +356,25 @@ export function InGameView({
         </div>
 
         {(placar.stats_j || placar.stats_a) && (
-          <div className="overflow-hidden border border-[#36505d] bg-[#0b160f]">
-            <div className="flex items-center justify-between bg-[#4b2c63] px-3 py-2">
-              <div className="arcade-font text-[10px] tracking-widest text-white">MATCH SUMMARY</div>
-              <div className="arcade-font text-[8px] text-[#d6c3e7]">AO VIVO</div>
-            </div>
-            <div className="grid grid-cols-[1fr_auto_1fr] items-center bg-[#24462c] px-3 py-2 arcade-font text-[9px]">
-              <div className="truncate text-left text-[#d8f5df]">{nomeJogador.toUpperCase()}</div>
-              <div className="text-center text-[#aac7ac]">STAT</div>
-              <div className="truncate text-right text-[#ffe0d6]">{adversario.nome.toUpperCase()}</div>
-            </div>
-            <div className="divide-y divide-[#28402f]">
-              {[
-                { label: 'Aces', j: placar.stats_j?.aces ?? 0, a: placar.stats_a?.aces ?? 0 },
-                { label: 'Double Faults', j: placar.stats_j?.duplas_faltas ?? 0, a: placar.stats_a?.duplas_faltas ?? 0 },
-                { label: '1st Serves In', j: placar.stats_j?.primeiro_saque_pct ?? '0%', a: placar.stats_a?.primeiro_saque_pct ?? '0%' },
-                { label: 'Winners', j: placar.stats_j?.winners ?? 0, a: placar.stats_a?.winners ?? 0 },
-                { label: 'Unforced Errors', j: placar.stats_j?.erros_nao_forcados ?? 0, a: placar.stats_a?.erros_nao_forcados ?? 0 },
-                { label: 'Break Points', j: placar.stats_j?.break_points ?? '0/0', a: placar.stats_a?.break_points ?? '0/0' },
-              ].map((item, index) => (
-                <div
-                  key={item.label}
-                  className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-3 py-2 arcade-font text-[10px]"
-                  style={{ background: index % 2 === 0 ? '#17331f' : '#12281a' }}
-                >
-                  <div className="text-left text-[#f0fff4]">{item.j}</div>
-                  <div className="text-center text-[#c9dfc9]">{item.label}</div>
-                  <div className="text-right text-[#ffe9dc]">{item.a}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <BroadcastStatsCard
+            nomeJogador={nomeJogador}
+            nomeAdversario={adversario.nome}
+            rankingJogador={undefined}
+            rankingAdversario={adversario.ranking}
+            statsJ={placar.stats_j ?? {
+              aces: 0, duplas_faltas: 0, primeiro_saque_pct: '0%',
+              winners: 0, erros_nao_forcados: 0, pontos_saque_pct: '0%',
+              pontos_devolucao_pct: '0%', break_points: '0/0',
+              rallies_curtos: 0, rallies_medios: 0, rallies_longos: 0,
+            }}
+            statsA={placar.stats_a ?? {
+              aces: 0, duplas_faltas: 0, primeiro_saque_pct: '0%',
+              winners: 0, erros_nao_forcados: 0, pontos_saque_pct: '0%',
+              pontos_devolucao_pct: '0%', break_points: '0/0',
+              rallies_curtos: 0, rallies_medios: 0, rallies_longos: 0,
+            }}
+            setAtual={placar.sets[0] + placar.sets[1] + 1}
+          />
         )}
 
         <div className="border border-white/10 bg-[#0a0a0a] p-3 space-y-3">

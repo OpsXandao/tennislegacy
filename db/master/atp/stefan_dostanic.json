@@ -2,24 +2,33 @@
   "nome": "Stefan Dostanic",
   "nacionalidade": "[US]",
   "idade": 24,
-  "overall": 77,
+  "overall": 49,
   "pontos": 135,
   "atributos": {
-    "saque": 51,
+    "vel_saque": 52,
+    "pre_saque": 48,
+    "segundo_saque": 52,
+    "retorno": 42,
     "forehand": 53,
     "backhand": 40,
-    "topspin": 42,
     "voleio": 47,
-    "slice": 46,
-    "movimento": 43,
+    "smash": 52,
     "lob": 55,
+    "topspin": 42,
+    "slice": 46,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 49,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 384,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 59,
+    "compostura": 40,
     "agressividade": 46,
     "leitura_de_jogo": 48,
     "determinacao": 41
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

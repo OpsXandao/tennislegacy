@@ -2,24 +2,33 @@
   "nome": "Keshav Chopra",
   "nacionalidade": "[US]",
   "idade": 24,
-  "overall": 70,
+  "overall": 48,
   "pontos": 16,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 44,
+    "retorno": 48,
     "forehand": 40,
     "backhand": 53,
-    "topspin": 46,
     "voleio": 40,
-    "slice": 41,
-    "movimento": 45,
+    "smash": 47,
     "lob": 42,
+    "topspin": 46,
+    "slice": 41,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 1052,
   "atributos_psicologicos": {
-    "concentracao": 48,
+    "clutch": 48,
+    "consistencia": 68,
+    "compostura": 42,
     "agressividade": 37,
     "leitura_de_jogo": 30,
     "determinacao": 31
@@ -45,5 +54,10 @@
   "peso": 65,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

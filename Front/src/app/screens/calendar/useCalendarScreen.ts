@@ -7,7 +7,7 @@ import type { CalendarCallup } from './types'
 
 export function useCalendarScreen() {
   const navigate = useNavigate()
-  const { semana: semanaAtual, ano } = useGameStore()
+  const { semana: semanaAtual, ano, torneio: torneioAtivo } = useGameStore()
   const setTorneio = useGameStore((state) => state.setTorneio)
   const setSemana = useGameStore((state) => state.setSemana)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -84,12 +84,15 @@ export function useCalendarScreen() {
 
     setInscrevendo(true)
     const targetNome = torneioParaInscrever?.nome || convocacao?.torneio?.nome
-    setTorneioParaInscrever(null)
 
     try {
       const response = await api.torneio.criar(modalidade as any, parceiro, targetNome)
-      if (!response.ok) return
+      if (!response.ok) {
+        setErroInscricao('Erro ao entrar no torneio. Tente novamente.')
+        return
+      }
 
+      setTorneioParaInscrever(null)
       setTorneio(response.torneio)
       if (response.torneio.destino_click_hub) {
         navigate(response.torneio.destino_click_hub)
@@ -142,6 +145,11 @@ export function useCalendarScreen() {
     }
   }
 
+  function handleSelectTorneio(t: import('../../../types').TorneioCalendario) {
+    if (torneioAtivo) return
+    setTorneioParaInscrever(t)
+  }
+
   return {
     ano,
     semanaAtual,
@@ -156,6 +164,8 @@ export function useCalendarScreen() {
     erroInscricao,
     convocacao,
     scrollRef,
+    torneioAtivo: !!torneioAtivo,
+    handleSelectTorneio,
     handleConfirmarInscricao,
     handleRecusarConvocacao,
     handleDescansar,

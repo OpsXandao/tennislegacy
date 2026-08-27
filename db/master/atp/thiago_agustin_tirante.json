@@ -2,24 +2,33 @@
   "nome": "Thiago Agustin Tirante",
   "nacionalidade": "[AR]",
   "idade": 24,
-  "overall": 83,
+  "overall": 62,
   "pontos": 739,
   "atributos": {
-    "saque": 66,
+    "vel_saque": 65,
+    "pre_saque": 64,
+    "segundo_saque": 67,
+    "retorno": 63,
     "forehand": 64,
     "backhand": 63,
-    "topspin": 63,
     "voleio": 61,
-    "slice": 60,
-    "movimento": 67,
+    "smash": 60,
     "lob": 62,
+    "topspin": 63,
+    "slice": 60,
     "winner": 62,
-    "fisico": 60,
+    "velocidade": 64,
+    "aceleracao": 60,
+    "resistencia": 60,
+    "forca": 61,
+    "agilidade": 64,
     "duplas": 60
   },
   "id": 131,
   "atributos_psicologicos": {
-    "concentracao": 67,
+    "clutch": 67,
+    "consistencia": 47,
+    "compostura": 67,
     "agressividade": 58,
     "leitura_de_jogo": 50,
     "determinacao": 70
@@ -45,5 +54,10 @@
   "peso": 85,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

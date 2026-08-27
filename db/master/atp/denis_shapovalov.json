@@ -2,24 +2,33 @@
   "nome": "Denis Shapovalov",
   "nacionalidade": "[CA]",
   "idade": 26,
-  "overall": 86,
+  "overall": 77,
   "pontos": 1350,
   "atributos": {
-    "saque": 85,
+    "vel_saque": 81,
+    "pre_saque": 83,
+    "segundo_saque": 73,
+    "retorno": 84,
     "forehand": 82,
     "backhand": 86,
-    "topspin": 84,
     "voleio": 81,
-    "slice": 78,
-    "movimento": 86,
+    "smash": 73,
     "lob": 84,
+    "topspin": 84,
+    "slice": 78,
     "winner": 87,
-    "fisico": 60,
+    "velocidade": 76,
+    "aceleracao": 70,
+    "resistencia": 60,
+    "forca": 71,
+    "agilidade": 79,
     "duplas": 60
   },
   "id": 27,
   "atributos_psicologicos": {
-    "concentracao": 89,
+    "clutch": 89,
+    "consistencia": 35,
+    "compostura": 80,
     "agressividade": 81,
     "leitura_de_jogo": 80,
     "determinacao": 62
@@ -61,5 +70,10 @@
   "peso": 86,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

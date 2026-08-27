@@ -2,24 +2,33 @@
   "nome": "Chirag Duhan",
   "nacionalidade": "[IN]",
   "idade": 22,
-  "overall": 71,
+  "overall": 51,
   "pontos": 17,
   "atributos": {
-    "saque": 46,
+    "vel_saque": 48,
+    "pre_saque": 46,
+    "segundo_saque": 48,
+    "retorno": 47,
     "forehand": 56,
     "backhand": 46,
-    "topspin": 44,
     "voleio": 53,
-    "slice": 50,
-    "movimento": 49,
+    "smash": 55,
     "lob": 55,
+    "topspin": 44,
+    "slice": 50,
     "winner": 41,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 1031,
   "atributos_psicologicos": {
-    "concentracao": 50,
+    "clutch": 50,
+    "consistencia": 52,
+    "compostura": 45,
     "agressividade": 53,
     "leitura_de_jogo": 35,
     "determinacao": 37
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

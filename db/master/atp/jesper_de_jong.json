@@ -2,24 +2,33 @@
   "nome": "Jesper de Jong",
   "nacionalidade": "[NL]",
   "idade": 25,
-  "overall": 83,
+  "overall": 65,
   "pontos": 665,
   "atributos": {
-    "saque": 68,
+    "vel_saque": 66,
+    "pre_saque": 67,
+    "segundo_saque": 65,
+    "retorno": 67,
     "forehand": 66,
     "backhand": 66,
-    "topspin": 72,
     "voleio": 66,
-    "slice": 66,
-    "movimento": 72,
+    "smash": 63,
     "lob": 66,
+    "topspin": 72,
+    "slice": 66,
     "winner": 68,
-    "fisico": 60,
+    "velocidade": 67,
+    "aceleracao": 63,
+    "resistencia": 60,
+    "forca": 62,
+    "agilidade": 68,
     "duplas": 60
   },
   "id": 87,
   "atributos_psicologicos": {
-    "concentracao": 57,
+    "clutch": 57,
+    "consistencia": 46,
+    "compostura": 57,
     "agressividade": 59,
     "leitura_de_jogo": 59,
     "determinacao": 60
@@ -45,5 +54,10 @@
   "peso": 86,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

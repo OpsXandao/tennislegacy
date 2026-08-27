@@ -2,24 +2,33 @@
   "nome": "Marko Mesarovic",
   "nacionalidade": "[US]",
   "idade": 21,
-  "overall": 69,
+  "overall": 51,
   "pontos": 6,
   "atributos": {
-    "saque": 59,
+    "vel_saque": 59,
+    "pre_saque": 54,
+    "segundo_saque": 53,
+    "retorno": 44,
     "forehand": 53,
     "backhand": 41,
-    "topspin": 48,
     "voleio": 44,
-    "slice": 50,
-    "movimento": 47,
+    "smash": 50,
     "lob": 52,
+    "topspin": 48,
+    "slice": 50,
     "winner": 56,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 1283,
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 68,
+    "compostura": 40,
     "agressividade": 37,
     "leitura_de_jogo": 46,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

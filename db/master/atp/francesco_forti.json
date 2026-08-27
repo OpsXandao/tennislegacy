@@ -2,24 +2,33 @@
   "nome": "Francesco Forti",
   "nacionalidade": "[IT]",
   "idade": 26,
-  "overall": 73,
+  "overall": 52,
   "pontos": 53,
   "atributos": {
-    "saque": 54,
+    "vel_saque": 54,
+    "pre_saque": 51,
+    "segundo_saque": 53,
+    "retorno": 51,
     "forehand": 43,
     "backhand": 53,
-    "topspin": 51,
     "voleio": 41,
-    "slice": 40,
-    "movimento": 57,
+    "smash": 48,
     "lob": 49,
+    "topspin": 51,
+    "slice": 40,
     "winner": 59,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 682,
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 65,
+    "compostura": 48,
     "agressividade": 40,
     "leitura_de_jogo": 46,
     "determinacao": 40
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

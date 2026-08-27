@@ -6,34 +6,53 @@
   "pontos_ranking": 46,
   "pontos_ranking_duplas": 0,
   "pontos_ytd": 0,
-  "overall": 73,
-  "energia": 100,
-  "fadiga": 24,
-  "moral": 75,
+  "overall": 50,
+  "energia": 72,
+  "fadiga": 3,
+  "moral": 80,
   "is_lean": false,
   "is_bot": false,
   "e_ficticio": false,
   "atributos": {
-    "saque": 44,
+    "vel_saque": 46,
+    "pre_saque": 44,
+    "segundo_saque": 47,
+    "retorno": 47,
     "forehand": 51,
     "backhand": 51,
-    "topspin": 48,
     "voleio": 40,
-    "slice": 40,
-    "movimento": 48,
+    "smash": 47,
     "lob": 41,
+    "topspin": 48,
+    "slice": 40,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 52,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 49,
     "duplas": 60
   },
   "atributos_psicologicos": {
-    "concentracao": 37,
+    "clutch": 37,
+    "consistencia": 66,
+    "compostura": 36,
     "agressividade": 39,
     "leitura_de_jogo": 53,
     "determinacao": 36
   },
   "historico_torneios": [],
-  "historico_partidas": [],
+  "historico_partidas": [
+    {
+      "ano": 2026,
+      "semana": 1,
+      "torneio": "Hong Kong Open",
+      "fase": "semifinal",
+      "adversario": "Alexandre Paiva",
+      "placar": "Alexandre Paiva 2 x 0 Tianhui Zhang",
+      "resultado": "D"
+    }
+  ],
   "pontos_detalhados": [
     {
       "pontos": 46,
@@ -62,5 +81,11 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  },
+  "ranking_pos": 704
 }

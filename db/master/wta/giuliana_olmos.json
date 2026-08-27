@@ -2,24 +2,33 @@
   "nome": "Giuliana Olmos",
   "nacionalidade": "[MX] México",
   "idade": 21,
-  "overall": 89,
+  "overall": 90,
   "pontos": 1765,
   "id": 53001,
   "atributos": {
-    "saque": 92,
+    "vel_saque": 91,
+    "pre_saque": 92,
+    "segundo_saque": 83,
+    "retorno": 93,
     "forehand": 83,
     "backhand": 95,
-    "topspin": 87,
     "voleio": 96,
-    "slice": 94,
-    "movimento": 90,
+    "smash": 93,
     "lob": 96,
-    "fisico": 90,
+    "topspin": 87,
+    "slice": 94,
     "winner": 81,
+    "velocidade": 90,
+    "aceleracao": 82,
+    "resistencia": 90,
+    "forca": 89,
+    "agilidade": 90,
     "duplas": 101
   },
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 41,
+    "compostura": 57,
     "agressividade": 64,
     "leitura_de_jogo": 55,
     "determinacao": 68
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1765,
-  "rank_duplas": 44
+  "rank_duplas": 44,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

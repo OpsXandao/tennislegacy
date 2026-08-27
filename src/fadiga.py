@@ -6,6 +6,16 @@ from src.management import obter_profissional_da_equipe
 
 # --- Constantes de Fadiga e Lesão ---
 FADIGA_POR_PONTO = 0.085
+
+# Bônus de desgaste cumulativo por set — só ativa em set 4/5 (partidas longas).
+# Sets 1-3 não recebem multiplicador: o custo já escala pelo número de pontos jogados.
+CUSTO_ENERGIA_POR_SET = {
+    1: 1.00,
+    2: 1.00,
+    3: 1.05,
+    4: 1.20,
+    5: 1.40,
+}
 CHANCE_LESAO_THRESHOLD = 80  # Acima desta fadiga, há risco de lesão
 CHANCE_LESAO_PROB = 0.2  # 20% de chance de lesão se acima do threshold
 ENERGIA_RECUP_BASE = 10
@@ -109,10 +119,14 @@ def _aumento_fadiga_nao_linear(
     pontos_disputados: int,
     fatores_partida: dict | None = None,
     energia_perdida: int | None = None,
+    set_atual: int = 1,
 ) -> int:
     if pontos_disputados <= 0:
         return 0
     base = pontos_disputados * FADIGA_POR_PONTO
+    # Multiplicador de custo por set (EA FC stamina decay)
+    multiplicador_set = CUSTO_ENERGIA_POR_SET.get(max(1, min(5, set_atual)), 1.00)
+    base *= multiplicador_set
     # Partidas muito longas têm custo adicional, mas limitado para evitar saltos irreais.
     if pontos_disputados > 180:
         base += (pontos_disputados - 180) * 0.03
@@ -131,7 +145,10 @@ def _aumento_fadiga_nao_linear(
 
 
 def _atualizar_status_lesao_por_risco(
-    status: dict, fadiga: int, energia_atual: int = 100
+    status: dict,
+    fadiga: int,
+    energia_atual: int = 100,
+    set_atual: int = 1,
 ):
     status = _normalizar_status_lesao(status)
     if status["lesionado"]:
@@ -144,11 +161,20 @@ def _atualizar_status_lesao_por_risco(
     if energia <= 55:
         # Energia perto de 50% aumenta risco agudo de desconforto/lesão.
         risco += (55 - energia) / 120.0
+    # Risco adicional de cãibra/distensão por esforço máximo (energia < 30 no set 4+)
+    if energia < 30 and set_atual >= 4:
+        risco += 0.15
 
     nivel_atual = status.get("nivel", "saudavel")
 
     if fadiga >= 90 and random.random() < risco:
-        semanas_lesionado = random.randint(2, 5)
+        gravidade = random.random()
+        if gravidade < 0.70:
+            semanas_lesionado = random.randint(2, 4)
+        elif gravidade < 0.92:
+            semanas_lesionado = random.randint(5, 12)
+        else:
+            semanas_lesionado = random.randint(13, 26)
         status["lesionado"] = True
         status["nivel"] = "lesionado"
         status["semanas_restantes"] = semanas_lesionado
@@ -173,6 +199,108 @@ def _atualizar_status_lesao_por_risco(
         return status, "desconforto"
 
     return status, None
+
+
+# ---------------------------------------------------------------------------
+# Sistema de Energia FM+EA — novas funções públicas
+# ---------------------------------------------------------------------------
+
+
+def calcular_condicao_pre_partida(fadiga: int, dias_descanso: int) -> int:
+    """Calcula a condição física do jogador antes da partida (FM Condition %).
+
+    Combina dias de descanso com fadiga acumulada para devolver um valor
+    entre 50 e 100 que representa o percentual de forma no dia.
+    """
+    dias_descanso = max(0, int(dias_descanso))
+    fadiga = max(0, min(100, int(fadiga)))
+
+    if dias_descanso >= 3:
+        base = random.randint(95, 100)
+    elif dias_descanso == 2:
+        base = random.randint(85, 92)
+    elif dias_descanso == 1:
+        base = random.randint(72, 82)
+    else:
+        base = random.randint(60, 72)
+
+    penalidade = max(0.0, (fadiga - 30) * 0.3)
+    condicao = int(round(base - penalidade))
+    return max(50, min(100, condicao))
+
+
+def calcular_multiplicador_condicao(condicao: int) -> float:
+    """Converte condição pré-partida em multiplicador de atributos.
+
+    Usado para escalar todos os atributos do jogador ao iniciar a partida.
+    """
+    condicao = max(0, min(100, int(condicao)))
+    if condicao >= 90:
+        return 1.00
+    elif condicao >= 75:
+        return 0.97
+    elif condicao >= 60:
+        return 0.93
+    elif condicao >= 45:
+        return 0.88
+    return 0.82
+
+
+def calcular_penalidade_energia(energia: int) -> float:
+    """Retorna o fator de penalidade de atributos pelo nível atual de energia.
+
+    Mapeamento EA FC attribute reduction:
+      >= 80 → 0.00 (sem penalidade)
+      >= 60 → 0.03
+      >= 40 → 0.08
+      >= 20 → 0.15
+      <  20 → 0.25
+    """
+    energia = max(0, min(100, int(energia)))
+    if energia >= 80:
+        return 0.00
+    elif energia >= 60:
+        return 0.03
+    elif energia >= 40:
+        return 0.08
+    elif energia >= 20:
+        return 0.15
+    return 0.25
+
+
+def calcular_recuperacao_energia(
+    resistencia: int,
+    tipo: str,
+    tem_fisioterapeuta: bool = False,
+) -> int:
+    """Calcula energia recuperada entre games ou sets (FM substitution logic).
+
+    tipo "game"  → int(resistencia * 0.05 + 2)
+    tipo "set"   → int(resistencia * 0.12 + 5)
+    Com fisioterapeuta: +20%.
+    """
+    resistencia = max(0, min(100, int(resistencia)))
+    if tipo == "set":
+        recuperacao = max(2, int(resistencia * 0.05 + 1.5))
+    else:
+        recuperacao = max(1, int(resistencia * 0.02 + 0.5))
+    if tem_fisioterapeuta:
+        recuperacao = int(round(recuperacao * 1.20))
+    return max(1, recuperacao)
+
+
+def aplicar_fadiga_extra_energia_final(jogador, energia_final: int) -> None:
+    """Ajusta a fadiga semanal com base no nível de energia ao término da partida.
+
+    Energia final < 40  → +5 fadiga (tank vazio = recuperação mais lenta)
+    Energia final >= 70 → -3 fadiga (partida fácil preserva energia)
+    """
+    energia_final = max(0, min(100, int(energia_final)))
+    fadiga_atual = max(0, int(getattr(jogador, "fadiga", 0)))
+    if energia_final < 40:
+        jogador.fadiga = min(100, fadiga_atual + 5)
+    elif energia_final >= 70:
+        jogador.fadiga = max(0, fadiga_atual - 3)
 
 
 def handle_fadiga_e_lesao(
@@ -255,6 +383,7 @@ def handle_fadiga_e_lesao(
             pos_atual = ranking.obter_posicao(jogador.nome) or 999
             jogador.protected_ranking = pos_atual
             jogador.protected_ranking_semanas = 52  # 1 ano de proteção pós-retorno
+            jogador.protected_ranking_usos = 8  # limite ATP/WTA: até 8 torneios
             eventos.append(
                 EventoProgressao(
                     tipo="ranking_protegido",
@@ -314,19 +443,19 @@ def recuperar_energia_entre_rodadas(
     eventos: list[EventoProgressao] = []
     if isinstance(jogador, dict):
         atributos = jogador.get("atributos", {}) or {}
-        fisico = atributos.get("fisico", 50)
+        resistencia = atributos.get("resistencia", 50)
         fadiga = int(jogador.get("fadiga", 0) or 0)
         energia_antes = int(jogador.get("energia", 100) or 100)
         equipe = jogador.get("equipe", []) or []
     else:
         atributos = getattr(jogador, "atributos", {}) or {}
-        fisico = atributos.get("fisico", 50)
+        resistencia = atributos.get("resistencia", 50)
         fadiga = int(getattr(jogador, "fadiga", 0) or 0)
         energia_antes = int(getattr(jogador, "energia", 100) or 100)
         equipe = getattr(jogador, "equipe", []) or []
     multiplicador = max(0.2, min(1.5, float(multiplicador)))
     recuperacao_base = int(
-        round(ENERGIA_RECUP_BASE + fisico * ENERGIA_RECUP_POR_FISICO)
+        round(ENERGIA_RECUP_BASE + resistencia * ENERGIA_RECUP_POR_FISICO)
     )
     fator_fadiga = 1.0
     if fadiga <= 20:
@@ -356,9 +485,7 @@ def recuperar_energia_entre_rodadas(
     recuperacao = max(2, recuperacao)
 
     # Bônus do Treinador
-    treinador = obter_profissional_da_equipe(
-        equipe, "treinador"
-    )
+    treinador = obter_profissional_da_equipe(equipe, "treinador")
     if treinador:
         bonus = treinador.get("bonus_recuperacao", 0)
         recuperacao += bonus

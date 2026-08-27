@@ -1,0 +1,80 @@
+{
+  "nome": "Alvin Nicholas Tudorica",
+  "nacionalidade": "[CA]",
+  "pontos": 39,
+  "pontos_duplas": 0,
+  "pontos_ranking": 39,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 51,
+  "energia": 100,
+  "fadiga": 9,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 45,
+    "pre_saque": 47,
+    "segundo_saque": 48,
+    "retorno": 53,
+    "forehand": 44,
+    "backhand": 55,
+    "voleio": 40,
+    "smash": 47,
+    "lob": 49,
+    "topspin": 53,
+    "slice": 54,
+    "winner": 55,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 52,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 30,
+    "consistencia": 61,
+    "compostura": 32,
+    "agressividade": 44,
+    "leitura_de_jogo": 30,
+    "determinacao": 39
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 39,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 24,
+  "id": 793,
+  "pico_carreira": 761,
+  "altura": 175,
+  "peso": 79,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
+}

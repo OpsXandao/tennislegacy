@@ -2,24 +2,33 @@
   "nome": "Alexander Bernard",
   "nacionalidade": "[US]",
   "idade": 22,
-  "overall": 69,
+  "overall": 53,
   "pontos": 9,
   "atributos": {
-    "saque": 45,
+    "vel_saque": 47,
+    "pre_saque": 45,
+    "segundo_saque": 53,
+    "retorno": 48,
     "forehand": 55,
     "backhand": 40,
-    "topspin": 52,
     "voleio": 54,
-    "slice": 55,
-    "movimento": 57,
+    "smash": 55,
     "lob": 45,
+    "topspin": 52,
+    "slice": 55,
     "winner": 45,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 57,
     "duplas": 60
   },
   "id": 1189,
   "atributos_psicologicos": {
-    "concentracao": 34,
+    "clutch": 34,
+    "consistencia": 49,
+    "compostura": 40,
     "agressividade": 56,
     "leitura_de_jogo": 45,
     "determinacao": 53
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Canhoto",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

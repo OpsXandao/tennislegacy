@@ -2,24 +2,33 @@
   "nome": "Kiranpal Pannu",
   "nacionalidade": "[NZ]",
   "idade": 29,
-  "overall": 70,
+  "overall": 49,
   "pontos": 12,
   "atributos": {
-    "saque": 58,
+    "vel_saque": 58,
+    "pre_saque": 54,
+    "segundo_saque": 56,
+    "retorno": 45,
     "forehand": 40,
     "backhand": 41,
-    "topspin": 45,
     "voleio": 42,
-    "slice": 53,
-    "movimento": 47,
+    "smash": 48,
     "lob": 40,
+    "topspin": 45,
+    "slice": 53,
     "winner": 42,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 50,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 1110,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 56,
+    "compostura": 43,
     "agressividade": 49,
     "leitura_de_jogo": 45,
     "determinacao": 46
@@ -45,5 +54,10 @@
   "peso": 71,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

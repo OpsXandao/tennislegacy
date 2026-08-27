@@ -2,24 +2,33 @@
   "nome": "Horacio Zeballos",
   "nacionalidade": "[RU] Rússia",
   "idade": 32,
-  "overall": 95,
+  "overall": 93,
   "pontos": 8135,
   "id": 29298,
   "atributos": {
-    "saque": 97,
+    "vel_saque": 96,
+    "pre_saque": 95,
+    "segundo_saque": 80,
+    "retorno": 92,
     "forehand": 98,
     "backhand": 92,
-    "topspin": 88,
     "voleio": 105,
-    "slice": 95,
-    "movimento": 93,
+    "smash": 98,
     "lob": 90,
-    "fisico": 92,
+    "topspin": 88,
+    "slice": 95,
     "winner": 89,
+    "velocidade": 92,
+    "aceleracao": 84,
+    "resistencia": 92,
+    "forca": 93,
+    "agilidade": 93,
     "duplas": 107
   },
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 35,
+    "compostura": 54,
     "agressividade": 75,
     "leitura_de_jogo": 59,
     "determinacao": 51
@@ -53,5 +62,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 8135,
-  "rank_duplas": 2
+  "rank_duplas": 2,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

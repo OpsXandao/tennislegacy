@@ -2,24 +2,33 @@
   "nome": "David Pichler",
   "nacionalidade": "[AT]",
   "idade": 30,
-  "overall": 71,
+  "overall": 51,
   "pontos": 19,
   "atributos": {
-    "saque": 50,
+    "vel_saque": 51,
+    "pre_saque": 51,
+    "segundo_saque": 56,
+    "retorno": 52,
     "forehand": 51,
     "backhand": 55,
-    "topspin": 51,
     "voleio": 40,
-    "slice": 55,
-    "movimento": 45,
+    "smash": 47,
     "lob": 42,
+    "topspin": 51,
+    "slice": 55,
     "winner": 42,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 49,
     "duplas": 91
   },
   "id": 985,
   "atributos_psicologicos": {
-    "concentracao": 37,
+    "clutch": 37,
+    "consistencia": 61,
+    "compostura": 43,
     "agressividade": 44,
     "leitura_de_jogo": 49,
     "determinacao": 56
@@ -47,5 +56,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 814,
-  "rank_duplas": 99
+  "rank_duplas": 99,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

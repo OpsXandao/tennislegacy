@@ -2,24 +2,33 @@
   "nome": "Nicaise Muamba",
   "nacionalidade": "[CA]",
   "idade": 25,
-  "overall": 69,
+  "overall": 54,
   "pontos": 6,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 55,
+    "segundo_saque": 51,
+    "retorno": 53,
     "forehand": 56,
     "backhand": 59,
-    "topspin": 56,
     "voleio": 59,
-    "slice": 47,
-    "movimento": 48,
+    "smash": 57,
     "lob": 42,
+    "topspin": 56,
+    "slice": 47,
     "winner": 43,
-    "fisico": 60,
+    "velocidade": 52,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 1288,
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 71,
+    "compostura": 40,
     "agressividade": 34,
     "leitura_de_jogo": 55,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

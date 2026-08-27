@@ -36,8 +36,8 @@ export function BracketMatchCard({
       style={{ borderColor }}
     >
       <div
-        className={`flex items-center gap-2 h-1/2 border-b ${
-          match.winner === 1 ? 'text-[#0f8c3a]' : match.winner === 2 ? 'text-[#666]' : 'text-black'
+        className={`flex items-center gap-2 h-1/2 border-b transition-opacity ${
+          match.winner === 1 ? 'text-[#0f8c3a]' : match.winner === 2 ? 'text-[#666] opacity-40' : 'text-black'
         }`}
         style={{ borderColor: '#bdbdbd' }}
       >
@@ -45,6 +45,7 @@ export function BracketMatchCard({
           <PixelFlag
             countryCode={getPlayerFlag(match.player1, match.player1Nationality)}
             size="sm"
+            className={match.winner === 2 ? 'grayscale opacity-50' : ''}
           />
         )}
         <span
@@ -62,14 +63,15 @@ export function BracketMatchCard({
       </div>
 
       <div
-        className={`flex items-center gap-2 h-1/2 ${
-          match.winner === 2 ? 'text-[#0f8c3a]' : match.winner === 1 ? 'text-[#666]' : 'text-black'
+        className={`flex items-center gap-2 h-1/2 transition-opacity ${
+          match.winner === 2 ? 'text-[#0f8c3a]' : match.winner === 1 ? 'text-[#666] opacity-40' : 'text-black'
         }`}
       >
         {!isPlaceholder2 && (
           <PixelFlag
             countryCode={getPlayerFlag(match.player2, match.player2Nationality)}
             size="sm"
+            className={match.winner === 1 ? 'grayscale opacity-50' : ''}
           />
         )}
         <span

@@ -2,24 +2,33 @@
   "nome": "Franco Agamenone",
   "nacionalidade": "[IT]",
   "idade": 32,
-  "overall": 78,
+  "overall": 55,
   "pontos": 197,
   "atributos": {
-    "saque": 52,
+    "vel_saque": 53,
+    "pre_saque": 52,
+    "segundo_saque": 50,
+    "retorno": 53,
     "forehand": 58,
     "backhand": 50,
-    "topspin": 45,
     "voleio": 51,
-    "slice": 57,
-    "movimento": 57,
+    "smash": 54,
     "lob": 58,
+    "topspin": 45,
+    "slice": 57,
     "winner": 49,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 57,
     "duplas": 60
   },
   "id": 303,
   "atributos_psicologicos": {
-    "concentracao": 51,
+    "clutch": 51,
+    "consistencia": 52,
+    "compostura": 45,
     "agressividade": 53,
     "leitura_de_jogo": 51,
     "determinacao": 35
@@ -45,5 +54,10 @@
   "peso": 81,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

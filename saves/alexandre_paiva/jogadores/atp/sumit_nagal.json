@@ -1,0 +1,91 @@
+{
+  "nome": "Sumit Nagal",
+  "nacionalidade": "[IN]",
+  "pontos": 181,
+  "pontos_duplas": 0,
+  "pontos_ranking": 181,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 66,
+  "energia": 66,
+  "fadiga": 5,
+  "moral": 85,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 65,
+    "pre_saque": 68,
+    "segundo_saque": 66,
+    "retorno": 73,
+    "forehand": 65,
+    "backhand": 74,
+    "voleio": 59,
+    "smash": 60,
+    "lob": 69,
+    "topspin": 64,
+    "slice": 75,
+    "winner": 72,
+    "velocidade": 66,
+    "aceleracao": 62,
+    "resistencia": 60,
+    "forca": 64,
+    "agilidade": 68,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 56,
+    "consistencia": 57,
+    "compostura": 59,
+    "agressividade": 48,
+    "leitura_de_jogo": 58,
+    "determinacao": 67
+  },
+  "historico_torneios": [],
+  "historico_partidas": [
+    {
+      "ano": 2026,
+      "semana": 2,
+      "torneio": "Hong Kong Open",
+      "fase": "final",
+      "adversario": "Alexandre Paiva",
+      "placar": "Alexandre Paiva 2 x 0 Sumit Nagal",
+      "resultado": "D"
+    }
+  ],
+  "pontos_detalhados": [
+    {
+      "pontos": 181,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 28,
+  "id": 318,
+  "pico_carreira": 286,
+  "altura": 178,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  },
+  "ranking_pos": 291
+}

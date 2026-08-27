@@ -7,6 +7,10 @@ interface Props {
   onAcao: (id: string, acao: 'aceitar' | 'recusar' | 'deletar') => Promise<void>
 }
 
+function isEmailAcionavel(tipo?: string) {
+  return ['proposta_patrocinio', 'convite_duplas', 'patrocinio', 'empresario', 'proposta_empresario'].includes(tipo || '')
+}
+
 export function EmailTab({ emails, processandoId, onAcao }: Props) {
   if (emails.length === 0) {
     return (
@@ -27,11 +31,11 @@ export function EmailTab({ emails, processandoId, onAcao }: Props) {
             <Mail className="text-neon-pink shrink-0 mt-0.5" size={16} />
             <div className="flex-1 min-w-0">
               <div className="arcade-font text-[10px] text-white font-bold mb-1 uppercase">
-                {email.assunto || 'PROPOSTA DE CARREIRA'}
+                {email.assunto || email.titulo || 'PROPOSTA DE CARREIRA'}
               </div>
-              <p className="arcade-font text-[9px] text-[#888] mb-3 leading-relaxed">{email.corpo}</p>
+              <p className="arcade-font text-[9px] text-[#888] mb-3 leading-relaxed">{email.corpo || email.mensagem}</p>
               <div className="flex gap-2">
-                {email.tipo === 'proposta_patrocinio' || email.tipo === 'convite_duplas' ? (
+                {isEmailAcionavel(email.tipo) ? (
                   <>
                     <button
                       onClick={() => onAcao(email.id, 'aceitar')}

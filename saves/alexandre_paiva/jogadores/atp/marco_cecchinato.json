@@ -1,0 +1,96 @@
+{
+  "nome": "Marco Cecchinato",
+  "nacionalidade": "[IT]",
+  "pontos": 270,
+  "pontos_duplas": 0,
+  "pontos_ranking": 270,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 51,
+  "energia": 100,
+  "fadiga": 15,
+  "moral": 70,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 44,
+    "pre_saque": 41,
+    "segundo_saque": 50,
+    "retorno": 43,
+    "forehand": 55,
+    "backhand": 40,
+    "voleio": 57,
+    "smash": 57,
+    "lob": 49,
+    "topspin": 50,
+    "slice": 41,
+    "winner": 51,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 52,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 53,
+    "consistencia": 74,
+    "compostura": 51,
+    "agressividade": 31,
+    "leitura_de_jogo": 39,
+    "determinacao": 49
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 270,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [
+    {
+      "nome": "Budapest",
+      "ano": 2018,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Umag",
+      "ano": 2018,
+      "categoria": "ATP 250"
+    },
+    {
+      "nome": "Buenos Aires",
+      "ano": 2019,
+      "categoria": "ATP 250"
+    }
+  ],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 33,
+  "id": 249,
+  "pico_carreira": 217,
+  "altura": 185,
+  "peso": 73,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
+}

@@ -2,24 +2,33 @@
   "nome": "Tomas Barrios Vera",
   "nacionalidade": "[CL]",
   "idade": 28,
-  "overall": 82,
+  "overall": 64,
   "pontos": 551,
   "atributos": {
-    "saque": 68,
+    "vel_saque": 66,
+    "pre_saque": 67,
+    "segundo_saque": 65,
+    "retorno": 66,
     "forehand": 67,
     "backhand": 65,
-    "topspin": 67,
     "voleio": 63,
-    "slice": 67,
-    "movimento": 68,
+    "smash": 62,
     "lob": 65,
+    "topspin": 67,
+    "slice": 67,
     "winner": 60,
-    "fisico": 60,
+    "velocidade": 64,
+    "aceleracao": 61,
+    "resistencia": 60,
+    "forca": 62,
+    "agilidade": 66,
     "duplas": 60
   },
   "id": 110,
   "atributos_psicologicos": {
-    "concentracao": 60,
+    "clutch": 60,
+    "consistencia": 35,
+    "compostura": 60,
     "agressividade": 73,
     "leitura_de_jogo": 71,
     "determinacao": 60
@@ -45,5 +54,10 @@
   "peso": 89,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

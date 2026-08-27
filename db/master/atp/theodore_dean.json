@@ -2,24 +2,33 @@
   "nome": "Theodore Dean",
   "nacionalidade": "[US]",
   "idade": 23,
-  "overall": 71,
+  "overall": 47,
   "pontos": 23,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 44,
+    "retorno": 40,
     "forehand": 56,
     "backhand": 40,
-    "topspin": 46,
     "voleio": 40,
-    "slice": 44,
-    "movimento": 40,
+    "smash": 48,
     "lob": 56,
+    "topspin": 46,
+    "slice": 44,
     "winner": 43,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 937,
   "atributos_psicologicos": {
-    "concentracao": 34,
+    "clutch": 34,
+    "consistencia": 60,
+    "compostura": 32,
     "agressividade": 45,
     "leitura_de_jogo": 31,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

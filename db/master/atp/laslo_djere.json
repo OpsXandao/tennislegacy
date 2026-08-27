@@ -2,24 +2,33 @@
   "nome": "Laslo Djere",
   "nacionalidade": "[RS]",
   "idade": 30,
-  "overall": 82,
+  "overall": 71,
   "pontos": 538,
   "atributos": {
-    "saque": 79,
+    "vel_saque": 76,
+    "pre_saque": 77,
+    "segundo_saque": 77,
+    "retorno": 75,
     "forehand": 77,
     "backhand": 73,
-    "topspin": 78,
     "voleio": 70,
-    "slice": 79,
-    "movimento": 77,
+    "smash": 66,
     "lob": 74,
+    "topspin": 78,
+    "slice": 79,
     "winner": 79,
-    "fisico": 60,
+    "velocidade": 70,
+    "aceleracao": 65,
+    "resistencia": 60,
+    "forca": 67,
+    "agilidade": 73,
     "duplas": 60
   },
   "id": 59,
   "atributos_psicologicos": {
-    "concentracao": 77,
+    "clutch": 77,
+    "consistencia": 47,
+    "compostura": 78,
     "agressividade": 58,
     "leitura_de_jogo": 70,
     "determinacao": 83
@@ -56,5 +65,10 @@
   "peso": 84,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Josip Simundza",
   "nacionalidade": "[HR]",
   "idade": 21,
-  "overall": 73,
+  "overall": 50,
   "pontos": 43,
   "atributos": {
-    "saque": 42,
+    "vel_saque": 44,
+    "pre_saque": 44,
+    "segundo_saque": 48,
+    "retorno": 46,
     "forehand": 43,
     "backhand": 42,
-    "topspin": 41,
     "voleio": 58,
-    "slice": 56,
-    "movimento": 47,
+    "smash": 56,
     "lob": 40,
+    "topspin": 41,
+    "slice": 56,
     "winner": 50,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 759,
   "atributos_psicologicos": {
-    "concentracao": 46,
+    "clutch": 46,
+    "consistencia": 75,
+    "compostura": 44,
     "agressividade": 30,
     "leitura_de_jogo": 30,
     "determinacao": 41
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

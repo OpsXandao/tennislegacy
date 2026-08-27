@@ -2,24 +2,33 @@
   "nome": "Mate Pavic",
   "nacionalidade": "[RU] Rússia",
   "idade": 32,
-  "overall": 95,
+  "overall": 94,
   "pontos": 6980,
   "id": 19615,
   "atributos": {
-    "saque": 98,
+    "vel_saque": 98,
+    "pre_saque": 95,
+    "segundo_saque": 78,
+    "retorno": 92,
     "forehand": 97,
     "backhand": 91,
-    "topspin": 98,
     "voleio": 95,
-    "slice": 89,
-    "movimento": 98,
+    "smash": 95,
     "lob": 87,
-    "fisico": 98,
+    "topspin": 98,
+    "slice": 89,
     "winner": 98,
+    "velocidade": 98,
+    "aceleracao": 89,
+    "resistencia": 98,
+    "forca": 96,
+    "agilidade": 96,
     "duplas": 110
   },
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 56,
+    "compostura": 40,
     "agressividade": 49,
     "leitura_de_jogo": 74,
     "determinacao": 40
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 6980,
-  "rank_duplas": 6
+  "rank_duplas": 6,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Ryan Seggerman",
   "nacionalidade": "[US]",
   "idade": 26,
-  "overall": 70,
+  "overall": 52,
   "pontos": 16,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 46,
+    "segundo_saque": 48,
+    "retorno": 44,
     "forehand": 60,
     "backhand": 44,
-    "topspin": 51,
     "voleio": 58,
-    "slice": 49,
-    "movimento": 42,
+    "smash": 58,
     "lob": 55,
+    "topspin": 51,
+    "slice": 49,
     "winner": 59,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 46,
     "duplas": 92
   },
   "id": 1037,
   "atributos_psicologicos": {
-    "concentracao": 54,
+    "clutch": 54,
+    "consistencia": 67,
+    "compostura": 47,
     "agressividade": 38,
     "leitura_de_jogo": 35,
     "determinacao": 34
@@ -47,5 +56,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1315,
-  "rank_duplas": 70
+  "rank_duplas": 70,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

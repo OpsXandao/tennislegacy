@@ -2,24 +2,33 @@
   "nome": "Cruz Hewitt",
   "nacionalidade": "[AU]",
   "idade": 17,
-  "overall": 73,
+  "overall": 51,
   "pontos": 51,
   "atributos": {
-    "saque": 52,
+    "vel_saque": 53,
+    "pre_saque": 51,
+    "segundo_saque": 56,
+    "retorno": 48,
     "forehand": 57,
     "backhand": 54,
-    "topspin": 50,
     "voleio": 41,
-    "slice": 47,
-    "movimento": 40,
+    "smash": 47,
     "lob": 41,
+    "topspin": 50,
+    "slice": 47,
     "winner": 45,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 697,
   "atributos_psicologicos": {
-    "concentracao": 34,
+    "clutch": 34,
+    "consistencia": 53,
+    "compostura": 39,
     "agressividade": 52,
     "leitura_de_jogo": 34,
     "determinacao": 52
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

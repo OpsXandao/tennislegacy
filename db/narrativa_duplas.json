@@ -1,0 +1,61 @@
+{
+  "parceiro": {
+    "Profissional": {
+      "vitoria": [
+        "Bom trabalho hoje. Estamos começando a entender o ritmo um do outro.",
+        "Vitória sólida. Com o tempo vamos melhorar a cobertura."
+      ],
+      "derrota": [
+        "Ainda falta entrosamento. Precisamos de mais horas de quadra juntos.",
+        "Foi difícil hoje. Não estávamos na mesma página."
+      ]
+    },
+    "Familiar": {
+      "vitoria": [
+        "Já me sinto mais confortável jogando com você!",
+        "Boa! Aquela cobertura no segundo set foi fundamental."
+      ],
+      "derrota": [
+        "Quase conseguimos. Sinto que o entrosamento está vindo, devagar mas está.",
+        "Batalhamos bem, mas eles foram mais duplistas que nós."
+      ]
+    },
+    "Entrosada": {
+      "vitoria": [
+        "Grande vitória, parceiro! Estamos jogando muito!",
+        "Nossa tática funcionou perfeitamente hoje. Grande dupla!"
+      ],
+      "derrota": [
+        "Essa doeu. Mas confio na nossa dupla, vamos dar a volta por cima.",
+        "Faltou pouco. O entrosamento está lá, só precisamos ajustar o saque."
+      ]
+    },
+    "Sincronizada": {
+      "vitoria": [
+        "Parece que eu já sabia onde você ia colocar cada bola!",
+        "Sincronia total hoje. Imbatíveis."
+      ],
+      "derrota": [
+        "Inacreditável como perdemos essa. Estávamos jogando tão bem juntos.",
+        "Foco total, parceiro. Nosso nível é muito alto para desanimar."
+      ]
+    },
+    "Telepática": {
+      "vitoria": [
+        "Não preciso nem olhar pra você pra saber onde está a cobertura. É outro nível!",
+        "Simplesmente Telepático. Que aula de duplas nós demos hoje."
+      ],
+      "derrota": [
+        "Às vezes o tênis é injusto. Nossa conexão foi perfeita, mas eles tiveram sorte.",
+        "Cabeça erguida. Somos a melhor dupla do circuito, os resultados vão voltar."
+      ]
+    }
+  },
+  "convites": [
+    "Vi seu desempenho recente e acho que formaríamos uma ótima dupla. O que acha?",
+    "Estou procurando um parceiro para os próximos torneios e seu estilo combina com o meu.",
+    "Bora dominar o circuito de duplas juntos? Aceita o convite?",
+    "Acredito que nossos estilos de jogo se complementam muito bem. Topa formar dupla?",
+    "Tenho acompanhado seus jogos e adoraria estar do mesmo lado da rede que você."
+  ]
+}

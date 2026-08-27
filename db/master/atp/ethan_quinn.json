@@ -2,24 +2,33 @@
   "nome": "Ethan Quinn",
   "nacionalidade": "[US]",
   "idade": 21,
-  "overall": 83,
+  "overall": 64,
   "pontos": 776,
   "atributos": {
-    "saque": 67,
+    "vel_saque": 65,
+    "pre_saque": 65,
+    "segundo_saque": 62,
+    "retorno": 64,
     "forehand": 71,
     "backhand": 65,
-    "topspin": 68,
     "voleio": 64,
-    "slice": 61,
-    "movimento": 66,
+    "smash": 62,
     "lob": 64,
+    "topspin": 68,
+    "slice": 61,
     "winner": 64,
-    "fisico": 60,
+    "velocidade": 63,
+    "aceleracao": 60,
+    "resistencia": 60,
+    "forca": 63,
+    "agilidade": 64,
     "duplas": 60
   },
   "id": 106,
   "atributos_psicologicos": {
-    "concentracao": 48,
+    "clutch": 48,
+    "consistencia": 55,
+    "compostura": 48,
     "agressividade": 50,
     "leitura_de_jogo": 53,
     "determinacao": 50
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

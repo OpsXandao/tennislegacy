@@ -2,24 +2,33 @@
   "nome": "Lorenzo Beraldo",
   "nacionalidade": "[IT]",
   "idade": 19,
-  "overall": 69,
+  "overall": 54,
   "pontos": 8,
   "atributos": {
-    "saque": 48,
+    "vel_saque": 49,
+    "pre_saque": 48,
+    "segundo_saque": 54,
+    "retorno": 51,
     "forehand": 60,
     "backhand": 56,
-    "topspin": 52,
     "voleio": 48,
-    "slice": 45,
-    "movimento": 50,
+    "smash": 52,
     "lob": 50,
+    "topspin": 52,
+    "slice": 45,
     "winner": 55,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 59,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 1222,
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 56,
+    "compostura": 55,
     "agressividade": 49,
     "leitura_de_jogo": 46,
     "determinacao": 53
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

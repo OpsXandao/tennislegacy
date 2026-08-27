@@ -2,24 +2,33 @@
   "nome": "Nicolas Robert",
   "nacionalidade": "[FR]",
   "idade": 19,
-  "overall": 69,
+  "overall": 47,
   "pontos": 6,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 45,
+    "segundo_saque": 47,
+    "retorno": 41,
     "forehand": 48,
     "backhand": 40,
-    "topspin": 41,
     "voleio": 43,
-    "slice": 47,
-    "movimento": 41,
+    "smash": 49,
     "lob": 47,
+    "topspin": 41,
+    "slice": 47,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 1306,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 65,
+    "compostura": 30,
     "agressividade": 40,
     "leitura_de_jogo": 48,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

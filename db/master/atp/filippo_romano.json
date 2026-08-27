@@ -2,24 +2,33 @@
   "nome": "Filippo Romano",
   "nacionalidade": "[IT]",
   "idade": 20,
-  "overall": 74,
+  "overall": 50,
   "pontos": 71,
   "atributos": {
-    "saque": 49,
+    "vel_saque": 50,
+    "pre_saque": 48,
+    "segundo_saque": 52,
+    "retorno": 49,
     "forehand": 40,
     "backhand": 54,
-    "topspin": 47,
     "voleio": 42,
-    "slice": 41,
-    "movimento": 49,
+    "smash": 49,
     "lob": 49,
+    "topspin": 47,
+    "slice": 41,
     "winner": 41,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 581,
   "atributos_psicologicos": {
-    "concentracao": 31,
+    "clutch": 31,
+    "consistencia": 53,
+    "compostura": 35,
     "agressividade": 52,
     "leitura_de_jogo": 41,
     "determinacao": 45
@@ -45,5 +54,10 @@
   "peso": 67,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

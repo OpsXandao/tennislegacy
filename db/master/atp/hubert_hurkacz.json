@@ -2,24 +2,33 @@
   "nome": "Hubert Hurkacz",
   "nacionalidade": "[PL]",
   "idade": 29,
-  "overall": 83,
+  "overall": 76,
   "pontos": 775,
   "atributos": {
-    "saque": 85,
+    "vel_saque": 81,
+    "pre_saque": 84,
+    "segundo_saque": 79,
+    "retorno": 80,
     "forehand": 81,
     "backhand": 81,
-    "topspin": 85,
     "voleio": 85,
-    "slice": 87,
-    "movimento": 76,
+    "smash": 76,
     "lob": 83,
+    "topspin": 85,
+    "slice": 87,
     "winner": 81,
-    "fisico": 60,
+    "velocidade": 69,
+    "aceleracao": 65,
+    "resistencia": 60,
+    "forca": 70,
+    "agilidade": 73,
     "duplas": 60
   },
   "id": 31,
   "atributos_psicologicos": {
-    "concentracao": 81,
+    "clutch": 81,
+    "consistencia": 35,
+    "compostura": 80,
     "agressividade": 76,
     "leitura_de_jogo": 66,
     "determinacao": 80
@@ -86,5 +95,10 @@
   "peso": 81,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "Server-Volleyer"
+  "estilo_jogo": "Server-Volleyer",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

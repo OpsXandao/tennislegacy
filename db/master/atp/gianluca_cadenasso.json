@@ -2,24 +2,33 @@
   "nome": "Gianluca Cadenasso",
   "nacionalidade": "[IT]",
   "idade": 21,
-  "overall": 77,
+  "overall": 52,
   "pontos": 166,
   "atributos": {
-    "saque": 48,
+    "vel_saque": 49,
+    "pre_saque": 49,
+    "segundo_saque": 52,
+    "retorno": 51,
     "forehand": 53,
     "backhand": 52,
-    "topspin": 53,
     "voleio": 40,
-    "slice": 52,
-    "movimento": 49,
+    "smash": 47,
     "lob": 43,
+    "topspin": 53,
+    "slice": 52,
     "winner": 48,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 337,
   "atributos_psicologicos": {
-    "concentracao": 39,
+    "clutch": 39,
+    "consistencia": 63,
+    "compostura": 41,
     "agressividade": 42,
     "leitura_de_jogo": 30,
     "determinacao": 47
@@ -45,5 +54,10 @@
   "peso": 66,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

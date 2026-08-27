@@ -2,24 +2,33 @@
   "nome": "Alejo Sanchez Quilez",
   "nacionalidade": "[ES]",
   "idade": 20,
-  "overall": 74,
+  "overall": 53,
   "pontos": 63,
   "atributos": {
-    "saque": 51,
+    "vel_saque": 52,
+    "pre_saque": 48,
+    "segundo_saque": 54,
+    "retorno": 47,
     "forehand": 47,
     "backhand": 45,
-    "topspin": 55,
     "voleio": 57,
-    "slice": 40,
-    "movimento": 57,
+    "smash": 57,
     "lob": 47,
+    "topspin": 55,
+    "slice": 40,
     "winner": 56,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 629,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 60,
+    "compostura": 43,
     "agressividade": 45,
     "leitura_de_jogo": 49,
     "determinacao": 50
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Jaume Munar",
   "nacionalidade": "[ES]",
   "idade": 28,
-  "overall": 85,
+  "overall": 72,
   "pontos": 1235,
   "atributos": {
-    "saque": 77,
+    "vel_saque": 74,
+    "pre_saque": 77,
+    "segundo_saque": 70,
+    "retorno": 79,
     "forehand": 73,
     "backhand": 79,
-    "topspin": 79,
     "voleio": 77,
-    "slice": 79,
-    "movimento": 79,
+    "smash": 70,
     "lob": 75,
+    "topspin": 79,
+    "slice": 79,
     "winner": 68,
-    "fisico": 60,
+    "velocidade": 71,
+    "aceleracao": 66,
+    "resistencia": 60,
+    "forca": 67,
+    "agilidade": 74,
     "duplas": 60
   },
   "id": 58,
   "atributos_psicologicos": {
-    "concentracao": 72,
+    "clutch": 72,
+    "consistencia": 46,
+    "compostura": 69,
     "agressividade": 59,
     "leitura_de_jogo": 57,
     "determinacao": 64
@@ -45,5 +54,10 @@
   "peso": 82,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Michele Mecarelli",
   "nacionalidade": "[IT]",
   "idade": 18,
-  "overall": 69,
+  "overall": 47,
   "pontos": 7,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 41,
+    "segundo_saque": 44,
+    "retorno": 41,
     "forehand": 46,
     "backhand": 40,
-    "topspin": 41,
     "voleio": 52,
-    "slice": 46,
-    "movimento": 42,
+    "smash": 54,
     "lob": 49,
+    "topspin": 41,
+    "slice": 46,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 46,
     "duplas": 60
   },
   "id": 1257,
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 74,
+    "compostura": 38,
     "agressividade": 31,
     "leitura_de_jogo": 41,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

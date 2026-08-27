@@ -2,24 +2,33 @@
   "nome": "Finn Reynolds",
   "nacionalidade": "[RU] Rússia",
   "idade": 35,
-  "overall": 87,
+  "overall": 85,
   "pontos": 1032,
   "id": 34978,
   "atributos": {
-    "saque": 81,
+    "vel_saque": 82,
+    "pre_saque": 81,
+    "segundo_saque": 74,
+    "retorno": 85,
     "forehand": 90,
     "backhand": 88,
-    "topspin": 83,
     "voleio": 89,
-    "slice": 79,
-    "movimento": 85,
+    "smash": 88,
     "lob": 85,
-    "fisico": 88,
+    "topspin": 83,
+    "slice": 79,
     "winner": 89,
+    "velocidade": 86,
+    "aceleracao": 79,
+    "resistencia": 88,
+    "forca": 88,
+    "agilidade": 84,
     "duplas": 101
   },
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 39,
+    "compostura": 46,
     "agressividade": 66,
     "leitura_de_jogo": 48,
     "determinacao": 56
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1032,
-  "rank_duplas": 85
+  "rank_duplas": 85,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

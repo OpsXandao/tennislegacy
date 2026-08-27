@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import { buildBracketLayout } from './utils'
 import { HEADER_HEIGHT, CARD_HEIGHT, CARD_WIDTH } from './types'
 import type { BracketSection } from './types'
@@ -15,7 +16,7 @@ export function BracketCanvas({ section }: { section: BracketSection }) {
     )
 
   return (
-    <section className="overflow-hidden rounded border border-neon-pink/40 bg-[#090909] shadow-[0_0_20px_#ff005533]">
+    <section className="group relative overflow-hidden rounded border border-neon-pink/40 bg-[#090909] shadow-[0_0_20px_#ff005533]">
       <div className="sticky top-0 z-[1] flex items-center justify-between border-b border-neon-green/20 bg-[#111] px-4 py-3">
         <div>
           <h3 className="pixel-font text-sm text-neon-green">{section.title}</h3>
@@ -26,7 +27,7 @@ export function BracketCanvas({ section }: { section: BracketSection }) {
         </div>
       </div>
 
-      <div className="overflow-x-auto overflow-y-hidden px-3 py-4 sm:p-4">
+      <div className="overflow-x-auto overflow-y-hidden px-3 py-4 sm:p-4 scrollbar-hide">
         <div
           className="relative"
           style={{ width: `${totalWidth}px`, height: `${totalHeight}px` }}
@@ -118,6 +119,21 @@ export function BracketCanvas({ section }: { section: BracketSection }) {
           ))}
         </div>
       </div>
+
+      {/* Indicador de Scroll Horizontal */}
+      {layout.length > 2 && (
+        <>
+          <div className="pointer-events-none absolute bottom-0 right-0 top-12 w-20 bg-gradient-to-l from-[#090909] to-transparent z-[2]" />
+          <motion.div
+            animate={{ x: [0, 5, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 z-[3] flex flex-col items-center gap-1"
+          >
+            <div className="text-neon-cyan text-[8px] arcade-font opacity-50 [writing-mode:vertical-lr]">SCROLL</div>
+            <div className="text-neon-cyan text-lg">▶</div>
+          </motion.div>
+        </>
+      )}
     </section>
   )
 }

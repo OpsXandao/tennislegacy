@@ -2,24 +2,33 @@
   "nome": "Petr Nouza",
   "nacionalidade": "[RU] Rússia",
   "idade": 31,
-  "overall": 88,
+  "overall": 86,
   "pontos": 1990,
   "id": 56752,
   "atributos": {
-    "saque": 81,
+    "vel_saque": 81,
+    "pre_saque": 84,
+    "segundo_saque": 77,
+    "retorno": 88,
     "forehand": 91,
     "backhand": 89,
-    "topspin": 87,
     "voleio": 95,
-    "slice": 94,
-    "movimento": 82,
+    "smash": 91,
     "lob": 94,
-    "fisico": 84,
+    "topspin": 87,
+    "slice": 94,
     "winner": 84,
+    "velocidade": 82,
+    "aceleracao": 76,
+    "resistencia": 84,
+    "forca": 86,
+    "agilidade": 84,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 52,
+    "compostura": 60,
     "agressividade": 53,
     "leitura_de_jogo": 59,
     "determinacao": 69
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1990,
-  "rank_duplas": 45
+  "rank_duplas": 45,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

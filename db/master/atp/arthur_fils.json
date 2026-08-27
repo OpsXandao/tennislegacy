@@ -2,24 +2,33 @@
   "nome": "Arthur Fils",
   "nacionalidade": "[FR]",
   "idade": 21,
-  "overall": 87,
+  "overall": 79,
   "pontos": 1440,
   "atributos": {
-    "saque": 86,
+    "vel_saque": 82,
+    "pre_saque": 86,
+    "segundo_saque": 77,
+    "retorno": 87,
     "forehand": 88,
     "backhand": 88,
-    "topspin": 85,
     "voleio": 77,
-    "slice": 86,
-    "movimento": 87,
+    "smash": 71,
     "lob": 84,
+    "topspin": 85,
+    "slice": 86,
     "winner": 88,
-    "fisico": 60,
+    "velocidade": 76,
+    "aceleracao": 70,
+    "resistencia": 60,
+    "forca": 73,
+    "agilidade": 80,
     "duplas": 60
   },
   "id": 14,
   "atributos_psicologicos": {
-    "concentracao": 63,
+    "clutch": 63,
+    "consistencia": 35,
+    "compostura": 65,
     "agressividade": 73,
     "leitura_de_jogo": 64,
     "determinacao": 72
@@ -61,5 +70,10 @@
   "peso": 85,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "Aggressive Baseliner"
+  "estilo_jogo": "Aggressive Baseliner",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

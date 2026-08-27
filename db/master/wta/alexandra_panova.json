@@ -2,24 +2,33 @@
   "nome": "Alexandra Panova",
   "nacionalidade": "[RU] Rússia",
   "idade": 18,
-  "overall": 91,
+  "overall": 90,
   "pontos": 2634,
   "id": 65222,
   "atributos": {
-    "saque": 98,
+    "vel_saque": 96,
+    "pre_saque": 96,
+    "segundo_saque": 85,
+    "retorno": 89,
     "forehand": 97,
     "backhand": 91,
-    "topspin": 98,
     "voleio": 100,
-    "slice": 94,
-    "movimento": 83,
+    "smash": 94,
     "lob": 98,
-    "fisico": 86,
+    "topspin": 98,
+    "slice": 94,
     "winner": 84,
+    "velocidade": 84,
+    "aceleracao": 77,
+    "resistencia": 86,
+    "forca": 89,
+    "agilidade": 85,
     "duplas": 104
   },
   "atributos_psicologicos": {
-    "concentracao": 61,
+    "clutch": 61,
+    "consistencia": 64,
+    "compostura": 62,
     "agressividade": 41,
     "leitura_de_jogo": 60,
     "determinacao": 67
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2634,
-  "rank_duplas": 24
+  "rank_duplas": 24,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

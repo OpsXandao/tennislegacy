@@ -2,24 +2,33 @@
   "nome": "Katarzyna Piter",
   "nacionalidade": "[PL] Polônia",
   "idade": 34,
-  "overall": 87,
+  "overall": 85,
   "pontos": 1305,
   "id": 16141,
   "atributos": {
-    "saque": 90,
+    "vel_saque": 88,
+    "pre_saque": 88,
+    "segundo_saque": 76,
+    "retorno": 83,
     "forehand": 88,
     "backhand": 83,
-    "topspin": 92,
     "voleio": 93,
-    "slice": 89,
-    "movimento": 79,
+    "smash": 89,
     "lob": 94,
-    "fisico": 83,
+    "topspin": 92,
+    "slice": 89,
     "winner": 91,
+    "velocidade": 80,
+    "aceleracao": 74,
+    "resistencia": 83,
+    "forca": 84,
+    "agilidade": 81,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 67,
+    "clutch": 67,
+    "consistencia": 42,
+    "compostura": 62,
     "agressividade": 63,
     "leitura_de_jogo": 74,
     "determinacao": 52
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1305,
-  "rank_duplas": 68
+  "rank_duplas": 68,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

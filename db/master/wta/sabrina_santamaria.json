@@ -2,24 +2,33 @@
   "nome": "Sabrina Santamaria",
   "nacionalidade": "[US] Estados Unidos",
   "idade": 35,
-  "overall": 88,
+  "overall": 86,
   "pontos": 1480,
   "id": 49373,
   "atributos": {
-    "saque": 80,
+    "vel_saque": 80,
+    "pre_saque": 85,
+    "segundo_saque": 77,
+    "retorno": 92,
     "forehand": 81,
     "backhand": 94,
-    "topspin": 96,
     "voleio": 90,
-    "slice": 96,
-    "movimento": 88,
+    "smash": 87,
     "lob": 84,
-    "fisico": 84,
+    "topspin": 96,
+    "slice": 96,
     "winner": 81,
+    "velocidade": 86,
+    "aceleracao": 79,
+    "resistencia": 84,
+    "forca": 85,
+    "agilidade": 88,
     "duplas": 96
   },
   "atributos_psicologicos": {
-    "concentracao": 71,
+    "clutch": 71,
+    "consistencia": 56,
+    "compostura": 70,
     "agressividade": 49,
     "leitura_de_jogo": 50,
     "determinacao": 68
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1480,
-  "rank_duplas": 53
+  "rank_duplas": 53,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Neal Skupski",
   "nacionalidade": "[RU] Rússia",
   "idade": 30,
-  "overall": 96,
+  "overall": 93,
   "pontos": 8280,
   "id": 44339,
   "atributos": {
-    "saque": 98,
+    "vel_saque": 96,
+    "pre_saque": 96,
+    "segundo_saque": 82,
+    "retorno": 95,
     "forehand": 91,
     "backhand": 98,
-    "topspin": 97,
     "voleio": 100,
-    "slice": 88,
-    "movimento": 98,
+    "smash": 96,
     "lob": 98,
-    "fisico": 90,
+    "topspin": 97,
+    "slice": 88,
     "winner": 97,
+    "velocidade": 94,
+    "aceleracao": 86,
+    "resistencia": 90,
+    "forca": 92,
+    "agilidade": 94,
     "duplas": 110
   },
   "atributos_psicologicos": {
-    "concentracao": 50,
+    "clutch": 50,
+    "consistencia": 48,
+    "compostura": 51,
     "agressividade": 57,
     "leitura_de_jogo": 70,
     "determinacao": 56
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 8280,
-  "rank_duplas": 1
+  "rank_duplas": 1,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

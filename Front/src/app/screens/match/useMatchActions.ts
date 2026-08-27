@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router'
 import { api, ApiError } from '../../../api/client'
 import { criarEventoLocalDePlacar } from './bootstrap'
-import { estrategiaPonto, serializarPacoteTatico } from './model'
+import { estrategiaPonto, serializarPacoteTatico } from './tactics'
 import type {
   Faixa,
   InstrucaoValor,
@@ -118,7 +118,7 @@ export function useMatchActions({
         setPartidaId(response.partida_id)
         if (response.adversario) applyAdversario(response.adversario)
         if (response.placar) aplicar(criarEventoLocalDePlacar(response.placar, 'setup'))
-        await api.partida.estrategia(response.partida_id, estrategia).catch(() => {})
+        await api.partida.estrategia(response.partida_id, estrategia).catch((e) => console.warn('estrategia (auto):', e))
         const estado = await api.partida.simularPartida(response.partida_id)
         aplicar({ ...estado, tipo: 'fim' as any, descricao: '' } as any)
         return
@@ -130,7 +130,7 @@ export function useMatchActions({
       setPartidaId(response.partida_id)
       if (response.adversario) applyAdversario(response.adversario)
       if (response.placar) aplicar(criarEventoLocalDePlacar(response.placar, 'setup'))
-      await api.partida.estrategia(response.partida_id, estrategia).catch(() => {})
+      await api.partida.estrategia(response.partida_id, estrategia).catch((e) => console.warn('estrategia (estrategista):', e))
       setFase('aguardando')
     } catch (error) {
       if (error instanceof ApiError && error.status === 400) {
@@ -158,7 +158,7 @@ export function useMatchActions({
     setSimulando(true)
     setAlertaBreak('')
     try {
-      await api.partida.estrategia(partidaId, estrategiaPonto(intencao, faixa)).catch(() => {})
+      await api.partida.estrategia(partidaId, estrategiaPonto(intencao, faixa)).catch((e) => console.warn('estrategia (ponto):', e))
       const estado = await api.partida.ponto(partidaId)
       aplicar(estado)
     } catch {
@@ -177,6 +177,15 @@ export function useMatchActions({
       const estado = await api.partida.ponto(partidaId)
       aplicar(estado)
     } catch {
+      // tenta ressincronizar estado com servidor
+      try {
+        const ativa = await api.partida.ativa()
+        if (ativa?.placar) {
+          aplicar(ativa.placar)
+        }
+      } catch {
+        // ignora — mantém estado local
+      }
       setFase('aguardando')
     } finally {
       setSimulando(false)
@@ -204,6 +213,15 @@ export function useMatchActions({
       }
       if (finalEstado) aplicar(finalEstado)
     } catch {
+      // tenta ressincronizar estado com servidor
+      try {
+        const ativa = await api.partida.ativa()
+        if (ativa?.placar) {
+          aplicar(ativa.placar)
+        }
+      } catch {
+        // ignora — mantém estado local
+      }
       setFase('aguardando')
     } finally {
       setSimulando(false)
@@ -288,7 +306,7 @@ export function useMatchActions({
       if (torneioAtual?.fase_atual === 'finalizado') {
         const resultado = await api.calendario.avancar()
         setSemana(resultado.semana, resultado.ano ?? ano)
-        await fetchJogador().catch(() => {})
+        await fetchJogador().catch((e) => console.warn('fetchJogador pós-jogo:', e))
         setTorneio(null)
         setPartidaId(null)
         navigate('/hub')

@@ -74,6 +74,21 @@ body.light-mode {
   --text-glow-cyan:  none;
 }
 
+/* Utilities neon — sem glow no modo claro */
+body.light-mode .neon-glow-green,
+body.light-mode .neon-glow-pink,
+body.light-mode .neon-glow-yellow,
+body.light-mode .neon-glow-cyan {
+  box-shadow: none;
+}
+
+body.light-mode .text-neon-green,
+body.light-mode .text-neon-pink,
+body.light-mode .text-neon-yellow,
+body.light-mode .text-neon-cyan {
+  text-shadow: none;
+}
+
 /* Remove scanlines (não faz sentido em fundo claro) */
 body.light-mode::before {
   display: none;
@@ -280,11 +295,11 @@ body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
   --glow-gold-sm:   0 0 4px var(--neon-yellow), 0 0 10px rgba(255,230,0,0.22);
   --glow-cyan-sm:   0 0 4px var(--neon-cyan), 0 0 10px rgba(0,229,255,0.24);
 
-  /* Text glows */
-  --text-glow-green: 0 0 6px var(--neon-green), 0 0 12px rgba(0,255,136,0.42);
-  --text-glow-pink:  0 0 6px var(--neon-pink), 0 0 12px rgba(255,0,85,0.38);
-  --text-glow-gold:  0 0 6px var(--neon-yellow), 0 0 12px rgba(255,230,0,0.34);
-  --text-glow-cyan:  0 0 6px var(--neon-cyan), 0 0 12px rgba(0,229,255,0.38);
+  /* Text glows — blur reduzido para não vazar em telas pequenas */
+  --text-glow-green: 0 0 3px var(--neon-green), 0 0 7px rgba(0,255,136,0.30);
+  --text-glow-pink:  0 0 3px var(--neon-pink), 0 0 7px rgba(255,0,85,0.28);
+  --text-glow-gold:  0 0 3px var(--neon-yellow), 0 0 7px rgba(255,230,0,0.24);
+  --text-glow-cyan:  0 0 3px var(--neon-cyan), 0 0 7px rgba(0,229,255,0.28);
   
   /* Legacy theme variables for compatibility */
   --font-size: 16px;
@@ -485,54 +500,83 @@ body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
   }
 }
 
-/* Utility classes for neon effects */
+/* ── Escala de tipografia semântica ──────────────────────────
+   Substituem text-[Npx] arbitrários. Sempre combinados com
+   pixel-font ou arcade-font para aplicar a família correta.
+
+   Hierarquia:
+     micro   →  badge de rastreamento, decoração
+     tag     →  rótulo de seção, tracking alto
+     label   →  rótulo padrão de UI
+     caption →  legenda, info secundária
+     body    →  texto corrido
+     value   →  valores de estatística
+     lead    →  títulos de seção
+──────────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-ui-micro   { font-size: 10px; letter-spacing: 0.08em; }
+  .text-ui-tag     { font-size: 11px; letter-spacing: 0.12em; }
+  .text-ui-label   { font-size: 12px; }
+  .text-ui-caption { font-size: 13px; }
+  .text-ui-body    { font-size: 14px; line-height: 1.55; }
+  .text-ui-value   { font-size: 15px; }
+  .text-ui-lead    { font-size: 17px; }
+}
+
+/* ── Escala mínima de leitura — bump global de fontes arbitrárias
+   Qualquer text-[Npx] abaixo de 12px é elevado para manter
+   legibilidade em telas móveis pequenas.
+──────────────────────────────────────────────────────────── */
+.text-\[7px\]  { font-size: 10px !important; }
+.text-\[8px\]  { font-size: 11px !important; }
+.text-\[9px\]  { font-size: 12px !important; }
+.text-\[10px\] { font-size: 13px !important; }
+.text-\[11px\] { font-size: 14px !important; }
+
+/* ── Utility classes for neon effects ──────────────────────── */
 @layer utilities {
   .neon-glow-green {
-    box-shadow: 0 0 5px var(--neon-green),
-                0 0 10px var(--neon-green),
-                0 0 20px var(--neon-green);
+    box-shadow: 0 0 4px var(--neon-green),
+                0 0 10px rgba(0,255,136,0.40);
   }
 
   .neon-glow-pink {
-    box-shadow: 0 0 5px var(--neon-pink),
-                0 0 10px var(--neon-pink),
-                0 0 20px var(--neon-pink);
+    box-shadow: 0 0 4px var(--neon-pink),
+                0 0 10px rgba(255,0,85,0.38);
   }
 
   .neon-glow-yellow {
-    box-shadow: 0 0 5px var(--neon-yellow),
-                0 0 10px var(--neon-yellow),
-                0 0 20px var(--neon-yellow);
+    box-shadow: 0 0 4px var(--neon-yellow),
+                0 0 10px rgba(255,230,0,0.34);
   }
 
   .neon-glow-cyan {
-    box-shadow: 0 0 5px var(--neon-cyan),
-                0 0 10px var(--neon-cyan),
-                0 0 20px var(--neon-cyan);
+    box-shadow: 0 0 4px var(--neon-cyan),
+                0 0 10px rgba(0,229,255,0.38);
   }
 
   .text-neon-green {
     color: var(--neon-green);
-    text-shadow: 0 0 5px var(--neon-green),
-                 0 0 10px var(--neon-green);
+    text-shadow: 0 0 3px var(--neon-green),
+                 0 0 7px rgba(0,255,136,0.40);
   }
 
   .text-neon-pink {
     color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink),
-                 0 0 10px var(--neon-pink);
+    text-shadow: 0 0 3px var(--neon-pink),
+                 0 0 7px rgba(255,0,85,0.38);
   }
 
   .text-neon-yellow {
     color: var(--neon-yellow);
-    text-shadow: 0 0 5px var(--neon-yellow),
-                 0 0 10px var(--neon-yellow);
+    text-shadow: 0 0 3px var(--neon-yellow),
+                 0 0 7px rgba(255,230,0,0.34);
   }
 
   .text-neon-cyan {
     color: var(--neon-cyan);
-    text-shadow: 0 0 5px var(--neon-cyan),
-                 0 0 10px var(--neon-cyan);
+    text-shadow: 0 0 3px var(--neon-cyan),
+                 0 0 7px rgba(0,229,255,0.38);
   }
 
   .pixel-font {
@@ -632,4 +676,318 @@ body.light-mode .app-player-screen [class*="border-[#2a2a2a]"] {
     font-size: 0.75rem;
     letter-spacing: 0.02em;
   }
+
+  /* Match themes */
+  /*
+   * Convenção de cores dentro de match screens:
+   *
+   *   --match-accent        → cor primária do piso (player / vitória)
+   *   --match-accent-dim    → fundo suave no tom do piso (12% alpha)
+   *   --match-accent-border → borda no tom do piso (30% alpha)
+   *   --match-rival         → cor do adversário (derrota / perigo)
+   *   --match-rival-dim     → fundo suave do rival
+   *   --match-muted-text    → texto secundário / faint dentro do tema
+   *
+   * Sempre use var(--match-accent) em vez de calcular a cor no JS.
+   * Os temas de piso abaixo sobrescrevem --neon-green / --neon-pink,
+   * que são as fontes de --match-accent e --match-rival.
+   */
+  .match-theme-screen {
+    --match-accent:        var(--neon-green);
+    --match-accent-dim:    color-mix(in srgb, var(--neon-green) 12%, transparent);
+    --match-accent-border: color-mix(in srgb, var(--neon-green) 30%, transparent);
+    --match-rival:         var(--neon-pink);
+    --match-rival-dim:     color-mix(in srgb, var(--neon-pink) 12%, transparent);
+    --match-muted-text:    color-mix(in srgb, var(--match-text) 70%, transparent);
+
+    --match-bg: #926699;
+    --match-bg-secondary: #347048;
+    --match-panel: rgba(235, 225, 216, 0.12);
+    --match-panel-strong: rgba(235, 225, 216, 0.18);
+    --match-line: rgba(235, 225, 216, 0.18);
+    --match-text: #f7f1ec;
+    --match-muted: rgba(247, 241, 236, 0.76);
+    --match-shadow: 0 24px 60px rgba(12, 10, 18, 0.28);
+    background:
+      radial-gradient(circle at top left, color-mix(in srgb, var(--neon-yellow) 16%, transparent) 0%, transparent 26%),
+      radial-gradient(circle at bottom right, color-mix(in srgb, var(--neon-green) 18%, transparent) 0%, transparent 28%),
+      linear-gradient(135deg, var(--match-bg) 0%, var(--match-bg-secondary) 100%);
+    color: var(--match-text);
+  }
+
+  .match-theme-default {
+    --neon-green: #347048;
+    --neon-pink: #926699;
+    --neon-yellow: #b9cf32;
+    --neon-cyan: #ebe1d8;
+    --neon-purple: #926699;
+  }
+
+  .match-theme-hard {
+    --match-bg: #002752;
+    --match-bg-secondary: #003e93;
+    --match-panel: rgba(243, 245, 247, 0.10);
+    --match-panel-strong: rgba(243, 245, 247, 0.16);
+    --match-line: rgba(243, 245, 247, 0.22);
+    --match-text: #f3f5f7;
+    --match-muted: rgba(243, 245, 247, 0.78);
+    --neon-green: #bfe800;
+    --neon-pink: #ff8d6d;
+    --neon-yellow: #f3f5f7;
+    --neon-cyan: #f3f5f7;
+    --neon-purple: #ff8d6d;
+  }
+
+  .match-theme-grass {
+    --match-bg: #1f361b;
+    --match-bg-secondary: #101811;
+    --match-panel: rgba(232, 237, 198, 0.10);
+    --match-panel-strong: rgba(232, 237, 198, 0.16);
+    --match-line: rgba(243, 239, 17, 0.20);
+    --match-text: #f1efe8;
+    --match-muted: rgba(232, 237, 198, 0.76);
+    --neon-green: #e8edc6;
+    --neon-pink: #f1efe8;
+    --neon-yellow: #f3ef11;
+    --neon-cyan: #e8edc6;
+    --neon-purple: #f3ef11;
+  }
+
+  .match-theme-clay {
+    --match-bg: #87231e;
+    --match-bg-secondary: #a13920;
+    --match-panel: rgba(174, 179, 203, 0.10);
+    --match-panel-strong: rgba(138, 172, 211, 0.16);
+    --match-line: rgba(201, 163, 76, 0.24);
+    --match-text: #f7efe6;
+    --match-muted: rgba(174, 179, 203, 0.82);
+    --neon-green: #c9a34c;
+    --neon-pink: #aeb3cb;
+    --neon-yellow: #8aacd3;
+    --neon-cyan: #f7efe6;
+    --neon-purple: #c9a34c;
+  }
+
+  .match-theme-screen .app-panel,
+  .match-theme-screen .match-card {
+    background: linear-gradient(180deg, var(--match-panel-strong) 0%, var(--match-panel) 100%);
+    border-color: var(--match-line);
+    box-shadow: var(--match-shadow);
+  }
+
+  .match-theme-screen .match-topbar {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 100%),
+      linear-gradient(180deg, rgba(4, 8, 12, 0.22) 0%, rgba(4, 8, 12, 0.06) 100%);
+  }
+
+  .match-theme-screen .match-hero {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
+    border: 1px solid var(--match-line);
+    box-shadow: var(--match-shadow);
+  }
+
+  .match-theme-screen .match-card-soft {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, var(--match-panel) 100%);
+  }
+
+  .match-theme-screen .match-card-player {
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--neon-green) 14%, transparent) 0%, transparent 100%),
+      linear-gradient(180deg, var(--match-panel-strong) 0%, var(--match-panel) 100%);
+  }
+
+  .match-theme-screen .match-card-rival {
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--neon-pink) 12%, transparent) 0%, transparent 100%),
+      linear-gradient(180deg, var(--match-panel-strong) 0%, var(--match-panel) 100%);
+  }
+}
+
+/* ── Surface Atmosphere Layers ───────────────────────────────
+   Cada piso tem uma camada ambiental CSS-only aplicada via
+   ::before no container da tela de partida.
+   z-index 2 fica acima do fundo mas abaixo de qualquer UI (z≥10).
+────────────────────────────────────────────────────────────── */
+
+/* Roland Garros — saibro quente, poeira alaranjada */
+.match-theme-screen.match-theme-clay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse 130% 55% at 50% 110%, rgba(161, 57, 32, 0.26) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 40% at 0% 55%, rgba(200, 75, 23, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 40% at 100% 55%, rgba(200, 75, 23, 0.10) 0%, transparent 50%);
+  animation: clay-heat 12s ease-in-out infinite alternate;
+}
+
+@keyframes clay-heat {
+  from { opacity: 0.55; }
+  to   { opacity: 1; }
+}
+
+/* Wimbledon — grama fresca, brisa fria */
+.match-theme-screen.match-theme-grass::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse 110% 55% at 50% 110%, rgba(31, 54, 27, 0.28) 0%, transparent 58%),
+    radial-gradient(ellipse 60% 30% at 50% -5%, rgba(232, 237, 198, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 20% at 20% 30%, rgba(140, 200, 80, 0.04) 0%, transparent 50%);
+  animation: grass-cool 9s ease-in-out infinite alternate;
+}
+
+@keyframes grass-cool {
+  from { opacity: 0.65; transform: translateY(0px); }
+  to   { opacity: 1;    transform: translateY(-3px); }
+}
+
+/* US Open — quadra dura, grade elétrica */
+.match-theme-screen.match-theme-hard::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(30, 95, 168, 0.035) 0px, transparent 1px,
+      transparent 32px, rgba(30, 95, 168, 0.035) 33px),
+    repeating-linear-gradient(90deg,
+      rgba(30, 95, 168, 0.028) 0px, transparent 1px,
+      transparent 32px, rgba(30, 95, 168, 0.028) 33px),
+    radial-gradient(ellipse 110% 50% at 50% -5%, rgba(0, 50, 140, 0.18) 0%, transparent 58%);
+  animation: hard-electric 7s ease-in-out infinite alternate;
+}
+
+@keyframes hard-electric {
+  from { opacity: 0.5; }
+  50%  { opacity: 0.85; }
+  to   { opacity: 1; }
+}
+
+/* ── Crowd Roar Visual ────────────────────────────────────────
+   Classe aplicada via JS quando crowdRoar === true.
+   Pequena vibração de tela + flash de brilho.
+────────────────────────────────────────────────────────────── */
+@keyframes crowd-rumble {
+  0%   { transform: translate(0, 0)   scale(1);     filter: brightness(1); }
+  15%  { transform: translate(-1px, 1px) scale(1.003); filter: brightness(1.08); }
+  30%  { transform: translate(1px, -1px) scale(1);    filter: brightness(1.12); }
+  50%  { transform: translate(-0.5px, 0) scale(1.002); filter: brightness(1.06); }
+  70%  { transform: translate(0.5px, 0.5px) scale(1); filter: brightness(1.04); }
+  100% { transform: translate(0, 0)   scale(1);     filter: brightness(1); }
+}
+
+.crowd-roar-active {
+  animation: crowd-rumble 0.5s ease-out forwards;
+}
+
+/* ── Post-Match Emotional Weight ──────────────────────────────
+   .postmatch-win  → tela se ilumina progressivamente (vitória)
+   .postmatch-loss → vinheta pesada, temperatura fria (derrota)
+────────────────────────────────────────────────────────────── */
+.postmatch-win::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(ellipse 90% 60% at 50% 20%,
+    rgba(0, 255, 136, 0.08) 0%, transparent 65%);
+  animation: win-light 3s ease-out forwards;
+}
+
+@keyframes win-light {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.postmatch-loss::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.45) 100%),
+    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(40, 0, 20, 0.20) 0%, transparent 60%);
+  animation: loss-weight 2s ease-out forwards;
+}
+
+@keyframes loss-weight {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Grand Slam / Finale Ceremony ─────────────────────────────
+   Aura dourada adicional quando a fase é "final" de Grand Slam
+────────────────────────────────────────────────────────────── */
+.match-grandslam-final::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background: radial-gradient(ellipse 60% 25% at 50% 0%,
+    rgba(255, 220, 0, 0.12) 0%, transparent 60%);
+  animation: grandslam-aura 4s ease-in-out infinite alternate;
+}
+
+@keyframes grandslam-aura {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+
+/* ── Visual Storytelling Effects ─────────────────────────── */
+
+@keyframes glitch {
+  0% { transform: translate(0); opacity: 1; }
+  10% { transform: translate(-1px, 1px); opacity: 0.95; }
+  20% { transform: translate(1px, -1px); opacity: 1; }
+  30% { transform: translate(0); }
+  100% { transform: translate(0); }
+}
+
+.fatigue-glitch {
+  animation: glitch 0.5s infinite linear;
+}
+
+@keyframes momentum-glow-pulse {
+  0% { filter: drop-shadow(0 0 5px rgba(255, 230, 0, 0.4)); }
+  50% { filter: drop-shadow(0 0 15px rgba(255, 230, 0, 0.8)); }
+  100% { filter: drop-shadow(0 0 5px rgba(255, 230, 0, 0.4)); }
+}
+
+.momentum-glow {
+  animation: momentum-glow-pulse 2s infinite ease-in-out;
+}
+
+/* ── Final Match Drama ──────────────────────────────────── */
+
+.final-glow-overlay {
+  position: relative;
+}
+
+.final-glow-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  border: 4px solid var(--neon-yellow);
+  box-shadow: inset 0 0 40px rgba(255, 230, 0, 0.25);
+  animation: final-border-pulse 3s infinite alternate ease-in-out;
+}
+
+@keyframes final-border-pulse {
+  from { opacity: 0.4; border-width: 2px; }
+  to { opacity: 0.8; border-width: 6px; }
 }

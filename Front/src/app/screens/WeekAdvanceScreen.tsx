@@ -1,10 +1,16 @@
 import { useEffect, useMemo, useState } from 'react'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 import { useLocation, useNavigate } from 'react-router'
-import { CalendarDays, ChevronRight, Clock3, MapPinned, Trophy } from 'lucide-react'
-import { NeonCard, NeonButton, PixelFlag } from '../components'
+import { CalendarDays, ChevronRight, Trophy } from 'lucide-react'
+import { PixelFlag } from '../components'
 import { useGameStore } from '../../store/gameStore'
 import type { CampeaoSemana, TorneioCalendario, WeekAdvanceStep } from '../../types'
+
+interface RivalInfo {
+  nome: string
+  ranking: number
+  h2h: { v: number; d: number }
+}
 
 interface WeekAdvanceLocationState {
   fromSemana: number
@@ -12,323 +18,511 @@ interface WeekAdvanceLocationState {
   toSemana: number
   toAno: number
   campeoes: CampeaoSemana[]
-  eventos?: string[]
+  eventos?: Array<string | { texto?: string; categoria?: string }>
   processamento?: WeekAdvanceStep[]
   torneiosDisponiveis?: TorneioCalendario[]
-  motivo?: 'withdraw' | 'tournament_end' | 'rest'
+  motivo?: string
+  rival_info?: RivalInfo | null
 }
 
-function titleFromReason(reason?: WeekAdvanceLocationState['motivo']) {
-  if (reason === 'withdraw') return 'SEMANA AVANÇADA'
-  if (reason === 'rest') return 'CONTINUE'
-  return 'FIM DE SEMANA'
+function contextLabel(motivo?: string): { titulo: string; sub: string } {
+  if (motivo === 'treino')         return { titulo: 'SEMANA DE TREINO',   sub: 'PREPARAÇÃO CONCLUÍDA' }
+  if (motivo === 'descanso')       return { titulo: 'RECUPERAÇÃO',         sub: 'ENERGIA RESTAURADA' }
+  if (motivo === 'withdraw')       return { titulo: 'TORNEIO ENCERRADO',   sub: 'DESISTÊNCIA REGISTRADA' }
+  if (motivo === 'tournament_end') return { titulo: 'FIM DE SEMANA',       sub: 'RESULTADOS DO CIRCUITO' }
+  if (motivo === 'rest')           return { titulo: 'DESCANSO',            sub: 'SEMANA AVANÇADA' }
+  return                                  { titulo: 'SEMANA AVANÇADA',     sub: 'CALENDÁRIO ATUALIZADO' }
 }
 
-function subtitleFromReason(reason?: WeekAdvanceLocationState['motivo']) {
-  if (reason === 'withdraw') return 'TORNEIO ENCERRADO APÓS DESISTÊNCIA'
-  if (reason === 'rest') return 'A SEMANA ESTÁ SENDO PROCESSADA'
-  return 'RESULTADOS CONSOLIDADOS DO CIRCUITO'
-}
-
-function badgeColor(tour: string) {
-  return tour.toLowerCase().includes('wta') ? '#ff5f8f' : 'var(--neon-green)'
-}
-
-function toneColor(tom: WeekAdvanceStep['tom']) {
-  if (tom === 'positive') return 'var(--neon-green)'
-  if (tom === 'warning') return 'var(--neon-yellow)'
-  if (tom === 'info') return 'var(--neon-cyan)'
+function stepAccent(tom: WeekAdvanceStep['tom']): string {
+  if (tom === 'positive') return '#00ff88'
+  if (tom === 'warning')  return '#ffe600'
+  if (tom === 'info')     return '#00e5ff'
   return '#c7d4d0'
 }
 
-function defaultSteps(state: WeekAdvanceLocationState | null): WeekAdvanceStep[] {
-  if (!state) return []
+function tourAccent(tour: string): string {
+  return tour.toLowerCase().includes('wta') ? '#ff5f8f' : '#00ff88'
+}
+
+function defaultSteps(state: WeekAdvanceLocationState): WeekAdvanceStep[] {
   return [
     {
       id: 'advance_calendar',
       titulo: 'Calendário',
-      resumo: `Semana ${state.fromSemana} encerrada. Preparando a semana ${state.toSemana}.`,
+      resumo: `Semana ${state.fromSemana} encerrada. Avançando para a ${state.toSemana}.`,
       tom: 'info',
-      detalhes: state.eventos?.slice(0, 3) ?? [],
+      detalhes: (state.eventos?.slice(0, 3) ?? []).map((e: any) =>
+      typeof e === 'string' ? e : e?.texto ?? String(e)
+    ),
     },
     {
       id: 'simulate_tournaments',
-      titulo: 'Circuito',
-      resumo: 'Consolidando o que aconteceu nos torneios do mundo.',
+      titulo: 'Circuito Mundial',
+      resumo: 'Resultados consolidados nos torneios do mundo.',
       tom: 'neutral',
-      detalhes: state.campeoes.slice(0, 3).map((campeao) => `${campeao.tour}: ${campeao.torneio}`),
+      detalhes: state.campeoes.slice(0, 3).map((c) => `${c.torneio}: ${c.simples}`),
     },
     {
       id: 'init_next_week',
-      titulo: 'Nova agenda',
-      resumo: 'Montando seus próximos compromissos de calendário.',
+      titulo: 'Nova Semana',
+      resumo: 'Agenda e compromissos prontos.',
       tom: 'positive',
-      detalhes: state.torneiosDisponiveis?.slice(0, 3).map((torneio) => `${torneio.nome} • ${torneio.horario_local ?? '13:00'}`) ?? [],
+      detalhes: state.torneiosDisponiveis?.slice(0, 3).map((t) => t.nome) ?? [],
     },
   ]
 }
 
 export function WeekAdvanceScreen() {
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate    = useNavigate()
+  const location    = useLocation()
   const { setSemana, setTorneio, setPartidaId, fetchJogador } = useGameStore()
-  const state = location.state as WeekAdvanceLocationState | null
+  const state       = location.state as WeekAdvanceLocationState | null
 
-  const [currentStep, setCurrentStep] = useState(-1)
-  const [allowContinue, setAllowContinue] = useState(false)
+  const [phase,             setPhase]             = useState(0)
+  const [revealedSteps,     setRevealedSteps]     = useState(-1)
+  const [revealedChampions, setRevealedChampions] = useState(-1)
+  const [weekFlipped,       setWeekFlipped]       = useState(false)
+  const [allowContinue,     setAllowContinue]     = useState(false)
 
-  const campeoes = useMemo(() => state?.campeoes ?? [], [state])
-  const etapas = useMemo(
-    () => (state?.processamento && state.processamento.length > 0 ? state.processamento : defaultSteps(state)),
-    [state]
-  )
+  const campeoes           = useMemo(() => state?.campeoes ?? [], [state])
+  const etapas             = useMemo(() => {
+    if (!state) return []
+    const raw = state.processamento?.length ? state.processamento : defaultSteps(state)
+    return raw.map((etapa: any) => ({
+      ...etapa,
+      resumo: typeof etapa.resumo === 'string' ? etapa.resumo : etapa.resumo?.texto ?? String(etapa.resumo ?? ''),
+      detalhes: (etapa.detalhes ?? []).map((d: any) => typeof d === 'string' ? d : d?.texto ?? String(d)),
+    }))
+  }, [state])
   const torneiosDisponiveis = useMemo(() => state?.torneiosDisponiveis ?? [], [state])
-  const calendarStepIndex = useMemo(() => {
-    const found = etapas.findIndex((etapa) => etapa.id === 'advance_calendar')
-    return found >= 0 ? found : 0
+  const calendarStepIndex   = useMemo(() => {
+    const idx = etapas.findIndex((e) => e.id === 'advance_calendar')
+    return idx >= 0 ? idx : 0
   }, [etapas])
-  const showIncrement = currentStep >= calendarStepIndex
 
   useEffect(() => {
-    if (!state) {
-      navigate('/hub', { replace: true })
-      return
-    }
+    if (!state) { navigate('/hub', { replace: true }); return }
 
     setTorneio(null)
     setPartidaId(null)
 
     const timers: number[] = []
-    etapas.forEach((_, index) => {
-      timers.push(
-        window.setTimeout(() => {
-          setCurrentStep(index)
-          if (index === calendarStepIndex) {
-            setSemana(state.toSemana, state.toAno)
-          }
-        }, 700 + index * 800)
-      )
+    const push = (fn: () => void, ms: number) => timers.push(window.setTimeout(fn, ms))
+
+    push(() => setWeekFlipped(true), 480)
+    push(() => setPhase(1), 680)
+
+    etapas.forEach((_, i) => {
+      push(() => {
+        setRevealedSteps(i)
+        if (i === calendarStepIndex) setSemana(state.toSemana, state.toAno)
+      }, 780 + i * 360)
     })
 
-    timers.push(
-      window.setTimeout(() => {
-        setAllowContinue(true)
-        fetchJogador().catch(() => {})
-      }, 1200 + etapas.length * 800)
+    const afterSteps = 780 + etapas.length * 360
+
+    push(() => setPhase(2), afterSteps + 140)
+    campeoes.forEach((_, i) =>
+      push(() => setRevealedChampions(i), afterSteps + 280 + i * 240),
     )
 
-    return () => {
-      timers.forEach((timer) => window.clearTimeout(timer))
-    }
-  }, [calendarStepIndex, etapas, fetchJogador, navigate, setPartidaId, setSemana, setTorneio, state])
+    const afterChamps = afterSteps + 280 + Math.max(campeoes.length, 1) * 240
+
+    push(() => setPhase(3), afterChamps + 140)
+    push(() => {
+      setPhase(4)
+      setAllowContinue(true)
+      fetchJogador().catch(() => {})
+    }, afterChamps + 420)
+
+    return () => timers.forEach(clearTimeout)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!state) return null
 
+  const { titulo, sub } = contextLabel(state.motivo)
+
   return (
     <div
-      className="min-h-screen px-4 py-6 text-white"
-      style={{
-        background:
-          'radial-gradient(circle at top, rgba(0,255,136,0.18), transparent 28%), linear-gradient(180deg, #061312 0%, #030909 100%)',
-      }}
+      className="min-h-screen text-white"
+      style={{ background: 'linear-gradient(160deg, #050f0a 0%, #030a07 55%, #020608 100%)' }}
     >
-      <div className="mx-auto flex min-h-[calc(100vh-3rem)] max-w-5xl flex-col justify-center gap-6">
-        <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} className="text-center">
-          <div
-            className="mb-2 text-[11px]"
-            style={{ fontFamily: 'var(--font-pixel)', color: 'var(--neon-green)', textShadow: '0 0 10px rgba(0,255,136,0.55)' }}
+      <motion.div
+        className="fixed inset-0 pointer-events-none"
+        animate={{ opacity: weekFlipped ? 1 : 0 }}
+        transition={{ duration: 1.4 }}
+        style={{
+          background:
+            'radial-gradient(ellipse at 50% 18%, rgba(0,255,136,0.07) 0%, transparent 52%)',
+        }}
+      />
+
+      <div className="relative z-10 max-w-sm mx-auto px-5 pt-12 pb-28">
+
+        <div className="text-center mb-14">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+            className="text-[8px] tracking-[0.42em] text-white/18 mb-8"
+            style={{ fontFamily: 'var(--font-arcade)' }}
           >
-            {titleFromReason(state.motivo)}
-          </div>
-          <div className="text-[20px] sm:text-[26px]" style={{ fontFamily: 'var(--font-arcade)' }}>
-            {subtitleFromReason(state.motivo)}
-          </div>
-        </motion.div>
+            {titulo}
+          </motion.div>
 
-        <div className="grid gap-5 xl:grid-cols-[1.1fr_1fr]">
-          <NeonCard variant="green" hover={false} className="overflow-hidden">
-            <div className="mb-4 flex items-center gap-3">
-              <CalendarDays size={18} className="text-neon-green" />
-              <div>
-                <div className="pixel-font text-sm text-neon-green">PROGRESSÃO DA SEMANA</div>
-                <div className="arcade-font text-xs text-[#9ae6c3]">Processamento visível do calendário</div>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center gap-4 rounded border border-[#00ff8844] bg-[#031311] px-4 py-6">
-              <motion.div
-                animate={!showIncrement ? { scale: [1, 1.06, 1], opacity: [0.85, 1, 0.85] } : { scale: 0.94, opacity: 0.45 }}
-                transition={{ duration: 0.9, repeat: !showIncrement ? Infinity : 0 }}
-                className="text-center"
+          <div className="flex items-center justify-center gap-6">
+            <motion.div
+              animate={weekFlipped ? { opacity: 0.18, scale: 0.8 } : { opacity: 1, scale: 1 }}
+              transition={{ duration: 0.48, delay: 0.42 }}
+              className="text-center"
+            >
+              <div
+                className="text-[7px] text-white/20 mb-1"
+                style={{ fontFamily: 'var(--font-arcade)' }}
               >
-                <div className="pixel-font text-[10px] text-[#88bca3]">SEMANA</div>
-                <div className="pixel-font text-3xl text-neon-yellow">{state.fromSemana}</div>
-                <div className="arcade-font text-xs text-[#789186]">{state.fromAno}</div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0.2, x: -8 }}
-                animate={showIncrement ? { opacity: 1, x: 0 } : { opacity: 0.2, x: -8 }}
-                className="text-neon-cyan"
+                SEMANA
+              </div>
+              <div
+                className="text-[58px] leading-none text-neon-yellow"
+                style={{
+                  fontFamily: 'var(--font-pixel)',
+                  textShadow: '0 0 22px rgba(255,230,0,0.35)',
+                }}
               >
-                <ChevronRight size={34} />
-              </motion.div>
-
-              <div className="text-center">
-                <div className="pixel-font text-[10px] text-[#88bca3]">PRÓXIMA</div>
-                <div
-                  className="pixel-font text-3xl"
-                  style={{
-                    color: showIncrement ? 'var(--neon-green)' : '#34544c',
-                    textShadow: showIncrement ? '0 0 12px rgba(0,255,136,0.45)' : 'none',
-                  }}
-                >
-                  {state.toSemana}
-                </div>
-                <div className="arcade-font text-xs text-[#789186]">{state.toAno}</div>
+                {state.fromSemana}
               </div>
-            </div>
+            </motion.div>
 
-            <div className="mt-4 space-y-2">
-              {etapas.map((etapa, index) => {
-                const ativo = index === currentStep
-                const concluido = index < currentStep || (allowContinue && index <= currentStep)
-                const color = toneColor(etapa.tom)
-                return (
-                  <div
-                    key={etapa.id}
-                    className="border px-3 py-3"
-                    style={{
-                      borderColor: ativo || concluido ? `${color}88` : '#28402f',
-                      background: ativo ? '#071d18' : '#091311',
-                      boxShadow: ativo ? `0 0 18px ${color}22` : 'none',
-                    }}
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <div className="pixel-font text-[10px]" style={{ color }}>{etapa.titulo.toUpperCase()}</div>
-                        <div className="arcade-font text-[10px] text-[#c7d4d0] mt-1">{etapa.resumo}</div>
-                      </div>
-                      <div className="pixel-font text-[9px]" style={{ color }}>
-                        {concluido ? 'OK' : ativo ? '...' : 'PEND'}
-                      </div>
-                    </div>
-                    {etapa.detalhes.length > 0 && (ativo || concluido) ? (
-                      <div className="mt-2 space-y-1">
-                        {etapa.detalhes.slice(0, 3).map((detalhe) => (
-                          <div key={detalhe} className="arcade-font text-[10px] text-[#9db2ab]">
-                            {detalhe}
-                          </div>
-                        ))}
-                      </div>
-                    ) : null}
-                  </div>
-                )
-              })}
-            </div>
-          </NeonCard>
+            <motion.div
+              animate={{ opacity: weekFlipped ? 1 : 0, x: weekFlipped ? 0 : -12 }}
+              transition={{ duration: 0.32, delay: 0.52 }}
+              className="text-neon-cyan/60"
+            >
+              <ChevronRight size={28} />
+            </motion.div>
 
-          <div className="space-y-5">
-            <NeonCard variant="yellow" hover={false}>
-              <div className="mb-4 flex items-center gap-3">
-                <Clock3 size={18} className="text-neon-yellow" />
-                <div>
-                  <div className="pixel-font text-sm text-neon-yellow">AGENDA DA NOVA SEMANA</div>
-                  <div className="arcade-font text-xs text-[#f8eb9a]">Horários e quadras do circuito</div>
-                </div>
+            <motion.div
+              animate={weekFlipped ? { opacity: 1, scale: 1 } : { opacity: 0.14, scale: 0.8 }}
+              transition={{ duration: 0.48, delay: 0.42 }}
+              className="text-center"
+            >
+              <div
+                className="text-[7px] text-neon-green/35 mb-1"
+                style={{ fontFamily: 'var(--font-arcade)' }}
+              >
+                PRÓXIMA
               </div>
-
-              <div className="space-y-3">
-                {torneiosDisponiveis.length > 0 ? (
-                  torneiosDisponiveis.slice(0, 4).map((torneio) => (
-                    <div
-                      key={`${torneio.nome}-${torneio.semana}`}
-                      className="border p-3"
-                      style={{ borderColor: '#00e5ff44', background: '#071015' }}
-                    >
-                      <div className="mb-2 flex items-start justify-between gap-3">
-                        <div>
-                          <div className="arcade-font text-sm text-white">{torneio.nome}</div>
-                          <div className="arcade-font text-[10px] text-[#8fc0cf] mt-1">
-                            {torneio.janela_semana ?? 'SEG-DOM'} • {torneio.tipo}
-                          </div>
-                        </div>
-                        {torneio.codigo_pais ? <PixelFlag countryCode={torneio.codigo_pais} size="lg" /> : null}
-                      </div>
-                      <div className="grid gap-2 sm:grid-cols-2">
-                        <div className="border border-[#1f3d49] bg-black/20 px-2 py-2">
-                          <div className="pixel-font text-[8px] text-neon-cyan">HORÁRIO LOCAL</div>
-                          <div className="arcade-font text-[10px] text-white mt-1">
-                            {torneio.horario_local ?? '13:00'} • {torneio.sessao_label ?? 'Sessão principal'}
-                          </div>
-                        </div>
-                        <div className="border border-[#3f3520] bg-black/20 px-2 py-2">
-                          <div className="pixel-font text-[8px] text-neon-yellow">QUADRA PRINCIPAL</div>
-                          <div className="arcade-font text-[10px] text-white mt-1">
-                            {torneio.quadra_nome ?? 'Quadra Central'}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-2 flex items-center gap-2 arcade-font text-[10px] text-[#c7d4d0]">
-                        <MapPinned size={12} className="text-[#ff9a5f]" />
-                        <span>{torneio.local} • {torneio.superficie}</span>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <div className="border border-dashed border-[#ffe60044] px-3 py-6 text-center">
-                    <div className="arcade-font text-xs text-[#d7d7b0]">Sem agenda nova consolidada nesta virada.</div>
-                  </div>
-                )}
+              <div
+                className="text-[58px] leading-none"
+                style={{
+                  fontFamily: 'var(--font-pixel)',
+                  color: weekFlipped ? 'var(--neon-green)' : '#0f2018',
+                  textShadow: weekFlipped ? '0 0 30px rgba(0,255,136,0.58)' : 'none',
+                  transition: 'color 0.44s ease, text-shadow 0.44s ease',
+                }}
+              >
+                {state.toSemana}
               </div>
-            </NeonCard>
-
-            <NeonCard variant="yellow" hover={false}>
-              <div className="mb-4 flex items-center gap-3">
-                <Trophy size={18} className="text-neon-yellow" />
-                <div>
-                  <div className="pixel-font text-sm text-neon-yellow">CAMPEÕES</div>
-                  <div className="arcade-font text-xs text-[#f8eb9a]">Quem venceu no circuito</div>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                {campeoes.length > 0 ? campeoes.map((campeao, index) => (
-                  <motion.div
-                    key={`${campeao.torneio}-${campeao.tour}`}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * index }}
-                    className="border p-3"
-                    style={{ borderColor: `${badgeColor(campeao.tour)}66`, background: '#0a0f0e' }}
-                  >
-                    <div className="mb-1 flex items-center justify-between gap-3">
-                      <div className="arcade-font text-sm text-white">{campeao.torneio}</div>
-                      <div className="pixel-font text-[9px]" style={{ color: badgeColor(campeao.tour) }}>
-                        {campeao.tour.toUpperCase()}
-                      </div>
-                    </div>
-                    <div className="arcade-font text-xs text-[#c7d4d0]">Simples: {campeao.simples}</div>
-                    {campeao.duplas ? <div className="arcade-font mt-1 text-xs text-[#8db8ff]">Duplas: {campeao.duplas}</div> : null}
-                  </motion.div>
-                )) : (
-                  <div className="border border-dashed border-[#ffe60044] px-3 py-6 text-center">
-                    <div className="arcade-font text-xs text-[#d7d7b0]">Sem campeões consolidados nesta virada.</div>
-                  </div>
-                )}
-              </div>
-            </NeonCard>
+            </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.22 }}
+            className="text-[7px] tracking-widest text-white/12 mt-7"
+            style={{ fontFamily: 'var(--font-arcade)' }}
+          >
+            {sub} · {state.toAno}
+          </motion.div>
         </div>
 
+        <AnimatePresence>
+          {phase >= 1 && (
+            <motion.div
+              key="steps"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="space-y-1 mb-12"
+            >
+              {etapas.map((etapa, i) => {
+                const active  = i === revealedSteps
+                const done    = i < revealedSteps || (allowContinue && i <= revealedSteps)
+                const visible = active || done
+                const color   = stepAccent(etapa.tom)
+
+                return (
+                  <motion.div
+                    key={etapa.id}
+                    initial={{ opacity: 0, x: -22 }}
+                    animate={i <= revealedSteps ? { opacity: 1, x: 0 } : { opacity: 0, x: -22 }}
+                    transition={{ duration: 0.28, ease: 'easeOut' }}
+                    className="flex items-start gap-3 py-2.5 pl-4 border-l-2"
+                    style={{ borderColor: visible ? color : '#162518' }}
+                  >
+                    <span
+                      className="shrink-0 text-[10px] pt-0.5 w-3"
+                      style={{ fontFamily: 'var(--font-arcade)', color }}
+                    >
+                      {done ? '✓' : active ? '·' : ''}
+                    </span>
+
+                    <div>
+                      <div
+                        className="text-[8px] tracking-wider mb-0.5"
+                        style={{
+                          fontFamily: 'var(--font-arcade)',
+                          color: visible ? color : '#1e3328',
+                        }}
+                      >
+                        {etapa.titulo.toUpperCase()}
+                      </div>
+
+                      {visible && (
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.1 }}
+                        >
+                          <div
+                            className="text-[10px] text-white/45"
+                            style={{ fontFamily: 'var(--font-pixel)' }}
+                          >
+                            {etapa.resumo}
+                          </div>
+                          {etapa.detalhes.length > 0 && (
+                            <div className="mt-1 space-y-0.5">
+                              {etapa.detalhes.slice(0, 2).map((d: any, i: number) => {
+                                const texto = typeof d === 'string' ? d : d?.texto ?? String(d)
+                                return (
+                                  <div
+                                    key={i}
+                                    className="text-[8px] text-white/22"
+                                    style={{ fontFamily: 'var(--font-arcade)' }}
+                                  >
+                                    › {texto}
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          )}
+                        </motion.div>
+                      )}
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {phase >= 2 && campeoes.length > 0 && (
+            <motion.section
+              key="champions"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mb-12"
+            >
+              <div className="flex items-center gap-2 mb-5">
+                <Trophy size={11} className="text-neon-yellow/55" />
+                <span
+                  className="text-[8px] tracking-[0.3em] text-neon-yellow/40"
+                  style={{ fontFamily: 'var(--font-arcade)' }}
+                >
+                  CAMPEÕES DA SEMANA
+                </span>
+                <div
+                  className="flex-1 h-px"
+                  style={{
+                    background:
+                      'linear-gradient(90deg, rgba(255,230,0,0.14), transparent)',
+                  }}
+                />
+              </div>
+
+              <div className="space-y-2">
+                {campeoes.map((c, i) => {
+                  const accent = tourAccent(c.tour)
+                  return (
+                    <motion.div
+                      key={`${c.torneio}-${c.tour}`}
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={
+                        i <= revealedChampions
+                          ? { opacity: 1, x: 0 }
+                          : { opacity: 0, x: 30 }
+                      }
+                      transition={{ duration: 0.32, ease: 'easeOut' }}
+                      style={{
+                        borderLeft: `2px solid ${accent}`,
+                        background: `${accent}09`,
+                        paddingLeft: 14,
+                        paddingRight: 12,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                      }}
+                    >
+                      <div
+                        className="text-[7px] text-white/22 mb-1"
+                        style={{ fontFamily: 'var(--font-arcade)' }}
+                      >
+                        {c.torneio.toUpperCase()} · {c.tour.toUpperCase()}
+                      </div>
+                      <div
+                        className="text-[15px] text-white leading-tight"
+                        style={{ fontFamily: 'var(--font-pixel)' }}
+                      >
+                        {c.simples}
+                      </div>
+                      {c.duplas && (
+                        <div
+                          className="text-[9px] text-white/28 mt-0.5"
+                          style={{ fontFamily: 'var(--font-arcade)' }}
+                        >
+                          Duplas · {c.duplas}
+                        </div>
+                      )}
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </motion.section>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {phase >= 3 && state.rival_info && (
+            <motion.div
+              key="rival"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.36 }}
+              className="mb-8 px-4 py-3"
+              style={{
+                background: 'rgba(255,46,99,0.07)',
+                border: '1px solid rgba(255,46,99,0.3)',
+              }}
+            >
+              <div
+                className="text-[7px] tracking-[0.3em] mb-2"
+                style={{ fontFamily: 'var(--font-arcade)', color: '#ff2e63' }}
+              >
+                ⚔ RIVAL NA SEMANA
+              </div>
+              <div
+                className="text-[14px] text-white/90"
+                style={{ fontFamily: 'var(--font-pixel)' }}
+              >
+                {state.rival_info.nome}
+              </div>
+              <div
+                className="text-[8px] text-white/35 mt-1"
+                style={{ fontFamily: 'var(--font-arcade)' }}
+              >
+                {state.rival_info.ranking > 0 && `RK #${state.rival_info.ranking} · `}
+                H2H {state.rival_info.h2h.v}V {state.rival_info.h2h.d}D
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {phase >= 3 && torneiosDisponiveis.length > 0 && (
+            <motion.section
+              key="upcoming"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.38 }}
+              className="mb-12"
+            >
+              <div className="flex items-center gap-2 mb-5">
+                <CalendarDays size={11} className="text-neon-cyan/55" />
+                <span
+                  className="text-[8px] tracking-[0.3em] text-neon-cyan/40"
+                  style={{ fontFamily: 'var(--font-arcade)' }}
+                >
+                  PRÓXIMA SEMANA
+                </span>
+                <div
+                  className="flex-1 h-px"
+                  style={{
+                    background:
+                      'linear-gradient(90deg, rgba(0,229,255,0.12), transparent)',
+                  }}
+                />
+              </div>
+
+              <div className="space-y-1">
+                {torneiosDisponiveis.slice(0, 4).map((torneio) => (
+                  <div
+                    key={torneio.nome}
+                    className="flex items-center gap-3 px-3 py-2.5"
+                    style={{
+                      background: 'rgba(0,229,255,0.04)',
+                      borderBottom: '1px solid rgba(0,229,255,0.07)',
+                    }}
+                  >
+                    {torneio.codigo_pais ? (
+                      <PixelFlag countryCode={torneio.codigo_pais} size="sm" />
+                    ) : null}
+                    <div className="flex-1 min-w-0">
+                      <div
+                        className="text-[11px] text-white/75 truncate"
+                        style={{ fontFamily: 'var(--font-pixel)' }}
+                      >
+                        {torneio.nome}
+                      </div>
+                      <div
+                        className="text-[8px] text-white/22 mt-0.5"
+                        style={{ fontFamily: 'var(--font-arcade)' }}
+                      >
+                        {torneio.tipo} · {torneio.superficie}
+                      </div>
+                    </div>
+                    {torneio.horario_local && (
+                      <div
+                        className="text-[9px] text-neon-cyan/35 shrink-0"
+                        style={{ fontFamily: 'var(--font-arcade)' }}
+                      >
+                        {torneio.horario_local}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+        </AnimatePresence>
+
         <div className="flex justify-center">
-          <NeonButton
-            variant="cyan"
-            onClick={() => navigate('/hub', { replace: true })}
-            disabled={!allowContinue}
-          >
-            {allowContinue ? 'CONTINUAR PARA O HUB' : 'PROCESSANDO A SEMANA...'}
-          </NeonButton>
+          {allowContinue ? (
+            <motion.button
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.42 }}
+              onClick={() => navigate('/hub', { replace: true })}
+              className="relative border-2 border-neon-cyan px-14 py-4 text-[11px] text-neon-cyan"
+              style={{
+                fontFamily: 'var(--font-arcade)',
+                background: 'rgba(0,229,255,0.05)',
+              }}
+            >
+              <motion.span
+                className="absolute inset-0 border-2 border-neon-cyan pointer-events-none"
+                animate={{ opacity: [0.45, 0, 0.45] }}
+                transition={{ duration: 1.7, repeat: Infinity }}
+              />
+              CONTINUAR
+            </motion.button>
+          ) : (
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1.1, repeat: Infinity, ease: 'linear' }}
+              className="w-5 h-5 border border-neon-green/18 border-t-neon-green rounded-full"
+            />
+          )}
         </div>
       </div>
     </div>

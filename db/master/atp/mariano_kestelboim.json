@@ -2,24 +2,33 @@
   "nome": "Mariano Kestelboim",
   "nacionalidade": "[AR]",
   "idade": 30,
-  "overall": 76,
+  "overall": 56,
   "pontos": 114,
   "atributos": {
-    "saque": 58,
+    "vel_saque": 58,
+    "pre_saque": 55,
+    "segundo_saque": 53,
+    "retorno": 54,
     "forehand": 48,
     "backhand": 54,
-    "topspin": 51,
     "voleio": 66,
-    "slice": 46,
-    "movimento": 61,
+    "smash": 62,
     "lob": 54,
+    "topspin": 51,
+    "slice": 46,
     "winner": 64,
-    "fisico": 60,
+    "velocidade": 60,
+    "aceleracao": 57,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 58,
     "duplas": 60
   },
   "id": 448,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 60,
+    "compostura": 38,
     "agressividade": 45,
     "leitura_de_jogo": 55,
     "determinacao": 36
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -1,17 +1,50 @@
 import { NeonCard } from '../../components'
 
-const ATRIB_TECNICOS: [string, string][] = [
-  ['saque', 'SAQUE'], ['forehand', 'FOREHAND'], ['backhand', 'BACKHAND'],
-  ['voleio', 'VOLEIO'], ['topspin', 'TOPSPIN'], ['slice', 'SLICE'],
-  ['lob', 'LOB'], ['winner', 'WINNER'],
+const ATRIB_SAQUE: [string, string][] = [
+  ['vel_saque', 'VEL. SAQUE'],
+  ['pre_saque', 'PREP. SAQUE'],
+  ['segundo_saque', '2º SAQUE'],
+  ['retorno', 'RETORNO'],
+]
+const ATRIB_GOLPES: [string, string][] = [
+  ['forehand', 'FOREHAND'],
+  ['backhand', 'BACKHAND'],
+  ['voleio', 'VOLEIO'],
+  ['smash', 'SMASH'],
+  ['topspin', 'TOPSPIN'],
+  ['slice', 'SLICE'],
+  ['lob', 'LOB'],
+  ['winner', 'WINNER'],
 ]
 const ATRIB_FISICOS: [string, string][] = [
-  ['movimento', 'MOVIMENTO'], ['fisico', 'FÍSICO'],
+  ['velocidade', 'VELOCIDADE'],
+  ['aceleracao', 'ACELERAÇÃO'],
+  ['resistencia', 'RESISTÊNCIA'],
+  ['forca', 'FORÇA'],
+  ['agilidade', 'AGILIDADE'],
 ]
 const ATRIB_MENTAIS: [string, string][] = [
-  ['concentracao', 'CONCENTRAÇÃO'], ['agressividade', 'AGRESSIVIDADE'],
-  ['leitura_de_jogo', 'LEIT. JOGO'], ['determinacao', 'DETERMINAÇÃO'],
+  ['determinacao', 'DETERMINAÇÃO'],
+  ['compostura', 'COMPOSTURA'],
+  ['agressividade', 'AGRESSIVIDADE'],
+  ['leitura_de_jogo', 'LEITURA'],
+  ['clutch', 'CLUTCH'],
+  ['consistencia', 'CONSISTÊNCIA'],
 ]
+
+function AtribCard({
+  label, value, borderColor, textColor, bgColor,
+}: {
+  label: string; value: number; borderColor: string; textColor: string; bgColor: string
+}) {
+  const color = value >= 80 ? 'var(--neon-yellow)' : value >= 70 ? textColor : '#7a8fa0'
+  return (
+    <div className="border px-3 py-3" style={{ borderColor, background: bgColor }}>
+      <div className="arcade-font text-ui-tag tracking-widest" style={{ color: textColor }}>{label}</div>
+      <div className="pixel-font text-2xl mt-2" style={{ color }}>{value}</div>
+    </div>
+  )
+}
 
 interface Props {
   atributos: Record<string, number>
@@ -21,44 +54,52 @@ interface Props {
 export function AtributosTab({ atributos, atributosMentais }: Props) {
   return (
     <div className="space-y-3">
-      <NeonCard variant="cyan" hover={false}>
-        <div className="arcade-font text-[9px] text-neon-cyan tracking-widest mb-3">TÉCNICOS</div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {ATRIB_TECNICOS.map(([key, label]) =>
-            atributos[key] !== undefined ? (
-              <div key={key} className="border border-[#163041] bg-[#0b1821] px-4 py-3">
-                <div className="arcade-font text-[9px] text-[#8eb5c8] tracking-widest">{label}</div>
-                <div className="pixel-font text-2xl text-neon-cyan mt-2">{atributos[key]}</div>
-              </div>
-            ) : null
-          )}
-        </div>
-      </NeonCard>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <NeonCard variant="cyan" hover={false}>
+          <div className="arcade-font text-ui-tag text-neon-cyan tracking-widest mb-3">SAQUE</div>
+          <div className="grid grid-cols-2 gap-3">
+            {ATRIB_SAQUE.map(([key, label]) =>
+              atributos[key] !== undefined ? (
+                <AtribCard key={key} label={label} value={atributos[key]}
+                  borderColor="#163041" textColor="#8eb5c8" bgColor="#0b1821" />
+              ) : null
+            )}
+          </div>
+        </NeonCard>
+
+        <NeonCard variant="cyan" hover={false}>
+          <div className="arcade-font text-ui-tag text-neon-cyan tracking-widest mb-3">GOLPES</div>
+          <div className="grid grid-cols-2 gap-3">
+            {ATRIB_GOLPES.map(([key, label]) =>
+              atributos[key] !== undefined ? (
+                <AtribCard key={key} label={label} value={atributos[key]}
+                  borderColor="#163041" textColor="#8eb5c8" bgColor="#0b1821" />
+              ) : null
+            )}
+          </div>
+        </NeonCard>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         <NeonCard variant="green" hover={false}>
-          <div className="arcade-font text-[9px] text-neon-green tracking-widest mb-3">FÍSICOS</div>
+          <div className="arcade-font text-ui-tag text-neon-green tracking-widest mb-3">FÍSICOS</div>
           <div className="grid grid-cols-2 gap-3">
             {ATRIB_FISICOS.map(([key, label]) =>
               atributos[key] !== undefined ? (
-                <div key={key} className="border border-[#173520] bg-[#0c160f] px-4 py-3">
-                  <div className="arcade-font text-[9px] text-[#9fd8b2] tracking-widest">{label}</div>
-                  <div className="pixel-font text-2xl text-neon-green mt-2">{atributos[key]}</div>
-                </div>
+                <AtribCard key={key} label={label} value={atributos[key]}
+                  borderColor="#173520" textColor="#9fd8b2" bgColor="#0c160f" />
               ) : null
             )}
           </div>
         </NeonCard>
 
         <NeonCard variant="yellow" hover={false}>
-          <div className="arcade-font text-[9px] text-neon-yellow tracking-widest mb-3">MENTAIS</div>
+          <div className="arcade-font text-ui-tag text-neon-yellow tracking-widest mb-3">MENTAIS</div>
           <div className="grid grid-cols-2 gap-3">
             {ATRIB_MENTAIS.map(([key, label]) =>
               atributosMentais[key] !== undefined ? (
-                <div key={key} className="border border-[#3a3516] bg-[#171407] px-4 py-3">
-                  <div className="arcade-font text-[9px] text-[#d8ca7a] tracking-widest">{label}</div>
-                  <div className="pixel-font text-2xl text-neon-yellow mt-2">{atributosMentais[key]}</div>
-                </div>
+                <AtribCard key={key} label={label} value={atributosMentais[key]}
+                  borderColor="#3a3516" textColor="#d8ca7a" bgColor="#171407" />
               ) : null
             )}
           </div>

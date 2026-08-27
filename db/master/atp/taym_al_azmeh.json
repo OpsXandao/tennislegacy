@@ -2,24 +2,33 @@
   "nome": "Taym Al Azmeh",
   "nacionalidade": "[DE]",
   "idade": 21,
-  "overall": 71,
+  "overall": 50,
   "pontos": 19,
   "atributos": {
-    "saque": 52,
+    "vel_saque": 53,
+    "pre_saque": 50,
+    "segundo_saque": 49,
+    "retorno": 48,
     "forehand": 46,
     "backhand": 54,
-    "topspin": 44,
     "voleio": 49,
-    "slice": 40,
-    "movimento": 46,
+    "smash": 51,
     "lob": 40,
+    "topspin": 44,
+    "slice": 40,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 988,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 75,
+    "compostura": 30,
     "agressividade": 30,
     "leitura_de_jogo": 39,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

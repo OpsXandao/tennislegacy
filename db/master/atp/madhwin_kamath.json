@@ -2,24 +2,33 @@
   "nome": "Madhwin Kamath",
   "nacionalidade": "[IN]",
   "idade": 24,
-  "overall": 69,
+  "overall": 48,
   "pontos": 6,
   "atributos": {
-    "saque": 45,
+    "vel_saque": 47,
+    "pre_saque": 44,
+    "segundo_saque": 48,
+    "retorno": 44,
     "forehand": 40,
     "backhand": 48,
-    "topspin": 47,
     "voleio": 43,
-    "slice": 40,
-    "movimento": 43,
+    "smash": 49,
     "lob": 45,
+    "topspin": 47,
+    "slice": 40,
     "winner": 43,
-    "fisico": 60,
+    "velocidade": 49,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 46,
     "duplas": 60
   },
   "id": 1294,
   "atributos_psicologicos": {
-    "concentracao": 36,
+    "clutch": 36,
+    "consistencia": 64,
+    "compostura": 36,
     "agressividade": 41,
     "leitura_de_jogo": 38,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

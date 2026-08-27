@@ -1,4 +1,5 @@
 export type Fase =
+  | 'hype'
   | 'setup'
   | 'aguardando'
   | 'jogando'

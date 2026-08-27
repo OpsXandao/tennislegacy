@@ -2,24 +2,33 @@
   "nome": "Quinn Vandecasteele",
   "nacionalidade": "[US]",
   "idade": 23,
-  "overall": 75,
+  "overall": 50,
   "pontos": 83,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 44,
+    "segundo_saque": 48,
+    "retorno": 51,
     "forehand": 40,
     "backhand": 57,
-    "topspin": 51,
     "voleio": 44,
-    "slice": 44,
-    "movimento": 46,
+    "smash": 49,
     "lob": 46,
+    "topspin": 51,
+    "slice": 44,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 539,
   "atributos_psicologicos": {
-    "concentracao": 49,
+    "clutch": 49,
+    "consistencia": 72,
+    "compostura": 47,
     "agressividade": 33,
     "leitura_de_jogo": 33,
     "determinacao": 45
@@ -45,5 +54,10 @@
   "peso": 72,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

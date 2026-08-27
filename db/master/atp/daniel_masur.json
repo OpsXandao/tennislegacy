@@ -2,24 +2,33 @@
   "nome": "Daniel Masur",
   "nacionalidade": "[DE]",
   "idade": 31,
-  "overall": 76,
+  "overall": 51,
   "pontos": 110,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 47,
+    "segundo_saque": 52,
+    "retorno": 49,
     "forehand": 51,
     "backhand": 54,
-    "topspin": 54,
     "voleio": 57,
-    "slice": 44,
-    "movimento": 44,
+    "smash": 56,
     "lob": 43,
+    "topspin": 54,
+    "slice": 44,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 461,
   "atributos_psicologicos": {
-    "concentracao": 36,
+    "clutch": 36,
+    "consistencia": 71,
+    "compostura": 40,
     "agressividade": 34,
     "leitura_de_jogo": 44,
     "determinacao": 49
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

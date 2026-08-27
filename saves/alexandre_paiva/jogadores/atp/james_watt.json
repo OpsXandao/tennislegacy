@@ -1,0 +1,81 @@
+{
+  "nome": "James Watt",
+  "nacionalidade": "[NZ]",
+  "pontos": 51,
+  "pontos_duplas": 1032,
+  "pontos_ranking": 51,
+  "pontos_ranking_duplas": 1032,
+  "pontos_ytd": 0,
+  "overall": 54,
+  "energia": 100,
+  "fadiga": 10,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 57,
+    "pre_saque": 56,
+    "segundo_saque": 54,
+    "retorno": 53,
+    "forehand": 58,
+    "backhand": 58,
+    "voleio": 52,
+    "smash": 54,
+    "lob": 44,
+    "topspin": 46,
+    "slice": 55,
+    "winner": 45,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 59,
+    "agilidade": 49,
+    "duplas": 91
+  },
+  "atributos_psicologicos": {
+    "clutch": 32,
+    "consistencia": 58,
+    "compostura": 34,
+    "agressividade": 47,
+    "leitura_de_jogo": 43,
+    "determinacao": 41
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 51,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 25,
+  "id": 696,
+  "pico_carreira": 664,
+  "altura": 206,
+  "peso": 76,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "rank_duplas": 86,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

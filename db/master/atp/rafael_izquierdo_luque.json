@@ -2,24 +2,33 @@
   "nome": "Rafael Izquierdo Luque",
   "nacionalidade": "[ES]",
   "idade": 26,
-  "overall": 72,
+  "overall": 51,
   "pontos": 29,
   "atributos": {
-    "saque": 54,
+    "vel_saque": 54,
+    "pre_saque": 52,
+    "segundo_saque": 52,
+    "retorno": 50,
     "forehand": 43,
     "backhand": 55,
-    "topspin": 49,
     "voleio": 45,
-    "slice": 46,
-    "movimento": 47,
+    "smash": 49,
     "lob": 42,
+    "topspin": 49,
+    "slice": 46,
     "winner": 43,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 883,
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 51,
+    "compostura": 42,
     "agressividade": 54,
     "leitura_de_jogo": 32,
     "determinacao": 37
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

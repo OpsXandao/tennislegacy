@@ -2,24 +2,33 @@
   "nome": "Evan Zhu",
   "nacionalidade": "[US]",
   "idade": 27,
-  "overall": 72,
+  "overall": 49,
   "pontos": 41,
   "atributos": {
-    "saque": 52,
+    "vel_saque": 53,
+    "pre_saque": 50,
+    "segundo_saque": 49,
+    "retorno": 44,
     "forehand": 44,
     "backhand": 41,
-    "topspin": 40,
     "voleio": 49,
-    "slice": 52,
-    "movimento": 46,
+    "smash": 53,
     "lob": 51,
+    "topspin": 40,
+    "slice": 52,
     "winner": 45,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 779,
   "atributos_psicologicos": {
-    "concentracao": 51,
+    "clutch": 51,
+    "consistencia": 58,
+    "compostura": 44,
     "agressividade": 47,
     "leitura_de_jogo": 32,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

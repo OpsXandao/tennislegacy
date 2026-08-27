@@ -2,24 +2,33 @@
   "nome": "Victor Lilov",
   "nacionalidade": "[US]",
   "idade": 22,
-  "overall": 72,
+  "overall": 50,
   "pontos": 36,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 46,
+    "segundo_saque": 53,
+    "retorno": 46,
     "forehand": 44,
     "backhand": 41,
-    "topspin": 43,
     "voleio": 42,
-    "slice": 49,
-    "movimento": 55,
+    "smash": 49,
     "lob": 56,
+    "topspin": 43,
+    "slice": 49,
     "winner": 60,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 818,
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 62,
+    "compostura": 54,
     "agressividade": 43,
     "leitura_de_jogo": 41,
     "determinacao": 50
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

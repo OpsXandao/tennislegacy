@@ -2,24 +2,33 @@
   "nome": "Samuele Pieri",
   "nacionalidade": "[IT]",
   "idade": 23,
-  "overall": 75,
+  "overall": 49,
   "pontos": 85,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 49,
+    "segundo_saque": 50,
+    "retorno": 44,
     "forehand": 47,
     "backhand": 46,
-    "topspin": 41,
     "voleio": 48,
-    "slice": 41,
-    "movimento": 45,
+    "smash": 51,
     "lob": 40,
+    "topspin": 41,
+    "slice": 41,
     "winner": 44,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 532,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 60,
+    "compostura": 36,
     "agressividade": 45,
     "leitura_de_jogo": 50,
     "determinacao": 33
@@ -45,5 +54,10 @@
   "peso": 67,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

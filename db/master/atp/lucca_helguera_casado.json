@@ -2,24 +2,33 @@
   "nome": "Lucca Helguera Casado",
   "nacionalidade": "[ES]",
   "idade": 20,
-  "overall": 71,
+  "overall": 49,
   "pontos": 19,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 47,
+    "segundo_saque": 52,
+    "retorno": 48,
     "forehand": 47,
     "backhand": 56,
-    "topspin": 40,
     "voleio": 48,
-    "slice": 41,
-    "movimento": 40,
+    "smash": 52,
     "lob": 52,
+    "topspin": 40,
+    "slice": 41,
     "winner": 44,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 998,
   "atributos_psicologicos": {
-    "concentracao": 46,
+    "clutch": 46,
+    "consistencia": 64,
+    "compostura": 46,
     "agressividade": 41,
     "leitura_de_jogo": 37,
     "determinacao": 47
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

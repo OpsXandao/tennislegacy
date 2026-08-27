@@ -2,24 +2,33 @@
   "nome": "Thanapet Chanta",
   "nacionalidade": "[TH]",
   "idade": 26,
-  "overall": 72,
+  "overall": 53,
   "pontos": 36,
   "atributos": {
-    "saque": 45,
+    "vel_saque": 47,
+    "pre_saque": 48,
+    "segundo_saque": 53,
+    "retorno": 53,
     "forehand": 45,
     "backhand": 56,
-    "topspin": 52,
     "voleio": 58,
-    "slice": 51,
-    "movimento": 52,
+    "smash": 58,
     "lob": 52,
+    "topspin": 52,
+    "slice": 51,
     "winner": 41,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 53,
     "duplas": 60
   },
   "id": 819,
   "atributos_psicologicos": {
-    "concentracao": 48,
+    "clutch": 48,
+    "consistencia": 55,
+    "compostura": 49,
     "agressividade": 50,
     "leitura_de_jogo": 53,
     "determinacao": 53
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Tristan McCormick",
   "nacionalidade": "[US]",
   "idade": 26,
-  "overall": 75,
+  "overall": 49,
   "pontos": 83,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 44,
+    "retorno": 46,
     "forehand": 46,
     "backhand": 45,
-    "topspin": 52,
     "voleio": 47,
-    "slice": 52,
-    "movimento": 45,
+    "smash": 52,
     "lob": 52,
+    "topspin": 52,
+    "slice": 52,
     "winner": 49,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 540,
   "atributos_psicologicos": {
-    "concentracao": 31,
+    "clutch": 31,
+    "consistencia": 56,
+    "compostura": 31,
     "agressividade": 49,
     "leitura_de_jogo": 44,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

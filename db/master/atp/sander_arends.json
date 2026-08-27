@@ -2,24 +2,33 @@
   "nome": "Sander Arends",
   "nacionalidade": "[RU] Rússia",
   "idade": 18,
-  "overall": 88,
+  "overall": 84,
   "pontos": 2035,
   "id": 72256,
   "atributos": {
-    "saque": 84,
+    "vel_saque": 83,
+    "pre_saque": 83,
+    "segundo_saque": 76,
+    "retorno": 84,
     "forehand": 81,
     "backhand": 83,
-    "topspin": 92,
     "voleio": 97,
-    "slice": 85,
-    "movimento": 86,
+    "smash": 90,
     "lob": 86,
-    "fisico": 81,
+    "topspin": 92,
+    "slice": 85,
     "winner": 88,
+    "velocidade": 84,
+    "aceleracao": 77,
+    "resistencia": 81,
+    "forca": 81,
+    "agilidade": 84,
     "duplas": 98
   },
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 44,
+    "compostura": 47,
     "agressividade": 61,
     "leitura_de_jogo": 52,
     "determinacao": 63
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2035,
-  "rank_duplas": 42
+  "rank_duplas": 42,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

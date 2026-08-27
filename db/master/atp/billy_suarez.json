@@ -2,24 +2,33 @@
   "nome": "Billy Suarez",
   "nacionalidade": "[US]",
   "idade": 24,
-  "overall": 70,
+  "overall": 54,
   "pontos": 13,
   "atributos": {
-    "saque": 51,
+    "vel_saque": 52,
+    "pre_saque": 51,
+    "segundo_saque": 56,
+    "retorno": 53,
     "forehand": 49,
     "backhand": 51,
-    "topspin": 56,
     "voleio": 51,
-    "slice": 55,
-    "movimento": 56,
+    "smash": 54,
     "lob": 53,
+    "topspin": 56,
+    "slice": 55,
     "winner": 49,
-    "fisico": 60,
+    "velocidade": 57,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 56,
     "duplas": 60
   },
   "id": 1100,
   "atributos_psicologicos": {
-    "concentracao": 33,
+    "clutch": 33,
+    "consistencia": 65,
+    "compostura": 40,
     "agressividade": 40,
     "leitura_de_jogo": 47,
     "determinacao": 55
@@ -45,5 +54,10 @@
   "peso": 66,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

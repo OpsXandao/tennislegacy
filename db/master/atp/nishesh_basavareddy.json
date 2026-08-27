@@ -2,24 +2,33 @@
   "nome": "Nishesh Basavareddy",
   "nacionalidade": "[US]",
   "idade": 20,
-  "overall": 80,
+  "overall": 47,
   "pontos": 331,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 44,
+    "retorno": 44,
     "forehand": 44,
     "backhand": 47,
-    "topspin": 51,
     "voleio": 41,
-    "slice": 46,
-    "movimento": 40,
+    "smash": 48,
     "lob": 48,
+    "topspin": 51,
+    "slice": 46,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 218,
   "atributos_psicologicos": {
-    "concentracao": 36,
+    "clutch": 36,
+    "consistencia": 71,
+    "compostura": 34,
     "agressividade": 34,
     "leitura_de_jogo": 36,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

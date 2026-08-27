@@ -1,0 +1,48 @@
+{
+  "semanais": [
+    {
+      "id": "jantar_caridade",
+      "texto": "Você participou de um jantar de caridade. (+100 seguidores, -8 energia)",
+      "tipo": "social",
+      "efeitos": {
+        "seguidores": 100,
+        "energia": -8
+      }
+    },
+    {
+      "id": "treino_inspirado",
+      "texto": "Semana de treino excepcionalmente produtiva! (+3 moral)",
+      "tipo": "mental",
+      "efeitos": {
+        "moral": 3
+      }
+    },
+    {
+      "id": "noite_insonia",
+      "texto": "Uma noite de insônia afetou sua recuperação. (-12 energia)",
+      "tipo": "fisico",
+      "efeitos": {
+        "energia": -12
+      }
+    },
+    {
+      "id": "fofoca_midia",
+      "texto": "Boatos sobre sua vida pessoal circulam na mídia. (-5 moral, +250 seguidores)",
+      "tipo": "reputação",
+      "efeitos": {
+        "moral": -5,
+        "seguidores": 250
+      }
+    },
+    {
+      "id": "festa_vip",
+      "texto": "Você foi convidado para uma festa VIP. (+500 seguidores, -20 energia, -8 moral)",
+      "tipo": "social",
+      "efeitos": {
+        "seguidores": 500,
+        "energia": -20,
+        "moral": -8
+      }
+    }
+  ]
+}

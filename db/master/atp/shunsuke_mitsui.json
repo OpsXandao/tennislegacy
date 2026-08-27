@@ -2,24 +2,33 @@
   "nome": "Shunsuke Mitsui",
   "nacionalidade": "[JP]",
   "idade": 23,
-  "overall": 75,
+  "overall": 48,
   "pontos": 78,
   "atributos": {
-    "saque": 44,
+    "vel_saque": 46,
+    "pre_saque": 43,
+    "segundo_saque": 48,
+    "retorno": 42,
     "forehand": 53,
     "backhand": 40,
-    "topspin": 40,
     "voleio": 40,
-    "slice": 48,
-    "movimento": 42,
+    "smash": 47,
     "lob": 43,
+    "topspin": 40,
+    "slice": 48,
     "winner": 50,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 46,
     "duplas": 60
   },
   "id": 553,
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 56,
+    "compostura": 43,
     "agressividade": 49,
     "leitura_de_jogo": 36,
     "determinacao": 39
@@ -45,5 +54,10 @@
   "peso": 66,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

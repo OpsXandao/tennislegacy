@@ -2,24 +2,33 @@
   "nome": "Aldila Sutjiadi",
   "nacionalidade": "[ID] Indonésia",
   "idade": 19,
-  "overall": 88,
+  "overall": 87,
   "pontos": 1619,
   "id": 76563,
   "atributos": {
-    "saque": 95,
+    "vel_saque": 94,
+    "pre_saque": 92,
+    "segundo_saque": 85,
+    "retorno": 85,
     "forehand": 84,
     "backhand": 85,
-    "topspin": 94,
     "voleio": 92,
-    "slice": 91,
-    "movimento": 82,
+    "smash": 90,
     "lob": 80,
-    "fisico": 92,
+    "topspin": 94,
+    "slice": 91,
     "winner": 83,
+    "velocidade": 85,
+    "aceleracao": 79,
+    "resistencia": 92,
+    "forca": 88,
+    "agilidade": 85,
     "duplas": 101
   },
   "atributos_psicologicos": {
-    "concentracao": 73,
+    "clutch": 73,
+    "consistencia": 39,
+    "compostura": 72,
     "agressividade": 66,
     "leitura_de_jogo": 51,
     "determinacao": 71
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1619,
-  "rank_duplas": 48
+  "rank_duplas": 48,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -1,0 +1,33 @@
+{
+  "email_templates": {
+    "patrocinio": {
+      "titulo": "Proposta de Patrocínio: {brand}",
+      "corpo": "{brand} quer te patrocinar. Oferta: ${weekly}/sem + bônus assinatura ${signing:,}."
+    },
+    "empresario": {
+      "titulo": "Proposta de Empresário: {name}",
+      "corpo": "{name} quer representar sua carreira. Oferta inicial: ${salary}/sem por {weeks} semanas."
+    }
+  },
+  "motivos_bloqueio": {
+    "ja_tem": "Você já tem este patrocínio.",
+    "master_categoria": "Patrocinador master deve ser de material esportivo.",
+    "master_conflito": "Você já tem o patrocinador master {brand}. Encerre-o primeiro.",
+    "limite_menores": "Limite de {limit} patrocínios menores atingido.",
+    "ranking_insuficiente": "Ranking insuficiente (requerido: #{rank}).",
+    "seguidores_insuficientes": "Seguidores insuficientes (requerido: {followers:,}).",
+    "desconhecido": "Patrocinador desconhecido."
+  },
+  "transacoes": {
+    "bonus_assinatura": "Bônus Assinatura: {brand}",
+    "pagamento_semanal": "Patrocínio: {brand}",
+    "bonus_empresario": " (+{percent}% bônus)",
+    "comissao_empresario": " (-{percent}% comissão {agent})",
+    "rescisao_empresario": "Rescisão empresário anterior"
+  },
+  "avisos": {
+    "contrato_assinado": "Contrato assinado com {brand}!",
+    "novo_agente": "Novo empresário contratado.",
+    "proposta_recusada": "Proposta recusada."
+  }
+}

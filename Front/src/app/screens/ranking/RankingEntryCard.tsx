@@ -63,13 +63,42 @@ export function RankingEntryCard({
         </div>
         <div className="w-12 text-center">
           <div className="text-[11px] text-[#d9ebf5] arcade-font">{player.idade || '—'}</div>
-          <div className="text-[7px] text-[#66798b]">IDADE</div>
+          <div className="text-ui-tag text-[#66798b]">IDADE</div>
         </div>
+        {(player as any).overall > 0 && (
+          <div className="w-16 flex flex-col gap-1">
+            <div className="flex items-center justify-between">
+              <span className="arcade-font text-ui-tag text-[#5a7488]">OVR</span>
+              <span
+                className="arcade-font text-ui-label font-bold"
+                style={{
+                  color: (player as any).overall >= 85 ? 'var(--neon-yellow)'
+                       : (player as any).overall >= 75 ? 'var(--neon-cyan)'
+                       : (player as any).overall >= 65 ? 'var(--neon-green)'
+                       : '#7a8fa0'
+                }}
+              >
+                {(player as any).overall}
+              </span>
+            </div>
+            <div className="h-1 bg-[#0a1520] rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full"
+                style={{
+                  width: `${Math.min(100, ((player as any).overall / 99) * 100)}%`,
+                  background: (player as any).overall >= 85 ? 'var(--neon-yellow)'
+                            : (player as any).overall >= 75 ? 'var(--neon-cyan)'
+                            : 'var(--neon-green)',
+                }}
+              />
+            </div>
+          </div>
+        )}
         <div className="w-20 text-right">
           <div className={`text-sm font-bold ${isUser ? 'text-neon-green' : 'text-white'}`}>
             {player.pontos.toLocaleString('pt-BR')}
           </div>
-          <div className="text-[7px] text-[#888]">PTS</div>
+          <div className="text-ui-tag text-[#888]">PTS</div>
         </div>
         <div className="flex w-10 justify-center">
           {change > 0 ? (

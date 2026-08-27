@@ -1,0 +1,80 @@
+{
+  "nome": "Frederico Ferreira Silva",
+  "nacionalidade": "[PT]",
+  "pontos": 235,
+  "pontos_duplas": 0,
+  "pontos_ranking": 235,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 55,
+  "energia": 100,
+  "fadiga": 16,
+  "moral": 70,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 53,
+    "pre_saque": 52,
+    "segundo_saque": 55,
+    "retorno": 54,
+    "forehand": 55,
+    "backhand": 59,
+    "voleio": 54,
+    "smash": 56,
+    "lob": 62,
+    "topspin": 61,
+    "slice": 48,
+    "winner": 47,
+    "velocidade": 54,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 52,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 42,
+    "consistencia": 70,
+    "compostura": 44,
+    "agressividade": 35,
+    "leitura_de_jogo": 54,
+    "determinacao": 49
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 235,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 30,
+  "id": 272,
+  "pico_carreira": 240,
+  "altura": 178,
+  "peso": 84,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

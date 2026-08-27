@@ -2,24 +2,33 @@
   "nome": "Renzo Olivo",
   "nacionalidade": "[AR]",
   "idade": 33,
-  "overall": 75,
+  "overall": 59,
   "pontos": 75,
   "atributos": {
-    "saque": 69,
+    "vel_saque": 67,
+    "pre_saque": 65,
+    "segundo_saque": 66,
+    "retorno": 61,
     "forehand": 50,
     "backhand": 66,
-    "topspin": 56,
     "voleio": 57,
-    "slice": 50,
-    "movimento": 61,
+    "smash": 58,
     "lob": 57,
+    "topspin": 56,
+    "slice": 50,
     "winner": 56,
-    "fisico": 60,
+    "velocidade": 60,
+    "aceleracao": 57,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 59,
     "duplas": 60
   },
   "id": 565,
   "atributos_psicologicos": {
-    "concentracao": 50,
+    "clutch": 50,
+    "consistencia": 65,
+    "compostura": 53,
     "agressividade": 40,
     "leitura_de_jogo": 64,
     "determinacao": 62
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

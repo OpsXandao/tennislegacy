@@ -2,24 +2,33 @@
   "nome": "Alexis Gurmendi",
   "nacionalidade": "[AR]",
   "idade": 28,
-  "overall": 69,
+  "overall": 49,
   "pontos": 5,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 45,
+    "retorno": 50,
     "forehand": 40,
     "backhand": 53,
-    "topspin": 40,
     "voleio": 41,
-    "slice": 44,
-    "movimento": 50,
+    "smash": 48,
     "lob": 50,
+    "topspin": 40,
+    "slice": 44,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 1315,
   "atributos_psicologicos": {
-    "concentracao": 33,
+    "clutch": 33,
+    "consistencia": 70,
+    "compostura": 33,
     "agressividade": 35,
     "leitura_de_jogo": 40,
     "determinacao": 35
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Alexei Popyrin",
   "nacionalidade": "[AU]",
   "idade": 26,
-  "overall": 85,
+  "overall": 75,
   "pontos": 1050,
   "atributos": {
-    "saque": 85,
+    "vel_saque": 81,
+    "pre_saque": 83,
+    "segundo_saque": 75,
+    "retorno": 80,
     "forehand": 82,
     "backhand": 83,
-    "topspin": 79,
     "voleio": 80,
-    "slice": 77,
-    "movimento": 79,
+    "smash": 72,
     "lob": 74,
+    "topspin": 79,
+    "slice": 77,
     "winner": 81,
-    "fisico": 60,
+    "velocidade": 71,
+    "aceleracao": 66,
+    "resistencia": 60,
+    "forca": 70,
+    "agilidade": 74,
     "duplas": 60
   },
   "id": 25,
   "atributos_psicologicos": {
-    "concentracao": 68,
+    "clutch": 68,
+    "consistencia": 43,
+    "compostura": 68,
     "agressividade": 62,
     "leitura_de_jogo": 68,
     "determinacao": 68
@@ -61,5 +70,10 @@
   "peso": 88,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

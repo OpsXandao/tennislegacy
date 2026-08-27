@@ -2,24 +2,33 @@
   "nome": "Koki Matsuda",
   "nacionalidade": "[JP]",
   "idade": 25,
-  "overall": 74,
+  "overall": 53,
   "pontos": 63,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 47,
+    "segundo_saque": 49,
+    "retorno": 57,
     "forehand": 43,
     "backhand": 59,
-    "topspin": 54,
     "voleio": 51,
-    "slice": 58,
-    "movimento": 54,
+    "smash": 54,
     "lob": 58,
+    "topspin": 54,
+    "slice": 58,
     "winner": 44,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 628,
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 58,
+    "compostura": 45,
     "agressividade": 47,
     "leitura_de_jogo": 44,
     "determinacao": 48
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

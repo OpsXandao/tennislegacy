@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { motion, AnimatePresence } from 'motion/react'
 import {
-  Settings, Save, LogOut, ChevronRight,
-  Globe, ShoppingBag, Shield, Users, History, CalendarDays, Play, Mic, Crown,
+  Settings, Save, LogOut, ChevronRight, Play, Trophy,
 } from 'lucide-react'
 import { FutCard, BottomNav } from '../components'
+import { InlineMeter } from './match/components'
+import { MATCH_AUTOSAVE_KEY } from './match/constants'
 import { useGameStore } from '../../store/gameStore'
 import { api } from '../../api/client'
 import { useTheme } from '../hooks/useTheme'
-import { HubRadioCard } from './hub/HubRadioCard'
-import { useHubRadio } from './hub/radio/useHubRadio'
-
-const MATCH_AUTOSAVE_KEY = 'tennislegacy.match.autosave'
+import { useHubData } from './hub/hooks/useHubData'
+import { calcularCapituloCarreira, checarMarcoRanking } from './match/matchNarrative'
+import { AutoSavePromptModal, MilestoneOverlay, ActiveTournamentBanner } from './hub/HubOverlays'
 
 function fmt(v: number) {
   if (v >= 1_000_000) return `$${(v / 1_000_000).toFixed(1)}M`
@@ -20,85 +20,27 @@ function fmt(v: number) {
   return `$${v}`
 }
 
-function PixelMeter({ value, color }: { value: number; color: string }) {
-  const blocks = 12
-  const filled = Math.round((Math.min(100, Math.max(0, value)) / 100) * blocks)
-  return (
-    <div className="flex gap-[2px]">
-      {Array.from({ length: blocks }).map((_, i) => (
-        <div
-          key={i}
-          className="flex-1 h-[8px]"
-          style={{
-            background: i < filled ? color : 'var(--muted, #1a1a1a)',
-            boxShadow: i < filled && i === filled - 1 ? `0 0 6px ${color}` : 'none',
-          }}
-        />
-      ))}
-    </div>
-  )
-}
-
-const QUICK = [
-  { icon: CalendarDays, label: 'JOGAR',    route: '/calendar',  color: 'var(--neon-green)',  rgb: 'var(--neon-green-rgb)' },
-  { icon: ShoppingBag,  label: 'MERCADO',  route: '/market',    color: 'var(--neon-pink)',   rgb: 'var(--neon-pink-rgb)' },
-  { icon: Users,        label: 'DUPLAS',   route: '/duplas',    color: 'var(--neon-cyan)',   rgb: 'var(--neon-cyan-rgb)' },
-  { icon: Shield,       label: 'DAVIS',    route: '/davis',     color: 'var(--neon-yellow)', rgb: 'var(--neon-yellow-rgb)' },
-  { icon: History,      label: 'HISTORICO',route: '/history',   color: 'var(--neon-yellow)', rgb: 'var(--neon-yellow-rgb)' },
-  { icon: Globe,        label: 'MUNDO',    route: '/world',     color: 'var(--neon-yellow)', rgb: 'var(--neon-yellow-rgb)' },
-  { icon: Mic,          label: 'IMPRENSA', route: '/imprensa',  color: 'var(--neon-purple)', rgb: 'var(--neon-purple-rgb)' },
-  { icon: Crown,        label: 'LIFESTYLE',route: '/lifestyle', color: '#ffb7c6',            rgb: '255,183,198' },
-]
-
-function QuickBtn({ item, onClick }: { item: typeof QUICK[number]; onClick: () => void }) {
-  const [hovered, setHovered] = useState(false)
-  return (
-    <button
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="flex items-center gap-2 p-3 border-2 active:scale-95 transition-all text-left"
-      style={{
-        borderColor: hovered ? item.color : `rgba(${item.rgb},0.20)`,
-        background: hovered ? `rgba(${item.rgb},0.05)` : 'var(--card)',
-        boxShadow: hovered ? `0 0 10px rgba(${item.rgb},0.27)` : 'none',
-        transition: 'border-color 0.15s, background 0.15s, box-shadow 0.15s',
-      }}
-    >
-      <item.icon size={15} style={{ color: item.color, flexShrink: 0 }} />
-      <span
-        className="text-[9px] truncate"
-        style={{ fontFamily: 'var(--font-pixel)', color: hovered ? item.color : '#444' }}
-      >
-        {item.label}
-      </span>
-    </button>
-  )
-}
-
 export function HubScreen() {
   const navigate  = useNavigate()
-  const { jogador, semana, ano, setJogador, fetchJogador, torneio, reset } = useGameStore()
+  const { jogador, semana, ano, fetchJogador, torneio, reset } = useGameStore()
   const [saving, setSaving]   = useState(false)
   const [saveMsg, setSaveMsg] = useState('')
-  const [mostrarPromptAutoSave, setMostrarPromptAutoSave] = useState(false)
-  const [unreadEmails, setUnreadEmails] = useState(0)
-  const [loadError, setLoadError] = useState(false)
+  const {
+    unreadEmails,
+    loadError,
+    trofeus,
+    careerEvents,
+    lastSaveTime,
+    setLastSaveTime,
+    mostrarPromptAutoSave,
+    setMostrarPromptAutoSave,
+    setLoadError,
+  } = useHubData()
 
   const [hoveringConfig, setHoveringConfig] = useState(false)
   const [hoveringSave, setHoveringSave] = useState(false)
   const [hoveringExit, setHoveringExit] = useState(false)
-  const [hoveringActiveTournament, setHoveringActiveTournament] = useState(false)
   const [hoveringNextStep, setHoveringNextStep] = useState(false)
-  const radio = useHubRadio()
-
-  useEffect(() => {
-    fetchJogador().catch(() => { setLoadError(true) })
-    api.email.unreadCount().then(res => setUnreadEmails(res.unread_count || 0)).catch(() => {})
-    if (typeof window !== 'undefined' && window.localStorage.getItem(MATCH_AUTOSAVE_KEY) === null) {
-      setMostrarPromptAutoSave(true)
-    }
-  }, [])
 
   const { isLight } = useTheme()
   const nome      = jogador?.nome      ?? '...'
@@ -109,24 +51,44 @@ export function HubScreen() {
   const overall   = jogador?.overall   ?? 0
   const tour      = (jogador?.tour     ?? 'atp') as 'atp' | 'wta'
   const isAtp     = tour === 'atp'
-  
-  // Landmarks Visuais (Ranking-based UI levels)
+
   const isTop10   = rank > 0 && rank <= 10
   const isTop100  = rank > 0 && rank <= 100
-  
+
   const accent    = isTop10 ? 'var(--neon-yellow)' : isTop100 ? 'var(--neon-cyan)' : isAtp ? 'var(--neon-green)' : 'var(--neon-pink)'
-  const accentVar = isTop10 ? 'var(--neon-yellow)' : isTop100 ? 'var(--neon-cyan)' : isAtp ? 'var(--neon-green)' : 'var(--neon-pink)'
+  const accentVar = accent
   const glowVar   = isTop10 ? 'var(--glow-gold-sm)' : isTop100 ? 'var(--glow-cyan-sm)' : isAtp ? 'var(--glow-green-sm)' : 'var(--glow-pink-sm)'
   const shadowVar = isTop10 ? '0 2px 12px rgba(255,230,0,0.22)' : isTop100 ? '0 2px 12px rgba(0,229,255,0.22)' : isAtp ? '0 2px 12px rgba(0,255,136,0.12)' : '0 2px 12px rgba(255,0,85,0.12)'
-  
+
   const lesionado = !!jogador?.status_lesao
+
+  const capitulo  = calcularCapituloCarreira(rank || 9999, jogador?.nivel ?? 1)
+
+  const [marco, setMarco] = useState<{ titulo: string; texto: string } | null>(null)
+  const marcoDismissTimerRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    if (!rank) return
+    const found = checarMarcoRanking(rank)
+    if (found) {
+      setMarco(found)
+      if (marcoDismissTimerRef.current) window.clearTimeout(marcoDismissTimerRef.current)
+      marcoDismissTimerRef.current = window.setTimeout(() => setMarco(null), 5000)
+    }
+    return () => { if (marcoDismissTimerRef.current) window.clearTimeout(marcoDismissTimerRef.current) }
+  }, [rank])
 
   async function handleSalvar() {
     setSaving(true)
     setSaveMsg('')
     try {
       const r = await api.saves.salvar()
-      if (r.ok) setSaveMsg('SALVO')
+      if (r.ok) {
+        setSaveMsg('SALVO')
+        const now = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+        setLastSaveTime(now)
+        localStorage.setItem('tennislegacy.lastSave', now)
+      }
     } catch {
       setSaveMsg('ERRO')
     } finally {
@@ -156,33 +118,7 @@ export function HubScreen() {
           </button>
         </div>
       )}
-      {mostrarPromptAutoSave && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/82 p-4 backdrop-blur-sm">
-          <div className="w-full max-w-md border-2 border-neon-green bg-[#06110c] p-5 shadow-[0_0_24px_rgba(0,255,136,0.18)]">
-            <div className="arcade-font text-[10px] tracking-[0.2em] text-neon-green">SALVAMENTO AUTOMÁTICO</div>
-            <div className="pixel-font mt-3 text-lg text-white">Deseja ativar o salvamento automático?</div>
-            <div className="arcade-font mt-3 text-[11px] leading-relaxed text-[#9bc7af]">
-              Essa configuração é definida no hub e usada quando uma nova partida começar.
-            </div>
-            <div className="mt-5 grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() => definirAutoSave(false)}
-                className="min-h-[44px] border-2 border-neon-pink px-4 py-3 arcade-font text-[10px] text-[#ff7d9e]"
-              >
-                NÃO
-              </button>
-              <button
-                type="button"
-                onClick={() => definirAutoSave(true)}
-                className="min-h-[44px] border-2 border-neon-green px-4 py-3 arcade-font text-[10px] text-neon-green"
-              >
-                SIM
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {mostrarPromptAutoSave && <AutoSavePromptModal onConfirm={definirAutoSave} />}
 
       {/* Top bar */}
       <div
@@ -191,19 +127,35 @@ export function HubScreen() {
       >
         <div>
           <div
-            className="text-[10px]"
+            className="text-[10px] flex items-center gap-2"
             style={{ fontFamily: 'var(--font-pixel)', color: accent, textShadow: `0 0 6px ${accent}` }}
           >
             TENNIS LEGACY
+            {jogador?.persona?.ativa && jogador.persona.ativa !== 'Neutro' && (
+              <motion.span
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="bg-white/10 px-1.5 py-0.5 rounded text-[7px] border border-white/20 text-white tracking-widest"
+              >
+                {jogador.persona.ativa.toUpperCase()}
+              </motion.span>
+            )}
           </div>
-          <div className="text-[9px] text-[#555] mt-0.5" style={{ fontFamily: 'var(--font-arcade)' }}>
-            TEMPORADA {ano} | SEMANA {semana}/52
+          <div className="text-[9px] text-[#555] mt-0.5 flex items-center gap-1.5" style={{ fontFamily: 'var(--font-arcade)' }}>
+            <span>TEMPORADA {ano} | SEMANA {semana}/52</span>
+            {jogador?.persona?.titulo && (
+              <>
+                <span className="opacity-30">|</span>
+                <span className="text-neon-cyan">{jogador.persona.titulo.toUpperCase()}</span>
+              </>
+            )}
           </div>
         </div>
         <div className="flex items-center gap-1">
-          <AnimatePresence>
-            {saveMsg && (
+          <AnimatePresence mode="wait">
+            {saveMsg ? (
               <motion.span
+                key="msg"
                 initial={{ opacity: 0, x: 6 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0 }}
@@ -216,7 +168,16 @@ export function HubScreen() {
               >
                 {saveMsg}
               </motion.span>
-            )}
+            ) : lastSaveTime ? (
+              <motion.span
+                key="last"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.5 }}
+                className="text-[7px] mr-2 app-faint arcade-font"
+              >
+                SALVO {lastSaveTime}
+              </motion.span>
+            ) : null}
           </AnimatePresence>
           <button
             onClick={() => navigate('/settings')}
@@ -292,6 +253,49 @@ export function HubScreen() {
         )}
       </div>
 
+      {/* BARRA DE STATUS — sempre visível */}
+      <div className="mx-4 mb-3 flex items-center justify-between gap-2 border border-[#1a2a38] bg-[#0a1018] px-3 py-2">
+        <div className="flex items-center gap-1">
+          <span className="arcade-font text-ui-tag text-[#6e8fa5]">OVR</span>
+          <span className="arcade-font text-ui-value" style={{ color: accentVar }}>{overall || '—'}</span>
+        </div>
+        <div className="h-4 w-px bg-[#1e3040]" />
+        <div className="flex items-center gap-1">
+          <span className="arcade-font text-ui-tag text-[#6e8fa5]">#</span>
+          <span className="arcade-font text-ui-value text-white">{rank > 0 ? rank : '—'}</span>
+        </div>
+        <div className="h-4 w-px bg-[#1e3040]" />
+        <div className="flex items-center gap-1">
+          <span className="arcade-font text-ui-value text-neon-yellow">{fmt(money)}</span>
+        </div>
+        <div className="h-4 w-px bg-[#1e3040]" />
+        <div className="flex items-center gap-2 min-w-[60px]">
+          <span className="arcade-font text-ui-tag text-[#6e8fa5]">⚡</span>
+          <div className="flex-1 h-1.5 bg-[#1a2a38] rounded-full overflow-hidden min-w-[40px]">
+            <div className="h-full rounded-full transition-all" style={{ width: `${energia}%`, background: energia > 60 ? 'var(--neon-green)' : energia > 30 ? 'var(--neon-yellow)' : 'var(--neon-pink)' }} />
+          </div>
+          <span className="arcade-font text-ui-tag" style={{ color: energia > 60 ? 'var(--neon-green)' : energia > 30 ? 'var(--neon-yellow)' : 'var(--neon-pink)' }}>{energia}%</span>
+        </div>
+      </div>
+
+      {/* PROGRESSO DA TEMPORADA */}
+      <div className="mx-4 mb-4">
+        <div className="flex items-center justify-between mb-1">
+          <span className="arcade-font text-ui-tag text-[#6e8fa5]">TEMPORADA {ano}</span>
+          <span className="arcade-font text-ui-tag" style={{ color: accentVar }}>SEMANA {semana ?? 0}/52</span>
+        </div>
+        <div className="h-2 bg-[#0f1e2a] border border-[#1a2e40] rounded-sm overflow-hidden">
+          <div
+            className="h-full transition-all duration-500"
+            style={{
+              width: `${((semana ?? 0) / 52) * 100}%`,
+              background: `linear-gradient(90deg, ${accentVar}88, ${accentVar})`,
+              boxShadow: `0 0 6px ${accentVar}44`,
+            }}
+          />
+        </div>
+      </div>
+
       {/* Status meters */}
       <div className="mx-4 mt-3 grid grid-cols-3 gap-2">
         <div
@@ -299,7 +303,7 @@ export function HubScreen() {
           style={{ borderColor: accentVar, boxShadow: glowVar }}
         >
           <div className="text-[9px] mb-2" style={{ fontFamily: 'var(--font-pixel)', color: accentVar }}>ENERGIA</div>
-          <PixelMeter value={energia} color={accentVar} />
+          <InlineMeter value={energia} color={accentVar} />
           <div className="text-[10px] mt-2 text-right tabular-nums" style={{ fontFamily: 'var(--font-pixel)', color: accentVar }}>{energia}%</div>
         </div>
 
@@ -311,13 +315,42 @@ export function HubScreen() {
           }}
         >
           <div className="text-[9px] mb-2" style={{ fontFamily: 'var(--font-pixel)', color: fadiga > 70 ? 'var(--neon-pink)' : 'var(--neon-yellow)' }}>FADIGA</div>
-          <PixelMeter value={fadiga} color={fadiga > 70 ? 'var(--neon-pink)' : 'var(--neon-yellow)'} />
+          <InlineMeter value={fadiga} color={fadiga > 70 ? 'var(--neon-pink)' : 'var(--neon-yellow)'} />
           <div className="text-[10px] mt-2 text-right tabular-nums" style={{ fontFamily: 'var(--font-pixel)', color: fadiga > 70 ? 'var(--neon-pink)' : 'var(--neon-yellow)' }}>{fadiga}%</div>
         </div>
 
         <div className="app-panel border-2 p-3" style={{ borderColor: 'var(--neon-yellow)', boxShadow: 'var(--glow-gold-sm)' }}>
           <div className="text-[9px] mb-2" style={{ fontFamily: 'var(--font-pixel)', color: 'var(--neon-yellow)' }}>PRÊMIO</div>
           <div className="text-[12px] mt-2" style={{ fontFamily: 'var(--font-pixel)', color: 'var(--neon-yellow)' }}>{fmt(money)}</div>
+        </div>
+      </div>
+
+      {/* Trophy Shelf (Landmarks of progress) */}
+      <div className="mx-4 mt-3 app-panel border-2 border-neon-cyan/20 p-2 flex items-center justify-between">
+        <div className="flex flex-col">
+          <div className="text-[7px] text-neon-cyan arcade-font opacity-70">HALL DA FAMA</div>
+          <div className="text-[9px] text-white arcade-font">{trofeus.length > 0 ? 'ÚLTIMAS CONQUISTAS' : 'SEM TÍTULOS'}</div>
+        </div>
+        <div className="flex gap-2">
+          {trofeus.length > 0 ? trofeus.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: i * 0.1 }}
+              className="relative group cursor-help"
+              title={`${t.torneio} (${t.ano})`}
+            >
+              <Trophy size={20} className={t.tipo === 'Grand Slam' ? 'text-neon-yellow' : 'text-neon-cyan'} />
+              <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full animate-ping opacity-20" />
+            </motion.div>
+          )) : (
+            <div className="flex gap-2 opacity-10">
+              <Trophy size={20} className="text-[#333]" />
+              <Trophy size={20} className="text-[#333]" />
+              <Trophy size={20} className="text-[#333]" />
+            </div>
+          )}
         </div>
       </div>
 
@@ -338,52 +371,62 @@ export function HubScreen() {
         )}
       </AnimatePresence>
 
+      {/* Career chapter band */}
+      <motion.div
+        initial={{ opacity: 0, y: 6 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="mx-4 mt-3 border px-3 py-2.5 flex items-center justify-between gap-3"
+        style={{ borderColor: `${capitulo.cor}33`, background: `${capitulo.cor}08` }}
+      >
+        <div className="min-w-0">
+          <div className="arcade-font text-[7px] tracking-widest mb-0.5" style={{ color: capitulo.cor }}>
+            {capitulo.titulo}
+          </div>
+          <div className="arcade-font text-[9px] text-[#6a7f8a] leading-snug truncate">
+            {capitulo.descricao}
+          </div>
+        </div>
+        {capitulo.proximoRanking && (
+          <div className="shrink-0 text-right">
+            <div className="arcade-font text-[7px] text-[#444] tracking-wide">PRÓXIMO</div>
+            <div className="arcade-font text-[10px]" style={{ color: capitulo.cor }}>
+              TOP {capitulo.proximoRanking}
+            </div>
+          </div>
+        )}
+      </motion.div>
+
+      {/* Career event feed */}
+      {careerEvents.length > 0 && (
+        <div className="mx-4 mt-3 space-y-2">
+          {careerEvents.map((ev) => (
+            <motion.div
+              key={ev.id}
+              initial={{ opacity: 0, x: -6 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-start gap-3 border-l-2 px-3 py-2"
+              style={{ borderColor: ev.cor, background: `${ev.cor}08` }}
+            >
+              <span className="shrink-0 text-[13px]" aria-hidden="true">{ev.icone}</span>
+              <div className="min-w-0">
+                <div className="arcade-font text-[7px] tracking-widest mb-0.5" style={{ color: ev.cor }}>
+                  {ev.titulo}
+                </div>
+                <div className="arcade-font text-[9px] text-[#5a7080] leading-snug">
+                  {ev.texto}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      )}
+
+      <MilestoneOverlay marco={marco} />
+
       {/* Active tournament banner */}
       <AnimatePresence>
-        {torneio && (
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ 
-              opacity: 1,
-              boxShadow: [
-                '0 0 16px rgba(255,230,0,0.2)', 
-                '0 0 32px rgba(255,230,0,0.45)', 
-                '0 0 16px rgba(255,230,0,0.2)'
-              ]
-            }}
-            transition={{ 
-              opacity: { duration: 0.3 },
-              boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-            }}
-            exit={{ opacity: 0 }}
-            onClick={() => navigate((torneio as any).davis ? '/davis' : '/tournament')}
-            onMouseEnter={() => setHoveringActiveTournament(true)}
-            onMouseLeave={() => setHoveringActiveTournament(false)}
-            className="mx-4 mt-3 w-[calc(100%-2rem)] flex items-center justify-between p-3 border-2 border-neon-yellow bg-black text-left active:scale-[0.98] transition-transform"
-            style={{
-              background: hoveringActiveTournament ? 'rgba(255,230,0,0.06)' : '#000',
-            }}
-          >
-            <div>
-              <div className="text-[8px] text-neon-yellow animate-pulse mb-1" style={{ fontFamily: 'var(--font-pixel)' }}>
-                &gt; {(torneio as any).davis ? 'CONFRONTO NACIONAL' : 'TORNEIO EM CURSO'}
-              </div>
-              <div className="text-[12px] text-white" style={{ fontFamily: 'var(--font-pixel)' }}>{torneio.nome}</div>
-              <div className="text-[9px] text-[#666] mt-0.5" style={{ fontFamily: 'var(--font-arcade)' }}>{torneio.fase_atual?.toUpperCase()}</div>
-            </div>
-            <div
-              className="flex items-center gap-1 border-2 border-neon-yellow px-3 py-1.5 text-[9px] shrink-0 ml-2"
-              style={{
-                color: 'var(--neon-yellow)',
-                fontFamily: 'var(--font-pixel)',
-                background: hoveringActiveTournament ? 'rgba(255,230,0,0.14)' : 'transparent',
-                boxShadow: hoveringActiveTournament ? '0 0 10px rgba(255,230,0,0.22)' : 'none',
-              }}
-            >
-              PLAY <ChevronRight size={10} />
-            </div>
-          </motion.button>
-        )}
+        {torneio && <ActiveTournamentBanner torneio={torneio} />}
       </AnimatePresence>
 
       {/* Quick access */}
@@ -431,27 +474,26 @@ export function HubScreen() {
             </div>
           </motion.button>
         )}
-        <div className="text-[9px] text-[#444] mb-2" style={{ fontFamily: 'var(--font-pixel)' }}>&gt;&gt; MENU</div>
-        <div className="grid grid-cols-3 gap-2">
-          {QUICK.map((item) => (
-            <QuickBtn key={item.route} item={item} onClick={() => navigate(item.route)} />
-          ))}
-        </div>
+        {unreadEmails > 0 && (
+          <div
+            className="mb-3 border-2 border-neon-pink/50 bg-neon-pink/5 p-3 cursor-pointer"
+            onClick={() => navigate('/player', { state: { tab: 6 } })}
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">📨</span>
+                <div>
+                  <div className="arcade-font text-ui-label text-neon-pink">MENSAGENS NÃO LIDAS</div>
+                  <div className="arcade-font text-ui-tag text-[#ff8ca8] mt-0.5">
+                    {unreadEmails} {unreadEmails === 1 ? 'nova mensagem' : 'novas mensagens'}
+                  </div>
+                </div>
+              </div>
+              <div className="arcade-font text-ui-tag text-neon-pink">VER →</div>
+            </div>
+          </div>
+        )}
       </div>
-
-      <HubRadioCard
-        currentTrack={radio.currentTrack}
-        erro={radio.erro}
-        playing={radio.playing}
-        sourceType={radio.sourceType}
-        station={radio.station}
-        stations={radio.stations}
-        volume={radio.volume}
-        setVolume={radio.setVolume}
-        togglePlay={radio.togglePlay}
-        trocarEstacao={radio.trocarEstacao}
-        avancarFaixaOuEstacao={radio.avancarFaixaOuEstacao}
-      />
 
       {/* Pixel deco bottom */}
       <div className="mx-4 mt-5 flex gap-[3px]">
@@ -460,7 +502,7 @@ export function HubScreen() {
         ))}
       </div>
 
-      <BottomNav />
+      <BottomNav unreadEmails={unreadEmails} />
     </div>
   )
 }

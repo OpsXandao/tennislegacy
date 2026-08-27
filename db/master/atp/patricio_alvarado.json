@@ -2,24 +2,33 @@
   "nome": "Patricio Alvarado",
   "nacionalidade": "[EC]",
   "idade": 36,
-  "overall": 69,
+  "overall": 63,
   "pontos": 4,
   "atributos": {
-    "saque": 64,
+    "vel_saque": 63,
+    "pre_saque": 64,
+    "segundo_saque": 65,
+    "retorno": 63,
     "forehand": 70,
     "backhand": 60,
-    "topspin": 73,
     "voleio": 59,
-    "slice": 74,
-    "movimento": 61,
+    "smash": 60,
     "lob": 74,
+    "topspin": 73,
+    "slice": 74,
     "winner": 61,
-    "fisico": 60,
+    "velocidade": 60,
+    "aceleracao": 57,
+    "resistencia": 60,
+    "forca": 62,
+    "agilidade": 62,
     "duplas": 60
   },
   "id": 1342,
   "atributos_psicologicos": {
-    "concentracao": 65,
+    "clutch": 65,
+    "consistencia": 58,
+    "compostura": 64,
     "agressividade": 47,
     "leitura_de_jogo": 55,
     "determinacao": 64
@@ -45,5 +54,10 @@
   "peso": 90,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

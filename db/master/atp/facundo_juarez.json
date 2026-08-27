@@ -2,24 +2,33 @@
   "nome": "Facundo Juarez",
   "nacionalidade": "[IT]",
   "idade": 28,
-  "overall": 73,
+  "overall": 67,
   "pontos": 53,
   "atributos": {
-    "saque": 70,
+    "vel_saque": 68,
+    "pre_saque": 71,
+    "segundo_saque": 64,
+    "retorno": 70,
     "forehand": 61,
     "backhand": 69,
-    "topspin": 62,
     "voleio": 76,
-    "slice": 79,
-    "movimento": 67,
+    "smash": 70,
     "lob": 77,
+    "topspin": 62,
+    "slice": 79,
     "winner": 75,
-    "fisico": 60,
+    "velocidade": 64,
+    "aceleracao": 60,
+    "resistencia": 60,
+    "forca": 62,
+    "agilidade": 67,
     "duplas": 60
   },
   "id": 684,
   "atributos_psicologicos": {
-    "concentracao": 55,
+    "clutch": 55,
+    "consistencia": 35,
+    "compostura": 54,
     "agressividade": 72,
     "leitura_de_jogo": 56,
     "determinacao": 54
@@ -45,5 +54,10 @@
   "peso": 92,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

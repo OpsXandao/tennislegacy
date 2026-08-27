@@ -2,24 +2,33 @@
   "nome": "Sander Gille",
   "nacionalidade": "[RU] Rússia",
   "idade": 29,
-  "overall": 88,
+  "overall": 84,
   "pontos": 1420,
   "id": 41964,
   "atributos": {
-    "saque": 85,
+    "vel_saque": 84,
+    "pre_saque": 85,
+    "segundo_saque": 78,
+    "retorno": 85,
     "forehand": 91,
     "backhand": 89,
-    "topspin": 84,
     "voleio": 88,
-    "slice": 83,
-    "movimento": 81,
+    "smash": 86,
     "lob": 95,
-    "fisico": 82,
+    "topspin": 84,
+    "slice": 83,
     "winner": 79,
+    "velocidade": 81,
+    "aceleracao": 75,
+    "resistencia": 82,
+    "forca": 85,
+    "agilidade": 81,
     "duplas": 93
   },
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 49,
+    "compostura": 49,
     "agressividade": 56,
     "leitura_de_jogo": 66,
     "determinacao": 65
@@ -42,5 +51,10 @@
   "reves": "Uma mão",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1420,
-  "rank_duplas": 63
+  "rank_duplas": 63,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

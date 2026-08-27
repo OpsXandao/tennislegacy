@@ -2,24 +2,33 @@
   "nome": "Ian Luca Cervantes Tomas",
   "nacionalidade": "[MX]",
   "idade": 22,
-  "overall": 69,
+  "overall": 49,
   "pontos": 4,
   "atributos": {
-    "saque": 42,
+    "vel_saque": 44,
+    "pre_saque": 44,
+    "segundo_saque": 50,
+    "retorno": 48,
     "forehand": 45,
     "backhand": 50,
-    "topspin": 40,
     "voleio": 43,
-    "slice": 46,
-    "movimento": 49,
+    "smash": 49,
     "lob": 51,
+    "topspin": 40,
+    "slice": 46,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 1343,
   "atributos_psicologicos": {
-    "concentracao": 34,
+    "clutch": 34,
+    "consistencia": 60,
+    "compostura": 39,
     "agressividade": 45,
     "leitura_de_jogo": 38,
     "determinacao": 50
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

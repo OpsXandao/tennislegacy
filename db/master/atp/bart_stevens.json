@@ -2,24 +2,33 @@
   "nome": "Bart Stevens",
   "nacionalidade": "[RU] Rússia",
   "idade": 22,
-  "overall": 89,
+  "overall": 88,
   "pontos": 1635,
   "id": 45036,
   "atributos": {
-    "saque": 90,
+    "vel_saque": 89,
+    "pre_saque": 89,
+    "segundo_saque": 73,
+    "retorno": 90,
     "forehand": 89,
     "backhand": 90,
-    "topspin": 93,
     "voleio": 93,
-    "slice": 87,
-    "movimento": 95,
+    "smash": 90,
     "lob": 96,
-    "fisico": 84,
+    "topspin": 93,
+    "slice": 87,
     "winner": 85,
+    "velocidade": 90,
+    "aceleracao": 82,
+    "resistencia": 84,
+    "forca": 86,
+    "agilidade": 91,
     "duplas": 98
   },
   "atributos_psicologicos": {
-    "concentracao": 65,
+    "clutch": 65,
+    "consistencia": 46,
+    "compostura": 57,
     "agressividade": 59,
     "leitura_de_jogo": 64,
     "determinacao": 42
@@ -42,5 +51,10 @@
   "reves": "Uma mão",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1635,
-  "rank_duplas": 58
+  "rank_duplas": 58,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

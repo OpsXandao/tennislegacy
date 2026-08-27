@@ -6,20 +6,29 @@
   "pontos": 2500,
   "id": 16559,
   "atributos": {
-    "saque": 95,
+    "vel_saque": 95,
+    "pre_saque": 94,
+    "segundo_saque": 83,
+    "retorno": 92,
     "forehand": 93,
     "backhand": 98,
-    "topspin": 82,
     "voleio": 97,
-    "slice": 90,
-    "movimento": 83,
+    "smash": 95,
     "lob": 83,
-    "fisico": 96,
+    "topspin": 82,
+    "slice": 90,
     "winner": 90,
+    "velocidade": 87,
+    "aceleracao": 81,
+    "resistencia": 96,
+    "forca": 95,
+    "agilidade": 86,
     "duplas": 103
   },
   "atributos_psicologicos": {
-    "concentracao": 66,
+    "clutch": 66,
+    "consistencia": 65,
+    "compostura": 64,
     "agressividade": 40,
     "leitura_de_jogo": 70,
     "determinacao": 62
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 2500,
-  "rank_duplas": 23
+  "rank_duplas": 23,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

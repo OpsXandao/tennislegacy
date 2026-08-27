@@ -2,24 +2,33 @@
   "nome": "Alfredo Perez",
   "nacionalidade": "[US]",
   "idade": 28,
-  "overall": 76,
+  "overall": 49,
   "pontos": 118,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 48,
+    "retorno": 43,
     "forehand": 52,
     "backhand": 40,
-    "topspin": 45,
     "voleio": 49,
-    "slice": 45,
-    "movimento": 49,
+    "smash": 52,
     "lob": 42,
+    "topspin": 45,
+    "slice": 45,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 432,
   "atributos_psicologicos": {
-    "concentracao": 46,
+    "clutch": 46,
+    "consistencia": 64,
+    "compostura": 45,
     "agressividade": 41,
     "leitura_de_jogo": 44,
     "determinacao": 45
@@ -45,5 +54,10 @@
   "peso": 72,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

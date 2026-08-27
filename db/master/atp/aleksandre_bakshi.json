@@ -2,24 +2,33 @@
   "nome": "Aleksandre Bakshi",
   "nacionalidade": "[GE]",
   "idade": 28,
-  "overall": 74,
+  "overall": 53,
   "pontos": 71,
   "atributos": {
-    "saque": 54,
+    "vel_saque": 54,
+    "pre_saque": 51,
+    "segundo_saque": 51,
+    "retorno": 48,
     "forehand": 47,
     "backhand": 42,
-    "topspin": 55,
     "voleio": 61,
-    "slice": 53,
-    "movimento": 55,
+    "smash": 60,
     "lob": 62,
+    "topspin": 55,
+    "slice": 53,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 580,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 56,
+    "compostura": 38,
     "agressividade": 49,
     "leitura_de_jogo": 41,
     "determinacao": 34
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -18,6 +18,10 @@ function avg(...values: Array<number | undefined>) {
   return Math.round(valid.reduce((acc, value) => acc + value, 0) / valid.length)
 }
 
+function firstNumber(...values: Array<number | undefined>) {
+  return values.find((value): value is number => typeof value === 'number')
+}
+
 function calcularOverallCard(
   atributos: Record<string, number>,
   atributosPsicologicos: Record<string, number>,
@@ -39,6 +43,12 @@ function resolveStat(
   if (typeof direct === 'number') return direct
 
   switch (key) {
+    case 'saque':
+      return firstNumber(
+        atributos.saque,
+        atributos.vel_saque,
+        avg(atributos.vel_saque, atributos.pre_saque, atributos.segundo_saque),
+      )
     case 'retorno':
       return avg(atributos.retorno, atributos.backhand, atributos.forehand)
     case 'forca':

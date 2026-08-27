@@ -2,24 +2,33 @@
   "nome": "Ivana Corley",
   "nacionalidade": "[US] Estados Unidos",
   "idade": 35,
-  "overall": 85,
+  "overall": 82,
   "pontos": 875,
   "id": 76802,
   "atributos": {
-    "saque": 83,
+    "vel_saque": 82,
+    "pre_saque": 82,
+    "segundo_saque": 78,
+    "retorno": 81,
     "forehand": 78,
     "backhand": 79,
-    "topspin": 91,
     "voleio": 93,
-    "slice": 86,
-    "movimento": 84,
+    "smash": 87,
     "lob": 78,
-    "fisico": 81,
+    "topspin": 91,
+    "slice": 86,
     "winner": 78,
+    "velocidade": 82,
+    "aceleracao": 76,
+    "resistencia": 81,
+    "forca": 79,
+    "agilidade": 83,
     "duplas": 94
   },
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 56,
+    "compostura": 58,
     "agressividade": 49,
     "leitura_de_jogo": 68,
     "determinacao": 71
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 875,
-  "rank_duplas": 93
+  "rank_duplas": 93,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

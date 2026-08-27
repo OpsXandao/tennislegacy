@@ -2,24 +2,33 @@
   "nome": "Fang-Hsien Wu",
   "nacionalidade": "[TW] TWN",
   "idade": 35,
-  "overall": 88,
+  "overall": 85,
   "pontos": 1871,
   "id": 15518,
   "atributos": {
-    "saque": 82,
+    "vel_saque": 82,
+    "pre_saque": 83,
+    "segundo_saque": 72,
+    "retorno": 86,
     "forehand": 88,
     "backhand": 88,
-    "topspin": 93,
     "voleio": 90,
-    "slice": 86,
-    "movimento": 84,
+    "smash": 88,
     "lob": 95,
-    "fisico": 84,
+    "topspin": 93,
+    "slice": 86,
     "winner": 83,
+    "velocidade": 84,
+    "aceleracao": 77,
+    "resistencia": 84,
+    "forca": 85,
+    "agilidade": 84,
     "duplas": 99
   },
   "atributos_psicologicos": {
-    "concentracao": 44,
+    "clutch": 44,
+    "consistencia": 35,
+    "compostura": 45,
     "agressividade": 75,
     "leitura_de_jogo": 43,
     "determinacao": 50
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1871,
-  "rank_duplas": 41
+  "rank_duplas": 41,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

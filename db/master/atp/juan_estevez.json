@@ -2,24 +2,33 @@
   "nome": "Juan Estevez",
   "nacionalidade": "[AR]",
   "idade": 20,
-  "overall": 76,
+  "overall": 50,
   "pontos": 106,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 52,
+    "segundo_saque": 53,
+    "retorno": 46,
     "forehand": 48,
     "backhand": 52,
-    "topspin": 41,
     "voleio": 53,
-    "slice": 42,
-    "movimento": 41,
+    "smash": 55,
     "lob": 51,
+    "topspin": 41,
+    "slice": 42,
     "winner": 43,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 476,
   "atributos_psicologicos": {
-    "concentracao": 32,
+    "clutch": 32,
+    "consistencia": 53,
+    "compostura": 33,
     "agressividade": 52,
     "leitura_de_jogo": 32,
     "determinacao": 37
@@ -45,5 +54,10 @@
   "peso": 70,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

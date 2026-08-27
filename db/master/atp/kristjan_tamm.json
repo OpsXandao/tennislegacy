@@ -2,24 +2,33 @@
   "nome": "Kristjan Tamm",
   "nacionalidade": "[EE]",
   "idade": 27,
-  "overall": 71,
+  "overall": 53,
   "pontos": 20,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 53,
+    "segundo_saque": 56,
+    "retorno": 49,
     "forehand": 63,
     "backhand": 52,
-    "topspin": 48,
     "voleio": 43,
-    "slice": 46,
-    "movimento": 47,
+    "smash": 50,
     "lob": 63,
+    "topspin": 48,
+    "slice": 46,
     "winner": 43,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 59,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 982,
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 58,
+    "compostura": 51,
     "agressividade": 47,
     "leitura_de_jogo": 37,
     "determinacao": 49
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Fernando Romboli",
   "nacionalidade": "[RU] Rússia",
   "idade": 24,
-  "overall": 89,
+  "overall": 87,
   "pontos": 1900,
   "id": 39077,
   "atributos": {
-    "saque": 92,
+    "vel_saque": 91,
+    "pre_saque": 90,
+    "segundo_saque": 78,
+    "retorno": 86,
     "forehand": 94,
     "backhand": 85,
-    "topspin": 85,
     "voleio": 95,
-    "slice": 91,
-    "movimento": 84,
+    "smash": 92,
     "lob": 88,
-    "fisico": 89,
+    "topspin": 85,
+    "slice": 91,
     "winner": 83,
+    "velocidade": 85,
+    "aceleracao": 79,
+    "resistencia": 89,
+    "forca": 89,
+    "agilidade": 86,
     "duplas": 99
   },
   "atributos_psicologicos": {
-    "concentracao": 46,
+    "clutch": 46,
+    "consistencia": 56,
+    "compostura": 47,
     "agressividade": 49,
     "leitura_de_jogo": 52,
     "determinacao": 51
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1900,
-  "rank_duplas": 52
+  "rank_duplas": 52,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

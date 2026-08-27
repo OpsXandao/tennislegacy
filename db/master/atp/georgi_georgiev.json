@@ -2,24 +2,33 @@
   "nome": "Georgi Georgiev",
   "nacionalidade": "[BG]",
   "idade": 19,
-  "overall": 69,
+  "overall": 50,
   "pontos": 6,
   "atributos": {
-    "saque": 54,
+    "vel_saque": 54,
+    "pre_saque": 51,
+    "segundo_saque": 56,
+    "retorno": 44,
     "forehand": 41,
     "backhand": 44,
-    "topspin": 42,
     "voleio": 54,
-    "slice": 48,
-    "movimento": 44,
+    "smash": 54,
     "lob": 40,
+    "topspin": 42,
+    "slice": 48,
     "winner": 49,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 1284,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 63,
+    "compostura": 42,
     "agressividade": 42,
     "leitura_de_jogo": 35,
     "determinacao": 51
@@ -45,5 +54,10 @@
   "peso": 81,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

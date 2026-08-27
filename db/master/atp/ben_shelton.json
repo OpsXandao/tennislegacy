@@ -2,24 +2,33 @@
   "nome": "Ben Shelton",
   "nacionalidade": "[US]",
   "idade": 23,
-  "overall": 90,
+  "overall": 79,
   "pontos": 4050,
   "atributos": {
-    "saque": 86,
+    "vel_saque": 82,
+    "pre_saque": 84,
+    "segundo_saque": 74,
+    "retorno": 84,
     "forehand": 88,
     "backhand": 86,
-    "topspin": 88,
     "voleio": 86,
-    "slice": 78,
-    "movimento": 88,
+    "smash": 76,
     "lob": 80,
+    "topspin": 88,
+    "slice": 78,
     "winner": 89,
-    "fisico": 60,
+    "velocidade": 77,
+    "aceleracao": 71,
+    "resistencia": 60,
+    "forca": 73,
+    "agilidade": 80,
     "duplas": 91
   },
   "id": 13,
   "atributos_psicologicos": {
-    "concentracao": 91,
+    "clutch": 91,
+    "consistencia": 35,
+    "compostura": 82,
     "agressividade": 85,
     "leitura_de_jogo": 71,
     "determinacao": 64
@@ -58,5 +67,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Server-Volleyer",
   "pontos_ranking_duplas": 810,
-  "rank_duplas": 100
+  "rank_duplas": 100,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Niccolò Ciavarella",
   "nacionalidade": "[IT] Itália",
   "idade": 25,
-  "overall": 70,
+  "overall": 47,
   "pontos": 11,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 49,
+    "retorno": 48,
     "forehand": 40,
     "backhand": 56,
-    "topspin": 40,
     "voleio": 41,
-    "slice": 40,
-    "movimento": 40,
+    "smash": 48,
     "lob": 46,
+    "topspin": 40,
+    "slice": 40,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 2286,
   "atributos_psicologicos": {
-    "concentracao": 44,
+    "clutch": 44,
+    "consistencia": 70,
+    "compostura": 45,
     "agressividade": 35,
     "leitura_de_jogo": 36,
     "determinacao": 49
@@ -39,5 +48,10 @@
   "peso": 70,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Mariano Navone",
   "nacionalidade": "[AR]",
   "idade": 24,
-  "overall": 83,
+  "overall": 65,
   "pontos": 725,
   "atributos": {
-    "saque": 67,
+    "vel_saque": 65,
+    "pre_saque": 67,
+    "segundo_saque": 62,
+    "retorno": 67,
     "forehand": 68,
     "backhand": 68,
-    "topspin": 66,
     "voleio": 70,
-    "slice": 66,
-    "movimento": 69,
+    "smash": 66,
     "lob": 67,
+    "topspin": 66,
+    "slice": 66,
     "winner": 65,
-    "fisico": 60,
+    "velocidade": 65,
+    "aceleracao": 61,
+    "resistencia": 60,
+    "forca": 63,
+    "agilidade": 66,
     "duplas": 60
   },
   "id": 98,
   "atributos_psicologicos": {
-    "concentracao": 74,
+    "clutch": 74,
+    "consistencia": 36,
+    "compostura": 66,
     "agressividade": 69,
     "leitura_de_jogo": 72,
     "determinacao": 52
@@ -45,5 +54,10 @@
   "peso": 71,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

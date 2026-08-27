@@ -6,12 +6,13 @@ import type { RaceToFinals } from '../../../types'
 export function RaceTab() {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState<RaceToFinals | null>(null)
+  const [erro, setErro] = useState(false)
 
   useEffect(() => {
     api.mundo
       .raceToFinals()
       .then(setData)
-      .catch(() => {})
+      .catch(() => setErro(true))
       .finally(() => setLoading(false))
   }, [])
 
@@ -19,6 +20,14 @@ export function RaceTab() {
     return (
       <div className="py-16 text-center pixel-font text-xs text-neon-green animate-pulse">
         CARREGANDO...
+      </div>
+    )
+  }
+
+  if (erro) {
+    return (
+      <div className="py-16 text-center pixel-font text-[10px] text-neon-pink">
+        Erro ao carregar feed
       </div>
     )
   }

@@ -2,24 +2,33 @@
   "nome": "Yoshihito Nishioka",
   "nacionalidade": "[JP]",
   "idade": 30,
-  "overall": 80,
+  "overall": 69,
   "pontos": 361,
   "atributos": {
-    "saque": 77,
+    "vel_saque": 74,
+    "pre_saque": 76,
+    "segundo_saque": 69,
+    "retorno": 73,
     "forehand": 65,
     "backhand": 75,
-    "topspin": 75,
     "voleio": 80,
-    "slice": 76,
-    "movimento": 68,
+    "smash": 72,
     "lob": 75,
+    "topspin": 75,
+    "slice": 76,
     "winner": 67,
-    "fisico": 60,
+    "velocidade": 64,
+    "aceleracao": 61,
+    "resistencia": 60,
+    "forca": 64,
+    "agilidade": 67,
     "duplas": 60
   },
   "id": 201,
   "atributos_psicologicos": {
-    "concentracao": 74,
+    "clutch": 74,
+    "consistencia": 38,
+    "compostura": 69,
     "agressividade": 67,
     "leitura_de_jogo": 71,
     "determinacao": 59
@@ -61,5 +70,10 @@
   "peso": 83,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

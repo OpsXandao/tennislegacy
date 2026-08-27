@@ -2,24 +2,33 @@
   "nome": "Robin Catry",
   "nacionalidade": "[FR]",
   "idade": 23,
-  "overall": 74,
+  "overall": 49,
   "pontos": 69,
   "atributos": {
-    "saque": 52,
+    "vel_saque": 53,
+    "pre_saque": 48,
+    "segundo_saque": 50,
+    "retorno": 43,
     "forehand": 51,
     "backhand": 40,
-    "topspin": 48,
     "voleio": 45,
-    "slice": 44,
-    "movimento": 50,
+    "smash": 49,
     "lob": 40,
+    "topspin": 48,
+    "slice": 44,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 592,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 61,
+    "compostura": 37,
     "agressividade": 44,
     "leitura_de_jogo": 48,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 72,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

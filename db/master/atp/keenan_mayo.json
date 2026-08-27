@@ -2,24 +2,33 @@
   "nome": "Keenan Mayo",
   "nacionalidade": "[US]",
   "idade": 25,
-  "overall": 69,
+  "overall": 52,
   "pontos": 8,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 52,
+    "segundo_saque": 51,
+    "retorno": 52,
     "forehand": 45,
     "backhand": 51,
-    "topspin": 42,
     "voleio": 51,
-    "slice": 53,
-    "movimento": 53,
+    "smash": 53,
     "lob": 45,
+    "topspin": 42,
+    "slice": 53,
     "winner": 45,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 1208,
   "atributos_psicologicos": {
-    "concentracao": 55,
+    "clutch": 55,
+    "consistencia": 62,
+    "compostura": 48,
     "agressividade": 43,
     "leitura_de_jogo": 49,
     "determinacao": 34
@@ -45,5 +54,10 @@
   "peso": 81,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

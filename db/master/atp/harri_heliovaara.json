@@ -2,24 +2,33 @@
   "nome": "Harri Heliovaara",
   "nacionalidade": "[RU] Rússia",
   "idade": 31,
-  "overall": 94,
+  "overall": 91,
   "pontos": 6570,
   "id": 32200,
   "atributos": {
-    "saque": 92,
+    "vel_saque": 91,
+    "pre_saque": 91,
+    "segundo_saque": 79,
+    "retorno": 91,
     "forehand": 96,
     "backhand": 91,
-    "topspin": 91,
     "voleio": 105,
-    "slice": 91,
-    "movimento": 92,
+    "smash": 97,
     "lob": 88,
-    "fisico": 89,
+    "topspin": 91,
+    "slice": 91,
     "winner": 98,
+    "velocidade": 90,
+    "aceleracao": 83,
+    "resistencia": 89,
+    "forca": 91,
+    "agilidade": 91,
     "duplas": 107
   },
   "atributos_psicologicos": {
-    "concentracao": 74,
+    "clutch": 74,
+    "consistencia": 56,
+    "compostura": 68,
     "agressividade": 49,
     "leitura_de_jogo": 56,
     "determinacao": 57
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 6570,
-  "rank_duplas": 8
+  "rank_duplas": 8,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Nuno Borges",
   "nacionalidade": "[PT]",
   "idade": 29,
-  "overall": 85,
+  "overall": 73,
   "pontos": 1045,
   "atributos": {
-    "saque": 77,
+    "vel_saque": 74,
+    "pre_saque": 77,
+    "segundo_saque": 76,
+    "retorno": 78,
     "forehand": 77,
     "backhand": 79,
-    "topspin": 81,
     "voleio": 78,
-    "slice": 76,
-    "movimento": 80,
+    "smash": 71,
     "lob": 75,
+    "topspin": 81,
+    "slice": 76,
     "winner": 76,
-    "fisico": 60,
+    "velocidade": 72,
+    "aceleracao": 67,
+    "resistencia": 60,
+    "forca": 68,
+    "agilidade": 75,
     "duplas": 60
   },
   "id": 41,
   "atributos_psicologicos": {
-    "concentracao": 78,
+    "clutch": 78,
+    "consistencia": 35,
+    "compostura": 79,
     "agressividade": 73,
     "leitura_de_jogo": 68,
     "determinacao": 83
@@ -51,5 +60,10 @@
   "peso": 82,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -122,7 +122,7 @@ class AvancarCalendarioTests(unittest.TestCase):
 
         ctx = _make_context(semana_atual=10)
 
-        with patch("src.calendario._processar_virada_ano"):
+        with patch("src.services.season_service._processar_virada_ano"):
             _avancar_calendario(ctx)
 
         self.assertEqual(ctx.temporada["semana"], 11)
@@ -133,7 +133,7 @@ class AvancarCalendarioTests(unittest.TestCase):
 
         ctx = _make_context(semana_atual=3)
 
-        with patch("src.calendario._processar_virada_ano"):
+        with patch("src.services.season_service._processar_virada_ano"):
             _avancar_calendario(ctx)
 
         texto_evento = " ".join(ctx.eventos_api)
@@ -144,7 +144,7 @@ class AvancarCalendarioTests(unittest.TestCase):
 
         ctx = _make_context()
 
-        with patch("src.calendario._processar_virada_ano") as mock_virada:
+        with patch("src.services.season_service._processar_virada_ano") as mock_virada:
             _avancar_calendario(ctx)
 
         mock_virada.assert_called_once()
@@ -224,7 +224,7 @@ class ExpirarPontosTests(unittest.TestCase):
         ctx.semana_nova = 7
         ctx.ano_novo = 2026
 
-        with patch("src.calendario._processar_expiracao_ranking") as mock_exp:
+        with patch("src.services.ranking_service.processar_expiracao_ranking") as mock_exp:
             _expirar_pontos(ctx)
 
         mock_exp.assert_called_once_with("test_save", 7, 2026)

@@ -5,6 +5,8 @@ import type {
   JogadorState,
   RankingEntry,
   TorneioState,
+  WorldSchedulePayload,
+  NewsItem,
   PlacarState,
   MatchPointRuntime,
   TorneioCalendario,
@@ -117,6 +119,7 @@ export const api = {
       idade?: number
       archetype_id?: string
       mental_id?: string
+      mao_dominante?: string
     }) => post<{ ok: boolean; save: string }>('/save/criar', payload),
 
     criarAlexandre: (nome: string) =>
@@ -222,7 +225,7 @@ export const api = {
   mundo: {
     proximos: () =>
       get<{ semana_atual: number; torneios: MundoTorneio[] }>('/mundo/proximos'),
-    noticias: () => get<{ noticias: string[] }>('/mundo/noticias'),
+    noticias: () => get<{ noticias: string[]; feed?: NewsItem[] }>('/mundo/noticias'),
     torneio: (nome: string, tour?: string) =>
       get<TorneioState>(`/mundo/torneio/${nome}${tour ? `?tour=${tour}` : ''}`),
     rankingNacoes: () =>
@@ -284,11 +287,21 @@ export const api = {
 
     estado: () => get<TorneioState | null>('/torneio/estado'),
 
+    agenda: () => get<WorldSchedulePayload>('/torneio/agenda'),
+
+    avancarProximoMomento: () =>
+      post<{ ok: boolean; clock: WorldSchedulePayload['clock']; evento?: WorldSchedulePayload['proximo_jogavel']; mensagem?: string }>(
+        '/torneio/avancar-proximo-momento',
+        {}
+      ),
+
     avancarFase: () =>
       post<{
         fase: string
         resultados: { jogador1: string; jogador2: string; placar: string; vencedor: string }[]
         proximo: { adversario: string; fase: string; superficie: string } | null
+        agenda?: WorldSchedulePayload['events']
+        proximo_evento_jogavel?: WorldSchedulePayload['proximo_jogavel']
       }>('/torneio/avancar-fase'),
 
     desistir: () => post<{ ok: boolean } & WeekAdvancePayload>('/torneio/desistir'),
@@ -432,15 +445,16 @@ export const api = {
         } | null
       }>(`/imprensa/pergunta?contexto=${contexto}`),
 
-    responder: (opcao_idx: number, contexto: 'pre' | 'pos' | 'geral' = 'geral') =>
+    responder: (opcao_idx: number, contexto: 'pre' | 'pos' | 'geral' = 'geral', pergunta_hash?: string) =>
       post<{
         ok: boolean
-        texto_opcao: string
-        moral_delta: number
-        rep_delta: number
-        moral: number
-        reputacao: number
-      }>('/imprensa/responder', { opcao_idx, contexto }),
+        mensagem?: string
+        texto_opcao?: string
+        moral_delta?: number
+        rep_delta?: number
+        moral?: number
+        reputacao?: number
+      }>('/imprensa/responder', { opcao_idx, contexto, pergunta_hash }),
   },
 
   // ── Histórico ─────────────────────────────────────────────────────────────
@@ -448,6 +462,11 @@ export const api = {
   historico: {
     goat: () => get<{ recordes: GoatRecordes; meus_titulos: TituloCarreira[] }>('/historico/goat'),
     campeoes: () => get<{ campeoes: Record<string, TituloCarreira[]> }>('/historico/campeoes'),
+    campeoesTemporada: () => get<{
+      ano: number
+      titulos_jogador: Array<{ torneio: string; tipo: string; categoria: string; semana: number; ano: number; modalidade: string }>
+      campeoes_npc: Array<{ torneio: string; campeao: string; ano: number; semana: number; tipo: string }>
+    }>('/historico/campeoes-temporada'),
   },
 
   // ── Davis Cup / BJK Cup ───────────────────────────────────────────────────
@@ -469,14 +488,20 @@ export const api = {
         overall: number
         duplas?: number
         posicao?: number
+        ranking_duplas?: number | null
+        ranking_simples?: number | null
+        ranking_combinado?: number
+        perfil_parceria?: { status: string; partidas: number; vitorias: number; win_rate: number; skill_duplas: number }
+        disponibilidade?: { status: string; motivo: string; score: number }
+        formato_duplas?: { sets: string; no_ad: boolean; match_tiebreak: boolean; terceiro_set: string }
         vinculo?: VinculoDupla
       }[]
     }>('/duplas/sugestoes'),
 
     buscar: (params: { nome?: string; nacionalidade?: string }) => {
       let q = ''
-      if (params.nome) q = `?nome=${params.nome}`
-      else if (params.nacionalidade) q = `?nacionalidade=${params.nacionalidade}`
+      if (params.nome) q = `?nome=${encodeURIComponent(params.nome)}`
+      else if (params.nacionalidade) q = `?nacionalidade=${encodeURIComponent(params.nacionalidade)}`
       return get<{
         parceiros: {
           nome: string
@@ -484,12 +509,18 @@ export const api = {
           overall: number
           duplas?: number
           posicao?: number
+          ranking_duplas?: number | null
+          ranking_simples?: number | null
+          ranking_combinado?: number
+          perfil_parceria?: { status: string; partidas: number; vitorias: number; win_rate: number; skill_duplas: number }
+          disponibilidade?: { status: string; motivo: string; score: number }
+          formato_duplas?: { sets: string; no_ad: boolean; match_tiebreak: boolean; terceiro_set: string }
         }[]
       }>(`/duplas/buscar${q}`)
     },
 
     convidar: (npc_nome: string, torneio_tipo: string) =>
-      post<{ ok: boolean; mensagem: string; parceiro?: { nome: string; nacionalidade: string } }>(
+      post<{ ok: boolean; mensagem: string; parceiro?: { nome: string; nacionalidade: string }; disponibilidade?: { status: string; motivo: string; score: number } }>(
         '/duplas/convidar',
         { npc_nome, torneio_tipo }
       ),

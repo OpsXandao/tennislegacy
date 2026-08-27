@@ -2,24 +2,33 @@
   "nome": "Matyas Fuele",
   "nacionalidade": "[HU]",
   "idade": 27,
-  "overall": 72,
+  "overall": 51,
   "pontos": 39,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 50,
+    "segundo_saque": 49,
+    "retorno": 46,
     "forehand": 54,
     "backhand": 40,
-    "topspin": 54,
     "voleio": 40,
-    "slice": 51,
-    "movimento": 54,
+    "smash": 47,
     "lob": 40,
+    "topspin": 54,
+    "slice": 51,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 792,
   "atributos_psicologicos": {
-    "concentracao": 49,
+    "clutch": 49,
+    "consistencia": 60,
+    "compostura": 42,
     "agressividade": 45,
     "leitura_de_jogo": 33,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 79,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

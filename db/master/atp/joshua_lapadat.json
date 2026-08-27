@@ -2,24 +2,33 @@
   "nome": "Joshua Lapadat",
   "nacionalidade": "[CA]",
   "idade": 23,
-  "overall": 69,
+  "overall": 50,
   "pontos": 9,
   "atributos": {
-    "saque": 43,
+    "vel_saque": 45,
+    "pre_saque": 44,
+    "segundo_saque": 45,
+    "retorno": 47,
     "forehand": 54,
     "backhand": 54,
-    "topspin": 53,
     "voleio": 48,
-    "slice": 40,
-    "movimento": 40,
+    "smash": 52,
     "lob": 46,
+    "topspin": 53,
+    "slice": 40,
     "winner": 56,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 1185,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 71,
+    "compostura": 30,
     "agressividade": 34,
     "leitura_de_jogo": 43,
     "determinacao": 31
@@ -45,5 +54,10 @@
   "peso": 79,
   "mao_dominante": "Canhoto",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

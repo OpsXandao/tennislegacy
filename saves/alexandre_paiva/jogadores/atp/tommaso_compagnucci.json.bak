@@ -1,0 +1,80 @@
+{
+  "nome": "Tommaso Compagnucci",
+  "nacionalidade": "[IT]",
+  "pontos": 94,
+  "pontos_duplas": 0,
+  "pontos_ranking": 94,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 52,
+  "energia": 100,
+  "fadiga": 10,
+  "moral": 75,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 43,
+    "pre_saque": 45,
+    "segundo_saque": 45,
+    "retorno": 54,
+    "forehand": 54,
+    "backhand": 54,
+    "voleio": 40,
+    "smash": 47,
+    "lob": 40,
+    "topspin": 43,
+    "slice": 56,
+    "winner": 54,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 55,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 32,
+    "consistencia": 75,
+    "compostura": 33,
+    "agressividade": 30,
+    "leitura_de_jogo": 33,
+    "determinacao": 36
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 94,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 26,
+  "id": 506,
+  "pico_carreira": 474,
+  "altura": 175,
+  "peso": 70,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
+}

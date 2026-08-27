@@ -2,24 +2,33 @@
   "nome": "Alex Barrena",
   "nacionalidade": "[AR]",
   "idade": 23,
-  "overall": 80,
+  "overall": 51,
   "pontos": 336,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 50,
+    "retorno": 49,
     "forehand": 51,
     "backhand": 46,
-    "topspin": 51,
     "voleio": 43,
-    "slice": 53,
-    "movimento": 54,
+    "smash": 49,
     "lob": 51,
+    "topspin": 51,
+    "slice": 53,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 215,
   "atributos_psicologicos": {
-    "concentracao": 48,
+    "clutch": 48,
+    "consistencia": 75,
+    "compostura": 49,
     "agressividade": 30,
     "leitura_de_jogo": 42,
     "determinacao": 52
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

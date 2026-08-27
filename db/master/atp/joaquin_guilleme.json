@@ -2,24 +2,33 @@
   "nome": "Joaquin Guilleme",
   "nacionalidade": "[NI]",
   "idade": 19,
-  "overall": 70,
+  "overall": 54,
   "pontos": 10,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 46,
+    "segundo_saque": 47,
+    "retorno": 55,
     "forehand": 58,
     "backhand": 58,
-    "topspin": 50,
     "voleio": 52,
-    "slice": 55,
-    "movimento": 52,
+    "smash": 54,
     "lob": 45,
+    "topspin": 50,
+    "slice": 55,
     "winner": 50,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 59,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 1166,
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 51,
+    "compostura": 43,
     "agressividade": 54,
     "leitura_de_jogo": 44,
     "determinacao": 39
@@ -45,5 +54,10 @@
   "peso": 65,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -1,10 +1,31 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router'
 import { Search, TrendingUp, Star, UserCheck, Users, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
 import { ActionDock, ArcadeTab, NeonButton, NeonCard, PixelFlag, PageHeader, ScreenSection } from '../components'
 import { api } from '../../api/client'
 import { useGameStore } from '../../store/gameStore'
 import { getOverallTierLabel } from '../utils/playerRatings'
+import type { RankingEntry } from '../../types'
+
+function OvrBadge({ ovr }: { ovr: number }) {
+  const color = ovr >= 85 ? 'var(--neon-yellow)' : ovr >= 75 ? 'var(--neon-cyan)' : ovr >= 65 ? 'var(--neon-green)' : '#7a8fa0'
+  return (
+    <div className="flex flex-col items-center justify-center border-2 w-10 h-10 shrink-0" style={{ borderColor: color }}>
+      <span className="arcade-font text-[7px] text-[#6e8fa5]">OVR</span>
+      <span className="pixel-font text-[12px] leading-none" style={{ color }}>{ovr}</span>
+    </div>
+  )
+}
+
+function DuplasBadge({ duplas }: { duplas?: number }) {
+  if (!duplas || duplas < 70) return null
+  return (
+    <span className="border border-neon-yellow/40 px-1.5 py-0.5 arcade-font text-[7px] text-neon-yellow">
+      DUP {duplas}
+    </span>
+  )
+}
 
 const TABS = ['SUGESTOES', 'BUSCAR', 'RANKING']
 
@@ -14,64 +35,69 @@ interface Parceiro {
   overall: number
   duplas?: number
   posicao?: number
+  estilo_jogo?: string
+  ranking_duplas?: number | null
+  ranking_simples?: number | null
+  ranking_combinado?: number
+  perfil_parceria?: { status: string; partidas: number; vitorias: number; win_rate: number; skill_duplas: number }
+  disponibilidade?: { status: string; motivo: string; score: number }
+  formato_duplas?: { sets: string; no_ad: boolean; match_tiebreak: boolean; terceiro_set: string }
   vinculo?: { partidas: number; vitorias: number } | null
 }
 
-interface RankingEntry {
-  posicao: number
-  nome: string
-  nacionalidade: string
-  pontos: number
+// ... rest of interfaces
+
+function getChemistryInfo(parceiro: Parceiro): { label: string; color: string; percent: number } {
+  const partidas = parceiro.vinculo?.partidas ?? 0
+  if (partidas >= 20) return { label: 'TELEPÁTICA', color: 'var(--neon-gold)', percent: 100 }
+  if (partidas >= 10) return { label: 'SINCRONIZADA', color: 'var(--neon-cyan)', percent: 75 }
+  if (partidas >= 5) return { label: 'ENTROSADA', color: 'var(--neon-green)', percent: 50 }
+  if (partidas >= 1) return { label: 'FAMILIAR', color: 'var(--neon-yellow)', percent: 25 }
+  return { label: 'PROFISSIONAL', color: '#666', percent: 5 }
 }
 
-function calcSinergia(vinculo?: Parceiro['vinculo']): string {
-  if (!vinculo || vinculo.partidas === 0) return ''
-  const wr = vinculo.partidas > 0 ? vinculo.vitorias / vinculo.partidas : 0
-  if (wr >= 0.6 && vinculo.partidas >= 5) return 'PARCERIA ELITE'
-  if (vinculo.partidas >= 5) return 'PARCERIA SOLIDA'
-  if (vinculo.partidas >= 1) return 'JA JOGARAM'
-  return ''
-}
-
-function OvrBadge({ ovr }: { ovr: number }) {
-  const color = ovr >= 80 ? 'var(--neon-yellow)' : ovr >= 65 ? 'var(--neon-green)' : 'var(--neon-cyan)'
+function TacticalSynergy({ estilo1, estilo2 }: { estilo1?: string; estilo2?: string }) {
+  if (!estilo1 || !estilo2) return null
+  
+  let label = ''
+  if ((estilo1.includes('Baseline') && estilo2.includes('Serve & Voleio')) || (estilo2.includes('Baseline') && estilo1.includes('Serve & Voleio'))) {
+    label = 'DUO CLÁSSICO (FUNDO + REDE)'
+  } else if (estilo1.includes('Agressivo') && estilo2.includes('Agressivo')) {
+    label = 'POWERHOUSE (ATAQUE TOTAL)'
+  } else if (estilo1.includes('Baseline') && estilo2.includes('Baseline')) {
+    label = 'THE WALL (CONSISTÊNCIA)'
+  }
+  
+  if (!label) return null
+  
   return (
-    <div
-      className="flex items-center justify-center w-10 h-10 border-2 text-sm font-bold shrink-0"
-      style={{ borderColor: color, color, fontFamily: 'var(--font-arcade)' }}
-    >
-      {ovr}
+    <div className="mt-2 flex items-center gap-1.5 border border-neon-cyan/20 bg-neon-cyan/5 px-2 py-1">
+      <TrendingUp size={10} className="text-neon-cyan" />
+      <span className="arcade-font text-[7px] text-neon-cyan tracking-wider">{label}</span>
     </div>
   )
 }
 
-function DuplasBadge({ duplas }: { duplas?: number }) {
-  if (!duplas || duplas < 80) return null
-  return (
-    <div
-      className="border px-1.5 py-0.5 text-[7px]"
-      style={{
-        borderColor: '#f6c453',
-        color: '#f6c453',
-        background: 'rgba(246, 196, 83, 0.1)',
-        fontFamily: 'var(--font-arcade)',
-      }}
-    >
-      DUPLAS PRO {duplas}
-    </div>
-  )
+function availabilityColor(status?: string) {
+  if (status === 'alta' || status === 'aberta') return 'var(--neon-green)'
+  if (status === 'media') return 'var(--neon-yellow)'
+  if (status === 'baixa' || status === 'duvida') return 'var(--neon-pink)'
+  if (status === 'indisponivel') return '#777'
+  return '#888'
 }
 
 function ParceiroCarta({
   parceiro,
+  meuEstilo,
   onConvidar,
   convidando,
 }: {
   parceiro: Parceiro
+  meuEstilo?: string
   onConvidar: (nome: string) => void
   convidando: string | null
 }) {
-  const sinergia = calcSinergia(parceiro.vinculo)
+  const chem = getChemistryInfo(parceiro)
   const temHistorico = parceiro.vinculo && parceiro.vinculo.partidas > 0
   const destaqueDuplas = Number(parceiro.duplas ?? 0) >= 88
   const tier = getOverallTierLabel(parceiro.overall, parceiro.posicao)
@@ -80,7 +106,7 @@ function ParceiroCarta({
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`border-2 p-3 bg-[#1a1a2e] ${
+      className={`border-2 p-3 bg-[#1a1a2e] relative overflow-hidden ${
         destaqueDuplas
           ? 'border-[#f6c453]'
           : temHistorico
@@ -93,11 +119,20 @@ function ParceiroCarta({
           : temHistorico
           ? '0 0 10px rgba(255,230,0,0.15)'
           : '0 0 6px rgba(0,229,255,0.1)',
-        background: destaqueDuplas
-          ? 'linear-gradient(180deg, rgba(246,196,83,0.12) 0%, #1a1a2e 100%)'
-          : undefined,
       }}
     >
+      {/* Chemistry Progress Bar (Top edge) */}
+      {temHistorico && (
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#111]">
+          <motion.div 
+            initial={{ width: 0 }} 
+            animate={{ width: `${chem.percent}%` }} 
+            className="h-full" 
+            style={{ background: chem.color }} 
+          />
+        </div>
+      )}
+
       <div className="flex items-center gap-3">
         <OvrBadge ovr={parceiro.overall} />
 
@@ -110,30 +145,53 @@ function ParceiroCarta({
             >
               {parceiro.nome}
             </span>
-            {temHistorico && <Star size={10} className="text-neon-yellow shrink-0" fill="var(--neon-yellow)" />}
+            {temHistorico && (
+              <span 
+                className="text-[6px] px-1 border border-current arcade-font" 
+                style={{ color: chem.color }}
+              >
+                {chem.label}
+              </span>
+            )}
           </div>
 
-          <div className="flex items-center gap-2 text-[8px] text-[#888]">
-            {parceiro.posicao && <span>#{parceiro.posicao}</span>}
+          <div className="flex flex-wrap items-center gap-2 text-[8px] text-[#888]">
+            {parceiro.posicao && <span>D#{parceiro.posicao}</span>}
+            {parceiro.ranking_simples && <span>S#{parceiro.ranking_simples}</span>}
             <span className="text-[#8ca8b9]">{tier}</span>
-            {sinergia && (
-              <span
-                className="px-1.5 py-0.5 border text-[7px]"
-                style={{
-                  borderColor: 'var(--neon-yellow)',
-                  color: 'var(--neon-yellow)',
-                  fontFamily: 'var(--font-arcade)',
-                }}
-              >
-                {sinergia}
-              </span>
+            {typeof parceiro.ranking_combinado === 'number' && (
+              <span className="text-neon-cyan">COMB {parceiro.ranking_combinado}</span>
             )}
             {parceiro.vinculo && parceiro.vinculo.partidas > 0 && (
               <span className="text-[#888]">
-                {parceiro.vinculo.vitorias}W/{parceiro.vinculo.partidas - parceiro.vinculo.vitorias}L
+                {parceiro.vinculo.vitorias}V/{parceiro.vinculo.partidas - parceiro.vinculo.vitorias}L
               </span>
             )}
           </div>
+
+          <div className="mt-1 flex flex-wrap gap-1.5">
+            {parceiro.disponibilidade && (
+              <span
+                className="border px-1.5 py-0.5 arcade-font text-[7px]"
+                style={{ color: availabilityColor(parceiro.disponibilidade.status), borderColor: availabilityColor(parceiro.disponibilidade.status) }}
+              >
+                {parceiro.disponibilidade.status.toUpperCase()}
+              </span>
+            )}
+            {parceiro.perfil_parceria && (
+              <span className="border border-neon-cyan/40 px-1.5 py-0.5 arcade-font text-[7px] text-neon-cyan">
+                {parceiro.perfil_parceria.status.toUpperCase()} • SKILL {parceiro.perfil_parceria.skill_duplas}
+              </span>
+            )}
+            {parceiro.formato_duplas && (
+              <span className="border border-neon-yellow/40 px-1.5 py-0.5 arcade-font text-[7px] text-neon-yellow">
+                {parceiro.formato_duplas.no_ad ? 'NO-AD' : 'DEUCE'} • {parceiro.formato_duplas.match_tiebreak ? 'MTB' : '3º SET'}
+              </span>
+            )}
+          </div>
+          
+          <TacticalSynergy estilo1={meuEstilo} estilo2={parceiro.estilo_jogo} />
+          
           <div className="mt-1">
             <DuplasBadge duplas={parceiro.duplas} />
           </div>
@@ -210,7 +268,7 @@ export function DuplasScreen() {
     setConvidando(nome)
     setMensagem(null)
     try {
-      const r = await api.duplas.convidar(nome, 'ATP 250')
+      const r = await api.duplas.convidar(nome, tour === 'wta' ? 'WTA 250' : 'ATP 250')
       setMensagem({ texto: r.mensagem, ok: r.ok })
     } catch (e: any) {
       setMensagem({ texto: e.message, ok: false })
@@ -275,6 +333,7 @@ export function DuplasScreen() {
                         <ParceiroCarta
                           key={p.nome}
                           parceiro={p}
+                          meuEstilo={jogador?.estilo_jogo}
                           onConvidar={handleConvidar}
                           convidando={convidando}
                         />
@@ -299,6 +358,7 @@ export function DuplasScreen() {
                         <ParceiroCarta
                           key={p.nome}
                           parceiro={p}
+                          meuEstilo={jogador?.estilo_jogo}
                           onConvidar={handleConvidar}
                           convidando={convidando}
                         />
@@ -359,6 +419,7 @@ export function DuplasScreen() {
                 <ParceiroCarta
                   key={p.nome}
                   parceiro={p}
+                  meuEstilo={jogador?.estilo_jogo}
                   onConvidar={handleConvidar}
                   convidando={convidando}
                 />

@@ -44,17 +44,20 @@ class Jogador:
         self.peso: int = (
             random.randint(70, 90) if genero == "masculino" else random.randint(55, 75)
         )
-        self.mao_dominante: str = random.choice(["Destro", "Canhoto"])
+        self.mao_dominante: str = "Canhoto" if random.random() < 0.11 else "Destro"
         self.reves: str = random.choice(["Duas mãos", "Uma mão"])
         self.estilo_jogo: str = "All-court"  # Default
 
         # Atributos de Jogo
         self.semana: int = 1
         self.energia: int = 100
-        self.ritmo_jogo: int = 50
+        self.ritmo_jogo: int = 40
         self.moral: int = 70
-        self.dinheiro: int = 500
+        self.continente_atual: str = "Europa"
+        self.dinheiro: int = 8000
+        self.agenda_inscricoes: dict = {}
         self.fadiga: int = 0
+        self.condicao: int = 100
         self.status_lesao: dict = {
             "lesionado": False,
             "semanas_restantes": 0,
@@ -88,6 +91,11 @@ class Jogador:
             {}
         )  # {pat_id: True} quando patrocinador insatisfeito
         self.reputacao_imprensa: int = 50
+        self.persona: dict = {
+            "pontos": {"iceman": 0, "badboy": 0, "champ": 0},
+            "ativa": "Neutro",
+            "titulo": "Promessa",
+        }
         self.caixa_email: list[dict] = []  # propostas e convites pendentes
         self.lifestyle: list[str] = []  # IDs de itens de luxo/investimentos adquiridos
 
@@ -96,7 +104,7 @@ class Jogador:
         self.xp: int = 0
         self.xp_para_proximo_nivel: int = 100
         self.pontos_de_skill: int = 0
-        self.pico_carreira: int = random.randint(26, 29)  # Idade do ápice técnico
+        self.pico_carreira: int = random.randint(24, 34)  # Idade do ápice técnico
         self.historico_partidas: list[dict] = []
         self.historico_torneios: list[dict] = []
         self.historico_ranking: list[dict] = (
@@ -109,16 +117,18 @@ class Jogador:
 
         self.protected_ranking: int | None = None
         self.protected_ranking_semanas: int = 0
+        self.protected_ranking_usos: int = (
+            8  # usos restantes após ativar PR (ATP: 8 em 12 meses)
+        )
 
         self.atributos = DEFAULT_ATRIBUTOS.copy()
         self.atributos_psicologicos = DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy()
+        self.especialidade_superficie: dict = {"saibro": 70, "hard": 70, "grama": 70}
         self._overall_cache = None
         self._sanitizar_atributos()
 
     def _sanitizar_atributos(self):
-        """Garante que todos os atributos estejam dentro dei limites (1-100)."""
-        if "duplas" not in self.atributos:
-            self.atributos["duplas"] = DEFAULT_ATRIBUTOS.get("duplas", 60)
+        """Garante que todos os atributos estejam dentro dos limites (1-100)."""
         for attr in self.atributos:
             self.atributos[attr] = max(1, min(100, self.atributos[attr]))
         for attr in self.atributos_psicologicos:
@@ -172,6 +182,30 @@ class Jogador:
     def ajustar_ritmo(self, valor):
         self.ritmo_jogo = max(0, min(100, self.ritmo_jogo + valor))
 
+    def inscrever_torneio(self, semana_alvo: int, nome_torneio: str):
+        """Registra interesse em jogar um torneio com antecedência."""
+        self.agenda_inscricoes[str(semana_alvo)] = nome_torneio
+
+    def desinscrever_torneio(self, semana_alvo: int):
+        """Remove inscrição de uma semana futura."""
+        self.agenda_inscricoes.pop(str(semana_alvo), None)
+
+    def obter_inscricao_semana(self, semana: int) -> str | None:
+        """Retorna o torneio planejado para dada semana."""
+        return self.agenda_inscricoes.get(str(semana))
+
+    def processar_ritmo_semanal(self, participou: bool):
+        """
+        Se o jogador participou de um torneio, o ritmo se mantém ou sobe levemente.
+        Se descansou, o ritmo cai (enferruja).
+        """
+        if participou:
+            # Manutenção ou ganho passivo por estar no clima de torneio
+            self.ajustar_ritmo(random.randint(0, 2))
+        else:
+            # Perda de ritmo por inatividade
+            self.ajustar_ritmo(-random.randint(5, 10))
+
     def registrar_transacao(self, valor, descricao, categoria="torneio"):
         """Registra uma transação financeira no ledger e ajusta o saldo."""
         self.dinheiro += valor
@@ -216,7 +250,9 @@ class Jogador:
             "energia": self.energia,
             "ritmo_jogo": self.ritmo_jogo,
             "moral": self.moral,
+            "continente_atual": self.continente_atual,
             "dinheiro": self.dinheiro,
+            "agenda_inscricoes": self.agenda_inscricoes,
             "modalidade_atual": self.modalidade_atual,
             "parceiro_duplas": self.parceiro_duplas,
             "nivel": self.nivel,
@@ -232,6 +268,7 @@ class Jogador:
             "transacoes": self.transacoes,
             "snapshots_carreira": self.snapshots_carreira,
             "fadiga": self.fadiga,
+            "condicao": self.condicao,
             "status_lesao": self.status_lesao,
             "status_doenca": self.status_doenca,
             "empresario": self.empresario,
@@ -240,22 +277,21 @@ class Jogador:
             "seguidores": self.seguidores,
             "avisos_patrocinio": self.avisos_patrocinio,
             "reputacao_imprensa": self.reputacao_imprensa,
+            "persona": self.persona,
             "caixa_email": self.caixa_email,
             "lifestyle": self.lifestyle,
             "atributos": self.atributos,
             "atributos_psicologicos": self.atributos_psicologicos,
+            "especialidade_superficie": self.especialidade_superficie,
             "protected_ranking": self.protected_ranking,
             "protected_ranking_semanas": self.protected_ranking_semanas,
+            "protected_ranking_usos": self.protected_ranking_usos,
             "vinculos_dupla": self.vinculos_dupla,
         }
 
     @classmethod
     def from_dict(cls, data: dict, save_name: str) -> "Jogador":
-        """Reconstrói uma instância de Jogador a partir de um dicionário salvo com migrações."""
-        from src.migracoes import aplicar_migracoes
-
-        data = aplicar_migracoes(data)
-
+        """Reconstrói uma instância de Jogador a partir de um dicionário salvo."""
         jogador = cls(
             nome=data["nome"],
             idade=data["idade"],
@@ -272,9 +308,11 @@ class Jogador:
 
         jogador.semana = data.get("semana", 1)
         jogador.energia = data.get("energia", 100)
-        jogador.ritmo_jogo = data.get("ritmo_jogo", 50)
+        jogador.ritmo_jogo = data.get("ritmo_jogo", 40)
         jogador.moral = data.get("moral", 70)
-        jogador.dinheiro = data.get("dinheiro", 500)
+        jogador.continente_atual = data.get("continente_atual", "Europa")
+        jogador.dinheiro = data.get("dinheiro", 8000)
+        jogador.agenda_inscricoes = data.get("agenda_inscricoes", {})
         jogador.modalidade_atual = data.get("modalidade_atual", "simples")
         jogador.parceiro_duplas = data.get("parceiro_duplas", None)
 
@@ -290,7 +328,7 @@ class Jogador:
         jogador.xp = data.get("xp", 0)
         jogador.xp_para_proximo_nivel = data.get("xp_para_proximo_nivel", 100)
         jogador.pontos_de_skill = data.get("pontos_de_skill", 0)
-        jogador.pico_carreira = data.get("pico_carreira", random.randint(26, 29))
+        jogador.pico_carreira = data.get("pico_carreira", random.randint(24, 34))
         jogador.historico_partidas = data.get("historico_partidas", [])
         jogador.historico_torneios = data.get("historico_torneios", [])
         jogador.historico_ranking = data.get("historico_ranking", [])
@@ -301,16 +339,30 @@ class Jogador:
 
         # Fadiga e Lesão
         jogador.fadiga = data.get("fadiga", 0)
+        jogador.condicao = int(data.get("condicao", 100) or 100)
         jogador.status_lesao = data.get("status_lesao", jogador.status_lesao)
         jogador.status_doenca = data.get("status_doenca", jogador.status_doenca)
 
         # Gestão
-        jogador.empresario = data.get("empresario")
-        jogador.equipe = data.get("equipe", [])
-        jogador.patrocinios = data.get("patrocinios", [])
+        jogador.empresario = data.get("empresario") or None
+        equipe_salva = data.get("equipe", [])
+        jogador.equipe = equipe_salva if isinstance(equipe_salva, list) else []
+        patrocinios_salvos = data.get("patrocinios", [])
+        jogador.patrocinios = (
+            patrocinios_salvos if isinstance(patrocinios_salvos, list) else []
+        )
         jogador.seguidores = data.get("seguidores", 0)
-        jogador.avisos_patrocinio = data.get("avisos_patrocinio") or {}
+        avisos = data.get("avisos_patrocinio")
+        jogador.avisos_patrocinio = avisos if isinstance(avisos, dict) else {}
         jogador.reputacao_imprensa = data.get("reputacao_imprensa", 50)
+        jogador.persona = data.get(
+            "persona",
+            {
+                "pontos": {"iceman": 0, "badboy": 0, "champ": 0},
+                "ativa": "Neutro",
+                "titulo": "Promessa",
+            },
+        )
         jogador.caixa_email = data.get("caixa_email", [])
         jogador.lifestyle = data.get("lifestyle", [])
 
@@ -319,11 +371,17 @@ class Jogador:
             "atributos_psicologicos", DEFAULT_ATRIBUTOS_PSICOLOGICOS.copy()
         )
 
+        # Especialidade de Superfície
+        jogador.especialidade_superficie = data.get(
+            "especialidade_superficie", {"saibro": 70, "hard": 70, "grama": 70}
+        )
+
         # Ranking Protegido
         jogador.protected_ranking = data.get("protected_ranking")
         jogador.protected_ranking_semanas = int(
             data.get("protected_ranking_semanas", 0) or 0
         )
+        jogador.protected_ranking_usos = int(data.get("protected_ranking_usos", 8) or 8)
 
         # Vínculos de Dupla
         jogador.vinculos_dupla = data.get("vinculos_dupla", {})
@@ -489,22 +547,32 @@ def criar_jogador_alexandre_paiva(nome_save: str) -> Jogador:
         genero="masculino",
     )
     jogador_instancia.atributos = {
-        "saque": 80,
+        "vel_saque": 78,
+        "pre_saque": 72,
+        "segundo_saque": 68,
+        "retorno": 74,
         "forehand": 72,
         "backhand": 80,
-        "topspin": 68,
         "voleio": 60,
-        "slice": 62,
-        "movimento": 78,
+        "smash": 62,
         "lob": 65,
-        "fisico": 80,
+        "topspin": 68,
+        "slice": 62,
         "winner": 75,
+        "velocidade": 78,
+        "aceleracao": 74,
+        "resistencia": 80,
+        "forca": 72,
+        "agilidade": 76,
+        "duplas": 60,
     }
     jogador_instancia.atributos_psicologicos = {
-        "concentracao": 75,
-        "agressividade": 50,
+        "clutch": 70,
+        "consistencia": 60,
         "leitura_de_jogo": 60,
         "determinacao": 65,
+        "compostura": 68,
+        "agressividade": 50,
     }
     salvar_jogo(nome_save, jogador_instancia)
     adicionar_jogador_ao_ranking(jogador_instancia)

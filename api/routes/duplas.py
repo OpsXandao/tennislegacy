@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from typing import Optional
 
-from api.session import Session, obter_sessao_ativa
+from api.session import Session, obter_sessao_ativa, refresh_session
 from api.services import duplas_service
 
 router = APIRouter(prefix="/api/duplas", tags=["duplas"])
@@ -31,4 +31,7 @@ def buscar_parceiros(
 
 @router.post("/convidar")
 def convidar(req: InviteRequest, session: Session = Depends(obter_sessao_ativa)):
-    return duplas_service.convidar(session, req.npc_nome, req.torneio_tipo)
+    res = duplas_service.convidar(session, req.npc_nome, req.torneio_tipo)
+    if res.get("ok"):
+        refresh_session(session.nome_save_ativo)
+    return res

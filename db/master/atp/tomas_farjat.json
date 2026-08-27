@@ -2,24 +2,33 @@
   "nome": "Tomas Farjat",
   "nacionalidade": "[AR]",
   "idade": 25,
-  "overall": 72,
+  "overall": 49,
   "pontos": 40,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 46,
+    "segundo_saque": 53,
+    "retorno": 46,
     "forehand": 40,
     "backhand": 49,
-    "topspin": 42,
     "voleio": 46,
-    "slice": 40,
-    "movimento": 47,
+    "smash": 51,
     "lob": 50,
+    "topspin": 42,
+    "slice": 40,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 784,
   "atributos_psicologicos": {
-    "concentracao": 44,
+    "clutch": 44,
+    "consistencia": 62,
+    "compostura": 45,
     "agressividade": 43,
     "leitura_de_jogo": 42,
     "determinacao": 50
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -18,6 +18,7 @@ from src.services.tournament_service import (
     get_tournament_state,
     withdraw_from_tournament,
 )
+from src.services.world_clock_service import avancar_ate_proximo_momento, obter_agenda_torneio
 
 router = APIRouter(prefix="/api/torneio", tags=["torneio"])
 
@@ -45,17 +46,77 @@ def recusar_convocacao(session: Session = Depends(obter_sessao_ativa)) -> dict:
     return {"ok": True, "mensagem": "Convocação recusada. Moral afetada."}
 
 
+@router.post("/inscrever")
+def inscrever(semana: int, nome: str, session: Session = Depends(obter_sessao_ativa)):
+    if semana <= session.semana_atual + 2:
+        raise HTTPException(status_code=400, detail="Inscrições fecham com 3 semanas de antecedência.")
+    session.jogador.inscrever_torneio(semana, nome)
+    from src.save import salvar_jogo
+    salvar_jogo(session.nome_save_ativo, session.jogador)
+    return {"ok": True, "mensagem": f"Inscrição confirmada para {nome} na semana {semana}."}
+
+
 @router.post("/criar")
 def criar(
     body: CriarTorneioBody, session: Session = Depends(obter_sessao_ativa)
 ) -> dict:
-    return create_tournament(
+    jogador = session.jogador
+    # Validação de Entry List (Realismo de Calendário)
+    inscrito = jogador.obter_inscricao_semana(session.semana_atual)
+    custo_wc = 0
+    
+    if inscrito != body.torneio_nome:
+        # Taxa de wildcard escalonada por tier do torneio
+        _WC_TAXA = {
+            "ITF 25": 300,
+            "ITF 100": 500,
+            "Challenger 125": 500,
+            "ATP 250": 800,
+            "WTA 250": 800,
+            "ATP 500": 1500,
+            "WTA 500": 1500,
+            "ATP 1000": 2500,
+            "WTA 1000": 2500,
+            "Grand Slam": 4000,
+        }
+        # Busca o tipo do torneio no calendário pelo nome
+        tipo_torneio = ""
+        try:
+            from src.dados import carregar_calendario
+            genero = "masculino" if jogador.genero == "masculino" else "feminino"
+            cal = carregar_calendario(genero)
+            nome_alvo = (body.torneio_nome or "").lower()
+            for semana_info in (cal if isinstance(cal, list) else cal.values()):
+                torneios = semana_info if isinstance(semana_info, list) else [semana_info]
+                for t in torneios:
+                    if isinstance(t, dict) and t.get("nome", "").lower() == nome_alvo:
+                        tipo_torneio = t.get("tipo", "")
+                        break
+                if tipo_torneio:
+                    break
+        except Exception:
+            pass
+
+        custo_wc = _WC_TAXA.get(tipo_torneio, 1000)
+        if jogador.dinheiro < custo_wc:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Você não se inscreveu. Wildcard: ${custo_wc:,} ({tipo_torneio or 'torneio'}). Saldo insuficiente.",
+            )
+        jogador.registrar_transacao(
+            -custo_wc, f"Wildcard: {body.torneio_nome}", categoria="torneio"
+        )
+
+    jogador.desinscrever_torneio(session.semana_atual)
+
+    res = create_tournament(
         nome_save=session.nome_save_ativo,
         jogador=session.jogador,
         modalidade=body.modalidade,
         parceiro=body.parceiro,
         torneio_nome=body.torneio_nome,
     )
+    return {**res, "wc_pago": custo_wc > 0}
 
 
 @router.get("/historico")
@@ -74,6 +135,16 @@ def historico_torneio(
 @router.get("/estado")
 def get_estado(session: Session = Depends(obter_sessao_ativa)):
     return get_tournament_state(session.nome_save_ativo)
+
+
+@router.get("/agenda")
+def get_agenda(session: Session = Depends(obter_sessao_ativa)) -> dict:
+    return obter_agenda_torneio(session.nome_save_ativo, genero=session.jogador.genero)
+
+
+@router.post("/avancar-proximo-momento")
+def avancar_proximo_momento(session: Session = Depends(obter_sessao_ativa)) -> dict:
+    return avancar_ate_proximo_momento(session.nome_save_ativo)
 
 
 @router.post("/avancar-fase")

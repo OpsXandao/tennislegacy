@@ -2,24 +2,33 @@
   "nome": "Ethan Cook",
   "nacionalidade": "[AU]",
   "idade": 23,
-  "overall": 69,
+  "overall": 49,
   "pontos": 8,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 44,
+    "retorno": 47,
     "forehand": 40,
     "backhand": 40,
-    "topspin": 54,
     "voleio": 42,
-    "slice": 55,
-    "movimento": 54,
+    "smash": 48,
     "lob": 44,
+    "topspin": 54,
+    "slice": 55,
     "winner": 55,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 50,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 1234,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 55,
+    "compostura": 38,
     "agressividade": 50,
     "leitura_de_jogo": 37,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 69,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

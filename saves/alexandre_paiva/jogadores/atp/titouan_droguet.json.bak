@@ -1,0 +1,91 @@
+{
+  "nome": "Titouan Droguet",
+  "nacionalidade": "[FR]",
+  "pontos": 520,
+  "pontos_duplas": 0,
+  "pontos_ranking": 520,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 52,
+  "energia": 76,
+  "fadiga": 3,
+  "moral": 75,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 51,
+    "pre_saque": 48,
+    "segundo_saque": 50,
+    "retorno": 47,
+    "forehand": 52,
+    "backhand": 52,
+    "voleio": 60,
+    "smash": 58,
+    "lob": 40,
+    "topspin": 55,
+    "slice": 40,
+    "winner": 51,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 47,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 54,
+    "consistencia": 64,
+    "compostura": 48,
+    "agressividade": 41,
+    "leitura_de_jogo": 34,
+    "determinacao": 38
+  },
+  "historico_torneios": [],
+  "historico_partidas": [
+    {
+      "ano": 2026,
+      "semana": 1,
+      "torneio": "Hong Kong Open",
+      "fase": "quartas",
+      "adversario": "Alexandre Paiva",
+      "placar": "Alexandre Paiva 2 x 0 Titouan Droguet",
+      "resultado": "D"
+    }
+  ],
+  "pontos_detalhados": [
+    {
+      "pontos": 520,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 24,
+  "id": 166,
+  "pico_carreira": 122,
+  "altura": 191,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  },
+  "ranking_pos": 123
+}

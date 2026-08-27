@@ -2,24 +2,33 @@
   "nome": "Cristian Garin",
   "nacionalidade": "[CL]",
   "idade": 29,
-  "overall": 83,
+  "overall": 65,
   "pontos": 656,
   "atributos": {
-    "saque": 69,
+    "vel_saque": 67,
+    "pre_saque": 67,
+    "segundo_saque": 70,
+    "retorno": 65,
     "forehand": 68,
     "backhand": 65,
-    "topspin": 70,
     "voleio": 69,
-    "slice": 64,
-    "movimento": 67,
+    "smash": 65,
     "lob": 66,
+    "topspin": 70,
+    "slice": 64,
     "winner": 61,
-    "fisico": 60,
+    "velocidade": 64,
+    "aceleracao": 60,
+    "resistencia": 60,
+    "forca": 63,
+    "agilidade": 65,
     "duplas": 60
   },
   "id": 122,
   "atributos_psicologicos": {
-    "concentracao": 55,
+    "clutch": 55,
+    "consistencia": 35,
+    "compostura": 61,
     "agressividade": 74,
     "leitura_de_jogo": 69,
     "determinacao": 74
@@ -71,5 +80,10 @@
   "peso": 79,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

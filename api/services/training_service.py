@@ -6,18 +6,46 @@ from api.session import Session
 
 def executar_descanso(session: Session) -> tuple:
     j = session.jogador
+    energia_antes = j.energia
     j.energia = min(100, j.energia + 30)
     j.fadiga = max(0, j.fadiga - 25)
+    
+    # Feedback Narrativo
+    recup = j.energia - energia_antes
+    msg = f"Ótima escolha. Seu preparador físico nota uma recuperação de {recup}% na sua energia."
+    if j.fadiga == 0:
+        msg += " Você está se sentindo renovado e pronto para o próximo desafio."
+        
     salvar_jogo(session.nome_save_ativo, j)
     resultado = avancar_semana(session.nome_save_ativo, expected_week=session.semana_atual)
+    resultado["eventos"].append(msg)
     return j, resultado
 
 
-def executar_treino(session: Session, foco: str) -> tuple:
+def executar_treino(session: Session, foco: str, atributo_foco: str | None = None) -> tuple:
     j = session.jogador
-    melhorias = treinar_semana(j, foco)
+    melhorias = treinar_semana(j, foco, atributo_foco=atributo_foco)
+    
+    # Feedback Narrativo
+    if "LESIONADO" in melhorias:
+        msg = f"DESASTRE NO TREINO! Você tentou forçar demais e sofreu uma lesão. Seu preparador está furioso com a falta de cuidado."
+        salvar_jogo(session.nome_save_ativo, j)
+        resultado = avancar_semana(session.nome_save_ativo, expected_week=session.semana_atual)
+        resultado["eventos"].append(msg)
+        return j, {}, resultado
+
+    if melhorias:
+        fatos = ", ".join([f"{k.capitalize()} (+{v})" for k, v in melhorias.items() if k != "moral"])
+        if atributo_foco and atributo_foco in melhorias:
+            msg = f"Treino de especialização concluído. Seu treinador elogia seu foco em {atributo_foco.capitalize()}. Evolução: {fatos}."
+        else:
+            msg = f"Seu treinador está satisfeito com a evolução em: {fatos}."
+    else:
+        msg = "O treino foi intenso, mas seu treinador acredita que você precisa de mais foco para atingir o próximo nível."
+
     salvar_jogo(session.nome_save_ativo, j)
     resultado = avancar_semana(session.nome_save_ativo, expected_week=session.semana_atual)
+    resultado["eventos"].append(msg)
     return j, melhorias, resultado
 
 

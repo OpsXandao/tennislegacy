@@ -2,24 +2,33 @@
   "nome": "Alex Chang",
   "nacionalidade": "[US]",
   "idade": 22,
-  "overall": 69,
+  "overall": 54,
   "pontos": 7,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 53,
+    "segundo_saque": 50,
+    "retorno": 51,
     "forehand": 57,
     "backhand": 54,
-    "topspin": 48,
     "voleio": 59,
-    "slice": 54,
-    "movimento": 44,
+    "smash": 58,
     "lob": 49,
+    "topspin": 48,
+    "slice": 54,
     "winner": 56,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 1242,
   "atributos_psicologicos": {
-    "concentracao": 51,
+    "clutch": 51,
+    "consistencia": 74,
+    "compostura": 44,
     "agressividade": 31,
     "leitura_de_jogo": 35,
     "determinacao": 31
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -1,0 +1,80 @@
+{
+  "nome": "Edouard Villoslada",
+  "nacionalidade": "[FR]",
+  "pontos": 8,
+  "pontos_duplas": 0,
+  "pontos_ranking": 8,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 53,
+  "energia": 100,
+  "fadiga": 6,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 53,
+    "pre_saque": 52,
+    "segundo_saque": 52,
+    "retorno": 49,
+    "forehand": 46,
+    "backhand": 44,
+    "voleio": 59,
+    "smash": 57,
+    "lob": 45,
+    "topspin": 48,
+    "slice": 61,
+    "winner": 58,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 53,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 51,
+    "consistencia": 60,
+    "compostura": 47,
+    "agressividade": 45,
+    "leitura_de_jogo": 38,
+    "determinacao": 40
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 8,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 26,
+  "id": 1226,
+  "pico_carreira": 1230,
+  "altura": 180,
+  "peso": 81,
+  "mao_dominante": "Destro",
+  "reves": "Uma mão",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

@@ -2,24 +2,33 @@
   "nome": "Pablo Masjuan Ginel",
   "nacionalidade": "[ES]",
   "idade": 23,
-  "overall": 71,
+  "overall": 51,
   "pontos": 21,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 46,
+    "retorno": 50,
     "forehand": 40,
     "backhand": 54,
-    "topspin": 40,
     "voleio": 56,
-    "slice": 40,
-    "movimento": 52,
+    "smash": 56,
     "lob": 50,
+    "topspin": 40,
+    "slice": 40,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 52,
     "duplas": 60
   },
   "id": 965,
   "atributos_psicologicos": {
-    "concentracao": 46,
+    "clutch": 46,
+    "consistencia": 63,
+    "compostura": 42,
     "agressividade": 42,
     "leitura_de_jogo": 50,
     "determinacao": 36
@@ -45,5 +54,10 @@
   "peso": 69,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

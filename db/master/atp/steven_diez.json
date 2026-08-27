@@ -2,24 +2,33 @@
   "nome": "Steven Diez",
   "nacionalidade": "[CA]",
   "idade": 34,
-  "overall": 70,
+  "overall": 65,
   "pontos": 10,
   "atributos": {
-    "saque": 65,
+    "vel_saque": 64,
+    "pre_saque": 67,
+    "segundo_saque": 61,
+    "retorno": 68,
     "forehand": 73,
     "backhand": 71,
-    "topspin": 65,
     "voleio": 66,
-    "slice": 73,
-    "movimento": 62,
+    "smash": 64,
     "lob": 68,
+    "topspin": 65,
+    "slice": 73,
     "winner": 75,
-    "fisico": 60,
+    "velocidade": 61,
+    "aceleracao": 58,
+    "resistencia": 60,
+    "forca": 65,
+    "agilidade": 62,
     "duplas": 60
   },
   "id": 1164,
   "atributos_psicologicos": {
-    "concentracao": 49,
+    "clutch": 49,
+    "consistencia": 56,
+    "compostura": 49,
     "agressividade": 49,
     "leitura_de_jogo": 58,
     "determinacao": 52
@@ -45,5 +54,10 @@
   "peso": 81,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

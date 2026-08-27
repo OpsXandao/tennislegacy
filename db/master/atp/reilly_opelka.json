@@ -2,24 +2,33 @@
   "nome": "Reilly Opelka",
   "nacionalidade": "[US]",
   "idade": 28,
-  "overall": 84,
+  "overall": 66,
   "pontos": 786,
   "atributos": {
-    "saque": 68,
+    "vel_saque": 66,
+    "pre_saque": 68,
+    "segundo_saque": 69,
+    "retorno": 66,
     "forehand": 72,
     "backhand": 68,
-    "topspin": 67,
     "voleio": 71,
-    "slice": 69,
-    "movimento": 63,
+    "smash": 66,
     "lob": 69,
+    "topspin": 67,
+    "slice": 69,
     "winner": 73,
-    "fisico": 60,
+    "velocidade": 61,
+    "aceleracao": 58,
+    "resistencia": 60,
+    "forca": 64,
+    "agilidade": 63,
     "duplas": 60
   },
   "id": 95,
   "atributos_psicologicos": {
-    "concentracao": 61,
+    "clutch": 61,
+    "consistencia": 35,
+    "compostura": 65,
     "agressividade": 72,
     "leitura_de_jogo": 74,
     "determinacao": 74
@@ -66,5 +75,10 @@
   "peso": 79,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

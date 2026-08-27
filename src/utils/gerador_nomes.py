@@ -94,7 +94,10 @@ def gerar_nacionalidade_aleatoria(pais_sede=None):
 
 
 def gerar_jogador_fraco(id_bot, pais_sede=None, genero="masculino"):
-    from src.constants.constantes import DEFAULT_ATRIBUTOS, DEFAULT_ATRIBUTOS_PSICOLOGICOS
+    from src.constants.constantes import (
+        DEFAULT_ATRIBUTOS,
+        DEFAULT_ATRIBUTOS_PSICOLOGICOS,
+    )
 
     codigo_pais = gerar_nacionalidade_aleatoria(pais_sede)
     nome = gerar_nome_completo(codigo_pais, genero)
@@ -121,18 +124,18 @@ def gerar_jogador_fraco(id_bot, pais_sede=None, genero="masculino"):
 
     # Base de atributos baixos (30-50)
     atributos = {k: random.randint(30, 50) for k in DEFAULT_ATRIBUTOS.keys()}
-    atributos["fisico"] = random.randint(35, 55)
+    atributos["resistencia"] = random.randint(35, 55)
 
     if arq == "sacador":
-        atributos["saque"] += 15
+        atributos["vel_saque"] += 15
         atributos["winner"] += 5
     elif arq == "saibrista":
         atributos["topspin"] += 12
-        atributos["movimento"] += 10
-        atributos["fisico"] += 8
+        atributos["agilidade"] += 10
+        atributos["resistencia"] += 8
     elif arq == "rede":
         atributos["voleio"] += 15
-        atributos["movimento"] += 5
+        atributos["velocidade"] += 5
 
     # Atributos psicológicos
     psico = {k: random.randint(30, 55) for k in DEFAULT_ATRIBUTOS_PSICOLOGICOS.keys()}

@@ -2,24 +2,33 @@
   "nome": "Patrik Trhac",
   "nacionalidade": "[RU] Rússia",
   "idade": 22,
-  "overall": 87,
+  "overall": 88,
   "pontos": 1217,
   "id": 72329,
   "atributos": {
-    "saque": 87,
+    "vel_saque": 87,
+    "pre_saque": 86,
+    "segundo_saque": 82,
+    "retorno": 84,
     "forehand": 92,
     "backhand": 82,
-    "topspin": 80,
     "voleio": 94,
-    "slice": 87,
-    "movimento": 88,
+    "smash": 92,
     "lob": 86,
-    "fisico": 93,
+    "topspin": 80,
+    "slice": 87,
     "winner": 85,
+    "velocidade": 89,
+    "aceleracao": 82,
+    "resistencia": 93,
+    "forca": 90,
+    "agilidade": 88,
     "duplas": 93
   },
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 35,
+    "compostura": 58,
     "agressividade": 73,
     "leitura_de_jogo": 68,
     "determinacao": 71
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1217,
-  "rank_duplas": 76
+  "rank_duplas": 76,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

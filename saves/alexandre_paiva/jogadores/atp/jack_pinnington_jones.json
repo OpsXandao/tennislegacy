@@ -1,0 +1,86 @@
+{
+  "nome": "Jack Pinnington Jones",
+  "nacionalidade": "[GB]",
+  "pontos": 456,
+  "pontos_duplas": 0,
+  "pontos_ranking": 456,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 53,
+  "energia": 75,
+  "fadiga": 3,
+  "moral": 70,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 52,
+    "pre_saque": 49,
+    "segundo_saque": 56,
+    "retorno": 49,
+    "forehand": 49,
+    "backhand": 47,
+    "voleio": 46,
+    "smash": 50,
+    "lob": 45,
+    "topspin": 53,
+    "slice": 49,
+    "winner": 61,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 55,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 41,
+    "consistencia": 59,
+    "compostura": 45,
+    "agressividade": 46,
+    "leitura_de_jogo": 42,
+    "determinacao": 56
+  },
+  "historico_torneios": [],
+  "historico_partidas": [
+    {
+      "ano": 2026,
+      "semana": 2,
+      "torneio": "Hong Kong Open",
+      "fase": "oitavas",
+      "adversario": "Alexandre Paiva",
+      "placar": "Alexandre Paiva 2 x 0 Jack Pinnington Jones",
+      "resultado": "D"
+    }
+  ],
+  "pontos_detalhados": [
+    {
+      "pontos": 456,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {},
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 22,
+  "id": 172,
+  "pico_carreira": 136,
+  "altura": 180,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  },
+  "ranking_pos": 138
+}

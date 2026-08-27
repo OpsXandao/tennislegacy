@@ -2,24 +2,33 @@
   "nome": "Elgin Khoeblal",
   "nacionalidade": "[NL]",
   "idade": 24,
-  "overall": 70,
+  "overall": 53,
   "pontos": 10,
   "atributos": {
-    "saque": 55,
+    "vel_saque": 55,
+    "pre_saque": 53,
+    "segundo_saque": 51,
+    "retorno": 51,
     "forehand": 59,
     "backhand": 59,
-    "topspin": 55,
     "voleio": 50,
-    "slice": 42,
-    "movimento": 44,
+    "smash": 52,
     "lob": 43,
+    "topspin": 55,
+    "slice": 42,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 59,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 1174,
   "atributos_psicologicos": {
-    "concentracao": 55,
+    "clutch": 55,
+    "consistencia": 56,
+    "compostura": 48,
     "agressividade": 49,
     "leitura_de_jogo": 55,
     "determinacao": 34
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

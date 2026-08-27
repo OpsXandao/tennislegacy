@@ -2,24 +2,33 @@
   "nome": "Keegan Smith",
   "nacionalidade": "[US]",
   "idade": 27,
-  "overall": 77,
+  "overall": 47,
   "pontos": 164,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 47,
+    "retorno": 43,
     "forehand": 40,
     "backhand": 44,
-    "topspin": 51,
     "voleio": 43,
-    "slice": 40,
-    "movimento": 44,
+    "smash": 49,
     "lob": 46,
+    "topspin": 51,
+    "slice": 40,
     "winner": 43,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 338,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 59,
+    "compostura": 40,
     "agressividade": 46,
     "leitura_de_jogo": 35,
     "determinacao": 43
@@ -45,5 +54,10 @@
   "peso": 66,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

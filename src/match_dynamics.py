@@ -1,11 +1,17 @@
 from src.utils.math_utils import clamp
 from src.utils.superficie_utils import normalizar_superficie
+from src.fadiga import (
+    calcular_recuperacao_energia,
+    calcular_penalidade_energia,
+    calcular_condicao_pre_partida,
+    calcular_multiplicador_condicao,
+)
 
 STAMINA_CUSTO_BASE = {
-    "curto": 0.35,
-    "medio": 0.65,
-    "longo": 0.95,
-    "muito_longo": 1.55,  # rallies de 10+ trocas (saibro, dois baseliners)
+    "curto": 0.5,
+    "medio": 1.0,
+    "longo": 1.6,
+    "muito_longo": 2.5,
 }
 
 SUPERFICIE_FADIGA = {
@@ -50,17 +56,17 @@ def calcular_fator_custo_stamina(
     atributos: dict, psico: dict, estrategia: dict, intensidade: str, superficie: str
 ) -> float:
     estrategia = estrategia or {}
-    fisico = atributos.get("fisico", 50)
-    movimento = atributos.get("movimento", 50)
+    resistencia = atributos.get("resistencia", 50)
+    velocidade = atributos.get("velocidade", 50)
     topspin = atributos.get("topspin", 50)
     agressividade = psico.get("agressividade", 50)
     estilo = estrategia.get("estilo", "atacar_do_fundo")
 
-    fator = 1.0 - (fisico - 50) / 200.0
+    fator = 1.0 - (resistencia - 50) / 200.0
     fator *= 1.0 + (agressividade - 50) / 200.0
 
     if intensidade == "longo":
-        bonus = 1.0 - ((movimento - 50) / 250.0 + (topspin - 50) / 300.0)
+        bonus = 1.0 - ((velocidade - 50) / 250.0 + (topspin - 50) / 300.0)
         if estilo == "atacar_do_fundo":
             bonus -= 0.05
         elif estilo == "atacar_na_rede":
@@ -195,20 +201,36 @@ def aplicar_custo_stamina_contextual(
 
 
 def calcular_stamina_pos_recuperacao(
-    stamina: float, fisico: float, indoor: bool, clima: str, umidade: int
+    stamina: float,
+    fisico: float = 50,
+    indoor: bool = False,
+    clima: str = "ameno",
+    umidade: int = 50,
+    tipo: str = "game",
+    tem_fisioterapeuta: bool = False,
 ) -> float:
-    base = 0.9 if indoor else 1.0
+    """Recuperação de stamina entre games ou sets.
+
+    Delega o cálculo base para calcular_recuperacao_energia (fadiga.py) e
+    aplica penalidades ambientais (indoor/clima/umidade).
+    """
+    rec_base = float(
+        calcular_recuperacao_energia(int(fisico), tipo, tem_fisioterapeuta)
+    )
+    fator_amb = 1.0
+    if indoor:
+        fator_amb *= 0.9
     if (clima or "").lower() == "quente":
-        base *= 0.9
+        fator_amb *= 0.9
     if int(umidade or 0) >= 75:
-        base *= 0.92
-    rec = base * clamp(0.12 + (fisico / 240.0), 0.2, 0.62)
+        fator_amb *= 0.92
+    rec = rec_base * fator_amb
     return clamp(stamina + rec, 0.0, 100.0)
 
 
 def normalizar_energia_pos_partida(
     stamina_final: float,
-    fisico: int,
+    resistencia: int,
     pontos_disputados: int,
     superficie: str = "dura",
     energia_inicial: float | None = None,
@@ -226,8 +248,8 @@ def normalizar_energia_pos_partida(
     elif superficie_n == "grama":
         ajuste_superficie = 2
 
-    bonus_fisico = max(0, min(7, int(round((int(fisico) - 55) / 6.5))))
-    alvo = 58 + bonus_fisico + ajuste_superficie
+    bonus_resistencia = max(0, min(7, int(round((int(resistencia) - 55) / 6.5))))
+    alvo = 58 + bonus_resistencia + ajuste_superficie
     intensidade = min(1.0, max(0.55, pontos_disputados / 145.0))
 
     if energia > alvo:
@@ -236,9 +258,9 @@ def normalizar_energia_pos_partida(
         energia = energia - (excesso * (0.72 + (0.28 * intensidade)))
 
     teto_pos_partida = 60 + ajuste_superficie
-    if int(fisico) >= 85:
+    if int(resistencia) >= 85:
         teto_pos_partida = 65 + ajuste_superficie
-    elif int(fisico) >= 75:
+    elif int(resistencia) >= 75:
         teto_pos_partida = 62 + ajuste_superficie
     if pontos_disputados >= 170:
         teto_pos_partida -= 2
@@ -255,11 +277,11 @@ def calcular_impacto_moral_sets(jogador, resultado_sets, venceu_partida: bool) -
         else jogador.get("atributos_psicologicos", {})
     )
     determinacao = int(psico.get("determinacao", 50) or 50)
-    concentracao = int(psico.get("concentracao", 50) or 50)
+    clutch = int(psico.get("clutch", 50) or 50)
     agressividade = int(psico.get("agressividade", 50) or 50)
 
     # Resiliência mental reduz impacto negativo; mental baixo amplia.
-    resiliencia = ((determinacao - 50) * 0.012) + ((concentracao - 50) * 0.008)
+    resiliencia = ((determinacao - 50) * 0.012) + ((clutch - 50) * 0.008)
     fator_negativo = max(0.65, min(1.35, 1.0 - resiliencia))
     # Agressividade alta acelera recuperação de confiança em sets dominantes.
     fator_positivo = max(0.8, min(1.25, 1.0 + ((agressividade - 50) * 0.005)))
@@ -281,16 +303,17 @@ def calcular_impacto_moral_sets(jogador, resultado_sets, venceu_partida: bool) -
 
     if not venceu_partida:
         delta = int(round(delta * 1.2))
-    
+
     return delta
 
 
 def calcular_impacto_moral_ranking(jogador, adversario, venceu_partida: bool) -> int:
     """Calcula ajuste de moral por resultado relativo ao ranking/força do adversário."""
     from src.utils.entidade_utils import obter_atributos
+
     attrs_j = obter_atributos(jogador)
     attrs_a = obter_atributos(adversario)
-    
+
     overall_j = (
         int(round(sum(attrs_j.values()) / max(1, len(attrs_j)))) if attrs_j else 50
     )
@@ -360,5 +383,5 @@ def calcular_impacto_moral_ranking(jogador, adversario, venceu_partida: bool) ->
         delta = 0
     if not venceu_partida and delta > 0:
         delta = 0
-    
+
     return delta

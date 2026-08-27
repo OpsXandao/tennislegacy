@@ -1,0 +1,106 @@
+{
+  "nome": "Marcel Zielinski",
+  "nacionalidade": "[PL]",
+  "pontos": 60,
+  "pontos_duplas": 0,
+  "pontos_ranking": 60,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 10,
+  "overall": 53,
+  "energia": 100,
+  "fadiga": 10,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 54,
+    "pre_saque": 52,
+    "segundo_saque": 55,
+    "retorno": 48,
+    "forehand": 58,
+    "backhand": 51,
+    "voleio": 53,
+    "smash": 55,
+    "lob": 53,
+    "topspin": 56,
+    "slice": 47,
+    "winner": 42,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 48,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 34,
+    "consistencia": 66,
+    "compostura": 37,
+    "agressividade": 39,
+    "leitura_de_jogo": 46,
+    "determinacao": 46
+  },
+  "historico_torneios": [
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 1,
+      "ano": 2026,
+      "fase": "pre_oitavas",
+      "fase_alcancada": "pre_oitavas",
+      "pontos": 10,
+      "premio": 4482,
+      "modalidade": "simples",
+      "obrigatorio": false,
+      "expirado": false
+    }
+  ],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 50,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    },
+    {
+      "pontos": 10,
+      "semana_expiracao": 1,
+      "ano_expiracao": 2027,
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana_origem": 1,
+      "ano_origem": 2026,
+      "fase": "pre_oitavas",
+      "modalidade": "simples"
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 4482,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 25,
+  "id": 708,
+  "pico_carreira": 676,
+  "altura": 176,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

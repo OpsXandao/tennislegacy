@@ -1,0 +1,80 @@
+{
+  "nome": "Anton Shepp",
+  "nacionalidade": "[NZ]",
+  "pontos": 23,
+  "pontos_duplas": 0,
+  "pontos_ranking": 23,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 54,
+  "energia": 100,
+  "fadiga": 23,
+  "moral": 75,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 55,
+    "pre_saque": 54,
+    "segundo_saque": 55,
+    "retorno": 53,
+    "forehand": 48,
+    "backhand": 51,
+    "voleio": 45,
+    "smash": 50,
+    "lob": 45,
+    "topspin": 51,
+    "slice": 59,
+    "winner": 55,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 56,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 39,
+    "consistencia": 50,
+    "compostura": 40,
+    "agressividade": 55,
+    "leitura_de_jogo": 55,
+    "determinacao": 45
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 23,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 23,
+  "id": 940,
+  "pico_carreira": 910,
+  "altura": 179,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

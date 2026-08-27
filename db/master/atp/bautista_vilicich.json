@@ -2,24 +2,33 @@
   "nome": "Bautista Vilicich",
   "nacionalidade": "[AR]",
   "idade": 24,
-  "overall": 72,
+  "overall": 48,
   "pontos": 34,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 48,
+    "segundo_saque": 55,
+    "retorno": 40,
     "forehand": 49,
     "backhand": 40,
-    "topspin": 47,
     "voleio": 40,
-    "slice": 40,
-    "movimento": 41,
+    "smash": 47,
     "lob": 48,
+    "topspin": 47,
+    "slice": 40,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 836,
   "atributos_psicologicos": {
-    "concentracao": 41,
+    "clutch": 41,
+    "consistencia": 62,
+    "compostura": 43,
     "agressividade": 43,
     "leitura_de_jogo": 42,
     "determinacao": 49
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Santiago Gonzalez",
   "nacionalidade": "[RU] Rússia",
   "idade": 30,
-  "overall": 89,
+  "overall": 91,
   "pontos": 1895,
   "id": 91114,
   "atributos": {
-    "saque": 94,
+    "vel_saque": 94,
+    "pre_saque": 93,
+    "segundo_saque": 78,
+    "retorno": 92,
     "forehand": 81,
     "backhand": 92,
-    "topspin": 87,
     "voleio": 96,
-    "slice": 95,
-    "movimento": 93,
+    "smash": 94,
     "lob": 82,
-    "fisico": 97,
+    "topspin": 87,
+    "slice": 95,
     "winner": 85,
+    "velocidade": 94,
+    "aceleracao": 86,
+    "resistencia": 97,
+    "forca": 91,
+    "agilidade": 94,
     "duplas": 96
   },
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 41,
+    "compostura": 45,
     "agressividade": 64,
     "leitura_de_jogo": 72,
     "determinacao": 46
@@ -42,5 +51,10 @@
   "reves": "Uma mão",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1895,
-  "rank_duplas": 53
+  "rank_duplas": 53,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

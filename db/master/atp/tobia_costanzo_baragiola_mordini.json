@@ -2,24 +2,33 @@
   "nome": "Tobia Costanzo Baragiola Mordini",
   "nacionalidade": "[IT]",
   "idade": 19,
-  "overall": 69,
+  "overall": 50,
   "pontos": 8,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 41,
+    "segundo_saque": 45,
+    "retorno": 47,
     "forehand": 42,
     "backhand": 47,
-    "topspin": 54,
     "voleio": 53,
-    "slice": 40,
-    "movimento": 54,
+    "smash": 55,
     "lob": 52,
+    "topspin": 54,
+    "slice": 40,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 53,
     "duplas": 60
   },
   "id": 1225,
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 66,
+    "compostura": 41,
     "agressividade": 39,
     "leitura_de_jogo": 45,
     "determinacao": 35
@@ -45,5 +54,10 @@
   "peso": 66,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

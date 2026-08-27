@@ -8,13 +8,9 @@ from src.match_dynamics import (
     atualizar_momentum_contextual,
     calcular_stamina_pos_recuperacao,
 )
-from src.simulacao_partida import (
-    ContextoPartida,
-    ContextoPonto,
-    EstatisticasPartida,
-    SimuladorPonto,
-    normalizar_superficie,
-)
+from src.match_state import ContextoPartida, ContextoPonto, EstatisticasPartida
+from src.services.simulador_ponto import SimuladorPonto
+from src.utils.superficie_utils import normalizar_superficie
 
 
 def atualizar_estatisticas(
@@ -95,22 +91,22 @@ def atualizar_estatisticas(
 def _definir_estrategia_auto(jogador, superficie: str) -> dict:
     atributos = obter_atributos(jogador)
     psico = obter_atributos_psicologicos(jogador)
-    saque = atributos.get("saque", 50)
+    vel_saque = atributos.get("vel_saque", 50)
     voleio = atributos.get("voleio", 50)
     slice_ = atributos.get("slice", 50)
     forehand = atributos.get("forehand", 50)
     backhand = atributos.get("backhand", 50)
     topspin = atributos.get("topspin", 50)
-    movimento = atributos.get("movimento", 50)
+    velocidade = atributos.get("velocidade", 50)
     winner = atributos.get("winner", 50)
     agressividade = psico.get("agressividade", 50)
     leitura = psico.get("leitura_de_jogo", 50)
     determinacao = psico.get("determinacao", 50)
 
     superficie = normalizar_superficie(superficie)
-    rede_score = saque * 0.4 + voleio * 0.4 + slice_ * 0.2
+    rede_score = vel_saque * 0.4 + voleio * 0.4 + slice_ * 0.2
     fundo_score = forehand * 0.35 + backhand * 0.35 + topspin * 0.3
-    variado_score = movimento * 0.4 + winner * 0.3 + saque * 0.3
+    variado_score = velocidade * 0.4 + winner * 0.3 + vel_saque * 0.3
 
     if superficie == "grama":
         rede_score *= 1.1
@@ -127,18 +123,18 @@ def _definir_estrategia_auto(jogador, superficie: str) -> dict:
     intencao = IntencaoPonto.PACIENTE
     if agressividade >= 68 or winner >= 74:
         intencao = IntencaoPonto.ARRISCAR
-    elif leitura >= 68 and movimento >= 66:
+    elif leitura >= 68 and velocidade >= 66:
         intencao = IntencaoPonto.DEFENSIVO
 
     saque_tipo = TipoSaque.VARIADO
-    if saque >= 74 and agressividade >= 62:
+    if vel_saque >= 74 and agressividade >= 62:
         saque_tipo = TipoSaque.AGRESSIVO
-    elif determinacao < 45 or saque < 48:
+    elif determinacao < 45 or vel_saque < 48:
         saque_tipo = TipoSaque.SEGURO
 
     segundo_saque = (
         EstrategiaSaque.FORCAR
-        if agressividade >= 66 and saque >= 70
+        if agressividade >= 66 and vel_saque >= 70
         else EstrategiaSaque.SEGURO
     )
 
@@ -215,17 +211,36 @@ def _aplicar_custo_stamina(
     )
 
 
+def _tem_fisioterapeuta(entidade) -> bool:
+    """Verifica se a entidade tem fisioterapeuta ativo na equipe."""
+    from src.management import obter_profissional_da_equipe
+
+    equipe = (
+        entidade.get("equipe", [])
+        if isinstance(entidade, dict)
+        else getattr(entidade, "equipe", [])
+    )
+    return obter_profissional_da_equipe(equipe or [], "fisioterapeuta") is not None
+
+
 def _recuperar_stamina_entre_games(
-    contexto_partida: ContextoPartida, jogador, adversario
+    contexto_partida: ContextoPartida,
+    jogador,
+    adversario,
+    tipo: str = "game",
 ):
-    fisico_j = obter_atributos(jogador).get("fisico", 50)
-    fisico_a = obter_atributos(adversario).get("fisico", 50)
+    fisico_j = obter_atributos(jogador).get("resistencia", 50)
+    fisico_a = obter_atributos(adversario).get("resistencia", 50)
+    tem_fisio_j = _tem_fisioterapeuta(jogador)
+    tem_fisio_a = _tem_fisioterapeuta(adversario)
     contexto_partida.stamina_j = calcular_stamina_pos_recuperacao(
         contexto_partida.stamina_j,
         fisico=fisico_j,
         indoor=contexto_partida.indoor,
         clima=contexto_partida.clima,
         umidade=contexto_partida.umidade,
+        tipo=tipo,
+        tem_fisioterapeuta=tem_fisio_j,
     )
     contexto_partida.stamina_a = calcular_stamina_pos_recuperacao(
         contexto_partida.stamina_a,
@@ -233,6 +248,8 @@ def _recuperar_stamina_entre_games(
         indoor=contexto_partida.indoor,
         clima=contexto_partida.clima,
         umidade=contexto_partida.umidade,
+        tipo=tipo,
+        tem_fisioterapeuta=tem_fisio_a,
     )
 
 

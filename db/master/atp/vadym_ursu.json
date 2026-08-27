@@ -2,24 +2,33 @@
   "nome": "Vadym Ursu",
   "nacionalidade": "[UA]",
   "idade": 29,
-  "overall": 76,
+  "overall": 58,
   "pontos": 110,
   "atributos": {
-    "saque": 66,
+    "vel_saque": 65,
+    "pre_saque": 62,
+    "segundo_saque": 62,
+    "retorno": 53,
     "forehand": 62,
     "backhand": 53,
-    "topspin": 62,
     "voleio": 70,
-    "slice": 59,
-    "movimento": 50,
+    "smash": 64,
     "lob": 52,
+    "topspin": 62,
+    "slice": 59,
     "winner": 63,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 53,
     "duplas": 60
   },
   "id": 462,
   "atributos_psicologicos": {
-    "concentracao": 54,
+    "clutch": 54,
+    "consistencia": 63,
+    "compostura": 53,
     "agressividade": 42,
     "leitura_de_jogo": 52,
     "determinacao": 53
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

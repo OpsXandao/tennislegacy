@@ -2,24 +2,33 @@
   "nome": "Joran Vliegen",
   "nacionalidade": "[RU] Rússia",
   "idade": 27,
-  "overall": 88,
+  "overall": 87,
   "pontos": 1310,
   "id": 24679,
   "atributos": {
-    "saque": 84,
+    "vel_saque": 85,
+    "pre_saque": 82,
+    "segundo_saque": 78,
+    "retorno": 83,
     "forehand": 88,
     "backhand": 79,
-    "topspin": 94,
     "voleio": 90,
-    "slice": 80,
-    "movimento": 94,
+    "smash": 91,
     "lob": 90,
-    "fisico": 94,
+    "topspin": 94,
+    "slice": 80,
     "winner": 80,
+    "velocidade": 94,
+    "aceleracao": 85,
+    "resistencia": 94,
+    "forca": 89,
+    "agilidade": 92,
     "duplas": 96
   },
   "atributos_psicologicos": {
-    "concentracao": 62,
+    "clutch": 62,
+    "consistencia": 43,
+    "compostura": 61,
     "agressividade": 62,
     "leitura_de_jogo": 54,
     "determinacao": 61
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1310,
-  "rank_duplas": 71
+  "rank_duplas": 71,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Gael Monfils",
   "nacionalidade": "[FR]",
   "idade": 39,
-  "overall": 80,
+  "overall": 58,
   "pontos": 360,
   "atributos": {
-    "saque": 61,
+    "vel_saque": 60,
+    "pre_saque": 60,
+    "segundo_saque": 57,
+    "retorno": 57,
     "forehand": 59,
     "backhand": 58,
-    "topspin": 59,
     "voleio": 65,
-    "slice": 62,
-    "movimento": 54,
+    "smash": 62,
     "lob": 54,
+    "topspin": 59,
+    "slice": 62,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 59,
+    "agilidade": 56,
     "duplas": 60
   },
   "id": 202,
   "atributos_psicologicos": {
-    "concentracao": 37,
+    "clutch": 37,
+    "consistencia": 62,
+    "compostura": 38,
     "agressividade": 43,
     "leitura_de_jogo": 49,
     "determinacao": 42
@@ -106,5 +115,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

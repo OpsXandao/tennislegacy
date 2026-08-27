@@ -2,24 +2,33 @@
   "nome": "Emilio Nava",
   "nacionalidade": "[US]",
   "idade": 24,
-  "overall": 83,
+  "overall": 61,
   "pontos": 710,
   "atributos": {
-    "saque": 62,
+    "vel_saque": 61,
+    "pre_saque": 61,
+    "segundo_saque": 65,
+    "retorno": 60,
     "forehand": 65,
     "backhand": 60,
-    "topspin": 66,
     "voleio": 60,
-    "slice": 59,
-    "movimento": 63,
+    "smash": 60,
     "lob": 63,
+    "topspin": 66,
+    "slice": 59,
     "winner": 67,
-    "fisico": 60,
+    "velocidade": 61,
+    "aceleracao": 58,
+    "resistencia": 60,
+    "forca": 61,
+    "agilidade": 61,
     "duplas": 60
   },
   "id": 138,
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 56,
+    "compostura": 60,
     "agressividade": 49,
     "leitura_de_jogo": 69,
     "determinacao": 70
@@ -45,5 +54,10 @@
   "peso": 84,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

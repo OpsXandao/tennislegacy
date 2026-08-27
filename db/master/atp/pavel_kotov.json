@@ -2,24 +2,33 @@
   "nome": "Pavel Kotov",
   "nacionalidade": "[RU]",
   "idade": 27,
-  "overall": 77,
+  "overall": 51,
   "pontos": 129,
   "atributos": {
-    "saque": 42,
+    "vel_saque": 44,
+    "pre_saque": 44,
+    "segundo_saque": 52,
+    "retorno": 50,
     "forehand": 41,
     "backhand": 48,
-    "topspin": 44,
     "voleio": 54,
-    "slice": 52,
-    "movimento": 55,
+    "smash": 55,
     "lob": 45,
+    "topspin": 44,
+    "slice": 52,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 395,
   "atributos_psicologicos": {
-    "concentracao": 33,
+    "clutch": 33,
+    "consistencia": 56,
+    "compostura": 40,
     "agressividade": 49,
     "leitura_de_jogo": 54,
     "determinacao": 55
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

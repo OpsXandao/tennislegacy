@@ -2,24 +2,33 @@
   "nome": "Benito Sanchez Martinez",
   "nacionalidade": "[DE]",
   "idade": 23,
-  "overall": 70,
+  "overall": 53,
   "pontos": 12,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 55,
+    "segundo_saque": 58,
+    "retorno": 52,
     "forehand": 50,
     "backhand": 58,
-    "topspin": 59,
     "voleio": 46,
-    "slice": 53,
-    "movimento": 43,
+    "smash": 51,
     "lob": 56,
+    "topspin": 59,
+    "slice": 53,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 49,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 1108,
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 49,
+    "compostura": 46,
     "agressividade": 56,
     "leitura_de_jogo": 49,
     "determinacao": 54
@@ -45,5 +54,10 @@
   "peso": 72,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

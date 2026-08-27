@@ -2,24 +2,33 @@
   "nome": "Egor Gerasimov",
   "nacionalidade": "[BY]",
   "idade": 33,
-  "overall": 72,
+  "overall": 53,
   "pontos": 31,
   "atributos": {
-    "saque": 46,
+    "vel_saque": 48,
+    "pre_saque": 48,
+    "segundo_saque": 54,
+    "retorno": 53,
     "forehand": 54,
     "backhand": 48,
-    "topspin": 45,
     "voleio": 47,
-    "slice": 61,
-    "movimento": 58,
+    "smash": 52,
     "lob": 52,
+    "topspin": 45,
+    "slice": 61,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 56,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 58,
     "duplas": 60
   },
   "id": 860,
   "atributos_psicologicos": {
-    "concentracao": 41,
+    "clutch": 41,
+    "consistencia": 62,
+    "compostura": 46,
     "agressividade": 43,
     "leitura_de_jogo": 53,
     "determinacao": 57
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

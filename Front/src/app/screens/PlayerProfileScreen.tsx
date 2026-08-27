@@ -8,19 +8,23 @@ import { getDuplasRating, getOverallTierLabel, getSpecialCardPalette, isDoublesS
 const TABS = ['VISÃO GERAL', 'ATRIBUTOS', 'HISTÓRIA']
 
 const ATRIB_TECNICOS: [string, string][] = [
-  ['saque', 'SAQUE'],
+  ['vel_saque', 'V.SAQUE'],
+  ['retorno', 'RETORNO'],
   ['forehand', 'FOREHAND'],
   ['backhand', 'BACKHAND'],
   ['voleio', 'VOLEIO'],
   ['winner', 'WINNER'],
-  ['movimento', 'MOVIMENTO'],
+  ['topspin', 'TOPSPIN'],
+  ['resistencia', 'RESISTÊN.'],
 ]
 
 const ATRIB_MENTAIS: [string, string][] = [
-  ['concentracao', 'CONCENTRAÇÃO'],
+  ['determinacao', 'DETERMINAÇÃO'],
+  ['compostura', 'COMPOSTURA'],
   ['agressividade', 'AGRESSIVIDADE'],
   ['leitura_de_jogo', 'LEITURA'],
-  ['determinacao', 'DETERMINAÇÃO'],
+  ['clutch', 'CLUTCH'],
+  ['consistencia', 'CONSISTÊNCIA'],
 ]
 
 const FASE_LABEL: Record<string, string> = {

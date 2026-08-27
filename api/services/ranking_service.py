@@ -45,6 +45,13 @@ def overall_com_bonus(j: dict, bonus: dict) -> int:
     ajustar_atributo_duplas(fake_j)
     return calcular_overall_contextual(fake_j)
 
+def _get_consistent_overall(j: dict, ranking_pos: int | None = None) -> int:
+    """Retorna o OVR consistente para ser usado em qualquer lugar da API."""
+    pontos = j.get("pontos_ranking", j.get("pontos", 0))
+    temp_j = {**j, "pontos_ranking": pontos}
+    return calcular_overall_contextual(temp_j, ranking_pos=ranking_pos)
+
+
 def serializar_perfil_jogador(
     j: dict, ranking: SistemaRanking | None, tour: str, modalidade: str = "simples"
 ) -> dict:
@@ -60,7 +67,7 @@ def serializar_perfil_jogador(
     )
     
     carta = carta_jogador(j, ranking_pos if isinstance(ranking_pos, int) else RANKING_POSICAO_FALLBACK)
-    overall = calcular_overall_contextual(j, ranking_pos=ranking_pos)
+    overall = _get_consistent_overall(j, ranking_pos=ranking_pos)
     overall_boosted = (
         overall_com_bonus(j, carta.get("bonus", {})) if carta.get("bonus") else overall
     )
@@ -169,7 +176,7 @@ def get_ranking_superficie(
                     "nome": j.get("nome", "Desconhecido"),
                     "nacionalidade": j.get("nacionalidade", "??"),
                     "pontos_superficie": ovr_sup,
-                    "overall": calcular_overall_contextual(j, ranking_pos=idx + 1),
+                    "overall": _get_consistent_overall(j, ranking_pos=idx + 1),
                 }
             )
 
@@ -204,8 +211,8 @@ def get_cached_ranking(session: Session, tour: str, limit: int, offset: int):
                     "nome": j.get("nome") or ("Desconhecida" if is_wta else "Desconhecido"),
                     "nacionalidade": j.get("nacionalidade") or "??",
                     "idade": int(j.get("idade", 0) or 0),
-                    "pontos": j.get("pontos_ranking") or j.get("pontos", 0),
-                    "overall": calcular_overall_contextual(j, ranking_pos=i + 1),
+                    "pontos": int(j.get("pontos_ranking", j.get("pontos", 0)) or 0),
+                    "overall": _get_consistent_overall(j, ranking_pos=i + 1),
                     "carta_tipo": carta_jogador(j, i + 1).get("tipo", "bronze"),
                     "carta_raridade": carta_jogador(j, i + 1).get("raridade", "bronze"),
                 }

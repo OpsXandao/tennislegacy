@@ -2,24 +2,33 @@
   "nome": "Ugo Blanchet",
   "nacionalidade": "[FR]",
   "idade": 27,
-  "overall": 80,
+  "overall": 49,
   "pontos": 361,
   "atributos": {
-    "saque": 43,
+    "vel_saque": 45,
+    "pre_saque": 43,
+    "segundo_saque": 45,
+    "retorno": 44,
     "forehand": 53,
     "backhand": 40,
-    "topspin": 40,
     "voleio": 43,
-    "slice": 51,
-    "movimento": 49,
+    "smash": 49,
     "lob": 45,
+    "topspin": 40,
+    "slice": 51,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 200,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 59,
+    "compostura": 38,
     "agressividade": 46,
     "leitura_de_jogo": 36,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

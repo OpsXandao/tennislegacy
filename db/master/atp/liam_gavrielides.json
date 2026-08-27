@@ -2,24 +2,33 @@
   "nome": "Liam Gavrielides",
   "nacionalidade": "[DE]",
   "idade": 22,
-  "overall": 69,
+  "overall": 51,
   "pontos": 6,
   "atributos": {
-    "saque": 50,
+    "vel_saque": 51,
+    "pre_saque": 51,
+    "segundo_saque": 48,
+    "retorno": 50,
     "forehand": 45,
     "backhand": 54,
-    "topspin": 53,
     "voleio": 56,
-    "slice": 55,
-    "movimento": 40,
+    "smash": 55,
     "lob": 40,
+    "topspin": 53,
+    "slice": 55,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 46,
     "duplas": 60
   },
   "id": 1285,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 75,
+    "compostura": 30,
     "agressividade": 30,
     "leitura_de_jogo": 30,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 69,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

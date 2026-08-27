@@ -1,0 +1,80 @@
+{
+  "nome": "Charles Broom",
+  "nacionalidade": "[GB]",
+  "pontos": 206,
+  "pontos_duplas": 0,
+  "pontos_ranking": 206,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 50,
+  "energia": 100,
+  "fadiga": 19,
+  "moral": 80,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 46,
+    "pre_saque": 44,
+    "segundo_saque": 51,
+    "retorno": 44,
+    "forehand": 54,
+    "backhand": 40,
+    "voleio": 46,
+    "smash": 50,
+    "lob": 40,
+    "topspin": 50,
+    "slice": 50,
+    "winner": 51,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 50,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 46,
+    "consistencia": 61,
+    "compostura": 47,
+    "agressividade": 44,
+    "leitura_de_jogo": 31,
+    "determinacao": 50
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 206,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 27,
+  "id": 293,
+  "pico_carreira": 261,
+  "altura": 178,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
+}

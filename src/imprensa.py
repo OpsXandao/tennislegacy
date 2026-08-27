@@ -89,7 +89,7 @@ def obter_pergunta_contextual(contexto_id, **kwargs):
 
 def processar_resposta_imprensa(jogador, pergunta, opcao_escolhida):
     """
-    Aplica os efeitos da resposta escolhida ao jogador (moral e reputação).
+    Aplica os efeitos da resposta escolhida ao jogador (moral, reputação e persona).
     """
     moral_ganha = opcao_escolhida.get("moral", 0)
     reputacao_ganha = opcao_escolhida.get("reputacao", 0)
@@ -98,6 +98,44 @@ def processar_resposta_imprensa(jogador, pergunta, opcao_escolhida):
     jogador.reputacao = max(
         0, min(100, (getattr(jogador, "reputacao", 50) or 50) + reputacao_ganha)
     )
+
+    # Lógica de Persona Narrativa
+    persona = getattr(jogador, "persona", {"pontos": {"iceman": 0, "badboy": 0, "champ": 0}, "ativa": "Neutro", "titulo": "Promessa"})
+    p_pts = persona["pontos"]
+    
+    p_pts["iceman"] += opcao_escolhida.get("iceman", 0)
+    p_pts["badboy"] += opcao_escolhida.get("badboy", 0)
+    p_pts["champ"] += opcao_escolhida.get("champ", 0)
+
+    # Define persona ativa com base no maior pontuador
+    maior = max(p_pts, key=p_pts.get)
+    if p_pts[maior] > 0:
+        try:
+            from pathlib import Path
+            import json
+            caminho = Path(__file__).parent.parent / "db" / "narrativa_geral.json"
+            with open(caminho, "r", encoding="utf-8") as f:
+                narrativa = json.load(f)
+            
+            titulos = narrativa.get("titles", {})
+            mapeamento_ids = {
+                "iceman": "Iceman",
+                "badboy": "Bad Boy",
+                "champ": "People's Champ"
+            }
+            persona_id = mapeamento_ids[maior]
+            persona["ativa"] = persona_id
+            persona["titulo"] = titulos.get(persona_id, "Veterano")
+        except Exception:
+            # Fallback
+            mapeamento = {
+                "iceman": ("Iceman", "Foco Absoluto"),
+                "badboy": ("Bad Boy", "Rebelde do Tour"),
+                "champ": ("People's Champ", "Ídolo Local")
+            }
+            persona["ativa"], persona["titulo"] = mapeamento[maior]
+    
+    jogador.persona = persona
 
     return moral_ganha, reputacao_ganha
 

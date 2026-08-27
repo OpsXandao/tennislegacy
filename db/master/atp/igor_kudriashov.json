@@ -2,24 +2,33 @@
   "nome": "Igor Kudriashov",
   "nacionalidade": "[RU]",
   "idade": 22,
-  "overall": 73,
+  "overall": 50,
   "pontos": 53,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 51,
+    "segundo_saque": 52,
+    "retorno": 44,
     "forehand": 49,
     "backhand": 45,
-    "topspin": 40,
     "voleio": 56,
-    "slice": 50,
-    "movimento": 40,
+    "smash": 55,
     "lob": 40,
+    "topspin": 40,
+    "slice": 50,
     "winner": 52,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 683,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 69,
+    "compostura": 32,
     "agressividade": 36,
     "leitura_de_jogo": 30,
     "determinacao": 39
@@ -45,5 +54,10 @@
   "peso": 67,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

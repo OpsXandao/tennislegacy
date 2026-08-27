@@ -2,24 +2,33 @@
   "nome": "John-Patrick Smith",
   "nacionalidade": "[RU] Rússia",
   "idade": 21,
-  "overall": 90,
+  "overall": 91,
   "pontos": 2002,
   "id": 51649,
   "atributos": {
-    "saque": 92,
+    "vel_saque": 92,
+    "pre_saque": 91,
+    "segundo_saque": 79,
+    "retorno": 91,
     "forehand": 92,
     "backhand": 86,
-    "topspin": 81,
     "voleio": 93,
-    "slice": 97,
-    "movimento": 97,
+    "smash": 92,
     "lob": 84,
-    "fisico": 94,
+    "topspin": 81,
+    "slice": 97,
     "winner": 97,
+    "velocidade": 95,
+    "aceleracao": 87,
+    "resistencia": 94,
+    "forca": 91,
+    "agilidade": 96,
     "duplas": 98
   },
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 53,
+    "compostura": 52,
     "agressividade": 52,
     "leitura_de_jogo": 45,
     "determinacao": 52
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 2002,
-  "rank_duplas": 44
+  "rank_duplas": 44,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

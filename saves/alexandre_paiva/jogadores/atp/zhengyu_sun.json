@@ -1,0 +1,108 @@
+{
+  "nome": "Zhengyu Sun",
+  "nacionalidade": "[CN]",
+  "pontos": 8,
+  "pontos_duplas": 0,
+  "pontos_ranking": 8,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 5,
+  "overall": 50,
+  "energia": 100,
+  "fadiga": 16,
+  "moral": 70,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 54,
+    "pre_saque": 49,
+    "segundo_saque": 50,
+    "retorno": 43,
+    "forehand": 50,
+    "backhand": 40,
+    "voleio": 40,
+    "smash": 48,
+    "lob": 52,
+    "topspin": 41,
+    "slice": 45,
+    "winner": 49,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 51,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 45,
+    "consistencia": 69,
+    "compostura": 40,
+    "agressividade": 36,
+    "leitura_de_jogo": 33,
+    "determinacao": 32
+  },
+  "historico_torneios": [
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 1,
+      "ano": 2026,
+      "fase": "qualy_2",
+      "fase_alcancada": "qualy_2",
+      "pontos": 5,
+      "premio": 746,
+      "modalidade": "simples",
+      "obrigatorio": false,
+      "expirado": false
+    }
+  ],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 3,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    },
+    {
+      "pontos": 5,
+      "semana_expiracao": 1,
+      "ano_expiracao": 2027,
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana_origem": 1,
+      "ano_origem": 2026,
+      "fase": "qualy_2",
+      "modalidade": "simples"
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 746,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 19,
+  "titulos_total": 0,
+  "ultimo_titulo_ano": null,
+  "id": 1356,
+  "pico_carreira": 1642,
+  "altura": 176,
+  "peso": 71,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

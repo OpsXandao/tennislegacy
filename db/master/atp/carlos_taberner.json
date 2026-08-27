@@ -2,24 +2,33 @@
   "nome": "Carlos Taberner",
   "nacionalidade": "[ES]",
   "idade": 28,
-  "overall": 82,
+  "overall": 63,
   "pontos": 608,
   "atributos": {
-    "saque": 58,
+    "vel_saque": 58,
+    "pre_saque": 59,
+    "segundo_saque": 56,
+    "retorno": 63,
     "forehand": 66,
     "backhand": 62,
-    "topspin": 65,
     "voleio": 68,
-    "slice": 62,
-    "movimento": 69,
+    "smash": 64,
     "lob": 63,
+    "topspin": 65,
+    "slice": 62,
     "winner": 64,
-    "fisico": 60,
+    "velocidade": 65,
+    "aceleracao": 61,
+    "resistencia": 60,
+    "forca": 62,
+    "agilidade": 66,
     "duplas": 60
   },
   "id": 125,
   "atributos_psicologicos": {
-    "concentracao": 48,
+    "clutch": 48,
+    "consistencia": 47,
+    "compostura": 47,
     "agressividade": 58,
     "leitura_de_jogo": 50,
     "determinacao": 46
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -1,0 +1,45 @@
+{
+  "noticias": {
+    "ranking": {
+      "subiu": [
+        "{name} está em ascensão no ranking, subindo para a posição #{pos}.",
+        "Grande salto de {name} na lista da ATP/WTA esta semana.",
+        "O mundo do tênis observa le progresso de {name} no ranking mundial."
+      ],
+      "caiu": [
+        "{name} perdeu posições no ranking e agora ocupa a posição #{pos}.",
+        "Queda preocupante para {name} na atualização do ranking.",
+        "{name} luta para manter sua posição no top mundial."
+      ]
+    },
+    "campeoes": {
+      "gs": [
+        "HISTÓRICO: {name} conquista le título em {tournament}!",
+        "{name} entra para le hall das lendas com a vitória em {tournament}."
+      ],
+      "atp": [
+        "{name} domina em {tournament} e levanta le troféu.",
+        "Título merecido para {name} em {tournament}."
+      ]
+    },
+    "lesao": {
+      "jogador": [
+        "PREOCUPAÇÃO: {name} sofreu uma lesão e será avaliado pelos médicos.",
+        "DM: {name} está fora das quadras por tempo indeterminado.",
+        "Notícia triste para os fãs: {name} confirma lesão no tour."
+      ]
+    },
+    "moral": {
+      "baixa": [
+        "{name} parece estar passando por uma crise de confiança no tour.",
+        "Analistas notam desânimo em {name} nas últimas semanas.",
+        "O lado mental está pesando para {name} no momento."
+      ]
+    },
+    "geral": [
+      "O circuito segue calmo nesta semana.",
+      "Preparativos intensos para os próximos torneios do tour.",
+      "Bastidores do circuito fervilham com os resultados recentes."
+    ]
+  }
+}

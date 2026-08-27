@@ -1,0 +1,91 @@
+{
+  "nome": "Mattia Bellucci",
+  "nacionalidade": "[IT]",
+  "pontos": 553,
+  "pontos_duplas": 0,
+  "pontos_ranking": 553,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 68,
+  "energia": 40,
+  "fadiga": 17,
+  "moral": 90,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 71,
+    "pre_saque": 72,
+    "segundo_saque": 73,
+    "retorno": 71,
+    "forehand": 69,
+    "backhand": 71,
+    "voleio": 71,
+    "smash": 67,
+    "lob": 73,
+    "topspin": 72,
+    "slice": 70,
+    "winner": 75,
+    "velocidade": 67,
+    "aceleracao": 63,
+    "resistencia": 60,
+    "forca": 64,
+    "agilidade": 69,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 53,
+    "consistencia": 35,
+    "compostura": 61,
+    "agressividade": 70,
+    "leitura_de_jogo": 64,
+    "determinacao": 79
+  },
+  "historico_torneios": [],
+  "historico_partidas": [
+    {
+      "ano": 2026,
+      "semana": 2,
+      "torneio": "Hong Kong Open",
+      "fase": "finalizado",
+      "adversario": "Alexandre Paiva",
+      "placar": "Alexandre Paiva 2 x 0 Mattia Bellucci",
+      "resultado": "D"
+    }
+  ],
+  "pontos_detalhados": [
+    {
+      "pontos": 553,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 24,
+  "id": 68,
+  "pico_carreira": 29,
+  "altura": 175,
+  "peso": 81,
+  "mao_dominante": "Canhoto",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  },
+  "ranking_pos": 113
+}

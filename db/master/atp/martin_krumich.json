@@ -2,24 +2,33 @@
   "nome": "Martin Krumich",
   "nacionalidade": "[CZ]",
   "idade": 23,
-  "overall": 77,
+  "overall": 51,
   "pontos": 140,
   "atributos": {
-    "saque": 54,
+    "vel_saque": 54,
+    "pre_saque": 54,
+    "segundo_saque": 54,
+    "retorno": 51,
     "forehand": 47,
     "backhand": 55,
-    "topspin": 51,
     "voleio": 40,
-    "slice": 55,
-    "movimento": 42,
+    "smash": 47,
     "lob": 42,
+    "topspin": 51,
+    "slice": 55,
     "winner": 42,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 374,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 59,
+    "compostura": 34,
     "agressividade": 46,
     "leitura_de_jogo": 39,
     "determinacao": 45
@@ -45,5 +54,10 @@
   "peso": 72,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

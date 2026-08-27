@@ -5,22 +5,31 @@
   "idade": 35,
   "pontos": 1344,
   "pontos_ranking": 1344,
-  "overall": 87,
+  "overall": 82,
   "atributos": {
-    "saque": 86,
+    "vel_saque": 85,
+    "pre_saque": 83,
+    "segundo_saque": 83,
+    "retorno": 81,
     "forehand": 89,
     "backhand": 79,
-    "topspin": 79,
     "voleio": 85,
-    "slice": 80,
-    "movimento": 87,
+    "smash": 83,
     "lob": 84,
-    "fisico": 80,
+    "topspin": 79,
+    "slice": 80,
     "winner": 82,
+    "velocidade": 84,
+    "aceleracao": 77,
+    "resistencia": 80,
+    "forca": 82,
+    "agilidade": 84,
     "duplas": 93
   },
   "atributos_psicologicos": {
-    "concentracao": 88,
+    "clutch": 88,
+    "consistencia": 35,
+    "compostura": 86,
     "agressividade": 82,
     "leitura_de_jogo": 83,
     "determinacao": 82
@@ -48,5 +57,10 @@
   "mao_dominante": "Destra",
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
-  "rank_duplas": 55
+  "rank_duplas": 55,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -1,0 +1,82 @@
+{
+  "nome": "Alessio Vasquez",
+  "nacionalidade": "[DE]",
+  "pontos": 5,
+  "pontos_duplas": 0,
+  "pontos_ranking": 5,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 51,
+  "energia": 100,
+  "fadiga": 10,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 45,
+    "pre_saque": 45,
+    "segundo_saque": 47,
+    "retorno": 52,
+    "forehand": 51,
+    "backhand": 54,
+    "voleio": 40,
+    "smash": 47,
+    "lob": 40,
+    "topspin": 53,
+    "slice": 46,
+    "winner": 48,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 54,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 52,
+    "consistencia": 73,
+    "compostura": 47,
+    "agressividade": 32,
+    "leitura_de_jogo": 47,
+    "determinacao": 38
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 5,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "idade": 22,
+  "titulos_total": 0,
+  "ultimo_titulo_ano": null,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "id": 1313,
+  "pico_carreira": 1371,
+  "altura": 175,
+  "peso": 66,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
+}

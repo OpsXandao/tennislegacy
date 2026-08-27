@@ -2,24 +2,33 @@
   "nome": "Christopher Eubanks",
   "nacionalidade": "[US]",
   "idade": 29,
-  "overall": 76,
+  "overall": 66,
   "pontos": 120,
   "atributos": {
-    "saque": 72,
+    "vel_saque": 70,
+    "pre_saque": 72,
+    "segundo_saque": 64,
+    "retorno": 71,
     "forehand": 75,
     "backhand": 77,
-    "topspin": 66,
     "voleio": 60,
-    "slice": 71,
-    "movimento": 61,
+    "smash": 59,
     "lob": 58,
+    "topspin": 66,
+    "slice": 71,
     "winner": 66,
-    "fisico": 60,
+    "velocidade": 60,
+    "aceleracao": 57,
+    "resistencia": 60,
+    "forca": 67,
+    "agilidade": 62,
     "duplas": 60
   },
   "id": 421,
   "atributos_psicologicos": {
-    "concentracao": 46,
+    "clutch": 46,
+    "consistencia": 49,
+    "compostura": 46,
     "agressividade": 56,
     "leitura_de_jogo": 54,
     "determinacao": 49
@@ -51,5 +60,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

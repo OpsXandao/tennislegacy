@@ -2,24 +2,33 @@
   "nome": "Erik Arutiunian",
   "nacionalidade": "[BY]",
   "idade": 21,
-  "overall": 75,
+  "overall": 51,
   "pontos": 96,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 44,
+    "segundo_saque": 48,
+    "retorno": 52,
     "forehand": 47,
     "backhand": 55,
-    "topspin": 49,
     "voleio": 40,
-    "slice": 48,
-    "movimento": 53,
+    "smash": 47,
     "lob": 47,
+    "topspin": 49,
+    "slice": 48,
     "winner": 41,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 53,
     "duplas": 60
   },
   "id": 501,
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 67,
+    "compostura": 49,
     "agressividade": 38,
     "leitura_de_jogo": 48,
     "determinacao": 43
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Sheng Tang",
   "nacionalidade": "[CN]",
   "idade": 26,
-  "overall": 69,
+  "overall": 54,
   "pontos": 2,
   "atributos": {
-    "saque": 55,
+    "vel_saque": 55,
+    "pre_saque": 53,
+    "segundo_saque": 56,
+    "retorno": 51,
     "forehand": 57,
     "backhand": 48,
-    "topspin": 49,
     "voleio": 51,
-    "slice": 54,
-    "movimento": 55,
+    "smash": 54,
     "lob": 50,
+    "topspin": 49,
+    "slice": 54,
     "winner": 56,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 1365,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 58,
+    "compostura": 51,
     "agressividade": 47,
     "leitura_de_jogo": 51,
     "determinacao": 49
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

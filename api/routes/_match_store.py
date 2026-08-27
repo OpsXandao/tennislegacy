@@ -62,6 +62,19 @@ def clear_runtime_cache(partida_id: str) -> None:
     _global_matches_cache.pop(partida_id, None)
 
 
+def delete_snapshot(save_name: str, partida_id: str) -> bool:
+    """Remove o arquivo físico do snapshot da partida."""
+    path = snapshot_path(save_name, partida_id)
+    try:
+        if path.exists():
+            path.unlink()
+            clear_runtime_cache(partida_id)
+            return True
+    except Exception:
+        pass
+    return False
+
+
 def invalidate_other_snapshots(save_name: str, keep_partida_id: str) -> None:
     matches_dir = snapshot_path(save_name, keep_partida_id).parent
     if not matches_dir.exists():
@@ -70,16 +83,18 @@ def invalidate_other_snapshots(save_name: str, keep_partida_id: str) -> None:
     for snap in matches_dir.glob("*.json"):
         if snap.stem == keep_partida_id:
             continue
-        payload = carregar_json(str(snap), padrao=None)
-        if not isinstance(payload, dict):
-            continue
-        if payload.get("encerrado"):
-            continue
-        payload["encerrado"] = True
-        payload["finalizado_torneio"] = True
-        payload["pausado"] = False
-        payload["log"] = list(payload.get("log", [])[-24:]) + [
-            "Snapshot antigo invalidado automaticamente.",
-        ]
-        salvar_json_seguro(str(snap), payload)
-        clear_runtime_cache(snap.stem)
+        
+        try:
+            payload = carregar_json(str(snap), padrao=None)
+            if not isinstance(payload, dict) or payload.get("encerrado"):
+                # Se já estava encerrado ou corrompido, deleta de vez
+                snap.unlink()
+                clear_runtime_cache(snap.stem)
+                continue
+            
+            # Se estava aberto, invalida (marca como encerrado) ou deleta
+            # Para polimento extremo: deleta logo, já que um novo começou
+            snap.unlink()
+            clear_runtime_cache(snap.stem)
+        except Exception:
+            pass

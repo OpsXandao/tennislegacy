@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from src.match_config import ConfigPartida
 from src.constants.match_constants import EstrategiaSaque, IntencaoPonto, TipoSaque
-from src.simulacao_partida import ContextoPartida, EstatisticasPartida
+from src.match_state import ContextoPartida, EstatisticasPartida
 
 
 class MatchRuntimeStrategyTests(unittest.TestCase):
@@ -125,6 +125,8 @@ class MatchRuntimeStrategyTests(unittest.TestCase):
 
         self.assertGreater(payload["fadiga_j"], 12)
         self.assertGreater(payload["fadiga_a"], 18)
+        self.assertIsInstance(payload["descricao_json"], dict)
+        self.assertEqual(payload["descricao_json"]["kind"], "ponto")
 
     def test_runtime_recupera_stamina_apos_game_e_entre_sets(self):
         runtime = self._runtime_base()
@@ -241,6 +243,142 @@ class MatchRuntimeStrategyTests(unittest.TestCase):
         }
 
         self.assertEqual(runtime._tipo_saque_do_sacador(), TipoSaque.SEGURO)
+
+    def test_runtime_de_duplas_funde_parceiro_e_dupla_adversaria_no_motor(self):
+        class RankingFake:
+            def __init__(self, ranking):
+                self.ranking = ranking
+
+        ranking_fake = RankingFake(
+            [
+                {
+                    "nome": "Parceiro Silva",
+                    "nacionalidade": "[BR]",
+                    "energia": 84,
+                    "moral": 72,
+                    "ritmo_jogo": 58,
+                    "atributos": {
+                        "saque": 68,
+                        "forehand": 67,
+                        "backhand": 65,
+                        "topspin": 61,
+                        "voleio": 82,
+                        "slice": 63,
+                        "movimento": 74,
+                        "lob": 58,
+                        "winner": 66,
+                        "fisico": 71,
+                        "duplas": 89,
+                    },
+                    "atributos_psicologicos": {
+                        "concentracao": 68,
+                        "agressividade": 64,
+                        "leitura_de_jogo": 78,
+                        "determinacao": 70,
+                    },
+                },
+                {
+                    "nome": "Rival One",
+                    "nacionalidade": "[US]",
+                    "energia": 79,
+                    "moral": 70,
+                    "ritmo_jogo": 56,
+                    "atributos": {
+                        "saque": 73,
+                        "forehand": 71,
+                        "backhand": 69,
+                        "topspin": 66,
+                        "voleio": 78,
+                        "slice": 65,
+                        "movimento": 72,
+                        "lob": 60,
+                        "winner": 72,
+                        "fisico": 69,
+                        "duplas": 84,
+                    },
+                    "atributos_psicologicos": {
+                        "concentracao": 67,
+                        "agressividade": 69,
+                        "leitura_de_jogo": 73,
+                        "determinacao": 68,
+                    },
+                },
+                {
+                    "nome": "Rival Two",
+                    "nacionalidade": "[US]",
+                    "energia": 77,
+                    "moral": 69,
+                    "ritmo_jogo": 55,
+                    "atributos": {
+                        "saque": 70,
+                        "forehand": 72,
+                        "backhand": 68,
+                        "topspin": 65,
+                        "voleio": 76,
+                        "slice": 67,
+                        "movimento": 71,
+                        "lob": 59,
+                        "winner": 70,
+                        "fisico": 68,
+                        "duplas": 83,
+                    },
+                    "atributos_psicologicos": {
+                        "concentracao": 65,
+                        "agressividade": 66,
+                        "leitura_de_jogo": 72,
+                        "determinacao": 69,
+                    },
+                },
+            ]
+        )
+
+        with patch("src.utils.match_doubles_utils.load_singles_ranking", return_value=ranking_fake):
+            runtime = self.MatchRuntime(
+                partida_id="dbl1",
+                save_name="save",
+                modo="manual",
+                jogador=types.SimpleNamespace(
+                    nome="Alexandre Paiva",
+                    genero="masculino",
+                    tipo_duplas_atual="mesmo_genero",
+                    parceiro_duplas={"nome": "Parceiro Silva", "nacionalidade": "[BR]"},
+                    vinculos_dupla={"Parceiro Silva": {"partidas": 8, "vitorias": 6}},
+                    energia=88,
+                    moral=74,
+                    ritmo_jogo=62,
+                    atributos={
+                        "saque": 72,
+                        "forehand": 70,
+                        "backhand": 68,
+                        "topspin": 64,
+                        "voleio": 80,
+                        "slice": 62,
+                        "movimento": 73,
+                        "lob": 57,
+                        "winner": 69,
+                        "fisico": 70,
+                        "duplas": 87,
+                    },
+                    atributos_psicologicos={
+                        "concentracao": 71,
+                        "agressividade": 63,
+                        "leitura_de_jogo": 75,
+                        "determinacao": 72,
+                    },
+                    rivalidades={},
+                ),
+                adversario={"nome": "Rival One / Rival Two"},
+                torneio_info={"nome": "Roma"},
+                config=ConfigPartida(superficie="dura"),
+                modalidade="duplas",
+            )
+
+        self.assertTrue(runtime.simulador.jogador["is_dupla"])
+        self.assertTrue(runtime.simulador.adversario["is_dupla"])
+        self.assertEqual(runtime.simulador.jogador["quimica"]["label"], "Entrosada")
+        self.assertEqual(runtime.contexto_partida.stamina_j, 84.0)
+        self.assertEqual(runtime.contexto_partida.stamina_a, 77.0)
+        self.assertEqual(len(runtime.adversario["jogadores"]), 2)
 
 
 if __name__ == "__main__":

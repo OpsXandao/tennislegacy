@@ -1,0 +1,321 @@
+{
+  "torneio": "Monastir ITF 25",
+  "semana": 4,
+  "fase_atual": "r32",
+  "fases": [
+    "r32",
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "rodadas": {
+    "r32": [
+      [
+        {
+          "nome": "Jack Draper",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Patrick Kypson",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Christopher O'connell",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Benjamin Bonzi",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Rafael Jodar",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Mackenzie McDonald",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Dino Prizmic",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Ugo Humbert",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Carlos Taberner",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Tomas Barrios Vera",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Titouan Droguet",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Shintaro Mochizuki",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Dalibor Svrcina",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Jordan Thompson",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Luca Nardi",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Stefanos Tsitsipas",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Arthur Rinderknech",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Laslo Djere",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Rinky Hijikata",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Hamad Medjedovic",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Dusan Lajovic",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Coleman Wong",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Jan Choinski",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Pedro Martinez",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Aleksandar Vukic",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Mattia Bellucci",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Adolfo Daniel Vallejo",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Francesco Maestrelli",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Tristan Schoolkate",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Pablo Carreno Busta",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Vilius Gaubas",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Holger Rune",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ]
+    ]
+  },
+  "resultados": {},
+  "jogador": "Alexandre Paiva",
+  "jogador_vivo": false,
+  "tournament_data": {
+    "nome": "Monastir ITF 25",
+    "tipo": "ITF 25",
+    "local": "Monastir",
+    "quadra": "dura",
+    "premiacao": 25000,
+    "dificuldade": 1,
+    "popularidade": 1,
+    "qualificacao": true,
+    "pais_sede": "[TN] Tunísia",
+    "semana": 4,
+    "ultimo_campeao_duplas": null,
+    "ultimo_campeao": null
+  },
+  "genero": "masculino",
+  "campeao_simples": null,
+  "fases_duplas": [
+    "r16",
+    "quartas",
+    "semifinal",
+    "final"
+  ],
+  "fase_atual_duplas": "r16",
+  "rodadas_duplas": {
+    "r16": [
+      [
+        {
+          "nome": "Harri Heliovaara / Edouard Roger-Vasselin",
+          "overall": 50
+        },
+        {
+          "nome": "Julian Cash / Marcel Granollers",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Mate Pavic / Luke Johnson",
+          "overall": 50
+        },
+        {
+          "nome": "Manuel Guinard / Hugo Nys",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Neal Skupski / Fabien Reboul",
+          "overall": 50
+        },
+        {
+          "nome": "Sadio Doumbia / Theo Arribage",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Nikola Mektic / Horacio Zeballos",
+          "overall": 50
+        },
+        {
+          "nome": "Yuki Bhambri / Henry Patten",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Lucas Miedler / Lloyd Glasspool",
+          "overall": 50
+        },
+        {
+          "nome": "Albano Olivetti / Tim Puetz",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Jan Zielinski / Joe Salisbury",
+          "overall": 50
+        },
+        {
+          "nome": "JJ Tracy / Evan King",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Andres Molteni / David Pel",
+          "overall": 50
+        },
+        {
+          "nome": "Simone Bolelli / Francisco Cabral",
+          "overall": 50
+        }
+      ],
+      [
+        {
+          "nome": "Kevin Krawietz / Marcelo Arevalo",
+          "overall": 50
+        },
+        {
+          "nome": "Andre Goransson / Christian Harrison",
+          "overall": 50
+        }
+      ]
+    ]
+  },
+  "resultados_duplas": {},
+  "campeao_duplas": null,
+  "lucky_losers_pool": []
+}

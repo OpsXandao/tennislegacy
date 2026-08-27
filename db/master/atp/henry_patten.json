@@ -2,24 +2,33 @@
   "nome": "Henry Patten",
   "nacionalidade": "[RU] Rússia",
   "idade": 22,
-  "overall": 94,
+  "overall": 93,
   "pontos": 6570,
   "id": 87130,
   "atributos": {
-    "saque": 90,
+    "vel_saque": 89,
+    "pre_saque": 91,
+    "segundo_saque": 80,
+    "retorno": 95,
     "forehand": 98,
     "backhand": 98,
-    "topspin": 98,
     "voleio": 103,
-    "slice": 90,
-    "movimento": 96,
+    "smash": 97,
     "lob": 98,
-    "fisico": 89,
+    "topspin": 98,
+    "slice": 90,
     "winner": 97,
+    "velocidade": 93,
+    "aceleracao": 85,
+    "resistencia": 89,
+    "forca": 93,
+    "agilidade": 93,
     "duplas": 101
   },
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 38,
+    "compostura": 58,
     "agressividade": 67,
     "leitura_de_jogo": 70,
     "determinacao": 63
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 6570,
-  "rank_duplas": 8
+  "rank_duplas": 8,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

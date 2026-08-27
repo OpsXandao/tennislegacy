@@ -16,24 +16,27 @@ def _clamp(value: float, low: int, high: int) -> int:
 
 
 def calcular_overall_base(atributos: dict | None) -> int:
+    """OVR formula do novo schema (18 atributos técnico/físico, sem duplas)."""
     atributos = atributos or {}
 
     def _a(chave: str, padrao: int = 60) -> int:
         return _int(atributos.get(chave), padrao)
 
-    tec_avg = (
-        _a("voleio") + _a("topspin") + _a("slice") + _a("lob") + _a("winner")
-    ) / 5
-
-    ovr = (
-        _a("forehand") * 0.25
-        + _a("backhand") * 0.25
-        + _a("movimento") * 0.20
-        + _a("fisico") * 0.15
-        + _a("saque") * 0.10
-        + tec_avg * 0.05
+    serve_g = (
+        _a("vel_saque") * 0.40 + _a("pre_saque") * 0.35 + _a("segundo_saque") * 0.25
     )
-    return round(ovr)
+    ground_g = _a("forehand") * 0.38 + _a("backhand") * 0.38 + _a("retorno") * 0.24
+    net_g = _a("voleio") * 0.50 + _a("smash") * 0.30 + _a("lob") * 0.20
+    style_g = _a("topspin") * 0.35 + _a("slice") * 0.35 + _a("winner") * 0.30
+    tec = serve_g * 0.22 + ground_g * 0.38 + net_g * 0.20 + style_g * 0.20
+    fis = (
+        _a("velocidade") * 0.25
+        + _a("aceleracao") * 0.20
+        + _a("resistencia") * 0.30
+        + _a("forca") * 0.10
+        + _a("agilidade") * 0.15
+    )
+    return round(tec * 0.60 + fis * 0.40)
 
 
 def overall_por_posicao(posicao: int | None) -> int | None:
@@ -92,7 +95,9 @@ def ajustar_atributo_duplas(jogador: dict) -> bool:
         _int(jogador.get("pontos_ranking_duplas"), 0),
         _int(jogador.get("pontos_duplas"), 0),
     )
-    posicao_duplas = _int(jogador.get("rank_duplas") or jogador.get("posicao_duplas"), 0)
+    posicao_duplas = _int(
+        jogador.get("rank_duplas") or jogador.get("posicao_duplas"), 0
+    )
 
     alvo_por_pontos = overall_por_pontos(pontos_duplas)
     alvo_por_rank = overall_por_posicao(posicao_duplas)
@@ -116,11 +121,11 @@ def ajustar_atributo_duplas(jogador: dict) -> bool:
 # ---------------------------------------------------------------------------
 
 _BONUS_CARTA: dict[str, dict[str, int]] = {
-    "lenda": {"concentracao": 5, "determinacao": 5, "leitura_de_jogo": 5},
-    "gs": {"concentracao": 3, "determinacao": 3, "saque": 2, "forehand": 2},
-    "if": {"forehand": 3, "backhand": 3, "movimento": 2, "concentracao": 2},
-    "ds": {"voleio": 5, "duplas": 5, "movimento": 2, "fisico": 2},
-    "wk": {"forehand": 3, "backhand": 3, "movimento": 3, "fisico": 3},
+    "lenda": {"clutch": 5, "determinacao": 5, "leitura_de_jogo": 5},
+    "gs": {"clutch": 3, "determinacao": 3, "vel_saque": 2, "forehand": 2},
+    "if": {"forehand": 3, "backhand": 3, "velocidade": 2, "clutch": 2},
+    "ds": {"voleio": 5, "duplas": 5, "velocidade": 2, "resistencia": 2},
+    "wk": {"forehand": 3, "backhand": 3, "velocidade": 3, "resistencia": 3},
 }
 
 # Cartas cujo bônus só vale em determinado contexto de modalidade
@@ -199,12 +204,12 @@ def calcular_overall_contextual(jogador: dict, ranking_pos: int | None = None) -
         return base
 
     target = max(targets)
-    
+
     # Se o jogador é Top 250, o ranking (target) deve ter muito mais peso que a média técnica (base)
     # Isso evita que jogadores com atributos incompletos pareçam amadores no overall
     if _int(ranking_pos, 9999) <= 250:
         blended = round(base * 0.25 + target * 0.75)
     else:
         blended = round(base * 0.40 + target * 0.60)
-        
+
     return max(target - 2, min(target + 3, blended))

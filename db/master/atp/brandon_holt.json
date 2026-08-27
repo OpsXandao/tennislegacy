@@ -2,24 +2,33 @@
   "nome": "Brandon Holt",
   "nacionalidade": "[US]",
   "idade": 27,
-  "overall": 80,
+  "overall": 51,
   "pontos": 368,
   "atributos": {
-    "saque": 51,
+    "vel_saque": 52,
+    "pre_saque": 50,
+    "segundo_saque": 49,
+    "retorno": 50,
     "forehand": 40,
     "backhand": 54,
-    "topspin": 44,
     "voleio": 48,
-    "slice": 44,
-    "movimento": 49,
+    "smash": 51,
     "lob": 41,
+    "topspin": 44,
+    "slice": 44,
     "winner": 55,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 198,
   "atributos_psicologicos": {
-    "concentracao": 47,
+    "clutch": 47,
+    "consistencia": 54,
+    "compostura": 41,
     "agressividade": 51,
     "leitura_de_jogo": 50,
     "determinacao": 31
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

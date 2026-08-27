@@ -2,24 +2,33 @@
   "nome": "Taha Baadi",
   "nacionalidade": "[MA]",
   "idade": 24,
-  "overall": 74,
+  "overall": 49,
   "pontos": 66,
   "atributos": {
-    "saque": 48,
+    "vel_saque": 49,
+    "pre_saque": 46,
+    "segundo_saque": 51,
+    "retorno": 43,
     "forehand": 46,
     "backhand": 42,
-    "topspin": 49,
     "voleio": 54,
-    "slice": 45,
-    "movimento": 45,
+    "smash": 54,
     "lob": 40,
+    "topspin": 49,
+    "slice": 45,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 614,
   "atributos_psicologicos": {
-    "concentracao": 49,
+    "clutch": 49,
+    "consistencia": 65,
+    "compostura": 47,
     "agressividade": 40,
     "leitura_de_jogo": 47,
     "determinacao": 44
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

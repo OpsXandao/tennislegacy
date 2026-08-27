@@ -2,24 +2,33 @@
   "nome": "Anastasia Dețiuc",
   "nacionalidade": "[CZ] CZE",
   "idade": 35,
-  "overall": 87,
+  "overall": 85,
   "pontos": 1263,
   "id": 27142,
   "atributos": {
-    "saque": 83,
+    "vel_saque": 83,
+    "pre_saque": 85,
+    "segundo_saque": 72,
+    "retorno": 89,
     "forehand": 79,
     "backhand": 92,
-    "topspin": 79,
     "voleio": 92,
-    "slice": 90,
-    "movimento": 85,
+    "smash": 89,
     "lob": 88,
-    "fisico": 85,
+    "topspin": 79,
+    "slice": 90,
     "winner": 81,
+    "velocidade": 85,
+    "aceleracao": 78,
+    "resistencia": 85,
+    "forca": 84,
+    "agilidade": 85,
     "duplas": 95
   },
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 35,
+    "compostura": 53,
     "agressividade": 75,
     "leitura_de_jogo": 74,
     "determinacao": 49
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1263,
-  "rank_duplas": 71
+  "rank_duplas": 71,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

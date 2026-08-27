@@ -2,24 +2,33 @@
   "nome": "Tommy Paul",
   "nacionalidade": "[US]",
   "idade": 28,
-  "overall": 88,
+  "overall": 79,
   "pontos": 1815,
   "atributos": {
-    "saque": 89,
+    "vel_saque": 84,
+    "pre_saque": 86,
+    "segundo_saque": 77,
+    "retorno": 84,
     "forehand": 88,
     "backhand": 86,
-    "topspin": 89,
     "voleio": 86,
-    "slice": 78,
-    "movimento": 86,
+    "smash": 76,
     "lob": 85,
+    "topspin": 89,
+    "slice": 78,
     "winner": 83,
-    "fisico": 60,
+    "velocidade": 76,
+    "aceleracao": 70,
+    "resistencia": 60,
+    "forca": 73,
+    "agilidade": 79,
     "duplas": 60
   },
   "id": 12,
   "atributos_psicologicos": {
-    "concentracao": 72,
+    "clutch": 72,
+    "consistencia": 35,
+    "compostura": 70,
     "agressividade": 70,
     "leitura_de_jogo": 66,
     "determinacao": 68
@@ -66,5 +75,10 @@
   "peso": 88,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "Aggressive Baseliner"
+  "estilo_jogo": "Aggressive Baseliner",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

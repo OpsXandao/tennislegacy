@@ -2,24 +2,33 @@
   "nome": "David Pel",
   "nacionalidade": "[RU] Rússia",
   "idade": 33,
-  "overall": 90,
+  "overall": 91,
   "pontos": 2396,
   "id": 22442,
   "atributos": {
-    "saque": 94,
+    "vel_saque": 93,
+    "pre_saque": 94,
+    "segundo_saque": 76,
+    "retorno": 93,
     "forehand": 88,
     "backhand": 96,
-    "topspin": 98,
     "voleio": 92,
-    "slice": 94,
-    "movimento": 89,
+    "smash": 91,
     "lob": 90,
-    "fisico": 91,
+    "topspin": 98,
+    "slice": 94,
     "winner": 97,
+    "velocidade": 89,
+    "aceleracao": 82,
+    "resistencia": 91,
+    "forca": 91,
+    "agilidade": 90,
     "duplas": 105
   },
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 61,
+    "compostura": 49,
     "agressividade": 44,
     "leitura_de_jogo": 75,
     "determinacao": 42
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 2396,
-  "rank_duplas": 29
+  "rank_duplas": 29,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

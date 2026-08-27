@@ -2,24 +2,33 @@
   "nome": "Ryotaro Taguchi",
   "nacionalidade": "[JP]",
   "idade": 25,
-  "overall": 71,
+  "overall": 48,
   "pontos": 22,
   "atributos": {
-    "saque": 49,
+    "vel_saque": 50,
+    "pre_saque": 48,
+    "segundo_saque": 48,
+    "retorno": 47,
     "forehand": 40,
     "backhand": 52,
-    "topspin": 50,
     "voleio": 40,
-    "slice": 41,
-    "movimento": 44,
+    "smash": 47,
     "lob": 40,
+    "topspin": 50,
+    "slice": 41,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 954,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 56,
+    "compostura": 30,
     "agressividade": 49,
     "leitura_de_jogo": 49,
     "determinacao": 31
@@ -45,5 +54,10 @@
   "peso": 65,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

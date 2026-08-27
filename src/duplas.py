@@ -2,61 +2,79 @@ import random
 from src.jogador import normalizar_nome
 
 
+from src.utils.entidade_utils import obter_atributos, obter_atributos_psicologicos
+
+
+def calcular_sinergia_tatica(jogador1, jogador2):
+    """
+    Identifica bônus táticos baseados nos estilos de jogo dos parceiros.
+    """
+    estilo1 = (
+        jogador1.get("estilo_jogo", "All-court")
+        if isinstance(jogador1, dict)
+        else getattr(jogador1, "estilo_jogo", "All-court")
+    )
+    estilo2 = (
+        jogador2.get("estilo_jogo", "All-court")
+        if isinstance(jogador2, dict)
+        else getattr(jogador2, "estilo_jogo", "All-court")
+    )
+
+    # Mapeamento de Sinergias
+    # Baseline + Serve & Volley = "The Classic Duo"
+    if ("Baseline" in estilo1 and "Serve & Voleio" in estilo2) or (
+        "Baseline" in estilo2 and "Serve & Voleio" in estilo1
+    ):
+        return 3, "Duo Clássico (Fundo + Rede)"
+
+    # Agressivo + Agressivo = "Powerhouse"
+    if "Agressivo" in estilo1 and "Agressivo" in estilo2:
+        return 2, "Dupla de Ataque (Pressão Total)"
+
+    # Baseline + Baseline = "The Wall"
+    if "Baseline" in estilo1 and "Baseline" in estilo2:
+        return 2, "Muro Defensivo (Consistência)"
+
+    return 0, "Equilibrada"
+
+
 def fundir_dupla(jogador1, jogador2, nome_equipe=None, vinculo=None):
     """
     Funde os atributos de dois jogadores em uma única 'Equipe'
     para ser simulada no motor de partida 1v1.
     """
-    attr1 = (
-        jogador1.get("atributos", {})
-        if isinstance(jogador1, dict)
-        else getattr(jogador1, "atributos", {})
-    )
-    attr2 = (
-        jogador2.get("atributos", {})
-        if isinstance(jogador2, dict)
-        else getattr(jogador2, "atributos", {})
-    )
+    attr1 = obter_atributos(jogador1)
+    attr2 = obter_atributos(jogador2)
 
-    psico1 = (
-        jogador1.get("atributos_psicologicos", {})
-        if isinstance(jogador1, dict)
-        else getattr(jogador1, "atributos_psicologicos", {})
-    )
-    psico2 = (
-        jogador2.get("atributos_psicologicos", {})
-        if isinstance(jogador2, dict)
-        else getattr(jogador2, "atributos_psicologicos", {})
-    )
+    psico1 = obter_atributos_psicologicos(jogador1)
+    psico2 = obter_atributos_psicologicos(jogador2)
 
     # Regras de Sinergia de Duplas
     atributos_equipe = {
-        # Em duplas, cada jogador serve metade dos games — o melhor sacador dita o ritmo
-        "saque": max(attr1.get("saque", 50), attr2.get("saque", 50)),
+        "vel_saque": max(attr1.get("vel_saque", 50), attr2.get("vel_saque", 50)),
         "forehand": (attr1.get("forehand", 50) + attr2.get("forehand", 50)) // 2,
         "backhand": (attr1.get("backhand", 50) + attr2.get("backhand", 50)) // 2,
         "topspin": (attr1.get("topspin", 50) + attr2.get("topspin", 50)) // 2,
-        "voleio": max(attr1.get("voleio", 50), attr2.get("voleio", 50))
-        + 5,  # Bônus de cobertura de rede
+        "voleio": max(attr1.get("voleio", 50), attr2.get("voleio", 50)) + 5,
         "slice": (attr1.get("slice", 50) + attr2.get("slice", 50)) // 2,
-        "movimento": (attr1.get("movimento", 50) + attr2.get("movimento", 50)) // 2,
+        "velocidade": (attr1.get("velocidade", 50) + attr2.get("velocidade", 50)) // 2,
         "lob": max(attr1.get("lob", 50), attr2.get("lob", 50)),
         "winner": (attr1.get("winner", 50) + attr2.get("winner", 50)) // 2,
-        "fisico": (attr1.get("fisico", 50) + attr2.get("fisico", 50)) // 2,
+        "resistencia": (attr1.get("resistencia", 50) + attr2.get("resistencia", 50))
+        // 2,
         "duplas": (attr1.get("duplas", 60) + attr2.get("duplas", 60)) // 2,
     }
 
     psico_equipe = {
-        "concentracao": max(
-            psico1.get("concentracao", 50), psico2.get("concentracao", 50)
-        ),
+        "clutch": max(psico1.get("clutch", 50), psico2.get("clutch", 50)),
         "agressividade": (
             psico1.get("agressividade", 50) + psico2.get("agressividade", 50)
         )
         // 2,
         "leitura_de_jogo": max(
             psico1.get("leitura_de_jogo", 50), psico2.get("leitura_de_jogo", 50)
-        ),
+        )
+        + 3,  # Bônus fixo de cobertura
         "determinacao": max(
             psico1.get("determinacao", 50), psico2.get("determinacao", 50)
         ),
@@ -75,21 +93,18 @@ def fundir_dupla(jogador1, jogador2, nome_equipe=None, vinculo=None):
         )
         nome_equipe = f"{nome1.split()[-1]} / {nome2.split()[-1]}"
 
-    # Overall base exclui duplas e voleio (ambos têm peso próprio)
+    # Overall base
     atributos_base = {
         k: v for k, v in atributos_equipe.items() if k not in ("duplas", "voleio")
     }
     overall_base = sum(atributos_base.values()) // max(1, len(atributos_base))
 
-    # Bônus de especialidade em duplas: cada ponto acima de 60 vale 0.5 no overall
+    # Bônus de especialidade em duplas
     duplas_media = atributos_equipe.get("duplas", 60)
     bonus_duplas_attr = int((duplas_media - 60) * 0.5)
 
-    # Bônus de voleio: fundamental em duplas — melhor dos dois, cada ponto acima de 60 vale 0.4
-    voleio_melhor = max(
-        attr1.get("voleio", 50),
-        attr2.get("voleio", 50),
-    )
+    # Bônus de voleio
+    voleio_melhor = max(attr1.get("voleio", 50), attr2.get("voleio", 50))
     bonus_voleio = int(max(0, (voleio_melhor - 60) * 0.4))
 
     # Bônus de Sinergia
@@ -106,37 +121,54 @@ def fundir_dupla(jogador1, jogador2, nome_equipe=None, vinculo=None):
     bonus_nac = 5 if (nac1[:4] == nac2[:4] and nac1) else 0
 
     bonus_vinculo = 0
+    quimica_label = "Profissional"
     partes_sinergia = []
+
     if bonus_nac:
         partes_sinergia.append("compatriotas")
     if bonus_voleio >= 4:
-        partes_sinergia.append(f"voleio de rede ({voleio_melhor})")
+        partes_sinergia.append("domínio de rede")
 
     if isinstance(vinculo, dict):
         partidas = vinculo.get("partidas", 0)
         vitorias = vinculo.get("vitorias", 0)
         win_rate = vitorias / partidas if partidas > 0 else 0.0
 
-        if partidas >= 10:
-            bonus_vinculo = 6
+        if partidas >= 20:
+            bonus_vinculo = 10
+            quimica_label = "Telepática"
+        elif partidas >= 10:
+            bonus_vinculo = 7
+            quimica_label = "Sincronizada"
         elif partidas >= 5:
             bonus_vinculo = 4
+            quimica_label = "Entrosada"
         elif partidas >= 1:
             bonus_vinculo = 2
+            quimica_label = "Familiar"
 
-        if win_rate >= 0.60 and partidas >= 1:
-            bonus_vinculo += 2
+        if win_rate >= 0.60 and partidas >= 3:
+            bonus_vinculo += 3
+            partes_sinergia.append("ritmo vencedor")
 
-        if bonus_vinculo:
-            partes_sinergia.append(f"{partidas} partidas juntos")
+    # Bônus Tático
+    bonus_tatico, desc_tatica = calcular_sinergia_tatica(jogador1, jogador2)
+    if bonus_tatico:
+        partes_sinergia.append(desc_tatica)
 
     descricao_sinergia = " | ".join(partes_sinergia)
 
     overall = min(
-        99, overall_base + bonus_duplas_attr + bonus_voleio + bonus_nac + bonus_vinculo
+        99,
+        overall_base
+        + bonus_duplas_attr
+        + bonus_voleio
+        + bonus_nac
+        + bonus_vinculo
+        + bonus_tatico,
     )
 
-    # Energia e lesão: usa o pior dos dois (qualquer parceiro inapto = dupla inapta)
+    # Energia e lesão
     energia1 = int(
         jogador1.get("energia", 100)
         if isinstance(jogador1, dict)
@@ -147,6 +179,7 @@ def fundir_dupla(jogador1, jogador2, nome_equipe=None, vinculo=None):
         if isinstance(jogador2, dict)
         else getattr(jogador2, "energia", 100) or 100
     )
+
     lesao1 = (
         jogador1.get("status_lesao", {})
         if isinstance(jogador1, dict)
@@ -161,21 +194,46 @@ def fundir_dupla(jogador1, jogador2, nome_equipe=None, vinculo=None):
         isinstance(lesao2, dict) and bool(lesao2.get("lesionado"))
     )
 
-    nacionalidade_equipe = nac1 if (bonus_nac and nac1) else "Mix"
-
     return {
         "nome": nome_equipe,
-        "nacionalidade": nacionalidade_equipe,
+        "nacionalidade": nac1 if (bonus_nac and nac1) else "Mix",
         "atributos": atributos_equipe,
         "atributos_psicologicos": psico_equipe,
         "overall": overall,
-        "bonus_aplicado": bonus_nac + bonus_vinculo,
-        "descricao_sinergia": descricao_sinergia,
+        "quimica": {
+            "label": quimica_label,
+            "bonus_total": bonus_nac + bonus_vinculo + bonus_tatico,
+            "detalhes": descricao_sinergia,
+        },
         "is_dupla": True,
         "jogadores": [jogador1, jogador2],
         "energia": min(energia1, energia2),
         "status_lesao": {"lesionado": lesionado},
     }
+
+
+def gerar_comentario_parceiro(quimica_label, venceu=True):
+    """
+    Gera um comentário narrativo do parceiro carregado do JSON.
+    """
+    try:
+        from pathlib import Path
+        import json
+
+        caminho = Path(__file__).parent.parent / "db" / "narrativa_duplas.json"
+        if not caminho.exists():
+            return "Bom jogo."
+
+        with open(caminho, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        pool = data.get("parceiro", {})
+        label = quimica_label if quimica_label in pool else "Profissional"
+        res = "vitoria" if venceu else "derrota"
+
+        return random.choice(pool[label][res])
+    except Exception:
+        return "Bom trabalho hoje."
 
 
 def tentar_convidar_parceiro(

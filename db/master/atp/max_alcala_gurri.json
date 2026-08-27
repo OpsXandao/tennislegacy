@@ -2,24 +2,33 @@
   "nome": "Max Alcala Gurri",
   "nacionalidade": "[ES]",
   "idade": 23,
-  "overall": 76,
+  "overall": 52,
   "pontos": 124,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 47,
+    "retorno": 52,
     "forehand": 42,
     "backhand": 56,
-    "topspin": 44,
     "voleio": 60,
-    "slice": 41,
-    "movimento": 56,
+    "smash": 58,
     "lob": 49,
+    "topspin": 44,
+    "slice": 41,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 57,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 415,
   "atributos_psicologicos": {
-    "concentracao": 41,
+    "clutch": 41,
+    "consistencia": 53,
+    "compostura": 41,
     "agressividade": 52,
     "leitura_de_jogo": 51,
     "determinacao": 42
@@ -45,5 +54,10 @@
   "peso": 76,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

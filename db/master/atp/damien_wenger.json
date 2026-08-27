@@ -2,24 +2,33 @@
   "nome": "Damien Wenger",
   "nacionalidade": "[CH]",
   "idade": 25,
-  "overall": 74,
+  "overall": 52,
   "pontos": 58,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 54,
+    "segundo_saque": 56,
+    "retorno": 49,
     "forehand": 52,
     "backhand": 50,
-    "topspin": 42,
     "voleio": 57,
-    "slice": 54,
-    "movimento": 45,
+    "smash": 56,
     "lob": 40,
+    "topspin": 42,
+    "slice": 54,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 652,
   "atributos_psicologicos": {
-    "concentracao": 51,
+    "clutch": 51,
+    "consistencia": 73,
+    "compostura": 50,
     "agressividade": 32,
     "leitura_de_jogo": 43,
     "determinacao": 48
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

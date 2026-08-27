@@ -2,24 +2,33 @@
   "nome": "Mert Alkaya",
   "nacionalidade": "[TR]",
   "idade": 25,
-  "overall": 76,
+  "overall": 50,
   "pontos": 124,
   "atributos": {
-    "saque": 44,
+    "vel_saque": 46,
+    "pre_saque": 44,
+    "segundo_saque": 45,
+    "retorno": 48,
     "forehand": 51,
     "backhand": 51,
-    "topspin": 40,
     "voleio": 49,
-    "slice": 40,
-    "movimento": 50,
+    "smash": 52,
     "lob": 50,
+    "topspin": 40,
+    "slice": 40,
     "winner": 42,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 413,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 65,
+    "compostura": 30,
     "agressividade": 40,
     "leitura_de_jogo": 30,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

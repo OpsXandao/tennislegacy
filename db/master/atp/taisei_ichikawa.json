@@ -2,24 +2,33 @@
   "nome": "Taisei Ichikawa",
   "nacionalidade": "[JP]",
   "idade": 25,
-  "overall": 71,
+  "overall": 49,
   "pontos": 28,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 45,
+    "segundo_saque": 49,
+    "retorno": 44,
     "forehand": 42,
     "backhand": 40,
-    "topspin": 40,
     "voleio": 40,
-    "slice": 47,
-    "movimento": 52,
+    "smash": 47,
     "lob": 44,
+    "topspin": 40,
+    "slice": 47,
     "winner": 54,
-    "fisico": 60,
+    "velocidade": 55,
+    "aceleracao": 53,
+    "resistencia": 60,
+    "forca": 50,
+    "agilidade": 53,
     "duplas": 60
   },
   "id": 895,
   "atributos_psicologicos": {
-    "concentracao": 32,
+    "clutch": 32,
+    "consistencia": 58,
+    "compostura": 34,
     "agressividade": 47,
     "leitura_de_jogo": 50,
     "determinacao": 39
@@ -45,5 +54,10 @@
   "peso": 70,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

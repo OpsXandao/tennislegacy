@@ -2,24 +2,33 @@
   "nome": "Rocco Piatti",
   "nacionalidade": "[IT]",
   "idade": 21,
-  "overall": 70,
+  "overall": 51,
   "pontos": 11,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 46,
+    "segundo_saque": 44,
+    "retorno": 52,
     "forehand": 50,
     "backhand": 54,
-    "topspin": 41,
     "voleio": 44,
-    "slice": 58,
-    "movimento": 46,
+    "smash": 49,
     "lob": 46,
+    "topspin": 41,
+    "slice": 58,
     "winner": 50,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 1146,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 64,
+    "compostura": 38,
     "agressividade": 41,
     "leitura_de_jogo": 47,
     "determinacao": 31
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

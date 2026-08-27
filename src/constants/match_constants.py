@@ -50,8 +50,14 @@ class MatchPointStats:
     dupla_falta: bool = False
     winner: bool = False
     erro_nao_forcado: bool = False
+    vencedor: str = ""
     intensidade: str = "medio"
     insights: list[str] = field(default_factory=list)
+    momento: str = "normal"
+    padrao: str = ""
+    pressao: str = "media"
+    sequencia_j: int = 0
+    sequencia_a: int = 0
 
     # Visualização (coordenadas 0-100)
     # X: 0 (esquerda) a 100 (direita)

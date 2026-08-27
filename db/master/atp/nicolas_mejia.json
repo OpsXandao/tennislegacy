@@ -2,24 +2,33 @@
   "nome": "Nicolas Mejia",
   "nacionalidade": "[CO]",
   "idade": 26,
-  "overall": 80,
+  "overall": 52,
   "pontos": 341,
   "atributos": {
-    "saque": 58,
+    "vel_saque": 58,
+    "pre_saque": 54,
+    "segundo_saque": 58,
+    "retorno": 48,
     "forehand": 54,
     "backhand": 48,
-    "topspin": 42,
     "voleio": 44,
-    "slice": 48,
-    "movimento": 50,
+    "smash": 50,
     "lob": 53,
+    "topspin": 42,
+    "slice": 48,
     "winner": 41,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 213,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 67,
+    "compostura": 51,
     "agressividade": 38,
     "leitura_de_jogo": 39,
     "determinacao": 51
@@ -45,5 +54,10 @@
   "peso": 76,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
-from api.session import obter_sessao_ativa, Session
+from api.session import obter_sessao_ativa, Session, refresh_session
 from api.services.training_service import alocar_skill
 
 router = APIRouter(prefix="/api/progressao", tags=["progressao"])
@@ -33,4 +33,5 @@ def alocar(req: AlocarRequest, session: Session = Depends(obter_sessao_ativa)):
     resultado = alocar_skill(session, req.tipo, req.atributo)
     if not resultado.get("ok"):
         raise HTTPException(status_code=resultado.get("status", 400), detail=resultado["erro"])
+    refresh_session(session.nome_save_ativo)
     return resultado

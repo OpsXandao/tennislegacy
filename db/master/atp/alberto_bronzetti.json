@@ -2,24 +2,33 @@
   "nome": "Alberto Bronzetti",
   "nacionalidade": "[IT]",
   "idade": 27,
-  "overall": 70,
+  "overall": 53,
   "pontos": 10,
   "atributos": {
-    "saque": 52,
+    "vel_saque": 53,
+    "pre_saque": 52,
+    "segundo_saque": 55,
+    "retorno": 52,
     "forehand": 45,
     "backhand": 59,
-    "topspin": 41,
     "voleio": 56,
-    "slice": 46,
-    "movimento": 45,
+    "smash": 57,
     "lob": 58,
+    "topspin": 41,
+    "slice": 46,
     "winner": 58,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 1168,
   "atributos_psicologicos": {
-    "concentracao": 47,
+    "clutch": 47,
+    "consistencia": 72,
+    "compostura": 47,
     "agressividade": 33,
     "leitura_de_jogo": 50,
     "determinacao": 49
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

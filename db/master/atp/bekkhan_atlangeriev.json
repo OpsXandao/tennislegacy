@@ -2,24 +2,33 @@
   "nome": "Bekkhan Atlangeriev",
   "nacionalidade": "[RU]",
   "idade": 24,
-  "overall": 71,
+  "overall": 53,
   "pontos": 18,
   "atributos": {
-    "saque": 52,
+    "vel_saque": 53,
+    "pre_saque": 51,
+    "segundo_saque": 54,
+    "retorno": 53,
     "forehand": 46,
     "backhand": 55,
-    "topspin": 45,
     "voleio": 48,
-    "slice": 46,
-    "movimento": 58,
+    "smash": 53,
     "lob": 56,
+    "topspin": 45,
+    "slice": 46,
     "winner": 50,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 56,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 56,
     "duplas": 60
   },
   "id": 1011,
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 64,
+    "compostura": 52,
     "agressividade": 41,
     "leitura_de_jogo": 54,
     "determinacao": 46
@@ -45,5 +54,10 @@
   "peso": 82,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

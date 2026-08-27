@@ -2,24 +2,33 @@
   "nome": "Luke Johnson",
   "nacionalidade": "[RU] Rússia",
   "idade": 28,
-  "overall": 90,
+  "overall": 88,
   "pontos": 2435,
   "id": 30551,
   "atributos": {
-    "saque": 84,
+    "vel_saque": 84,
+    "pre_saque": 85,
+    "segundo_saque": 72,
+    "retorno": 90,
     "forehand": 84,
     "backhand": 91,
-    "topspin": 96,
     "voleio": 100,
-    "slice": 83,
-    "movimento": 94,
+    "smash": 95,
     "lob": 93,
-    "fisico": 88,
+    "topspin": 96,
+    "slice": 83,
     "winner": 90,
+    "velocidade": 91,
+    "aceleracao": 83,
+    "resistencia": 88,
+    "forca": 87,
+    "agilidade": 91,
     "duplas": 99
   },
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 44,
+    "compostura": 42,
     "agressividade": 61,
     "leitura_de_jogo": 47,
     "determinacao": 45
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2435,
-  "rank_duplas": 25
+  "rank_duplas": 25,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

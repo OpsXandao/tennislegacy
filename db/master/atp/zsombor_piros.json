@@ -2,24 +2,33 @@
   "nome": "Zsombor Piros",
   "nacionalidade": "[HU]",
   "idade": 26,
-  "overall": 80,
+  "overall": 48,
   "pontos": 341,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 44,
+    "retorno": 40,
     "forehand": 54,
     "backhand": 40,
-    "topspin": 44,
     "voleio": 53,
-    "slice": 40,
-    "movimento": 41,
+    "smash": 54,
     "lob": 41,
+    "topspin": 44,
+    "slice": 40,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 212,
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 75,
+    "compostura": 38,
     "agressividade": 30,
     "leitura_de_jogo": 31,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

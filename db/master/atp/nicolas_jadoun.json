@@ -2,24 +2,33 @@
   "nome": "Nicolas Jadoun",
   "nacionalidade": "[FR]",
   "idade": 23,
-  "overall": 71,
+  "overall": 52,
   "pontos": 24,
   "atributos": {
-    "saque": 58,
+    "vel_saque": 58,
+    "pre_saque": 55,
+    "segundo_saque": 52,
+    "retorno": 48,
     "forehand": 53,
     "backhand": 53,
-    "topspin": 51,
     "voleio": 45,
-    "slice": 46,
-    "movimento": 43,
+    "smash": 50,
     "lob": 46,
+    "topspin": 51,
+    "slice": 46,
     "winner": 59,
-    "fisico": 60,
+    "velocidade": 49,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 935,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 55,
+    "compostura": 36,
     "agressividade": 50,
     "leitura_de_jogo": 54,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

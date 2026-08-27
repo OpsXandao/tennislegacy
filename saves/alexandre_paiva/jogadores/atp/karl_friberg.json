@@ -1,0 +1,108 @@
+{
+  "nome": "Karl Friberg",
+  "nacionalidade": "[SE]",
+  "pontos": 23,
+  "pontos_duplas": 0,
+  "pontos_ranking": 23,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 5,
+  "overall": 55,
+  "energia": 100,
+  "fadiga": 19,
+  "moral": 70,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 49,
+    "pre_saque": 49,
+    "segundo_saque": 54,
+    "retorno": 55,
+    "forehand": 59,
+    "backhand": 56,
+    "voleio": 47,
+    "smash": 51,
+    "lob": 48,
+    "topspin": 58,
+    "slice": 51,
+    "winner": 43,
+    "velocidade": 58,
+    "aceleracao": 56,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 57,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 40,
+    "consistencia": 49,
+    "compostura": 44,
+    "agressividade": 56,
+    "leitura_de_jogo": 41,
+    "determinacao": 54
+  },
+  "historico_torneios": [
+    {
+      "nome": "Hong Kong Open",
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana": 1,
+      "ano": 2026,
+      "fase": "qualy_2",
+      "fase_alcancada": "qualy_2",
+      "pontos": 5,
+      "premio": 746,
+      "modalidade": "simples",
+      "obrigatorio": false,
+      "expirado": false
+    }
+  ],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 18,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    },
+    {
+      "pontos": 5,
+      "semana_expiracao": 1,
+      "ano_expiracao": 2027,
+      "torneio": "Hong Kong Open",
+      "tipo": "ATP 250",
+      "semana_origem": 1,
+      "ano_origem": 2026,
+      "fase": "qualy_2",
+      "modalidade": "simples"
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 746,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 26,
+  "titulos_total": 0,
+  "ultimo_titulo_ano": null,
+  "id": 1009,
+  "pico_carreira": 981,
+  "altura": 191,
+  "peso": 69,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
+}

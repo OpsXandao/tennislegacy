@@ -2,24 +2,33 @@
   "nome": "Maxime Cressy",
   "nacionalidade": "[US]",
   "idade": 28,
-  "overall": 69,
+  "overall": 50,
   "pontos": 6,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 41,
+    "segundo_saque": 49,
+    "retorno": 46,
     "forehand": 48,
     "backhand": 49,
-    "topspin": 46,
     "voleio": 59,
-    "slice": 42,
-    "movimento": 46,
+    "smash": 58,
     "lob": 47,
+    "topspin": 46,
+    "slice": 42,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 1286,
   "atributos_psicologicos": {
-    "concentracao": 41,
+    "clutch": 41,
+    "consistencia": 56,
+    "compostura": 43,
     "agressividade": 49,
     "leitura_de_jogo": 40,
     "determinacao": 48
@@ -51,5 +60,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

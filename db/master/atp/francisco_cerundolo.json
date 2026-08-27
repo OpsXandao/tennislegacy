@@ -2,24 +2,33 @@
   "nome": "Francisco Cerundolo",
   "nacionalidade": "[AR]",
   "idade": 27,
-  "overall": 88,
+  "overall": 77,
   "pontos": 2170,
   "atributos": {
-    "saque": 83,
+    "vel_saque": 79,
+    "pre_saque": 82,
+    "segundo_saque": 80,
+    "retorno": 82,
     "forehand": 86,
     "backhand": 82,
-    "topspin": 85,
     "voleio": 81,
-    "slice": 81,
-    "movimento": 86,
+    "smash": 74,
     "lob": 85,
+    "topspin": 85,
+    "slice": 81,
     "winner": 86,
-    "fisico": 60,
+    "velocidade": 76,
+    "aceleracao": 70,
+    "resistencia": 60,
+    "forca": 71,
+    "agilidade": 79,
     "duplas": 60
   },
   "id": 18,
   "atributos_psicologicos": {
-    "concentracao": 62,
+    "clutch": 62,
+    "consistencia": 35,
+    "compostura": 69,
     "agressividade": 77,
     "leitura_de_jogo": 69,
     "determinacao": 86
@@ -61,5 +70,10 @@
   "peso": 98,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "Aggressive Baseliner"
+  "estilo_jogo": "Aggressive Baseliner",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

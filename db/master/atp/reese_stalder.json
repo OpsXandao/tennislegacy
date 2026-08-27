@@ -2,24 +2,33 @@
   "nome": "Reese Stalder",
   "nacionalidade": "[RU] Rússia",
   "idade": 32,
-  "overall": 86,
+  "overall": 85,
   "pontos": 847,
   "id": 28189,
   "atributos": {
-    "saque": 88,
+    "vel_saque": 87,
+    "pre_saque": 88,
+    "segundo_saque": 82,
+    "retorno": 86,
     "forehand": 86,
     "backhand": 86,
-    "topspin": 79,
     "voleio": 86,
-    "slice": 93,
-    "movimento": 83,
+    "smash": 86,
     "lob": 92,
-    "fisico": 85,
+    "topspin": 79,
+    "slice": 93,
     "winner": 82,
+    "velocidade": 83,
+    "aceleracao": 77,
+    "resistencia": 85,
+    "forca": 85,
+    "agilidade": 84,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 55,
+    "clutch": 55,
+    "consistencia": 42,
+    "compostura": 60,
     "agressividade": 63,
     "leitura_de_jogo": 64,
     "determinacao": 73
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 847,
-  "rank_duplas": 96
+  "rank_duplas": 96,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

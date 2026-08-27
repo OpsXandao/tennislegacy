@@ -4,7 +4,7 @@ import {
   calcularOverallCardMatch,
   getScoutingMetrics,
   resumoScouting,
-} from '../model'
+} from '../scouting'
 import { ScoutingReportCard } from './ScoutingReportCard'
 
 interface OpponentScoutingCardProps {
@@ -38,12 +38,27 @@ export function OpponentScoutingCard({
     : fallbackReport
 
   return (
-    <ScoutingReportCard
-      titulo="Scouting Report"
-      overall={scout?.overall ?? calcularOverallCardMatch(fallbackMetrics)}
-      metrics={metrics}
-      report={report}
-      accent={accent}
-    />
+    <div>
+      {scout?.is_rival && (
+        <div
+          className="flex items-center gap-2 px-3 py-2 mb-2"
+          style={{
+            background: 'rgba(255,46,99,0.08)',
+            border: '1px solid rgba(255,46,99,0.35)',
+          }}
+        >
+          <span style={{ color: '#ff2e63', fontFamily: 'var(--font-arcade)', fontSize: 9, letterSpacing: '0.2em' }}>
+            ⚔ RIVAL
+          </span>
+        </div>
+      )}
+      <ScoutingReportCard
+        titulo="Scouting Report"
+        overall={scout?.overall ?? calcularOverallCardMatch(fallbackMetrics)}
+        metrics={metrics}
+        report={report}
+        accent={accent}
+      />
+    </div>
   )
 }

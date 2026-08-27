@@ -2,24 +2,33 @@
   "nome": "Gilbert Klier Junior",
   "nacionalidade": "[BR]",
   "idade": 25,
-  "overall": 70,
+  "overall": 52,
   "pontos": 15,
   "atributos": {
-    "saque": 49,
+    "vel_saque": 50,
+    "pre_saque": 51,
+    "segundo_saque": 54,
+    "retorno": 51,
     "forehand": 41,
     "backhand": 50,
-    "topspin": 53,
     "voleio": 57,
-    "slice": 60,
-    "movimento": 49,
+    "smash": 57,
     "lob": 49,
+    "topspin": 53,
+    "slice": 60,
     "winner": 44,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 52,
     "duplas": 60
   },
   "id": 1060,
   "atributos_psicologicos": {
-    "concentracao": 51,
+    "clutch": 51,
+    "consistencia": 61,
+    "compostura": 51,
     "agressividade": 44,
     "leitura_de_jogo": 47,
     "determinacao": 53
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

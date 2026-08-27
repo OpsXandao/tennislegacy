@@ -2,24 +2,33 @@
   "nome": "Alexander Wagner",
   "nacionalidade": "[AT]",
   "idade": 19,
-  "overall": 69,
+  "overall": 47,
   "pontos": 7,
   "atributos": {
-    "saque": 44,
+    "vel_saque": 46,
+    "pre_saque": 44,
+    "segundo_saque": 48,
+    "retorno": 42,
     "forehand": 46,
     "backhand": 40,
-    "topspin": 50,
     "voleio": 41,
-    "slice": 50,
-    "movimento": 40,
+    "smash": 47,
     "lob": 40,
+    "topspin": 50,
+    "slice": 50,
     "winner": 43,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 1254,
   "atributos_psicologicos": {
-    "concentracao": 39,
+    "clutch": 39,
+    "consistencia": 72,
+    "compostura": 38,
     "agressividade": 33,
     "leitura_de_jogo": 34,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

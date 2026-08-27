@@ -2,24 +2,33 @@
   "nome": "Aleksandr Lobanov",
   "nacionalidade": "[RU]",
   "idade": 24,
-  "overall": 71,
+  "overall": 51,
   "pontos": 25,
   "atributos": {
-    "saque": 44,
+    "vel_saque": 46,
+    "pre_saque": 46,
+    "segundo_saque": 49,
+    "retorno": 48,
     "forehand": 56,
     "backhand": 47,
-    "topspin": 44,
     "voleio": 51,
-    "slice": 53,
-    "movimento": 46,
+    "smash": 53,
     "lob": 43,
+    "topspin": 44,
+    "slice": 53,
     "winner": 50,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 920,
   "atributos_psicologicos": {
-    "concentracao": 54,
+    "clutch": 54,
+    "consistencia": 61,
+    "compostura": 50,
     "agressividade": 44,
     "leitura_de_jogo": 31,
     "determinacao": 42
@@ -45,5 +54,10 @@
   "peso": 67,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

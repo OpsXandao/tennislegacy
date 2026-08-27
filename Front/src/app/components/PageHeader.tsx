@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 interface PageHeaderProps {
   title: string;
   subtitle?: string;
-  color?: 'green' | 'pink' | 'yellow' | 'cyan';
+  color?: 'green' | 'pink' | 'yellow' | 'gold' | 'cyan';
   backTo?: string;
   onBack?: () => void;
   right?: React.ReactNode;
@@ -15,6 +15,7 @@ const COLORS = {
   green:  { text: 'var(--neon-green)', border: 'border-b-2', glow: 'var(--text-glow-green)' },
   pink:   { text: 'var(--neon-pink)', border: 'border-b-2', glow: 'var(--text-glow-pink)'  },
   yellow: { text: 'var(--neon-yellow)', border: 'border-b-2', glow: 'var(--text-glow-gold)'  },
+  gold:   { text: 'var(--neon-yellow)', border: 'border-b-2', glow: 'var(--text-glow-gold)'  },
   cyan:   { text: 'var(--neon-cyan)', border: 'border-b-2', glow: 'var(--text-glow-cyan)'  },
 } as const;
 
@@ -28,7 +29,7 @@ export function PageHeader({
   children,
 }: PageHeaderProps) {
   const navigate = useNavigate();
-  const c = COLORS[color];
+  const c = COLORS[color] ?? COLORS.green;
 
   function handleBack() {
     if (onBack) { onBack(); return; }

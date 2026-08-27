@@ -2,24 +2,33 @@
   "nome": "Otto Virtanen",
   "nacionalidade": "[FI]",
   "idade": 24,
-  "overall": 81,
+  "overall": 65,
   "pontos": 475,
   "atributos": {
-    "saque": 70,
+    "vel_saque": 68,
+    "pre_saque": 68,
+    "segundo_saque": 71,
+    "retorno": 65,
     "forehand": 68,
     "backhand": 67,
-    "topspin": 69,
     "voleio": 67,
-    "slice": 64,
-    "movimento": 65,
+    "smash": 63,
     "lob": 61,
+    "topspin": 69,
+    "slice": 64,
     "winner": 68,
-    "fisico": 60,
+    "velocidade": 63,
+    "aceleracao": 59,
+    "resistencia": 60,
+    "forca": 63,
+    "agilidade": 63,
     "duplas": 60
   },
   "id": 114,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 48,
+    "compostura": 59,
     "agressividade": 57,
     "leitura_de_jogo": 48,
     "determinacao": 75
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

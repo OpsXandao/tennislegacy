@@ -2,24 +2,33 @@
   "nome": "Arthur Nagel",
   "nacionalidade": "[FR]",
   "idade": 22,
-  "overall": 75,
+  "overall": 56,
   "pontos": 77,
   "atributos": {
-    "saque": 44,
+    "vel_saque": 46,
+    "pre_saque": 48,
+    "segundo_saque": 51,
+    "retorno": 57,
     "forehand": 61,
     "backhand": 59,
-    "topspin": 54,
     "voleio": 60,
-    "slice": 55,
-    "movimento": 56,
+    "smash": 58,
     "lob": 44,
+    "topspin": 54,
+    "slice": 55,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 57,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 60,
+    "agilidade": 56,
     "duplas": 60
   },
   "id": 562,
   "atributos_psicologicos": {
-    "concentracao": 37,
+    "clutch": 37,
+    "consistencia": 56,
+    "compostura": 40,
     "agressividade": 49,
     "leitura_de_jogo": 44,
     "determinacao": 48
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

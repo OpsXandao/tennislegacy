@@ -2,24 +2,33 @@
   "nome": "Luca Sanchez",
   "nacionalidade": "[RU] Rússia",
   "idade": 25,
-  "overall": 86,
+  "overall": 84,
   "pontos": 1001,
   "id": 20514,
   "atributos": {
-    "saque": 78,
+    "vel_saque": 79,
+    "pre_saque": 81,
+    "segundo_saque": 75,
+    "retorno": 87,
     "forehand": 81,
     "backhand": 94,
-    "topspin": 87,
     "voleio": 90,
-    "slice": 80,
-    "movimento": 82,
+    "smash": 88,
     "lob": 81,
-    "fisico": 87,
+    "topspin": 87,
+    "slice": 80,
     "winner": 80,
+    "velocidade": 83,
+    "aceleracao": 77,
+    "resistencia": 87,
+    "forca": 86,
+    "agilidade": 82,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 47,
+    "clutch": 47,
+    "consistencia": 60,
+    "compostura": 53,
     "agressividade": 45,
     "leitura_de_jogo": 46,
     "determinacao": 66
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1001,
-  "rank_duplas": 91
+  "rank_duplas": 91,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

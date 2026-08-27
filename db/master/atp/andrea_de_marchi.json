@@ -2,24 +2,33 @@
   "nome": "Andrea De Marchi",
   "nacionalidade": "[IT]",
   "idade": 19,
-  "overall": 69,
+  "overall": 53,
   "pontos": 9,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 49,
+    "segundo_saque": 49,
+    "retorno": 53,
     "forehand": 46,
     "backhand": 57,
-    "topspin": 51,
     "voleio": 54,
-    "slice": 53,
-    "movimento": 47,
+    "smash": 56,
     "lob": 57,
+    "topspin": 51,
+    "slice": 53,
     "winner": 50,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 1205,
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 56,
+    "compostura": 47,
     "agressividade": 49,
     "leitura_de_jogo": 35,
     "determinacao": 37
@@ -45,5 +54,10 @@
   "peso": 76,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

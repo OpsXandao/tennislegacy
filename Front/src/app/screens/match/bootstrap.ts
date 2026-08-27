@@ -5,7 +5,7 @@ import type {
   PlacarState,
   TorneioState,
 } from '../../../types'
-import { inferirEstilo } from './model'
+import { inferirEstilo } from './tactics'
 import type { AdversarioInfo, ModoAcomp } from './types'
 
 export interface MatchSyntheticEvent extends PlacarState {

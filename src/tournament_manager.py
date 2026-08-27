@@ -27,18 +27,25 @@ def fases_por_tipo_torneio(tipo: str):
     return ["r32", "r16", "quartas", "semifinal", "final"], 32
 
 
-# Alias privado para uso interno
-_fases_por_tipo = fases_por_tipo_torneio
-
-
 def gerar_placar_fake() -> str:
     """Gera um placar fictício aleatório para partidas NPC."""
     opcoes = ["6-3 6-4", "7-5 6-4", "6-4 3-6 6-3", "6-2 6-2", "7-6 6-4"]
     return random.choice(opcoes)
 
 
-# Alias privado para uso interno
-_placar_fake = gerar_placar_fake
+def _extrair_participantes_confronto(confronto):
+    """Normaliza um par de participantes para dicts com nome e overall."""
+    a = (
+        confronto[0]
+        if isinstance(confronto[0], dict)
+        else {"nome": str(confronto[0]), "overall": 50}
+    )
+    b = (
+        confronto[1]
+        if isinstance(confronto[1], dict)
+        else {"nome": str(confronto[1]), "overall": 50}
+    )
+    return a, b
 
 
 def _fases_duplas_por_draw(draw_size: int):
@@ -184,55 +191,67 @@ class WeekTournamentManager:
             if tipo in ("Davis Cup", "Billie Jean King Cup", "United Cup"):
                 continue
 
-            fases, draw_size = _fases_por_tipo(tipo)
+            # 1. Definir tamanhos de draw (MD e Qualy)
+            fases, draw_size = fases_por_tipo_torneio(tipo)
             draw_duplas = _draw_duplas_por_tipo(tipo)
-
+            num_qualifiers = 0
+            if tipo == "Grand Slam": num_qualifiers = 8
+            elif "1000" in tipo: num_qualifiers = 4
+            elif tipo in ["ATP 500", "ATP 250", "WTA 500", "WTA 250"]: num_qualifiers = 2
+            
+            # Draw da Qualy (geralmente metade ou igual ao MD)
+            qualy_size = num_qualifiers * 4 if num_qualifiers > 0 else 0
+            
+            # 2. Selecionar Participantes (MD + Qualy)
+            total_selecionar = draw_size - num_qualifiers + qualy_size
             selecionados = _selecionar_participantes_para_torneio(
-                info, ranking_ord, disponiveis, max_jogadores=draw_size
+                info, ranking_ord, disponiveis, max_jogadores=total_selecionar
             )
-            jogadores = [
-                {
-                    "nome": j.get("nome", ""),
-                    "overall": int(j.get("overall", 50) or 50),
-                }
-                for j in selecionados[:draw_size]
-            ]
+            
+            # 3. Separar MD e Qualy
+            jogadores_md = selecionados[:(draw_size - num_qualifiers)]
+            jogadores_q = selecionados[(draw_size - num_qualifiers):]
+            
+            # 4. Simular Qualy "Relâmpago" (KISS)
+            vencedores_q = []
+            lucky_losers = []
+            if jogadores_q and num_qualifiers > 0:
+                random.shuffle(jogadores_q)
+                # Simula eliminatórias até chegar no número final de vagas
+                # Guardamos os derrotados da última rodada como potenciais LL
+                while len(jogadores_q) > num_qualifiers:
+                    vencedores_rodada = []
+                    perdedores_rodada = []
+                    for i in range(0, len(jogadores_q) - 1, 2):
+                        a, b = jogadores_q[i], jogadores_q[i+1]
+                        oa = int(a.get("overall", 50) or 50)
+                        ob = int(b.get("overall", 50) or 50)
+                        vencedor = random.choices([a, b], weights=[oa, ob], k=1)[0]
+                        perdedor = b if vencedor == a else a
+                        vencedores_rodada.append(vencedor)
+                        perdedores_rodada.append(perdedor)
+                    
+                    if len(vencedores_rodada) == num_qualifiers:
+                        lucky_losers = perdedores_rodada
+                    
+                    jogadores_q = vencedores_rodada
+                
+                vencedores_q = [{"nome": f"[Q] {j.get('nome')}", "overall": j.get("overall"), "is_qualifier": True} for j in jogadores_q]
+                lucky_losers = [{"nome": f"[LL] {j.get('nome')}", "overall": j.get("overall"), "is_ll": True} for j in lucky_losers]
 
-            # Fallback: reaproveita quaisquer jogadores reais ainda não usados no draw.
-            nomes_no_draw = {normalizar_nome(j.get("nome", "")) for j in jogadores}
-            for j in ranking_ord:
-                if len(jogadores) >= max(2, draw_size):
-                    break
+            # 5. Montar Campo Final do MD
+            jogadores_finais = jogadores_md + vencedores_q
+
+            from src.torneio_draw import montar_chave_principal
+
+            def garantir_dados_fn(j):
+                if not j: return {"nome": "Bye", "overall": 10}
                 nome = j.get("nome", "")
-                nome_norm = normalizar_nome(nome)
-                if (
-                    not nome_norm
-                    or nome_norm in nomes_no_draw
-                    or str(nome).startswith("Bot")
-                    or bool(j.get("is_bot"))
-                ):
-                    continue
-                jogadores.append(
-                    {"nome": nome, "overall": int(j.get("overall", 50) or 50)}
-                )
-                nomes_no_draw.add(nome_norm)
+                # Se for qualifier, o nome já tem [Q]
+                return {"nome": nome, "overall": int(j.get("overall", 50) or 50), "is_qualifier": j.get("is_qualifier", False)}
 
-            # Último recurso: gera NPCs com nomes reais (nunca "Bot Externo").
-            if len(jogadores) < max(2, draw_size):
-                from src.utils.gerador_nomes import gerar_jogador_fraco
-
-                while len(jogadores) < max(2, draw_size):
-                    bot = gerar_jogador_fraco(
-                        len(jogadores) + 1,
-                        pais_sede=info.get("pais_sede"),
-                        genero=self.genero,
-                    )
-                    jogadores.append({"nome": bot["nome"], "overall": bot["overall"]})
-
-            random.shuffle(jogadores)
-            confrontos = []
-            for i in range(0, len(jogadores) - 1, 2):
-                confrontos.append([jogadores[i], jogadores[i + 1]])
+            confrontos_chave = montar_chave_principal(jogadores_finais, draw_size, self.ranking, garantir_dados_fn)
+            confrontos = [list(pair) for pair in confrontos_chave]
 
             # Duplas NPC: prioriza ranking de duplas, com fallback para ranking geral.
             ranking_duplas = sorted(
@@ -306,6 +325,7 @@ class WeekTournamentManager:
                 ),
                 "resultados_duplas": {},
                 "campeao_duplas": None,
+                "lucky_losers_pool": lucky_losers,
             }
 
         self.salvar()
@@ -390,23 +410,36 @@ class WeekTournamentManager:
         vencedores = []
 
         for confronto in confrontos:
-            a = (
-                confronto[0]
-                if isinstance(confronto[0], dict)
-                else {"nome": str(confronto[0]), "overall": 50}
-            )
-            b = (
-                confronto[1]
-                if isinstance(confronto[1], dict)
-                else {"nome": str(confronto[1]), "overall": 50}
-            )
+            a, b = _extrair_participantes_confronto(confronto)
 
-            # Partida do jogador humano: não simula, mantém o confronto em aberto
+            # Partida do jogador humano: não simula
             nome_a = normalizar_nome(a.get("nome", ""))
             nome_b = normalizar_nome(b.get("nome", ""))
             if jogador_norm and jogador_norm in (nome_a, nome_b):
-                vencedores.append(a)  # placeholder: será atualizado quando jogar
+                vencedores.append(a)
                 continue
+
+            # 6. Realismo de Desistência NPC (Walkovers / LL)
+            # Chance de 2% de um NPC se lesionar antes da partida
+            if random.random() < 0.02:
+                desistente, oponente = random.choice([(a, b), (b, a)])
+                
+                # Se for 1ª rodada e houver Lucky Loser, substitui
+                ll_pool = estado.get("lucky_losers_pool", [])
+                if fase_atual in ["r64", "r32", "r128"] and ll_pool:
+                    ll = ll_pool.pop(0)
+                    estado["lucky_losers_pool"] = ll_pool
+                    # Substitui o desistente pelo LL e continua simulação normal
+                    if desistente == a: a = ll
+                    else: b = ll
+                else:
+                    # Walkover direto
+                    resultados.append({
+                        "jogador_a": a.get("nome"), "jogador_b": b.get("nome"),
+                        "vencedor": oponente.get("nome"), "placar": "W.O.", "walkover": True
+                    })
+                    vencedores.append(dict(oponente))
+                    continue
 
             oa = max(1, int(a.get("overall", 50) or 50))
             ob = max(1, int(b.get("overall", 50) or 50))
@@ -421,7 +454,7 @@ class WeekTournamentManager:
                     "jogador_a": a.get("nome", "??"),
                     "jogador_b": b.get("nome", "??"),
                     "vencedor": vencedor.get("nome", "??"),
-                    "placar": _placar_fake(),
+                    "placar": gerar_placar_fake(),
                 }
             )
             # Incrementa contador de partidas do vencedor para rastrear desgaste
@@ -476,16 +509,7 @@ class WeekTournamentManager:
         vencedores = []
 
         for confronto in confrontos:
-            a = (
-                confronto[0]
-                if isinstance(confronto[0], dict)
-                else {"nome": str(confronto[0]), "overall": 50}
-            )
-            b = (
-                confronto[1]
-                if isinstance(confronto[1], dict)
-                else {"nome": str(confronto[1]), "overall": 50}
-            )
+            a, b = _extrair_participantes_confronto(confronto)
 
             nome_a = normalizar_nome(a.get("nome", ""))
             nome_b = normalizar_nome(b.get("nome", ""))
@@ -503,7 +527,7 @@ class WeekTournamentManager:
                     "dupla_a": a.get("nome", "??"),
                     "dupla_b": b.get("nome", "??"),
                     "vencedor": vencedor.get("nome", "??"),
-                    "placar": _placar_fake(),
+                    "placar": gerar_placar_fake(),
                 }
             )
             vencedores.append(vencedor)

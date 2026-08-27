@@ -2,7 +2,7 @@ import random
 from dataclasses import dataclass
 from typing import Optional
 
-from src.simulacao_partida import normalizar_superficie
+from src.utils.superficie_utils import normalizar_superficie
 
 
 @dataclass

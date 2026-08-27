@@ -2,24 +2,33 @@
   "nome": "Jesse Delaney",
   "nacionalidade": "[AU]",
   "idade": 27,
-  "overall": 71,
+  "overall": 46,
   "pontos": 22,
   "atributos": {
-    "saque": 42,
+    "vel_saque": 44,
+    "pre_saque": 43,
+    "segundo_saque": 44,
+    "retorno": 45,
     "forehand": 40,
     "backhand": 50,
-    "topspin": 40,
     "voleio": 40,
-    "slice": 40,
-    "movimento": 40,
+    "smash": 47,
     "lob": 42,
+    "topspin": 40,
+    "slice": 40,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 961,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 74,
+    "compostura": 38,
     "agressividade": 31,
     "leitura_de_jogo": 45,
     "determinacao": 30
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Tommaso Compagnucci",
   "nacionalidade": "[IT]",
   "idade": 26,
-  "overall": 75,
+  "overall": 52,
   "pontos": 94,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 45,
+    "segundo_saque": 45,
+    "retorno": 54,
     "forehand": 54,
     "backhand": 54,
-    "topspin": 43,
     "voleio": 40,
-    "slice": 56,
-    "movimento": 54,
+    "smash": 47,
     "lob": 40,
+    "topspin": 43,
+    "slice": 56,
     "winner": 54,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 55,
     "duplas": 60
   },
   "id": 506,
   "atributos_psicologicos": {
-    "concentracao": 32,
+    "clutch": 32,
+    "consistencia": 75,
+    "compostura": 33,
     "agressividade": 30,
     "leitura_de_jogo": 33,
     "determinacao": 36
@@ -45,5 +54,10 @@
   "peso": 70,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

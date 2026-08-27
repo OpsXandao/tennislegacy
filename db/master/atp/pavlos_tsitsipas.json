@@ -2,24 +2,33 @@
   "nome": "Pavlos Tsitsipas",
   "nacionalidade": "[GR]",
   "idade": 20,
-  "overall": 70,
+  "overall": 51,
   "pontos": 16,
   "atributos": {
-    "saque": 48,
+    "vel_saque": 49,
+    "pre_saque": 47,
+    "segundo_saque": 50,
+    "retorno": 45,
     "forehand": 60,
     "backhand": 40,
-    "topspin": 43,
     "voleio": 48,
-    "slice": 53,
-    "movimento": 50,
+    "smash": 52,
     "lob": 46,
+    "topspin": 43,
+    "slice": 53,
     "winner": 50,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 52,
     "duplas": 60
   },
   "id": 1054,
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 72,
+    "compostura": 50,
     "agressividade": 33,
     "leitura_de_jogo": 36,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

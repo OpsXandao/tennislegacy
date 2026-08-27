@@ -7,22 +7,40 @@ from pydantic import BaseModel
 
 from api.logging_utils import log_exception
 from api.routes._match_runtime import obter_match_runtime
-from api.session import Session, obter_sessao_ativa
+from api.routes._match_store import delete_snapshot
+from api.session import Session, obter_sessao_ativa, refresh_session
 from src.services.match_service import (
-    completar_adversario,
-    dupla_contem_jogador,
     get_active_match,
     preview_match,
-    resolver_adversario_partida,
     start_match,
 )
 from src.services.scouting_service import montar_relatorio_scouting
 
 router = APIRouter(prefix="/api/partida", tags=["partida"])
 
-_dupla_contem_jogador = dupla_contem_jogador
-_resolver_adversario_partida = resolver_adversario_partida
-_completar_adversario = completar_adversario
+
+def _aplicar_fm_tactics(
+    runtime, texto: str, extra_fields: dict | None = None
+) -> dict | None:
+    """Parseia táticas FM-style (pipe-delimited) e aplica ao runtime. Retorna None se não reconhecido."""
+    if "|" not in texto:
+        return None
+    partes = texto.split("|")
+    if texto.startswith("fm|") and len(partes) >= 5:
+        _, mentalidade, abordagem, instrucao, segundo_saque = partes[:5]
+    elif len(partes) == 3:
+        mentalidade, abordagem, instrucao = partes
+        segundo_saque = None
+    else:
+        return None
+    runtime.contexto_partida.mentalidade = mentalidade
+    runtime.contexto_partida.abordagem = abordagem
+    runtime.contexto_partida.instrucao_especifica = instrucao
+    if segundo_saque is not None:
+        runtime.contexto_partida.segundo_saque = segundo_saque
+    runtime.aplicar_estrategia(texto)
+    runtime._persistir()
+    return {"ok": True, "tipo": "fm_tactics", **(extra_fields or {})}
 
 
 class IniciarPartidaBody(BaseModel):
@@ -68,6 +86,7 @@ class ScoutResponse(BaseModel):
     dicas: list[str]
     pontos_fortes: list[str]
     fraquezas: list[str]
+    is_rival: bool = False
 
 
 class PartidaConfigResponse(BaseModel):
@@ -149,6 +168,7 @@ class MatchStrategyResponse(BaseModel):
 class MatchRuntimeResponse(BaseModel):
     tipo: str
     descricao: str
+    descricao_json: dict
     sets: list[int]
     games: list[int]
     pontos: list[str]
@@ -168,6 +188,9 @@ class MatchRuntimeResponse(BaseModel):
     estrategia_a: MatchStrategyResponse
     ajuste_tatico_j: str
     ajuste_tatico_a: str
+    quimica_j: dict | None = None
+    quimica_a: dict | None = None
+    comentario_parceiro: str | None = None
 
 
 @router.get("/ativa")
@@ -251,7 +274,16 @@ def scout(
         pass
 
     atributos = adversario.get("atributos") or {}
-    relatorio = montar_relatorio_scouting(adversario, instancia.superficie if instancia else "")
+    superficie = getattr(instancia, "superficie", "") if instancia else ""
+    if not superficie and instancia:
+        tournament_data = getattr(instancia, "tournament_data", {}) or {}
+        if isinstance(tournament_data, dict):
+            superficie = tournament_data.get("superficie") or tournament_data.get(
+                "quadra", ""
+            )
+    relatorio = montar_relatorio_scouting(adversario, superficie)
+
+    from src.jogador import rival_ativo as _rival_ativo
 
     return ScoutResponse(
         nome=adversario.get("nome", nome_adversario),
@@ -268,6 +300,7 @@ def scout(
         dicas=relatorio["dicas"],
         pontos_fortes=relatorio["pontos_fortes"],
         fraquezas=relatorio["fraquezas"],
+        is_rival=_rival_ativo(jogador, nome_adversario),
     )
 
 
@@ -283,13 +316,16 @@ def desistir_partida(
     body: PontoBody, session: Session = Depends(obter_sessao_ativa)
 ) -> dict:
     runtime = obter_match_runtime(body.partida_id, session.nome_save_ativo)
-    if runtime.encerrado:
+    if getattr(runtime, "encerrado", False):
+        delete_snapshot(session.nome_save_ativo, body.partida_id)
         return {"ok": True}
 
     runtime.encerrado = True
     runtime.vencedor = "adversario"
     runtime.log.append("Jogador desistiu da partida (W.O.).")
     runtime._finalizar_torneio()
+    refresh_session(session.nome_save_ativo)
+    delete_snapshot(session.nome_save_ativo, body.partida_id)
     return {"ok": True}
 
 
@@ -299,7 +335,11 @@ def ponto(
 ) -> MatchRuntimeResponse:
     try:
         runtime = obter_match_runtime(body.partida_id, session.nome_save_ativo)
-        return runtime.jogar_ponto()
+        res = runtime.jogar_ponto()
+        if getattr(runtime, "encerrado", False):
+            refresh_session(session.nome_save_ativo)
+            delete_snapshot(session.nome_save_ativo, body.partida_id)
+        return res
     except HTTPException:
         raise
     except Exception as exc:
@@ -319,24 +359,9 @@ def estrategia(
     runtime = obter_match_runtime(body.partida_id, session.nome_save_ativo)
 
     texto = str(body.estrategia or "")
-    if "|" in texto:
-        partes = texto.split("|")
-        if texto.startswith("fm|") and len(partes) >= 5:
-            _, mentalidade, abordagem, instrucao, _segundo_saque = partes[:5]
-            runtime.contexto_partida.mentalidade = mentalidade
-            runtime.contexto_partida.abordagem = abordagem
-            runtime.contexto_partida.instrucao_especifica = instrucao
-            runtime.aplicar_estrategia(texto)
-            runtime._persistir()
-            return {"ok": True, "tipo": "fm_tactics"}
-        if len(partes) == 3:
-            mentalidade, abordagem, instrucao = partes
-            runtime.contexto_partida.mentalidade = mentalidade
-            runtime.contexto_partida.abordagem = abordagem
-            runtime.contexto_partida.instrucao_especifica = instrucao
-            runtime.aplicar_estrategia(texto)
-            runtime._persistir()
-            return {"ok": True, "tipo": "fm_tactics"}
+    fm = _aplicar_fm_tactics(runtime, texto)
+    if fm is not None:
+        return fm
 
     runtime.aplicar_estrategia(body.estrategia)
     runtime._persistir()
@@ -352,35 +377,19 @@ def ajuste_tatico(
     runtime = obter_match_runtime(body.partida_id, session.nome_save_ativo)
 
     texto = str(body.estrategia or "").lower()
-    
-    # Suporte a ajustes simples (X-5)
+    extra = {"set_ajustado": body.set_numero}
+
     if texto in {"agressivo", "seguro", "manter"}:
         runtime.aplicar_ajuste_tatico(texto)
-        return {"ok": True, "set_ajustado": body.set_numero, "ajuste": texto}
+        return {"ok": True, "ajuste": texto, **extra}
 
-    # Fallback para pacotes complexos (FM-style)
-    if "|" in texto:
-        partes = texto.split("|")
-        if texto.startswith("fm|") and len(partes) >= 5:
-            _, mentalidade, abordagem, instrucao, _segundo_saque = partes[:5]
-            runtime.contexto_partida.mentalidade = mentalidade
-            runtime.contexto_partida.abordagem = abordagem
-            runtime.contexto_partida.instrucao_especifica = instrucao
-            runtime.aplicar_estrategia(texto)
-            runtime._persistir()
-            return {"ok": True, "set_ajustado": body.set_numero, "tipo": "fm_tactics"}
-        if len(partes) == 3:
-            mentalidade, abordagem, instrucao = partes
-            runtime.contexto_partida.mentalidade = mentalidade
-            runtime.contexto_partida.abordagem = abordagem
-            runtime.contexto_partida.instrucao_especifica = instrucao
-            runtime.aplicar_estrategia(texto)
-            runtime._persistir()
-            return {"ok": True, "set_ajustado": body.set_numero, "tipo": "fm_tactics"}
+    fm = _aplicar_fm_tactics(runtime, texto, extra_fields=extra)
+    if fm is not None:
+        return fm
 
     runtime.aplicar_estrategia(body.estrategia)
     runtime._persistir()
-    return {"ok": True, "set_ajustado": body.set_numero}
+    return {"ok": True, **extra}
 
 
 @router.post("/simular-set", response_model=MatchRuntimeResponse)
@@ -389,7 +398,11 @@ def simular_set(
 ) -> MatchRuntimeResponse:
     try:
         runtime = obter_match_runtime(body.partida_id, session.nome_save_ativo)
-        return runtime.simular_set()
+        res = runtime.simular_set()
+        if getattr(runtime, "encerrado", False):
+            refresh_session(session.nome_save_ativo)
+            delete_snapshot(session.nome_save_ativo, body.partida_id)
+        return res
     except HTTPException:
         raise
     except Exception as exc:
@@ -403,7 +416,10 @@ def simular_partida(
 ) -> MatchRuntimeResponse:
     try:
         runtime = obter_match_runtime(body.partida_id, session.nome_save_ativo)
-        return runtime.simular_partida()
+        res = runtime.simular_partida()
+        refresh_session(session.nome_save_ativo)
+        delete_snapshot(session.nome_save_ativo, body.partida_id)
+        return res
     except HTTPException:
         raise
     except Exception as exc:
@@ -423,11 +439,11 @@ def get_partida_stats(
         "placar": {
             "sets": runtime.sets,
             "games": runtime.games,
-            "set_scores": runtime.set_scores
+            "set_scores": runtime.set_scores,
         },
         "stats_jogador": runtime._serializar_stats_lado(runtime.stats_j),
         "stats_adversario": runtime._serializar_stats_lado(runtime.stats_a),
-        "total_pontos": runtime.total_pontos
+        "total_pontos": runtime.total_pontos,
     }
 
 

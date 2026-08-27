@@ -2,24 +2,33 @@
   "nome": "Luka Mikrut",
   "nacionalidade": "[HR]",
   "idade": 21,
-  "overall": 80,
+  "overall": 55,
   "pontos": 371,
   "atributos": {
-    "saque": 60,
+    "vel_saque": 60,
+    "pre_saque": 58,
+    "segundo_saque": 57,
+    "retorno": 56,
     "forehand": 48,
     "backhand": 56,
-    "topspin": 50,
     "voleio": 47,
-    "slice": 54,
-    "movimento": 58,
+    "smash": 50,
     "lob": 41,
+    "topspin": 50,
+    "slice": 54,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 56,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 57,
     "duplas": 60
   },
   "id": 194,
   "atributos_psicologicos": {
-    "concentracao": 42,
+    "clutch": 42,
+    "consistencia": 52,
+    "compostura": 42,
     "agressividade": 53,
     "leitura_de_jogo": 53,
     "determinacao": 44
@@ -45,5 +54,10 @@
   "peso": 86,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

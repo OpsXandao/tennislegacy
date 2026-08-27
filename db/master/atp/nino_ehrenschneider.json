@@ -2,24 +2,33 @@
   "nome": "Nino Ehrenschneider",
   "nacionalidade": "[DE]",
   "idade": 24,
-  "overall": 74,
+  "overall": 52,
   "pontos": 65,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 53,
+    "segundo_saque": 55,
+    "retorno": 50,
     "forehand": 42,
     "backhand": 54,
-    "topspin": 43,
     "voleio": 48,
-    "slice": 41,
-    "movimento": 50,
+    "smash": 52,
     "lob": 55,
+    "topspin": 43,
+    "slice": 41,
     "winner": 58,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 619,
   "atributos_psicologicos": {
-    "concentracao": 32,
+    "clutch": 32,
+    "consistencia": 66,
+    "compostura": 35,
     "agressividade": 39,
     "leitura_de_jogo": 47,
     "determinacao": 44
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Enzo Aguiard",
   "nacionalidade": "[AU]",
   "idade": 23,
-  "overall": 70,
+  "overall": 47,
   "pontos": 13,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 41,
+    "segundo_saque": 49,
+    "retorno": 43,
     "forehand": 41,
     "backhand": 40,
-    "topspin": 46,
     "voleio": 40,
-    "slice": 50,
-    "movimento": 46,
+    "smash": 47,
     "lob": 42,
+    "topspin": 46,
+    "slice": 50,
     "winner": 48,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 50,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 1092,
   "atributos_psicologicos": {
-    "concentracao": 46,
+    "clutch": 46,
+    "consistencia": 56,
+    "compostura": 46,
     "agressividade": 49,
     "leitura_de_jogo": 42,
     "determinacao": 47
@@ -45,5 +54,10 @@
   "peso": 65,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

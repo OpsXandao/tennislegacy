@@ -2,24 +2,33 @@
   "nome": "Lui Maxted",
   "nacionalidade": "[GB]",
   "idade": 22,
-  "overall": 76,
+  "overall": 51,
   "pontos": 102,
   "atributos": {
-    "saque": 56,
+    "vel_saque": 56,
+    "pre_saque": 51,
+    "segundo_saque": 57,
+    "retorno": 44,
     "forehand": 51,
     "backhand": 41,
-    "topspin": 52,
     "voleio": 44,
-    "slice": 45,
-    "movimento": 51,
+    "smash": 50,
     "lob": 49,
+    "topspin": 52,
+    "slice": 45,
     "winner": 50,
-    "fisico": 60,
+    "velocidade": 54,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 52,
     "duplas": 60
   },
   "id": 483,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 68,
+    "compostura": 43,
     "agressividade": 37,
     "leitura_de_jogo": 55,
     "determinacao": 50
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

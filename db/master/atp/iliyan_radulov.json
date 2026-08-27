@@ -2,24 +2,33 @@
   "nome": "Iliyan Radulov",
   "nacionalidade": "[BG]",
   "idade": 20,
-  "overall": 73,
+  "overall": 51,
   "pontos": 57,
   "atributos": {
-    "saque": 50,
+    "vel_saque": 51,
+    "pre_saque": 49,
+    "segundo_saque": 50,
+    "retorno": 49,
     "forehand": 54,
     "backhand": 54,
-    "topspin": 48,
     "voleio": 47,
-    "slice": 42,
-    "movimento": 48,
+    "smash": 51,
     "lob": 43,
+    "topspin": 48,
+    "slice": 42,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 52,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 662,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 70,
+    "compostura": 37,
     "agressividade": 35,
     "leitura_de_jogo": 31,
     "determinacao": 35
@@ -45,5 +54,10 @@
   "peso": 67,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

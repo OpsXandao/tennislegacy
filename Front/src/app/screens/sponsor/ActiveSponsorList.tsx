@@ -1,52 +1,42 @@
-import { CheckCircle } from 'lucide-react'
-
 import type { Patrocinio } from '../../../types'
+import { ActiveContractCard } from './ActiveContractCard'
 
 interface ActiveSponsorListProps {
   ativos: Patrocinio[]
 }
 
 export function ActiveSponsorList({ ativos }: ActiveSponsorListProps) {
-  if (ativos.length === 0) {
-    return null
-  }
+  if (ativos.length === 0) return null
+
+  const totalSemanal = ativos.reduce((s, p) => s + p.valor, 0)
+  const emRisco = ativos.filter(p => p.status === 'em_risco').length
+  const sobPressao = ativos.filter(p => p.status === 'sob_pressao').length
 
   return (
     <section>
-      <h2
-        className="text-[10px] text-neon-yellow mb-3 flex items-center gap-2"
-        style={{ fontFamily: 'var(--font-arcade)' }}
-      >
-        <CheckCircle size={12} />
-        CONTRATOS ATIVOS ({ativos.length})
-      </h2>
+      <div className="flex items-center justify-between mb-3">
+        <h2 className="text-[10px] text-neon-yellow flex items-center gap-2" style={{ fontFamily: 'var(--font-arcade)' }}>
+          CONTRATOS ATIVOS ({ativos.length})
+        </h2>
+        <div className="flex items-center gap-3">
+          {emRisco > 0 && (
+            <span className="arcade-font text-[8px] text-neon-pink animate-pulse">
+              ⚠ {emRisco} EM RISCO
+            </span>
+          )}
+          {sobPressao > 0 && (
+            <span className="arcade-font text-[8px] text-neon-yellow">
+              {sobPressao} SOB PRESSÃO
+            </span>
+          )}
+          <span className="arcade-font text-[9px] text-neon-green">
+            R$ {totalSemanal.toLocaleString('pt-BR')}/sem
+          </span>
+        </div>
+      </div>
       <div className="space-y-2">
         {ativos.map((patrocinio) => (
-          <div
-            key={patrocinio.id}
-            className="border border-neon-yellow/40 bg-neon-yellow/5 p-3 flex items-center justify-between gap-3"
-          >
-            <div className="min-w-0">
-              <p
-                className="text-[10px] text-neon-yellow"
-                style={{ fontFamily: 'var(--font-arcade)' }}
-              >
-                {patrocinio.nome}
-              </p>
-              <p className="text-[9px] text-white/50 mt-0.5 uppercase">
-                {patrocinio.categoria} • {patrocinio.nivel}
-              </p>
-              <p className="text-[9px] text-neon-yellow/50 mt-0.5">
-                {patrocinio.semanas_restantes} semanas restantes
-              </p>
-            </div>
-            <div className="text-right shrink-0">
-              <p className="text-[10px] text-neon-green">
-                R$ {patrocinio.valor.toLocaleString('pt-BR')}
-              </p>
-              <p className="text-[9px] text-white/40">/semana</p>
-            </div>
-          </div>
+          <ActiveContractCard key={patrocinio.id} patrocinio={patrocinio} />
         ))}
       </div>
     </section>

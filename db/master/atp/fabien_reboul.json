@@ -2,24 +2,33 @@
   "nome": "Fabien Reboul",
   "nacionalidade": "[RU] Rússia",
   "idade": 21,
-  "overall": 90,
+  "overall": 87,
   "pontos": 2380,
   "id": 98039,
   "atributos": {
-    "saque": 93,
+    "vel_saque": 91,
+    "pre_saque": 90,
+    "segundo_saque": 77,
+    "retorno": 84,
     "forehand": 94,
     "backhand": 82,
-    "topspin": 91,
     "voleio": 91,
-    "slice": 89,
-    "movimento": 87,
+    "smash": 88,
     "lob": 91,
-    "fisico": 85,
+    "topspin": 91,
+    "slice": 89,
     "winner": 97,
+    "velocidade": 86,
+    "aceleracao": 79,
+    "resistencia": 85,
+    "forca": 86,
+    "agilidade": 86,
     "duplas": 104
   },
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 45,
+    "compostura": 46,
     "agressividade": 60,
     "leitura_de_jogo": 41,
     "determinacao": 51
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 2380,
-  "rank_duplas": 30
+  "rank_duplas": 30,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

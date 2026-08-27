@@ -5,6 +5,7 @@ export type TierVisual = 'grandslam' | 'masters' | 'atp500' | 'atp250'
 export interface CalendarCallup {
   convocado: boolean
   mensagem: string
+  posicao?: number
   torneio?: TorneioCalendario
 }
 
@@ -16,6 +17,7 @@ export interface CalendarTournamentGridProps {
   convocacao: CalendarCallup | null
   inscrevendo: boolean
   erroInscricao: string
+  torneioAtivo: boolean
   onSelectTournament: (torneio: TorneioCalendario) => void
   onConfirmCallup: () => void
   onDeclineCallup: () => void

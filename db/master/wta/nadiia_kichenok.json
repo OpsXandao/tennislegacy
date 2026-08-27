@@ -2,24 +2,33 @@
   "nome": "Nadiia Kichenok",
   "nacionalidade": "[UA] Ucrânia",
   "idade": 20,
-  "overall": 88,
+  "overall": 87,
   "pontos": 1377,
   "id": 23918,
   "atributos": {
-    "saque": 92,
+    "vel_saque": 92,
+    "pre_saque": 90,
+    "segundo_saque": 84,
+    "retorno": 87,
     "forehand": 81,
     "backhand": 95,
-    "topspin": 85,
     "voleio": 90,
-    "slice": 79,
-    "movimento": 81,
+    "smash": 91,
     "lob": 83,
-    "fisico": 95,
+    "topspin": 85,
+    "slice": 79,
     "winner": 87,
+    "velocidade": 86,
+    "aceleracao": 79,
+    "resistencia": 95,
+    "forca": 91,
+    "agilidade": 83,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 74,
+    "clutch": 74,
+    "consistencia": 65,
+    "compostura": 72,
     "agressividade": 40,
     "leitura_de_jogo": 41,
     "determinacao": 68
@@ -42,5 +51,10 @@
   "reves": "Uma mão",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1377,
-  "rank_duplas": 63
+  "rank_duplas": 63,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

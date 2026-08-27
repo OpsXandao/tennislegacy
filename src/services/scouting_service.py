@@ -12,19 +12,19 @@ def calcular_metricas_scouting(
     atributos_psicologicos = atributos_psicologicos or {}
     resumo_fifa = resumo_fifa or {}
 
-    saque = int(resumo_fifa.get("SAQ", atributos.get("saque", 50)) or 50)
+    saque = int(resumo_fifa.get("SAQ", atributos.get("vel_saque", 50)) or 50)
     fundo = round(
         (
             int(resumo_fifa.get("FOR", atributos.get("forehand", 50)) or 50)
             + int(resumo_fifa.get("BAC", atributos.get("backhand", 50)) or 50)
-            + int(resumo_fifa.get("MOV", atributos.get("movimento", 50)) or 50)
+            + int(resumo_fifa.get("MOV", atributos.get("velocidade", 50)) or 50)
             + int(atributos.get("winner", 50) or 50)
         )
         / 4
     )
     mental = round(
         (
-            int(atributos_psicologicos.get("concentracao", 50) or 50)
+            int(atributos_psicologicos.get("clutch", 50) or 50)
             + int(atributos_psicologicos.get("determinacao", 50) or 50)
             + int(atributos_psicologicos.get("leitura_de_jogo", 50) or 50)
         )
@@ -32,7 +32,7 @@ def calcular_metricas_scouting(
     )
     voleio = int(atributos.get("voleio", 50) or 50)
     winner = int(atributos.get("winner", 50) or 50)
-    movimento = int(atributos.get("movimento", 50) or 50)
+    movimento = int(atributos.get("velocidade", 50) or 50)
 
     return {
         "saque": saque,
@@ -40,7 +40,7 @@ def calcular_metricas_scouting(
         "mental": mental,
         "voleio": voleio,
         "winner": winner,
-        "movimento": movimento,
+        "velocidade": movimento,
     }
 
 
@@ -52,7 +52,7 @@ def detectar_superficie_favorita(atributos: Dict[str, Any] | None = None) -> str
     clay_score = int(atributos.get("topspin", 0) or 0) + int(
         atributos.get("slice", 0) or 0
     )
-    grass_score = int(atributos.get("saque", 0) or 0) + int(
+    grass_score = int(atributos.get("vel_saque", 0) or 0) + int(
         atributos.get("voleio", 0) or 0
     )
     hard_score = int(atributos.get("forehand", 0) or 0) + int(
@@ -93,7 +93,7 @@ def montar_relatorio_scouting(
     mental = metricas["mental"]
     voleio = metricas["voleio"]
     winner = metricas["winner"]
-    movimento = metricas["movimento"]
+    movimento = metricas["velocidade"]
 
     pontos_fortes: List[str] = []
     fraquezas: List[str] = []
@@ -103,7 +103,9 @@ def montar_relatorio_scouting(
         pontos_fortes.append("CANHÃO DE SAQUE")
         dicas.append("Prepare devoluções curtas e priorize colocar a bola em jogo.")
         if superficie_norm in {"grass", "hard"}:
-            dicas.append("Em quadra rápida, ele deve forçar o saque nos pontos grandes.")
+            dicas.append(
+                "Em quadra rápida, ele deve forçar o saque nos pontos grandes."
+            )
     elif saque >= 74:
         pontos_fortes.append("SAQUE PRECISO")
         dicas.append("Evite antecipar o lado da devolução; ele varia bem o alvo.")
@@ -147,7 +149,9 @@ def montar_relatorio_scouting(
         dicas.append("Não espere presentes em pontos decisivos.")
     elif mental <= 60:
         fraquezas.append("MENTAL OSCILANTE")
-        dicas.append("Sets longos e pressão contínua tendem a derrubar a confiança dele.")
+        dicas.append(
+            "Sets longos e pressão contínua tendem a derrubar a confiança dele."
+        )
         if int(atributos_psicologicos.get("determinacao", 50) or 50) < 50:
             dicas.append("Uma quebra abaixo já pode afetar bastante a postura dele.")
 
@@ -155,22 +159,36 @@ def montar_relatorio_scouting(
         fraquezas.append("EXAUSTÃO VISÍVEL")
         dicas.append("Alongue trocas para explorar o desgaste físico.")
 
+    if atributos.get("backhand", 60) <= 58:
+        fraquezas.append("BACKHAND INSTÁVEL")
+        dicas.append("Pressione o backhand: ele tende a encurtar a bola sob pressão.")
+
+    if atributos.get("forehand", 60) <= 58:
+        fraquezas.append("FOREHAND VULNERÁVEL")
+        dicas.append(
+            "Explore o forehand: force-o a bater em movimento para induzir erros."
+        )
+
     if not pontos_fortes:
         pontos_fortes.append("EQUILIBRADO")
 
     nome = adversario.get("nome", "Adversário")
     if saque >= 75 and voleio >= 70:
-        texto = (
-            f"{nome} tem perfil de saque e rede, buscando encurtar pontos desde o início."
-        )
+        texto = f"{nome} tem perfil de saque e rede, buscando encurtar pontos desde o início."
+        briefing = f"Prepare-se para pressão constante na rede. {nome} não vai te dar ritmo de fundo."
+        instrucao = "atacar_rede"
     elif fundo >= 75 and movimento >= 75:
-        texto = (
-            f"{nome} atua como contra-atacador sólido, sustentando trocas longas com muita cobertura."
-        )
+        texto = f"{nome} atua como contra-atacador sólido, sustentando trocas longas com muita cobertura."
+        briefing = f"Um verdadeiro 'paredão'. {nome} devolve tudo. Precisamos de paciência e ângulos curtos."
+        instrucao = "paciencia_e_angulos"
     elif winner >= 75 and saque >= 70:
         texto = f"{nome} joga de forma agressiva e tenta ditar o ritmo com potência."
+        briefing = f"Cuidado com as acelerações. Se você deixar a bola curta, {nome} vai ditar o ponto."
+        instrucao = "profundidade_maxima"
     else:
         texto = f"{nome} apresenta perfil versátil e tende a se adaptar ao contexto da partida."
+        briefing = f"{nome} é um jogador equilibrado. O jogo será decidido nos detalhes táticos."
+        instrucao = "variar_ritmo"
 
     return {
         "metricas": {
@@ -179,6 +197,8 @@ def montar_relatorio_scouting(
             "mental": mental,
         },
         "texto": texto,
+        "briefing": briefing,  # Polimento Visual Storyteller
+        "instrucao_sugerida": instrucao,  # Link direto com gameplay
         "dicas": dicas[:3],
         "pontos_fortes": pontos_fortes[:3],
         "fraquezas": fraquezas[:3],

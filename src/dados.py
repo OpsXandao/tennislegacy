@@ -223,13 +223,23 @@ def carregar_json(caminho: str, padrao=None, model=None):
 
 def validate_data(data, model):
     """Valida dados contra um modelo Pydantic, retornando o dict validado ou logando erro."""
+    def _validate_item(item):
+        if hasattr(model, "model_validate"):
+            validated = model.model_validate(item)
+        else:
+            validated = model.parse_obj(item)
+
+        if hasattr(validated, "model_dump"):
+            return validated.model_dump()
+        return validated.dict()
+
     try:
         if isinstance(data, list):
             # No caso de listas (como rankings), validamos cada item.
             # Retornamos os objetos validados convertidos em dict.
-            return [model.model_validate(item).model_dump() for item in data]
-        return model.model_validate(data).model_dump()
-    except ValidationError as e:
+            return [_validate_item(item) for item in data]
+        return _validate_item(data)
+    except (ValidationError, AttributeError) as e:
         logger.error("Erro de validação: %s", e)
         return data
 

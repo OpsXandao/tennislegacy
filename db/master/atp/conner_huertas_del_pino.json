@@ -2,24 +2,33 @@
   "nome": "Conner Huertas del Pino",
   "nacionalidade": "[PE]",
   "idade": 30,
-  "overall": 72,
+  "overall": 55,
   "pontos": 42,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 49,
+    "segundo_saque": 52,
+    "retorno": 52,
     "forehand": 63,
     "backhand": 50,
-    "topspin": 58,
     "voleio": 61,
-    "slice": 60,
-    "movimento": 51,
+    "smash": 59,
     "lob": 45,
+    "topspin": 58,
+    "slice": 60,
     "winner": 52,
-    "fisico": 60,
+    "velocidade": 54,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 762,
   "atributos_psicologicos": {
-    "concentracao": 58,
+    "clutch": 58,
+    "consistencia": 57,
+    "compostura": 55,
     "agressividade": 48,
     "leitura_de_jogo": 38,
     "determinacao": 49
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

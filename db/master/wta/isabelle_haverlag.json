@@ -2,24 +2,33 @@
   "nome": "Isabelle Haverlag",
   "nacionalidade": "[NL] Países Baixos",
   "idade": 23,
-  "overall": 88,
+  "overall": 89,
   "pontos": 1231,
   "id": 69939,
   "atributos": {
-    "saque": 82,
+    "vel_saque": 83,
+    "pre_saque": 83,
+    "segundo_saque": 80,
+    "retorno": 88,
     "forehand": 93,
     "backhand": 86,
-    "topspin": 79,
     "voleio": 95,
-    "slice": 87,
-    "movimento": 94,
+    "smash": 94,
     "lob": 95,
-    "fisico": 93,
+    "topspin": 79,
+    "slice": 87,
     "winner": 83,
+    "velocidade": 93,
+    "aceleracao": 85,
+    "resistencia": 93,
+    "forca": 91,
+    "agilidade": 92,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 61,
+    "compostura": 58,
     "agressividade": 44,
     "leitura_de_jogo": 42,
     "determinacao": 71
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 1231,
-  "rank_duplas": 74
+  "rank_duplas": 74,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

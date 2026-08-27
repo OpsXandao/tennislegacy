@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
-import { X, Search, User, Users, Star, Trophy } from 'lucide-react'
+import { X, Search, User, Users, Star, Trophy, Activity } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
 import { NeonButton } from './NeonButton'
 import { NeonCard } from './NeonCard'
 import { PixelBar } from './PixelBar'
 import { PixelFlag } from './PixelFlag'
 import { api } from '../../api/client'
+import { useGameStore } from '../../store/gameStore'
 import type { TorneioCalendario } from '../../types'
 
 interface Partner {
@@ -13,10 +14,12 @@ interface Partner {
   nacionalidade: string
   overall: number
   posicao?: number
-  vinculo?: {
-    partidas: number
-    vitorias: number
-  }
+  vinculo?: { partidas: number; vitorias: number }
+}
+
+interface Historico {
+  pontos_a_defender: number
+  ultima_colocacao?: string
 }
 
 interface Props {
@@ -26,30 +29,40 @@ interface Props {
 }
 
 const FASE_LABEL: Record<string, string> = {
-  campeao: 'Campeão',
-  final: 'Final',
-  semifinal: 'Semifinal',
-  quarta: 'Quartas de Final',
-  oitavas: 'Oitavas de Final',
-  r16: 'R16',
-  r32: 'R32',
-  r64: 'R64',
   r128: 'R128',
-  qualy_3: 'Qualifying',
-  qualy_2: 'Qualifying',
-  qualy_1: 'Qualifying',
+  r64:  'R64',
+  r32:  'R32',
+  r16:  'OITAVAS',
+  qf:   'QUARTAS',
+  sf:   'SEMI',
+  f:    'FINAL',
+  w:    'CAMPEÃO',
 }
 
 export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
-  const [step, setStep] = useState<'preview' | 'modalidade' | 'parceiro'>('preview')
-  const [modalidade, setModalidade] = useState<'simples' | 'duplas' | 'ambos' | 'mistas'>('simples')
-  const [sugestoes, setSugestoes] = useState<Partner[]>([])
-  const [busca, setBusca] = useState('')
-  const [resultadosBusca, setResultadosBusca] = useState<Partner[]>([])
-  const [loading, setLoading] = useState(false)
-  const [convidando, setConvidando] = useState<string | null>(null)
-  const [feedback, setFeedback] = useState('')
-  const [historico, setHistorico] = useState<{ pontos_a_defender: number; ultima_colocacao: string | null } | null>(null)
+  const { jogador } = useGameStore()
+  const ranking = jogador?.ranking ?? 999
+  const [step,             setStep]             = useState<'preview' | 'modalidade' | 'parceiro'>('preview')
+  const [historico,        setHistorico]        = useState<Historico | null>(null)
+  const [loading,          setLoading]          = useState(false)
+  const [modalidade,       setModalidade]       = useState<'simples' | 'duplas' | 'mistas'>('simples')
+  const [busca,            setBusca]            = useState('')
+  const [feedback,         setFeedback]         = useState('')
+  const [resultadosBusca,  setResultadosBusca]  = useState<Partner[]>([])
+  const [sugestoes,        setSugestoes]        = useState<Partner[]>([])
+  const [convidando,       setConvidando]       = useState<string | null>(null)
+
+  const getEntradaProjetada = () => {
+    const t = torneio.tipo.toLowerCase()
+    if (t.includes('grand slam')) return ranking <= 104 ? 'CHAVE PRINCIPAL' : 'QUALIFYING'
+    if (t.includes('1000')) return ranking <= 45 ? 'CHAVE PRINCIPAL' : 'QUALIFYING'
+    if (t.includes('500')) return ranking <= 32 ? 'CHAVE PRINCIPAL' : 'QUALIFYING'
+    if (t.includes('250')) return ranking <= 28 ? 'CHAVE PRINCIPAL' : 'QUALIFYING'
+    if (t.includes('challenger')) return ranking <= 75 ? 'CHAVE PRINCIPAL' : 'QUALIFYING'
+    return 'CHAVE PRINCIPAL'
+  }
+
+  const entrada = getEntradaProjetada()
 
   useEffect(() => {
     api.torneio.historico(torneio.nome).then(setHistorico).catch(() => {})
@@ -153,6 +166,17 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
                   <div className="text-[8px] app-muted arcade-font mb-1">QUADRA</div>
                   <div className="text-[10px] text-[#f5d28f] arcade-font truncate">
                     {(torneio.quadra_nome ?? 'Quadra Central').toUpperCase()}
+                  </div>
+                </div>
+              </div>
+
+              {/* Projeção de Entrada */}
+              <div className="mb-4 border-2 border-neon-cyan/40 bg-neon-cyan/5 p-3 flex items-center gap-3">
+                <Activity size={20} className="text-neon-cyan" />
+                <div>
+                  <div className="text-[8px] app-muted arcade-font mb-0.5">ENTRADA PROJETADA (RANK #{ranking})</div>
+                  <div className="text-[10px] text-neon-cyan arcade-font font-bold">
+                    {entrada}
                   </div>
                 </div>
               </div>
@@ -280,7 +304,7 @@ export function TournamentEntryModal({ torneio, onClose, onConfirm }: Props) {
                       <div className="flex justify-between items-end">
                         <div className="text-[8px] app-muted arcade-font">
                           {p.vinculo ? (
-                            <span className="text-neon-green">{p.vinculo.partidas} JOGOS • {Math.round((p.vinculo.vitorias/p.vinculo.partidas)*100)}% VITÓRIAS</span>
+                            <span className="text-neon-green">{p.vinculo.partidas} JOGOS • {p.vinculo.partidas > 0 ? Math.round((p.vinculo.vitorias / p.vinculo.partidas) * 100) : 0}% VITÓRIAS</span>
                           ) : (
                             `RANK #${p.posicao || '?'}`
                           )}

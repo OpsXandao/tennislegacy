@@ -2,24 +2,33 @@
   "nome": "Erin Routliffe",
   "nacionalidade": "[NZ] Nova Zelândia",
   "idade": 28,
-  "overall": 94,
+  "overall": 92,
   "pontos": 5790,
   "id": 87802,
   "atributos": {
-    "saque": 95,
+    "vel_saque": 94,
+    "pre_saque": 93,
+    "segundo_saque": 81,
+    "retorno": 91,
     "forehand": 98,
     "backhand": 87,
-    "topspin": 98,
     "voleio": 98,
-    "slice": 93,
-    "movimento": 98,
+    "smash": 94,
     "lob": 89,
-    "fisico": 91,
+    "topspin": 98,
+    "slice": 93,
     "winner": 97,
+    "velocidade": 95,
+    "aceleracao": 86,
+    "resistencia": 91,
+    "forca": 91,
+    "agilidade": 95,
     "duplas": 106
   },
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 35,
+    "compostura": 53,
     "agressividade": 71,
     "leitura_de_jogo": 46,
     "determinacao": 56
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 5790,
-  "rank_duplas": 10
+  "rank_duplas": 10,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

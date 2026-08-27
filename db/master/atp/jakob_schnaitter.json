@@ -2,24 +2,33 @@
   "nome": "Jakob Schnaitter",
   "nacionalidade": "[RU] Rússia",
   "idade": 25,
-  "overall": 90,
+  "overall": 89,
   "pontos": 1955,
   "id": 26338,
   "atributos": {
-    "saque": 87,
+    "vel_saque": 88,
+    "pre_saque": 87,
+    "segundo_saque": 80,
+    "retorno": 89,
     "forehand": 90,
     "backhand": 93,
-    "topspin": 84,
     "voleio": 95,
-    "slice": 85,
-    "movimento": 88,
+    "smash": 94,
     "lob": 97,
-    "fisico": 94,
+    "topspin": 84,
+    "slice": 85,
     "winner": 87,
+    "velocidade": 90,
+    "aceleracao": 82,
+    "resistencia": 94,
+    "forca": 92,
+    "agilidade": 88,
     "duplas": 101
   },
   "atributos_psicologicos": {
-    "concentracao": 70,
+    "clutch": 70,
+    "consistencia": 36,
+    "compostura": 67,
     "agressividade": 69,
     "leitura_de_jogo": 74,
     "determinacao": 63
@@ -42,5 +51,10 @@
   "reves": "Uma mão",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1955,
-  "rank_duplas": 49
+  "rank_duplas": 49,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

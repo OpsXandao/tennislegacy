@@ -2,24 +2,33 @@
   "nome": "Sebastian Sorger",
   "nacionalidade": "[AT]",
   "idade": 20,
-  "overall": 74,
+  "overall": 53,
   "pontos": 69,
   "atributos": {
-    "saque": 48,
+    "vel_saque": 49,
+    "pre_saque": 49,
+    "segundo_saque": 53,
+    "retorno": 51,
     "forehand": 50,
     "backhand": 60,
-    "topspin": 47,
     "voleio": 60,
-    "slice": 43,
-    "movimento": 44,
+    "smash": 58,
     "lob": 43,
+    "topspin": 47,
+    "slice": 43,
     "winner": 54,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 593,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 62,
+    "compostura": 50,
     "agressividade": 43,
     "leitura_de_jogo": 34,
     "determinacao": 48
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

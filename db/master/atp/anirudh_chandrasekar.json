@@ -2,24 +2,33 @@
   "nome": "Anirudh Chandrasekar",
   "nacionalidade": "[RU] Rússia",
   "idade": 18,
-  "overall": 86,
+  "overall": 84,
   "pontos": 871,
   "id": 21916,
   "atributos": {
-    "saque": 87,
+    "vel_saque": 86,
+    "pre_saque": 85,
+    "segundo_saque": 75,
+    "retorno": 82,
     "forehand": 90,
     "backhand": 79,
-    "topspin": 77,
     "voleio": 91,
-    "slice": 84,
-    "movimento": 89,
+    "smash": 87,
     "lob": 90,
-    "fisico": 82,
+    "topspin": 77,
+    "slice": 84,
     "winner": 83,
+    "velocidade": 86,
+    "aceleracao": 79,
+    "resistencia": 82,
+    "forca": 83,
+    "agilidade": 86,
     "duplas": 94
   },
   "atributos_psicologicos": {
-    "concentracao": 70,
+    "clutch": 70,
+    "consistencia": 35,
+    "compostura": 64,
     "agressividade": 72,
     "leitura_de_jogo": 75,
     "determinacao": 54
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 871,
-  "rank_duplas": 95
+  "rank_duplas": 95,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Michael Zhu",
   "nacionalidade": "[US]",
   "idade": 33,
-  "overall": 71,
+  "overall": 64,
   "pontos": 20,
   "atributos": {
-    "saque": 74,
+    "vel_saque": 71,
+    "pre_saque": 70,
+    "segundo_saque": 68,
+    "retorno": 61,
     "forehand": 72,
     "backhand": 58,
-    "topspin": 71,
     "voleio": 69,
-    "slice": 73,
-    "movimento": 58,
+    "smash": 65,
     "lob": 64,
+    "topspin": 71,
+    "slice": 73,
     "winner": 68,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 56,
+    "resistencia": 60,
+    "forca": 62,
+    "agilidade": 60,
     "duplas": 60
   },
   "id": 983,
   "atributos_psicologicos": {
-    "concentracao": 51,
+    "clutch": 51,
+    "consistencia": 53,
+    "compostura": 53,
     "agressividade": 52,
     "leitura_de_jogo": 69,
     "determinacao": 59
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

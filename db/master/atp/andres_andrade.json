@@ -2,24 +2,33 @@
   "nome": "Andres Andrade",
   "nacionalidade": "[EC]",
   "idade": 27,
-  "overall": 79,
+  "overall": 51,
   "pontos": 239,
   "atributos": {
-    "saque": 47,
+    "vel_saque": 48,
+    "pre_saque": 45,
+    "segundo_saque": 54,
+    "retorno": 47,
     "forehand": 44,
     "backhand": 44,
-    "topspin": 44,
     "voleio": 47,
-    "slice": 43,
-    "movimento": 58,
+    "smash": 52,
     "lob": 57,
+    "topspin": 44,
+    "slice": 43,
     "winner": 56,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 56,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 56,
     "duplas": 60
   },
   "id": 269,
   "atributos_psicologicos": {
-    "concentracao": 33,
+    "clutch": 33,
+    "consistencia": 52,
+    "compostura": 40,
     "agressividade": 53,
     "leitura_de_jogo": 42,
     "determinacao": 56
@@ -45,5 +54,10 @@
   "peso": 69,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Karen Khachanov",
   "nacionalidade": "[RU]",
   "idade": 29,
-  "overall": 88,
+  "overall": 75,
   "pontos": 2450,
   "atributos": {
-    "saque": 83,
+    "vel_saque": 79,
+    "pre_saque": 81,
+    "segundo_saque": 79,
+    "retorno": 80,
     "forehand": 81,
     "backhand": 79,
-    "topspin": 80,
     "voleio": 81,
-    "slice": 78,
-    "movimento": 84,
+    "smash": 73,
     "lob": 84,
+    "topspin": 80,
+    "slice": 78,
     "winner": 84,
-    "fisico": 60,
+    "velocidade": 74,
+    "aceleracao": 69,
+    "resistencia": 60,
+    "forca": 69,
+    "agilidade": 77,
     "duplas": 60
   },
   "id": 24,
   "atributos_psicologicos": {
-    "concentracao": 66,
+    "clutch": 66,
+    "consistencia": 35,
+    "compostura": 71,
     "agressividade": 72,
     "leitura_de_jogo": 78,
     "determinacao": 84
@@ -81,5 +90,10 @@
   "peso": 89,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

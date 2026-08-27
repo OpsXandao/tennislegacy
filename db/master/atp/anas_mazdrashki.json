@@ -2,24 +2,33 @@
   "nome": "Anas Mazdrashki",
   "nacionalidade": "[BG]",
   "idade": 19,
-  "overall": 71,
+  "overall": 53,
   "pontos": 25,
   "atributos": {
-    "saque": 50,
+    "vel_saque": 51,
+    "pre_saque": 49,
+    "segundo_saque": 49,
+    "retorno": 49,
     "forehand": 52,
     "backhand": 54,
-    "topspin": 54,
     "voleio": 56,
-    "slice": 41,
-    "movimento": 49,
+    "smash": 56,
     "lob": 49,
+    "topspin": 54,
+    "slice": 41,
     "winner": 53,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 922,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 53,
+    "compostura": 45,
     "agressividade": 52,
     "leitura_de_jogo": 41,
     "determinacao": 33
@@ -45,5 +54,10 @@
   "peso": 70,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

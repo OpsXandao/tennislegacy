@@ -2,24 +2,33 @@
   "nome": "Alexander Weis",
   "nacionalidade": "[IT]",
   "idade": 28,
-  "overall": 75,
+  "overall": 50,
   "pontos": 80,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 47,
+    "retorno": 46,
     "forehand": 50,
     "backhand": 42,
-    "topspin": 46,
     "voleio": 40,
-    "slice": 48,
-    "movimento": 54,
+    "smash": 47,
     "lob": 42,
+    "topspin": 46,
+    "slice": 48,
     "winner": 57,
-    "fisico": 60,
+    "velocidade": 56,
+    "aceleracao": 54,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 54,
     "duplas": 60
   },
   "id": 548,
   "atributos_psicologicos": {
-    "concentracao": 47,
+    "clutch": 47,
+    "consistencia": 68,
+    "compostura": 44,
     "agressividade": 37,
     "leitura_de_jogo": 38,
     "determinacao": 40
@@ -45,5 +54,10 @@
   "peso": 66,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

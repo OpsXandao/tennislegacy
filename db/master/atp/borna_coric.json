@@ -2,24 +2,33 @@
   "nome": "Borna Coric",
   "nacionalidade": "[HR]",
   "idade": 29,
-  "overall": 82,
+  "overall": 67,
   "pontos": 488,
   "atributos": {
-    "saque": 66,
+    "vel_saque": 65,
+    "pre_saque": 68,
+    "segundo_saque": 66,
+    "retorno": 71,
     "forehand": 69,
     "backhand": 71,
-    "topspin": 75,
     "voleio": 69,
-    "slice": 73,
-    "movimento": 72,
+    "smash": 66,
     "lob": 74,
+    "topspin": 75,
+    "slice": 73,
     "winner": 70,
-    "fisico": 60,
+    "velocidade": 67,
+    "aceleracao": 63,
+    "resistencia": 60,
+    "forca": 64,
+    "agilidade": 69,
     "duplas": 60
   },
   "id": 83,
   "atributos_psicologicos": {
-    "concentracao": 71,
+    "clutch": 71,
+    "consistencia": 35,
+    "compostura": 69,
     "agressividade": 77,
     "leitura_de_jogo": 76,
     "determinacao": 66
@@ -61,5 +70,10 @@
   "peso": 90,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

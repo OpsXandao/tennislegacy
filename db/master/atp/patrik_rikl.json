@@ -2,24 +2,33 @@
   "nome": "Patrik Rikl",
   "nacionalidade": "[RU] Rússia",
   "idade": 26,
-  "overall": 89,
+  "overall": 88,
   "pontos": 1970,
   "id": 76859,
   "atributos": {
-    "saque": 87,
+    "vel_saque": 88,
+    "pre_saque": 85,
+    "segundo_saque": 73,
+    "retorno": 84,
     "forehand": 94,
     "backhand": 85,
-    "topspin": 86,
     "voleio": 98,
-    "slice": 83,
-    "movimento": 85,
+    "smash": 96,
     "lob": 96,
-    "fisico": 94,
+    "topspin": 86,
+    "slice": 83,
     "winner": 86,
+    "velocidade": 88,
+    "aceleracao": 81,
+    "resistencia": 94,
+    "forca": 92,
+    "agilidade": 86,
     "duplas": 97
   },
   "atributos_psicologicos": {
-    "concentracao": 55,
+    "clutch": 55,
+    "consistencia": 41,
+    "compostura": 50,
     "agressividade": 64,
     "leitura_de_jogo": 52,
     "determinacao": 40
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1970,
-  "rank_duplas": 48
+  "rank_duplas": 48,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

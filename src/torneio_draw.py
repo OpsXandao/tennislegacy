@@ -66,49 +66,20 @@ def gerar_chave_simples(
 
 
 def seed_positions(draw_size, num_seeds):
-    """Retorna as posições fixas das cabeças de chave baseadas no tamanho da chave."""
-    if draw_size == 32:
-        positions = [0, 31, 15, 16, 7, 24, 8, 23]
+    """Retorna as posições fixas das cabeças de chave baseadas no tamanho da chave (ATP/WTA Standard)."""
+    if draw_size == 128:
+        # Posições para 32 seeds em draw de 128
+        return [0, 127, 63, 64, 31, 96, 32, 95, 15, 112, 47, 80, 16, 111, 48, 79, 7, 120, 55, 72, 24, 103, 39, 88, 8, 119, 56, 71, 23, 104, 40, 87]
+    elif draw_size == 64:
+        # Posições para 16 seeds em draw de 64
+        return [0, 63, 31, 32, 15, 48, 16, 47, 7, 56, 24, 39, 8, 55, 23, 40]
+    elif draw_size == 32:
+        # Posições para 8 seeds em draw de 32
+        return [0, 31, 15, 16, 7, 24, 8, 23]
     elif draw_size == 16:
-        positions = [0, 15, 7, 8]
-    elif draw_size == 128:
-        positions = [
-            0,
-            127,
-            63,
-            64,
-            31,
-            96,
-            32,
-            95,
-            15,
-            112,
-            47,
-            80,
-            16,
-            111,
-            48,
-            79,
-            7,
-            120,
-            55,
-            72,
-            24,
-            103,
-            39,
-            88,
-            8,
-            119,
-            56,
-            71,
-            23,
-            104,
-            40,
-            87,
-        ]
-    else:
-        return []
-    return positions[: min(num_seeds, len(positions))]
+        # Posições para 4 seeds em draw de 16
+        return [0, 15, 7, 8]
+    return []
 
 
 def montar_chave_principal(jogadores, draw_size, ranking, garantir_dados_fn):

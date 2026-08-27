@@ -80,6 +80,7 @@ def atualizar_jogador_no_ranking(nome_save: str, dados_jogador: dict):
                 "pontos_ytd",
                 "historico_torneios",
                 "transacoes",
+                "estilo_jogo",
             ]
             for campo in campos_sync:
                 if campo in dados_jogador:

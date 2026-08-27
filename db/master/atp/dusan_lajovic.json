@@ -2,24 +2,33 @@
   "nome": "Dusan Lajovic",
   "nacionalidade": "[RS]",
   "idade": 35,
-  "overall": 82,
+  "overall": 64,
   "pontos": 541,
   "atributos": {
-    "saque": 66,
+    "vel_saque": 65,
+    "pre_saque": 66,
+    "segundo_saque": 65,
+    "retorno": 66,
     "forehand": 64,
     "backhand": 70,
-    "topspin": 65,
     "voleio": 70,
-    "slice": 67,
-    "movimento": 60,
+    "smash": 66,
     "lob": 68,
+    "topspin": 65,
+    "slice": 67,
     "winner": 70,
-    "fisico": 60,
+    "velocidade": 60,
+    "aceleracao": 57,
+    "resistencia": 60,
+    "forca": 63,
+    "agilidade": 60,
     "duplas": 60
   },
   "id": 124,
   "atributos_psicologicos": {
-    "concentracao": 63,
+    "clutch": 63,
+    "consistencia": 57,
+    "compostura": 62,
     "agressividade": 48,
     "leitura_de_jogo": 47,
     "determinacao": 62
@@ -56,5 +65,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

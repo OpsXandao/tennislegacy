@@ -2,24 +2,33 @@
   "nome": "Ulrikke Eikeri",
   "nacionalidade": "[NO] Noruega",
   "idade": 29,
-  "overall": 90,
+  "overall": 88,
   "pontos": 2025,
   "id": 94395,
   "atributos": {
-    "saque": 89,
+    "vel_saque": 88,
+    "pre_saque": 89,
+    "segundo_saque": 74,
+    "retorno": 90,
     "forehand": 85,
     "backhand": 93,
-    "topspin": 84,
     "voleio": 95,
-    "slice": 87,
-    "movimento": 89,
+    "smash": 91,
     "lob": 81,
-    "fisico": 88,
+    "topspin": 84,
+    "slice": 87,
     "winner": 96,
+    "velocidade": 88,
+    "aceleracao": 81,
+    "resistencia": 88,
+    "forca": 88,
+    "agilidade": 88,
     "duplas": 95
   },
   "atributos_psicologicos": {
-    "concentracao": 72,
+    "clutch": 72,
+    "consistencia": 41,
+    "compostura": 63,
     "agressividade": 64,
     "leitura_de_jogo": 48,
     "determinacao": 45
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2025,
-  "rank_duplas": 37
+  "rank_duplas": 37,
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

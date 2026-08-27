@@ -26,10 +26,13 @@ const NationsRankingScreen = lazy(() => import("./screens/NationsRankingScreen")
 const RankingHistoryScreen = lazy(() => import("./screens/RankingHistoryScreen").then(m => ({ default: m.RankingHistoryScreen })));
 const PressScreen          = lazy(() => import("./screens/PressScreen").then(m => ({ default: m.PressScreen })));
 const LifestyleScreen      = lazy(() => import("./screens/LifestyleScreen").then(m => ({ default: m.LifestyleScreen })));
+const SigningScreen        = lazy(() => import("./screens/SigningScreen").then(m => ({ default: m.SigningScreen })));
+const GestaoScreen         = lazy(() => import("./screens/GestaoScreen").then(m => ({ default: m.GestaoScreen })));
 
 export const router = createBrowserRouter([
   { path: "/",           Component: HomeScreen },
   { path: "/continue",   Component: ContinueScreen },
+  { path: "/signing",    Component: SigningScreen },
   { path: "/hub",        Component: HubScreen },
   { path: "/tournament", Component: TournamentBracket },
   { path: "/match",      Component: MatchScreen },
@@ -51,5 +54,6 @@ export const router = createBrowserRouter([
   { path: "/ranking-historico", Component: RankingHistoryScreen },
   { path: "/imprensa",   Component: PressScreen },
   { path: "/lifestyle",  Component: LifestyleScreen },
+  { path: "/gestao",     Component: GestaoScreen },
   { path: "*",           Component: NotFoundScreen },
 ]);

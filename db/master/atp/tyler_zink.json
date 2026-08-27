@@ -2,24 +2,33 @@
   "nome": "Tyler Zink",
   "nacionalidade": "[US]",
   "idade": 25,
-  "overall": 77,
+  "overall": 49,
   "pontos": 150,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 45,
+    "retorno": 45,
     "forehand": 45,
     "backhand": 40,
-    "topspin": 40,
     "voleio": 50,
-    "slice": 54,
-    "movimento": 48,
+    "smash": 52,
     "lob": 44,
+    "topspin": 40,
+    "slice": 54,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 52,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 51,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 360,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 75,
+    "compostura": 31,
     "agressividade": 30,
     "leitura_de_jogo": 30,
     "determinacao": 34
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

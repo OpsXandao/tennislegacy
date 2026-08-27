@@ -2,24 +2,33 @@
   "nome": "Francisco Comesana",
   "nacionalidade": "[AR]",
   "idade": 25,
-  "overall": 83,
+  "overall": 68,
   "pontos": 694,
   "atributos": {
-    "saque": 69,
+    "vel_saque": 67,
+    "pre_saque": 69,
+    "segundo_saque": 70,
+    "retorno": 71,
     "forehand": 72,
     "backhand": 74,
-    "topspin": 75,
     "voleio": 70,
-    "slice": 65,
-    "movimento": 71,
+    "smash": 66,
     "lob": 73,
+    "topspin": 75,
+    "slice": 65,
     "winner": 73,
-    "fisico": 60,
+    "velocidade": 66,
+    "aceleracao": 62,
+    "resistencia": 60,
+    "forca": 66,
+    "agilidade": 67,
     "duplas": 60
   },
   "id": 64,
   "atributos_psicologicos": {
-    "concentracao": 55,
+    "clutch": 55,
+    "consistencia": 56,
+    "compostura": 61,
     "agressividade": 49,
     "leitura_de_jogo": 55,
     "determinacao": 76
@@ -45,5 +54,10 @@
   "peso": 76,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

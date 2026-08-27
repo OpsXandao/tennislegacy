@@ -5,7 +5,7 @@ import logging
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from api.logging_utils import log_event, log_exception
-from api.session import Session, obter_sessao_ativa
+from api.session import Session, obter_sessao_ativa, refresh_session
 from api.services import calendario_service
 
 router = APIRouter(prefix="/api/calendario", tags=["calendario"])
@@ -34,6 +34,7 @@ def avancar(session: Session = Depends(obter_sessao_ativa)) -> dict:
     jogador = session.jogador
     try:
         resultado = calendario_service.avancar(session)
+        refresh_session(nome_save)
         log_event(
             logging.INFO,
             "semana_avancada",

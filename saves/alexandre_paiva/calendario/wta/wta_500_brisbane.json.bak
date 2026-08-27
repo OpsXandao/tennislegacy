@@ -13,247 +13,293 @@
     "r32": [
       [
         {
-          "nome": "Emma Navarro",
-          "overall": 50
+          "nome": "Iga Świątek",
+          "overall": 50,
+          "is_qualifier": false
         },
         {
-          "nome": "Jasmine Paolini",
-          "overall": 50
+          "nome": "Sára Bejlek",
+          "overall": 50,
+          "is_qualifier": false
         }
       ],
       [
         {
-          "nome": "Emma Raducanu",
-          "overall": 50
+          "nome": "Janice Tjen",
+          "overall": 50,
+          "is_qualifier": false
         },
         {
-          "nome": "Madison Keys",
-          "overall": 50
+          "nome": "Maya Joint",
+          "overall": 50,
+          "is_qualifier": false
         }
       ],
       [
         {
-          "nome": "Ekaterina Alexandrova",
-          "overall": 50
+          "nome": "Elise Mertens",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Iva Jovic",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Elisabetta Cocciaretto",
+          "overall": 50,
+          "is_qualifier": false
         },
         {
           "nome": "Mirra Andreeva",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Sorana Cîrstea",
-          "overall": 50
-        },
-        {
-          "nome": "Jaqueline Cristian",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Amanda Anisimova",
-          "overall": 50
-        },
-        {
-          "nome": "Alexandra Eala",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Anna Kalinskaya",
-          "overall": 50
-        },
-        {
-          "nome": "Belinda Bencic",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Iva Jovic",
-          "overall": 50
-        },
-        {
-          "nome": "Marta Kostyuk",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Coco Gauff",
-          "overall": 50
-        },
-        {
-          "nome": "Leylah Fernandez",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Elina Svitolina",
-          "overall": 50
-        },
-        {
-          "nome": "Elise Mertens",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Iga Świątek",
-          "overall": 50
-        },
-        {
-          "nome": "Diana Shnaider",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Xinyu Wang",
-          "overall": 50
-        },
-        {
-          "nome": "Naomi Osaka",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Clara Tauson",
-          "overall": 50
-        },
-        {
-          "nome": "Karolína Muchová",
-          "overall": 50
-        }
-      ],
-      [
-        {
-          "nome": "Maya Joint",
-          "overall": 50
-        },
-        {
-          "nome": "Linda Nosková",
-          "overall": 50
+          "overall": 50,
+          "is_qualifier": false
         }
       ],
       [
         {
           "nome": "Victoria Mboko",
-          "overall": 50
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "[Q] Markéta Vondroušová",
+          "overall": 50,
+          "is_qualifier": true
+        }
+      ],
+      [
+        {
+          "nome": "Diana Shnaider",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Qinwen Zheng",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Hailey Baptiste",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Leylah Fernandez",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Ann Li",
+          "overall": 50,
+          "is_qualifier": false
         },
         {
           "nome": "Jessica Pegula",
-          "overall": 50
+          "overall": 50,
+          "is_qualifier": false
         }
       ],
       [
         {
-          "nome": "Qinwen Zheng",
-          "overall": 50
+          "nome": "Jasmine Paolini",
+          "overall": 50,
+          "is_qualifier": false
         },
         {
-          "nome": "Ludmilla Samsonova",
-          "overall": 50
+          "nome": "Alexandra Eala",
+          "overall": 50,
+          "is_qualifier": false
         }
       ],
       [
         {
-          "nome": "Elena Rybakina",
-          "overall": 50
+          "nome": "[Q] Sonay Kartal",
+          "overall": 50,
+          "is_qualifier": true
         },
+        {
+          "nome": "Emma Raducanu",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Marie Bouzková",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Karolína Muchová",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
         {
           "nome": "Jeļena Ostapenko",
-          "overall": 50
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Ekaterina Alexandrova",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Elina Svitolina",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Marta Kostyuk",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Sorana Cîrstea",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Belinda Bencic",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Naomi Osaka",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Jaqueline Cristian",
+          "overall": 50,
+          "is_qualifier": false
+        }
+      ],
+      [
+        {
+          "nome": "Emma Navarro",
+          "overall": 50,
+          "is_qualifier": false
+        },
+        {
+          "nome": "Elena Rybakina",
+          "overall": 50,
+          "is_qualifier": false
         }
       ]
     ],
     "r16": [
       [
         {
-          "nome": "Clara Tauson",
+          "nome": "Alexandra Eala",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         },
         {
-          "nome": "Marta Kostyuk",
+          "nome": "Ann Li",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         }
       ],
       [
         {
-          "nome": "Iga Świątek",
+          "nome": "Elisabetta Cocciaretto",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         },
         {
-          "nome": "Naomi Osaka",
+          "nome": "Janice Tjen",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         }
       ],
       [
         {
-          "nome": "Leylah Fernandez",
+          "nome": "Hailey Baptiste",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         },
         {
-          "nome": "Jeļena Ostapenko",
+          "nome": "[Q] Sonay Kartal",
           "overall": 50,
+          "is_qualifier": true,
           "_partidas": 1
         }
       ],
       [
         {
-          "nome": "Madison Keys",
+          "nome": "Sára Bejlek",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         },
         {
-          "nome": "Emma Navarro",
+          "nome": "Marie Bouzková",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         }
       ],
       [
         {
-          "nome": "Amanda Anisimova",
+          "nome": "Victoria Mboko",
           "overall": 50,
+          "is_qualifier": false,
+          "_partidas": 1
+        },
+        {
+          "nome": "Sorana Cîrstea",
+          "overall": 50,
+          "is_qualifier": false,
+          "_partidas": 1
+        }
+      ],
+      [
+        {
+          "nome": "Elina Svitolina",
+          "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         },
         {
           "nome": "Qinwen Zheng",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         }
       ],
       [
         {
-          "nome": "Sorana Cîrstea",
+          "nome": "Iva Jovic",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         },
         {
-          "nome": "Elina Svitolina",
+          "nome": "Emma Navarro",
           "overall": 50,
-          "_partidas": 1
-        }
-      ],
-      [
-        {
-          "nome": "Belinda Bencic",
-          "overall": 50,
-          "_partidas": 1
-        },
-        {
-          "nome": "Jessica Pegula",
-          "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         }
       ],
@@ -261,11 +307,13 @@
         {
           "nome": "Ekaterina Alexandrova",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         },
         {
-          "nome": "Maya Joint",
+          "nome": "Naomi Osaka",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 1
         }
       ]
@@ -273,49 +321,57 @@
     "quartas": [
       [
         {
-          "nome": "Marta Kostyuk",
+          "nome": "Qinwen Zheng",
           "overall": 50,
+          "is_qualifier": false,
+          "_partidas": 2
+        },
+        {
+          "nome": "Elisabetta Cocciaretto",
+          "overall": 50,
+          "is_qualifier": false,
+          "_partidas": 2
+        }
+      ],
+      [
+        {
+          "nome": "Sorana Cîrstea",
+          "overall": 50,
+          "is_qualifier": false,
+          "_partidas": 2
+        },
+        {
+          "nome": "Alexandra Eala",
+          "overall": 50,
+          "is_qualifier": false,
+          "_partidas": 2
+        }
+      ],
+      [
+        {
+          "nome": "Sára Bejlek",
+          "overall": 50,
+          "is_qualifier": false,
+          "_partidas": 2
+        },
+        {
+          "nome": "Naomi Osaka",
+          "overall": 50,
+          "is_qualifier": false,
+          "_partidas": 2
+        }
+      ],
+      [
+        {
+          "nome": "[Q] Sonay Kartal",
+          "overall": 50,
+          "is_qualifier": true,
           "_partidas": 2
         },
         {
           "nome": "Emma Navarro",
           "overall": 50,
-          "_partidas": 2
-        }
-      ],
-      [
-        {
-          "nome": "Iga Świątek",
-          "overall": 50,
-          "_partidas": 2
-        },
-        {
-          "nome": "Maya Joint",
-          "overall": 50,
-          "_partidas": 2
-        }
-      ],
-      [
-        {
-          "nome": "Elina Svitolina",
-          "overall": 50,
-          "_partidas": 2
-        },
-        {
-          "nome": "Jessica Pegula",
-          "overall": 50,
-          "_partidas": 2
-        }
-      ],
-      [
-        {
-          "nome": "Qinwen Zheng",
-          "overall": 50,
-          "_partidas": 2
-        },
-        {
-          "nome": "Leylah Fernandez",
-          "overall": 50,
+          "is_qualifier": false,
           "_partidas": 2
         }
       ]
@@ -323,25 +379,29 @@
     "semifinal": [
       [
         {
-          "nome": "Elina Svitolina",
+          "nome": "Sorana Cîrstea",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 3
         },
         {
-          "nome": "Emma Navarro",
+          "nome": "Naomi Osaka",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 3
         }
       ],
       [
         {
-          "nome": "Qinwen Zheng",
+          "nome": "[Q] Sonay Kartal",
           "overall": 50,
+          "is_qualifier": true,
           "_partidas": 3
         },
         {
-          "nome": "Iga Świątek",
+          "nome": "Elisabetta Cocciaretto",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 3
         }
       ]
@@ -349,13 +409,15 @@
     "final": [
       [
         {
-          "nome": "Emma Navarro",
+          "nome": "Elisabetta Cocciaretto",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 4
         },
         {
-          "nome": "Iga Świątek",
+          "nome": "Naomi Osaka",
           "overall": 50,
+          "is_qualifier": false,
           "_partidas": 4
         }
       ]
@@ -364,198 +426,198 @@
   "resultados": {
     "r32": [
       {
-        "jogador_a": "Emma Navarro",
-        "jogador_b": "Jasmine Paolini",
-        "vencedor": "Emma Navarro",
-        "placar": "6-3 6-4"
-      },
-      {
-        "jogador_a": "Emma Raducanu",
-        "jogador_b": "Madison Keys",
-        "vencedor": "Madison Keys",
-        "placar": "6-4 3-6 6-3"
-      },
-      {
-        "jogador_a": "Ekaterina Alexandrova",
-        "jogador_b": "Mirra Andreeva",
-        "vencedor": "Ekaterina Alexandrova",
-        "placar": "6-4 3-6 6-3"
-      },
-      {
-        "jogador_a": "Sorana Cîrstea",
-        "jogador_b": "Jaqueline Cristian",
-        "vencedor": "Sorana Cîrstea",
-        "placar": "6-3 6-4"
-      },
-      {
-        "jogador_a": "Amanda Anisimova",
-        "jogador_b": "Alexandra Eala",
-        "vencedor": "Amanda Anisimova",
-        "placar": "6-4 3-6 6-3"
-      },
-      {
-        "jogador_a": "Anna Kalinskaya",
-        "jogador_b": "Belinda Bencic",
-        "vencedor": "Belinda Bencic",
-        "placar": "6-3 6-4"
-      },
-      {
-        "jogador_a": "Iva Jovic",
-        "jogador_b": "Marta Kostyuk",
-        "vencedor": "Marta Kostyuk",
-        "placar": "7-6 6-4"
-      },
-      {
-        "jogador_a": "Coco Gauff",
-        "jogador_b": "Leylah Fernandez",
-        "vencedor": "Leylah Fernandez",
-        "placar": "6-4 3-6 6-3"
-      },
-      {
-        "jogador_a": "Elina Svitolina",
-        "jogador_b": "Elise Mertens",
-        "vencedor": "Elina Svitolina",
-        "placar": "6-2 6-2"
-      },
-      {
         "jogador_a": "Iga Świątek",
-        "jogador_b": "Diana Shnaider",
-        "vencedor": "Iga Świątek",
-        "placar": "6-3 6-4"
+        "jogador_b": "Sára Bejlek",
+        "vencedor": "Sára Bejlek",
+        "placar": "6-4 3-6 6-3"
       },
       {
-        "jogador_a": "Xinyu Wang",
-        "jogador_b": "Naomi Osaka",
-        "vencedor": "Naomi Osaka",
-        "placar": "7-6 6-4"
+        "jogador_a": "Janice Tjen",
+        "jogador_b": "Maya Joint",
+        "vencedor": "Janice Tjen",
+        "placar": "6-4 3-6 6-3"
       },
       {
-        "jogador_a": "Clara Tauson",
-        "jogador_b": "Karolína Muchová",
-        "vencedor": "Clara Tauson",
+        "jogador_a": "Elise Mertens",
+        "jogador_b": "Iva Jovic",
+        "vencedor": "Iva Jovic",
         "placar": "6-2 6-2"
       },
       {
-        "jogador_a": "Maya Joint",
-        "jogador_b": "Linda Nosková",
-        "vencedor": "Maya Joint",
+        "jogador_a": "Elisabetta Cocciaretto",
+        "jogador_b": "Mirra Andreeva",
+        "vencedor": "Elisabetta Cocciaretto",
         "placar": "7-5 6-4"
       },
       {
         "jogador_a": "Victoria Mboko",
-        "jogador_b": "Jessica Pegula",
-        "vencedor": "Jessica Pegula",
+        "jogador_b": "[Q] Markéta Vondroušová",
+        "vencedor": "Victoria Mboko",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Diana Shnaider",
+        "jogador_b": "Qinwen Zheng",
+        "vencedor": "Qinwen Zheng",
+        "placar": "7-5 6-4"
+      },
+      {
+        "jogador_a": "Hailey Baptiste",
+        "jogador_b": "Leylah Fernandez",
+        "vencedor": "Hailey Baptiste",
         "placar": "6-4 3-6 6-3"
       },
       {
-        "jogador_a": "Qinwen Zheng",
-        "jogador_b": "Ludmilla Samsonova",
-        "vencedor": "Qinwen Zheng",
+        "jogador_a": "Ann Li",
+        "jogador_b": "Jessica Pegula",
+        "vencedor": "Ann Li",
+        "placar": "7-5 6-4"
+      },
+      {
+        "jogador_a": "Jasmine Paolini",
+        "jogador_b": "Alexandra Eala",
+        "vencedor": "Alexandra Eala",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "[Q] Sonay Kartal",
+        "jogador_b": "Emma Raducanu",
+        "vencedor": "[Q] Sonay Kartal",
+        "placar": "7-5 6-4"
+      },
+      {
+        "jogador_a": "Marie Bouzková",
+        "jogador_b": "Karolína Muchová",
+        "vencedor": "Marie Bouzková",
         "placar": "7-6 6-4"
       },
       {
-        "jogador_a": "Elena Rybakina",
-        "jogador_b": "Jeļena Ostapenko",
-        "vencedor": "Jeļena Ostapenko",
+        "jogador_a": "Jeļena Ostapenko",
+        "jogador_b": "Ekaterina Alexandrova",
+        "vencedor": "Ekaterina Alexandrova",
+        "placar": "6-3 6-4"
+      },
+      {
+        "jogador_a": "Elina Svitolina",
+        "jogador_b": "Marta Kostyuk",
+        "vencedor": "Elina Svitolina",
         "placar": "7-5 6-4"
+      },
+      {
+        "jogador_a": "Sorana Cîrstea",
+        "jogador_b": "Belinda Bencic",
+        "vencedor": "Sorana Cîrstea",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Naomi Osaka",
+        "jogador_b": "Jaqueline Cristian",
+        "vencedor": "Naomi Osaka",
+        "placar": "7-6 6-4"
+      },
+      {
+        "jogador_a": "Emma Navarro",
+        "jogador_b": "Elena Rybakina",
+        "vencedor": "Emma Navarro",
+        "placar": "6-4 3-6 6-3"
       }
     ],
     "r16": [
       {
-        "jogador_a": "Clara Tauson",
-        "jogador_b": "Marta Kostyuk",
-        "vencedor": "Marta Kostyuk",
-        "placar": "7-6 6-4"
-      },
-      {
-        "jogador_a": "Iga Świątek",
-        "jogador_b": "Naomi Osaka",
-        "vencedor": "Iga Świątek",
-        "placar": "7-6 6-4"
-      },
-      {
-        "jogador_a": "Leylah Fernandez",
-        "jogador_b": "Jeļena Ostapenko",
-        "vencedor": "Leylah Fernandez",
-        "placar": "6-4 3-6 6-3"
-      },
-      {
-        "jogador_a": "Madison Keys",
-        "jogador_b": "Emma Navarro",
-        "vencedor": "Emma Navarro",
-        "placar": "6-4 3-6 6-3"
-      },
-      {
-        "jogador_a": "Amanda Anisimova",
-        "jogador_b": "Qinwen Zheng",
-        "vencedor": "Qinwen Zheng",
+        "jogador_a": "Alexandra Eala",
+        "jogador_b": "Ann Li",
+        "vencedor": "Alexandra Eala",
         "placar": "6-2 6-2"
       },
       {
-        "jogador_a": "Sorana Cîrstea",
-        "jogador_b": "Elina Svitolina",
-        "vencedor": "Elina Svitolina",
+        "jogador_a": "Elisabetta Cocciaretto",
+        "jogador_b": "Janice Tjen",
+        "vencedor": "Elisabetta Cocciaretto",
+        "placar": "6-3 6-4"
+      },
+      {
+        "jogador_a": "Hailey Baptiste",
+        "jogador_b": "[Q] Sonay Kartal",
+        "vencedor": "[Q] Sonay Kartal",
+        "placar": "7-6 6-4"
+      },
+      {
+        "jogador_a": "Sára Bejlek",
+        "jogador_b": "Marie Bouzková",
+        "vencedor": "Sára Bejlek",
         "placar": "6-4 3-6 6-3"
       },
       {
-        "jogador_a": "Belinda Bencic",
-        "jogador_b": "Jessica Pegula",
-        "vencedor": "Jessica Pegula",
+        "jogador_a": "Victoria Mboko",
+        "jogador_b": "Sorana Cîrstea",
+        "vencedor": "Sorana Cîrstea",
+        "placar": "6-3 6-4"
+      },
+      {
+        "jogador_a": "Elina Svitolina",
+        "jogador_b": "Qinwen Zheng",
+        "vencedor": "Qinwen Zheng",
         "placar": "7-6 6-4"
+      },
+      {
+        "jogador_a": "Iva Jovic",
+        "jogador_b": "Emma Navarro",
+        "vencedor": "Emma Navarro",
+        "placar": "7-5 6-4"
       },
       {
         "jogador_a": "Ekaterina Alexandrova",
-        "jogador_b": "Maya Joint",
-        "vencedor": "Maya Joint",
-        "placar": "6-2 6-2"
+        "jogador_b": "Naomi Osaka",
+        "vencedor": "Naomi Osaka",
+        "placar": "6-3 6-4"
       }
     ],
     "quartas": [
       {
-        "jogador_a": "Marta Kostyuk",
-        "jogador_b": "Emma Navarro",
-        "vencedor": "Emma Navarro",
-        "placar": "7-6 6-4"
-      },
-      {
-        "jogador_a": "Iga Świątek",
-        "jogador_b": "Maya Joint",
-        "vencedor": "Iga Świątek",
-        "placar": "7-6 6-4"
-      },
-      {
-        "jogador_a": "Elina Svitolina",
-        "jogador_b": "Jessica Pegula",
-        "vencedor": "Elina Svitolina",
-        "placar": "7-6 6-4"
-      },
-      {
         "jogador_a": "Qinwen Zheng",
-        "jogador_b": "Leylah Fernandez",
-        "vencedor": "Qinwen Zheng",
-        "placar": "7-6 6-4"
+        "jogador_b": "Elisabetta Cocciaretto",
+        "vencedor": "Elisabetta Cocciaretto",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "jogador_a": "Sorana Cîrstea",
+        "jogador_b": "Alexandra Eala",
+        "vencedor": "Sorana Cîrstea",
+        "placar": "6-2 6-2"
+      },
+      {
+        "jogador_a": "Sára Bejlek",
+        "jogador_b": "Naomi Osaka",
+        "vencedor": "Naomi Osaka",
+        "placar": "7-5 6-4"
+      },
+      {
+        "jogador_a": "[Q] Sonay Kartal",
+        "jogador_b": "Emma Navarro",
+        "vencedor": "[Q] Sonay Kartal",
+        "placar": "7-5 6-4"
       }
     ],
     "semifinal": [
       {
-        "jogador_a": "Elina Svitolina",
-        "jogador_b": "Emma Navarro",
-        "vencedor": "Emma Navarro",
+        "jogador_a": "Sorana Cîrstea",
+        "jogador_b": "Naomi Osaka",
+        "vencedor": "Naomi Osaka",
         "placar": "6-2 6-2"
       },
       {
-        "jogador_a": "Qinwen Zheng",
-        "jogador_b": "Iga Świątek",
-        "vencedor": "Iga Świątek",
-        "placar": "6-2 6-2"
+        "jogador_a": "[Q] Sonay Kartal",
+        "jogador_b": "Elisabetta Cocciaretto",
+        "vencedor": "Elisabetta Cocciaretto",
+        "placar": "6-3 6-4"
       }
     ],
     "final": [
       {
-        "jogador_a": "Emma Navarro",
-        "jogador_b": "Iga Świątek",
-        "vencedor": "Iga Świątek",
-        "placar": "7-6 6-4"
+        "jogador_a": "Elisabetta Cocciaretto",
+        "jogador_b": "Naomi Osaka",
+        "vencedor": "Naomi Osaka",
+        "placar": "6-4 3-6 6-3"
       }
     ]
   },
@@ -576,7 +638,7 @@
     "ultimo_campeao": "Aryna Sabalenka"
   },
   "genero": "feminino",
-  "campeao_simples": "Iga Świątek",
+  "campeao_simples": "Naomi Osaka",
   "fases_duplas": [
     "r16",
     "quartas",
@@ -588,81 +650,81 @@
     "r16": [
       [
         {
-          "nome": "Xinyu Jiang / Alexandra Panova",
+          "nome": "Lyudmyla Kichenok / Hao-ching Chan",
           "overall": 50
         },
         {
-          "nome": "Giuliana Olmos / Sabrina Santamaria",
+          "nome": "Miyu Kato / Aldila Sutjiadi",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Makoto Ninomiya / Asia Muhammad",
+          "nome": "Tímea Babos / Fanny Stollár",
           "overall": 50
         },
         {
-          "nome": "Zhaoxuan Yang / Tímea Babos",
+          "nome": "Su-wei Hsieh / Tereza Mihalíková",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Su-wei Hsieh / Shuko Aoyama",
+          "nome": "Irina Khromacheva / Xinyu Jiang",
           "overall": 50
         },
         {
-          "nome": "Demi Schuurs / Quinn Gleason",
+          "nome": "Nadiia Kichenok / Yifan Xu",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Luisa Stefani / Hao-ching Chan",
+          "nome": "Quinn Gleason / Giuliana Olmos",
           "overall": 50
         },
         {
-          "nome": "Tereza Mihalíková / Irina Khromacheva",
+          "nome": "Desirae Krawczyk / Luisa Stefani",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Yifan Xu / Miyu Kato",
+          "nome": "Gabriela Dabrowski / Ulrikke Eikeri",
           "overall": 50
         },
         {
-          "nome": "Desirae Krawczyk / Ulrikke Eikeri",
+          "nome": "Ellen Perez / Erin Routliffe",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Olivia Nicholls / Nadiia Kichenok",
+          "nome": "Miriam Kolodziejová / Olivia Nicholls",
           "overall": 50
         },
         {
-          "nome": "Miriam Kolodziejová / Anna Danilina",
+          "nome": "Alexandra Panova / Demi Schuurs",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Nicole Melichar-Martinez / Aldila Sutjiadi",
+          "nome": "Nicole Melichar-Martinez / Zhaoxuan Yang",
           "overall": 50
         },
         {
-          "nome": "Lyudmyla Kichenok / Erin Routliffe",
+          "nome": "Asia Muhammad / Makoto Ninomiya",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Gabriela Dabrowski / Fang-Hsien Wu",
+          "nome": "Fang-Hsien Wu / Sabrina Santamaria",
           "overall": 50
         },
         {
-          "nome": "Ellen Perez / Fanny Stollár",
+          "nome": "Shuko Aoyama / Anna Danilina",
           "overall": 50
         }
       ]
@@ -670,41 +732,41 @@
     "quartas": [
       [
         {
-          "nome": "Makoto Ninomiya / Asia Muhammad",
+          "nome": "Alexandra Panova / Demi Schuurs",
           "overall": 50
         },
         {
-          "nome": "Su-wei Hsieh / Shuko Aoyama",
+          "nome": "Nicole Melichar-Martinez / Zhaoxuan Yang",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Lyudmyla Kichenok / Erin Routliffe",
+          "nome": "Fang-Hsien Wu / Sabrina Santamaria",
           "overall": 50
         },
         {
-          "nome": "Tereza Mihalíková / Irina Khromacheva",
+          "nome": "Ellen Perez / Erin Routliffe",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Yifan Xu / Miyu Kato",
+          "nome": "Quinn Gleason / Giuliana Olmos",
           "overall": 50
         },
         {
-          "nome": "Giuliana Olmos / Sabrina Santamaria",
+          "nome": "Miyu Kato / Aldila Sutjiadi",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Gabriela Dabrowski / Fang-Hsien Wu",
+          "nome": "Su-wei Hsieh / Tereza Mihalíková",
           "overall": 50
         },
         {
-          "nome": "Miriam Kolodziejová / Anna Danilina",
+          "nome": "Nadiia Kichenok / Yifan Xu",
           "overall": 50
         }
       ]
@@ -712,21 +774,21 @@
     "semifinal": [
       [
         {
-          "nome": "Tereza Mihalíková / Irina Khromacheva",
+          "nome": "Alexandra Panova / Demi Schuurs",
           "overall": 50
         },
         {
-          "nome": "Su-wei Hsieh / Shuko Aoyama",
+          "nome": "Quinn Gleason / Giuliana Olmos",
           "overall": 50
         }
       ],
       [
         {
-          "nome": "Yifan Xu / Miyu Kato",
+          "nome": "Fang-Hsien Wu / Sabrina Santamaria",
           "overall": 50
         },
         {
-          "nome": "Gabriela Dabrowski / Fang-Hsien Wu",
+          "nome": "Su-wei Hsieh / Tereza Mihalíková",
           "overall": 50
         }
       ]
@@ -734,11 +796,11 @@
     "final": [
       [
         {
-          "nome": "Tereza Mihalíková / Irina Khromacheva",
+          "nome": "Su-wei Hsieh / Tereza Mihalíková",
           "overall": 50
         },
         {
-          "nome": "Gabriela Dabrowski / Fang-Hsien Wu",
+          "nome": "Quinn Gleason / Giuliana Olmos",
           "overall": 50
         }
       ]
@@ -747,102 +809,114 @@
   "resultados_duplas": {
     "r16": [
       {
-        "dupla_a": "Xinyu Jiang / Alexandra Panova",
-        "dupla_b": "Giuliana Olmos / Sabrina Santamaria",
-        "vencedor": "Giuliana Olmos / Sabrina Santamaria",
-        "placar": "6-3 6-4"
-      },
-      {
-        "dupla_a": "Makoto Ninomiya / Asia Muhammad",
-        "dupla_b": "Zhaoxuan Yang / Tímea Babos",
-        "vencedor": "Makoto Ninomiya / Asia Muhammad",
-        "placar": "7-5 6-4"
-      },
-      {
-        "dupla_a": "Su-wei Hsieh / Shuko Aoyama",
-        "dupla_b": "Demi Schuurs / Quinn Gleason",
-        "vencedor": "Su-wei Hsieh / Shuko Aoyama",
-        "placar": "6-2 6-2"
-      },
-      {
-        "dupla_a": "Luisa Stefani / Hao-ching Chan",
-        "dupla_b": "Tereza Mihalíková / Irina Khromacheva",
-        "vencedor": "Tereza Mihalíková / Irina Khromacheva",
-        "placar": "7-6 6-4"
-      },
-      {
-        "dupla_a": "Yifan Xu / Miyu Kato",
-        "dupla_b": "Desirae Krawczyk / Ulrikke Eikeri",
-        "vencedor": "Yifan Xu / Miyu Kato",
-        "placar": "6-2 6-2"
-      },
-      {
-        "dupla_a": "Olivia Nicholls / Nadiia Kichenok",
-        "dupla_b": "Miriam Kolodziejová / Anna Danilina",
-        "vencedor": "Miriam Kolodziejová / Anna Danilina",
+        "dupla_a": "Lyudmyla Kichenok / Hao-ching Chan",
+        "dupla_b": "Miyu Kato / Aldila Sutjiadi",
+        "vencedor": "Miyu Kato / Aldila Sutjiadi",
         "placar": "6-4 3-6 6-3"
       },
       {
-        "dupla_a": "Nicole Melichar-Martinez / Aldila Sutjiadi",
-        "dupla_b": "Lyudmyla Kichenok / Erin Routliffe",
-        "vencedor": "Lyudmyla Kichenok / Erin Routliffe",
+        "dupla_a": "Tímea Babos / Fanny Stollár",
+        "dupla_b": "Su-wei Hsieh / Tereza Mihalíková",
+        "vencedor": "Su-wei Hsieh / Tereza Mihalíková",
+        "placar": "7-5 6-4"
+      },
+      {
+        "dupla_a": "Irina Khromacheva / Xinyu Jiang",
+        "dupla_b": "Nadiia Kichenok / Yifan Xu",
+        "vencedor": "Nadiia Kichenok / Yifan Xu",
         "placar": "6-3 6-4"
       },
       {
-        "dupla_a": "Gabriela Dabrowski / Fang-Hsien Wu",
-        "dupla_b": "Ellen Perez / Fanny Stollár",
-        "vencedor": "Gabriela Dabrowski / Fang-Hsien Wu",
+        "dupla_a": "Quinn Gleason / Giuliana Olmos",
+        "dupla_b": "Desirae Krawczyk / Luisa Stefani",
+        "vencedor": "Quinn Gleason / Giuliana Olmos",
         "placar": "6-2 6-2"
+      },
+      {
+        "dupla_a": "Gabriela Dabrowski / Ulrikke Eikeri",
+        "dupla_b": "Ellen Perez / Erin Routliffe",
+        "vencedor": "Ellen Perez / Erin Routliffe",
+        "placar": "7-6 6-4"
+      },
+      {
+        "dupla_a": "Miriam Kolodziejová / Olivia Nicholls",
+        "dupla_b": "Alexandra Panova / Demi Schuurs",
+        "vencedor": "Alexandra Panova / Demi Schuurs",
+        "placar": "6-4 3-6 6-3"
+      },
+      {
+        "dupla_a": "Nicole Melichar-Martinez / Zhaoxuan Yang",
+        "dupla_b": "Asia Muhammad / Makoto Ninomiya",
+        "vencedor": "Nicole Melichar-Martinez / Zhaoxuan Yang",
+        "placar": "7-5 6-4"
+      },
+      {
+        "dupla_a": "Fang-Hsien Wu / Sabrina Santamaria",
+        "dupla_b": "Shuko Aoyama / Anna Danilina",
+        "vencedor": "Fang-Hsien Wu / Sabrina Santamaria",
+        "placar": "6-4 3-6 6-3"
       }
     ],
     "quartas": [
       {
-        "dupla_a": "Makoto Ninomiya / Asia Muhammad",
-        "dupla_b": "Su-wei Hsieh / Shuko Aoyama",
-        "vencedor": "Su-wei Hsieh / Shuko Aoyama",
-        "placar": "6-4 3-6 6-3"
-      },
-      {
-        "dupla_a": "Lyudmyla Kichenok / Erin Routliffe",
-        "dupla_b": "Tereza Mihalíková / Irina Khromacheva",
-        "vencedor": "Tereza Mihalíková / Irina Khromacheva",
-        "placar": "6-4 3-6 6-3"
-      },
-      {
-        "dupla_a": "Yifan Xu / Miyu Kato",
-        "dupla_b": "Giuliana Olmos / Sabrina Santamaria",
-        "vencedor": "Yifan Xu / Miyu Kato",
+        "dupla_a": "Alexandra Panova / Demi Schuurs",
+        "dupla_b": "Nicole Melichar-Martinez / Zhaoxuan Yang",
+        "vencedor": "Alexandra Panova / Demi Schuurs",
         "placar": "7-5 6-4"
       },
       {
-        "dupla_a": "Gabriela Dabrowski / Fang-Hsien Wu",
-        "dupla_b": "Miriam Kolodziejová / Anna Danilina",
-        "vencedor": "Gabriela Dabrowski / Fang-Hsien Wu",
+        "dupla_a": "Fang-Hsien Wu / Sabrina Santamaria",
+        "dupla_b": "Ellen Perez / Erin Routliffe",
+        "vencedor": "Fang-Hsien Wu / Sabrina Santamaria",
+        "placar": "7-6 6-4"
+      },
+      {
+        "dupla_a": "Quinn Gleason / Giuliana Olmos",
+        "dupla_b": "Miyu Kato / Aldila Sutjiadi",
+        "vencedor": "Quinn Gleason / Giuliana Olmos",
+        "placar": "6-3 6-4"
+      },
+      {
+        "dupla_a": "Su-wei Hsieh / Tereza Mihalíková",
+        "dupla_b": "Nadiia Kichenok / Yifan Xu",
+        "vencedor": "Su-wei Hsieh / Tereza Mihalíková",
         "placar": "7-6 6-4"
       }
     ],
     "semifinal": [
       {
-        "dupla_a": "Tereza Mihalíková / Irina Khromacheva",
-        "dupla_b": "Su-wei Hsieh / Shuko Aoyama",
-        "vencedor": "Tereza Mihalíková / Irina Khromacheva",
-        "placar": "7-6 6-4"
+        "dupla_a": "Alexandra Panova / Demi Schuurs",
+        "dupla_b": "Quinn Gleason / Giuliana Olmos",
+        "vencedor": "Quinn Gleason / Giuliana Olmos",
+        "placar": "6-2 6-2"
       },
       {
-        "dupla_a": "Yifan Xu / Miyu Kato",
-        "dupla_b": "Gabriela Dabrowski / Fang-Hsien Wu",
-        "vencedor": "Gabriela Dabrowski / Fang-Hsien Wu",
-        "placar": "6-3 6-4"
+        "dupla_a": "Fang-Hsien Wu / Sabrina Santamaria",
+        "dupla_b": "Su-wei Hsieh / Tereza Mihalíková",
+        "vencedor": "Su-wei Hsieh / Tereza Mihalíková",
+        "placar": "7-6 6-4"
       }
     ],
     "final": [
       {
-        "dupla_a": "Tereza Mihalíková / Irina Khromacheva",
-        "dupla_b": "Gabriela Dabrowski / Fang-Hsien Wu",
-        "vencedor": "Gabriela Dabrowski / Fang-Hsien Wu",
+        "dupla_a": "Su-wei Hsieh / Tereza Mihalíková",
+        "dupla_b": "Quinn Gleason / Giuliana Olmos",
+        "vencedor": "Quinn Gleason / Giuliana Olmos",
         "placar": "7-5 6-4"
       }
     ]
   },
-  "campeao_duplas": "Gabriela Dabrowski / Fang-Hsien Wu"
+  "campeao_duplas": "Quinn Gleason / Giuliana Olmos",
+  "lucky_losers_pool": [
+    {
+      "nome": "[LL] Kateřina Siniaková",
+      "overall": 0,
+      "is_ll": true
+    },
+    {
+      "nome": "[LL] Barbora Krejčíková",
+      "overall": 0,
+      "is_ll": true
+    }
+  ]
 }

@@ -2,24 +2,33 @@
   "nome": "Juan Bautista Torres",
   "nacionalidade": "[AR]",
   "idade": 23,
-  "overall": 77,
+  "overall": 50,
   "pontos": 138,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 45,
+    "retorno": 46,
     "forehand": 53,
     "backhand": 46,
-    "topspin": 46,
     "voleio": 58,
-    "slice": 49,
-    "movimento": 47,
+    "smash": 57,
     "lob": 48,
+    "topspin": 46,
+    "slice": 49,
     "winner": 42,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 380,
   "atributos_psicologicos": {
-    "concentracao": 52,
+    "clutch": 52,
+    "consistencia": 62,
+    "compostura": 46,
     "agressividade": 43,
     "leitura_de_jogo": 40,
     "determinacao": 34
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -3,7 +3,8 @@ from unittest.mock import patch
 
 from src.match_core import simular_game_rapido, atualizar_estatisticas
 from src.constants.match_constants import TipoSaque, MatchPointStats, EstrategiaSaque, IntencaoPonto
-from src.simulacao_partida import ContextoPartida, ContextoPonto, SimuladorPonto
+from src.match_state import ContextoPartida, ContextoPonto
+from src.services.simulador_ponto import SimuladorPonto
 
 
 class SimuladorSequencial:
@@ -141,6 +142,131 @@ class MecanicaPartidaTests(unittest.TestCase):
         self.assertTrue(hasattr(stats, "get"))
         self.assertIn("sacador", stats)
 
+    def test_simular_ponto_rapido_com_contexto_coleta_insights_sem_quebrar(self):
+        jogador = self._jogador_base()
+        adversario = {
+            "nome": "Adversario",
+            "atributos": dict(jogador["atributos"]),
+            "atributos_psicologicos": dict(jogador["atributos_psicologicos"]),
+        }
+        simulador = SimuladorPonto(jogador, adversario)
+        contexto = ContextoPonto(
+            sacador="j",
+            placar_game=(0, 0),
+            placar_set=(0, 0),
+            placar_partida=(0, 0),
+        )
+
+        vencedor, stats = simulador.simular_ponto_rapido(
+            {"estilo": "atacar_do_fundo"},
+            contexto=contexto,
+            contexto_partida=ContextoPartida(superficie="saibro"),
+            estrategia_adversario={"estilo": "atacar_do_fundo"},
+        )
+
+        self.assertIn(vencedor, ("j", "a"))
+        self.assertIsInstance(stats, MatchPointStats)
+        self.assertIsInstance(stats.insights, list)
+        self.assertGreaterEqual(len(stats.insights), 1)
+
+    def test_duplas_aplicam_pressao_no_devolvedor_mais_fraco_e_poach(self):
+        dupla_j = {
+            "nome": "Jogador / Parceiro",
+            "is_dupla": True,
+            "quimica": {"label": "Entrosada", "bonus_total": 7, "detalhes": "ritmo vencedor"},
+            "atributos": {
+                "saque": 76,
+                "devolucao": 62,
+                "forehand": 72,
+                "backhand": 69,
+                "voleio": 84,
+                "movimento": 75,
+                "topspin": 63,
+                "slice": 66,
+                "fisico": 71,
+                "lob": 60,
+                "winner": 73,
+                "duplas": 88,
+            },
+            "atributos_psicologicos": {
+                "concentracao": 74,
+                "agressividade": 68,
+                "leitura_de_jogo": 77,
+                "determinacao": 71,
+            },
+            "jogadores": [
+                {"nome": "Jogador", "atributos": {"backhand": 70, "movimento": 74, "slice": 66, "voleio": 82, "duplas": 87}},
+                {"nome": "Parceiro", "atributos": {"backhand": 68, "movimento": 76, "slice": 65, "voleio": 84, "duplas": 89}},
+            ],
+        }
+        dupla_a = {
+            "nome": "Rivais / B",
+            "is_dupla": True,
+            "quimica": {"label": "Profissional", "bonus_total": 1, "detalhes": ""},
+            "atributos": {
+                "saque": 70,
+                "devolucao": 58,
+                "forehand": 67,
+                "backhand": 60,
+                "voleio": 73,
+                "movimento": 68,
+                "topspin": 61,
+                "slice": 59,
+                "fisico": 68,
+                "lob": 57,
+                "winner": 65,
+                "duplas": 78,
+            },
+            "atributos_psicologicos": {
+                "concentracao": 66,
+                "agressividade": 61,
+                "leitura_de_jogo": 63,
+                "determinacao": 64,
+            },
+            "jogadores": [
+                {"nome": "Rival 1", "atributos": {"backhand": 73, "movimento": 71, "slice": 62, "voleio": 75, "duplas": 79}},
+                {"nome": "Rival 2", "atributos": {"backhand": 48, "movimento": 58, "slice": 51, "voleio": 66, "duplas": 72}},
+            ],
+        }
+        simulador = SimuladorPonto(dupla_j, dupla_a)
+        stats = MatchPointStats.novo("j")
+        contexto = ContextoPonto(
+            sacador="j",
+            placar_game=(0, 0),
+            placar_set=(0, 0),
+            placar_partida=(0, 0),
+        )
+
+        poder_saque, chance_ace, poder_devolucao = simulador._ajuste_duplas_saque_devolucao(
+            contexto,
+            {"estilo": "atacar_na_rede"},
+            70.0,
+            0.10,
+            55.0,
+            stats,
+        )
+
+        self.assertGreater(poder_saque, 70.0)
+        self.assertGreater(chance_ace, 0.10)
+        self.assertIn("Você está mirando no devolvedor mais vulnerável", stats.insights)
+
+        with patch("src.services.simulador_ponto.random.random", side_effect=[0.0, 0.0]):
+            desc, eh_winner, eh_erro = simulador._determinar_tipo_finalizacao(
+                "j",
+                dupla_j["atributos"],
+                dupla_j["atributos_psicologicos"],
+                {"estilo": "atacar_na_rede"},
+                IntencaoPonto.ARRISCAR,
+                vantagem_rally=0.2,
+                superficie="grama",
+                stamina=88.0,
+                entidade=dupla_j,
+            )
+
+        self.assertTrue(eh_winner)
+        self.assertFalse(eh_erro)
+        self.assertIn("Poach agressivo", desc)
+
     def test_modo_rapido_usa_saque_tipo_da_estrategia_do_sacador(self):
         jogador = self._jogador_base()
         adversario = {
@@ -257,7 +383,7 @@ class MecanicaPartidaTests(unittest.TestCase):
             estilos.append(estrategia_usada.get("estilo"))
             return 50.0
 
-        with patch.object(simulador, "_calcular_poder_saque", return_value=(60.0, 0.0, 1.0)), \
+        with patch.object(simulador, "_calcular_poder_saque", return_value=(60.0, 0.0, 0.0)), \
              patch.object(simulador, "_calcular_poder_devolucao", return_value=50.0), \
              patch.object(simulador, "_calcular_poder_rally", side_effect=fake_poder_rally), \
              patch.object(simulador, "_simular_rally_trocas", return_value=(False, 0.1, 4)), \
@@ -372,7 +498,7 @@ class MecanicaPartidaTests(unittest.TestCase):
         }
         simulador = SimuladorPonto(jogador, adversario)
 
-        with patch("src.simulacao_partida.random.random", return_value=0.99):
+        with patch("src.services.simulador_ponto.random.random", return_value=0.99):
             _desc, eh_winner, eh_erro_nao_forcado = (
                 simulador._determinar_tipo_finalizacao(
                     "j",

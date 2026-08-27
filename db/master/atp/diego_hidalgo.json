@@ -2,24 +2,33 @@
   "nome": "Diego Hidalgo",
   "nacionalidade": "[RU] Rússia",
   "idade": 34,
-  "overall": 88,
+  "overall": 87,
   "pontos": 1138,
   "id": 74152,
   "atributos": {
-    "saque": 80,
+    "vel_saque": 81,
+    "pre_saque": 82,
+    "segundo_saque": 71,
+    "retorno": 89,
     "forehand": 89,
     "backhand": 93,
-    "topspin": 83,
     "voleio": 93,
-    "slice": 82,
-    "movimento": 90,
+    "smash": 91,
     "lob": 80,
-    "fisico": 92,
+    "topspin": 83,
+    "slice": 82,
     "winner": 83,
+    "velocidade": 90,
+    "aceleracao": 83,
+    "resistencia": 92,
+    "forca": 91,
+    "agilidade": 89,
     "duplas": 93
   },
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 43,
+    "compostura": 45,
     "agressividade": 62,
     "leitura_de_jogo": 44,
     "determinacao": 45
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1138,
-  "rank_duplas": 80
+  "rank_duplas": 80,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

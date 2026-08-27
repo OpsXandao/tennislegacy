@@ -1,48 +1,20 @@
 [
   {
-    "id": "dbf57183",
+    "id": "eaf975a5",
     "torneio": "Hong Kong Open",
     "semana": 1,
     "ano": 2026,
     "modalidade": "simples",
     "jogadores": [
       "Alexandre Paiva",
-      "Toby Martin"
+      "Cezar Gabriel Papoe"
     ],
-    "resultado": "Alexandre Paiva 2 x 0 Toby Martin",
+    "resultado": "Alexandre Paiva 2 x 0 Cezar Gabriel Papoe",
     "vencedor": "Alexandre Paiva",
     "fase": "qualy_2"
   },
   {
-    "id": "f0d8e14a",
-    "torneio": "Hong Kong Open",
-    "semana": 1,
-    "ano": 2026,
-    "modalidade": "simples",
-    "jogadores": [
-      "Alexandre Paiva",
-      "Pengyu Lu"
-    ],
-    "resultado": "Alexandre Paiva 2 x 0 Pengyu Lu",
-    "vencedor": "Alexandre Paiva",
-    "fase": "pre_oitavas"
-  },
-  {
-    "id": "d4b6afcd",
-    "torneio": "Hong Kong Open",
-    "semana": 1,
-    "ano": 2026,
-    "modalidade": "simples",
-    "jogadores": [
-      "Alexandre Paiva",
-      "Yaojie Zeng"
-    ],
-    "resultado": "Alexandre Paiva 2 x 0 Yaojie Zeng",
-    "vencedor": "Alexandre Paiva",
-    "fase": "oitavas"
-  },
-  {
-    "id": "88b25bee",
+    "id": "30b1593b",
     "torneio": "Hong Kong Open",
     "semana": 1,
     "ano": 2026,
@@ -53,34 +25,146 @@
     ],
     "resultado": "Alexandre Paiva 2 x 0 Ye Hongyu",
     "vencedor": "Alexandre Paiva",
-    "fase": "quartas"
+    "fase": "pre_oitavas"
   },
   {
-    "id": "0b6909c8",
+    "id": "cba4896a",
     "torneio": "Hong Kong Open",
     "semana": 1,
     "ano": 2026,
     "modalidade": "simples",
     "jogadores": [
       "Alexandre Paiva",
-      "Maximo Zeitune"
+      "Yuta Kikuchi"
     ],
-    "resultado": "Alexandre Paiva 2 x 0 Maximo Zeitune",
+    "resultado": "Alexandre Paiva 2 x 0 Yuta Kikuchi",
+    "vencedor": "Alexandre Paiva",
+    "fase": "oitavas"
+  },
+  {
+    "id": "14515a36",
+    "torneio": "Hong Kong Open",
+    "semana": 1,
+    "ano": 2026,
+    "modalidade": "simples",
+    "jogadores": [
+      "Alexandre Paiva",
+      "Titouan Droguet"
+    ],
+    "resultado": "Alexandre Paiva 2 x 0 Titouan Droguet",
+    "vencedor": "Alexandre Paiva",
+    "fase": "quartas"
+  },
+  {
+    "id": "e9036d19",
+    "torneio": "Hong Kong Open",
+    "semana": 1,
+    "ano": 2026,
+    "modalidade": "simples",
+    "jogadores": [
+      "Alexandre Paiva",
+      "Tianhui Zhang"
+    ],
+    "resultado": "Alexandre Paiva 2 x 0 Tianhui Zhang",
     "vencedor": "Alexandre Paiva",
     "fase": "semifinal"
   },
   {
-    "id": "0aca076e",
+    "id": "57ec64b1",
     "torneio": "Hong Kong Open",
     "semana": 1,
     "ano": 2026,
     "modalidade": "simples",
     "jogadores": [
       "Alexandre Paiva",
-      "Akira Santillan"
+      "Kirill Kivattsev"
     ],
-    "resultado": "Alexandre Paiva 2 x 0 Akira Santillan",
+    "resultado": "Alexandre Paiva 2 x 0 Kirill Kivattsev",
     "vencedor": "Alexandre Paiva",
     "fase": "final"
+  },
+  {
+    "id": "18a9d86e",
+    "torneio": "Hong Kong Open",
+    "semana": 1,
+    "ano": 2026,
+    "modalidade": "simples",
+    "jogadores": [
+      "Alexandre Paiva",
+      "Zhe Li"
+    ],
+    "resultado": "Alexandre Paiva 2 x 0 Zhe Li",
+    "vencedor": "Alexandre Paiva",
+    "fase": "finalizado"
+  },
+  {
+    "id": "3a82095a",
+    "torneio": "Hong Kong Open",
+    "semana": 2,
+    "ano": 2026,
+    "modalidade": "simples",
+    "jogadores": [
+      "Alexandre Paiva",
+      "Jack Pinnington Jones"
+    ],
+    "resultado": "Alexandre Paiva 2 x 0 Jack Pinnington Jones",
+    "vencedor": "Alexandre Paiva",
+    "fase": "oitavas"
+  },
+  {
+    "id": "7f05e6c1",
+    "torneio": "Hong Kong Open",
+    "semana": 2,
+    "ano": 2026,
+    "modalidade": "simples",
+    "jogadores": [
+      "Alexandre Paiva",
+      "Fabien Reboul"
+    ],
+    "resultado": "Alexandre Paiva 2 x 1 Fabien Reboul",
+    "vencedor": "Alexandre Paiva",
+    "fase": "quartas"
+  },
+  {
+    "id": "9d31585b",
+    "torneio": "Hong Kong Open",
+    "semana": 2,
+    "ano": 2026,
+    "modalidade": "simples",
+    "jogadores": [
+      "Alexandre Paiva",
+      "Charles Broom"
+    ],
+    "resultado": "Alexandre Paiva 2 x 0 Charles Broom",
+    "vencedor": "Alexandre Paiva",
+    "fase": "semifinal"
+  },
+  {
+    "id": "7e2dedd5",
+    "torneio": "Hong Kong Open",
+    "semana": 2,
+    "ano": 2026,
+    "modalidade": "simples",
+    "jogadores": [
+      "Alexandre Paiva",
+      "Sumit Nagal"
+    ],
+    "resultado": "Alexandre Paiva 2 x 0 Sumit Nagal",
+    "vencedor": "Alexandre Paiva",
+    "fase": "final"
+  },
+  {
+    "id": "9e7fe7ce",
+    "torneio": "Hong Kong Open",
+    "semana": 2,
+    "ano": 2026,
+    "modalidade": "simples",
+    "jogadores": [
+      "Alexandre Paiva",
+      "Mattia Bellucci"
+    ],
+    "resultado": "Alexandre Paiva 2 x 0 Mattia Bellucci",
+    "vencedor": "Alexandre Paiva",
+    "fase": "finalizado"
   }
 ]

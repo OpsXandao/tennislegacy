@@ -2,24 +2,33 @@
   "nome": "Michael Venus",
   "nacionalidade": "[RU] Rússia",
   "idade": 22,
-  "overall": 90,
+  "overall": 88,
   "pontos": 2100,
   "id": 74197,
   "atributos": {
-    "saque": 90,
+    "vel_saque": 88,
+    "pre_saque": 90,
+    "segundo_saque": 75,
+    "retorno": 91,
     "forehand": 84,
     "backhand": 88,
-    "topspin": 97,
     "voleio": 97,
-    "slice": 95,
-    "movimento": 96,
+    "smash": 90,
     "lob": 88,
-    "fisico": 82,
+    "topspin": 97,
+    "slice": 95,
     "winner": 82,
+    "velocidade": 90,
+    "aceleracao": 82,
+    "resistencia": 82,
+    "forca": 83,
+    "agilidade": 92,
     "duplas": 104
   },
   "atributos_psicologicos": {
-    "concentracao": 46,
+    "clutch": 46,
+    "consistencia": 35,
+    "compostura": 46,
     "agressividade": 74,
     "leitura_de_jogo": 63,
     "determinacao": 49
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2100,
-  "rank_duplas": 39
+  "rank_duplas": 39,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

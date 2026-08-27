@@ -2,24 +2,33 @@
   "nome": "Hernan Casanova",
   "nacionalidade": "[AR]",
   "idade": 32,
-  "overall": 76,
+  "overall": 49,
   "pontos": 118,
   "atributos": {
-    "saque": 48,
+    "vel_saque": 49,
+    "pre_saque": 46,
+    "segundo_saque": 50,
+    "retorno": 45,
     "forehand": 40,
     "backhand": 48,
-    "topspin": 43,
     "voleio": 53,
-    "slice": 40,
-    "movimento": 45,
+    "smash": 54,
     "lob": 45,
+    "topspin": 43,
+    "slice": 40,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 47,
     "duplas": 60
   },
   "id": 430,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 66,
+    "compostura": 32,
     "agressividade": 39,
     "leitura_de_jogo": 44,
     "determinacao": 39
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

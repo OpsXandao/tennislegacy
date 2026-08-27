@@ -2,24 +2,33 @@
   "nome": "Giles Hussey",
   "nacionalidade": "[GB]",
   "idade": 28,
-  "overall": 77,
+  "overall": 48,
   "pontos": 145,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 48,
+    "retorno": 42,
     "forehand": 51,
     "backhand": 40,
-    "topspin": 47,
     "voleio": 42,
-    "slice": 40,
-    "movimento": 50,
+    "smash": 48,
     "lob": 40,
+    "topspin": 47,
+    "slice": 40,
     "winner": 42,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 366,
   "atributos_psicologicos": {
-    "concentracao": 47,
+    "clutch": 47,
+    "consistencia": 64,
+    "compostura": 46,
     "agressividade": 41,
     "leitura_de_jogo": 42,
     "determinacao": 46
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 70,
+    "grama": 76
+  }
 }

@@ -12,6 +12,7 @@ export function CalendarTournamentGrid({
   convocacao,
   inscrevendo,
   erroInscricao,
+  torneioAtivo,
   onSelectTournament,
   onConfirmCallup,
   onDeclineCallup,
@@ -86,6 +87,7 @@ export function CalendarTournamentGrid({
           const surface = normalizeSurface(tournament.superficie)
           const surfaceColor = surfaceColors[surface]
           const isPastOrFuture = semanaSelecionada !== semanaAtual
+          const bloqueado = isPastOrFuture || torneioAtivo
 
           return (
             <motion.div
@@ -93,11 +95,11 @@ export function CalendarTournamentGrid({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08 }}
-              onClick={() => !isPastOrFuture && onSelectTournament(tournament)}
+              onClick={() => !bloqueado && onSelectTournament(tournament)}
               className={`relative flex flex-col h-28 overflow-hidden border-2 transition-transform ${
-                isPastOrFuture ? 'cursor-default opacity-60' : 'cursor-pointer active:scale-95'
+                bloqueado ? 'cursor-default opacity-60' : 'cursor-pointer active:scale-95'
               }`}
-              style={{ borderColor: config.color, boxShadow: isPastOrFuture ? 'none' : config.glow }}
+              style={{ borderColor: config.color, boxShadow: bloqueado ? 'none' : config.glow }}
             >
               <div
                 className="absolute inset-0 opacity-70"

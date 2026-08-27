@@ -2,24 +2,33 @@
   "nome": "Sumit Nagal",
   "nacionalidade": "[IN]",
   "idade": 28,
-  "overall": 78,
+  "overall": 66,
   "pontos": 181,
   "atributos": {
-    "saque": 66,
+    "vel_saque": 65,
+    "pre_saque": 68,
+    "segundo_saque": 66,
+    "retorno": 73,
     "forehand": 65,
     "backhand": 74,
-    "topspin": 64,
     "voleio": 59,
-    "slice": 75,
-    "movimento": 70,
+    "smash": 60,
     "lob": 69,
+    "topspin": 64,
+    "slice": 75,
     "winner": 72,
-    "fisico": 60,
+    "velocidade": 66,
+    "aceleracao": 62,
+    "resistencia": 60,
+    "forca": 64,
+    "agilidade": 68,
     "duplas": 60
   },
   "id": 318,
   "atributos_psicologicos": {
-    "concentracao": 56,
+    "clutch": 56,
+    "consistencia": 57,
+    "compostura": 59,
     "agressividade": 48,
     "leitura_de_jogo": 58,
     "determinacao": 67
@@ -45,5 +54,10 @@
   "peso": 70,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

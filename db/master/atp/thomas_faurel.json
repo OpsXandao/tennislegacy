@@ -2,24 +2,33 @@
   "nome": "Thomas Faurel",
   "nacionalidade": "[FR]",
   "idade": 20,
-  "overall": 76,
+  "overall": 46,
   "pontos": 114,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 46,
+    "retorno": 40,
     "forehand": 40,
     "backhand": 40,
-    "topspin": 40,
     "voleio": 46,
-    "slice": 40,
-    "movimento": 40,
+    "smash": 51,
     "lob": 52,
+    "topspin": 40,
+    "slice": 40,
     "winner": 46,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 50,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 449,
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 67,
+    "compostura": 42,
     "agressividade": 38,
     "leitura_de_jogo": 37,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

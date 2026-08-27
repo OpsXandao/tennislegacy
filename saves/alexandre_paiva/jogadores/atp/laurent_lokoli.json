@@ -1,0 +1,80 @@
+{
+  "nome": "Laurent Lokoli",
+  "nacionalidade": "[FR]",
+  "pontos": 84,
+  "pontos_duplas": 0,
+  "pontos_ranking": 84,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 54,
+  "energia": 100,
+  "fadiga": 6,
+  "moral": 65,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 54,
+    "pre_saque": 52,
+    "segundo_saque": 53,
+    "retorno": 51,
+    "forehand": 56,
+    "backhand": 56,
+    "voleio": 58,
+    "smash": 57,
+    "lob": 46,
+    "topspin": 43,
+    "slice": 45,
+    "winner": 52,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 58,
+    "agilidade": 50,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 43,
+    "consistencia": 53,
+    "compostura": 42,
+    "agressividade": 52,
+    "leitura_de_jogo": 51,
+    "determinacao": 42
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 84,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 31,
+  "id": 534,
+  "pico_carreira": 502,
+  "altura": 188,
+  "peso": 74,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
+}

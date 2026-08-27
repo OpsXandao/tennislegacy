@@ -2,24 +2,33 @@
   "nome": "Christian Harrison",
   "nacionalidade": "[RU] Rússia",
   "idade": 28,
-  "overall": 94,
+  "overall": 95,
   "pontos": 4815,
   "id": 18637,
   "atributos": {
-    "saque": 98,
+    "vel_saque": 97,
+    "pre_saque": 96,
+    "segundo_saque": 82,
+    "retorno": 94,
     "forehand": 98,
     "backhand": 98,
-    "topspin": 98,
     "voleio": 104,
-    "slice": 91,
-    "movimento": 92,
+    "smash": 99,
     "lob": 87,
-    "fisico": 97,
+    "topspin": 98,
+    "slice": 91,
     "winner": 96,
+    "velocidade": 93,
+    "aceleracao": 85,
+    "resistencia": 97,
+    "forca": 97,
+    "agilidade": 92,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 67,
+    "clutch": 67,
+    "consistencia": 37,
+    "compostura": 62,
     "agressividade": 68,
     "leitura_de_jogo": 40,
     "determinacao": 54
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 4815,
-  "rank_duplas": 11
+  "rank_duplas": 11,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

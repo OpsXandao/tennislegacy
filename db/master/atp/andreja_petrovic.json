@@ -2,24 +2,33 @@
   "nome": "Andreja Petrovic",
   "nacionalidade": "[NO]",
   "idade": 26,
-  "overall": 71,
+  "overall": 47,
   "pontos": 27,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 41,
+    "segundo_saque": 48,
+    "retorno": 40,
     "forehand": 55,
     "backhand": 40,
-    "topspin": 40,
     "voleio": 50,
-    "slice": 43,
-    "movimento": 40,
+    "smash": 52,
     "lob": 40,
+    "topspin": 40,
+    "slice": 43,
     "winner": 40,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 44,
     "duplas": 60
   },
   "id": 900,
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 69,
+    "compostura": 43,
     "agressividade": 36,
     "leitura_de_jogo": 38,
     "determinacao": 44
@@ -45,5 +54,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

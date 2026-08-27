@@ -2,24 +2,33 @@
   "nome": "Daniel Rincon",
   "nacionalidade": "[ES]",
   "idade": 23,
-  "overall": 78,
+  "overall": 52,
   "pontos": 169,
   "atributos": {
-    "saque": 53,
+    "vel_saque": 54,
+    "pre_saque": 53,
+    "segundo_saque": 52,
+    "retorno": 50,
     "forehand": 48,
     "backhand": 49,
-    "topspin": 49,
     "voleio": 49,
-    "slice": 61,
-    "movimento": 45,
+    "smash": 53,
     "lob": 55,
+    "topspin": 49,
+    "slice": 61,
     "winner": 52,
-    "fisico": 60,
+    "velocidade": 50,
+    "aceleracao": 49,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 334,
   "atributos_psicologicos": {
-    "concentracao": 34,
+    "clutch": 34,
+    "consistencia": 56,
+    "compostura": 35,
     "agressividade": 49,
     "leitura_de_jogo": 55,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Canhoto",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Pedro Boscardin Dias",
   "nacionalidade": "[BR]",
   "idade": 23,
-  "overall": 78,
+  "overall": 48,
   "pontos": 209,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 44,
+    "retorno": 42,
     "forehand": 48,
     "backhand": 40,
-    "topspin": 50,
     "voleio": 40,
-    "slice": 44,
-    "movimento": 47,
+    "smash": 47,
     "lob": 40,
+    "topspin": 50,
+    "slice": 44,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 49,
     "duplas": 60
   },
   "id": 290,
   "atributos_psicologicos": {
-    "concentracao": 43,
+    "clutch": 43,
+    "consistencia": 70,
+    "compostura": 39,
     "agressividade": 35,
     "leitura_de_jogo": 35,
     "determinacao": 31
@@ -45,5 +54,10 @@
   "peso": 78,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

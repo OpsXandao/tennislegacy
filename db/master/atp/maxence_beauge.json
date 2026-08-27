@@ -2,24 +2,33 @@
   "nome": "Maxence Beauge",
   "nacionalidade": "[FR]",
   "idade": 25,
-  "overall": 73,
+  "overall": 50,
   "pontos": 53,
   "atributos": {
-    "saque": 42,
+    "vel_saque": 44,
+    "pre_saque": 42,
+    "segundo_saque": 45,
+    "retorno": 47,
     "forehand": 51,
     "backhand": 49,
-    "topspin": 52,
     "voleio": 47,
-    "slice": 40,
-    "movimento": 49,
+    "smash": 51,
     "lob": 49,
+    "topspin": 52,
+    "slice": 40,
     "winner": 49,
-    "fisico": 60,
+    "velocidade": 53,
+    "aceleracao": 51,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 50,
     "duplas": 60
   },
   "id": 686,
   "atributos_psicologicos": {
-    "concentracao": 39,
+    "clutch": 39,
+    "consistencia": 61,
+    "compostura": 36,
     "agressividade": 44,
     "leitura_de_jogo": 47,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

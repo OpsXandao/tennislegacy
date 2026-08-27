@@ -1,0 +1,32 @@
+{
+  "foco": {
+    "tecnico": [
+      { "label": "SAQUE",        "cor": "var(--neon-green)" },
+      { "label": "RETORNO",      "cor": "var(--neon-green)" },
+      { "label": "CONSISTÊNCIA", "cor": "var(--neon-green)" },
+      { "label": "VOLEIO",       "cor": "var(--neon-green)" },
+      { "label": "SLICE",        "cor": "var(--neon-green)" },
+      { "label": "SMASH",        "cor": "var(--neon-green)" }
+    ],
+    "fisico": [
+      { "label": "VELOCIDADE",   "cor": "var(--neon-cyan)" },
+      { "label": "FORÇA",        "cor": "var(--neon-cyan)" },
+      { "label": "RESISTÊNCIA",  "cor": "var(--neon-cyan)" },
+      { "label": "REFLEXO",      "cor": "var(--neon-cyan)" },
+      { "label": "AGILIDADE",    "cor": "var(--neon-cyan)" },
+      { "label": "RECUPERAÇÃO",  "cor": "var(--neon-cyan)" }
+    ],
+    "psicologico": [
+      { "label": "MENTAL",       "cor": "var(--neon-yellow)" },
+      { "label": "FOCO",         "cor": "var(--neon-yellow)" },
+      { "label": "CONFIANÇA",    "cor": "var(--neon-yellow)" },
+      { "label": "RESILIÊNCIA",  "cor": "var(--neon-yellow)" },
+      { "label": "CONCENTRAÇÃO", "cor": "var(--neon-yellow)" }
+    ]
+  },
+  "avisos_fadiga": [
+    { "min": 80, "texto": "FADIGA CRÍTICA — EFICIÊNCIA MUITO REDUZIDA. CONSIDERE DESCANSAR", "cor": "var(--neon-pink)" },
+    { "min": 65, "texto": "FADIGA ELEVADA — TREINO MENOS EFICIENTE",                          "cor": "var(--neon-yellow)" },
+    { "min": 50, "texto": "FADIGA MODERADA — RENDIMENTO LEVEMENTE REDUZIDO",                  "cor": "var(--neon-yellow)" }
+  ]
+}

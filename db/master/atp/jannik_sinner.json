@@ -2,24 +2,33 @@
   "nome": "Jannik Sinner",
   "nacionalidade": "[IT]",
   "idade": 24,
-  "overall": 95,
+  "overall": 83,
   "pontos": 10400,
   "atributos": {
-    "saque": 90,
+    "vel_saque": 85,
+    "pre_saque": 89,
+    "segundo_saque": 85,
+    "retorno": 91,
     "forehand": 96,
     "backhand": 92,
-    "topspin": 93,
     "voleio": 87,
-    "slice": 85,
-    "movimento": 95,
+    "smash": 77,
     "lob": 90,
+    "topspin": 93,
+    "slice": 85,
     "winner": 97,
-    "fisico": 60,
+    "velocidade": 81,
+    "aceleracao": 74,
+    "resistencia": 60,
+    "forca": 76,
+    "agilidade": 86,
     "duplas": 60
   },
   "id": 1,
   "atributos_psicologicos": {
-    "concentracao": 89,
+    "clutch": 89,
+    "consistencia": 35,
+    "compostura": 89,
     "agressividade": 72,
     "leitura_de_jogo": 69,
     "determinacao": 92
@@ -141,5 +150,10 @@
   "peso": 77,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "Baselines Aggressive"
+  "estilo_jogo": "Baselines Aggressive",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

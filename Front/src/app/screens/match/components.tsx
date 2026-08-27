@@ -8,8 +8,6 @@ import type {
   MentalidadeValor,
   SegundoSaqueModo,
 } from './types'
-import {
-} from './model'
 
 export const INTENCOES = [
   { valor: 'ARRISCAR', label: 'PRESSIONAR', sub: 'Winner / Ace', color: 'var(--neon-pink)', emoji: '⚡' },
@@ -212,6 +210,69 @@ export function InlineMeter({ value, color }: { value: number; color: string }) 
   )
 }
 
+interface SelectOption {
+  valor: string
+  label: string
+  desc: string
+  icon?: string
+  color?: string
+}
+
+function OptionGroup<T extends string>({
+  title,
+  options,
+  selected,
+  onSelect,
+  activeColor,
+  compact,
+}: {
+  title: string
+  options: readonly SelectOption[]
+  selected: T
+  onSelect: (v: T) => void
+  activeColor: string
+  compact: boolean
+}) {
+  const sectionLabel = compact ? 'text-[9px]' : 'text-[10px]'
+  const itemLabel = compact ? 'text-[10px]' : 'text-[11px]'
+  const itemDesc = compact ? 'text-[8px]' : 'text-[9px]'
+  const py = compact ? 'p-2.5' : 'p-3'
+  return (
+    <div>
+      <div className={`arcade-font ${sectionLabel} mb-2 tracking-widest text-[#8fa3b5] uppercase`}>{title}</div>
+      <div className="space-y-2">
+        {options.map((opt) => {
+          const color = opt.color ?? activeColor
+          const isActive = selected === opt.valor
+          return (
+            <button
+              key={opt.valor}
+              onClick={() => onSelect(opt.valor as T)}
+              className={`w-full ${py} flex items-center gap-3 border-2 text-left transition-all`}
+              style={{
+                borderColor: isActive ? color : '#1a1a2e',
+                background: isActive ? `${color}12` : 'transparent',
+                boxShadow: isActive ? `0 0 12px ${color}1a` : 'none',
+              }}
+            >
+              {opt.icon && <span className={compact ? 'text-base' : 'text-lg'}>{opt.icon}</span>}
+              <div>
+                <div className={`arcade-font ${itemLabel}`} style={{ color: isActive ? color : '#d6e0ea' }}>{opt.label}</div>
+                <div className={`arcade-font ${itemDesc} mt-0.5 text-[#9fb0bf]`}>{opt.desc}</div>
+              </div>
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+const SEGUNDO_SAQUE_OPTIONS: SelectOption[] = [
+  { valor: 'SEGURO', label: '🛡️ SEGURO', desc: 'Menos dupla falta, menos pressão imediata.', color: 'var(--neon-green)' },
+  { valor: 'FORCAR', label: '⚡ FORÇAR', desc: 'Mais agressão no 2º saque, com risco maior.', color: 'var(--neon-yellow)' },
+]
+
 export function TacticalPackageEditor({
   mentalidade,
   abordagem,
@@ -233,122 +294,40 @@ export function TacticalPackageEditor({
   setSegundoSaque: (valor: SegundoSaqueModo) => void
   compact?: boolean
 }) {
-  const sectionLabel = compact ? 'text-[9px]' : 'text-[10px]'
-  const itemLabel = compact ? 'text-[10px]' : 'text-[11px]'
-  const itemDesc = compact ? 'text-[8px]' : 'text-[9px]'
-  const buttonPadding = compact ? 'p-2.5' : 'p-3'
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <div>
-        <div className={`arcade-font ${sectionLabel} mb-2 tracking-widest text-[#8fa3b5] uppercase`}>Mentalidade</div>
-        <div className="space-y-2">
-          {MENTALIDADES.map(m => (
-            <button
-              key={m.valor}
-              onClick={() => setMentalidade(m.valor)}
-              className={`w-full ${buttonPadding} flex items-center justify-between border-2 text-left transition-all`}
-              style={{
-                borderColor: mentalidade === m.valor ? m.color : '#1a1a2e',
-                background: mentalidade === m.valor ? `${m.color}15` : 'transparent',
-                boxShadow: mentalidade === m.valor ? `0 0 15px ${m.color}20` : 'none',
-              }}
-            >
-              <div className="flex items-center gap-3">
-                <span className={compact ? 'text-base' : 'text-lg'}>{m.emoji}</span>
-                <div>
-                  <div className={`arcade-font ${itemLabel}`} style={{ color: mentalidade === m.valor ? m.color : '#d6e0ea' }}>{m.label}</div>
-                  <div className={`arcade-font ${itemDesc} text-[#8ea3b7]`}>{m.desc}</div>
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <div className={`arcade-font ${sectionLabel} mb-2 tracking-widest text-[#8fa3b5] uppercase`}>Abordagem</div>
-        <div className="space-y-2">
-          {ABORDAGENS.map(a => (
-            <button
-              key={a.valor}
-              onClick={() => setAbordagem(a.valor)}
-              className={`w-full ${buttonPadding} flex items-center justify-between border-2 text-left transition-all`}
-              style={{
-                borderColor: abordagem === a.valor ? 'var(--neon-yellow)' : '#1a1a2e',
-                background: abordagem === a.valor ? '#ffe6000a' : 'transparent',
-              }}
-            >
-              <div className="flex items-center gap-3">
-                <span className={compact ? 'text-base' : 'text-lg'}>{a.icon}</span>
-                <div>
-                  <div className={`arcade-font ${itemLabel}`} style={{ color: abordagem === a.valor ? 'var(--neon-yellow)' : '#d6e0ea' }}>{a.label}</div>
-                  <div className={`arcade-font ${itemDesc} text-[#9fb0bf]`}>{a.desc}</div>
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <div className={`arcade-font ${sectionLabel} mb-2 tracking-widest text-[#8fa3b5] uppercase`}>Instrução Específica</div>
-        <div className="space-y-2">
-          {INSTRUCOES.map(i => (
-            <button
-              key={i.valor}
-              onClick={() => setInstrucao(i.valor)}
-              className={`w-full ${buttonPadding} border-2 text-left transition-all`}
-              style={{
-                borderColor: instrucao === i.valor ? 'var(--neon-green)' : '#1a1a2e',
-                background: instrucao === i.valor ? '#00ff880a' : 'transparent',
-              }}
-            >
-              <div className="flex items-center gap-3">
-                <span className={compact ? 'text-sm' : 'text-base'}>{i.emoji}</span>
-                <div>
-                  <div className={`arcade-font ${itemLabel}`} style={{ color: instrucao === i.valor ? 'var(--neon-green)' : '#d6e0ea' }}>{i.label}</div>
-                  <div className={`arcade-font ${itemDesc} mt-1 text-[#9fb0bf]`}>{i.desc}</div>
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <div className={`arcade-font ${sectionLabel} mb-2 tracking-widest text-[#8fa3b5] uppercase`}>Segundo Saque</div>
-        <div className="space-y-2">
-          {([
-            {
-              valor: 'SEGURO' as SegundoSaqueModo,
-              label: '🛡️ SEGURO',
-              desc: 'Menos dupla falta, menos pressão imediata.',
-              color: 'var(--neon-green)',
-            },
-            {
-              valor: 'FORCAR' as SegundoSaqueModo,
-              label: '⚡ FORÇAR',
-              desc: 'Mais agressão no 2º saque, com risco maior.',
-              color: 'var(--neon-yellow)',
-            },
-          ]).map((opcao) => (
-            <button
-              key={opcao.valor}
-              onClick={() => setSegundoSaque(opcao.valor)}
-              className={`w-full border px-3 ${compact ? 'py-2.5' : 'py-3'} text-left transition-all`}
-              style={{
-                borderColor: segundoSaque === opcao.valor ? opcao.color : '#1a1a2e',
-                background: segundoSaque === opcao.valor ? `${opcao.color}10` : 'transparent',
-              }}
-            >
-              <div className={`arcade-font ${itemLabel}`} style={{ color: segundoSaque === opcao.valor ? opcao.color : '#d6e0ea' }}>
-                {opcao.label}
-              </div>
-              <div className={`arcade-font ${itemDesc} mt-1 text-[#9fb0bf]`}>{opcao.desc}</div>
-            </button>
-          ))}
-        </div>
-      </div>
+      <OptionGroup
+        title="Mentalidade"
+        options={MENTALIDADES.map(m => ({ valor: m.valor, label: m.label, desc: m.desc, icon: m.emoji, color: m.color }))}
+        selected={mentalidade}
+        onSelect={setMentalidade}
+        activeColor="var(--neon-green)"
+        compact={compact}
+      />
+      <OptionGroup
+        title="Abordagem"
+        options={ABORDAGENS.map(a => ({ valor: a.valor, label: a.label, desc: a.desc, icon: a.icon }))}
+        selected={abordagem}
+        onSelect={setAbordagem}
+        activeColor="var(--neon-yellow)"
+        compact={compact}
+      />
+      <OptionGroup
+        title="Instrução Específica"
+        options={INSTRUCOES.map(i => ({ valor: i.valor, label: i.label, desc: i.desc, icon: i.emoji }))}
+        selected={instrucao}
+        onSelect={setInstrucao}
+        activeColor="var(--neon-green)"
+        compact={compact}
+      />
+      <OptionGroup
+        title="Segundo Saque"
+        options={SEGUNDO_SAQUE_OPTIONS}
+        selected={segundoSaque}
+        onSelect={setSegundoSaque}
+        activeColor="var(--neon-green)"
+        compact={compact}
+      />
     </div>
   )
 }

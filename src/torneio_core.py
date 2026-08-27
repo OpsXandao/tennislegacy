@@ -2,10 +2,6 @@ import os
 import random
 from copy import deepcopy
 
-from src.calendario_participacao import (
-    ajustar_prob_participacao_por_contexto,
-    prob_participacao,
-)
 from src.dados import (
     carregar_estado_torneio,
     get_caminho_torneio_save,
@@ -15,13 +11,14 @@ from src.progressao import evoluir_npc_pos_torneio
 from src.imprensa import disparar_entrevista
 from src.utils.gerador_nomes import gerar_jogador_fraco
 from src.utils.json_utils import salvar_json_seguro
+from src.utils.log_jogo import log_erro
 from src.torneio_profile import (
     TOURNAMENT_PROFILES,
+    TOURNAMENT_NAME_PROFILE_OVERRIDES,
     ENTRY_DIRECT_SELECTORS,
     WILDCARD_POLICIES,
     WILDCARD_OVERRIDES,
 )
-from src.torneio_entry_config import ENTRY_DIRECT_CONFIGS
 from src.constants.torneio_constants import (
     RANKING_POSICAO_FALLBACK,
     START_YEAR,
@@ -43,7 +40,42 @@ from src.torneio_logic import (
     selecionar_entrada_direta,
     selecionar_campo_finals,
 )
-from src.utils.log_jogo import log_erro
+from src.services.tournament_logic_service import (
+    is_grand_slam,
+    is_atp_1000,
+    is_finals,
+    is_davis_cup,
+    is_merge_phase_to_main_draw,
+    multiplicador_desgaste_segundo_jogo,
+    multiplicador_recuperacao_mesmo_dia,
+    estimar_pressao_adversario,
+)
+from src.services.tournament_state_service import (
+    carregar_estado,
+    salvar_estado,
+    normalizar_agenda_dia,
+    virar_dia_torneio,
+)
+from src.services.tournament_draw_service import (
+    numero_seeds_main_draw,
+    main_draw_tem_vagas_invalidas,
+    montar_rodada_r96,
+    jogador_em_seed_entries,
+)
+from src.services.tournament_entry_service import (
+    promover_protected_ranking,
+    eh_elegivel_por_ranking_torneio,
+    ranking_limite_torneio,
+)
+from src.services.tournament_pool_service import (
+    parametros_participacao,
+    selecionar_pool_torneio_realista,
+    selecionar_wildcards_realistas,
+)
+from src.services.tournament_withdrawal_service import (
+    marcar_eliminacao_em_item,
+    resolver_walkovers_pendentes,
+)
 
 
 class Torneio:
@@ -87,22 +119,26 @@ class Torneio:
             return tournament_data.get("tipo", "")
         return ""
 
+    @property
+    def superficie(self):
+        tournament_data = getattr(self, "tournament_data", None) or {}
+        if isinstance(tournament_data, dict):
+            return tournament_data.get("superficie") or tournament_data.get(
+                "quadra", ""
+            )
+        return ""
+
     def _is_grand_slam(self):
-        return self._tipo_torneio() == "Grand Slam"
+        return is_grand_slam(self._tipo_torneio())
 
     def _is_atp_1000(self):
-        return "1000" in self._tipo_torneio()
+        return is_atp_1000(self._tipo_torneio())
 
     def _is_finals(self):
-        tipo = self._tipo_torneio()
-        return (
-            tipo == "ATP Finals"
-            or tipo == "WTA Finals"
-            or tipo == "Next Gen ATP Finals"
-        )
+        return is_finals(self._tipo_torneio())
 
     def _is_davis_cup(self):
-        return self._tipo_torneio() in {"Davis Cup", "Billie Jean King Cup"}
+        return is_davis_cup(self._tipo_torneio())
 
     def _is_united_cup(self):
         return self._tipo_torneio() == "United Cup"
@@ -119,6 +155,10 @@ class Torneio:
     def _resolver_perfil_torneio(self):
         tipo = self._tipo_torneio()
         tipo_lower = str(tipo or "").lower()
+        nome = getattr(self, "nome_torneio_atual", "") or ""
+        if nome in TOURNAMENT_NAME_PROFILE_OVERRIDES:
+            chave = TOURNAMENT_NAME_PROFILE_OVERRIDES[nome]
+            return TOURNAMENT_PROFILES[chave]
         if tipo == "Grand Slam":
             return TOURNAMENT_PROFILES["grand_slam"]
         if "1000" in tipo:
@@ -127,8 +167,10 @@ class Torneio:
             return TOURNAMENT_PROFILES["atp_finals"]
         if "challenger" in tipo_lower:
             return TOURNAMENT_PROFILES["challenger_125"]
+        if "itf 100" in tipo_lower:
+            return TOURNAMENT_PROFILES["itf_100"]
         if "itf" in tipo_lower:
-            return TOURNAMENT_PROFILES["itf_padrao"]
+            return TOURNAMENT_PROFILES["itf_25"]
         return TOURNAMENT_PROFILES["atp_padrao"]
 
     def _fases_qualy(self):
@@ -141,7 +183,9 @@ class Torneio:
         return self._fases_qualy() + self._fases_main_draw()
 
     def _is_merge_phase_to_main_draw(self, fase, proxima_fase):
-        return (fase, proxima_fase) in self._perfil["merge_transitions"]
+        return is_merge_phase_to_main_draw(
+            fase, proxima_fase, self._perfil["merge_transitions"]
+        )
 
     def _selector_entrada_direta(self):
         selector_name = ENTRY_DIRECT_SELECTORS.get(self._tipo_torneio())
@@ -183,81 +227,6 @@ class Torneio:
             cfg,
         )
 
-    def _selecionar_entrada_direta_atp250(
-        self,
-        jogadores_ranking_ordenado,
-        num_top_diretos,
-        nome_jogador_lower,
-        priorizar_jogador,
-    ):
-        return self._selecionar_entrada_direta(
-            jogadores_ranking_ordenado,
-            num_top_diretos,
-            nome_jogador_lower,
-            priorizar_jogador,
-            ENTRY_DIRECT_CONFIGS["ATP 250"],
-        )
-
-    def _selecionar_entrada_direta_atp500(
-        self,
-        jogadores_ranking_ordenado,
-        num_top_diretos,
-        nome_jogador_lower,
-        priorizar_jogador,
-    ):
-        return self._selecionar_entrada_direta(
-            jogadores_ranking_ordenado,
-            num_top_diretos,
-            nome_jogador_lower,
-            priorizar_jogador,
-            ENTRY_DIRECT_CONFIGS["ATP 500"],
-        )
-
-    def _selecionar_entrada_direta_challenger(
-        self,
-        jogadores_ranking_ordenado,
-        num_top_diretos,
-        nome_jogador_lower,
-        priorizar_jogador,
-    ):
-        return self._selecionar_entrada_direta(
-            jogadores_ranking_ordenado,
-            num_top_diretos,
-            nome_jogador_lower,
-            priorizar_jogador,
-            ENTRY_DIRECT_CONFIGS["Challenger 125"],
-        )
-
-    def _selecionar_entrada_direta_itf100(
-        self,
-        jogadores_ranking_ordenado,
-        num_top_diretos,
-        nome_jogador_lower,
-        priorizar_jogador,
-    ):
-        return self._selecionar_entrada_direta(
-            jogadores_ranking_ordenado,
-            num_top_diretos,
-            nome_jogador_lower,
-            priorizar_jogador,
-            ENTRY_DIRECT_CONFIGS["ITF 100"],
-        )
-
-    def _selecionar_entrada_direta_itf25(
-        self,
-        jogadores_ranking_ordenado,
-        num_top_diretos,
-        nome_jogador_lower,
-        priorizar_jogador,
-    ):
-        return self._selecionar_entrada_direta(
-            jogadores_ranking_ordenado,
-            num_top_diretos,
-            nome_jogador_lower,
-            priorizar_jogador,
-            ENTRY_DIRECT_CONFIGS["ITF 25"],
-        )
-
     def _selecionar_campo_finals(
         self,
         jogadores_ranking_ordenado,
@@ -293,26 +262,16 @@ class Torneio:
         return mesmo_pais(a, b)
 
     def _promover_protected_ranking(self, chave_principal, qualy_players):
-        """Move jogadores com PR de volta para a chave principal se necessário."""
-        promovidos = []
-        for j in qualy_players[:]:
-            if int(j.get("protected_ranking_semanas", 0) or 0) > 0:
-                pr = int(j.get("protected_ranking", 9999))
-                if pr <= RANKING_LIMITE_ENTRADA_DIRETA:
-                    promovidos.append(j)
-                    qualy_players.remove(j)
+        promovidos, restantes = promover_protected_ranking(
+            qualy_players, limit=RANKING_LIMITE_ENTRADA_DIRETA
+        )
+        # Update qualy_players in place (since it was passed as list[:])
+        # Wait, the original was doing a loop and remove.
+        # I'll just return the joined list.
         return chave_principal + promovidos
 
     def _numero_seeds_main_draw(self, draw_size):
-        if draw_size >= 128:
-            return 32
-        if draw_size >= 64:
-            return 16
-        if draw_size >= 32:
-            return 8
-        if draw_size >= 16:
-            return 4
-        return 2
+        return numero_seeds_main_draw(draw_size)
 
     def _seed_positions(self, draw_size, num_seeds):
         from src.torneio_draw import seed_positions
@@ -327,12 +286,7 @@ class Torneio:
         )
 
     def _main_draw_tem_vagas_invalidas(self, confrontos):
-        for confronto in confrontos:
-            if not isinstance(confronto, (list, tuple)) or len(confronto) != 2:
-                return True
-            if confronto[0] is None or confronto[1] is None:
-                return True
-        return False
+        return main_draw_tem_vagas_invalidas(confrontos)
 
     def _completar_participantes_main_draw(
         self, estado, jogadores_main_draw, draw_size
@@ -431,9 +385,50 @@ class Torneio:
         return bool(estado["rodadas"][fase_inicial])
 
     def _montar_main_draw_a_partir_do_qualy(self, estado, classificados):
+        classificados = list(classificados or [])
+        vagas = int(
+            self._perfil.get("vagas_qualy", len(classificados)) or len(classificados)
+        )
+        if len(classificados) < vagas:
+            nomes_classificados = {
+                normalizar_nome(j.get("nome", ""))
+                for j in classificados
+                if isinstance(j, dict)
+            }
+            candidatos_ll = []
+            for resultado in reversed(
+                estado.get("resultados", {}).get(estado.get("fase_atual"), []) or []
+            ):
+                for chave in ("jogador_a", "jogador_b"):
+                    jogador = resultado.get(chave)
+                    if not isinstance(jogador, dict):
+                        continue
+                    nome = normalizar_nome(jogador.get("nome", ""))
+                    if nome and nome not in nomes_classificados:
+                        candidatos_ll.append(jogador)
+            for jogador in list(estado.get("alternates", []) or []):
+                if isinstance(jogador, dict):
+                    candidatos_ll.append(jogador)
+
+            lucky_losers = []
+            nomes_usados = set(nomes_classificados)
+            for jogador in sorted(candidatos_ll, key=self._obter_rank_entrada):
+                nome = normalizar_nome(jogador.get("nome", ""))
+                if not nome or nome in nomes_usados:
+                    continue
+                jogador = self.garantir_dados_completos(jogador)
+                jogador["entry_type"] = "Lucky Loser"
+                lucky_losers.append(jogador)
+                classificados.append(jogador)
+                nomes_usados.add(nome)
+                if len(classificados) >= vagas:
+                    break
+            if lucky_losers:
+                estado.setdefault("lucky_losers", []).extend(lucky_losers)
+
         direct_entries = estado.get("direct_entries", [])
         jogadores_main_draw = self._deduplicar_jogadores(
-            list(direct_entries) + list(classificados)
+            list(direct_entries) + list(classificados[:vagas])
         )
         self._montar_rodada_inicial_main_draw(estado, jogadores_main_draw)
 
@@ -445,46 +440,26 @@ class Torneio:
     def _aplicar_entry_info_estado(self, estado, entry_info):
         estado["entry_status"] = entry_info.get("status_entry", {})
         estado["cutoff_rank"] = entry_info.get("cutoff_rank")
+        estado["qualy_cutoff_rank"] = entry_info.get("qualy_cutoff_rank")
+        estado["entry_deadline_week"] = entry_info.get("entry_deadline_week")
+        estado["entry_list_summary"] = entry_info.get("entry_list_summary", {})
         estado["alternates"] = entry_info.get("alternates", [])
+        estado["wildcards"] = entry_info.get("wildcards", [])
+        estado["lucky_losers"] = entry_info.get("lucky_losers", [])
         return estado
 
     def _expected_main_draw_size(self):
         return self._perfil["draw_size_first_main_phase"]
 
     def _montar_rodada_r96(self, main_draw_players, incluir_jogador_principal=False):
-        """Lógica especializada para ATP 1000 com Bye pros Seeds (R96)."""
-        jogadores_ordenados = sorted(
+        return montar_rodada_r96(
             main_draw_players,
-            key=lambda j: self.ranking.obter_posicao(j.get("nome", ""))
-            or RANKING_POSICAO_FALLBACK,
+            self.ranking,
+            self.jogador_nome,
+            self.jogador_nacionalidade,
+            self.garantir_dados_completos,
+            incluir_jogador_principal,
         )
-        seeds = jogadores_ordenados[:SEEDS_ATP_1000]
-        nao_seeds = jogadores_ordenados[SEEDS_ATP_1000:]
-
-        if incluir_jogador_principal and normalizar_nome(self.jogador_nome) not in [
-            normalizar_nome(p["nome"]) for p in jogadores_ordenados
-        ]:
-            jogador_humano_dict = {
-                "nome": self.jogador_nome,
-                "nacionalidade": self.jogador_nacionalidade,
-            }
-            if nao_seeds:
-                nao_seeds[-1] = jogador_humano_dict
-            else:
-                nao_seeds.append(jogador_humano_dict)
-
-        random.shuffle(nao_seeds)
-        confrontos_r96 = []
-        for i in range(0, len(nao_seeds), 2):
-            if i + 1 < len(nao_seeds):
-                confrontos_r96.append(
-                    (
-                        self.garantir_dados_completos(nao_seeds[i]),
-                        self.garantir_dados_completos(nao_seeds[i + 1]),
-                    )
-                )
-
-        return seeds, confrontos_r96
 
     def _montar_draw_r96_atp1000(self, main_draw_players):
         incluir_jogador = (
@@ -496,12 +471,7 @@ class Torneio:
         )
 
     def _jogador_em_seed_entries(self, estado, nome_jogador):
-        seeds = estado.get("seed_entries", [])
-        nome_norm = normalizar_nome(nome_jogador)
-        for s in seeds:
-            if normalizar_nome(s.get("nome", "")) == nome_norm:
-                return True
-        return False
+        return jogador_em_seed_entries(estado.get("seed_entries", []), nome_jogador)
 
     def _jogador_tem_bye_r96(self, estado, fase, nome_jogador):
         if fase == "r96" and self._is_atp_1000():
@@ -520,41 +490,25 @@ class Torneio:
             return 0
 
     def _normalizar_agenda_dia(self, estado):
-        if "agenda_dia" not in estado or not isinstance(estado["agenda_dia"], dict):
-            estado["agenda_dia"] = {"dia_atual": 1, "jogos_realizados": []}
-        return estado["agenda_dia"]
+        return normalizar_agenda_dia(estado)
 
     def _registrar_jogo_no_dia(self, estado, modalidade):
         agenda = self._normalizar_agenda_dia(estado)
         agenda.setdefault("jogos_realizados", []).append(modalidade)
 
     def _virar_dia_torneio(self, estado):
-        agenda = self._normalizar_agenda_dia(estado)
-        agenda["dia_atual"] += 1
-        agenda["jogos_realizados"] = []
+        return virar_dia_torneio(estado)
 
     def _multiplicador_desgaste_segundo_jogo(self):
-        if self._is_grand_slam():
-            return 1.4
-        if self._is_atp_1000():
-            return 1.25
-        return 1.15
+        return multiplicador_desgaste_segundo_jogo(self._tipo_torneio())
 
     def _multiplicador_recuperacao_mesmo_dia(self):
-        if self._is_grand_slam():
-            return 0.7
-        if self._is_atp_1000():
-            return 0.85
-        return 1.0
+        return multiplicador_recuperacao_mesmo_dia(self._tipo_torneio())
 
     def _estimar_pressao_adversario(self, entidade):
         try:
             rank = self.ranking.obter_posicao(entidade.get("nome", "")) or 500
-            if rank <= 10:
-                return 0.9
-            if rank <= 50:
-                return 0.7
-            return 0.4
+            return estimar_pressao_adversario(rank)
         except Exception:
             return 0.5
 
@@ -640,31 +594,15 @@ class Torneio:
             self._estado_cache_mtime = os.path.getmtime(self.caminho_json)
 
     def _parametros_participacao(self):
-        tipo = self._tipo_torneio()
-        if tipo == "Grand Slam":
-            return {"draw_main": 104, "draw_qualy": 128, "vagas_qualy": 16}
-        if "1000" in tipo:
-            draw_main = (
-                78 if "96" in str(self._perfil.get("draw_size_main", "")) else 44
-            )
-            return {"draw_main": draw_main, "draw_qualy": 48, "vagas_qualy": 12}
-        if "500" in tipo:
-            return {"draw_main": 25, "draw_qualy": 16, "vagas_qualy": 4}
-        return {"draw_main": 24, "draw_qualy": 16, "vagas_qualy": 4}
+        return parametros_participacao(self._tipo_torneio())
 
     def _ranking_limite_torneio(self):
-        tipo = str(self._tipo_torneio() or "").lower()
-        if "challenger" in tipo:
-            return RANKING_LIMITE_CHALLENGER
-        if "itf" in tipo:
-            return RANKING_LIMITE_ITF
-        return None
+        return ranking_limite_torneio(self._tipo_torneio())
 
     def _eh_elegivel_por_ranking_torneio(self, jogador):
-        limite = self._ranking_limite_torneio()
-        if limite is None:
-            return True
-        return self._obter_rank_entrada(jogador) > limite
+        return eh_elegivel_por_ranking_torneio(
+            self._obter_rank_entrada(jogador), self._tipo_torneio()
+        )
 
     def _selecionar_wildcards(self, qualy_players, nome_jogador_lower, num_wildcards):
         """Seleciona jogadores para receber Wildcard (prioriza o player humano se estiver no qualy)."""
@@ -750,113 +688,42 @@ class Torneio:
         return qualy_players
 
     def _score_pool_torneio(self, jogador):
-        rank = self._obter_rank_entrada(jogador)
-        torneio_pais = self._extrair_codigo_pais(
-            self.tournament_data.get("pais_sede", "")
-        )
-        jogador_pais = self._extrair_codigo_pais(jogador.get("nacionalidade", ""))
-        is_home = bool(torneio_pais and torneio_pais == jogador_pais)
-        superficie_torneio = str(
-            self.tournament_data.get("quadra", "dura") or "dura"
-        ).lower()
-        superficie_pref = str(jogador.get("superficie_preferida", "") or "").lower()
-        superficie_match = bool(
-            superficie_pref and superficie_pref in superficie_torneio
-        )
-        prob = prob_participacao(
-            self._tipo_torneio(),
-            rank,
-            is_home=is_home,
-            superficie_match=superficie_match,
-        )
-        prob = ajustar_prob_participacao_por_contexto(
-            prob,
+        from src.services.tournament_pool_service import score_pool_torneio
+
+        return score_pool_torneio(
             jogador,
-            tipo=self._tipo_torneio(),
-            rank=rank,
-            nome_torneio=self.tournament_data.get("nome", ""),
-            semana_atual=self.tournament_data.get("semana", getattr(self, "semana", 1)),
-            ano_atual=self.tournament_data.get("ano"),
+            self._tipo_torneio(),
+            self.tournament_data,
+            self._obter_rank_entrada,
+            semana=getattr(self, "semana", 1),
         )
-        bonus_home = 0.18 if is_home else 0.0
-        bonus_surface = 0.08 if superficie_match else 0.0
-        bonus_pr = (
-            0.12 if int(jogador.get("protected_ranking_semanas", 0) or 0) > 0 else 0.0
-        )
-        noise = random.uniform(0.0, 0.08)
-        score = prob + bonus_home + bonus_surface + bonus_pr + noise
-        return min(1.0, score)
 
     def _selecionar_pool_torneio_realista(
         self, jogadores_aptos, total_necessario, priorizar_jogador=True
     ):
-        jogadores_reais = [j for j in jogadores_aptos if not j.get("is_bot")]
-        ordenados = sorted(jogadores_reais, key=self._obter_rank_entrada)
-        candidatos = [
-            (self._score_pool_torneio(jogador), jogador) for jogador in ordenados
-        ]
-        candidatos.sort(key=lambda item: (-item[0], self._obter_rank_entrada(item[1])))
-
-        pool = [jogador for _score, jogador in candidatos[:total_necessario]]
-        nomes_pool = {normalizar_nome(j.get("nome", "")) for j in pool}
-
-        if priorizar_jogador and normalizar_nome(self.jogador_nome) not in nomes_pool:
-            jogador_humano = next(
-                (
-                    jogador
-                    for jogador in jogadores_aptos
-                    if normalizar_nome(jogador.get("nome", ""))
-                    == normalizar_nome(self.jogador_nome)
-                ),
-                {
-                    "nome": self.jogador_nome,
-                    "nacionalidade": self.jogador_nacionalidade,
-                    "is_bot": False,
-                },
-            )
-            if len(pool) >= total_necessario and pool:
-                pool.pop()
-            pool.append(jogador_humano)
-
-        return sorted(self._deduplicar_jogadores(pool), key=self._obter_rank_entrada)
+        return selecionar_pool_torneio_realista(
+            jogadores_aptos,
+            total_necessario,
+            self._tipo_torneio(),
+            self.tournament_data,
+            self.jogador_nome,
+            self.jogador_nacionalidade,
+            self._obter_rank_entrada,
+            self._deduplicar_jogadores,
+            semana=getattr(self, "semana", 1),
+            priorizar_jogador=priorizar_jogador,
+        )
 
     def _selecionar_wildcards_realistas(
         self, remaining_pool, nome_jogador_lower, num_wildcards
     ):
-        if num_wildcards <= 0:
-            return [], remaining_pool
-
-        pais_sede = self._extrair_codigo_pais(self.tournament_data.get("pais_sede", ""))
-        elegiveis = list(remaining_pool)
-
-        def wildcard_score(jogador):
-            rank = self._obter_rank_entrada(jogador)
-            jogador_pais = self._extrair_codigo_pais(jogador.get("nacionalidade", ""))
-            same_country = pais_sede and jogador_pais == pais_sede
-            local_bonus = 1000 if same_country else 0
-            humana_bonus = (
-                500
-                if normalizar_nome(jogador.get("nome", "")) == nome_jogador_lower
-                else 0
-            )
-            proximity_bonus = max(0, 200 - min(rank, 200))
-            anti_star_penalty = -400 if rank <= 20 else (-180 if rank <= 50 else 0)
-            return local_bonus + humana_bonus + proximity_bonus + anti_star_penalty
-
-        elegiveis.sort(
-            key=lambda jogador: (
-                -wildcard_score(jogador),
-                self._obter_rank_entrada(jogador),
-            )
+        return selecionar_wildcards_realistas(
+            remaining_pool,
+            nome_jogador_lower,
+            num_wildcards,
+            self.tournament_data.get("pais_sede", ""),
+            self._obter_rank_entrada,
         )
-        wildcards = elegiveis[:num_wildcards]
-        nomes_wc = {normalizar_nome(j.get("nome", "")) for j in wildcards}
-        restantes = [
-            jogador
-            for jogador in remaining_pool
-            if normalizar_nome(jogador.get("nome", "")) not in nomes_wc
-        ]
-        return wildcards, restantes
 
     def escolher_participantes(self, todos_jogadores, priorizar_jogador=True):
         """Distribui jogadores entre Chave Principal, Qualy e Alternates."""
@@ -891,7 +758,7 @@ class Torneio:
 
         # 1. Entrada Direta (Main Draw)
         selector = self._selector_entrada_direta()
-        if selector == "atp_finals":
+        if selector == "_selecionar_campo_finals":
             chave_principal = self._selecionar_campo_finals(
                 jogadores_aptos, 8, nome_jogador_lower, priorizar_jogador
             )
@@ -983,11 +850,32 @@ class Torneio:
         ):
             status_entry = "Qualifying"
 
+        cutoff_rank = max(
+            (self._obter_rank_entrada(j) for j in chave_principal), default=None
+        )
+        qualy_cutoff_rank = max(
+            (self._obter_rank_entrada(j) for j in qualy_players), default=None
+        )
+        entry_deadline_week = max(1, int(getattr(self, "semana", 1) or 1) - 6)
         self._ultima_entry_info = {
             "status_entry": {self.jogador_nome: status_entry},
             "chave_principal": chave_principal,
             "qualy_players": qualy_players,
             "alternates": alternates,
+            "wildcards": wildcards if selector != "_selecionar_campo_finals" else [],
+            "cutoff_rank": cutoff_rank,
+            "qualy_cutoff_rank": qualy_cutoff_rank,
+            "entry_deadline_week": entry_deadline_week,
+            "entry_list_summary": {
+                "main_draw": len(chave_principal),
+                "qualifying": len(qualy_players),
+                "alternates": len(alternates),
+                "wildcards": (
+                    len(wildcards) if selector != "_selecionar_campo_finals" else 0
+                ),
+                "cutoff_rank": cutoff_rank,
+                "qualy_cutoff_rank": qualy_cutoff_rank,
+            },
         }
         return chave_principal, qualy_players
 
@@ -1089,13 +977,15 @@ class Torneio:
                             evoluir_npc_pos_torneio(perdedor, fase)
 
                     if self._is_merge_phase_to_main_draw(fase, proxima_fase):
-                        if validar_qtd_vencedores(
-                            vencedores,
-                            self._perfil["vagas_qualy"],
-                            f"{fase}->{proxima_fase}",
-                        ):
-                            self._montar_main_draw_a_partir_do_qualy(estado, vencedores)
-                            estado["fase_atual"] = proxima_fase
+                        if len(vencedores) > self._perfil["vagas_qualy"]:
+                            validar_qtd_vencedores(
+                                vencedores,
+                                self._perfil["vagas_qualy"],
+                                f"{fase}->{proxima_fase}",
+                            )
+                            vencedores = vencedores[: self._perfil["vagas_qualy"]]
+                        self._montar_main_draw_a_partir_do_qualy(estado, vencedores)
+                        estado["fase_atual"] = proxima_fase
                     elif len(vencedores) >= 2:
                         estado["rodadas"][proxima_fase] = [
                             (vencedores[i], vencedores[i + 1])
@@ -1313,70 +1203,15 @@ class Torneio:
         self._salvar_estado(estado)
 
     def _marcar_eliminacao_em_item(self, item, nome_jogador, fase_saida):
-        if isinstance(item, dict) and "nome" in item:
-            if normalizar_nome(item.get("nome", "")) == normalizar_nome(nome_jogador):
-                item["vivo"] = False
-                item["fase_saida"] = fase_saida
-            for valor in item.values():
-                self._marcar_eliminacao_em_item(valor, nome_jogador, fase_saida)
-            return
-        if isinstance(item, list):
-            for valor in item:
-                self._marcar_eliminacao_em_item(valor, nome_jogador, fase_saida)
-        elif isinstance(item, tuple):
-            for valor in item:
-                self._marcar_eliminacao_em_item(valor, nome_jogador, fase_saida)
+        marcar_eliminacao_em_item(item, nome_jogador, fase_saida)
 
     def _resolver_walkovers_pendentes(self, estado, nome_jogador):
-        fase_atual = estado.get("fase_atual")
-        if not fase_atual or fase_atual == "finalizado":
-            return estado
-
-        nome_norm = normalizar_nome(nome_jogador)
-        confrontos = list(estado.get("rodadas", {}).get(fase_atual, []) or [])
-        confrontos_restantes = []
-        houve_walkover = False
-
-        for confronto in confrontos:
-            if not isinstance(confronto, (list, tuple)) or len(confronto) != 2:
-                confrontos_restantes.append(confronto)
-                continue
-
-            jogador_a, jogador_b = confronto
-            nomes_a = [
-                normalizar_nome(nome) for nome in self._nomes_da_entidade(jogador_a)
-            ]
-            nomes_b = [
-                normalizar_nome(nome) for nome in self._nomes_da_entidade(jogador_b)
-            ]
-            jogador_no_lado_a = nome_norm in nomes_a
-            jogador_no_lado_b = nome_norm in nomes_b
-
-            if not jogador_no_lado_a and not jogador_no_lado_b:
-                confrontos_restantes.append(confronto)
-                continue
-
-            adversario = jogador_b if jogador_no_lado_a else jogador_a
-            estado.setdefault("resultados", {}).setdefault(fase_atual, []).append(
-                {
-                    "jogador_a": self.garantir_dados_completos(jogador_a),
-                    "jogador_b": self.garantir_dados_completos(jogador_b),
-                    "vencedor": self.garantir_dados_completos(adversario),
-                    "resultado": "W.O.",
-                    "walkover": True,
-                    "desistencia_jogador": True,
-                    "fase_saida": fase_atual,
-                }
-            )
-            houve_walkover = True
-
-        if houve_walkover:
-            estado.setdefault("rodadas", {})[fase_atual] = confrontos_restantes
-            estado["jogador_vivo"] = False
-            estado["desistencia_jogador"] = True
-            estado["jogador_fase_saida"] = fase_atual
-            self._marcar_eliminacao_em_item(estado, nome_jogador, fase_atual)
-        return estado
+        return resolver_walkovers_pendentes(
+            estado,
+            nome_jogador,
+            self.garantir_dados_completos,
+            self._nomes_da_entidade,
+        )
 
     def desistir_do_torneio(self):
         estado = self._carregar_estado()

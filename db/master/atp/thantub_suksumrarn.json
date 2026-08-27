@@ -2,24 +2,33 @@
   "nome": "Thantub Suksumrarn",
   "nacionalidade": "[TH]",
   "idade": 24,
-  "overall": 71,
+  "overall": 48,
   "pontos": 19,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 41,
+    "segundo_saque": 47,
+    "retorno": 42,
     "forehand": 51,
     "backhand": 40,
-    "topspin": 51,
     "voleio": 40,
-    "slice": 51,
-    "movimento": 40,
+    "smash": 47,
     "lob": 42,
+    "topspin": 51,
+    "slice": 51,
     "winner": 49,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 53,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 992,
   "atributos_psicologicos": {
-    "concentracao": 40,
+    "clutch": 40,
+    "consistencia": 67,
+    "compostura": 40,
     "agressividade": 38,
     "leitura_de_jogo": 48,
     "determinacao": 42
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Ellen Perez",
   "nacionalidade": "[AU] Austrália",
   "idade": 19,
-  "overall": 92,
+  "overall": 93,
   "pontos": 2855,
   "id": 60845,
   "atributos": {
-    "saque": 92,
+    "vel_saque": 92,
+    "pre_saque": 90,
+    "segundo_saque": 78,
+    "retorno": 90,
     "forehand": 94,
     "backhand": 86,
-    "topspin": 93,
     "voleio": 98,
-    "slice": 90,
-    "movimento": 98,
+    "smash": 97,
     "lob": 96,
-    "fisico": 98,
+    "topspin": 93,
+    "slice": 90,
     "winner": 91,
+    "velocidade": 98,
+    "aceleracao": 89,
+    "resistencia": 98,
+    "forca": 94,
+    "agilidade": 96,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 45,
+    "clutch": 45,
+    "consistencia": 50,
+    "compostura": 45,
     "agressividade": 55,
     "leitura_de_jogo": 42,
     "determinacao": 48
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "All-court",
   "pontos_ranking_duplas": 2855,
-  "rank_duplas": 22
+  "rank_duplas": 22,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

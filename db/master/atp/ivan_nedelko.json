@@ -2,24 +2,33 @@
   "nome": "Ivan Nedelko",
   "nacionalidade": "[RU]",
   "idade": 39,
-  "overall": 71,
+  "overall": 67,
   "pontos": 26,
   "atributos": {
-    "saque": 73,
+    "vel_saque": 71,
+    "pre_saque": 73,
+    "segundo_saque": 66,
+    "retorno": 72,
     "forehand": 66,
     "backhand": 72,
-    "topspin": 75,
     "voleio": 74,
-    "slice": 79,
-    "movimento": 67,
+    "smash": 68,
     "lob": 69,
+    "topspin": 75,
+    "slice": 79,
     "winner": 61,
-    "fisico": 60,
+    "velocidade": 64,
+    "aceleracao": 60,
+    "resistencia": 60,
+    "forca": 64,
+    "agilidade": 67,
     "duplas": 60
   },
   "id": 909,
   "atributos_psicologicos": {
-    "concentracao": 71,
+    "clutch": 71,
+    "consistencia": 39,
+    "compostura": 65,
     "agressividade": 66,
     "leitura_de_jogo": 72,
     "determinacao": 54
@@ -45,5 +54,10 @@
   "peso": 86,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

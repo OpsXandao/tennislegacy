@@ -2,24 +2,33 @@
   "nome": "Austin Krajicek",
   "nacionalidade": "[RU] Rússia",
   "idade": 31,
-  "overall": 88,
+  "overall": 85,
   "pontos": 1910,
   "id": 84186,
   "atributos": {
-    "saque": 85,
+    "vel_saque": 84,
+    "pre_saque": 85,
+    "segundo_saque": 70,
+    "retorno": 85,
     "forehand": 86,
     "backhand": 81,
-    "topspin": 91,
     "voleio": 95,
-    "slice": 95,
-    "movimento": 86,
+    "smash": 89,
     "lob": 81,
-    "fisico": 83,
+    "topspin": 91,
+    "slice": 95,
     "winner": 88,
+    "velocidade": 84,
+    "aceleracao": 78,
+    "resistencia": 83,
+    "forca": 83,
+    "agilidade": 86,
     "duplas": 100
   },
   "atributos_psicologicos": {
-    "concentracao": 59,
+    "clutch": 59,
+    "consistencia": 38,
+    "compostura": 52,
     "agressividade": 67,
     "leitura_de_jogo": 43,
     "determinacao": 40
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1910,
-  "rank_duplas": 51
+  "rank_duplas": 51,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -13,6 +13,7 @@ from api.session import (
     obter_sessao_ativa,
     Session,
     clear_sessao,
+    carregar_sessao,
 )
 from src.constants.torneio_constants import START_YEAR
 from src.dados import (
@@ -48,6 +49,7 @@ class CreateSaveRequest(BaseModel):
     idade: int = Field(default=18, ge=14, le=50)
     archetype_id: str = Field(default="3")
     mental_id: str = Field(default="5")
+    mao_dominante: str = Field(default="Destro")
 
     @validator("nome")
     def nome_valido(cls, v):
@@ -177,6 +179,8 @@ def criar_save(req: CreateSaveRequest):
     )
     jogador_inst.atributos = archetype_attrs.copy()
     jogador_inst.atributos_psicologicos = mental_attrs.copy()
+    if req.mao_dominante in ("Destro", "Canhoto"):
+        jogador_inst.mao_dominante = req.mao_dominante
 
     salvar_jogo(req.nome, jogador_inst)
 
@@ -229,8 +233,7 @@ def carregar_save(req: LoadSaveRequest):
         raise HTTPException(status_code=500, detail="Erro ao carregar jogador.")
 
     # Inicia sessão no pool e força rebuild dos rankings
-    session = Session(req.nome)
-    session.rebuild_rankings()
+    session = carregar_sessao(req.nome)
 
     log_event(logging.INFO, "save_carregado", save=req.nome, jogador=jogador_inst.nome)
 

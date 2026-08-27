@@ -4,7 +4,10 @@ from api.routes._carta import carta_jogador
 from api.session import obter_sessao_ativa, Session
 from src.player_identity import derive_player_identity
 from src.player_ratings import ajustar_atributo_duplas, calcular_overall_contextual
-from src.constants.staff_constants import EMPRESARIOS_DISPONIVEIS, PROFISSIONAIS_DISPONIVEIS
+from src.constants.staff_constants import (
+    EMPRESARIOS_DISPONIVEIS,
+    PROFISSIONAIS_DISPONIVEIS,
+)
 from src.constants.torneio_constants import RANKING_POSICAO_FALLBACK, START_YEAR
 
 router = APIRouter(prefix="/api/jogador")
@@ -57,19 +60,20 @@ def get_jogador(session: Session = Depends(obter_sessao_ativa)) -> JogadorRespon
 
     jogador_payload = j.to_dict()
     ajustar_atributo_duplas(jogador_payload)
+    attrs = jogador_payload["atributos"]
     resumo_fifa = {
-        "MOV": int(jogador_payload["atributos"].get("movimento", 60)),
-        "SAQ": int(jogador_payload["atributos"].get("saque", 60)),
-        "FOR": int(jogador_payload["atributos"].get("forehand", 60)),
-        "BAC": int(jogador_payload["atributos"].get("backhand", 60)),
-        "FIS": int(jogador_payload["atributos"].get("fisico", 60)),
+        "MOV": int(attrs.get("velocidade", 60)),
+        "SAQ": int(attrs.get("vel_saque", 60)),
+        "FOR": int(attrs.get("forehand", 60)),
+        "BAC": int(attrs.get("backhand", 60)),
+        "FIS": int(attrs.get("resistencia", 60)),
         "TEC": int(
             (
-                jogador_payload["atributos"].get("voleio", 60)
-                + jogador_payload["atributos"].get("topspin", 60)
-                + jogador_payload["atributos"].get("slice", 60)
-                + jogador_payload["atributos"].get("lob", 60)
-                + jogador_payload["atributos"].get("winner", 60)
+                attrs.get("voleio", 60)
+                + attrs.get("topspin", 60)
+                + attrs.get("slice", 60)
+                + attrs.get("lob", 60)
+                + attrs.get("winner", 60)
             )
             / 5
         ),
@@ -348,10 +352,10 @@ def get_rivalidades(session: Session = Depends(obter_sessao_ativa)):
             if normalizar_nome(jog) != j_norm:
                 adversario = jog
                 break
-        
+
         if not adversario:
             continue
-            
+
         adv_norm = normalizar_nome(adversario)
         if adv_norm not in stats_rival:
             stats_rival[adv_norm] = {
@@ -360,36 +364,39 @@ def get_rivalidades(session: Session = Depends(obter_sessao_ativa)):
                 "vitorias": 0,
                 "derrotas": 0,
                 "ultima_semana": 0,
-                "ultimo_ano": 0
+                "ultimo_ano": 0,
             }
-        
+
         stats = stats_rival[adv_norm]
         stats["confrontos"] += 1
-        
+
         vencedor = p.get("vencedor")
         venceu = False
         if isinstance(vencedor, list):
             venceu = any(normalizar_nome(v) == j_norm for v in vencedor)
         else:
             venceu = normalizar_nome(str(vencedor or "")) == j_norm
-            
+
         if venceu:
             stats["vitorias"] += 1
         else:
             stats["derrotas"] += 1
-            
+
         ano = int(p.get("ano", 0) or 0)
         semana = int(p.get("semana", 0) or 0)
-        if ano > stats["ultimo_ano"] or (ano == stats["ultimo_ano"] and semana > stats["ultima_semana"]):
+        if ano > stats["ultimo_ano"] or (
+            ano == stats["ultimo_ano"] and semana > stats["ultima_semana"]
+        ):
             stats["ultimo_ano"] = ano
             stats["ultima_semana"] = semana
 
     # Filtrar apenas quem tem 3+ confrontos (conforme X2-1)
     rivalidades = [s for s in stats_rival.values() if s["confrontos"] >= 3]
-    
-    # Adicionar flag de rival ativo (win_rate > 60% ou < 40%)
+
+    # Adicionar win_rate e flag de rival ativo (win_rate > 60% ou < 40%)
     for r in rivalidades:
-        win_rate = r["vitorias"] / r["confrontos"]
-        r["ativo"] = win_rate > 0.6 or win_rate < 0.4
+        win_rate = r["vitorias"] / r["confrontos"] if r["confrontos"] > 0 else 0.0
+        r["win_rate"] = round(win_rate, 3)
+        r["rival_ativo"] = win_rate > 0.6 or win_rate < 0.4
 
     return {"rivalidades": rivalidades}

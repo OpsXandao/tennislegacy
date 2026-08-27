@@ -43,12 +43,14 @@ export interface JogadorState {
   xp_para_proximo_nivel: number
   atributos: Record<string, number>
   atributos_psicologicos?: Record<string, number>
-  resumo_fifa?: Record<string, number>
   historico_partidas?: Array<Record<string, unknown>>
   historico_torneios?: Array<Record<string, unknown>>
   trofeus?: Array<Record<string, unknown>>
   carta?: CartaJogador
   identity?: PlayerIdentity
+  historico_ranking?: Array<{ semana: number; ano: number; posicao: number }>
+  pontos_duplas?: number
+  persona?: { ativa: string; titulo?: string }
 }
 
 export interface RankingEntry {
@@ -71,6 +73,37 @@ export interface BracketNode {
   fase: string
 }
 
+
+export interface WorldScheduleEvent {
+  id: string
+  tipo: 'player_match' | 'npc_match' | string
+  categoria: 'matchday' | 'world_sim' | string
+  ano: number
+  semana: number
+  dia: number
+  hora: string
+  torneio: string
+  tipo_torneio?: string
+  fase: string
+  jogador1: string
+  jogador2: string
+  quadra?: string
+  superficie?: string
+  melhor_de?: number
+  risco_atraso_clima?: number
+  janela_recuperacao_horas?: number
+  prioridade: number
+  status: 'scheduled' | 'completed' | string
+  stop_for_player: boolean
+  presentation: 'ea_matchday' | 'fm_result_tick' | string
+}
+
+export interface WorldSchedulePayload {
+  clock: { ano: number; semana: number; dia: number; hora: string }
+  events: WorldScheduleEvent[]
+  proximo_jogavel?: WorldScheduleEvent | null
+}
+
 export interface TorneioState {
   nome: string
   tipo: string
@@ -88,7 +121,22 @@ export interface TorneioState {
     fase: string
     adversario?: AdversarioInfo
   } | null
+  agenda?: WorldScheduleEvent[]
+  proximo_evento_jogavel?: WorldScheduleEvent | null
+  entry_list_summary?: { main_draw?: number; qualifying?: number; alternates?: number; wildcards?: number; cutoff_rank?: number; qualy_cutoff_rank?: number }
+  cutoff_rank?: number | null
+  qualy_cutoff_rank?: number | null
+  entry_deadline_week?: number | null
+  alternates?: Array<Record<string, unknown>>
+  wildcards?: Array<Record<string, unknown>>
+  lucky_losers?: Array<Record<string, unknown>>
   estado?: Record<string, unknown>
+  jogador_ativo_duplas?: boolean
+  fase_atual_duplas?: string
+  entry_status?: Record<string, unknown>
+  agenda_dia?: Record<string, unknown>
+  resultados?: Record<string, unknown>
+  resultados_duplas?: Record<string, unknown>
 }
 
 export interface PlacarState {
@@ -131,6 +179,18 @@ export interface MatchStrategySummary {
 export interface PlacarEvent extends PlacarState {
   tipo: 'ponto' | 'game' | 'set' | 'fim'
   descricao: string
+  descricao_json?: {
+    kind: string
+    headline: string
+    detail: string
+    winner: string | null
+    pressure: string
+    moment: string
+    mode: string
+    surface: string
+    tags: string[]
+    insights: string[]
+  }
   estrategia_j?: MatchStrategySummary
   estrategia_a?: MatchStrategySummary
 }
@@ -143,8 +203,14 @@ export interface MatchPointRuntime extends PlacarEvent {
     dupla_falta: boolean
     winner: boolean
     erro_nao_forcado: boolean
+    vencedor: string
     intensidade: string
     insights: string[]
+    momento: string
+    padrao: string
+    pressao: string
+    sequencia_j: number
+    sequencia_a: number
     origem: [number, number]
     destino: [number, number]
   }
@@ -156,6 +222,9 @@ export interface MatchPointRuntime extends PlacarEvent {
   estrategia_a: MatchStrategySummary
   ajuste_tatico_j: string
   ajuste_tatico_a: string
+  quimica_j?: { label: string; bonus_total: number; detalhes: string }
+  quimica_a?: { label: string; bonus_total: number; detalhes: string }
+  comentario_parceiro?: string
 }
 
 export interface TorneioCalendario {
@@ -172,6 +241,7 @@ export interface TorneioCalendario {
   horario_local?: string
   sessao_label?: string
   janela_semana?: string
+  ultimo_campeao?: string | null
 }
 
 export interface MundoTorneio extends TorneioCalendario {}
@@ -237,13 +307,26 @@ export interface WeekAdvancePayload {
   processamento?: WeekAdvanceStep[]
   torneios_disponiveis?: TorneioCalendario[]
   resumo_mundial: ResumoDaSemana
+  recuperacao?: Record<string, unknown>
+  pontos_expirados?: number
+  nova_posicao_ranking?: number | null
+  rival_info?: {
+    nome: string
+    ranking: number
+    h2h: { v: number; d: number }
+  } | null
 }
 
 export interface MembroEquipe {
   nome: string
   nivel: number
   custo_semanal: number
+  categoria?: string
+  estilo?: string
+  descricao?: string
   bonus: Record<string, number>
+  surface_fit?: number
+  contrato_semanas?: number
 }
 
 export interface Patrocinio {
@@ -339,7 +422,7 @@ export interface RaceToFinals {
   top8: RaceEntry[]
   posicao_jogador: number | null
   pontos_jogador: number
-  faltam_para_classificar: number
+  faltam_para_classificar?: number
 }
 
 export interface TorneioAoVivo {
@@ -350,6 +433,20 @@ export interface TorneioAoVivo {
   campeao_simples: string | null
   campeao_duplas: string | null
   finalizado: boolean
+}
+
+
+export interface NewsItem {
+  id: string
+  tipo: string
+  titulo: string
+  subtitulo?: string
+  impacto?: 'alto' | 'medio' | 'baixo' | string
+  jogador?: string
+  torneio?: string
+  semana?: number
+  prioridade?: number
+  texto: string
 }
 
 export interface NacaoRanking {
@@ -393,6 +490,7 @@ export interface AdversarioInfo {
   historico_torneios?: Array<Record<string, unknown>>
   historico_partidas?: Array<Record<string, unknown>>
   resumo_fifa?: Record<string, number>
+  carta?: CartaJogador
 }
 
 export interface CartaJogador {
@@ -500,6 +598,7 @@ export interface PartidaAtiva {
   config: PartidaConfig
   adversario: AdversarioInfo
   placar: PlacarState
+  encerrado?: boolean
 }
 
 export interface PartidaIniciar {
@@ -533,6 +632,7 @@ export interface PartidaScout {
   dicas: string[]
   pontos_fortes: string[]
   fraquezas: string[]
+  is_rival?: boolean
 }
 
 export interface MembroMercado {
@@ -544,6 +644,10 @@ export interface MembroMercado {
   salario_semanal?: number
   bonus?: Record<string, number>
   estrelas?: number
+  estilo?: string
+  descricao?: string
+  surface_fit?: number
+  contrato_semanas?: number
 }
 
 export interface EmailItem {
@@ -554,19 +658,26 @@ export interface EmailItem {
   lido: boolean
   tipo?: string
   acao?: string
+  status?: string
+  mensagem?: string
+  titulo?: string
+  oferta?: Record<string, unknown>
 }
 
 export interface GoatRecordes {
-  mais_titulos?: string
-  mais_grand_slams?: string
+  mais_titulos?: Array<{ nome: string; titulos: number }>
+  mais_grand_slams?: Array<{ nome: string; grand_slams: number }>
   mais_semanas_no_1?: string
-  [key: string]: string | number | undefined
+  mais_semanas_no_topo?: Array<{ nome: string; semanas: number }>
+  [key: string]: unknown
 }
 
 export interface TituloCarreira {
   torneio: string
   ano: number
   modalidade?: string
+  tipo?: string
+  adversario_final?: string
 }
 
 export interface VinculoDupla {

@@ -2,24 +2,33 @@
   "nome": "Leandro Riedi",
   "nacionalidade": "[CH]",
   "idade": 24,
-  "overall": 80,
+  "overall": 50,
   "pontos": 356,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 42,
+    "segundo_saque": 47,
+    "retorno": 49,
     "forehand": 42,
     "backhand": 49,
-    "topspin": 49,
     "voleio": 50,
-    "slice": 47,
-    "movimento": 51,
+    "smash": 54,
     "lob": 58,
+    "topspin": 49,
+    "slice": 47,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 54,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 52,
     "duplas": 60
   },
   "id": 205,
   "atributos_psicologicos": {
-    "concentracao": 47,
+    "clutch": 47,
+    "consistencia": 56,
+    "compostura": 45,
     "agressividade": 49,
     "leitura_de_jogo": 48,
     "determinacao": 43
@@ -45,5 +54,10 @@
   "peso": 74,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

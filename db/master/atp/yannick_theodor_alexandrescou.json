@@ -2,24 +2,33 @@
   "nome": "Yannick Theodor Alexandrescou",
   "nacionalidade": "[FR]",
   "idade": 18,
-  "overall": 69,
+  "overall": 50,
   "pontos": 5,
   "atributos": {
-    "saque": 55,
+    "vel_saque": 55,
+    "pre_saque": 52,
+    "segundo_saque": 56,
+    "retorno": 47,
     "forehand": 44,
     "backhand": 54,
-    "topspin": 50,
     "voleio": 52,
-    "slice": 40,
-    "movimento": 41,
+    "smash": 54,
     "lob": 51,
+    "topspin": 50,
+    "slice": 40,
     "winner": 44,
-    "fisico": 60,
+    "velocidade": 48,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 1310,
   "atributos_psicologicos": {
-    "concentracao": 37,
+    "clutch": 37,
+    "consistencia": 55,
+    "compostura": 40,
     "agressividade": 50,
     "leitura_de_jogo": 38,
     "determinacao": 49
@@ -45,5 +54,10 @@
   "peso": 75,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  }
 }

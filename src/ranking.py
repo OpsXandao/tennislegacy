@@ -365,12 +365,15 @@ class SistemaRanking:
         c_tot = "pontos" if is_s else "pontos_duplas"
 
         if should_recalc:
+            if is_s:
+                _, genero = self._inferir_contexto_ranking()
+                top_n = 16 if genero == "feminino" else 19
             for j in self.ranking:
                 det = j.get(c_pts, [])
                 if det:
                     pts_ord = sorted((p.get("pontos", 0) for p in det), reverse=True)
-                    # Simples: top 18 resultados. Duplas: todos os resultados (ATP real)
-                    j[c_rk] = sum(pts_ord[:18]) if is_s else sum(pts_ord)
+                    # Simples: top 16 (WTA) ou top 19 (ATP) resultados. Duplas: todos (ATP real)
+                    j[c_rk] = sum(pts_ord[:top_n]) if is_s else sum(pts_ord)
                     j[c_tot] = sum(pts_ord)
                 else:
                     # Se não tem detalhes, pontos_ranking é o total

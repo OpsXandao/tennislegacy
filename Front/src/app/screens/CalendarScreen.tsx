@@ -19,6 +19,8 @@ export function CalendarScreen() {
     erroInscricao,
     convocacao,
     scrollRef,
+    torneioAtivo,
+    handleSelectTorneio,
     handleConfirmarInscricao,
     handleRecusarConvocacao,
     handleDescansar,
@@ -57,7 +59,8 @@ export function CalendarScreen() {
           convocacao={convocacao}
           inscrevendo={inscrevendo}
           erroInscricao={erroInscricao}
-          onSelectTournament={setTorneioParaInscrever}
+          torneioAtivo={torneioAtivo}
+          onSelectTournament={handleSelectTorneio}
           onConfirmCallup={() => handleConfirmarInscricao('simples')}
           onDeclineCallup={handleRecusarConvocacao}
         />
@@ -65,8 +68,8 @@ export function CalendarScreen() {
 
       <ActionDock>
         <div className="mx-auto w-full max-w-6xl">
-          <NeonButton variant="pink" className="w-full" onClick={handleDescansar}>
-            {torneiosSemana.length > 0 ? 'DESCANSAR (PULAR SEMANA)' : 'PULAR SEMANA'}
+          <NeonButton variant="pink" className="w-full" disabled={torneioAtivo} onClick={handleDescansar}>
+            [ PULAR SEMANA (RECUPERAR ENERGIA) ]
           </NeonButton>
         </div>
       </ActionDock>

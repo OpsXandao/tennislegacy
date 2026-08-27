@@ -1,0 +1,80 @@
+{
+  "nome": "Cruz Hewitt",
+  "nacionalidade": "[AU]",
+  "pontos": 51,
+  "pontos_duplas": 0,
+  "pontos_ranking": 51,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 51,
+  "energia": 100,
+  "fadiga": 32,
+  "moral": 80,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 53,
+    "pre_saque": 51,
+    "segundo_saque": 56,
+    "retorno": 48,
+    "forehand": 57,
+    "backhand": 54,
+    "voleio": 41,
+    "smash": 47,
+    "lob": 41,
+    "topspin": 50,
+    "slice": 47,
+    "winner": 45,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 57,
+    "agilidade": 45,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 34,
+    "consistencia": 53,
+    "compostura": 39,
+    "agressividade": 52,
+    "leitura_de_jogo": 34,
+    "determinacao": 52
+  },
+  "historico_torneios": [],
+  "historico_partidas": [],
+  "pontos_detalhados": [
+    {
+      "pontos": 51,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {
+    "lesionado": false,
+    "semanas_restantes": 0,
+    "nivel": "saudavel",
+    "penalidade_atributos": 0.0
+  },
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "idade": 17,
+  "id": 697,
+  "pico_carreira": 665,
+  "altura": 176,
+  "peso": 78,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
+}

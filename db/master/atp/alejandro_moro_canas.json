@@ -2,24 +2,33 @@
   "nome": "Alejandro Moro Canas",
   "nacionalidade": "[ES]",
   "idade": 25,
-  "overall": 78,
+  "overall": 50,
   "pontos": 229,
   "atributos": {
-    "saque": 41,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 48,
+    "retorno": 50,
     "forehand": 47,
     "backhand": 54,
-    "topspin": 50,
     "voleio": 40,
-    "slice": 40,
-    "movimento": 51,
+    "smash": 48,
     "lob": 53,
+    "topspin": 50,
+    "slice": 40,
     "winner": 51,
-    "fisico": 60,
+    "velocidade": 54,
+    "aceleracao": 52,
+    "resistencia": 60,
+    "forca": 55,
+    "agilidade": 51,
     "duplas": 60
   },
   "id": 277,
   "atributos_psicologicos": {
-    "concentracao": 30,
+    "clutch": 30,
+    "consistencia": 59,
+    "compostura": 34,
     "agressividade": 46,
     "leitura_de_jogo": 42,
     "determinacao": 44
@@ -45,5 +54,10 @@
   "peso": 68,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Braden Shick",
   "nacionalidade": "[US]",
   "idade": 22,
-  "overall": 76,
+  "overall": 49,
   "pontos": 112,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 43,
+    "segundo_saque": 48,
+    "retorno": 46,
     "forehand": 53,
     "backhand": 51,
-    "topspin": 42,
     "voleio": 40,
-    "slice": 46,
-    "movimento": 40,
+    "smash": 47,
     "lob": 47,
+    "topspin": 42,
+    "slice": 46,
     "winner": 55,
-    "fisico": 60,
+    "velocidade": 47,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 45,
     "duplas": 60
   },
   "id": 453,
   "atributos_psicologicos": {
-    "concentracao": 35,
+    "clutch": 35,
+    "consistencia": 54,
+    "compostura": 38,
     "agressividade": 51,
     "leitura_de_jogo": 44,
     "determinacao": 46
@@ -45,5 +54,10 @@
   "peso": 80,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

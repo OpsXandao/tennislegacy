@@ -2,24 +2,33 @@
   "nome": "Alexey Vatutin",
   "nacionalidade": "[RU]",
   "idade": 33,
-  "overall": 76,
+  "overall": 70,
   "pontos": 106,
   "atributos": {
-    "saque": 73,
+    "vel_saque": 71,
+    "pre_saque": 74,
+    "segundo_saque": 70,
+    "retorno": 76,
     "forehand": 74,
     "backhand": 80,
-    "topspin": 70,
     "voleio": 67,
-    "slice": 73,
-    "movimento": 73,
+    "smash": 64,
     "lob": 70,
+    "topspin": 70,
+    "slice": 73,
     "winner": 75,
-    "fisico": 60,
+    "velocidade": 68,
+    "aceleracao": 63,
+    "resistencia": 60,
+    "forca": 68,
+    "agilidade": 70,
     "duplas": 60
   },
   "id": 473,
   "atributos_psicologicos": {
-    "concentracao": 54,
+    "clutch": 54,
+    "consistencia": 51,
+    "compostura": 58,
     "agressividade": 54,
     "leitura_de_jogo": 63,
     "determinacao": 69
@@ -45,5 +54,10 @@
   "peso": 79,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

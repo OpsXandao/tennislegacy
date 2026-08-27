@@ -2,24 +2,33 @@
   "nome": "Rudy Quan",
   "nacionalidade": "[US]",
   "idade": 20,
-  "overall": 71,
+  "overall": 51,
   "pontos": 21,
   "atributos": {
-    "saque": 44,
+    "vel_saque": 46,
+    "pre_saque": 46,
+    "segundo_saque": 47,
+    "retorno": 48,
     "forehand": 50,
     "backhand": 49,
-    "topspin": 53,
     "voleio": 57,
-    "slice": 53,
-    "movimento": 43,
+    "smash": 57,
     "lob": 52,
+    "topspin": 53,
+    "slice": 53,
     "winner": 47,
-    "fisico": 60,
+    "velocidade": 49,
+    "aceleracao": 48,
+    "resistencia": 60,
+    "forca": 54,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 966,
   "atributos_psicologicos": {
-    "concentracao": 38,
+    "clutch": 38,
+    "consistencia": 54,
+    "compostura": 36,
     "agressividade": 51,
     "leitura_de_jogo": 51,
     "determinacao": 34
@@ -45,5 +54,10 @@
   "peso": 79,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

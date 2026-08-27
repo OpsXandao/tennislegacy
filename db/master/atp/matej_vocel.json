@@ -2,24 +2,33 @@
   "nome": "Matej Vocel",
   "nacionalidade": "[RU] Rússia",
   "idade": 18,
-  "overall": 88,
+  "overall": 87,
   "pontos": 1403,
   "id": 34177,
   "atributos": {
-    "saque": 94,
+    "vel_saque": 93,
+    "pre_saque": 89,
+    "segundo_saque": 78,
+    "retorno": 83,
     "forehand": 88,
     "backhand": 85,
-    "topspin": 82,
     "voleio": 97,
-    "slice": 79,
-    "movimento": 84,
+    "smash": 94,
     "lob": 89,
-    "fisico": 91,
+    "topspin": 82,
+    "slice": 79,
     "winner": 94,
+    "velocidade": 86,
+    "aceleracao": 79,
+    "resistencia": 91,
+    "forca": 88,
+    "agilidade": 84,
     "duplas": 101
   },
   "atributos_psicologicos": {
-    "concentracao": 70,
+    "clutch": 70,
+    "consistencia": 51,
+    "compostura": 63,
     "agressividade": 54,
     "leitura_de_jogo": 44,
     "determinacao": 49
@@ -42,5 +51,10 @@
   "reves": "Uma mão",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 1403,
-  "rank_duplas": 65
+  "rank_duplas": 65,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

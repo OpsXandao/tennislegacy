@@ -29,11 +29,11 @@ export function ScoutingReportCard({
   return (
     <div
       className="space-y-4 border p-4"
-      style={{ borderColor: `${accent}40`, background: `${accent}0a` }}
+      style={{ borderColor: `color-mix(in srgb, ${accent} 25%, transparent)`, background: `color-mix(in srgb, ${accent} 4%, transparent)` }}
     >
       <div
         className="flex items-center justify-between border-b pb-2"
-        style={{ borderColor: `${accent}20` }}
+        style={{ borderColor: `color-mix(in srgb, ${accent} 13%, transparent)` }}
       >
         <div
           className="arcade-font text-[11px] tracking-widest uppercase"
@@ -51,9 +51,9 @@ export function ScoutingReportCard({
           <div
             key={stat.label}
             className="border bg-black/40 p-1.5 text-center"
-            style={{ borderColor: `${accent}20` }}
+            style={{ borderColor: `color-mix(in srgb, ${accent} 13%, transparent)` }}
           >
-            <div className="arcade-font mb-1 text-[9px] text-[#888]">
+            <div className="arcade-font mb-1 text-[10px] text-[#b7c7d8]">
               {stat.label.toUpperCase()}
             </div>
             <div
@@ -74,7 +74,7 @@ export function ScoutingReportCard({
           {report.pontosFortes.map((tag) => (
             <span
               key={tag}
-              className="arcade-font border border-neon-green/20 bg-neon-green/10 px-1.5 py-0.5 text-[7px] text-neon-green"
+              className="arcade-font border border-neon-green/20 bg-neon-green/10 px-1.5 py-0.5 text-[9px] text-neon-green"
             >
               {tag}
             </span>
@@ -82,7 +82,7 @@ export function ScoutingReportCard({
           {report.fraquezas.map((tag) => (
             <span
               key={tag}
-              className="arcade-font border border-[#ff4466]/20 bg-[#ff4466]/10 px-1.5 py-0.5 text-[7px] text-[#ff4466]"
+              className="arcade-font border border-[#ff4466]/20 bg-[#ff4466]/10 px-1.5 py-0.5 text-[9px] text-[#ff6680]"
             >
               {tag}
             </span>
@@ -90,18 +90,18 @@ export function ScoutingReportCard({
         </div>
 
         <div className="space-y-2">
-          <div className="arcade-font text-[10px] leading-relaxed text-white/80">
+          <div className="arcade-font text-[12px] leading-relaxed text-[#eaf4ff]">
             {report.texto}
           </div>
           {report.dicas.length > 0 && (
             <div className="space-y-1 border-l-2 border-neon-yellow bg-neon-yellow/5 p-2">
-              <div className="arcade-font text-[8px] tracking-widest text-neon-yellow">
+              <div className="arcade-font text-[10px] tracking-widest text-neon-yellow">
                 DICA TÁTICA
               </div>
               {report.dicas.map((dica, idx) => (
                 <div
                   key={`${idx}-${dica}`}
-                  className="arcade-font text-[9px] leading-snug text-[#d6f2ff]"
+                  className="arcade-font text-[11px] leading-relaxed text-[#eaf4ff]"
                 >
                   • {dica}
                 </div>

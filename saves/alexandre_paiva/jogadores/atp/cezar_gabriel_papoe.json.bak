@@ -1,0 +1,88 @@
+{
+  "nome": "Cezar Gabriel Papoe",
+  "nacionalidade": "[RO]",
+  "pontos": 12,
+  "pontos_duplas": 0,
+  "pontos_ranking": 12,
+  "pontos_ranking_duplas": 0,
+  "pontos_ytd": 0,
+  "overall": 46,
+  "energia": 82,
+  "fadiga": 2,
+  "moral": 70,
+  "is_lean": false,
+  "is_bot": false,
+  "e_ficticio": false,
+  "atributos": {
+    "vel_saque": 43,
+    "pre_saque": 40,
+    "segundo_saque": 44,
+    "retorno": 40,
+    "forehand": 47,
+    "backhand": 40,
+    "voleio": 40,
+    "smash": 48,
+    "lob": 50,
+    "topspin": 48,
+    "slice": 40,
+    "winner": 40,
+    "velocidade": 48,
+    "aceleracao": 47,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 45,
+    "duplas": 60
+  },
+  "atributos_psicologicos": {
+    "clutch": 31,
+    "consistencia": 73,
+    "compostura": 30,
+    "agressividade": 32,
+    "leitura_de_jogo": 40,
+    "determinacao": 30
+  },
+  "historico_torneios": [],
+  "historico_partidas": [
+    {
+      "ano": 2026,
+      "semana": 1,
+      "torneio": "Hong Kong Open",
+      "fase": "qualy_2",
+      "adversario": "Alexandre Paiva",
+      "placar": "Alexandre Paiva 2 x 0 Cezar Gabriel Papoe",
+      "resultado": "D"
+    }
+  ],
+  "pontos_detalhados": [
+    {
+      "pontos": 12,
+      "semana_expiracao": 52,
+      "ano_expiracao": 2027
+    }
+  ],
+  "pontos_detalhados_duplas": [],
+  "status_lesao": {},
+  "status_doenca": {},
+  "protected_ranking": null,
+  "protected_ranking_semanas": 0,
+  "idade": 18,
+  "titulos_total": 0,
+  "ultimo_titulo_ano": null,
+  "trofeus": [],
+  "dinheiro": 0,
+  "superficie_preferida": "dura",
+  "e_jogador_principal": false,
+  "id": 1113,
+  "pico_carreira": 1093,
+  "altura": 175,
+  "peso": 75,
+  "mao_dominante": "Destro",
+  "reves": "Duas mãos",
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 70,
+    "hard": 70,
+    "grama": 70
+  },
+  "ranking_pos": 1082
+}

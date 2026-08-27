@@ -2,24 +2,33 @@
   "nome": "Pablo Carreno Busta",
   "nacionalidade": "[ES]",
   "idade": 34,
-  "overall": 82,
+  "overall": 67,
   "pontos": 516,
   "atributos": {
-    "saque": 62,
+    "vel_saque": 61,
+    "pre_saque": 65,
+    "segundo_saque": 67,
+    "retorno": 72,
     "forehand": 71,
     "backhand": 73,
-    "topspin": 66,
     "voleio": 68,
-    "slice": 72,
-    "movimento": 71,
+    "smash": 65,
     "lob": 72,
+    "topspin": 66,
+    "slice": 72,
     "winner": 71,
-    "fisico": 60,
+    "velocidade": 66,
+    "aceleracao": 62,
+    "resistencia": 60,
+    "forca": 65,
+    "agilidade": 68,
     "duplas": 60
   },
   "id": 100,
   "atributos_psicologicos": {
-    "concentracao": 54,
+    "clutch": 54,
+    "consistencia": 35,
+    "compostura": 61,
     "agressividade": 75,
     "leitura_de_jogo": 60,
     "determinacao": 76
@@ -81,5 +90,10 @@
   "peso": 79,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 78,
+    "hard": 68,
+    "grama": 60
+  }
 }

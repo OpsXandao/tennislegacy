@@ -1,0 +1,25 @@
+{
+  "titles": {
+    "Neutro": "Promessa",
+    "Iceman": "Foco Absoluto",
+    "Bad Boy": "Rebelde do Tour",
+    "People's Champ": "Ídolo Local"
+  },
+  "descriptions": {
+    "Iceman": "Frio, calculista e imperturbável. O tour respeita seu profissionalismo, mas poucos o conhecem de verdade.",
+    "Bad Boy": "Polêmico e arrogante. Você é o vilão que o circuito ama odiar, atraindo holofotes e críticas na mesma medida.",
+    "People's Champ": "O favorito dos fãs. Sua humildade e entrega em quadra inspiram uma legião de seguidores por onde passa."
+  },
+  "milestones": {
+    "signing": {
+      "headline": "PROFESSIONAL TOUR CONTRACT",
+      "body": "Este documento formaliza a entrada do atleta no circuito profissional de tênis, comprometendo-se com a integridade e a excelência."
+    },
+    "newspaper": {
+      "generic_win": {
+        "headline": "{player} É O CAMPEÃO EM {tournament}!",
+        "subheadline": "O jovem talento supera {opponent} em uma final histórica para conquistar o título."
+      }
+    }
+  }
+}

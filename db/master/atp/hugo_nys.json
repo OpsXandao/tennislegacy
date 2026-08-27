@@ -2,24 +2,33 @@
   "nome": "Hugo Nys",
   "nacionalidade": "[RU] Rússia",
   "idade": 35,
-  "overall": 92,
+  "overall": 93,
   "pontos": 3090,
   "id": 29689,
   "atributos": {
-    "saque": 87,
+    "vel_saque": 88,
+    "pre_saque": 88,
+    "segundo_saque": 80,
+    "retorno": 91,
     "forehand": 94,
     "backhand": 87,
-    "topspin": 88,
     "voleio": 98,
-    "slice": 95,
-    "movimento": 98,
+    "smash": 98,
     "lob": 98,
-    "fisico": 98,
+    "topspin": 88,
+    "slice": 95,
     "winner": 95,
+    "velocidade": 98,
+    "aceleracao": 89,
+    "resistencia": 98,
+    "forca": 94,
+    "agilidade": 97,
     "duplas": 97
   },
   "atributos_psicologicos": {
-    "concentracao": 54,
+    "clutch": 54,
+    "consistencia": 50,
+    "compostura": 56,
     "agressividade": 55,
     "leitura_de_jogo": 61,
     "determinacao": 63
@@ -42,5 +51,10 @@
   "reves": "Duas mãos",
   "estilo_jogo": "Aggressive Baseliner",
   "pontos_ranking_duplas": 3090,
-  "rank_duplas": 17
+  "rank_duplas": 17,
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

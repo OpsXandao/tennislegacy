@@ -43,7 +43,7 @@ class Session:
 
     def refresh(self) -> None:
         """Recarrega jogador e temporada do disco."""
-        from src.dados import carregar_temporada, carregar_jogador
+        from src.dados import carregar_temporada
 
         self.jogador = carregar_jogador(self.nome_save_ativo)
         temp = carregar_temporada(self.nome_save_ativo)
@@ -194,13 +194,26 @@ def refresh_session(nome_save: str) -> None:
     with _pool_lock:
         entrada = _sessions_pool.get(nome_save)
         if not entrada:
+            # Se não existe, cria (equivalente a carregar)
+            sess = Session(nome_save)
+            _sessions_pool[nome_save] = (sess, time.monotonic())
             return
+        
         sess = entrada[0]
         sess.refresh()
         # Usa método de encapsulamento para limpar rankings
         sess.clear_ranking_cache()
         # Atualiza timestamp de acesso
         _sessions_pool[nome_save] = (sess, time.monotonic())
+
+
+def carregar_sessao(nome_save: str) -> Session:
+    """Força o carregamento/inicialização de uma sessão no pool."""
+    with _pool_lock:
+        sess = Session(nome_save)
+        sess.rebuild_rankings()
+        _sessions_pool[nome_save] = (sess, time.monotonic())
+        return sess
 
 
 def clear_sessao(nome_save: Optional[str] = None) -> None:

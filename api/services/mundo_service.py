@@ -30,14 +30,6 @@ _FLAGS: dict[str, str] = {
     "ESA": "🇸🇻", "PAK": "🇵🇰", "RSA": "🇿🇦", "SLO": "🇸🇮", "THA": "🇹🇭",
 }
 
-_FRASES_MUNDO = [
-    "AUDIÊNCIA DO TÊNIS SOBE 20% NESTA TEMPORADA.",
-    "NOVAS REGRAS DE QUADRA ESTÃO SENDO TESTADAS PARA 2027.",
-    "TOUR MUNDIAL ANUNCIA EXPANSÃO PARA NOVOS PAÍSES.",
-    "RECORDE DE PÚBLICO EM GRAND SLAMS NESTE ANO.",
-    "MARCA ESPORTIVA LANÇA NOVA LINHA DE RAQUETES DE ALTA PERFORMANCE.",
-]
-
 
 def obter_proximos(session: Session) -> dict:
     nome_save = session.nome_save_ativo
@@ -54,44 +46,38 @@ def obter_proximos(session: Session) -> dict:
     return {"semana_atual": semana_atual, "torneios": proximos}
 
 
+from src.services.narrative_news_service import NarrativeNewsService
+
+
 def obter_noticias(session: Session) -> list:
     nome_save = session.nome_save_ativo
     jogador = session.jogador
-    noticias = []
-
+    temp = carregar_temporada_atual(nome_save)
+    semana = temp["semana"]
+    
+    # 1. Obter dados de contexto
     estado_t = carregar_estado_torneio(nome_save, genero=jogador.genero)
-    if estado_t and estado_t.get("fase_atual") == "finalizado":
-        campeao = estado_t.get("campeao_simples")
-        if campeao:
-            if normalizar_nome(campeao) == normalizar_nome(jogador.nome):
-                noticias.append(
-                    f"CAMPEÃO! {jogador.nome.upper()} VENCE EM {estado_t['torneio'].upper()}!"
-                )
-            else:
-                noticias.append(
-                    f"{campeao.upper()} CONQUISTA O TÍTULO DE {estado_t['torneio'].upper()}."
-                )
-
     rk = SistemaRanking(get_caminho_ranking_save(nome_save, genero=jogador.genero))
     posicao = rk.obter_posicao(jogador.nome) or 9999
+    
+    # 2. Gerar notícias via Service (DRY)
+    noticias = NarrativeNewsService.generate_player_news(jogador, posicao, estado_t)
+    
+    try:
+        manager = WeekTournamentManager(nome_save, semana, genero=jogador.genero)
+        noticias.extend(NarrativeNewsService.generate_circuit_news(
+            manager, 
+            active_tournament_name=estado_t.get("torneio") if estado_t else None
+        ))
+    except Exception:
+        pass
 
-    if posicao <= 10:
-        noticias.append(
-            f"FENÔMENO: {jogador.nome.upper()} SE CONSOLIDA ENTRE OS MELHORES DO MUNDO!"
-        )
-    elif posicao <= 100:
-        noticias.append(
-            f"SUBINDO: {jogador.nome.upper()} GANHA DESTAQUE NO CIRCUITO MUNDIAL."
-        )
+    # 3. Fillers (KISS)
+    while len(noticias) < 4:
+        noticias.append(NarrativeNewsService.get_filler_news())
 
-    noticias.append(random.choice(_FRASES_MUNDO))
-
-    if getattr(jogador, "patrocinios", []):
-        noticias.append(
-            f"MERCADO: {jogador.nome.upper()} ATRAI NOVOS INVESTIDORES APÓS RECENTES RESULTADOS."
-        )
-
-    return noticias
+    random.shuffle(noticias)
+    return noticias[:6]
 
 
 def obter_torneio(nome_save: str, semana: int, nome_torneio: str, genero: str) -> dict:
@@ -214,10 +200,9 @@ def obter_bracket(nome_save: str, semana: int, nome_torneio: str, tour: str) -> 
 
 def obter_ranking_nacoes() -> list:
     import os
+    import json
     from src.dados import BASE_DIR
     caminho_json = os.path.join(BASE_DIR, "db", "ranking_nacoes_davis.json")
-    import json
-    import os
 
     if not os.path.exists(caminho_json):
         raise HTTPException(status_code=404, detail="Ranking de nações não encontrado.")
@@ -225,15 +210,25 @@ def obter_ranking_nacoes() -> list:
     try:
         with open(caminho_json, "r", encoding="utf-8") as f:
             data = json.load(f)
+        
+        nacoes = data.get("nations", [])
+        # Ordenação oficial: Pontos -> Confrontos jogados
+        nacoes_ordenadas = sorted(
+            nacoes,
+            key=lambda x: (int(x.get("points", 0)), int(x.get("ties_played", 0))),
+            reverse=True,
+        )
+
         return [
             {
                 "posicao": idx,
                 "pais": n.get("name"),
                 "codigo": n.get("code"),
-                "pontos": n.get("points"),
-                "flag": _FLAGS.get(n.get("code", ""), "🏳️"),
+                "pontos": int(n.get("points", 0)),
+                "flag": _FLAGS.get(str(n.get("code", "")).upper(), "🏳️"),
+                "evolucao": random.randint(-2, 2) if random.random() < 0.3 else 0 # Simulação de evolução por enquanto
             }
-            for idx, n in enumerate(data.get("nations", []), 1)
+            for idx, n in enumerate(nacoes_ordenadas, 1)
         ]
     except Exception as exc:
         raise HTTPException(
@@ -241,15 +236,86 @@ def obter_ranking_nacoes() -> list:
         )
 
 
-def obter_goat(nome_save: str, trofeus: list) -> dict:
+def _pontuar_titulo(tipo: str, nome: str = "") -> int:
+    texto = f"{tipo} {nome}"
+    if "Grand Slam" in texto:
+        return 2000
+    if "1000" in texto:
+        return 1000
+    if "500" in texto:
+        return 500
+    if "250" in texto:
+        return 250
+    if "Challenger" in texto:
+        return 125
+    if "ITF 100" in texto:
+        return 100
+    if "ITF 25" in texto:
+        return 25
+    return 0
+
+
+def _normalizar_titulo_jogador(titulo) -> dict | None:
+    if isinstance(titulo, str):
+        nome = titulo.strip()
+        if not nome:
+            return None
+        return {"torneio": nome, "nome": nome, "tipo": "", "ano": None, "adversario_final": ""}
+    if not isinstance(titulo, dict):
+        return None
+    torneio = str(titulo.get("torneio") or titulo.get("nome") or "").strip()
+    if not torneio:
+        return None
+    return {
+        "torneio": torneio,
+        "nome": torneio,
+        "tipo": titulo.get("tipo") or titulo.get("categoria") or "",
+        "categoria": titulo.get("categoria") or titulo.get("tipo") or "",
+        "semana": titulo.get("semana"),
+        "ano": titulo.get("ano"),
+        "modalidade": titulo.get("modalidade", "simples"),
+        "adversario_final": titulo.get("adversario_final") or titulo.get("adversario") or "",
+    }
+
+
+def _titulos_derivados_do_historico(historico_torneios: list | None) -> list[dict]:
+    titulos = []
+    for item in historico_torneios or []:
+        if not isinstance(item, dict):
+            continue
+        fase = str(item.get("fase_alcancada") or item.get("fase") or "").lower()
+        if fase != "campeao":
+            continue
+        titulo = _normalizar_titulo_jogador(item)
+        if titulo:
+            titulos.append(titulo)
+    return titulos
+
+
+def obter_goat(nome_save: str, trofeus: list, historico_torneios: list | None = None) -> dict:
     from src.dados import carregar_historico
 
     hist = carregar_historico(nome_save)
+    recordes = hist.get("recordes", {})
+
+    meus_titulos = []
+    vistos = set()
+    for origem in (trofeus or [], *_titulos_derivados_do_historico(historico_torneios)):
+        titulo = _normalizar_titulo_jogador(origem)
+        if not titulo:
+            continue
+        chave = (titulo.get("torneio"), titulo.get("ano"), titulo.get("modalidade"))
+        if chave in vistos:
+            continue
+        vistos.add(chave)
+        meus_titulos.append(titulo)
+
+    pts = sum(_pontuar_titulo(str(t.get("tipo", "")), str(t.get("torneio", ""))) for t in meus_titulos)
+
     return {
-        "recordes": hist.get("recordes", {}),
-        "meus_titulos": trofeus,
-        "goat_points": 0,
-        "GoatPoints": 0,
+        "recordes": recordes,
+        "meus_titulos": meus_titulos,
+        "goat_points": pts,
     }
 
 

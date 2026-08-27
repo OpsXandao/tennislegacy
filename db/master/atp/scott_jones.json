@@ -2,24 +2,33 @@
   "nome": "Scott Jones",
   "nacionalidade": "[AU]",
   "idade": 28,
-  "overall": 71,
+  "overall": 50,
   "pontos": 28,
   "atributos": {
-    "saque": 40,
+    "vel_saque": 43,
+    "pre_saque": 41,
+    "segundo_saque": 46,
+    "retorno": 45,
     "forehand": 56,
     "backhand": 47,
-    "topspin": 48,
     "voleio": 51,
-    "slice": 40,
-    "movimento": 47,
+    "smash": 54,
     "lob": 55,
+    "topspin": 48,
+    "slice": 40,
     "winner": 52,
-    "fisico": 60,
+    "velocidade": 51,
+    "aceleracao": 50,
+    "resistencia": 60,
+    "forca": 56,
+    "agilidade": 48,
     "duplas": 60
   },
   "id": 889,
   "atributos_psicologicos": {
-    "concentracao": 49,
+    "clutch": 49,
+    "consistencia": 70,
+    "compostura": 45,
     "agressividade": 35,
     "leitura_de_jogo": 44,
     "determinacao": 38
@@ -45,5 +54,10 @@
   "peso": 73,
   "mao_dominante": "Destro",
   "reves": "Uma mão",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -2,24 +2,33 @@
   "nome": "Ryan Colby",
   "nacionalidade": "[US]",
   "idade": 22,
-  "overall": 72,
+  "overall": 53,
   "pontos": 30,
   "atributos": {
-    "saque": 57,
+    "vel_saque": 57,
+    "pre_saque": 53,
+    "segundo_saque": 52,
+    "retorno": 49,
     "forehand": 44,
     "backhand": 45,
-    "topspin": 54,
     "voleio": 45,
-    "slice": 50,
-    "movimento": 57,
+    "smash": 51,
     "lob": 54,
+    "topspin": 54,
+    "slice": 50,
     "winner": 59,
-    "fisico": 60,
+    "velocidade": 58,
+    "aceleracao": 55,
+    "resistencia": 60,
+    "forca": 52,
+    "agilidade": 56,
     "duplas": 60
   },
   "id": 869,
   "atributos_psicologicos": {
-    "concentracao": 53,
+    "clutch": 53,
+    "consistencia": 63,
+    "compostura": 46,
     "agressividade": 42,
     "leitura_de_jogo": 53,
     "determinacao": 32
@@ -45,5 +54,10 @@
   "peso": 71,
   "mao_dominante": "Destro",
   "reves": "Duas mãos",
-  "estilo_jogo": "All-court"
+  "estilo_jogo": "All-court",
+  "especialidade_superficie": {
+    "saibro": 65,
+    "hard": 78,
+    "grama": 68
+  }
 }

@@ -3,7 +3,8 @@ import unittest
 
 from src.match_core import atualizar_estatisticas
 from src.constants.match_constants import EstrategiaSaque, IntencaoPonto, TipoSaque
-from src.simulacao_partida import ContextoPartida, ContextoPonto, EstatisticasPartida, SimuladorPonto
+from src.match_state import ContextoPartida, ContextoPonto, EstatisticasPartida
+from src.services.simulador_ponto import SimuladorPonto
 
 
 class MatchBalanceTests(unittest.TestCase):
